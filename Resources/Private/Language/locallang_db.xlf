@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-11-11T21:36:44Z" product-name="operations">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_operations_domain_model_operation">
+				<source>Operation</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.number">
+				<source>Number</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.onlyEld">
+				<source>Only Coordination</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.location">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.begin">
+				<source>Begin</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.end">
+				<source>End</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.report">
+				<source>Report</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.longitude">
+				<source>Longitude</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.latitude">
+				<source>Latitude</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.zoom">
+				<source>Zoom</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.assistance">
+				<source>Assistance</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.vehicles">
+				<source>Vehicles</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.resources">
+				<source>Resources</source>
+			</trans-unit>
+
+			<trans-unit id="tx_operations_domain_model_assistance">
+				<source>Assistance</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_assistance.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_assistance.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_assistance.link">
+				<source>Link</source>
+			</trans-unit>
+
+			<trans-unit id="tx_operations_domain_model_vehicle">
+				<source>Vehicle</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_vehicle.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_vehicle.short">
+				<source>Short</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_vehicle.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_vehicle.image">
+				<source>Image</source>
+			</trans-unit>
+
+			<trans-unit id="tx_operations_domain_model_resources">
+				<source>Resources</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_resources.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_resources.short">
+				<source>Short</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_resources.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_resources.image">
+				<source>Image</source>
+			</trans-unit>
+
+			<trans-unit id="tx_operations_domain_model_type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_type.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_type.image">
+				<source>Image</source>
+			</trans-unit>
+			
+			<trans-unit id="flexform.sheet.general">
+				<source>Options</source>
+			</trans-unit>
+			<trans-unit id="flexform.sheet.img">
+				<source>Image options</source>
+			</trans-unit>
+			
+			<trans-unit id="flexform.showImgInList">
+				<source>Thumbnail in list view</source>
+			</trans-unit>
+			<trans-unit id="flexform.listImgWidth">
+				<source>Image width in list view</source>
+			</trans-unit>
+			<trans-unit id="flexform.listImgHeight">
+				<source>Image height in list view</source>
+			</trans-unit>
+			<trans-unit id="flexform.singleImgWidth">
+				<source>Image width in single view</source>
+			</trans-unit>
+			<trans-unit id="flexform.singleImgHeight">
+				<source>Image height in single view</source>
+			</trans-unit>
+			
+			<trans-unit id="flexform.controller">
+				<source>Show:</source>
+			</trans-unit>
+			<trans-unit id="flexform.operations">
+				<source>Operations</source>
+			</trans-unit>
+			<trans-unit id="flexform.vehicles">
+				<source>Vehicles</source>
+			</trans-unit>
+			<trans-unit id="flexform.resources">
+				<source>Resources</source>
+			</trans-unit>
+			<trans-unit id="flexform.itemsPerPage">
+				<source>Items per page</source>
+			</trans-unit>
+			<trans-unit id="flexform.showPaginator">
+				<source>Show pagination</source>
+			</trans-unit>
+			<trans-unit id="flexform.hidePagination">
+				<source>Hide pagination</source>
+			</trans-unit>
+			<trans-unit id="flexform.teaserMaxChars">
+				<source>Max chars of teaser text in list view</source>
+			</trans-unit>
+			<trans-unit id="flexform.storageFolder">
+				<source>Storage folder</source>
+			</trans-unit>
+			<trans-unit id="flexform.hideFilter">
+				<source>Hide filter for result</source>
+			</trans-unit>
+			
+			<trans-unit id="tca.paletteTitle.time">
+				<source>Operation times</source>
+			</trans-unit>
+			<trans-unit id="tca.paletteTitle.coordinates">
+				<source>Coordinates</source>
+			</trans-unit>
+			<trans-unit id="tca.paletteTitle.img">
+				<source>Operation images</source>
+			</trans-unit>
+			<trans-unit id="tca.paletteTitle.meta">
+				<source>Meta data</source>
+			</trans-unit>
+			<trans-unit id="tca.divTitle.relations">
+				<source>Relations</source>
+			</trans-unit>
+			<trans-unit id="tca.divTitle.map">
+				<source>Map data</source>
+			</trans-unit>
+			<trans-unit id="tca.divTitle.img">
+				<source>Images</source>
+			</trans-unit>
+			
+			<trans-unit id="tsc.subcategoryLabel.template">
+				<source>Resources (Template files, CSS, JS)</source>
+			</trans-unit>
+			<trans-unit id="tsc.subcategoryLabel.image">
+				<source>Settings for images</source>
+			</trans-unit>
+			<trans-unit id="tsc.subcategoryLabel.pids">
+				<source>Pids for views and storage</source>
+			</trans-unit>
+			<trans-unit id="tsc.subcategoryLabel.paginate">
+				<source>Settings for paginate</source>
+			</trans-unit>
+			<trans-unit id="tsc.subcategoryLabel.list">
+				<source>Settings for list view</source>
+			</trans-unit>
+			
+			<trans-unit id="tsc.templateRootPath">
+				<source>Templates:Path to template root (FE)</source>
+			</trans-unit>
+			<trans-unit id="tsc.partialRootPath">
+				<source>Partials:Path to template partials (FE)</source>
+			</trans-unit>
+			<trans-unit id="tsc.layoutRootPath">
+				<source>Layouts:Path to template layouts (FE)</source>
+			</trans-unit>
+			<trans-unit id="tsc.css">
+				<source>Default CSS:Default CSS file, change path to use your own CSS (FE)</source>
+			</trans-unit>
+			
+			<trans-unit id="tsc.flexsliderCss">
+				<source>Flexslider CSS:Default CSS from flexslider, change path to use your own CSS</source>
+			</trans-unit>
+			<trans-unit id="tsc.magnificCss">
+				<source>MagnificPopup CSS:Default CSS from magnific popup, change path to use your own CSS</source>
+			</trans-unit>
+			<trans-unit id="tsc.jquery">
+				<source>jQuery default:Default path to jquery library. Change or delete path to use your own library.</source>
+			</trans-unit>
+			<trans-unit id="tsc.flexsliderJs">
+				<source>Flexslider JS:Default path to flexslider JS. Change path to use your own flexslider code.</source>
+			</trans-unit>
+			<trans-unit id="tsc.magnificJs">
+				<source>MagnificPopup JS:Default path to magnific popup JS. Change path to use your own magnific popup code.</source>
+			</trans-unit>
+			<trans-unit id="tsc.sliderJs">
+				<source>Run slider JS:Default JS code from tx_operations to run the slider.</source>
+			</trans-unit>
+			<trans-unit id="tsc.lightboxJs">
+				<source>Run lightbox JS:Default JS code to run the lightbox.</source>
+			</trans-unit>
+			
+			<trans-unit id="tsc.storagePid">
+				<source>Storage Pid:Default storage PID for all data of operations</source>
+			</trans-unit>
+			<trans-unit id="tsc.operationPid">
+				<source>Operation page:Page with operation plugin and using operations view</source>
+			</trans-unit>
+			<trans-unit id="tsc.vehiclePid">
+				<source>Vehicles page:Page with operation plugin and using vehicles view</source>
+			</trans-unit>
+			<trans-unit id="tsc.resourcePid">
+				<source>Resources page:Page with operation plugin and using resources view</source>
+			</trans-unit>
+			<trans-unit id="tsc.hidePagination">
+				<source>Hide pagination:Hide the pagination in list view of operations</source>
+			</trans-unit>
+			<trans-unit id="tsc.hideFilter">
+				<source>Hide filter:Hide search form (filter) in list view of operations</source>
+			</trans-unit>
+			<trans-unit id="tsc.listImgWidth">
+				<source>Max img width list:Max image width in list view, for vehicles and resources too (add "c" for cropping image)</source>
+			</trans-unit>
+			<trans-unit id="tsc.listImgHeight">
+				<source>Max img height list:Max image width in list view</source>
+			</trans-unit>
+			<trans-unit id="tsc.singleImgWidth">
+				<source>Max img width list:Max image width in single view, for vehicles and resources too (add "c" for cropping image)</source>
+			</trans-unit>
+			<trans-unit id="tsc.singleImgHeight">
+				<source>Max img height list:Max image width in single view, for vehicles and resources too</source>
+			</trans-unit>
+			<trans-unit id="tsc.increaseImage">
+				<source>Lightbox for images:Render images in single view with a wrapped link to increase image (e.g. with lightbox plugin)</source>
+			</trans-unit>
+			<trans-unit id="tsc.showImgInList">
+				<source>First img in list:Show first image in listview</source>
+			</trans-unit>
+			<trans-unit id="tsc.itemsPerPage">
+				<source>Items per page:Items per page in listview</source>
+			</trans-unit>
+			<trans-unit id="tsc.limit">
+				<source>Limit:Limit the result in list view</source>
+			</trans-unit>
+			
+			<trans-unit id="tsc.insertAbove">
+				<source>Pagination above:Show pagination above the list</source>
+			</trans-unit>
+			<trans-unit id="tsc.insertBelow">
+				<source>Pagination below:Show pagination below the list</source>
+			</trans-unit>
+			<trans-unit id="tsc.lessPages">
+				<source>lessPages</source>
+			</trans-unit>
+			<trans-unit id="tsc.maxNumberOfLinks">
+				<source>maxNumberOfLinks</source>
+			</trans-unit>
+			<trans-unit id="tsc.pagesBefore">
+				<source>pagesBefore</source>
+			</trans-unit>
+			<trans-unit id="tsc.pagesAfter">
+				<source>pagesAfter</source>
+			</trans-unit>
+			<trans-unit id="tsc.prevNextHeaderTags">
+				<source>Show prev/next:Show prev/next in pagination</source>
+			</trans-unit>
+			
+		</body>
+	</file>
+</xliff>

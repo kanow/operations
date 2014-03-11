@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-11-11T21:36:44Z" product-name="operations">
+		<header/>
+		<body>
+		
+			<trans-unit id="list.header">
+				<source>List of operations</source>
+			</trans-unit>
+			<trans-unit id="backToList">
+				<source>back to list</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation">
+				<source>Operation</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.number">
+				<source>Operation number</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.location">
+				<source>Location of operation</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.begin">
+				<source>Begin</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.end">
+				<source>Ending</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.report">
+				<source>Operation report</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.longitude">
+				<source>Longitude</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.latitude">
+				<source>Latitude</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.zoom">
+				<source>Zoom for maps</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.image">
+				<source>Images of operation</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.type">
+				<source>Type of operation</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.assistance">
+				<source>Assistance to this oparation</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.vehicles">
+				<source>Vehicles use on this operation</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.resources">
+				<source>resources</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_operations_domain_model_assistance">
+				<source>Assistance</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_assistance.title">
+				<source>Title of the assistance</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_assistance.description">
+				<source>Description of assistance</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_assistance.link">
+				<source>A website url</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_operations_domain_model_vehicle">
+				<source>Vehicle</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_vehicle.title">
+				<source>Title of vehicle</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_vehicle.short">
+				<source>Abbreviation of vehicle</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_vehicle.description">
+				<source>Description of vehicle</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_vehicle.image">
+				<source>Image of vehicle</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_operations_domain_model_resources">
+				<source>Resources</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_resources.title">
+				<source>Title of resource</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_resources.short">
+				<source>Abbreviation title</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_resources.description">
+				<source>Description of resource</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_resources.image">
+				<source>Image of resource</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_operations_domain_model_type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_type.title">
+				<source>Operation type</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_type.image">
+				<source>icon for use in list</source>
+			</trans-unit>
+			
+			<trans-unit id="emptyResult">
+				<source>No results</source>
+			</trans-unit>
+			<trans-unit id="noReport">
+				<source>Sorry, there is no report here</source>
+			</trans-unit>
+			<trans-unit id="filter">
+				<source>Filter the results</source>
+			</trans-unit>
+			<trans-unit id="filter.labelYear">
+				<source>Select year</source>
+			</trans-unit>
+			<trans-unit id="filter.select.first">
+				<source>Please choose...</source>
+			</trans-unit>
+			<trans-unit id="filter.submit">
+				<source>Send</source>
+			</trans-unit>
+			<trans-unit id="filter.reset">
+				<source>Reset filter</source>
+			</trans-unit>
+			
+			<trans-unit id="operationsFound">
+				<source>operations found</source>
+			</trans-unit>
+			<trans-unit id="singleOperationFound">
+				<source>operation found</source>
+			</trans-unit>
+			<trans-unit id="backToOperation">
+				<source>back to operation</source>
+			</trans-unit>
+			
+		</body>
+	</file>
+</xliff>

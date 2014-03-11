@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-11-11T21:36:44Z" product-name="operations">
+		<header/>
+		<body>
+
+			<trans-unit id="title.description">
+				<source>Title of the assistance</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>Description of assistance</source>
+			</trans-unit>
+			<trans-unit id="link.description">
+				<source>A website url</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

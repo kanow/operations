@@ -1,0 +1,34 @@
+
+<f:link.action action="show" arguments="{operation:operation}">
+	<div class="meta">
+		<f:if condition="{operation.begin}">
+		<span>
+			<f:if condition="{operation.begin}">
+				{operation.begin -> f:format.date(format:'d.m.Y, H:i \U\h\r')}
+			</f:if>
+		</span>
+		</f:if>
+		<f:if condition="{operation.location}">
+			<span><f:translate key="tx_operations_domain_model_operation.location" />: {operation.location}</span>
+		</f:if>
+	</div>
+
+	<div class="left">
+		<h2>
+			<span class="number">[{operation.number}]</span>
+				{operation.title}
+		</h2>
+		<f:if condition="{operation.report}">
+			<div class="teaser">
+				<f:format.crop maxCharacters="{settings.cropTeaser}" append="…">{operation.report}</f:format.crop>
+			</div>
+		</f:if>
+	</div>
+	<f:if condition="{settings.showImgInList}">
+		<f:if condition="{operation.image}">
+			<div class="img">
+			<f:image src="{operation.firstImage.uid}" alt="" treatIdAsReference="TRUE" alt="{operation.firstImage.originalResource.alternative}" width="{settings.listImgWidth}" height="{settings.listImgHeight}" />		
+			</div>
+		</f:if>
+	</f:if>
+</f:link.action>

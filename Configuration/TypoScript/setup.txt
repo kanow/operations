@@ -1,0 +1,87 @@
+
+config.tx_extbase.objects {
+    Tx_Fluid_ViewHelpers_Widget_Controller_PaginateController {
+        className = Tx_Operations_ViewHelpers_Widget_Controller_PaginateController
+    }
+}
+
+plugin.tx_operations {
+	mvc.callDefaultActionIfActionCantBeResolved = 1
+	view {
+		templateRootPath = {$plugin.tx_operations.view.templateRootPath}
+		partialRootPath = {$plugin.tx_operations.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_operations.view.layoutRootPath}
+		widget.TYPO3\CMS\Fluid\ViewHelpers\Widget\PaginateViewHelper.templateRootPath = EXT:operations/Resources/Private/Templates/
+	}
+	persistence {
+		storagePid = {$plugin.tx_operations.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		#rewrittenPropertyMapper = 1
+		#skipDefaultArguments = 1 
+	}
+	settings {
+		overrideFlexformSettingsIfEmpty = itemsPerPage,showImgInList,listImgWidth,listImgHeight,singleImgWidth,singleImgHeight,cropTeaser
+		operationPid = {$plugin.tx_operations.settings.operationPid}
+		vehiclePid = {$plugin.tx_operations.settings.vehiclePid}
+		resourcePid = {$plugin.tx_operations.settings.resourcePid}
+		# cropMaxCharacters = 80
+		itemsPerPage = {$plugin.tx_operations.settings.itemsPerPage}
+		limit = {$plugin.tx_operations.settings.limit}
+		hidePagination = {$plugin.tx_operations.settings.hidePagination}
+		hideFilter = {$plugin.tx_operations.settings.hideFilter}
+		showImgInList = {$plugin.tx_operations.settings.showImgInList}
+		listImgWidth = {$plugin.tx_operations.settings.listImgWidth}
+		listImgHeight = {$plugin.tx_operations.settings.listImgHeight}
+		singleImgWidth = {$plugin.tx_operations.settings.singleImgWidth}
+		singleImgHeight = {$plugin.tx_operations.settings.singleImgHeight}
+		increaseImage = {$plugin.tx_operations.settings.increaseImage}
+		cropTeaser = 150
+		sortOrder = DESC
+		sortBy = begin
+		lastYears = 5
+		list {
+			#maxImageWidth = 
+			#maxImageHeight =
+		}
+		single {
+			#imageWidth = 165
+			#imageHeight = 120c
+			showNoReport = 1
+		}
+		paginate {
+			insertAbove = {$plugin.tx_operations.settings.paginate.insertAbove}
+			insertBelow = {$plugin.tx_operations.settings.paginate.insertBelow}
+			#lessPages = {$plugin.tx_operations.settings.paginate.lessPages}
+			maxNumberOfLinks = {$plugin.tx_operations.settings.paginate.maxNumberOfLinks}
+			#pagesBefore = {$plugin.tx_operations.settings.paginate.pagesBefore}
+			#pagesAfter = {$plugin.tx_operations.settings.paginate.pagesAfter}
+			templatePath = 
+			prevNextHeaderTags = {$plugin.tx_operations.settings.paginate.prevNextHeaderTags}
+		}
+	}
+}
+
+page {
+	includeJS {
+		#mapsApi = https://maps.googleapis.com/maps/api/js?key=AIzaSyDcQgIlBTC1tODnThKxQOp-CIynjmX7Wb0&sensor=false
+		#mapsApi = https://maps.googleapis.com/maps/api/js?&sensor=false
+		#mapsApi.external = 1
+		map = EXT:operations/Resources/Public/Js/map.js
+	}
+	includeCSS {
+		operations = {$plugin.tx_operations.css}
+		flexslider = {$plugin.tx_operations.flexsliderCss}
+		magnificPopup = {$plugin.tx_operations.magnificCss}
+	}
+	includeJSFooter {
+		jquery = {$plugin.tx_operations.jquery}
+		flexslider = {$plugin.tx_operations.flexsliderJs}
+		magnificPopup = {$plugin.tx_operations.magnificJs}
+		sliderJs = {$plugin.tx_operations.sliderJs}
+		lightboxJs = {$plugin.tx_operations.lightboxJs}
+	}
+}
+	
+	

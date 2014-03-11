@@ -1,0 +1,78 @@
+{namespace o=KN\Operations\ViewHelpers}
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+	<div class="operations list">
+		<h1><f:translate key="list.header" /></h1>
+		<f:flashMessages />
+		<f:if condition="{settings.hideFilter}">
+			<f:else>
+				<f:render partial="List/Form" arguments="{begin:begin, demand:demand}" />
+			</f:else>
+		</f:if>
+	
+		<f:if condition="{demanded}">
+			<f:then>
+				<f:if condition="{settings.hidePagination}">
+					<f:then>
+						<div class="countResult">
+							<span>{f:count(subject:demanded)} {f:if(condition:'{f:count(subject:demanded)} == 1',then:'{f:translate(key:"singleOperationFound")}',else:'{f:translate(key:"operationsFound")}')}</span>
+						</div>
+					
+						<ul>
+							<f:for each="{demanded}" as="operation" iteration="oIterator">
+								<li class="clearfix{f:if(condition:'{oIterator.isOdd}',then:' odd')}">
+									<f:render partial="List/Item" arguments="{operation: operation, settings:settings, backAction:'search'}" />
+								</li>
+							</f:for>
+						</ul>
+					</f:then>
+					<f:else>
+						<f:if condition="{f:count(subject:demanded)} <=  {settings.itemsPerPage}">
+							<f:then>
+								<div class="countResult">
+									<span>{f:count(subject:demanded)} {f:if(condition:'{f:count(subject:demanded)} == 1',then:'{f:translate(key:"singleOperationFound")}',else:'{f:translate(key:"operationsFound")}')}</span>
+								</div>
+								<ul>
+									<f:for each="{demanded}" as="operation" iteration="oIterator">
+										<li class="clearfix{f:if(condition:'{oIterator.isOdd}',then:' odd')}">
+											<f:render partial="List/Item" arguments="{operation: operation, settings:settings, backAction:'search'}" />
+										</li>
+									</f:for>
+								</ul>
+							</f:then>
+							<f:else>
+								<div class="countResult">
+									<span>{f:count(subject:demanded)} {f:if(condition:'{f:count(subject:demanded)} == 1',then:'{f:translate(key:"singleOperationFound")}',else:'{f:translate(key:"operationsFound")}')}</span>
+								</div>
+								<o:widget.paginate objects="{demanded}" as="paginatedOperations" pagination="pagination" configuration="{itemsPerPage: settings.itemsPerPage, insertAbove:settings.paginate.insertAbove, insertBelow:settings.paginate.insertBelow, maximumNumberOfLinks: settings.paginate.maxNumberOfLinks }" additionalParamsPrefix="tx_operations_list" additionalParams="{demand:demand.parameter}">
+									<ul>
+										<f:for each="{paginatedOperations}" as="operation" iteration="oIterator">
+											<li class="clearfix{f:if(condition:'{oIterator.isOdd}',then:' odd')}">
+												<f:render partial="List/Item" arguments="{operation: operation, settings:settings, backAction:'search'}" />
+											</li>
+										</f:for>
+									</ul>
+								</o:widget.paginate>
+							</f:else>
+						</f:if>
+					</f:else>
+				</f:if>
+			</f:then>
+			<f:else>
+				<p><f:translate key="emptyResult" /></p>
+			</f:else>
+		</f:if>
+	</div>
+</f:section>

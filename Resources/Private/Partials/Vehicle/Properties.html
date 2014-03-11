@@ -1,0 +1,25 @@
+
+<f:if condition="{vehicle.description}">
+	<div class="description layer">
+		<h2><f:translate key="tx_operations_domain_model_vehicle.description" /></h2>
+		<f:format.html parseFuncTSPath="lib.parseFunc_RTE">{vehicle.description}</f:format.html>
+	</div>
+	
+	<f:if condition="{vehicle.image}">
+		<div class="images layer">
+		<!--	<h2><f:translate key="tx_operations_domain_model_operation.image" /></h2> -->
+				<ul class="slides">
+					<f:for each="{vehicle.allImages}" as="image">
+						<li>
+							<f:if condition="{settings.increaseImage}"><a href="{image.originalResource.publicUrl}" title="{image.originalResource.alternative}"></f:if>
+								<f:image src="{image.uid}" alt="" treatIdAsReference="TRUE" alt="{image.originalResource.alternative}" width="{settings.singleImgWidth}" height="{settings.singleImgHeight}" />
+							<!-- <p class="imgDescription">{image.originalResource.description}</p> -->
+							<f:if condition="{settings.increaseImage}"></a></f:if>
+						</li>
+					</f:for>
+				</ul>
+		</div>
+	</f:if>
+	
+</f:if>
+

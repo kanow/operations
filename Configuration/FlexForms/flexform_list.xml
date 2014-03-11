@@ -1,0 +1,181 @@
+<T3DataStructure>
+  <sheets>
+    <sDEF>
+      <ROOT>
+        <TCEforms>
+          <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.general</sheetTitle>
+        </TCEforms>
+        <type>array</type>
+        <el>
+					<switchableControllerActions>
+							<TCEforms>
+								<onChange>reload</onChange>
+								<label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.controller</label>
+								<config>
+									<type>select</type>
+									<items>
+										<numIndex index="0">
+											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.operations</numIndex>
+											<numIndex index="1">Operation->list;Operation->show;Operation->search</numIndex>
+										</numIndex>
+
+									
+										<numIndex index="1">
+											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.vehicles</numIndex>
+											<numIndex index="1">Vehicle->show</numIndex>
+										</numIndex>
+											
+										<numIndex index="2">
+											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.resources</numIndex>
+											<numIndex index="1">Resources->show</numIndex>
+										</numIndex>
+										
+									</items>
+								</config>
+							</TCEforms>
+					</switchableControllerActions>
+					
+				
+					<settings.storageFolder>
+							<TCEforms>
+								<exclude>1</exclude>
+								<label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.storageFolder</label>
+								<config>
+									<type>group</type>
+									<internal_type>db</internal_type>
+									<allowed>pages</allowed>
+									<size>3</size>
+									<maxitems>50</maxitems>
+									<minitems>0</minitems>
+									<show_thumbs>1</show_thumbs>
+									<wizards>
+										<suggest>
+											<type>suggest</type>
+										</suggest>
+									</wizards>
+								</config>
+							</TCEforms>
+					</settings.storageFolder>
+					
+					<settings.itemsPerPage>
+		        <TCEforms>
+							<exclude>1</exclude>
+		         <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.itemsPerPage</label>
+		         <config>
+		          <type>input</type>
+		          <size>5</size>
+		          <default></default>
+		          <eval>trim,num</eval> 
+		         </config>
+		        </TCEforms>
+	      	</settings.itemsPerPage>
+					
+ 					<settings.cropTeaser>
+		        <TCEforms>
+							<exclude>1</exclude>
+		         <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.teaserMaxChars</label>
+		         <config>
+		          <type>input</type>
+		          <size>5</size>
+		          <default></default>
+		          <eval>trim,num</eval> 
+		         </config>
+		        </TCEforms>
+	       	</settings.cropTeaser>
+					 
+	 				<settings.hidePagination>
+	 			        <TCEforms>
+									<exclude>1</exclude> <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.hidePagination</label>
+	 			         <config>
+	 			          <type>check</type>
+	 			         </config>
+							 	</TCEforms>
+	 				</settings.hidePagination>
+					
+	 				<settings.hideFilter>
+	 			        <TCEforms>
+									<exclude>1</exclude> <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.hideFilter</label>
+	 			         <config>
+	 			          <type>check</type>
+	 			         </config>
+							 	</TCEforms>
+	 				</settings.hideFilter>
+
+        </el>
+      </ROOT>
+    </sDEF>
+    <sIMG>
+      <ROOT>
+        <TCEforms>
+          <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.img</sheetTitle>
+        </TCEforms>
+        <type>array</type>
+        <el>
+					
+	 				<settings.showImgInList>
+	 			        <TCEforms>
+									<exclude>1</exclude>
+	 			         <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showImgInList</label>
+	 			         <config>
+	 			          <type>check</type>
+	 			         </config>
+							 	</TCEforms>
+	 				</settings.showImgInList>
+					
+					<settings.listImgWidth>
+				        <TCEforms>
+									<exclude>1</exclude>
+				         <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listImgWidth</label>
+				         <config>
+				          <type>input</type>
+				          <size>5</size>
+				          <default></default>
+				          <eval>trim,alphanum</eval> 
+				         </config>
+				        </TCEforms>
+			       </settings.listImgWidth>
+					 
+	 					<settings.listImgHeight>
+			        <TCEforms>
+								<exclude>1</exclude>
+			         <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listImgHeight</label>
+			         <config>
+			          <type>input</type>
+			          <size>5</size>
+			          <default></default>
+			          <eval>trim,alphanum</eval> 
+			         </config>
+			        </TCEforms>
+		       </settings.listImgHeight>
+					 
+ 					<settings.singleImgWidth>
+ 				        <TCEforms>
+									<exclude>1</exclude>
+ 				         <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.singleImgWidth</label>
+ 				         <config>
+ 				          <type>input</type>
+ 				          <size>5</size>
+ 				          <default></default>
+ 				          <eval>trim,alphanum</eval> 
+ 				         </config>
+ 				        </TCEforms>
+ 			       </settings.singleImgWidth>
+					 
+ 	 					<settings.singleImgHeight>
+ 			        <TCEforms>
+								<exclude>1</exclude>
+ 			         <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.singleImgHeight</label>
+ 			         <config>
+ 			          <type>input</type>
+ 			          <size>5</size>
+ 			          <default></default>
+ 			          <eval>trim,alphanum</eval> 
+ 			         </config>
+ 			        </TCEforms>
+ 		       </settings.singleImgHeight>
+
+        </el>
+      </ROOT>
+    </sIMG>
+  </sheets>
+</T3DataStructure>

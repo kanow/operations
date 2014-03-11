@@ -1,0 +1,88 @@
+        'fixedPostVars' => array(
+							
+			        'operations' => array( 
+				         	array(
+										'GETvar' => 'tx_operations_list[controller]',
+											'noMatch' => 'bypass',
+										),
+										array(
+											'GETvar' => 'tx_operations_list[action]',
+											'noMatch' => 'bypass',
+											'valueMap' => array(
+												'suche' => 'search',
+									      'einsatz' => 'show',
+											),
+										),
+										array(
+											'GETvar' => 'tx_operations_list[operation]',
+											'lookUpTable' => array(
+												'table' => 'tx_operations_domain_model_operation',
+												'id_field' => 'uid',
+												'alias_field' => 'title',
+												'addWhereClause' => ' AND NOT deleted',
+												'useUniqueCache' => 1,
+												'useUniqueCache_conf' => array(
+													'strtolower' => 1,
+													'spaceCharacter' => '-',
+												),
+											),
+										),
+			          ),
+								//page uid for singleview operations
+								'15' => 'operations',
+								
+								'vehicle' => array( 
+									array(
+										'GETvar' => 'tx_operations_list[vehicle]',
+										'lookUpTable' => array(
+											'table' => 'tx_operations_domain_model_vehicle',
+											'id_field' => 'uid',
+											'alias_field' => 'title',
+											'addWhereClause' => ' AND NOT deleted',
+											'useUniqueCache' => 1,
+											'useUniqueCache_conf' => array(
+												'strtolower' => 1,
+												'spaceCharacter' => '-',
+											),
+										),
+									),
+									array(
+										'GETvar' => 'tx_operations_list[action]',
+										'noMatch' => 'bypass'
+									),
+									array(
+										'GETvar' => 'tx_operations_list[controller]',
+										'noMatch' => 'bypass'
+									),
+								),
+								// page uid for single view vehicle
+				        '43' => 'vehicle',
+								
+								'resources' => array( 
+									array(
+										'GETvar' => 'tx_operations_list[resources]',
+										'lookUpTable' => array(
+											'table' => 'tx_operations_domain_model_resources',
+											'id_field' => 'uid',
+											'alias_field' => 'title',
+											'addWhereClause' => ' AND NOT deleted',
+											'useUniqueCache' => 1,
+											'useUniqueCache_conf' => array(
+												'strtolower' => 1,
+												'spaceCharacter' => '-',
+											),
+										),
+									),
+									array(
+										'GETvar' => 'tx_operations_list[action]',
+										'noMatch' => 'bypass'
+									),
+									array(
+										'GETvar' => 'tx_operations_list[controller]',
+										'noMatch' => 'bypass'
+									),
+								),
+								// page uid for single view resources
+				        '44' => 'resources',
+
+				),

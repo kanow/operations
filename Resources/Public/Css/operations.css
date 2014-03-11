@@ -1,0 +1,49 @@
+/* =========== operations ============= */
+.clearfix:after {content:'.';height:0;line-height:0;font-size:0;visibility:hidden;display:block;clear:both;}
+
+
+.single .number {padding:0 10px 0 0;}
+.single .meta {padding:10px;}
+.single .meta{float:right;max-width:30%;width:205px;}
+.single .images.layer {clear:right;float:right;width:225px;min-height:184px;margin:60px 0;}
+.single h2 {font-size:1em;font-weight:normal;letter-spacing:1px;margin-bottom:10px;}
+.single .slides li {display:inline-block;}
+.backToList {clear:left;display:inline-block;margin:10px 0;padding:3px 5px 2px;border:1px solid #000;border-radius:3px;background:#DA2121;text-decoration:none;box-shadow:1px 1px 3px #FFA1A1;color:#fff;float:left;}
+.backToList:active {margin-top:11px;margin-left:1px;}
+
+.meta p {margin-bottom:5px;}
+.operations.list h1 {margin-bottom:40px;}
+.list ul, .images ul, .layer ul {list-style:none;}
+.list li {min-height:65px;padding:10px 2% 10px;position:relative;}
+.list .img {position:absolute;top:10px;right:10px;max-width:20%;}
+.list .left, .list .meta {padding-right:20%;}
+.list li h2 {margin:3px 0;}
+
+.pageBrowser {margin:20px 0;}
+.list .paginate li {min-height:10px;margin:2px 0;border-width:1px;border-style:solid;display:inline-block;padding:0;}
+.paginate a, .paginate li span {padding: 1px 5px 0;display:inline-block;}
+.list li {clear:both;}
+.list li a {text-decoration:none;}
+
+.filter {margin:0 0 20px;float:right;}
+.filter .reset {margin:10px 0;display:inline-block;}
+.filter label {display:block;}
+
+.layer {margin-bottom:20px;width:65%;float:left;}
+.layer.report {border-width:0 0 2px;border-style:solid;padding-bottom:10px;}
+.layer.report p {padding-bottom:20px;}
+.layer.report li {margin-bottom:0;}
+/* controls slider */
+.images.layer {position:relative;float:right;}
+.images.layer img {display:block;}
+.images.layer .flex-direction-nav {position:absolute;top:-20px;}
+.images.layer .flex-direction-nav li a {opacity:0.6;left:70px;right:auto;width:0;height:0;border-width:0 40px 0;border-style:solid;}
+.images.layer .flex-direction-nav li a:hover {opacity:1;}
+.images.layer .flex-prev {border-top-width:15px !important;top:233px;}
+.images.layer .flex-next {border-bottom-width:15px !important;top:12px;}
+.single.withoutMeta .images.layer {clear:none;margin-top:30px;}
+.single.withoutMeta .description {float:left;}
+.withoutMeta .backLink {clear:left;display:block;}
+
+/* map canvas */
+#map-canvas {height:300px;width:500px;clear:both;}

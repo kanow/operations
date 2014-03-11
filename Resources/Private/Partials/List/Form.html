@@ -1,0 +1,12 @@
+<div class="filter">
+	<!-- h2><f:translate key="filter" /></h2 -->
+	<f:form object="{demand}" controller="Operation" action="search" name="demand">
+		
+		<label for="begin"><f:translate key="filter.labelYear" /></label>
+		<f:form.select prependOptionLabel="{f:translate(key:'filter.select.first')}" prependOptionValue="0" id="begin" name="begin" property="begin" options="{begin}" optionValueField="year" optionLabelField="year" />
+		
+		<f:form.submit class="button" value="{f:translate(key:'filter.submit')}" />
+	</f:form>
+	
+	<f:link.action action="list" class="reset"><f:translate key="filter.reset" /></f:link.action>
+</div>	
