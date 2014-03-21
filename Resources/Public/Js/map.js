@@ -10,19 +10,23 @@ function initialize() {
      google.maps.event.addDomListener(window, 'load', initialize);
 */
 
-
+//var Lat = 51.753403 ,Lang =11.023974,Desc='Hier meine Beschreibung.<br />HTML funzt hier auch'; 
 function initialize() {
-	var coordination = new google.maps.LatLng(51.753403, 11.023974);
+	var coordination = new google.maps.LatLng(Lat,Lang);
 	
   var mapOptions = {
-    zoom: 11,
+    zoom: Zoom,
     center: coordination,
 		//panControl: true,
-	  zoomControl: false,
-	  mapTypeControl: true,
-		mapTypeControlOptions: {
-      style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
-    },
+	  zoomControl: true,
+	  zoomControlOptions: {
+	  	style:google.maps.ZoomControlStyle.SMALL,
+		position: google.maps.ControlPosition.TOP_LEFT
+	  },
+	mapTypeControl: true,
+	mapTypeControlOptions: {
+		style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+	},
 	  //scaleControl: true,
 	  streetViewControl: false,
 	  overviewMapControl: true
@@ -30,28 +34,22 @@ function initialize() {
 
 
 	var infowindow = new google.maps.InfoWindow({
-	    content: 'Hier meine Beschreibung.<br />HTML funzt hier auch'
+	    content:Desc
 	});
 
 
 
-  var map = new google.maps.Map(document.getElementById('map-canvas'),
-      mapOptions);
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 			
 	var marker = new google.maps.Marker({
-	    position: coordination,
-			map: map,
-	    title:'Hier war der Einsatz'
+	position: coordination,
+	map: map,
+//	title:'Hier war der Einsatz'
 	});
 	google.maps.event.addListener(marker, 'click', function() {
 	  infowindow.open(map,marker);
 	});
 
-
-	// To add the marker to the map, call setMap();
-	//marker.setMap(map);
-		 
-			
 			
 }
 

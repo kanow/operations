@@ -46,4 +46,4 @@
 .withoutMeta .backLink {clear:left;display:block;}
 
 /* map canvas */
-#map-canvas {height:300px;width:500px;clear:both;}
+#map-canvas {height:260px;width:225px;clear:right;float:right;}
