@@ -143,6 +143,10 @@
 				<source>back to operation</source>
 			</trans-unit>
 			
+			<trans-unit id="map.noscript">
+				<source>Please activate javascript to show map</source>
+			</trans-unit>
+			
 		</body>
 	</file>
 </xliff>

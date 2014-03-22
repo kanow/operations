@@ -199,6 +199,9 @@
 			<trans-unit id="tsc.subcategoryLabel.list">
 				<source>Settings for list view</source>
 			</trans-unit>
+			<trans-unit id="tsc.subcategoryLabel.map">
+				<source>Settings for map</source>
+			</trans-unit>
 			
 			<trans-unit id="tsc.templateRootPath">
 				<source>Templates:Path to template root (FE)</source>
@@ -298,6 +301,13 @@
 			</trans-unit>
 			<trans-unit id="tsc.prevNextHeaderTags">
 				<source>Show prev/next:Show prev/next in pagination</source>
+			</trans-unit>
+			
+			<trans-unit id="tsc.defaultZoomSingle">
+				<source>Default zoom single:Default zoom for map in single view if no zoom is set</source>
+			</trans-unit>
+			<trans-unit id="tsc.defaultZoomList">
+				<source>Zoom for map with all items:Zoom for map view with all operation items</source>
 			</trans-unit>
 			
 		</body>

@@ -186,6 +186,12 @@
 				<target>zurück zum Einsatz</target>
 			</trans-unit>
 			
+			<trans-unit id="map.noscript">
+				<source>Please activate javascript to show map</source>
+				<target>Bitte aktiviert Javascript für die Anzeige der Karte</target>
+			</trans-unit>
+			
+			
 		</body>
 	</file>
 </xliff>

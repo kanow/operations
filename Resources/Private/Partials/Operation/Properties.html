@@ -1,5 +1,5 @@
 	<script type="text/javascript">
-	var Lat = {operation.latitude},Lang ={operation.longitude},Desc='{operation.title}', Zoom={operation.zoom};
+	var Lat = {operation.latitude},Lang ={operation.longitude},Desc='{operation.title}', Zoom={f:if(condition:operation.zoom,then:operation.zoom,else:settings.map.defaultZoomSingle)};
 	</script>
 <div class="meta">
 	<f:if condition="{operation.location}">
