@@ -21,7 +21,7 @@ $TCA['tx_operations_domain_model_operation'] = array(
 	),
 	'palettes' => array(
 		'paletteMap' => array(
-			'showitem' => 'longitude,--linebreak--,latitude,
+			'showitem' => 'latitude,--linebreak--,longitude,
 			--linebreak--,zoom',
 			'canNotCollapse' => 'TRUE'
 		),
