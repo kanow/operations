@@ -50,6 +50,10 @@ plugin.tx_operations {
 			#imageHeight = 120c
 			showNoReport = 1
 		}
+		map {
+			defaultZoomSingle = {$plugin.tx_operations.settings.map.defaultZoomSingle}
+			defaultZoomList = {$plugin.tx_operations.settings.map.defaultZoomList}
+		}
 		paginate {
 			insertAbove = {$plugin.tx_operations.settings.paginate.insertAbove}
 			insertBelow = {$plugin.tx_operations.settings.paginate.insertBelow}
@@ -65,10 +69,10 @@ plugin.tx_operations {
 
 page {
 	includeJS {
+		# now include directly in map.js
 		#mapsApi = https://maps.googleapis.com/maps/api/js?key=AIzaSyDcQgIlBTC1tODnThKxQOp-CIynjmX7Wb0&sensor=false
 		#mapsApi = https://maps.googleapis.com/maps/api/js?&sensor=false
 		#mapsApi.external = 1
-		map = EXT:operations/Resources/Public/Js/map.js
 	}
 	includeCSS {
 		operations = {$plugin.tx_operations.css}
@@ -81,6 +85,7 @@ page {
 		magnificPopup = {$plugin.tx_operations.magnificJs}
 		sliderJs = {$plugin.tx_operations.sliderJs}
 		lightboxJs = {$plugin.tx_operations.lightboxJs}
+		map = EXT:operations/Resources/Public/Js/map.js
 	}
 }
 	

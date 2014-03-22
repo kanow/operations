@@ -3,6 +3,7 @@
 # customsubcategory=pids=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.subcategoryLabel.pids
 # customsubcategory=paginate=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.subcategoryLabel.paginate
 # customsubcategory=list=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.subcategoryLabel.list
+# customsubcategory=map=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.subcategoryLabel.map
 
 
 
@@ -70,6 +71,13 @@ plugin.tx_operations {
 		showImgInList = 1
 		# cat=plugin.tx_operations/image/0250/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.increaseImage
 		increaseImage = 1
+		
+		map {
+			# cat=plugin.tx_operations/map/0260/; type=int+; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.defaultZoomSingle
+			defaultZoomSingle = 15
+			# cat=plugin.tx_operations/map/0261/; type=int+; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.defaultZoomList
+			defaultZoomList = 8
+		}
 		
 		paginate {
 			# cat=plugin.tx_operations/paginate/0310/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.insertAbove
