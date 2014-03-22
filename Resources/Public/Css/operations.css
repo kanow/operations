@@ -3,7 +3,7 @@
 
 
 .single .number {padding:0 10px 0 0;}
-.single .meta {padding:10px;}
+.single .meta {padding:10px;margin-bottom:20px;}
 .single .meta{float:right;max-width:30%;width:205px;}
 .single .images.layer {clear:right;float:right;width:225px;min-height:184px;margin:60px 0;}
 .single h2 {font-size:1em;font-weight:normal;letter-spacing:1px;margin-bottom:10px;}
@@ -47,3 +47,4 @@
 
 /* map canvas */
 #map-canvas {height:260px;width:225px;clear:right;float:right;}
+#map-canvas img {max-width:none;}
