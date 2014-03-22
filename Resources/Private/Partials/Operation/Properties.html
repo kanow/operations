@@ -1,17 +1,43 @@
-	<script type="text/javascript">
+<script type="text/javascript">
 	var Lat = {operation.latitude},Lang ={operation.longitude},Desc='{operation.title}', Zoom={f:if(condition:operation.zoom,then:operation.zoom,else:settings.map.defaultZoomSingle)};
-	</script>
-<div class="meta">
-	<f:if condition="{operation.location}">
-		<p><f:translate key="tx_operations_domain_model_operation.location" />:<br /><span>{operation.location}</span></p>
+</script>
+
+<div class="right">
+	<div class="meta clearfix">
+		<f:if condition="{operation.location}">
+			<p><f:translate key="tx_operations_domain_model_operation.location" />:<br /><span>{operation.location}</span></p>
+		</f:if>
+		<f:if condition="{operation.begin}">	
+			<p><f:translate key="tx_operations_domain_model_operation.begin" />:<br /><span>{operation.begin -> f:format.date(format:'d.m.Y, H:i \U\h\r')}</span></p>
+		</f:if>
+		<f:if condition="{operation.end}">
+			<p><f:translate key="tx_operations_domain_model_operation.end" />:<br /><span>{operation.end -> f:format.date(format:'d.m.Y, H:i \U\h\r')}</span></p>
+		</f:if>
+	</div>
+	
+	<f:if condition="{operation.image}">
+		<div class="images">
+		<!--	<h2><f:translate key="tx_operations_domain_model_operation.image" /></h2> -->
+				<ul class="slides">
+					<f:for each="{operation.allImages}" as="image">
+						<li>
+								<f:if condition="{settings.increaseImage}"><a href="{image.originalResource.publicUrl}" title="{image.originalResource.alternative}"></f:if>
+									<f:image src="{image.uid}" alt="" treatIdAsReference="TRUE" alt="{image.originalResource.alternative}" width="{settings.singleImgWidth}" height="{settings.singleImgHeight}" />
+							<!-- <p class="imgDescription">{image.originalResource.description}</p> -->
+								<f:if condition="{settings.increaseImage}"></a></f:if>
+						</li>
+					</f:for>
+				</ul>
+		</div>
 	</f:if>
-	<f:if condition="{operation.begin}">	
-		<p><f:translate key="tx_operations_domain_model_operation.begin" />:<br /><span>{operation.begin -> f:format.date(format:'d.m.Y, H:i \U\h\r')}</span></p>
-	</f:if>
-	<f:if condition="{operation.end}">
-		<p><f:translate key="tx_operations_domain_model_operation.end" />:<br /><span>{operation.end -> f:format.date(format:'d.m.Y, H:i \U\h\r')}</span></p>
+	
+	<f:if condition="{operation.longitude}">
+		<div id="map-canvas" class="map">
+			<noscript><p><f:translate key="map.noscript">Please activate javascript for map</f:translate></p></noscript>
+		</div>
 	</f:if>
 </div>
+
 <f:if condition="{operation.report}">
 	<f:then>
 		<div class="report layer">
@@ -29,21 +55,6 @@
 	</f:else>
 </f:if>
 
-<f:if condition="{operation.image}">
-	<div class="images layer">
-	<!--	<h2><f:translate key="tx_operations_domain_model_operation.image" /></h2> -->
-			<ul class="slides">
-				<f:for each="{operation.allImages}" as="image">
-					<li>
-							<f:if condition="{settings.increaseImage}"><a href="{image.originalResource.publicUrl}" title="{image.originalResource.alternative}"></f:if>
-								<f:image src="{image.uid}" alt="" treatIdAsReference="TRUE" alt="{image.originalResource.alternative}" width="{settings.singleImgWidth}" height="{settings.singleImgHeight}" />
-						<!-- <p class="imgDescription">{image.originalResource.description}</p> -->
-							<f:if condition="{settings.increaseImage}"></a></f:if>
-					</li>
-				</f:for>
-			</ul>
-	</div>
-</f:if>
 <f:if condition="{operation.vehicles}">
 	<div class="vehicles layer">
 		<h2><f:translate key="tx_operations_domain_model_operation.vehicles" /></h2>
@@ -91,11 +102,7 @@
 		</p>
 	</div>
 </f:if>
-<f:if condition="{operation.longitude}">
-	<div id="map-canvas" class="map">
-	<noscript><p><f:translate key="map.noscript">Please activate javascript for map</f:translate></p></noscript>
-	</div>
-</f:if>
+
 
 
 
