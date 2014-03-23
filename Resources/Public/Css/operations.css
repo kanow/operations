@@ -52,3 +52,4 @@
 /* map canvas */
 #map-canvas {height:260px;/*width:225px;clear:right;float:right;*/}
 #map-canvas img {max-width:none;}
+.gm-style-iw, .gm-style-iw > div {overflow:hidden !important;line-height:1.3em;}
