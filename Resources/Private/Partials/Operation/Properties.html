@@ -1,9 +1,7 @@
-<script type="text/javascript">
-	var Lat = {operation.latitude},Lang ={operation.longitude},Desc='{operation.title}', Zoom={f:if(condition:operation.zoom,then:operation.zoom,else:settings.map.defaultZoomSingle)};
-</script>
+{namespace o=KN\Operations\ViewHelpers}
 
 <div class="right">
-	<div class="meta clearfix">
+	<div class="meta">
 		<f:if condition="{operation.location}">
 			<p><f:translate key="tx_operations_domain_model_operation.location" />:<br /><span>{operation.location}</span></p>
 		</f:if>
@@ -30,8 +28,9 @@
 				</ul>
 		</div>
 	</f:if>
-	
+
 	<f:if condition="{operation.longitude}">
+		<o:map object="{operation}" settings="{settings}" />
 		<div id="map-canvas" class="map">
 			<noscript><p><f:translate key="map.noscript">Please activate javascript for map</f:translate></p></noscript>
 		</div>
