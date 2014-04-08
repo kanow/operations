@@ -211,6 +211,10 @@
 				<source>Hide filter for result</source>
 				<target>Filter für Ergebnisliste ausblenden</target>
 			</trans-unit>
+			<trans-unit id="flexform.showMap">
+				<source>Show list of operations on a map</source>
+				<target>Zeige Liste der Einsätze auf einer Karte</target>
+			</trans-unit>
 			
 			<trans-unit id="tca.paletteTitle.time">
 				<source>Operation times</source>
@@ -403,9 +407,17 @@
 				<source>Default zoom single:Default zoom for map in single view if no zoom is set</source>
 				<target>Standard Zoom Einzelansicht:Standard Zoom für die Karte in der Einzelansicht falls kein Zoom in den Einsatzdaten gesetzt wurde</target>
 			</trans-unit>
-			<trans-unit id="tsc.defaultZoomList">
-				<source>Zoom for map with all items:Zoom for map view with all operation items</source>
-				<target>Zoom für Karte mit alle Einsätzen:Zoom für die Kartenansicht aller Einsätze</target>
+			<trans-unit id="tsc.overrideCenterLatList">
+				<source>Default latitude list-map: Override automatic latitude for centering the map in list view</source>
+				<target>Überschreibe Breitengrad Listen-Karte:Überschreibe automatischen Breitengrad für die Zentrierung der Karte in der Listenansicht</target>
+			</trans-unit>
+			<trans-unit id="tsc.overrideCenterLangList">
+				<source>Override longitude list-map:Override automatic longitude for centering the map in list view</source>
+				<target>Überschreibe Längengrad Listen-Karte:Überschreibe automatischen Längengrad für die Zentrierung der Karte in der Listenansicht</target>
+			</trans-unit>
+			<trans-unit id="tsc.overrideZoomList">
+				<source>Override zoom list-map:Override automatic zoom of the map in list view</source>
+				<target>Überschreibe Zoom Listen-Karte:Überschreibe automatischen Zoom der Karte in der Listenansicht</target>
 			</trans-unit>
 	
 		</body>

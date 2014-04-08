@@ -161,6 +161,9 @@
 			<trans-unit id="flexform.hideFilter">
 				<source>Hide filter for result</source>
 			</trans-unit>
+			<trans-unit id="flexform.showMap">
+				<source>Show list of operations on a map</source>
+			</trans-unit>
 			
 			<trans-unit id="tca.paletteTitle.time">
 				<source>Operation times</source>
@@ -308,6 +311,12 @@
 			</trans-unit>
 			<trans-unit id="tsc.defaultZoomList">
 				<source>Zoom for map with all items:Zoom for map view with all operation items</source>
+			</trans-unit>
+			<trans-unit id="tsc.listCenterLat">
+				<source>Default latitude list-map:Default latitude for centering the map in list view</source>
+			</trans-unit>
+			<trans-unit id="tsc.listCenterLang">
+				<source>Default longitude list-map:Default longitude for centering the map in list view</source>
 			</trans-unit>
 			
 		</body>
