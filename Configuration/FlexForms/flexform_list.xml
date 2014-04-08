@@ -58,48 +58,65 @@
 					</settings.storageFolder>
 					
 					<settings.itemsPerPage>
-		        <TCEforms>
-							<exclude>1</exclude>
-		         <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.itemsPerPage</label>
-		         <config>
-		          <type>input</type>
-		          <size>5</size>
-		          <default></default>
-		          <eval>trim,num</eval> 
-		         </config>
-		        </TCEforms>
-	      	</settings.itemsPerPage>
+				        <TCEforms>
+									<exclude>1</exclude>
+				         <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.itemsPerPage</label>
+						 <displayCond>FIELD:switchableControllerActions:=:Operation->list;Operation->show;Operation->search</displayCond>
+				         <config>
+				          <type>input</type>
+				          <size>5</size>
+				          <default></default>
+				          <eval>trim,num</eval> 
+				         </config>
+			        </TCEforms>
+		      	</settings.itemsPerPage>
 					
- 					<settings.cropTeaser>
-		        <TCEforms>
-							<exclude>1</exclude>
-		         <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.teaserMaxChars</label>
-		         <config>
-		          <type>input</type>
-		          <size>5</size>
-		          <default></default>
-		          <eval>trim,num</eval> 
-		         </config>
-		        </TCEforms>
+ 				<settings.cropTeaser>
+			        <TCEforms>
+						<exclude>1</exclude>
+			         <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.teaserMaxChars</label>
+					 <displayCond>FIELD:switchableControllerActions:=:Operation->list;Operation->show;Operation->search</displayCond>
+			         <config>
+			          <type>input</type>
+			          <size>5</size>
+			          <default></default>
+			          <eval>trim,num</eval> 
+			         </config>
+			        </TCEforms>
 	       	</settings.cropTeaser>
 					 
 	 				<settings.hidePagination>
 	 			        <TCEforms>
-									<exclude>1</exclude> <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.hidePagination</label>
+							<exclude>1</exclude>
+							<label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.hidePagination</label>
+							<displayCond>FIELD:switchableControllerActions:=:Operation->list;Operation->show;Operation->search</displayCond>
 	 			         <config>
 	 			          <type>check</type>
 	 			         </config>
-							 	</TCEforms>
+						</TCEforms>
 	 				</settings.hidePagination>
 					
 	 				<settings.hideFilter>
 	 			        <TCEforms>
-									<exclude>1</exclude> <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.hideFilter</label>
-	 			         <config>
-	 			          <type>check</type>
-	 			         </config>
-							 	</TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.hideFilter</label>
+							<displayCond>FIELD:switchableControllerActions:=:Operation->list;Operation->show;Operation->search</displayCond>
+		 			        <config>
+		 			          <type>check</type>
+		 			        </config>
+						</TCEforms>
 	 				</settings.hideFilter>
+					
+	 				<settings.showMap>
+	 			        <TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMap</label>
+							<displayCond>FIELD:switchableControllerActions:=:Operation->list;Operation->show;Operation->search</displayCond>
+		 			        <config>
+		 			          <type>check</type>
+		 			        </config>
+						</TCEforms>
+	 				</settings.showMap>
 
         </el>
       </ROOT>
@@ -109,12 +126,13 @@
         <TCEforms>
           <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.img</sheetTitle>
         </TCEforms>
+				
         <type>array</type>
         <el>
 					
 	 				<settings.showImgInList>
 	 			        <TCEforms>
-									<exclude>1</exclude>
+						 <exclude>1</exclude>
 	 			         <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showImgInList</label>
 	 			         <config>
 	 			          <type>check</type>
