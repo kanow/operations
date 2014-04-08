@@ -31,11 +31,11 @@ namespace KN\Operations\ViewHelpers;
 	 *
 	 * @param \TYPO3\CMS\Extbase\Persistence\QueryResultInterface $objects
 	 * @param array $settings
-	 * @param string $description content for infowindow
+	 * @param string $as
 	 * @return string
 	 */
 
-	public function render(\TYPO3\CMS\Extbase\Persistence\QueryResultInterface $objects,$settings,$description=NULL) {
+	public function render(\TYPO3\CMS\Extbase\Persistence\QueryResultInterface $objects,$settings,$as) {
 		
 		// get the location data from QueryResultInterface
 		foreach ($objects as $singleElement) {
@@ -44,13 +44,13 @@ namespace KN\Operations\ViewHelpers;
 				$longitudes = $singleElement->getLongitude();
 				$latitudes = $singleElement->getLatitude();
 				
-				if(!$description) {
-					$description = $singleElement->getTitle();
-				}
+					$this->templateVariableContainer->add($as, $singleElement);
+					$description = $this->renderChildren();
+					$this->templateVariableContainer->remove($as);
 				
-				$locations .= '["'.$description.'",'.$latitudes.','.$longitudes.'],';
+				$locations .= '[\''.$description.'\','.$latitudes.','.$longitudes.'],';
 				
-				//$mapData = 'var Lat = new Array('.substr($longitudes,0,-1).'), Lang = new Array('.substr($latitudes,0,-1).'), Desc = new Array('.substr($description,0,-1).')';
+
 			}
 		}
 		

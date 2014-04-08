@@ -28,7 +28,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 		<f:if condition="{operations}">
 			<f:if condition="{settings.showMap}">
 				<f:then>
-					<o:maplist objects="{operations}" settings="{settings}"/>
+					<o:maplist objects="{operations}" as="operation" settings="{settings}">{operation.begin -> f:format.date(format:'d.m.Y, H:i \U\h\r')}<br /><f:link.action action="show" arguments="{operation:operation}">{operation.title}</f:link.action></o:maplist>
 					<div id="map-canvas" class="map list"></div>
 					<noscript><p><f:translate key="map.noscript">Please activate javascript for map</f:translate></p></noscript>
 				</f:then>
