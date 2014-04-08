@@ -50,6 +50,8 @@
 .withoutMeta .backLink {clear:left;display:block;}
 
 /* map canvas */
-#map-canvas {height:260px;/*width:225px;clear:right;float:right;*/}
-#map-canvas img {max-width:none;}
+.map {height:260px;/*width:225px;clear:right;float:right;*/}
+.map img {max-width:none;}
 .gm-style-iw, .gm-style-iw > div {overflow:hidden !important;line-height:1.3em;}
+/* list view */
+.map.list {width:100%;max-width:550px;height:450px;border:1px solid #f00;}
