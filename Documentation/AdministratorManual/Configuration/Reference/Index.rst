@@ -14,6 +14,8 @@ Reference
 Typoscript Setup
 ^^^^^^^^^^^^^^^^
 
+Here you find the most important settings in typoscript. Please note that the recommended way to edit these things is in constants.
+For all possibly settings take a look at Classes/Configuration/TypoScript/setup.txt in extension folder.
 
 plugin.tx_operations.settings
 
@@ -26,251 +28,229 @@ General settings
  :header-rows: 1
 
  - :Property:
-					Property:
-					
+		Property:
    :Type:
-	 				Data type:
-					
+		Data type:
    :Description:
-					Description:
-
+		Description:
    :Default:
-					Default:
+		Default:
 
 
  - :Property:
-					templateRootPath
-					
+		templateRootPath
    :Type:
-	 				string
-					
+		string
    :Description:
-					Default path to template files
-
+		Default path to template files
    :Default:
-				  EXT:operations/Resources/Private/Templates/
-					
-
+		EXT:operations/Resources/Private/Templates/
  - :Property:
-					partialRootPath
-					
+		partialRootPath
    :Type:
-	 				string
-					
+		string
    :Description:
-					Default path to partial files
-
+		Default path to partial files
    :Default:
-				  EXT:operations/Resources/Private/Partials/
-					
-
+		EXT:operations/Resources/Private/Partials/
  - :Property:
-					layoutRootPath
-					
+		layoutRootPath
    :Type:
-	 				string
-					
+	 	string
    :Description:
-					Default path to layout files
-
+		Default path to layout files
    :Default:
-				  EXT:operations/Resources/Private/Layouts/
-
-
-
+	 	EXT:operations/Resources/Private/Layouts/
  - :Property:
-					operationPid
-					
+		operationPid
    :Type:
-	 				integer
-					
+	 	integer
    :Description:
-					Set page with operation list and single view here
-
+		Set page with operation list and single view here
    :Default:
-				  
-
-
+	 
  - :Property:
-					vehiclePid
-					
+		vehiclePid
    :Type:
-	 				integer
-					
+		integer
    :Description:
-					Set page with vehicle single view here
-
+		Set page with vehicle single view here
    :Default:
-				  
-					
-
+		
  - :Property:
-					resourcePid
-					
+		resourcePid
    :Type:
-	 				integer
-					
+		integer
    :Description:
-					Set page with resource single view here
-
+		Set page with resource single view here
    :Default:
-
+ - :Property:
+		overrideFlexformSettingsIfEmpty
+   :Type:
+		string/comma separated list
+   :Description:
+		When using typoscript settings for this fields, they are not overwritten with empty flexform fields.
+   :Default:
+		itemsPerPage,showImgInList,listImgWidth,listImgHeight,singleImgWidth,singleImgHeight,cropTeaser
 
 
 Settings for list view
-""""""""""""""""
+""""""""""""""""""""""
 
 
 .. t3-field-list-table::
  :header-rows: 1
 
  - :Property:
-					Property:
-					
+		Property:	
    :Type:
-	 				Data type:
-					
+	 	Data type:
    :Description:
-					Description:
-
+		Description:
    :Default:
-					Default:
+		Default:
 
 
  - :Property:
-					itemsPerPage
-					
+		itemsPerPage
    :Type:
-	 				integer
-					
+	 	integer
    :Description:
-					Items per page with pagination
-
+		Items per page with pagination
    :Default:
-				  10
-
-
+		  10
  - :Property:
-					limit
-					
+		limit
    :Type:
-	 				integer
-					
+	 	integer
    :Description:
-					Limit the whole result
-
+		Limit the whole result
    :Default:
-				  200
-					
-
+		200
  - :Property:
-					hidePagination
-					
+		hidePagination
    :Type:
-	 				boolean
-					
+		boolean
    :Description:
-					Hide the pagination and show the whole result in a list
-
+		Hide the pagination and show the whole result in a list
    :Default:
-	 				0
-
-				  
+		0
  - :Property:
-					hideFilter
-					
+		hideFilter
    :Type:
-	 				boolean
-					
+		boolean
    :Description:
-					Hide the form for filtering the result
-
+		Hide the form for filtering the result
    :Default:
-				  0
-
-
+		0
  - :Property:
-					showImgInList
-					
+		showImgInList
    :Type:
-	 				boolean
-					
+		boolean
    :Description:
-					Show thumbnail image in list view
-
+		Show thumbnail image in list view
    :Default:
-				  1
-
-
+		  1
  - :Property:
-					listImgWidth
-					
+		listImgWidth
    :Type:
-	 				integer/string
-					
+		integer/string
    :Description:
-					Image width in list view (add "c" for cropping the image)
-
+		Image width in list view (add "c" for cropping the image)
    :Default:
-	 				100c
-					
-
+		100c
  - :Property:
-					listImgHeight
-					
+		listImgHeight
    :Type:
-	 				integer/string
-					
+		integer/string
    :Description:
-					Image height in list view (add "c" for cropping the image)
-
+		Image height in list view (add "c" for cropping the image)
    :Default:
-	 				65
+					65
 					
 					
 Settings for single view
-""""""""""""""""
+""""""""""""""""""""""""
 
 
 .. t3-field-list-table::
  :header-rows: 1
 
  - :Property:
-					Property:
-					
+		Property:
    :Type:
-	 				Data type:
-					
+		Data type:
    :Description:
-					Description:
-
+		Description:
    :Default:
-					Default:
+		Default:
 
 
  - :Property:
-					singleImgWidth
-					
+		singleImgWidth
    :Type:
-	 				integer/string
-					
+		integer/string
    :Description:
-					Image width in single view (add "c" for cropping the image)
-
+		Image width in single view (add "c" for cropping the image)
    :Default:
-	 				225c
-					
-					
+		225c
  - :Property:
-					singleImgHeight
-					
+		singleImgHeight
    :Type:
-	 				integer/string
-					
+		integer/string
    :Description:
-					Image height in single view (add "c" for cropping the image)
-
+		Image height in single view (add "c" for cropping the image)
    :Default:
-	 				180	
-				  
-         
+		180	
+
+
+Settings for maps
+"""""""""""""""""
+
+plugin.tx_operations.settings.map
+
+.. t3-field-list-table::
+ :header-rows: 1
+
+ - :Property:
+		Property:
+   :Type:
+		Data type:
+   :Description:
+		Description:
+   :Default:
+		Default:
+
+
+ - :Property:
+		defaultZoomSingle
+   :Type:
+		integer
+   :Description:
+		Default zoom in single view using when no zoom in item is set
+   :Default:
+		15
+ - :Property:
+		overrideCenterLatList
+   :Type:
+		integer/string
+   :Description:
+		Override the automatic centering position latitude for map in list view. **Not in use at the moment!**
+   :Default:
+	 
+ - :Property:
+		overrideCenterLangList
+   :Type:
+		integer/string
+   :Description:
+		Override the automatic centering position longitude for map in list view. **Not in use at the moment!**
+   :Default:
+	 
+ - :Property:
+		overrideZoomList
+   :Type:
+		integer
+   :Description:
+		Override the automatic zoom for map in list view. **Not in use at the moment!**
+   :Default:
+	 

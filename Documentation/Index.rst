@@ -18,13 +18,13 @@ operations
 		operations
 
 	:Version:
-		1.0.4
+		1.0.3
 
 	:Language:
 		en
 
 	:Description:
-		Manage (firefighter) operations with reports, images used resources or vehicles and more. This extension were build to manage firefighter operations from `Freiwillige Feuerwehr Thale <http://www.feuerwehr-thale.de>`_. Use slider and lightbox for images. Possibly to use it for other reportable events.
+		Manage (firefighter) operations with reports, images used resources or vehicles and more. This extension were build to manage firefighter operations from "Freiwillige Feuerwehr Thale". Use slider and lightbox for images. Possibly to use it for other reportable events.
 
 	:Keywords:
 		operations,firefighter,fw,thw,fire run,fire brigade,reports
@@ -51,7 +51,7 @@ operations
 	This Extension works only with TYPO3 6.1.x or higher!
 	For bugs or ideas to this extension look at `forge.typo3.org <http://forge.typo3.org/projects/extension-operations>`_.
 
-	Big thanks goes to `undkonsorten - Die Berliner Internetagentur <http://www.undkonsorten.com>`_ for helping answers on my questions.
+	Big thanks goes to `undkonsorten - Die Berliner Internetagentur <http://www.undkonsorten.com>`_ for helping hands and answers on my questions.
 
 	Please note that this documentation is still in development. I'm verry happy about information of founded errors and try to fix it. 
 

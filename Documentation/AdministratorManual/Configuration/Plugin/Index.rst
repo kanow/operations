@@ -24,101 +24,77 @@ Tab "Options"
  :header-rows: 1
 
  - :Property:
-					Property:
-					
+		Property:		
    :View:
-	 				View:
-					
+		View:
    :Description:
-					Description:
-
+		Description:
    :Key:
-					Key:
+		Key:
 
 
  - :Property:
-					What to display
-					
+		What to display
    :View:
-					All
-
+		All
    :Description:
-					Selection of view:
+		Selection of view:
 
-					- Operations: List and single single view of operations
-					- Vehciles: Shows the single view of used vehicle
-					- Resources: Shows the single view of used resource
+		- Operations: List and single single view of operations
+		- Vehciles: Shows the single view of used vehicle
+		- Resources: Shows the single view of used resource
 
    :Key:
-				  
-					
 
  - :Property:
-					Storage folder
-
+		Storage folder
    :View:
-					All
-
+		All
    :Description:
-					Sysfolder where are the data sets
-
+		Sysfolder where are the data sets
    :Key:
-					persistence.storagePid
-				
-
-
+		persistence.storagePid
  - :Property:
-					Items per page
-
+		Items per page
    :View:
-					Operations
-
+		Operations
    :Description:
-					How many items will showing in list view. When pagination is hide is this the limit for the complete result.
-
+		How many items will showing in list view. When pagination is hide is this the limit for the complete result.
    :Key:
-					settings.itemsPerPage
-					
-					
-					
+		settings.itemsPerPage
  - :Property:
-					Max chars of teaser text in list view
-
+		Max chars of teaser text in list view
    :View:
-					Operations
-
+		Operations
    :Description:
-					Maximum length of teaser Text in list view.
-
+		Maximum length of teaser Text in list view.
    :Key:
-					settings.cropTeaser
-					
-					
+		settings.cropTeaser
  - :Property:
-					Hide pagination
-
+		Hide pagination
    :View:
-					Operations
-
+		Operations
    :Description:
-					Hide the pagination and show the whole in one list. Default Limit for whole list is 200. 
-
+		Hide the pagination and show the whole in one list. Default Limit for whole list is 200. 
    :Key:
-					settings.hidePagination
-					
-					
+		settings.hidePagination
  - :Property:
-					Hide filter for result
-
+		Hide filter for result
    :View:
-					Operations
-
+		Operations
    :Description:
-					Hide the form to filter the list by years (more selection can be added in future)
-
+		Hide the form to filter the list by years (more selection can be added in future)
    :Key:
-					settings.hideFilter
-					
+		settings.hideFilter
+ - :Property:
+		Show list of operations on a map
+   :View:
+		Operations
+   :Description:
+		Show the listed result in frontend on a google map.
+   :Key:
+		settings.showMap
+
 
 Tab "Image options"
 """"""""""""""

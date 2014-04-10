@@ -8,7 +8,7 @@
 .. _changelog:
 
 Changelog
-================
+=========
 
 
 
@@ -18,48 +18,34 @@ Changelog
  :header-rows: 1
 
  - :Version:
-					Version:
-					
+		Version:
    :Changes:
-	 				Changes:
-					
+	 	Changes:
 
 
  - :Version:
-					1.0.4
-					
+		1.0.6
    :Changes:
-	 				Bugfixes uid in template partial, #56675
-					
-					
+		Add 2 viewhelpers, to build a map for list and single view, add settings for map options
+ - :Version:
+		1.0.4
+   :Changes:
+		Bugfixes uid in template partial, #56675
+ - :Version:
+		1.0.3
+   :Changes:
+		Add ReST documentation
+ - :Version:
+		1.0.2
+   :Changes:
+		Javascript and CSS for using lightbox and slider without any own configuration. Many values are now customizable in constants.
+ - :Version:
+		1.0.1
+		
+   :Changes:
+		Bugfixing in flexform translations
 
  - :Version:
-					1.0.3
-					
-   :Type:
-	 				Add ReST documentation
-					
-
-					
-
- - :Version:
-					1.0.2
-					
+		1.0.0	
    :Changes:
-	 				Javascript and CSS for using lightbox and slider without any own configuration. Many values are now customizable in constants.
-
-
-					
- - :Version:
-					1.0.1
-					
-   :Changes:
-	 				Bugfixing in flexform translations
-
-
-
- - :Version:
-					1.0.0
-					
-   :Changes:
-	 				Initial upload
+		Initial upload
