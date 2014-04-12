@@ -18,7 +18,7 @@ operations
 		operations
 
 	:Version:
-		1.0.3
+		1.0.6
 
 	:Language:
 		en
