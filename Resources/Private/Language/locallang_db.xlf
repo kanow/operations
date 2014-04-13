@@ -25,6 +25,9 @@
 			<trans-unit id="tx_operations_domain_model_operation.end">
 				<source>End</source>
 			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.teaser">
+				<source>Teaser</source>
+			</trans-unit>
 			<trans-unit id="tx_operations_domain_model_operation.report">
 				<source>Report</source>
 			</trans-unit>

@@ -32,6 +32,10 @@
 				<source>End</source>
 				<target>Einsatzende</target>
 			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.teaser">
+				<source>Teaser</source>
+				<target>Kurzbeschreibung</target>
+			</trans-unit>
 			<trans-unit id="tx_operations_domain_model_operation.report">
 				<source>Report</source>
 				<target>Einsatzbericht</target>

@@ -18,10 +18,19 @@
 			<span class="number">[{operation.number}]</span>
 				{operation.title}
 		</h2>
-		<f:if condition="{operation.report}">
-			<div class="teaser">
-				<f:format.crop maxCharacters="{settings.cropTeaser}" append="…">{operation.report}</f:format.crop>
-			</div>
+		<f:if condition="{operation.teaser}">
+			<f:then>
+				<div class="teaser">
+					<f:format.crop maxCharacters="{settings.cropTeaser}" append="…">{operation.teaser}</f:format.crop>
+				</div>
+			</f:then>
+			<f:else>
+				<f:if condition="{operation.report}">
+					<div class="teaser">
+						<f:format.crop maxCharacters="{settings.cropTeaser}" append="…">{operation.report}</f:format.crop>
+					</div>
+				</f:if>
+			</f:else>
 		</f:if>
 	</div>
 	<f:if condition="{settings.showImgInList}">

@@ -81,6 +81,13 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $end;
 
 	/**
+	 * Operation short teaser
+	 *
+	 * @var \string
+	 */
+	protected $teaser;
+
+	/**
 	 * Operation report
 	 *
 	 * @var \string
@@ -103,7 +110,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * Zoom for maps
-	 *
+	 * @lazy
 	 * @var \integer
 	 */
 	protected $zoom;
@@ -123,21 +130,21 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * Assistance to this oparation
-	 *
+	 * @lazy
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\KN\Operations\Domain\Model\Assistance>
 	 */
 	protected $assistance;
 
 	/**
 	 * Vehicles use on this operation
-	 *
+	 * @lazy
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\KN\Operations\Domain\Model\Vehicle>
 	 */
 	protected $vehicles;
 
 	/**
 	 * resources
-	 *
+	 * @lazy
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\KN\Operations\Domain\Model\Resources>
 	 */
 	protected $resources;
@@ -286,6 +293,25 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function setEnd($end) {
 		$this->end = $end;
+	}
+
+	/**
+	 * Returns the teaser
+	 *
+	 * @return \string $teaser
+	 */
+	public function getTeaser() {
+		return $this->teaser;
+	}
+
+	/**
+	 * Sets the teaser
+	 *
+	 * @param \string $teaser
+	 * @return void
+	 */
+	public function setTeaser($teaser) {
+		$this->teaser = $teaser;
 	}
 
 	/**

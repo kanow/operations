@@ -12,6 +12,7 @@ CREATE TABLE tx_operations_domain_model_operation (
 	location text NOT NULL,
 	begin int(11) DEFAULT '0' NOT NULL,
 	end int(11) DEFAULT '0' NOT NULL,
+	teaser text NOT NULL,
 	report text NOT NULL,
 	longitude varchar(255) DEFAULT '' NOT NULL,
 	latitude varchar(255) DEFAULT '' NOT NULL,

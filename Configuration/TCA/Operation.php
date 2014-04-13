@@ -6,14 +6,14 @@ if (!defined ('TYPO3_MODE')) {
 $TCA['tx_operations_domain_model_operation'] = array(
 	'ctrl' => $TCA['tx_operations_domain_model_operation']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, number, onlyEld, title, location, begin, end, report, longitude, latitude, zoom, image, type, assistance, vehicles, resources',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, number, onlyEld, title, location, begin, end, teaser, report, longitude, latitude, zoom, image, type, assistance, vehicles, resources',
 	),
 	'types' => array(
 		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource;;1,
 		--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.meta;paletteMeta,
 		title, location,
 		--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.time;paletteTime,
-		report,
+		teaser,report,
 		--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.map,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.coordinates;paletteMap,
 		--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.relations,assistance,vehicles, resources,
 		--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.img,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.img;paletteImg,
@@ -172,6 +172,16 @@ $TCA['tx_operations_domain_model_operation'] = array(
 				'eval' => 'datetime',
 				'checkbox' => 1,
 				'default' => time()
+			),
+		),
+		'teaser' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.teaser',
+			'config' => array(
+				'type' => 'text',
+				'cols' => 60,
+				'rows' => 5,
+				'eval' => 'trim'
 			),
 		),
 		'report' => array(
