@@ -24,6 +24,10 @@ Changelog
 
 
  - :Version:
+		1.0.7
+   :Changes:
+		Add new field for teaser. Please go to installTool and compare database to add the new field. Extend documentation because of new map views. Set status to beta.
+ - :Version:
 		1.0.6
    :Changes:
 		Add 2 viewhelpers, to build a map for list and single view, add settings for map options

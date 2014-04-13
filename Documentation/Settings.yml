@@ -7,7 +7,7 @@ conf.py:
   copyright: 2014
   project: operations
   version: 1.0
-  release: 1.0.6
+  release: 1.0.8
   latex_documents:
   - - Index
     - operations.tex
