@@ -18,13 +18,13 @@ operations
 		operations
 
 	:Version:
-		1.0.6
+		1.0.7
 
 	:Language:
 		en
 
 	:Description:
-		Manage (firefighter) operations with reports, images used resources or vehicles and more. This extension were build to manage firefighter operations from "Freiwillige Feuerwehr Thale". Use slider and lightbox for images. Possibly to use it for other reportable events.
+		Manage (firefighter) operations with detailed reports, images used resources or vehicles, google map view for locations and more. Slider and Lightbox for images. This extension was build to manage firefighter operations from "Freiwillige Feuerwehr Thale". Possibly to use it for other reportable events like THW and so on.
 
 	:Keywords:
 		operations,firefighter,fw,thw,fire run,fire brigade,reports
