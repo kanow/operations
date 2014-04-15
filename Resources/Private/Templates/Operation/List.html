@@ -26,6 +26,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
 		
 		<f:if condition="{operations}">
+		<f:then>
 			<f:if condition="{settings.showMap}">
 				<f:then>
 				<div class="countResult">
@@ -83,11 +84,12 @@ Otherwise your changes will be overwritten the next time you save the extension 
 							</f:else>
 						</f:if>
 					</f:then>
-					<f:else>
-						<p><f:translate key="emptyResult" /></p>
-					</f:else>
 				</f:else>
 			</f:if>
+		</f:then>
+		<f:else>
+			<p><f:translate key="emptyResult" /></p>
+		</f:else>
 		</f:if>
 	</div>
 </f:section>
