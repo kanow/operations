@@ -49,19 +49,32 @@ namespace KN\Operations\ViewHelpers;
 					$this->templateVariableContainer->remove($as);
 				
 				$locations .= '[\''.$description.'\','.$latitudes.','.$longitudes.'],';
-				
-
 			}
 		}
 		
-		$locations;
-		$locations = 'var locations = ['.substr($locations,0,-1).'];';
-		
-		$bounds;
+		$overrideLatList = $settings['map']['overrideCenterLatList'];
+		$overrideLngList = $settings['map']['overrideCenterLangList'];
+		$overrideZoomList = $settings['map']['overrideZoomList'];
+
 		$bounds = "var bounds = new google.maps.LatLngBounds();\n";
-		
-		$mapOptions;
+		$fitBounds = "map.fitBounds(bounds);";
+		$extendBounds = "bounds.extend(myLatLng);\n";
+		// if override centering and zoom
+		if($overrideLatList && $overrideLngList && $overrideZoomList) {
+			$fitBounds = "";
+			$extendBounds = "";
+			$overrideCentering = "center: new google.maps.LatLng($overrideLatList,$overrideLngList),\n";
+			$overrideZoom = "zoom:$overrideZoomList,\n";
+		} else {
+			$overrideCentering = "";
+			$overrideZoom ="";
+		}
+
+		$locations = 'var locations = ['.substr($locations,0,-1).'];';
+
 		$mapOptions = "var mapOptions = {\n
+			$overrideZoom
+			$overrideCentering
 		  zoomControl: true,\n
 		  zoomControlOptions: {\n
 		  	style:google.maps.ZoomControlStyle.SMALL,\n
@@ -76,56 +89,31 @@ namespace KN\Operations\ViewHelpers;
 		  overviewMapControl: true\n
 	  };\n";
 		
-		$map;
+
 		$map = "var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);";
-		
-		$infowindow;
 		$infowindow = "var infowindow = new google.maps.InfoWindow();\n";
-		
-		$markerI;
 		$markerI = "var marker, i;\n";
-		
-		$markers;
 		$markers = "var markers = new Array();\n";
 		
-		$loopToAddMarkersAndCentering;
 		$loopToAddMarkersAndCentering = "for (i = 0; i < locations.length; i++) {\n
-		var myLatLang = new google.maps.LatLng(locations[i][1], locations[i][2]);\n
-		bounds.extend(myLatLang);\n
-		
+		var myLatLng = new google.maps.LatLng(locations[i][1], locations[i][2]);\n
+		$extendBounds
     marker = new google.maps.Marker({\n
-      position: myLatLang,\n
+      position: myLatLng,\n
       map: map\n
     });\n
-
     markers.push(marker);\n
-
     google.maps.event.addListener(marker, 'click', (function(marker, i) {\n
       return function() {\n
         infowindow.setContent(locations[i][0]);\n
         infowindow.open(map, marker);\n
       }\n
     })(marker, i));\n
-		
-		map.fitBounds(bounds);
-  }";
+		$fitBounds
+  }\n";
 
+		$initialize = "\n function initialize() {\n $bounds \n $mapOptions \n $map \n $infowindow \n $markerI \n $markers \n $loopToAddMarkersAndCentering \n }\n";
 		
-		// if overrideZoom set
-		$overrideZoom;
-		if($settings['map']['overrideZoom']) {
-			$overrideZoom = "var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {\n
-      this.setZoom(".$settings[map][overrideZoom].");\n
-      google.maps.event.removeListener(boundsListener);\n
-  });\n";
-		}
-		
-		
-		
-		$initialize;
-		$initialize = "function initialize() {".$bounds."\n".$mapOptions."\n".$map."\n".$infowindow."\n".$markerI."\n".$markers."\n".$loopToAddMarkersAndCentering."\n".$overrideZoom."}";
-		
-		$loadScript;
 		$loadScript = "\nfunction loadScript() {
   var script = document.createElement('script');
   script.type = 'text/javascript';
