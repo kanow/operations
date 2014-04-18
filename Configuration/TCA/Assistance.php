@@ -118,7 +118,17 @@ $TCA['tx_operations_domain_model_assistance'] = array(
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
-				'eval' => 'trim'
+				'eval' => 'trim',
+				'wizards' => array(
+					'link' => array(
+						'icon' => 'link_popup.gif',
+						'JSopenParams' => 'height=300,width=500,status=0,menubar=0,scrollbars=1',
+						'script' => 'browse_links.php?mode=wizard',
+						'title' => 'LLL:EXT:cms/locallang_ttc.xml:header_link_formlabel',
+						'type' => 'popup',
+					),
+					'_PADDING' => 2
+				),
 			),
 		),
 	),
