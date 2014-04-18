@@ -318,14 +318,14 @@
 			<trans-unit id="tsc.defaultZoomSingle">
 				<source>Default zoom single:Default zoom for map in single view if no zoom is set</source>
 			</trans-unit>
-			<trans-unit id="tsc.defaultZoomList">
-				<source>Zoom for map with all items:Zoom for map view with all operation items</source>
+			<trans-unit id="tsc.overrideCenterLatList">
+				<source>Override latitude list-map: Override automatic latitude for centering the map in list view</source>
 			</trans-unit>
-			<trans-unit id="tsc.listCenterLat">
-				<source>Default latitude list-map:Default latitude for centering the map in list view</source>
+			<trans-unit id="tsc.overrideCenterLongList">
+				<source>Override longitude list-map:Override automatic longitude for centering the map in list view</source>
 			</trans-unit>
-			<trans-unit id="tsc.listCenterLang">
-				<source>Default longitude list-map:Default longitude for centering the map in list view</source>
+			<trans-unit id="tsc.overrideZoomList">
+				<source>Override zoom list-map:Override automatic zoom of the map in list view</source>
 			</trans-unit>
 			
 		</body>

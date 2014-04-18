@@ -53,7 +53,7 @@ plugin.tx_operations {
 		map {
 			defaultZoomSingle = {$plugin.tx_operations.settings.map.defaultZoomSingle}
 			overrideCenterLatList = {$plugin.tx_operations.settings.map.overrideCenterLatList}
-			overrideCenterLangList = {$plugin.tx_operations.settings.map.overrideCenterLangList}
+			overrideCenterLongList = {$plugin.tx_operations.settings.map.overrideCenterLongList}
 			overrideZoomList = {$plugin.tx_operations.settings.map.overrideZoomList}
 		}
 		paginate {

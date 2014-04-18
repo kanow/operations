@@ -53,17 +53,17 @@ namespace KN\Operations\ViewHelpers;
 		}
 		
 		$overrideLatList = $settings['map']['overrideCenterLatList'];
-		$overrideLngList = $settings['map']['overrideCenterLangList'];
+		$overrideLongList = $settings['map']['overrideCenterLongList'];
 		$overrideZoomList = $settings['map']['overrideZoomList'];
 
 		$bounds = "var bounds = new google.maps.LatLngBounds();\n";
 		$fitBounds = "map.fitBounds(bounds);";
 		$extendBounds = "bounds.extend(myLatLng);\n";
 		// if override centering and zoom
-		if($overrideLatList && $overrideLngList && $overrideZoomList) {
+		if($overrideLatList && $overrideLongList && $overrideZoomList) {
 			$fitBounds = "";
 			$extendBounds = "";
-			$overrideCentering = "center: new google.maps.LatLng($overrideLatList,$overrideLngList),\n";
+			$overrideCentering = "center: new google.maps.LatLng($overrideLatList,$overrideLongList),\n";
 			$overrideZoom = "zoom:$overrideZoomList,\n";
 		} else {
 			$overrideCentering = "";

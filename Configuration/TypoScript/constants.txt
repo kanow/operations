@@ -77,8 +77,8 @@ plugin.tx_operations {
 			defaultZoomSingle = 15
 			# cat=plugin.tx_operations/map/0262/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.overrideCenterLatList
 			overrideCenterLatList = 
-			# cat=plugin.tx_operations/map/0263/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.overrideCenterLangList
-			overrideCenterLangList = 
+			# cat=plugin.tx_operations/map/0263/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.overrideCenterLongList
+			overrideCenterLongList = 
 			# cat=plugin.tx_operations/map/0264/; type=int+; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.overrideZoomList
 			overrideZoomList = 		
 		}

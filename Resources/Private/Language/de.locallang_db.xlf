@@ -420,10 +420,10 @@
 				<target>Standard Zoom Einzelansicht:Standard Zoom für die Karte in der Einzelansicht falls kein Zoom in den Einsatzdaten gesetzt wurde</target>
 			</trans-unit>
 			<trans-unit id="tsc.overrideCenterLatList">
-				<source>Default latitude list-map: Override automatic latitude for centering the map in list view</source>
+				<source>Override latitude list-map: Override automatic latitude for centering the map in list view</source>
 				<target>Überschreibe Breitengrad Listen-Karte:Überschreibe automatischen Breitengrad für die Zentrierung der Karte in der Listenansicht</target>
 			</trans-unit>
-			<trans-unit id="tsc.overrideCenterLangList">
+			<trans-unit id="tsc.overrideCenterLongList">
 				<source>Override longitude list-map:Override automatic longitude for centering the map in list view</source>
 				<target>Überschreibe Längengrad Listen-Karte:Überschreibe automatischen Längengrad für die Zentrierung der Karte in der Listenansicht</target>
 			</trans-unit>
