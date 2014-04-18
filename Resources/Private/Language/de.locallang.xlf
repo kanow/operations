@@ -7,6 +7,10 @@
 				<source>List of operations</source>
 				<target>Liste der Einsätze</target>
 			</trans-unit>
+			<trans-unit id="list.mapHeader">
+				<source>Map of operations</source>
+				<target>Kartenübersicht der Einsätze</target>
+			</trans-unit>
 			<trans-unit id="backToList">
 				<source>back to list</source>
 				<target>zurück zur Liste</target>
@@ -61,7 +65,7 @@
 			</trans-unit>
 			<trans-unit id="tx_operations_domain_model_operation.assistance">
 				<source>Assistance to this oparation</source>
-				<target>Ünterstützung</target>
+				<target>Unterstützung</target>
 			</trans-unit>
 			<trans-unit id="tx_operations_domain_model_operation.vehicles">
 				<source>Vehicles use on this operation</source>
