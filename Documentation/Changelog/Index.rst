@@ -25,6 +25,7 @@ Changelog
  - :Version:
 		1.1.0
    :Changes:
+		Change name of ts-constant and ts-setup from "overrideCenterLangList" to "overrideCenterLongList". Please check your ts after update.
 		#58037 add settings to override centering and zoom for map list view
 		#58036 add link wizard to assistance link field and viewhelper for typolink rendering
 		#57969 add RTE for description field in vehicles and resources

@@ -48,7 +48,8 @@ The content in info window of google map you can change in fluid template or par
 
 Then change the path in constants to your own. Now you can edit the template files as whatever you want.
 
-To override the automatic centering of map in list view, you can use the settings in constants. Please beware that the override only works when you set all three values: latitude, longitude and zoom!
+To override the automatic centering of map in list view, you can use the settings in constants. Please note that the override only works when you set all three values: latitude, longitude and zoom!
+Please check that you have the right constant in ts. I had changed this "overrideCenterLangList" to the correct acronym "overrideCenterLongList" in Version 1.1.0.
 
 
 
