@@ -22,7 +22,15 @@ Changelog
    :Changes:
 	 	Changes:
 
-
+ - :Version:
+		1.1.0
+   :Changes:
+		#58037 add settings to override centering and zoom for map list view
+		#58036 add link wizard to assistance link field and viewhelper for typolink rendering
+		#57969 add RTE for description field in vehicles and resources
+		#57968 spelling error in german translation
+		#57966 change title for map list view
+		#57965 every time "no result" at bottom of list view
  - :Version:
 		1.0.7
    :Changes:
