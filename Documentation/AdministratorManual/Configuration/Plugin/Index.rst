@@ -16,7 +16,7 @@ Because of using Extbase every setting can also be done by using typoscript but 
 
 
 Tab "Options"
-""""""""""""""
+"""""""""""""
 
 
 
@@ -97,7 +97,7 @@ Tab "Options"
 
 
 Tab "Image options"
-""""""""""""""
+"""""""""""""""""""
 
 
 

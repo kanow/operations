@@ -235,15 +235,15 @@ plugin.tx_operations.settings.map
    :Type:
 		integer/string
    :Description:
-		Override the automatic centering position latitude for map in list view. **Not in use at the moment!**
+		Override the automatic centering position latitude for map in list view.
    :Default:
 	 
  - :Property:
-		overrideCenterLangList
+		overrideCenterLongList
    :Type:
 		integer/string
    :Description:
-		Override the automatic centering position longitude for map in list view. **Not in use at the moment!**
+		Override the automatic centering position longitude for map in list view. 
    :Default:
 	 
  - :Property:
@@ -251,6 +251,6 @@ plugin.tx_operations.settings.map
    :Type:
 		integer
    :Description:
-		Override the automatic zoom for map in list view. **Not in use at the moment!**
+		Override the automatic zoom for map in list view. 
    :Default:
 	 

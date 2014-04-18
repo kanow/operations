@@ -5,9 +5,9 @@
 ---
 conf.py:
   copyright: 2014
-  project: operations
+  project: operations (Deutsch)
   version: 1.0
-  release: 1.1.0
+  release: 1.0.0
   latex_documents:
   - - Index
     - operations.tex
@@ -18,5 +18,4 @@ conf.py:
     papersize: a4paper
     pointsize: 10pt
     preamble: \usepackage{typo3}
-	
 ...

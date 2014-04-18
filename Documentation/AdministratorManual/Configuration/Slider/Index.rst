@@ -7,7 +7,7 @@
 
 
 Imageslider in single view
-=====
+==========================
 
 
 Use Slider for images in single view
