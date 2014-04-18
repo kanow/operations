@@ -7,6 +7,9 @@
 			<trans-unit id="list.header">
 				<source>List of operations</source>
 			</trans-unit>
+			<trans-unit id="list.mapHeader">
+				<source>Map of operations</source>
+			</trans-unit>
 			<trans-unit id="backToList">
 				<source>back to list</source>
 			</trans-unit>
