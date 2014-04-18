@@ -9,10 +9,15 @@ $TCA['tx_operations_domain_model_resources'] = array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, short, description, image',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, short, description, image,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, short, description,
+		--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.img,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitleResources.img;paletteImg,
+		--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
 	),
 	'palettes' => array(
-		'1' => array('showitem' => ''),
+		'paletteImg' => array(
+			'showitem' => 'image',
+			'canNotCollapse' => 'TRUE'
+		),
 	),
 	'columns' => array(
 		'sys_language_uid' => array(
@@ -118,8 +123,19 @@ $TCA['tx_operations_domain_model_resources'] = array(
 				'type' => 'text',
 				'cols' => 40,
 				'rows' => 15,
-				'eval' => 'trim'
+				'eval' => 'trim',
+				'wizards' => array(
+					'RTE' => array(
+						'icon' => 'wizard_rte2.gif',
+						'notNewRecords'=> 1,
+						'RTEonly' => 1,
+						'script' => 'wizard_rte.php',
+						'title' => 'LLL:EXT:cms/locallang_ttc.xlf:bodytext.W.RTE',
+						'type' => 'script'
+					)
+				)
 			),
+			'defaultExtras' => 'richtext:rte_transform[flag=rte_enabled|mode=ts]',
 		),
 		// ohne FAL
 		/*

@@ -232,6 +232,14 @@
 				<source>Operation images</source>
 				<target>Einsatzbilder</target>
 			</trans-unit>
+			<trans-unit id="tca.paletteTitleResources.img">
+				<source>Resource images</source>
+				<target>Hilfsmittelbilder</target>
+			</trans-unit>
+			<trans-unit id="tca.paletteTitleVehicles.img">
+				<source>Vehicle images</source>
+				<target>Fahrzeugbilder</target>
+			</trans-unit>
 			<trans-unit id="tca.paletteTitle.meta">
 				<source>Meta data</source>
 				<target>Metadaten</target>

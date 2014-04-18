@@ -177,6 +177,12 @@
 			<trans-unit id="tca.paletteTitle.img">
 				<source>Operation images</source>
 			</trans-unit>
+			<trans-unit id="tca.paletteTitleResources.img">
+				<source>Resource images</source>
+			</trans-unit>
+			<trans-unit id="tca.paletteTitleVehicles.img">
+				<source>Vehicle images</source>
+			</trans-unit>
 			<trans-unit id="tca.paletteTitle.meta">
 				<source>Meta data</source>
 			</trans-unit>
