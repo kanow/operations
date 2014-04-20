@@ -23,6 +23,8 @@ Look here: :ref:`Install <install>` for install the extension and create 4 pages
 - single view for resources (one page)
 - locations on a google map (one page)
 
+Please note that for resources and vehicles are no list view at the moment. This is planned for future versions. You need this feature right now? Feel free to contribute and help. Use forge or e-mail for contact.
+
 After this create sysfolder for data sets of vehicles, resources, assistance, type and operation itself.
 Set the pids of pages for vehicle, resource and operation view in typoscript constants.
 Look at the settings in plugin flexform fields or use typoscript constants to fit the settings.
