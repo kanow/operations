@@ -60,8 +60,9 @@ class OperationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
 	 */
 	public function listAction(\KN\Operations\Domain\Model\OperationDemand $demand = NULL) {
 		$demand = $this->updateDemandObjectFromSettings($demand, $this->settings);
-		$limit = $this->settings['limit'];
-		$operations = $this->operationRepository->findDemanded($demand, $limit);
+		//\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($this->settings);
+		$operations = $this->operationRepository->findDemanded($demand, $this->settings);
+		
 		$years = $this->generateYears();
 
 		$this->view->assign('begin',$years);
@@ -77,8 +78,7 @@ class OperationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
 	 */
 	public function searchAction(\KN\Operations\Domain\Model\OperationDemand $demand = NULL) {
 		$demand = $this->updateDemandObjectFromSettings($demand, $this->settings);
-		$limit = $this->settings['limit'];
-		$demanded = $this->operationRepository->findDemanded($demand, $limit);
+		$demanded = $this->operationRepository->findDemanded($demand, $this->settings);
 		$years = $this->generateYears();
 
 		$this->view->assign('begin',$years);

@@ -49,16 +49,13 @@ class OperationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	* Returns the objects of this repository matching the demand
 	*
 	* @param \KN\Operations\Domain\Model\OperationDemand $demand
-	* @param integer $limit
+	* @param array $settings
 	* @return Tx_Extbase_Persistence_QueryResultInterface
 	*/
 		
-	public function findDemanded(\KN\Operations\Domain\Model\OperationDemand $demand,$limit) {
-		if($limit<=0){
-			$limit = 200;
-		}
+	public function findDemanded(\KN\Operations\Domain\Model\OperationDemand $demand, $settings) {
 		
-		$query = $this->generateQuery($demand, $limit);
+		$query = $this->generateQuery($demand, $settings);
 		return $query->execute();
 	}
 	
@@ -77,20 +74,23 @@ class OperationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	 * Generates the query
 	 *
 	 * @param \KN\Operations\Domain\Model\OperationDemand $demand
-	 * @param integer $limit
+	 * @param array $settings
 	 * @return \TYPO3\CMS\Extbase\Persistence\QueryInterface
 	 */
-	protected function generateQuery(\KN\Operations\Domain\Model\OperationDemand $demand, $limit) {
+	protected function generateQuery(\KN\Operations\Domain\Model\OperationDemand $demand, $settings) {
 		$query = $this->createQuery();
 		//$query->getQuerySettings()->setRespectStoragePage(FALSE);
 		
-		$constraints = $this->createConstraintsFromDemand($query, $demand);
+		$constraints = $this->createConstraintsFromDemand($query, $demand, $settings);
 		if (!empty($constraints)) {
 			$query->matching(
 					$query->logicalAnd($constraints)
 			);
 		}
-		
+		$limit = $settings['limit'];
+		if($limit<=0){
+			$limit = 300;
+		}
 		if ($demand->getLimit() != NULL) {
 			$query->setLimit((int) $demand->getLimit());
 		} else {
@@ -105,9 +105,10 @@ class OperationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	 *
 	 * @param \TYPO3\CMS\Extbase\Persistence\QueryInterface $query
 	 * @param \KN\Operation\Domain\Model\OperationDemand $demand
+	 * @param array $settings
 	 * @return array<Tx_Extbase_Persistence_QOM_Constraint>
 	 */
-	protected function createConstraintsFromDemand(\TYPO3\CMS\Extbase\Persistence\QueryInterface $query, \KN\Operations\Domain\Model\OperationDemand $demand) {
+	protected function createConstraintsFromDemand(\TYPO3\CMS\Extbase\Persistence\QueryInterface $query, \KN\Operations\Domain\Model\OperationDemand $demand, $settings) {
 		
 		$constraints = array();
 
@@ -125,7 +126,14 @@ class OperationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 		if($demand->getType()){
 			$constraints[] = $query->contains('type',$demand->getType());
 		}
-			
+		
+		if($settings['showMap']) {
+			$constraints[] = $query->logicalAnd(
+				$query->greaterThan('latitude',0),
+				$query->greaterThan('longitude',0)
+			);
+		}
+		
 		$constraints = $this->cleanUnusedConstaints($constraints);
 	
 		return $constraints;
