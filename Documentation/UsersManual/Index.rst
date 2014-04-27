@@ -34,6 +34,18 @@ Now you can add your data for types, vehicles, resources and assistance to use t
 Note: You must save the plugin in backend once after choosing the operations plugin! After the first saving all settings are shown!
 
 
+Templates
+^^^^^^^^^
+
+Please copy these three folders completely in your fileadmin folder:
+
+- Resources/Private/Layouts
+- Resources/Private/Templates
+- Resources/Private/Partials
+
+Then change the path in constants to your own. Now you can edit the template files as whatever you want.
+
+
 Use the map view
 ^^^^^^^^^^^^^^^^
 
@@ -42,18 +54,27 @@ In single view the google map is automatically shown, when coordinates are speci
 
 For showing the map in list view please activate the checkbox in plugin flexform. Zoom and centering position of the map are automatically adjusted. Settings for override this feature are already prepared but without any effect this time.
 
-The content in info window of google map you can change in fluid template or partial of operations. Please copy these three folders completely in your fileadmin folder:
-
-- Resources/Private/Layouts
-- Resources/Private/Templates
-- Resources/Private/Partials
-
-Then change the path in constants to your own. Now you can edit the template files as whatever you want.
+The content in info window of google map you can change in fluid template or partial of operations. 
 
 To override the automatic centering of map in list view, you can use the settings in constants. Please note that the override only works when you set all three values: latitude, longitude and zoom!
 Please check that you have the right constant in ts. I had changed this "overrideCenterLangList" to the correct acronym "overrideCenterLongList" in Version 1.1.0.
 
 
+Update from version 1.1.0
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Following Templates are changed in version 1.2.0. Arguments and markup for new filter (type) were added. Please change your own templates to use the new filter!
+
+
+Partials/List/Form.html
+"""""""""""""""""""""""
+- The translate-key for the prependOptionLabel were changed.
+- please add the new <f:form.select> tag where you want.
+
+
+Templates/Operation/List.html and Templates/Operation/Search.html
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+- Add the new argument in line 23: <f:render partial="List/Form" arguments="{demand:demand,begin:begin,**types:types**}" />
 
 
 If i forgot anything (i hope i did not ;-)) feel free to write an e-mail or open an issue on `forge`.
