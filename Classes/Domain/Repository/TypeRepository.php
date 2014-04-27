@@ -40,7 +40,7 @@ class TypeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	* @return array
 	*/
 	protected $defaultOrderings = array( 
-	    'title' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING, 
+	    'title' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING, 
 	); 
 	
 	public function findAll() {
