@@ -168,6 +168,14 @@
 				<source>Please choose...</source>
 				<target>Bitte auswählen...</target>
 			</trans-unit>
+			<trans-unit id="filter.selectYear.first">
+				<source>Choose year..</source>
+				<target>Jahr auswählen...</target>
+			</trans-unit>
+			<trans-unit id="filter.selectType.first">
+				<source>Choose Type...</source>
+				<target>Einsatzart auswählen...</target>
+			</trans-unit>
 			<trans-unit id="filter.submit">
 				<source>Send</source>
 				<target>Los</target>

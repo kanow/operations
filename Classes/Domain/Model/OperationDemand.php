@@ -42,9 +42,9 @@ class OperationDemand extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 	protected $onlyEld;
 	
 	/**
-	 * Type of operation for demand
+	 * Type of operation
 	 *
-	 * @var Tx_Operations_Domain_Model_Type The demanded type
+	 * @var integer
 	 */
 	protected $type;
 	
@@ -77,18 +77,22 @@ class OperationDemand extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 	}
 	
 	/**
-	 * @param Tx_Operations_Domain_Model_Type The demanded type
-	 * @return void
-	 */
-	public function setType(Operations_Domain_Model_Type $type = NULL) {
-		$this->type = $type;
-	}
-
-	/**
-	 * @return Tx_Operations_Domain_Model_Type The demanded type
+	 * Returns the type
+	 *
+	 * @return integer $type
 	 */
 	public function getType() {
 		return $this->type;
+	}
+	
+	/**
+	 * Sets the type
+	 *
+	 * @param integer $type
+	 * @return void
+	 */
+	public function setType($type) {
+		$this->type = $type;
 	}
 	
 	/**
@@ -129,7 +133,7 @@ class OperationDemand extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 		$this->begin = $begin;
 	}
 	
-	const ARRAY_PROPERTIES = 'begin';
+	const ARRAY_PROPERTIES = 'begin,type';
 	
 	/**
 	 * get demand parameter for additionalParams in pagination 

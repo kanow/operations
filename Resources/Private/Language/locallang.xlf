@@ -129,6 +129,12 @@
 			<trans-unit id="filter.select.first">
 				<source>Please choose...</source>
 			</trans-unit>
+			<trans-unit id="filter.selectYear.first">
+				<source>Choose year..</source>
+			</trans-unit>
+			<trans-unit id="filter.selectType.first">
+				<source>Choose Type...</source>
+			</trans-unit>
 			<trans-unit id="filter.submit">
 				<source>Send</source>
 			</trans-unit>

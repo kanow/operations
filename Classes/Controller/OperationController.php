@@ -51,6 +51,14 @@ class OperationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
 	 * @inject
 	 */
 	protected $operationRepository;
+	
+	/**
+	 * typeRepository
+	 *
+	 * @var \KN\Operations\Domain\Repository\TypeRepository
+	 * @inject
+	 */
+	protected $typeRepository;
 
 	/**
 	 * action list
@@ -60,11 +68,11 @@ class OperationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
 	 */
 	public function listAction(\KN\Operations\Domain\Model\OperationDemand $demand = NULL) {
 		$demand = $this->updateDemandObjectFromSettings($demand, $this->settings);
-		//\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($this->settings);
 		$operations = $this->operationRepository->findDemanded($demand, $this->settings);
-		
+		$types = $this->typeRepository->findAll();
 		$years = $this->generateYears();
-
+		
+		$this->view->assign('types', $types);
 		$this->view->assign('begin',$years);
 		$this->view->assign('operations', $operations);
 	}
@@ -77,10 +85,14 @@ class OperationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
 	 * @return void
 	 */
 	public function searchAction(\KN\Operations\Domain\Model\OperationDemand $demand = NULL) {
+		//\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($demand);
 		$demand = $this->updateDemandObjectFromSettings($demand, $this->settings);
 		$demanded = $this->operationRepository->findDemanded($demand, $this->settings);
+		
 		$years = $this->generateYears();
+		$types = $this->typeRepository->findAll();
 
+		$this->view->assign('types', $types);
 		$this->view->assign('begin',$years);
 		$this->view->assign('demanded', $demanded);
 		$this->view->assign('demand', $demand);
@@ -97,10 +109,9 @@ class OperationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
 						$propertyMappingConfiguration->forProperty('*')->allowAllProperties();
 						$propertyMappingConfiguration->forProperty('*')->allowCreationForSubProperty('*');
 						$propertyMappingConfiguration->forProperty('*')->forProperty('*')->allowAllProperties();
-	 		}
+				}
 	 }
 	
-
 	/**
 	 * action show
 	 *
@@ -139,9 +150,8 @@ class OperationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
 				}				
 			}
 			$this->settings = $originalSettings; 
-		}		
+		}
 	}
-	
 	
 	/**
 	 * Update demand with current settings, if not exists it creates one
@@ -151,13 +161,11 @@ class OperationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
 	 * @return void
 	 */
 	protected function updateDemandObjectFromSettings($demand , $settings) {
-
 		if(is_null($demand)){
 			$demand = $this->objectManager->get('KN\Operations\Domain\Model\OperationDemand');
 		}
 		return $demand;
 	}
-	
 	
 	protected function generateYears(){
 		$now = (int)date("Y");

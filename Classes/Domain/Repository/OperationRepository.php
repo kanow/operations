@@ -54,7 +54,7 @@ class OperationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	*/
 		
 	public function findDemanded(\KN\Operations\Domain\Model\OperationDemand $demand, $settings) {
-		
+		//\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($query);
 		$query = $this->generateQuery($demand, $settings);
 		return $query->execute();
 	}
@@ -114,7 +114,6 @@ class OperationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 		$fromTimestamp = mktime(0,0,0,1,1,$demand->getBegin());
 		$toTimestamp = mktime(23,59,59,12,31,$demand->getBegin());
-		
 		
 		if($demand->getBegin()) {
 			$constraints[] = $query->logicalAnd(
