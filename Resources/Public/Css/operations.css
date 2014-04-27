@@ -22,6 +22,7 @@
 .list li h2 {margin:3px 0;}
 
 .pageBrowser {margin:20px 0;}
+.paginate {clear:both;}
 .list .paginate li {min-height:10px;margin:2px 0;border-width:1px;border-style:solid;display:inline-block;padding:0;}
 .paginate a, .paginate li span {padding: 1px 5px 0;display:inline-block;}
 .list li {clear:both;}
