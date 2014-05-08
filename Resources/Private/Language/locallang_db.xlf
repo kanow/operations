@@ -315,6 +315,9 @@
 				<source>Show prev/next:Show prev/next in pagination</source>
 			</trans-unit>
 			
+			<trans-unit id="tsc.apikey">
+				<source>GoogleMaps Apikey:Use your own googlemaps apikey</source>
+			</trans-unit>
 			<trans-unit id="tsc.defaultZoomSingle">
 				<source>Default zoom single:Default zoom for map in single view if no zoom is set</source>
 			</trans-unit>

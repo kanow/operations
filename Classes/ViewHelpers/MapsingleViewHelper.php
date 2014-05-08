@@ -38,7 +38,6 @@ namespace KN\Operations\ViewHelpers;
 
 	public function render(\KN\Operations\Domain\Model\Operation $object, $settings, $as) {
 		
-		$coordinates;
 		$coordinates = "var Coordinates = new google.maps.LatLng(".$object->getLatitude().",".$object->getLongitude().");";
 		
 		if($object->getZoom()) {
@@ -51,7 +50,6 @@ namespace KN\Operations\ViewHelpers;
 		$description = $this->renderChildren();
 		$this->templateVariableContainer->remove($as);
 		
-		$mapOptions;
 		$mapOptions = "var mapOptions = {\n
     zoom:$zoom,\n
     center: Coordinates,\n
@@ -70,34 +68,34 @@ namespace KN\Operations\ViewHelpers;
 	  overviewMapControl: true\n
   };\n";
 		
-		$map;
 		$map = "var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);";
 		
-		$infowindow;
 		$infowindow = "var infowindow = new google.maps.InfoWindow({\n
 	    content:'$description'\n
 	});\n";
 		
-		$marker;
 		$marker = "var marker = new google.maps.Marker({\n
 		position: Coordinates,\n
 		map: map,\n
 	});\n";
 		
-		$addListener;
 		$addListener = "google.maps.event.addListener(marker, 'click', function() {\n
 	  infowindow.open(map,marker);\n
 	});\n";
 
-		$initialize;
 		$initialize = "function initialize() {".$coordinates."\n".$mapOptions."\n".$map."\n".$infowindow."\n".$marker."\n".$addListener."}";
 		
-		$loadScript;
+		$apikey = $settings['map']['apikey'];
+		if($apikey) {
+			$src = "http://maps.googleapis.com/maps/api/js?key=$apikey&sensor=false&callback=initialize";
+		} else {
+			$src = "http://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize";
+		}
+		 
 		$loadScript = "\nfunction loadScript() {
   var script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +
-      'callback=initialize';
+  script.src = '$src';
   document.body.appendChild(script);
 }
 window.onload = loadScript;";

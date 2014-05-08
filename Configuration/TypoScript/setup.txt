@@ -37,6 +37,10 @@ plugin.tx_operations {
 		singleImgWidth = {$plugin.tx_operations.settings.singleImgWidth}
 		singleImgHeight = {$plugin.tx_operations.settings.singleImgHeight}
 		increaseImage = {$plugin.tx_operations.settings.increaseImage}
+		listImgWidthVehicle = {$plugin.tx_operations.settings.listImgWidthVehicle}
+		listImgHeightVehicle = {$plugin.tx_operations.settings.listImgHeightVehicle}
+		listImgWidthResources = {$plugin.tx_operations.settings.listImgWidthResources}
+		listImgHeightResources = {$plugin.tx_operations.settings.listImgHeightResources}
 		cropTeaser = 150
 		sortOrder = DESC
 		sortBy = begin
@@ -51,6 +55,7 @@ plugin.tx_operations {
 			showNoReport = 1
 		}
 		map {
+			apikey = {$plugin.tx_operations.settings.map.apikey}
 			defaultZoomSingle = {$plugin.tx_operations.settings.map.defaultZoomSingle}
 			overrideCenterLatList = {$plugin.tx_operations.settings.map.overrideCenterLatList}
 			overrideCenterLongList = {$plugin.tx_operations.settings.map.overrideCenterLongList}
@@ -71,10 +76,6 @@ plugin.tx_operations {
 
 page {
 	includeJS {
-		# now include directly in map.js
-		#mapsApi = https://maps.googleapis.com/maps/api/js?key=AIzaSyDcQgIlBTC1tODnThKxQOp-CIynjmX7Wb0&sensor=false
-		#mapsApi = https://maps.googleapis.com/maps/api/js?&sensor=false
-		#mapsApi.external = 1
 	}
 	includeCSS {
 		operations = {$plugin.tx_operations.css}

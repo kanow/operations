@@ -114,11 +114,17 @@ namespace KN\Operations\ViewHelpers;
 
 		$initialize = "\n function initialize() {\n $bounds \n $mapOptions \n $map \n $infowindow \n $markerI \n $markers \n $loopToAddMarkersAndCentering \n }\n";
 		
+		$apikey = $settings['map']['apikey'];
+		if($apikey) {
+			$src = "http://maps.googleapis.com/maps/api/js?key=$apikey&sensor=false&callback=initialize";
+		} else {
+			$src = "http://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize";
+		}
+		 
 		$loadScript = "\nfunction loadScript() {
   var script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +
-      'callback=initialize';
+  script.src = '$src';
   document.body.appendChild(script);
 }
 window.onload = loadScript;";

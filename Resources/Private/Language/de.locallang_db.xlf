@@ -415,6 +415,10 @@
 				<target>Zeige vor/zurück Buttons im Pagebrowser</target>
 			</trans-unit>
 			
+			<trans-unit id="tsc.apikey">
+				<source>GoogleMaps Apikey:Use your own googlemaps apikey.</source>
+				<target>GoogleMaps Apikey:Eigenen Apikey für GoogleMaps verwenden.</target>
+			</trans-unit>
 			<trans-unit id="tsc.defaultZoomSingle">
 				<source>Default zoom single:Default zoom for map in single view if no zoom is set</source>
 				<target>Standard Zoom Einzelansicht:Standard Zoom für die Karte in der Einzelansicht falls kein Zoom in den Einsatzdaten gesetzt wurde</target>
