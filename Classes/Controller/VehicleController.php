@@ -48,6 +48,7 @@ class VehicleController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
 	 * @return void
 	 */
 	public function listAction() {
+		//\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($vehicles);
 		$vehicles = $this->vehicleRepository->findAll();
 		$this->view->assign('vehicles', $vehicles);
 	}

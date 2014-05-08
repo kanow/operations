@@ -12,31 +12,23 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
+
+	<div class="operations list resources">
 <h1>Listing for Resources</h1>
 
 <f:flashMessages />
-
-<table  class="tx_operations" >
-	<tr>
-		<th><f:translate key="tx_operations_domain_model_resources.title" /></th>
-		<th><f:translate key="tx_operations_domain_model_resources.short" /></th>
-		<th><f:translate key="tx_operations_domain_model_resources.description" /></th>
-		<th><f:translate key="tx_operations_domain_model_resources.image" /></th>
-		<th> </th>
-		<th> </th>
-	</tr>
-
-	<f:for each="{resourcess}" as="resources">
-		<tr>
-			<td><f:link.action action="show" arguments="{resources : resources}"> {resources.title}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{resources : resources}"> {resources.short}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{resources : resources}"> {resources.description}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{resources : resources}"> {resources.image}</f:link.action></td>
-			<td><f:link.action action="edit" arguments="{resources : resources}">Edit</f:link.action></td>
-			<td><f:link.action action="delete" arguments="{resources : resources}">Delete</f:link.action></td>
-		</tr>
+<ul class="clearfix">
+	<f:for each="{resourcess}" as="resources" iteration="oIterator">
+		<li class="clearfix {f:if(condition:'{oIterator.isOdd}',then:' odd')}">
+			<f:link.action action="show" arguments="{resources:resources,backTo:'vehicles'}" class="clearfix">
+				<div class="left">{resources.title}<f:if condition="{resources.short}"><span class="short"> ({resources.short})</span></f:if></div>
+				<f:if condition="{resources.image}">
+				  <div class="imgBox"><f:image src="{resources.firstImage.uid}" treatIdAsReference="TRUE" alt="{resources.firstImage.originalResource.alternative}" width="{settings.listImgWidthResources}" height="{settings.listImgHeightResources}" /></div>
+					<div class="right">Bild</div>
+				</f:if>
+			</f:link.action>
+		</li>
 	</f:for>
-</table>
-
-<f:link.action action="new">New Resources</f:link.action>
+</ul>
+</div>
 </f:section>
