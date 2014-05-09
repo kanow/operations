@@ -197,6 +197,14 @@
 				<source>back to operation</source>
 				<target>zurück zum Einsatz</target>
 			</trans-unit>
+			<trans-unit id="backToResources">
+				<source>back to resources</source>
+				<target>zurück zur Hilfsmittelliste</target>
+			</trans-unit>
+			<trans-unit id="backToVehicles">
+				<source>back to vehicles</source>
+				<target>zurück zur Fahrzeugliste</target>
+			</trans-unit>
 			
 			<trans-unit id="map.noscript">
 				<source>Please activate javascript to show map</source>

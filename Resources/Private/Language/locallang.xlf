@@ -151,6 +151,12 @@
 			<trans-unit id="backToOperation">
 				<source>back to operation</source>
 			</trans-unit>
+			<trans-unit id="backToResources">
+				<source>back to resources</source>
+			</trans-unit>
+			<trans-unit id="backToVehicles">
+				<source>back to vehicles</source>
+			</trans-unit>
 			
 			<trans-unit id="map.noscript">
 				<source>Please activate javascript to show map</source>
