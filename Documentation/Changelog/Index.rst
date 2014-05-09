@@ -23,6 +23,10 @@ Changelog
 	 	Changes:
 
  - :Version:
+		1.3.0
+   :Changes:
+		Add list view for resources and vehicles. When using your own templates please check Templates/Resources/List.html, Templates/Resources/List.html. Add setting in constants to use an own api kay for google maps. More infos in :ref:`Manual <users-manual>`.
+ - :Version:
 		1.2.0
    :Changes:
 		Add new filter for type. When using your own templates please check Partials/List/Form.html, Templates/Operation/List.html and Templates/Operation/Search.html to use the new filter. More infos here in :ref:`Manual <users-manual>`.

@@ -19,11 +19,9 @@ Installing the Extension
 Look here: :ref:`Install <install>` for install the extension and create 4 pages for 
 
 - list and single view for operations (one page)
-- single view for vehicles (one page)
-- single view for resources (one page)
+- list and single view for vehicles (one page)
+- list and single view for resources (one page)
 - locations on a google map (one page)
-
-Please note that for resources and vehicles are no list view at the moment. This is planned for future versions. You need this feature right now? Feel free to contribute and help. Use forge or e-mail for contact.
 
 After this create sysfolder for data sets of vehicles, resources, assistance, type and operation itself.
 Set the pids of pages for vehicle, resource and operation view in typoscript constants.
@@ -58,6 +56,8 @@ The content in info window of google map you can change in fluid template or par
 
 To override the automatic centering of map in list view, you can use the settings in constants. Please note that the override only works when you set all three values: latitude, longitude and zoom!
 Please check that you have the right constant in ts. I had changed this "overrideCenterLangList" to the correct acronym "overrideCenterLongList" in Version 1.1.0.
+
+Since version 1.3.0 is it possible to use your own api key for google maps. Set this in constants when you need it.
 
 
 Update from version 1.1.0
