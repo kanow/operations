@@ -136,7 +136,15 @@ class Vehicle extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
   $images = $this->getImage()->toArray();
     return $images;
   }
-
+  /**
+   * Returns the first image
+   *
+   * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+   */
+  public function getFirstImage() {
+  $image = $this->getImage()->toArray();
+    return $image[0];
+  }
   /**
    * Sets the image
    *
