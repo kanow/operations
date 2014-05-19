@@ -1,16 +1,5 @@
 <f:layout name="Default" />
 
-This Template is responsible for creating a table of domain objects.
-
-If you modify this template, do not forget to change the overwrite settings
-in /Configuration/ExtensionBuilder/settings.yaml:
-  Resources:
-    Private:
-      Templates:
-        List.html: keep
-
-Otherwise your changes will be overwritten the next time you save the extension in the extension builder
-
 <f:section name="main">
 
 	<div class="operations list resources">
@@ -18,12 +7,12 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
 <f:flashMessages />
 <ul class="clearfix">
-	<f:for each="{resourcess}" as="resources" iteration="oIterator">
+	<f:for each="{resources}" as="resource" iteration="oIterator">
 		<li class="clearfix {f:if(condition:'{oIterator.isOdd}',then:' odd')}">
-			<f:link.action action="show" arguments="{resources:resources,backTo:'vehicles'}" class="clearfix">
-				<div class="left">{resources.title}<f:if condition="{resources.short}"><span class="short"> ({resources.short})</span></f:if></div>
-				<f:if condition="{resources.image}">
-				  <div class="imgBox"><f:image src="{resources.firstImage.uid}" treatIdAsReference="TRUE" alt="{resources.firstImage.originalResource.alternative}" width="{settings.listImgWidthResources}" height="{settings.listImgHeightResources}" /></div>
+			<f:link.action action="show" arguments="{resources:resource,backTo:'vehicles'}" class="clearfix">
+				<div class="left">{resource.title}<f:if condition="{resource.short}"><span class="short"> ({resource.short})</span></f:if></div>
+				<f:if condition="{resource.image}">
+				  <div class="imgBox"><f:image src="{resource.firstImage.uid}" treatIdAsReference="TRUE" alt="{resource.firstImage.originalResource.alternative}" width="{settings.listImgWidthResources}" height="{settings.listImgHeightResources}" /></div>
 					<div class="right">Bild</div>
 				</f:if>
 			</f:link.action>

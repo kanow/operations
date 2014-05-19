@@ -49,7 +49,7 @@ class ResourcesController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
 	 */
 	public function listAction() {
 		$resourcess = $this->resourcesRepository->findAll();
-		$this->view->assign('resourcess', $resourcess);
+		$this->view->assign('resources', $resourcess);
 	}
 
 	/**
@@ -59,7 +59,7 @@ class ResourcesController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
 	 * @return void
 	 */
 	public function showAction(\KN\Operations\Domain\Model\Resources $resources) {
-		$this->view->assign('resources', $resources);
+		$this->view->assign('resource', $resources);
 	}
 	
 	

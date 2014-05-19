@@ -45,9 +45,10 @@
 .single .images .flex-next {border-bottom-width:15px !important;top:12px;}
 .single .images .flex-prev, .single .images .flex-next {border-color:#d00;} 
 .single .images .flex-direction-nav li a {border-left-color:transparent;border-right-color:transparent;}
-.single.withoutMeta .images {clear:none;margin-top:30px;}
+.single.withoutMeta .images {clear:none;margin-top:30px;width:225px;float:right;}
 .single.withoutMeta .description {float:left;}
 .withoutMeta .backLink {clear:left;display:block;}
+
 
 /* map canvas */
 .map {height:260px;/*width:225px;clear:right;float:right;*/}

@@ -1,15 +1,16 @@
-
-<f:if condition="{resources.description}">
+<f:debug>{resource}</f:debug>
+<f:if condition="{resource.description}">
 	<div class="description layer">
 		<h2><f:translate key="tx_operations_domain_model_resources.description" /></h2>
-		<f:format.html parseFuncTSPath="lib.parseFunc_RTE">{resources.description}</f:format.html>
+		<f:format.html parseFuncTSPath="lib.parseFunc_RTE">{resource.description}</f:format.html>
 	</div>
-	
-	<f:if condition="{resources.image}">
+</f:if>
+
+	<f:if condition="{resource.image}">
 		<div class="images layer">
 		<!--	<h2><f:translate key="tx_operations_domain_model_resources.image" /></h2> -->
 				<ul class="slides">
-					<f:for each="{resources.allImages}" as="image">
+					<f:for each="{resource.allImages}" as="image">
 						<li>
 							<f:if condition="{settings.increaseImage}"><a href="{image.originalResource.publicUrl}" title="{image.originalResource.alternative}"></f:if>
 								<f:image src="{image.uid}" alt="" treatIdAsReference="TRUE" alt="{image.originalResource.alternative}" width="{settings.singleImgWidth}" height="{settings.singleImgHeight}" />
@@ -20,4 +21,3 @@
 				</ul>
 		</div>
 	</f:if>
-</f:if>
