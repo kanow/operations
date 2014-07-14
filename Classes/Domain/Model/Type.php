@@ -43,9 +43,9 @@ class Type extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $title;
 
 	/**
-	 * icon for use in list
+	 * icon for use in list or for whatever
 	 *
-	 * @var \string
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
 	 */
 	protected $image;
 
@@ -69,23 +69,40 @@ class Type extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the image
-	 *
-	 * @return \string $image
-	 */
-	public function getImage() {
-		return $this->image;
-	}
-
-	/**
-	 * Sets the image
-	 *
-	 * @param \string $image
-	 * @return void
-	 */
-	public function setImage($image) {
-		$this->image = $image;
-	}
+   * Returns the image
+   *
+   * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $image
+   */
+  public function getImage() {
+          return $this->image;
+  }
+  /**
+   * Returns all images
+   *
+   * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+   */
+  public function getAllImages() {
+  $images = $this->getImage()->toArray();
+    return $images;
+  }
+  /**
+   * Returns the first image
+   *
+   * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+   */
+  public function getFirstImage() {
+  $image = $this->getImage()->toArray();
+    return $image[0];
+  }
+  /**
+   * Sets the image
+   *
+   * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $image
+   * @return void
+   */
+  public function setImage($image) {
+          $this->image = $image;
+  }
 
 }
 ?>

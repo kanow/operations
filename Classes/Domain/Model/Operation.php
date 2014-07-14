@@ -143,9 +143,9 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $vehicles;
 
 	/**
-	 * resources
+	 * resources used
 	 * @lazy
-	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\KN\Operations\Domain\Model\Resources>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\KN\Operations\Domain\Model\Resource>
 	 */
 	protected $resources;
 
@@ -405,7 +405,6 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
    */
   public function getAllImages() {
   $images = $this->getImage()->toArray();
-  //$images = $this->getImage();
     return $images;
   }
   /**
@@ -550,7 +549,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @param \KN\Operations\Domain\Model\Resources $resource
 	 * @return void
 	 */
-	public function addResource(\KN\Operations\Domain\Model\Resources $resource) {
+	public function addResource(\KN\Operations\Domain\Model\Resource $resource) {
 		$this->resources->attach($resource);
 	}
 
@@ -560,7 +559,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @param \KN\Operations\Domain\Model\Resources $resourceToRemove The Resources to be removed
 	 * @return void
 	 */
-	public function removeResource(\KN\Operations\Domain\Model\Resources $resourceToRemove) {
+	public function removeResource(\KN\Operations\Domain\Model\Resource $resourceToRemove) {
 		$this->resources->detach($resourceToRemove);
 	}
 
