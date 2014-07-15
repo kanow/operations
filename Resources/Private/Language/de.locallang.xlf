@@ -205,10 +205,35 @@
 				<source>back to vehicles</source>
 				<target>zurück zur Fahrzeugliste</target>
 			</trans-unit>
+			<trans-unit id="back">
+				<source>back</source>
+				<target>zurück</target>
+			</trans-unit>
 			
 			<trans-unit id="map.noscript">
 				<source>Please activate javascript to show map</source>
 				<target>Bitte aktiviert Javascript für die Anzeige der Karte</target>
+			</trans-unit>
+			
+			<trans-unit id="update.ScriptDo">
+				<source>This script will do the following:</source>
+				<target>Das Script wird folgende Aktionen ausführen:</target>
+			</trans-unit>
+			<trans-unit id="update.Rename">
+				<source>Rename database table</source>
+				<target>Umbenennen der Datenbanktabellen</target>
+			</trans-unit>
+			<trans-unit id="update.Attention">
+				<source><b>Attention!</b> Please make a backup of your database before running!</source>
+				<target><b>Achtung!</b> Vorher unbedingt ein Backup der aktuellen Datenbank durchführen.</target>
+			</trans-unit>
+			<trans-unit id="update.NotNeeded">
+				<source>Database tables are already renamed. No update script needed.</source>
+				<target>Datenbanktabellen sind bereits umbenannt. Kein Update mehr nötig.</target>
+			</trans-unit>
+			<trans-unit id="update.Button">
+				<source>Update</source>
+				<target>Jetzt Update durchführen</target>
 			</trans-unit>
 			
 			

@@ -157,9 +157,28 @@
 			<trans-unit id="backToVehicles">
 				<source>back to vehicles</source>
 			</trans-unit>
+			<trans-unit id="back">
+				<source>back</source>
+			</trans-unit>
 			
 			<trans-unit id="map.noscript">
 				<source>Please activate javascript to show map</source>
+			</trans-unit>
+			
+			<trans-unit id="update.ScriptDo">
+				<source>This script will do the following:</source>
+			</trans-unit>
+			<trans-unit id="update.Rename">
+				<source>Rename database table</source>
+			</trans-unit>
+			<trans-unit id="update.Attention">
+				<source><b>Attention!</b> Please make a backup of your database before running!</source>
+			</trans-unit>
+			<trans-unit id="update.NotNeeded">
+				<source>Database tables are already renamed. No update script needed.</source>
+			</trans-unit>
+			<trans-unit id="update.Button">
+				<source>Update</source>
 			</trans-unit>
 			
 		</body>
