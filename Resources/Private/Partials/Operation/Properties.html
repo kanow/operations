@@ -75,7 +75,7 @@
 		<ul>
 			<f:for each="{operation.resources}" as="resource" iteration="count">
 				<li>
-					<f:link.action  action="show" arguments="{resources:resource}" controller="resources" pageUid="{settings.resourcePid}">
+					<f:link.action  action="show" arguments="{resource:resource}" controller="resource" pageUid="{settings.resourcePid}">
 					{resource.title}<f:if condition="{resource.short}"><span class="short"> ({resource.short})</span></f:if>
 					</f:link.action>
 				</li>
@@ -91,7 +91,7 @@
 			<f:for each="{operation.assistance}" as="assistance" iteration="count">
 				<f:if condition="{assistance.link}">
 				<f:then>
-					<o:typolink parameter="{assistance.link}">{assistance.title}</o:typolink>{f:if(condition:count.isLast,else:', ')}
+					<o:typolink parameter="{assistance.link}" target="_blank" extTarget="_blank">{assistance.title}</o:typolink>{f:if(condition:count.isLast,else:', ')}
 				</f:then>
 				<f:else>
 					{assistance.title}{f:if(condition:count.isLast,else:', ')}
