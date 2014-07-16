@@ -97,19 +97,21 @@ class OperationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
 		$this->view->assign('demanded', $demanded);
 		$this->view->assign('demand', $demand);
 	}
-	
+
 	/**
-	  * Initialize method for special action
-	  */
+	 * Initialize method for special action
+	 */
 	 public function initializeSearchAction() {
 			if ($this->arguments->hasArgument('demand')) {
 				$mvcPropertyMappingConfiguration = \TYPO3\CMS\Extbase\Property\PropertyMappingConfigurationBuilder::build('TYPO3\\CMS\\Extbase\\Mvc\\Controller\\MvcPropertyMappingConfiguration');
-						$this->arguments->getArgument('demand')->injectPropertyMappingConfiguration($mvcPropertyMappingConfiguration);
-						$propertyMappingConfiguration = $this->arguments->getArgument('demand')->getPropertyMappingConfiguration();
-						$propertyMappingConfiguration->forProperty('*')->allowAllProperties();
-						$propertyMappingConfiguration->forProperty('*')->allowCreationForSubProperty('*');
-						$propertyMappingConfiguration->forProperty('*')->forProperty('*')->allowAllProperties();
+				if(function_exists('injectPropertyMappingConfiguration')) {
+					$this->arguments->getArgument('demand')->injectPropertyMappingConfiguration($mvcPropertyMappingConfiguration);
 				}
+				$propertyMappingConfiguration = $this->arguments->getArgument('demand')->getPropertyMappingConfiguration();
+				$propertyMappingConfiguration->forProperty('*')->allowAllProperties();
+				$propertyMappingConfiguration->forProperty('*')->allowCreationForSubProperty('*');
+				$propertyMappingConfiguration->forProperty('*')->forProperty('*')->allowAllProperties();
+			}
 	 }
 	
 	/**
@@ -147,7 +149,7 @@ class OperationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
 				if ((!isset($originalSettings[$settingToOverride]) || empty($originalSettings[$settingToOverride]))
 						&& isset($typoScriptSettings['settings'][$settingToOverride])) {
 					$originalSettings[$settingToOverride] = $typoScriptSettings['settings'][$settingToOverride];
-				}				
+				}
 			}
 			$this->settings = $originalSettings; 
 		}
