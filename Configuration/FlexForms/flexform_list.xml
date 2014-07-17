@@ -22,12 +22,12 @@
 									
 										<numIndex index="1">
 											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.vehicles</numIndex>
-											<numIndex index="1">Vehicle->show</numIndex>
+											<numIndex index="1">Vehicle->list;Vehicle->show</numIndex>
 										</numIndex>
 											
 										<numIndex index="2">
 											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.resources</numIndex>
-											<numIndex index="1">Resources->show</numIndex>
+											<numIndex index="1">Resource->list;Resource->show</numIndex>
 										</numIndex>
 										
 									</items>

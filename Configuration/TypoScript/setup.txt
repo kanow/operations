@@ -19,14 +19,12 @@ plugin.tx_operations {
 	features {
 		# uncomment the following line to enable the new Property Mapper.
 		#rewrittenPropertyMapper = 1
-		#skipDefaultArguments = 1 
 	}
 	settings {
 		overrideFlexformSettingsIfEmpty = itemsPerPage,showImgInList,listImgWidth,listImgHeight,singleImgWidth,singleImgHeight,cropTeaser
 		operationPid = {$plugin.tx_operations.settings.operationPid}
 		vehiclePid = {$plugin.tx_operations.settings.vehiclePid}
 		resourcePid = {$plugin.tx_operations.settings.resourcePid}
-		# cropMaxCharacters = 80
 		itemsPerPage = {$plugin.tx_operations.settings.itemsPerPage}
 		limit = {$plugin.tx_operations.settings.limit}
 		hidePagination = {$plugin.tx_operations.settings.hidePagination}
@@ -44,14 +42,11 @@ plugin.tx_operations {
 		cropTeaser = 150
 		sortOrder = DESC
 		sortBy = begin
-		lastYears = 5
+		lastYears = {$plugin.tx_operations.settings.lastYears}
 		list {
-			#maxImageWidth = 
-			#maxImageHeight =
+
 		}
 		single {
-			#imageWidth = 165
-			#imageHeight = 120c
 			showNoReport = 1
 		}
 		map {

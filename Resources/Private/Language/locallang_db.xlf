@@ -85,19 +85,19 @@
 				<source>Image</source>
 			</trans-unit>
 
-			<trans-unit id="tx_operations_domain_model_resources">
-				<source>Resources</source>
+			<trans-unit id="tx_operations_domain_model_resource">
+				<source>Resource</source>
 			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_resources.title">
+			<trans-unit id="tx_operations_domain_model_resource.title">
 				<source>Title</source>
 			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_resources.short">
+			<trans-unit id="tx_operations_domain_model_resource.short">
 				<source>Short</source>
 			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_resources.description">
+			<trans-unit id="tx_operations_domain_model_resource.description">
 				<source>Description</source>
 			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_resources.image">
+			<trans-unit id="tx_operations_domain_model_resource.image">
 				<source>Image</source>
 			</trans-unit>
 
@@ -268,6 +268,9 @@
 			<trans-unit id="tsc.hideFilter">
 				<source>Hide filter:Hide search form (filter) in list view of operations</source>
 			</trans-unit>
+			<trans-unit id="tsc.lastYears">
+				<source>Last years:How many years back are showing in filter for years</source>
+			</trans-unit>
 			<trans-unit id="tsc.listImgWidth">
 				<source>Max img width list:Max image width in list view, for vehicles and resources too (add "c" for cropping image)</source>
 			</trans-unit>
@@ -286,6 +289,19 @@
 			<trans-unit id="tsc.showImgInList">
 				<source>First img in list:Show first image in listview</source>
 			</trans-unit>
+			<trans-unit id="tsc.listImgWidthVehicle">
+				<source>Img width vehicles:Image width in list view of vehicles</source>
+			</trans-unit>
+			<trans-unit id="tsc.listImgHeightVehicle">
+				<source>Img height vehicles:Image height in list view of vehicles</source>
+			</trans-unit>
+			<trans-unit id="tsc.listImgWidthResources">
+				<source>Img width resources:Image width in list view of resources</source>
+			</trans-unit>
+			<trans-unit id="tsc.listImgHeightResources">
+				<source>Img height resources:Image height in list view of resources</source>
+			</trans-unit>
+			
 			<trans-unit id="tsc.itemsPerPage">
 				<source>Items per page:Items per page in listview</source>
 			</trans-unit>
@@ -330,6 +346,7 @@
 			<trans-unit id="tsc.overrideZoomList">
 				<source>Override zoom list-map:Override automatic zoom of the map in list view</source>
 			</trans-unit>
+			
 			
 		</body>
 	</file>

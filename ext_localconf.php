@@ -8,7 +8,7 @@ if (!defined('TYPO3_MODE')) {
 	'List',
 	array(
 		'Operation' => 'list, show',
-		'Resources' => 'list, show',
+		'Resource' => 'list, show',
 		'Vehicle' => 'list, show',
 		
 	),
@@ -16,7 +16,7 @@ if (!defined('TYPO3_MODE')) {
 	array(
 		'Operation' => 'search',
 		'Vehicle' => '',
-		'Resources' => '',
+		'Resource' => '',
 		
 	)
 );

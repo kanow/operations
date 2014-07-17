@@ -111,23 +111,23 @@
 				<target>Bild</target>
 			</trans-unit>
 
-			<trans-unit id="tx_operations_domain_model_resources">
-				<source>Resources</source>
+			<trans-unit id="tx_operations_domain_model_resource">
+				<source>Resource</source>
 				<target>Hilfsmittel</target>
 			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_resources.title">
+			<trans-unit id="tx_operations_domain_model_resource.title">
 				<source>Title</source>
 				<target>Bezeichnung</target>
 			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_resources.short">
+			<trans-unit id="tx_operations_domain_model_resource.short">
 				<source>Short</source>
 				<target>Kurzbezeichnung</target>
 			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_resources.description">
+			<trans-unit id="tx_operations_domain_model_resource.description">
 				<source>Description</source>
 				<target>Beschreibung</target>
 			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_resources.image">
+			<trans-unit id="tx_operations_domain_model_resource.image">
 				<source>Image</source>
 				<target>Bild</target>
 			</trans-unit>
@@ -353,6 +353,10 @@
 				<source>Hide filter:Hide search form (filter) in list view of operations</source>
 				<target>Filter ausblenden:Suchformular/Filterformular in der Listansicht nicht anzeigen</target>
 			</trans-unit>
+			<trans-unit id="tsc.lastYears">
+				<source>Last years:How many years back are showing in filter for years</source>
+				<target>Jahre zurück:Wieviel zurückliegende Jahre sollen im Filter für Jahre angezeigt werden </target>
+			</trans-unit>
 			<trans-unit id="tsc.listImgWidth">
 				<source>Max img width list:Max image width in list view, for vehicles and resources too (add "c" for cropping image)</source>
 				<target>Max. Bildbreite Liste:Max. Bildbreite in der Listenansicht, betrifft auch Fahrzeuge und Hilfsmittel (ein 'c' anhängen für zuschneiden der Bilder)</target>
@@ -377,6 +381,23 @@
 				<source>First img in list:Show first image in listview</source>
 				<target>Bild in Liste:Erstes Bild aus Datensatz in der Listenansicht zeigen</target>
 			</trans-unit>
+			<trans-unit id="tsc.listImgWidthVehicle">
+				<source>Img width vehicles:Image width in list view of vehicles</source>
+				<target>Bildbreite Fahrzeuge:Bildbreite in der Listansicht der Fahrzeuge</target>
+			</trans-unit>
+			<trans-unit id="tsc.listImgHeightVehicle">
+				<source>Img height vehicles:Image height in list view of vehicles</source>
+				<target>Bildhöhe Fahrzeige:Bildhöhe in der Listansicht der Fahrzeuge</target>
+			</trans-unit>
+			<trans-unit id="tsc.listImgWidthResources">
+				<source>Img width resources:Image width in list view of resources</source>
+				<target>Bildbreite Hilfsmittel:Bildbreite in der Listansicht der Hilfsmittel</target>
+			</trans-unit>
+			<trans-unit id="tsc.listImgHeightResources">
+				<source>Img height resources:Image height in list view of resources</source>
+				<target>Bildhöhe Hilfsmittel:Bildhöhe in der Listansicht der Hilfsmittel</target>
+			</trans-unit>
+			
 			<trans-unit id="tsc.itemsPerPage">
 				<source>Items per page:Items per page in listview</source>
 				<target>Datensätze pro Seite:Datensätze pro Seite in der Listenansicht</target>
@@ -435,6 +456,8 @@
 				<source>Override zoom list-map:Override automatic zoom of the map in list view</source>
 				<target>Überschreibe Zoom Listen-Karte:Überschreibe automatischen Zoom der Karte in der Listenansicht</target>
 			</trans-unit>
+			
+			
 	
 		</body>
 	</file>

@@ -43,6 +43,12 @@ plugin.tx_operations {
 		storagePid = 
 	}
 	settings {
+		# cat=plugin.tx_operations/list/0030/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.hidePagination
+		hidePagination = 0
+		# cat=plugin.tx_operations/list/0035/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.hideFilter
+		hideFilter = 0
+		# cat=plugin.tx_operations/list/0037/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.lastYears
+		lastYears = 5
 		# cat=plugin.tx_operations/list/0040/; type=int+; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.itemsPerPage
 		itemsPerPage = 10
 		# cat=plugin.tx_operations/list/0041/; type=int+; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.limit
@@ -54,10 +60,6 @@ plugin.tx_operations {
 		vehiclePid = 
 		# cat=plugin.tx_operations/pids/0320/; type=int; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.resourcePid
 		resourcePid =
-		# cat=plugin.tx_operations/pids/0330/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.hidePagination
-		hidePagination = 0
-		# cat=plugin.tx_operations/pids/0340/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.hideFilter
-		hideFilter = 0
 		
 		# cat=plugin.tx_operations/image/0200/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listImgWidth
 		listImgWidth = 100c
@@ -71,9 +73,14 @@ plugin.tx_operations {
 		showImgInList = 1
 		# cat=plugin.tx_operations/image/0250/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.increaseImage
 		increaseImage = 1
+		
+		# cat=plugin.tx_operations/image/0255/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listImgWidthVehicle
 		listImgWidthVehicle = 320
+		# cat=plugin.tx_operations/image/0256/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listImgHeightVehicle
 		listImgHeightVehicle = 
+		# cat=plugin.tx_operations/image/0257/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listImgWidthResources
 		listImgWidthResources = 320
+		# cat=plugin.tx_operations/image/0258/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listImgHeightResources
 		listImgHeightResources = 
 		
 		map {

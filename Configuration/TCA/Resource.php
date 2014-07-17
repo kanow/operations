@@ -3,8 +3,8 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-$TCA['tx_operations_domain_model_resources'] = array(
-	'ctrl' => $TCA['tx_operations_domain_model_resources']['ctrl'],
+$TCA['tx_operations_domain_model_resource'] = array(
+	'ctrl' => $TCA['tx_operations_domain_model_resource']['ctrl'],
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, short, description, image',
 	),
@@ -42,8 +42,8 @@ $TCA['tx_operations_domain_model_resources'] = array(
 				'items' => array(
 					array('', 0),
 				),
-				'foreign_table' => 'tx_operations_domain_model_resources',
-				'foreign_table_where' => 'AND tx_operations_domain_model_resources.pid=###CURRENT_PID### AND tx_operations_domain_model_resources.sys_language_uid IN (-1,0)',
+				'foreign_table' => 'tx_operations_domain_model_resource',
+				'foreign_table_where' => 'AND tx_operations_domain_model_resource.pid=###CURRENT_PID### AND tx_operations_domain_model_resource.sys_language_uid IN (-1,0)',
 			),
 		),
 		'l10n_diffsource' => array(
@@ -100,7 +100,7 @@ $TCA['tx_operations_domain_model_resources'] = array(
 		),
 		'title' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_resources.title',
+			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_resource.title',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -109,7 +109,7 @@ $TCA['tx_operations_domain_model_resources'] = array(
 		),
 		'short' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_resources.short',
+			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_resource.short',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -118,7 +118,7 @@ $TCA['tx_operations_domain_model_resources'] = array(
 		),
 		'description' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_resources.description',
+			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_resource.description',
 			'config' => array(
 				'type' => 'text',
 				'cols' => 40,
@@ -137,26 +137,10 @@ $TCA['tx_operations_domain_model_resources'] = array(
 			),
 			'defaultExtras' => 'richtext:rte_transform[flag=rte_enabled|mode=ts]',
 		),
-		// ohne FAL
-		/*
-		'image' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_resources.image',
-			'config' => array(
-				'type' => 'group',
-				'internal_type' => 'file',
-				'uploadfolder' => 'uploads/tx_operations',
-				'show_thumbs' => 1,
-				'size' => 5,
-				'allowed' => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
-				'disallowed' => '',
-			),
-		),
-		*/
 		// mit FAL
 		'image' => array(
 				'exclude' => 1,
-				'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_resources.image',
+				'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_resource.image',
 				'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('image', array(
 					'appearance' => array(
 						'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference'

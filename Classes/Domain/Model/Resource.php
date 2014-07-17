@@ -32,7 +32,7 @@ namespace KN\Operations\Domain\Model;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class Resources extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Resource extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * Title of resource

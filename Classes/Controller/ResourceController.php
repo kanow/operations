@@ -32,15 +32,15 @@ namespace KN\Operations\Controller;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class ResourcesController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class ResourceController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
 	/**
-	 * resourcesRepository
+	 * resourceRepository
 	 *
-	 * @var \KN\Operations\Domain\Repository\ResourcesRepository
+	 * @var \KN\Operations\Domain\Repository\ResourceRepository
 	 * @inject
 	 */
-	protected $resourcesRepository;
+	protected $resourceRepository;
 
 	/**
 	 * action list
@@ -48,8 +48,8 @@ class ResourcesController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
 	 * @return void
 	 */
 	public function listAction() {
-		$resourcess = $this->resourcesRepository->findAll();
-		$this->view->assign('resources', $resourcess);
+		$resources = $this->resourceRepository->findAll();
+		$this->view->assign('resources', $resources);
 	}
 
 	/**
@@ -58,8 +58,8 @@ class ResourcesController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
 	 * @param \KN\Operations\Domain\Model\Resources $resources
 	 * @return void
 	 */
-	public function showAction(\KN\Operations\Domain\Model\Resources $resources) {
-		$this->view->assign('resource', $resources);
+	public function showAction(\KN\Operations\Domain\Model\Resource $resource) {
+		$this->view->assign('resource', $resource);
 	}
 	
 	

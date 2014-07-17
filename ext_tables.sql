@@ -139,9 +139,9 @@ CREATE TABLE tx_operations_domain_model_vehicle (
 );
 
 #
-# Table structure for table 'tx_operations_domain_model_resources'
+# Table structure for table 'tx_operations_domain_model_resource'
 #
-CREATE TABLE tx_operations_domain_model_resources (
+CREATE TABLE tx_operations_domain_model_resource (
 
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
@@ -262,9 +262,9 @@ CREATE TABLE tx_operations_operation_vehicle_mm (
 );
 
 #
-# Table structure for table 'tx_operations_operation_resources_mm'
+# Table structure for table 'tx_operations_operation_resource_mm'
 #
-CREATE TABLE tx_operations_operation_resources_mm (
+CREATE TABLE tx_operations_operation_resource_mm (
 	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
 	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
 	sorting int(11) unsigned DEFAULT '0' NOT NULL,

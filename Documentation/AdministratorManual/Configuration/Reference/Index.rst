@@ -14,15 +14,14 @@ Reference
 Typoscript Setup
 ^^^^^^^^^^^^^^^^
 
-Here you find the most important settings in typoscript. Please note that the recommended way to edit these things is in constants.
+Here you find the most important settings in typoscript. Please note that the recommended way to editing is in constants.
 For all possibly settings take a look at Classes/Configuration/TypoScript/setup.txt in extension folder.
-
-plugin.tx_operations.settings
 
 
 General settings
 """"""""""""""""
 
+**plugin.tx_operations.settings**
 
 .. t3-field-list-table::
  :header-rows: 1
@@ -97,6 +96,7 @@ General settings
 Settings for list view
 """"""""""""""""""""""
 
+**plugin.tx_operations.settings**
 
 .. t3-field-list-table::
  :header-rows: 1
@@ -172,6 +172,7 @@ Settings for list view
 Settings for single view
 """"""""""""""""""""""""
 
+**plugin.tx_operations.settings**
 
 .. t3-field-list-table::
  :header-rows: 1
@@ -207,7 +208,7 @@ Settings for single view
 Settings for maps
 """""""""""""""""
 
-plugin.tx_operations.settings.map
+**plugin.tx_operations.settings.map**
 
 .. t3-field-list-table::
  :header-rows: 1
@@ -222,6 +223,14 @@ plugin.tx_operations.settings.map
 		Default:
 
 
+ - :Property:
+		apikey
+   :Type:
+		string
+   :Description:
+		Use your own api key when you need it
+   :Default:
+		
  - :Property:
 		defaultZoomSingle
    :Type:

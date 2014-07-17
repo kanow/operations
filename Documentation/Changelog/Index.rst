@@ -25,9 +25,13 @@ Changelog
  - :Version:
 		1.3.0
    :Changes:
-		Add setting in constants to use an own api kay for google maps. More infos in :ref:`Manual <users-manual>`.
-		
-		#58376 Add list view for resources and vehicles. When using your own templates please check Templates/Resources/List.html, Templates/Resources/List.html.
+		Database tables for resources renamed and other important Changes! Please read manual!
+		Use update script in ext-manager to rename database tables
+		Add setting in constants to use your own api key for google maps.
+		More infos in :ref:`Manual <users-manual>`.
+		#60380 Fixed bug with missing injectPropertyMappingConfiguration in Controller, TYPO3 6.2
+		#58376 Add list view for resources and vehicles. When using your own templates please read :ref:`Manual <users-manual>`.
+		Bugfixing: the property of images from operation types are now file reference
  - :Version:
 		1.2.0
    :Changes:
