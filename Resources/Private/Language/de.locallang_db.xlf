@@ -387,7 +387,7 @@
 			</trans-unit>
 			<trans-unit id="tsc.listImgHeightVehicle">
 				<source>Img height vehicles:Image height in list view of vehicles</source>
-				<target>Bildhöhe Fahrzeige:Bildhöhe in der Listansicht der Fahrzeuge</target>
+				<target>Bildhöhe Fahrzeuge:Bildhöhe in der Listansicht der Fahrzeuge</target>
 			</trans-unit>
 			<trans-unit id="tsc.listImgWidthResources">
 				<source>Img width resources:Image width in list view of resources</source>

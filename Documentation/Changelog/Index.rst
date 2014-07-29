@@ -23,6 +23,12 @@ Changelog
 	 	Changes:
 
  - :Version:
+		1.3.1
+   :Changes:
+		Some Bugfixes. Also in Documentation and translating.
+		#60667 Fixed bug when using pagebrowser in filter results in TYPO3 6.2
+
+ - :Version:
 		1.3.0
    :Changes:
 		Database tables for resources renamed and other important Changes! Please read manual!
