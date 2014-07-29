@@ -60,9 +60,9 @@
 								
 								'resources' => array( 
 									array(
-										'GETvar' => 'tx_operations_list[resources]',
+										'GETvar' => 'tx_operations_list[resource]',
 										'lookUpTable' => array(
-											'table' => 'tx_operations_domain_model_resources',
+											'table' => 'tx_operations_domain_model_resource',
 											'id_field' => 'uid',
 											'alias_field' => 'title',
 											'addWhereClause' => ' AND NOT deleted',
