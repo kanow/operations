@@ -23,11 +23,14 @@ Changelog
 	 	Changes:
 
  - :Version:
+		1.3.2
+   :Changes:
+		Add new icons from "`The Noun Project <http://thenounproject.com>`_" for data in backend.
+ - :Version:
 		1.3.1
    :Changes:
 		Some Bugfixes. Also in Documentation and translating.
 		#60667 Fixed bug when using pagebrowser in filter results in TYPO3 6.2
-
  - :Version:
 		1.3.0
    :Changes:

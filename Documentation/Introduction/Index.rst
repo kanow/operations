@@ -31,5 +31,3 @@ If you have helpful suggestions or ideas, feel free to write an e-mail or open a
 I think about a little list here in manual with sites that are using operation on it. You like this? Write an email with your site url and a (very) little description for what part of your site you are using operations.
 
 A link to the extension in TER (on imprint or whatever) is helpful for propagation operations.
-
-I'm searching for anybody can help me with little icons for operation data in backend. I don't have talent to make really nice icons. I'm sure you understand me when you already using operations ;-). Please write an email if you are interested.
