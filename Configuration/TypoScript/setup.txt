@@ -55,6 +55,7 @@ plugin.tx_operations {
 			overrideCenterLatList = {$plugin.tx_operations.settings.map.overrideCenterLatList}
 			overrideCenterLongList = {$plugin.tx_operations.settings.map.overrideCenterLongList}
 			overrideZoomList = {$plugin.tx_operations.settings.map.overrideZoomList}
+			styles =
 		}
 		paginate {
 			insertAbove = {$plugin.tx_operations.settings.paginate.insertAbove}

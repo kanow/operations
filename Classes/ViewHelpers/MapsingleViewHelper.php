@@ -50,6 +50,7 @@ namespace KN\Operations\ViewHelpers;
 		$description = $this->renderChildren();
 		$this->templateVariableContainer->remove($as);
 		
+		($settings['map']['styles']!='')?$mapStyles = ",\nstyles: [".$settings['map']['styles']."]\n":$mapStyles = "\n";
 		$mapOptions = "var mapOptions = {\n
     zoom:$zoom,\n
     center: Coordinates,\n
@@ -65,7 +66,8 @@ namespace KN\Operations\ViewHelpers;
 	},\n
 	  //scaleControl: true,\n
 	  streetViewControl: false,\n
-	  overviewMapControl: true\n
+	  overviewMapControl: true" . $mapStyles . "
+	  
   };\n";
 		
 		$map = "var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);";
