@@ -19,15 +19,30 @@
 											<numIndex index="1">Operation->list;Operation->show;Operation->search</numIndex>
 										</numIndex>
 
-									
-										<numIndex index="1">
+										<numIndex index="9">
 											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.vehicles</numIndex>
-											<numIndex index="1">Vehicle->list;Vehicle->show</numIndex>
+											<numIndex index="1">--div--</numIndex>
 										</numIndex>
-											
-										<numIndex index="2">
+										<numIndex index="10">
+											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.vehiclesListAction</numIndex>
+											<numIndex index="1">Vehicle->list</numIndex>
+										</numIndex>
+										<numIndex index="11">
+											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.vehiclesShowAction</numIndex>
+											<numIndex index="1">Vehicle->show</numIndex>
+										</numIndex>
+										
+										<numIndex index="19">
 											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.resources</numIndex>
-											<numIndex index="1">Resource->list;Resource->show</numIndex>
+											<numIndex index="1">--div--</numIndex>
+										</numIndex>
+										<numIndex index="20">
+											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.resourcesListAction</numIndex>
+											<numIndex index="1">Resource->list</numIndex>
+										</numIndex>
+										<numIndex index="21">
+											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.resourcesShowAction</numIndex>
+											<numIndex index="1">Resource->show</numIndex>
 										</numIndex>
 										
 									</items>

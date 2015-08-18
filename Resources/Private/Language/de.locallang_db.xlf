@@ -187,9 +187,25 @@
 				<source>Vehicles</source>
 				<target>Fahrzeuge</target>
 			</trans-unit>
+			<trans-unit id="flexform.vehiclesListAction">
+				<source>Vehicles - List view</source>
+				<target>Fahrzeuge - Listansicht</target>
+			</trans-unit>
+			<trans-unit id="flexform.vehiclesShowAction">
+				<source>Vehicles - Single view</source>
+				<target>Fahrzeuge - Einzelansicht</target>
+			</trans-unit>
 			<trans-unit id="flexform.resources">
 				<source>Resources</source>
 				<target>Hilfsmittel</target>
+			</trans-unit>
+			<trans-unit id="flexform.resourcesListAction">
+				<source>Resources - List view</source>
+				<target>Hilfsmittel - Listansicht</target>
+			</trans-unit>
+			<trans-unit id="flexform.resourcesShowAction">
+				<source>Resources - Single view</source>
+				<target>Hilfsmittel - Einzelansicht</target>
 			</trans-unit>
 			<trans-unit id="flexform.itemsPerPage">
 				<source>Items per page</source>

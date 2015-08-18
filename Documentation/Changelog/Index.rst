@@ -26,6 +26,7 @@ Changelog
 		1.3.3
    :Changes:
 		Rename constants "listImgWidthResources" to "listImgWidthResource", same for height.
+		Split actions for vehicles and resources, separate list and show action. Please change your plugin elements.
 		
  - :Version:
 		1.3.2

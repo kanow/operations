@@ -143,8 +143,20 @@
 			<trans-unit id="flexform.vehicles">
 				<source>Vehicles</source>
 			</trans-unit>
+			<trans-unit id="flexform.vehiclesListAction">
+				<source>Vehicles - List view</source>
+			</trans-unit>
+			<trans-unit id="flexform.vehiclesShowAction">
+				<source>Vehicles - Single view</source>
+			</trans-unit>
 			<trans-unit id="flexform.resources">
 				<source>Resources</source>
+			</trans-unit>
+			<trans-unit id="flexform.resourcesListAction">
+				<source>Resources - List view</source>
+			</trans-unit>
+			<trans-unit id="flexform.resourcesShowAction">
+				<source>Resources - Single view</source>
 			</trans-unit>
 			<trans-unit id="flexform.itemsPerPage">
 				<source>Items per page</source>
