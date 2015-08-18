@@ -74,14 +74,14 @@ plugin.tx_operations {
 		# cat=plugin.tx_operations/image/0250/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.increaseImage
 		increaseImage = 1
 		
-		# cat=plugin.tx_operations/image/0255/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listImgWidthVehicle
+		# cat=plugin.tx_operations/image/0255/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listImgWidthVehicle
 		listImgWidthVehicle = 320
-		# cat=plugin.tx_operations/image/0256/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listImgHeightVehicle
+		# cat=plugin.tx_operations/image/0256/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listImgHeightVehicle
 		listImgHeightVehicle = 
-		# cat=plugin.tx_operations/image/0257/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listImgWidthResources
-		listImgWidthResources = 320
-		# cat=plugin.tx_operations/image/0258/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listImgHeightResources
-		listImgHeightResources = 
+		# cat=plugin.tx_operations/image/0257/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listImgWidthResources
+		listImgWidthResource = 320
+		# cat=plugin.tx_operations/image/0258/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listImgHeightResources
+		listImgHeightResource = 
 		
 		map {
 			# cat=plugin.tx_operations/map/0260/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.apikey

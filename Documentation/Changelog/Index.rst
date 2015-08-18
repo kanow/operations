@@ -23,6 +23,11 @@ Changelog
 	 	Changes:
 
  - :Version:
+		1.3.3
+   :Changes:
+		Rename constants "listImgWidthResources" to "listImgWidthResource", same for height.
+		
+ - :Version:
 		1.3.2
    :Changes:
 		Add new icons from "`The Noun Project <http://thenounproject.com>`_" for data in backend.

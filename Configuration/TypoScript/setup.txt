@@ -37,8 +37,8 @@ plugin.tx_operations {
 		increaseImage = {$plugin.tx_operations.settings.increaseImage}
 		listImgWidthVehicle = {$plugin.tx_operations.settings.listImgWidthVehicle}
 		listImgHeightVehicle = {$plugin.tx_operations.settings.listImgHeightVehicle}
-		listImgWidthResources = {$plugin.tx_operations.settings.listImgWidthResources}
-		listImgHeightResources = {$plugin.tx_operations.settings.listImgHeightResources}
+		listImgWidthResources = {$plugin.tx_operations.settings.listImgWidthResource}
+		listImgHeightResources = {$plugin.tx_operations.settings.listImgHeightResource}
 		cropTeaser = 150
 		sortOrder = DESC
 		sortBy = begin
