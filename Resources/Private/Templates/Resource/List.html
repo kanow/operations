@@ -7,7 +7,7 @@
 		<ul class="clearfix">
 			<f:for each="{resources}" as="resource" iteration="oIterator">
 				<li class="clearfix {f:if(condition:'{oIterator.isOdd}',then:' odd')}">
-					<f:link.action action="show" arguments="{resource:resource}" class="clearfix">
+					<f:link.action action="show" pageUid="{settings.resourcePid}" arguments="{resource:resource}" class="clearfix">
 						<div class="left">{resource.title}<f:if condition="{resource.short}"><span class="short"> ({resource.short})</span></f:if></div>
 						<f:if condition="{resource.image}">
 						  <div class="imgBox"><f:image src="{resource.firstImage.uid}" treatIdAsReference="TRUE" alt="{resource.firstImage.originalResource.alternative}" width="{settings.listImgWidthResources}" height="{settings.listImgHeightResources}" /></div>
