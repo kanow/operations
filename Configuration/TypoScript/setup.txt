@@ -21,7 +21,7 @@ plugin.tx_operations {
 		#rewrittenPropertyMapper = 1
 	}
 	settings {
-		overrideFlexformSettingsIfEmpty = itemsPerPage,showImgInList,listImgWidth,listImgHeight,singleImgWidth,singleImgHeight,cropTeaser
+		overrideFlexformSettingsIfEmpty = itemsPerPage,showImgInList,listImgWidth,listImgHeight,singleImgWidth,singleImgHeight,cropTeaser,hideFilter
 		operationPid = {$plugin.tx_operations.settings.operationPid}
 		vehiclePid = {$plugin.tx_operations.settings.vehiclePid}
 		resourcePid = {$plugin.tx_operations.settings.resourcePid}
