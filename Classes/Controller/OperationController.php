@@ -34,7 +34,7 @@ namespace KN\Operations\Controller;
  */
 use KN\Operations\Domain\Model\Year;
 
-class OperationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class OperationController extends \KN\Operations\Controller\BaseController {
 
 	/**
 	 * configuration manager
@@ -128,36 +128,7 @@ class OperationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
 		$this->view->assign('operation', $operation);
 	}
 	
-	/**
-	 * Constructor
-	 */
-	protected function initializeAction(){
-		$this->overrideFlexformSettings();
-	}
 	
-	/**
-	 * overrides flexform settings with original typoscript values when 
-	 * flexform value is empty and settings key is defined in 
-	 * 'settings.overrideFlexformSettingsIfEmpty'
-	 * 
-	 * @return void
-	 */
-	public function overrideFlexformSettings() {
-		$originalSettings = $this->configurationManager->getConfiguration(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS);
-		$typoScriptSettings = $this->configurationManager->getConfiguration(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK, 'operations', 'operations_list');
-		
-		if(isset($typoScriptSettings['settings']['overrideFlexformSettingsIfEmpty'])) {
-			$overrideIfEmpty = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',', $typoScriptSettings['settings']['overrideFlexformSettingsIfEmpty'], TRUE);
-			foreach ($overrideIfEmpty as $settingToOverride) {
-				// if flexform setting is empty and value is available in TS
-				if ((!isset($originalSettings[$settingToOverride]) || empty($originalSettings[$settingToOverride]))
-						&& isset($typoScriptSettings['settings'][$settingToOverride])) {
-					$originalSettings[$settingToOverride] = $typoScriptSettings['settings'][$settingToOverride];
-				}
-			}
-			$this->settings = $originalSettings; 
-		}
-	}
 	
 	/**
 	 * Update demand with current settings, if not exists it creates one
