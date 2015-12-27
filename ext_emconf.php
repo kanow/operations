@@ -14,7 +14,7 @@ $EM_CONF[$_EXTKEY] = array (
 	'title' => 'Operations',
 	'description' => 'Manage (firefighter) operations with detailed reports, images used resources or vehicles, google map view for locations and more. This extension were build to manage firefighter operations from "Freiwillige Feuerwehr Thale". Slider and lightbox for images. Possibly to use it for other reportable events like THW and so on.',
 	'category' => 'plugin',
-	'version' => '1.3.2',
+	'version' => '1.3.4',
 	'state' => 'beta',
 	'uploadfolder' => true,
 	'createDirs' => '',
@@ -22,20 +22,19 @@ $EM_CONF[$_EXTKEY] = array (
 	'author' => 'Karsten Nowak',
 	'author_email' => 'captnnowi@gmx.de',
 	'author_company' => 'undkonsorten',
-	'constraints' => 
+	'constraints' =>
 	array (
-		'depends' => 
+		'depends' =>
 		array (
 			'extbase' => '6.0',
 			'fluid' => '6.0',
-			'typo3' => '6.1.0-6.2.99',
+			'typo3' => '6.2.0-7.6.99',
 		),
-		'conflicts' => 
+		'conflicts' =>
 		array (
 		),
-		'suggests' => 
+		'suggests' =>
 		array (
 		),
 	),
 );
-
