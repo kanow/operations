@@ -3,6 +3,9 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
+// get first main part of TYPO3 version number
+$currentTypo3Version = \KN\Operations\Utility\Div::getPartOfTypo3Version();
+
 $TCA['tx_operations_domain_model_resource'] = array(
 	'ctrl' => $TCA['tx_operations_domain_model_resource']['ctrl'],
 	'interface' => array(
@@ -126,10 +129,12 @@ $TCA['tx_operations_domain_model_resource'] = array(
 				'eval' => 'trim',
 				'wizards' => array(
 					'RTE' => array(
-						'icon' => 'wizard_rte2.gif',
+						'icon' => \KN\Operations\Utility\Div::getWizardIcon('rte',$currentTypo3Version),
 						'notNewRecords'=> 1,
 						'RTEonly' => 1,
-						'script' => 'wizard_rte.php',
+						'module' => array(
+							'name' => 'wizard_rte',
+						),
 						'title' => 'LLL:EXT:cms/locallang_ttc.xlf:bodytext.W.RTE',
 						'type' => 'script'
 					)

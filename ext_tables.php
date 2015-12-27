@@ -2,20 +2,30 @@
 if (!defined('TYPO3_MODE')) {
 	die ('Access denied.');
 }
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-	$_EXTKEY,
+	'KN.'.$_EXTKEY,
 	'List',
 	'Operations'
 );
 
 $extensionName = strtolower(\TYPO3\CMS\Core\Utility\GeneralUtility::underscoredToUpperCamelCase($_EXTKEY));
 $pluginName = strtolower('List');
-$pluginSignature = $extensionName.'_'.$pluginName; 
+$pluginSignature = $extensionName.'_'.$pluginName;
 
-$TCA['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'layout,select_key,pages'; 
+// get first main part of TYPO3 version number
+$currentTypo3Version = \KN\Operations\Utility\Div::getPartOfTypo3Version();
+
+if($currentTypo3Version < 7) {
+	$iconPath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY);
+} else {
+	$iconPath = 'EXT:' . $_EXTKEY;
+}
+
+$TCA['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'layout,select_key,pages';
 $TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:'.$_EXTKEY . '/Configuration/FlexForms/flexform_list.xml'); 
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:'.$_EXTKEY . '/Configuration/FlexForms/flexform_list.xml');
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Operations');
 
@@ -45,7 +55,7 @@ $TCA['tx_operations_domain_model_operation'] = array(
 		),
 		'searchFields' => 'number,title,location,begin,end,report,longitude,latitude,zoom,image,type,assistance,vehicles,resources,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Operation.php',
-		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_operations_domain_model_operation.png'
+		'iconfile' => $iconPath.'/Resources/Public/Icons/tx_operations_domain_model_operation.png'
 	),
 );
 
@@ -74,7 +84,7 @@ $TCA['tx_operations_domain_model_assistance'] = array(
 		),
 		'searchFields' => 'title,description,link,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Assistance.php',
-		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_operations_domain_model_assistance.png'
+		'iconfile' => $iconPath.'/Resources/Public/Icons/tx_operations_domain_model_assistance.png'
 	),
 );
 
@@ -104,7 +114,7 @@ $TCA['tx_operations_domain_model_vehicle'] = array(
 		),
 		'searchFields' => 'title,short,description,image,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Vehicle.php',
-		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_operations_domain_model_vehicle.png'
+		'iconfile' => $iconPath.'/Resources/Public/Icons/tx_operations_domain_model_vehicle.png'
 	),
 );
 
@@ -133,7 +143,7 @@ $TCA['tx_operations_domain_model_resource'] = array(
 		),
 		'searchFields' => 'title,short,description,image,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Resource.php',
-		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_operations_domain_model_resource.png'
+		'iconfile' => $iconPath.'/Resources/Public/Icons/tx_operations_domain_model_resource.png'
 	),
 );
 
@@ -162,12 +172,13 @@ $TCA['tx_operations_domain_model_type'] = array(
 		),
 		'searchFields' => 'title,image,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Type.php',
-		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_operations_domain_model_type.png'
+		'iconfile' => $iconPath.'/Resources/Public/Icons/tx_operations_domain_model_type.png'
 	),
 );
 
-// TYPO3 FAL Bugfix
-TYPO3\CMS\Core\Utility\GeneralUtility::loadTCA('sys_file_reference');
+if($currentTypo3Version < 7) {
+	TYPO3\CMS\Core\Utility\GeneralUtility::loadTCA('sys_file_reference');
+}
 $TCA['sys_file_reference']['columns']['uid_local']['config']['foreign_table'] = 'sys_file';
 
 ?>

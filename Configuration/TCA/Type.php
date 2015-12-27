@@ -50,6 +50,7 @@ $TCA['tx_operations_domain_model_type'] = array(
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.versionLabel',
 			'config' => array(
 				'type' => 'input',
+
 				'size' => 30,
 				'max' => 255,
 			)
@@ -102,23 +103,6 @@ $TCA['tx_operations_domain_model_type'] = array(
 				'eval' => 'trim,required'
 			),
 		),
-		// ohne FAL
-		/*
-		'image' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_type.image',
-			'config' => array(
-				'type' => 'group',
-				'internal_type' => 'file',
-				'uploadfolder' => 'uploads/tx_operations',
-				'show_thumbs' => 1,
-				'size' => 5,
-				'allowed' => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
-				'disallowed' => '',
-			),
-		),
-		*/
-		// mit FAL
 		'image' => array(
 				'exclude' => 1,
 				'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_type.image',

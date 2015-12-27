@@ -3,6 +3,9 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
+// get first main part of TYPO3 version number
+$currentTypo3Version = \KN\Operations\Utility\Div::getPartOfTypo3Version();
+
 $TCA['tx_operations_domain_model_assistance'] = array(
 	'ctrl' => $TCA['tx_operations_domain_model_assistance']['ctrl'],
 	'interface' => array(
@@ -121,9 +124,14 @@ $TCA['tx_operations_domain_model_assistance'] = array(
 				'eval' => 'trim',
 				'wizards' => array(
 					'link' => array(
-						'icon' => 'link_popup.gif',
+						'icon' => \KN\Operations\Utility\Div::getWizardIcon('link',$currentTypo3Version),
 						'JSopenParams' => 'height=300,width=500,status=0,menubar=0,scrollbars=1',
-						'script' => 'browse_links.php?mode=wizard',
+						'module' => array(
+							'name' => 'wizard_element_browser',
+							'urlParameters' => array(
+								'mode' => 'wizard',
+							)
+						),
 						'title' => 'LLL:EXT:cms/locallang_ttc.xml:header_link_formlabel',
 						'type' => 'popup',
 					),

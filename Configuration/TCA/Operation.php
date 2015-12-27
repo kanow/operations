@@ -3,6 +3,15 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
+// get first main part of TYPO3 version number
+$currentTypo3Version = \KN\Operations\Utility\Div::getPartOfTypo3Version();
+
+// if($currentTypo3Version < 7) {
+// 	$wizardIconPath = '';
+// } else {
+// 	$wizardIconPath = 'EXT:backend/Resources/Public/Images/FormFieldWizard/wizard_';
+// }
+
 $TCA['tx_operations_domain_model_operation'] = array(
 	'ctrl' => $TCA['tx_operations_domain_model_operation']['ctrl'],
 	'interface' => array(
@@ -194,10 +203,12 @@ $TCA['tx_operations_domain_model_operation'] = array(
 				'eval' => 'trim',
 				'wizards' => array(
 					'RTE' => array(
-						'icon' => 'wizard_rte2.gif',
+						'icon' => \KN\Operations\Utility\Div::getWizardIcon('rte',$currentTypo3Version),
 						'notNewRecords'=> 1,
 						'RTEonly' => 1,
-						'script' => 'wizard_rte.php',
+						'module' => array(
+							'name' => 'wizard_rte'
+						),
 						'title' => 'LLL:EXT:cms/locallang_ttc.xlf:bodytext.W.RTE',
 						'type' => 'script'
 					)
@@ -232,8 +243,6 @@ $TCA['tx_operations_domain_model_operation'] = array(
 				'eval' => 'int'
 			),
 		),
-
-		// mit FAL
 		'image' => array(
 				'exclude' => 1,
 				'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.image',
@@ -258,13 +267,16 @@ $TCA['tx_operations_domain_model_operation'] = array(
 				'foreign_table' => 'tx_operations_domain_model_type',
 				'MM' => 'tx_operations_operation_type_mm',
 				'size' => 1,
-				'autoSizeMax' => 30,
+				'autoSizeMax' => 40,
+				'minItems' => 0,
 				'maxitems' => 1,
 				'multiple' => 0,
 				'wizards' => array(
 					'_PADDING' => 1,
 					'_VERTICAL' => 1,
 				),
+				'renderType' => 'selectSingle',
+				'default' => 'bitte wählen'
 			),
 		),
 		'assistance' => array(
@@ -275,30 +287,36 @@ $TCA['tx_operations_domain_model_operation'] = array(
 				'foreign_table' => 'tx_operations_domain_model_assistance',
 				'MM' => 'tx_operations_operation_assistance_mm',
 				'size' => 10,
-				'autoSizeMax' => 30,
+				'autoSizeMax' => 40,
+				'minitems' => 0,
 				'maxitems' => 9999,
 				'multiple' => 0,
+				'renderType' => 'selectMultipleSideBySide',
 				'wizards' => array(
 					'_PADDING' => 1,
 					'_VERTICAL' => 1,
 					'edit' => array(
 						'type' => 'popup',
 						'title' => 'Edit',
-						'script' => 'wizard_edit.php',
-						'icon' => 'edit2.gif',
+						'module' => array(
+							'name' => 'wizard_edit'
+						),
+						'icon' => \KN\Operations\Utility\Div::getWizardIcon('edit',$currentTypo3Version),
 						'popup_onlyOpenIfSelected' => 1,
 						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
 						),
 					'add' => Array(
 						'type' => 'script',
 						'title' => 'Create new',
-						'icon' => 'add.gif',
+						'icon' => \KN\Operations\Utility\Div::getWizardIcon('add',$currentTypo3Version),
 						'params' => array(
 							'table' => 'tx_operations_domain_model_assistance',
 							'pid' => '###CURRENT_PID###',
 							'setValue' => 'prepend'
 							),
-						'script' => 'wizard_add.php',
+						'module' => array(
+							'name' => 'wizard_add'
+						),
 					),
 				),
 			),
@@ -311,30 +329,36 @@ $TCA['tx_operations_domain_model_operation'] = array(
 				'foreign_table' => 'tx_operations_domain_model_vehicle',
 				'MM' => 'tx_operations_operation_vehicle_mm',
 				'size' => 10,
-				'autoSizeMax' => 30,
+				'autoSizeMax' => 40,
+				'minitems' => 0,
 				'maxitems' => 9999,
 				'multiple' => 0,
+				'renderType' => 'selectMultipleSideBySide',
 				'wizards' => array(
 					'_PADDING' => 1,
 					'_VERTICAL' => 1,
 					'edit' => array(
 						'type' => 'popup',
 						'title' => 'Edit',
-						'script' => 'wizard_edit.php',
-						'icon' => 'edit2.gif',
+						'module' => array(
+							'name' => 'wizard_edit'
+						),
+						'icon' => \KN\Operations\Utility\Div::getWizardIcon('edit',$currentTypo3Version),
 						'popup_onlyOpenIfSelected' => 1,
 						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
 						),
 					'add' => Array(
 						'type' => 'script',
 						'title' => 'Create new',
-						'icon' => 'add.gif',
+						'icon' => \KN\Operations\Utility\Div::getWizardIcon('add',$currentTypo3Version),
 						'params' => array(
 							'table' => 'tx_operations_domain_model_vehicle',
 							'pid' => '###CURRENT_PID###',
 							'setValue' => 'prepend'
 							),
-						'script' => 'wizard_add.php',
+						'module' => array(
+							'name' => 'wizard_add'
+						),
 					),
 				),
 			),
@@ -347,30 +371,36 @@ $TCA['tx_operations_domain_model_operation'] = array(
 				'foreign_table' => 'tx_operations_domain_model_resource',
 				'MM' => 'tx_operations_operation_resource_mm',
 				'size' => 10,
-				'autoSizeMax' => 30,
+				'autoSizeMax' => 40,
+				'minitems' => 0,
 				'maxitems' => 9999,
 				'multiple' => 0,
+				'renderType' => 'selectMultipleSideBySide',
 				'wizards' => array(
 					'_PADDING' => 1,
 					'_VERTICAL' => 1,
 					'edit' => array(
 						'type' => 'popup',
 						'title' => 'Edit',
-						'script' => 'wizard_edit.php',
-						'icon' => 'edit2.gif',
+						'module' => array(
+							'name' => 'wizard_edit'
+						),
+						'icon' => \KN\Operations\Utility\Div::getWizardIcon('edit',$currentTypo3Version),
 						'popup_onlyOpenIfSelected' => 1,
 						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
 						),
 					'add' => Array(
 						'type' => 'script',
 						'title' => 'Create new',
-						'icon' => 'add.gif',
+						'icon' => \KN\Operations\Utility\Div::getWizardIcon('add',$currentTypo3Version),
 						'params' => array(
 							'table' => 'tx_operations_domain_model_resource',
 							'pid' => '###CURRENT_PID###',
 							'setValue' => 'prepend'
 							),
-						'script' => 'wizard_add.php',
+						'module' => array(
+							'name' => 'wizard_add'
+						),
 					),
 				),
 			),
