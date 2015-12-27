@@ -21,13 +21,15 @@ Changelog
 		Version:
    :Changes:
 	 	Changes:
-
+ - :Version:
+ 		1.3.4
+    :Changes:
+ 		Bugfixing release and compatibility for TYPO3 7.
  - :Version:
 		1.3.3
    :Changes:
 		Rename constants "listImgWidthResources" to "listImgWidthResource", same for height.
 		Split actions for vehicles and resources, separate list and show action. Please change your plugin elements.
-		
  - :Version:
 		1.3.2
    :Changes:
@@ -55,21 +57,21 @@ Changelog
 		1.1.0
    :Changes:
 		Change name of ts-constant and ts-setup from "overrideCenterLangList" to "overrideCenterLongList". Please check your ts after update.
-		
+
 		#57792 correct counted result for list view with map
-		
+
 		#57967 Add note in documentation because of missing list view of vehicles and resources
-		
+
 		#58037 add settings to override centering and zoom for map list view
-		
+
 		#58036 add link wizard to assistance link field and viewhelper for typolink rendering
-		
+
 		#57969 add RTE for description field in vehicles and resources
-		
+
 		#57968 spelling error in german translation
-		
+
 		#57966 change title for map list view
-		
+
 		#57965 every time "no result" at bottom of list view
 
  - :Version:
@@ -94,11 +96,11 @@ Changelog
 		Javascript and CSS for using lightbox and slider without any own configuration. Many values are now customizable in constants.
  - :Version:
 		1.0.1
-		
+
    :Changes:
 		Bugfixing in flexform translations
 
  - :Version:
-		1.0.0	
+		1.0.0
    :Changes:
 		Initial upload
