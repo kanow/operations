@@ -110,14 +110,17 @@
 			<trans-unit id="tx_operations_domain_model_type.image">
 				<source>Image</source>
 			</trans-unit>
-			
+
 			<trans-unit id="flexform.sheet.general">
 				<source>Options</source>
 			</trans-unit>
 			<trans-unit id="flexform.sheet.img">
 				<source>Image options</source>
 			</trans-unit>
-			
+			<trans-unit id="flexform.sheet.template">
+				<source>Template options</source>
+			</trans-unit>
+
 			<trans-unit id="flexform.showImgInList">
 				<source>Thumbnail in list view</source>
 			</trans-unit>
@@ -133,7 +136,7 @@
 			<trans-unit id="flexform.singleImgHeight">
 				<source>Image height in single view</source>
 			</trans-unit>
-			
+
 			<trans-unit id="flexform.controller">
 				<source>Show:</source>
 			</trans-unit>
@@ -179,7 +182,10 @@
 			<trans-unit id="flexform.showMap">
 				<source>Show list of operations on a map</source>
 			</trans-unit>
-			
+			<trans-unit id="flexform.templateLayout">
+				<source>Select Template Layout (set items in TS Config)</source>
+			</trans-unit>
+
 			<trans-unit id="tca.paletteTitle.time">
 				<source>Operation times</source>
 			</trans-unit>
@@ -207,7 +213,7 @@
 			<trans-unit id="tca.divTitle.img">
 				<source>Images</source>
 			</trans-unit>
-			
+
 			<trans-unit id="tsc.subcategoryLabel.template">
 				<source>Resources (Template files, CSS, JS)</source>
 			</trans-unit>
@@ -226,7 +232,7 @@
 			<trans-unit id="tsc.subcategoryLabel.map">
 				<source>Settings for map</source>
 			</trans-unit>
-			
+
 			<trans-unit id="tsc.templateRootPath">
 				<source>Templates:Path to template root (FE)</source>
 			</trans-unit>
@@ -239,7 +245,7 @@
 			<trans-unit id="tsc.css">
 				<source>Default CSS:Default CSS file, change path to use your own CSS (FE)</source>
 			</trans-unit>
-			
+
 			<trans-unit id="tsc.flexsliderCss">
 				<source>Flexslider CSS:Default CSS from flexslider, change path to use your own CSS</source>
 			</trans-unit>
@@ -261,7 +267,7 @@
 			<trans-unit id="tsc.lightboxJs">
 				<source>Run lightbox JS:Default JS code to run the lightbox.</source>
 			</trans-unit>
-			
+
 			<trans-unit id="tsc.storagePid">
 				<source>Storage Pid:Default storage PID for all data of operations</source>
 			</trans-unit>
@@ -313,14 +319,14 @@
 			<trans-unit id="tsc.listImgHeightResources">
 				<source>Img height resources:Image height in list view of resources</source>
 			</trans-unit>
-			
+
 			<trans-unit id="tsc.itemsPerPage">
 				<source>Items per page:Items per page in listview</source>
 			</trans-unit>
 			<trans-unit id="tsc.limit">
 				<source>Limit:Limit the result in list view</source>
 			</trans-unit>
-			
+
 			<trans-unit id="tsc.insertAbove">
 				<source>Pagination above:Show pagination above the list</source>
 			</trans-unit>
@@ -342,7 +348,7 @@
 			<trans-unit id="tsc.prevNextHeaderTags">
 				<source>Show prev/next:Show prev/next in pagination</source>
 			</trans-unit>
-			
+
 			<trans-unit id="tsc.apikey">
 				<source>GoogleMaps Apikey:Use your own googlemaps apikey</source>
 			</trans-unit>
@@ -358,8 +364,8 @@
 			<trans-unit id="tsc.overrideZoomList">
 				<source>Override zoom list-map:Override automatic zoom of the map in list view</source>
 			</trans-unit>
-			
-			
+
+
 		</body>
 	</file>
 </xliff>

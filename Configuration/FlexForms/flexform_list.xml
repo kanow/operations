@@ -31,7 +31,7 @@
 											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.vehiclesShowAction</numIndex>
 											<numIndex index="1">Vehicle->show</numIndex>
 										</numIndex>
-										
+
 										<numIndex index="19">
 											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.resources</numIndex>
 											<numIndex index="1">--div--</numIndex>
@@ -44,13 +44,13 @@
 											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.resourcesShowAction</numIndex>
 											<numIndex index="1">Resource->show</numIndex>
 										</numIndex>
-										
+
 									</items>
 								</config>
 							</TCEforms>
 					</switchableControllerActions>
-					
-				
+
+
 					<settings.storageFolder>
 							<TCEforms>
 								<exclude>1</exclude>
@@ -71,7 +71,7 @@
 								</config>
 							</TCEforms>
 					</settings.storageFolder>
-					
+
 					<settings.itemsPerPage>
 				        <TCEforms>
 									<exclude>1</exclude>
@@ -81,11 +81,11 @@
 				          <type>input</type>
 				          <size>5</size>
 				          <default></default>
-				          <eval>trim,num</eval> 
+				          <eval>trim,num</eval>
 				         </config>
 			        </TCEforms>
 		      	</settings.itemsPerPage>
-					
+
  				<settings.cropTeaser>
 			        <TCEforms>
 						<exclude>1</exclude>
@@ -95,11 +95,11 @@
 			          <type>input</type>
 			          <size>5</size>
 			          <default></default>
-			          <eval>trim,num</eval> 
+			          <eval>trim,num</eval>
 			         </config>
 			        </TCEforms>
 	       	</settings.cropTeaser>
-					 
+
 	 				<settings.hidePagination>
 	 			        <TCEforms>
 							<exclude>1</exclude>
@@ -110,7 +110,7 @@
 	 			         </config>
 						</TCEforms>
 	 				</settings.hidePagination>
-					
+
 	 				<settings.hideFilter>
 	 			        <TCEforms>
 							<exclude>1</exclude>
@@ -121,7 +121,7 @@
 		 			        </config>
 						</TCEforms>
 	 				</settings.hideFilter>
-					
+
 	 				<settings.showMap>
 	 			        <TCEforms>
 							<exclude>1</exclude>
@@ -141,10 +141,10 @@
         <TCEforms>
           <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.img</sheetTitle>
         </TCEforms>
-				
+
         <type>array</type>
         <el>
-					
+
 	 				<settings.showImgInList>
 	 			        <TCEforms>
 						 <exclude>1</exclude>
@@ -154,7 +154,7 @@
 	 			         </config>
 							 	</TCEforms>
 	 				</settings.showImgInList>
-					
+
 					<settings.listImgWidth>
 				        <TCEforms>
 									<exclude>1</exclude>
@@ -163,11 +163,11 @@
 				          <type>input</type>
 				          <size>5</size>
 				          <default></default>
-				          <eval>trim,alphanum</eval> 
+				          <eval>trim,alphanum</eval>
 				         </config>
 				        </TCEforms>
 			       </settings.listImgWidth>
-					 
+
 	 					<settings.listImgHeight>
 			        <TCEforms>
 								<exclude>1</exclude>
@@ -176,11 +176,11 @@
 			          <type>input</type>
 			          <size>5</size>
 			          <default></default>
-			          <eval>trim,alphanum</eval> 
+			          <eval>trim,alphanum</eval>
 			         </config>
 			        </TCEforms>
 		       </settings.listImgHeight>
-					 
+
  					<settings.singleImgWidth>
  				        <TCEforms>
 									<exclude>1</exclude>
@@ -189,11 +189,11 @@
  				          <type>input</type>
  				          <size>5</size>
  				          <default></default>
- 				          <eval>trim,alphanum</eval> 
+ 				          <eval>trim,alphanum</eval>
  				         </config>
  				        </TCEforms>
  			       </settings.singleImgWidth>
-					 
+
  	 					<settings.singleImgHeight>
  			        <TCEforms>
 								<exclude>1</exclude>
@@ -202,7 +202,7 @@
  			          <type>input</type>
  			          <size>5</size>
  			          <default></default>
- 			          <eval>trim,alphanum</eval> 
+ 			          <eval>trim,alphanum</eval>
  			         </config>
  			        </TCEforms>
  		       </settings.singleImgHeight>
@@ -210,5 +210,30 @@
         </el>
       </ROOT>
     </sIMG>
+    <sTemplate>
+      <ROOT>
+        <TCEforms>
+          <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.template</sheetTitle>
+        </TCEforms>
+        <type>array</type>
+        <el>
+          <settings.templateLayout>
+    				<TCEforms>
+    					<label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.templateLayout</label>
+    					<config>
+    						<type>select</type>
+    						<itemsProcFunc>KN\Operations\Hooks\ItemsProcFunc->user_templateLayout</itemsProcFunc>
+    						<items>
+    							<numIndex index="0" type="array">
+    								<numIndex index="0"></numIndex>
+    								<numIndex index="1"></numIndex>
+    							</numIndex>
+    						</items>
+    					</config>
+    				</TCEforms>
+    		  </settings.templateLayout>
+        </el>
+      </ROOT>
+    </sTemplate>
   </sheets>
 </T3DataStructure>
