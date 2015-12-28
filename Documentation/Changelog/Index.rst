@@ -12,8 +12,6 @@ Changelog
 
 
 
-
-
 .. t3-field-list-table::
  :header-rows: 1
 
@@ -21,10 +19,11 @@ Changelog
 		Version:
    :Changes:
 	 	Changes:
+
  - :Version:
- 		1.3.4
-    :Changes:
- 		Bugfixing release and compatibility for TYPO3 7.
+		1.3.4
+   :Changes:
+		Bugfixing release and compatibility for TYPO3 7.
  - :Version:
 		1.3.3
    :Changes:
