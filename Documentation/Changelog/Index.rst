@@ -18,8 +18,13 @@ Changelog
  - :Version:
 		Version:
    :Changes:
-	 	Changes:
+		Changes:
 
+ - :Version:
+		1.3.5
+  :Changes:
+		Bugfix and update extension manual.
+		New setting in plugin for template layout, adjustable by page ts config.
  - :Version:
 		1.3.4
    :Changes:
