@@ -18,7 +18,7 @@ operations
 		operations
 
 	:Version:
-		1.3.2
+		1.3.4
 
 	:Language:
 		en
@@ -52,7 +52,7 @@ operations
 	For bugs or ideas to this extension look at `forge.typo3.org <http://forge.typo3.org/projects/extension-operations>`_.
 
 	Big thanks goes to `undkonsorten - Die Berliner Internetagentur <http://www.undkonsorten.com>`_ for helping hands and answers on my questions.
-	
+
 	Icons for data in backend are from `The Noun Project <http://thenounproject.com>`_.
 	- Icon for operation is designed by `Julián Humberto Corrales <http://www.thenounproject.com/jcorralesv>`_
 	- Icon for resource is designed by `Antonio Vicién Faure <http://www.thenounproject.com/antoniopolonio>`_
@@ -60,7 +60,7 @@ operations
 	- Icon for assistance is designed by `James Keuning <http://www.thenounproject.com/jmkeuning>`_
 	- Icon for operation type is designed by `Alan Hussey <http://www.thenounproject.com/alanhussey>`_
 
-	Please note that this documentation is still in development. I'm verry happy about information of founded errors and try to fix it. 
+	Please note that this documentation is still in development. I'm verry happy about information of founded errors and try to fix it.
 
 
 	**Table of Contents**
