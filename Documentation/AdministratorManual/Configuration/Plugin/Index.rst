@@ -24,7 +24,7 @@ Tab "Options"
  :header-rows: 1
 
  - :Property:
-		Property:		
+		Property:
    :View:
 		View:
    :Description:
@@ -75,7 +75,7 @@ Tab "Options"
    :View:
 		Operations
    :Description:
-		Hide the pagination and show the whole in one list. Default Limit for whole list is 200. 
+		Hide the pagination and show the whole in one list. Default Limit for whole list is 200.
    :Key:
 		settings.hidePagination
  - :Property:
@@ -106,17 +106,17 @@ Tab "Image options"
 
  - :Property:
 					Property:
-					
+
    :View:
 	 				View:
-					
+
    :Description:
 					Description:
 
    :Key:
 					Key:
 
-		
+
  - :Property:
 					Thumbnail in list view
 
@@ -129,8 +129,8 @@ Tab "Image options"
    :Key:
 					settings.showImgInList
 
-					
-					
+
+
  - :Property:
 					Image dimension in list/single view
 
@@ -146,4 +146,42 @@ Tab "Image options"
 					settings.singleImgWidth
 					settings.singleImgHeight
 
- 
+
+Tab "Template Options"
+""""""""""""""""""""""
+
+
+.. t3-field-list-table::
+ :header-rows: 1
+
+ - :Property:
+					Property:
+
+   :View:
+	 				View:
+
+   :Description:
+					Description:
+
+   :Key:
+					Key:
+
+
+ - :Property:
+					Template layout selector
+
+   :View:
+					All
+
+   :Description:
+          Set items in Page TS-Config before using
+
+          ::
+
+              tx_operations.templateLayouts {
+                  key = value
+              }
+
+
+   :Key:
+					settings.templateLayout
