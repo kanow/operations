@@ -183,7 +183,7 @@
 				<source>Show list of operations on a map</source>
 			</trans-unit>
 			<trans-unit id="flexform.templateLayout">
-				<source>Select Template Layout (set items in TS Config)</source>
+				<source>Select Template Layout (set items in Page TS Config before using)</source>
 			</trans-unit>
 
 			<trans-unit id="tca.paletteTitle.time">

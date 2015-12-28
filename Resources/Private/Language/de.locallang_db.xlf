@@ -144,7 +144,7 @@
 				<source>Image</source>
 				<target>Bild</target>
 			</trans-unit>
-			
+
 			<trans-unit id="flexform.sheet.general">
 				<source>Options</source>
 				<target>Einstellungen</target>
@@ -153,7 +153,11 @@
 				<source>Image options</source>
 				<target>Bildeinstellungen</target>
 			</trans-unit>
-			
+			<trans-unit id="flexform.sheet.template">
+				<source>Template options</source>
+				<target>Template-Einstellungen</target>
+			</trans-unit>
+
 			<trans-unit id="flexform.showImgInList">
 				<source>Thumbnail in list view</source>
 				<target>Vorschaubild in der Listansicht</target>
@@ -174,7 +178,7 @@
 				<source>Image height in single view</source>
 				<target>Bildhöhe in der Detailansicht</target>
 			</trans-unit>
-			
+
 			<trans-unit id="flexform.controller">
 				<source>Show:</source>
 				<target>Anzeigen von:</target>
@@ -235,7 +239,11 @@
 				<source>Show list of operations on a map</source>
 				<target>Zeige Liste der Einsätze auf einer Karte</target>
 			</trans-unit>
-			
+			<trans-unit id="flexform.templateLayout">
+				<source>Select Template Layout (set items in Page TS Config before using)</source>
+				<target>Template Layout auswählen (Einträge vorher im Page TS Config setzen)</target>
+			</trans-unit>
+
 			<trans-unit id="tca.paletteTitle.time">
 				<source>Operation times</source>
 				<target>Zeiten</target>
@@ -272,7 +280,7 @@
 				<source>Images</source>
 				<target>Bilder</target>
 			</trans-unit>
-			
+
 			<trans-unit id="tsc.subcategoryLabel.template">
 				<source>Resources (Template files, CSS, JS)</source>
 				<target>Dateien (Templatedateien, CSS, JS)</target>
@@ -297,7 +305,7 @@
 				<source>Settings for map</source>
 				<target>Karteneinstellungen</target>
 			</trans-unit>
-			
+
 			<trans-unit id="tsc.templateRootPath">
 				<source>Templates:Path to template root (FE)</source>
 				<target>Templates:Pfad zum Templateordner</target>
@@ -314,7 +322,7 @@
 				<source>Default CSS:Default CSS file, change path to use your own CSS (FE)</source>
 				<target>Standard CSS:Pfad zur Standard CSS-Datei der Extension, für eigenes CSS den Pfad ändern oder löschen</target>
 			</trans-unit>
-			
+
 			<trans-unit id="tsc.flexsliderCss">
 				<source>Flexslider CSS:Default CSS from flexslider, change path to use your own CSS</source>
 				<target>Flexslider CSS:Standard CSS vom Flexslider, für eigenes CSS den Pfad ändern oder löschen</target>
@@ -343,8 +351,8 @@
 				<source>Run lightbox JS:Default JS code to run the lightbox.</source>
 				<target>Lightbox JS aufrufen:Standard JS-Code um die Lightbox aufzurufen. Ändern oder löschen um eigene JS Datei zu verwenden.</target>
 			</trans-unit>
-			
-			
+
+
 			<trans-unit id="tsc.storagePid">
 				<source>Storage Pid:Default storage PID for all data of operations</source>
 				<target>Seite mit Einsatzdaten:Sysfolder in welchem die Einsatzdaten liegen (inkl. Fahrzeuge, Hilfsmittel etc.)</target>
@@ -413,7 +421,7 @@
 				<source>Img height resources:Image height in list view of resources</source>
 				<target>Bildhöhe Hilfsmittel:Bildhöhe in der Listansicht der Hilfsmittel</target>
 			</trans-unit>
-			
+
 			<trans-unit id="tsc.itemsPerPage">
 				<source>Items per page:Items per page in listview</source>
 				<target>Datensätze pro Seite:Datensätze pro Seite in der Listenansicht</target>
@@ -422,7 +430,7 @@
 				<source>Limit:Limit the result in list view</source>
 				<target>Max. Anzahl an Datensätzen:Maximale Anzahl der Ergebnisse in der Listenansicht</target>
 			</trans-unit>
-			
+
 			<trans-unit id="tsc.insertAbove">
 				<source>Pagination above:Show pagination above the list</source>
 				<target>Pagebrowser oberhalb:Pagebrowser oberhalb der Listenansicht anzeigen</target>
@@ -451,7 +459,7 @@
 				<source>Show prev/next:Show prev/next in pagination</source>
 				<target>Zeige vor/zurück Buttons im Pagebrowser</target>
 			</trans-unit>
-			
+
 			<trans-unit id="tsc.apikey">
 				<source>GoogleMaps Apikey:Use your own googlemaps apikey.</source>
 				<target>GoogleMaps Apikey:Eigenen Apikey für GoogleMaps verwenden.</target>
@@ -472,9 +480,9 @@
 				<source>Override zoom list-map:Override automatic zoom of the map in list view</source>
 				<target>Überschreibe Zoom Listen-Karte:Überschreibe automatischen Zoom der Karte in der Listenansicht</target>
 			</trans-unit>
-			
-			
-	
+
+
+
 		</body>
 	</file>
 </xliff>
