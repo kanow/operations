@@ -58,7 +58,7 @@
 								// page uid for single view vehicle
 				        '43' => 'vehicle',
 								
-								'resources' => array( 
+								'resource' => array( 
 									array(
 										'GETvar' => 'tx_operations_list[resource]',
 										'lookUpTable' => array(
@@ -82,7 +82,7 @@
 										'noMatch' => 'bypass'
 									),
 								),
-								// page uid for single view resources
-				        '44' => 'resources',
+								// page uid for single view resource
+				        '44' => 'resource',
 
 				),
