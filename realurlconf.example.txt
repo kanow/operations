@@ -1,6 +1,6 @@
         'fixedPostVars' => array(
 							
-			        'operations' => array( 
+			        'operation' => array( 
 				         	array(
 										'GETvar' => 'tx_operations_list[controller]',
 											'noMatch' => 'bypass',
@@ -29,7 +29,7 @@
 										),
 			          ),
 								//page uid for singleview operations
-								'15' => 'operations',
+								'15' => 'operation',
 								
 								'vehicle' => array( 
 									array(
