@@ -20,6 +20,8 @@ $currentTypo3Version = \KN\Operations\Utility\Div::getPartOfTypo3Version();
 
 // old iconfile
 $iconPath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY);
+
+if($currentTypo3Version > 6) {
 // new icon registery in TYPO3 7.6
 $iconRegistry = GeneralCoreUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
 // register icon for operation
@@ -52,7 +54,7 @@ $iconRegistry->registerIcon(
 	 \TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
 	 ['source' => 'EXT:operations/Resources/Public/Icons/tx_operations_domain_model_type.png']
 );
-
+}
 
 // if($currentTypo3Version < 7) {
 // 	$iconPath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY);
