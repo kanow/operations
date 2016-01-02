@@ -114,12 +114,11 @@ $TCA['tx_operations_domain_model_operation'] = array(
 		),
 		'searchFields' => 'number,title,location,begin,end,report,longitude,latitude,zoom,image,type,assistance,vehicles,resources,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Operation.php',
+		'iconfile' => $iconPath . '/Resources/Public/Icons/tx_operations_domain_model_operation.png',
 		//'typeicon_classes' => array(
 		//	'default' => 'ext-operations-operation',
 		//),
 		'typeicon_classes' => \KN\Operations\Utility\Div::getTypeIconClasses('ext-operations-operation'),
-		'iconfile' => $iconPath . '/Resources/Public/Icons/tx_operations_domain_model_operation.png',
-		
 	),
 );
 
@@ -149,9 +148,10 @@ $TCA['tx_operations_domain_model_assistance'] = array(
 		'searchFields' => 'title,description,link,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Assistance.php',
 		'iconfile' => $iconPath . '/Resources/Public/Icons/tx_operations_domain_model_assistance.png',
-		'typeicon_classes' => array(
-			'default' => 'ext-operations-assistance'
-		)
+		// 'typeicon_classes' => array(
+		// 	'default' => 'ext-operations-assistance'
+		// )
+		'typeicon_classes' => \KN\Operations\Utility\Div::getTypeIconClasses('ext-operations-assistance')
 	),
 );
 
@@ -182,9 +182,10 @@ $TCA['tx_operations_domain_model_vehicle'] = array(
 		'searchFields' => 'title,short,description,image,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Vehicle.php',
 		'iconfile' => $iconPath . '/Resources/Public/Icons/tx_operations_domain_model_vehicle.png',
-		'typeicon_classes' => array(
-			'default' => 'ext-operations-vehicle'
-		)
+		// 'typeicon_classes' => array(
+		// 	'default' => 'ext-operations-vehicle'
+		// )
+		'typeicon_classes' => \KN\Operations\Utility\Div::getTypeIconClasses('ext-operations-vehicle')
 	),
 );
 
@@ -214,9 +215,10 @@ $TCA['tx_operations_domain_model_resource'] = array(
 		'searchFields' => 'title,short,description,image,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Resource.php',
 		'iconfile' => $iconPath . '/Resources/Public/Icons/tx_operations_domain_model_resource.png',
-		'typeicon_classes' => array(
-			'default' => 'ext-operations-resource'
-		)
+		// 'typeicon_classes' => array(
+		// 	'default' => 'ext-operations-resource'
+		// )
+		'typeicon_classes' => \KN\Operations\Utility\Div::getTypeIconClasses('ext-operations-resource')
 	),
 );
 
@@ -246,9 +248,10 @@ $TCA['tx_operations_domain_model_type'] = array(
 		'searchFields' => 'title,image,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Type.php',
 		'iconfile' => $iconPath . '/Resources/Public/Icons/tx_operations_domain_model_type.png',
-		'typeicon_classes' => array(
-			'default' => 'ext-operations-type'
-		)
+		// 'typeicon_classes' => array(
+		// 	'default' => 'ext-operations-type'
+		// )
+		'typeicon_classes' => \KN\Operations\Utility\Div::getTypeIconClasses('ext-operations-type')
 	),
 );
 

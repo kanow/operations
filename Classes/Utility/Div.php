@@ -35,8 +35,6 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
  */
 class Div {
 
-
-
   /**
   * get TYPO3 version
 	* @param string $part part of array what is returned
