@@ -6,12 +6,6 @@ if (!defined ('TYPO3_MODE')) {
 // get first main part of TYPO3 version number
 $currentTypo3Version = \KN\Operations\Utility\Div::getPartOfTypo3Version();
 
-// if($currentTypo3Version < 7) {
-// 	$wizardIconPath = '';
-// } else {
-// 	$wizardIconPath = 'EXT:backend/Resources/Public/Images/FormFieldWizard/wizard_';
-// }
-
 $TCA['tx_operations_domain_model_operation'] = array(
 	'ctrl' => $TCA['tx_operations_domain_model_operation']['ctrl'],
 	'interface' => array(
