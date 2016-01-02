@@ -36,7 +36,8 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 class Div {
 
   /**
-  * get TYPO3 version
+  * get part of TYPO3 version
+	*
 	* @param string $part part of array what is returned
   * @return integer
   */
@@ -47,7 +48,8 @@ class Div {
   }
 
   /**
-  * get TYPO3 version
+  * get typeicon_classes for TCA in TYPO3 7
+	*
 	* @param string $identifier
   * @return array
   */
@@ -65,6 +67,7 @@ class Div {
 
 	/**
 	* get wizard icon
+	*
 	* @param string $wizard which icon is needed
 	* @param integer $version
 	* @return string
@@ -103,11 +106,8 @@ class Div {
 					break;
 			}
 		}
-
-		//DebuggerUtility::var_dump($wizardIconPath);
 		return $wizardIconPath;
 	}
-
 
 }
 ?>
