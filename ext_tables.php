@@ -18,10 +18,12 @@ $pluginSignature = $extensionName.'_'.$pluginName;
 // get first main part of TYPO3 version number
 $currentTypo3Version = \KN\Operations\Utility\Div::getPartOfTypo3Version();
 
-// old iconfile
-$iconPath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY);
+//$typeIconClasses = \KN\Operations\Utility\Div::getTypeIconClasses();
 
-if($currentTypo3Version > 6) {
+
+if($currentTypo3Version < 7){
+	$iconPath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY);
+} else {
 // new icon registery in TYPO3 7.6
 $iconRegistry = GeneralCoreUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
 // register icon for operation
@@ -112,10 +114,12 @@ $TCA['tx_operations_domain_model_operation'] = array(
 		),
 		'searchFields' => 'number,title,location,begin,end,report,longitude,latitude,zoom,image,type,assistance,vehicles,resources,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Operation.php',
-		'iconfile' => 'EXT:' . $_EXTKEY . '/Resources/Public/Icons/tx_operations_domain_model_operation.png',
-		'typeicon_classes' => array(
-			'default' => 'ext-operations-operation'
-		)
+		//'typeicon_classes' => array(
+		//	'default' => 'ext-operations-operation',
+		//),
+		'typeicon_classes' => \KN\Operations\Utility\Div::getTypeIconClasses('ext-operations-operation'),
+		'iconfile' => $iconPath . '/Resources/Public/Icons/tx_operations_domain_model_operation.png',
+		
 	),
 );
 
@@ -144,7 +148,7 @@ $TCA['tx_operations_domain_model_assistance'] = array(
 		),
 		'searchFields' => 'title,description,link,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Assistance.php',
-		'iconfile' => 'EXT:' . $_EXTKEY . '/Resources/Public/Icons/tx_operations_domain_model_assistance.png',
+		'iconfile' => $iconPath . '/Resources/Public/Icons/tx_operations_domain_model_assistance.png',
 		'typeicon_classes' => array(
 			'default' => 'ext-operations-assistance'
 		)
@@ -177,7 +181,7 @@ $TCA['tx_operations_domain_model_vehicle'] = array(
 		),
 		'searchFields' => 'title,short,description,image,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Vehicle.php',
-		'iconfile' => 'EXT:' . $_EXTKEY . '/Resources/Public/Icons/tx_operations_domain_model_vehicle.png',
+		'iconfile' => $iconPath . '/Resources/Public/Icons/tx_operations_domain_model_vehicle.png',
 		'typeicon_classes' => array(
 			'default' => 'ext-operations-vehicle'
 		)
@@ -209,7 +213,7 @@ $TCA['tx_operations_domain_model_resource'] = array(
 		),
 		'searchFields' => 'title,short,description,image,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Resource.php',
-		'iconfile' => 'EXT:' . $_EXTKEY . '/Resources/Public/Icons/tx_operations_domain_model_resource.png',
+		'iconfile' => $iconPath . '/Resources/Public/Icons/tx_operations_domain_model_resource.png',
 		'typeicon_classes' => array(
 			'default' => 'ext-operations-resource'
 		)
@@ -241,7 +245,7 @@ $TCA['tx_operations_domain_model_type'] = array(
 		),
 		'searchFields' => 'title,image,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Type.php',
-		'iconfile' => 'EXT:' . $_EXTKEY . '/Resources/Public/Icons/tx_operations_domain_model_type.png',
+		'iconfile' => $iconPath . '/Resources/Public/Icons/tx_operations_domain_model_type.png',
 		'typeicon_classes' => array(
 			'default' => 'ext-operations-type'
 		)
