@@ -34,8 +34,8 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
 class Div {
-	
-	
+
+
 
   /**
   * get TYPO3 version
@@ -55,7 +55,6 @@ class Div {
   */
 	public static function getTypeIconClasses($identifier) {
     $currentVersion = VersionNumberUtility::convertVersionStringToArray(VersionNumberUtility::getNumericTypo3Version());
-    return $currentVersion['version_'.$part];
 		if( $currentVersion['version_main'] > 6) {
 			$typeIconClasses = array(
 				'default' => $identifier
