@@ -3,6 +3,7 @@ if (!defined('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility as GeneralCoreUtility;
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
 	'KN.'.$_EXTKEY,
@@ -17,11 +18,65 @@ $pluginSignature = $extensionName.'_'.$pluginName;
 // get first main part of TYPO3 version number
 $currentTypo3Version = \KN\Operations\Utility\Div::getPartOfTypo3Version();
 
-if($currentTypo3Version < 7) {
-	$iconPath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY);
-} else {
-	$iconPath = 'EXT:' . $_EXTKEY;
-}
+// old iconfile
+$iconPath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY);
+// new icon registery in TYPO3 7.6
+$iconRegistry = GeneralCoreUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+// register icon for operation
+$iconRegistry->registerIcon(
+	 'ext-operations-operation',
+	 \TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
+	 ['source' => 'EXT:operations/Resources/Public/Icons/tx_operations_domain_model_operation.png']
+);
+// register icon for assistance
+$iconRegistry->registerIcon(
+	 'ext-operations-assistance',
+	 \TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
+	 ['source' => 'EXT:operations/Resources/Public/Icons/tx_operations_domain_model_assistance.png']
+);
+// register icon for resource
+$iconRegistry->registerIcon(
+	 'ext-operations-resource',
+	 \TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
+	 ['source' => 'EXT:operations/Resources/Public/Icons/tx_operations_domain_model_resource.png']
+);
+// register icon for vehicle
+$iconRegistry->registerIcon(
+	 'ext-operations-vehicle',
+	 \TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
+	 ['source' => 'EXT:operations/Resources/Public/Icons/tx_operations_domain_model_vehicle.png']
+);
+// register icon for type
+$iconRegistry->registerIcon(
+	 'ext-operations-type',
+	 \TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
+	 ['source' => 'EXT:operations/Resources/Public/Icons/tx_operations_domain_model_type.png']
+);
+
+
+// if($currentTypo3Version < 7) {
+// 	$iconPath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY);
+// } else {
+// 	//$iconPath = 'EXT:' . $_EXTKEY;
+// 	$iconPath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY);
+//
+// 	$iconRegistry = GeneralCoreUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+//
+// 	// DebuggerUtility::var_dump($iconRegistry->registerIcon(
+// 	// 'tx_operations_domain_model_operation',
+// 	// \TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
+// 	// ['source' => 'EXT:operations/Resources/Public/Icons/tx_operations_domain_model_operation.png']));
+// 	$iconRegistry->registerIcon(
+// 						 'ext-operations-operation',
+// 						 \TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
+// 						 ['source' => 'EXT:operations/Resources/Public/Icons/tx_operations_domain_model_operation.png']
+// 				 );
+// // $iconFactory = GeneralUtility::makeInstance(IconFactory::class);
+// // $iconFactory->getIcon($identifier, Icon::SIZE_SMALL)->render();
+// //
+// // 	$iconPath = 'EXT:operations/Resources/Public/Icons/tx_operations_domain_model_operation.png';
+// // 	DebuggerUtility::var_dump($iconRegistry->getIconConfigurationByIdentifier($identifier));
+// }
 
 $TCA['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'layout,select_key,pages';
 $TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
@@ -55,7 +110,10 @@ $TCA['tx_operations_domain_model_operation'] = array(
 		),
 		'searchFields' => 'number,title,location,begin,end,report,longitude,latitude,zoom,image,type,assistance,vehicles,resources,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Operation.php',
-		'iconfile' => $iconPath.'/Resources/Public/Icons/tx_operations_domain_model_operation.png'
+		'iconfile' => $iconPath.'/Resources/Public/Icons/tx_operations_domain_model_operation.png',
+		'typeicon_classes' => array(
+			'default' => 'ext-operations-operation'
+		)
 	),
 );
 
@@ -84,7 +142,10 @@ $TCA['tx_operations_domain_model_assistance'] = array(
 		),
 		'searchFields' => 'title,description,link,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Assistance.php',
-		'iconfile' => $iconPath.'/Resources/Public/Icons/tx_operations_domain_model_assistance.png'
+		'iconfile' => $iconPath.'/Resources/Public/Icons/tx_operations_domain_model_assistance.png',
+		'typeicon_classes' => array(
+			'default' => 'ext-operations-assistance'
+		)
 	),
 );
 
@@ -114,7 +175,10 @@ $TCA['tx_operations_domain_model_vehicle'] = array(
 		),
 		'searchFields' => 'title,short,description,image,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Vehicle.php',
-		'iconfile' => $iconPath.'/Resources/Public/Icons/tx_operations_domain_model_vehicle.png'
+		'iconfile' => $iconPath.'/Resources/Public/Icons/tx_operations_domain_model_vehicle.png',
+		'typeicon_classes' => array(
+			'default' => 'ext-operations-vehicle'
+		)
 	),
 );
 
@@ -143,7 +207,10 @@ $TCA['tx_operations_domain_model_resource'] = array(
 		),
 		'searchFields' => 'title,short,description,image,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Resource.php',
-		'iconfile' => $iconPath.'/Resources/Public/Icons/tx_operations_domain_model_resource.png'
+		'iconfile' => $iconPath.'/Resources/Public/Icons/tx_operations_domain_model_resource.png',
+		'typeicon_classes' => array(
+			'default' => 'ext-operations-resource'
+		)
 	),
 );
 
@@ -172,7 +239,10 @@ $TCA['tx_operations_domain_model_type'] = array(
 		),
 		'searchFields' => 'title,image,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Type.php',
-		'iconfile' => $iconPath.'/Resources/Public/Icons/tx_operations_domain_model_type.png'
+		'iconfile' => $iconPath.'/Resources/Public/Icons/tx_operations_domain_model_type.png',
+		'typeicon_classes' => array(
+			'default' => 'ext-operations-type'
+		)
 	),
 );
 
