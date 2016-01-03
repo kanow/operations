@@ -31,9 +31,9 @@ plugin.tx_operations {
 	}
 	settings {
 		overrideFlexformSettingsIfEmpty = itemsPerPage,showImgInList,listImgWidth,listImgHeight,singleImgWidth,singleImgHeight,cropTeaser,hideFilter
-		operationPid = {$plugin.tx_operations.settings.operationPid}
-		vehiclePid = {$plugin.tx_operations.settings.vehiclePid}
-		resourcePid = {$plugin.tx_operations.settings.resourcePid}
+		operationSinglePid = {$plugin.tx_operations.settings.operationSinglePid}
+		vehicleSinglePid = {$plugin.tx_operations.settings.vehicleSinglePid}
+		resourceSinglePid = {$plugin.tx_operations.settings.resourceSinglePid}
 		itemsPerPage = {$plugin.tx_operations.settings.itemsPerPage}
 		limit = {$plugin.tx_operations.settings.limit}
 		hidePagination = {$plugin.tx_operations.settings.hidePagination}

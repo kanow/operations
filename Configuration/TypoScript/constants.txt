@@ -54,12 +54,12 @@ plugin.tx_operations {
 		# cat=plugin.tx_operations/list/0041/; type=int+; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.limit
 		limit = 200
 
-		# cat=plugin.tx_operations/pids/0300/; type=int; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.operationPid
-		operationPid =
-		# cat=plugin.tx_operations/pids/0310/; type=int; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.vehiclePid
-		vehiclePid =
-		# cat=plugin.tx_operations/pids/0320/; type=int; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.resourcePid
-		resourcePid =
+		# cat=plugin.tx_operations/pids/0300/; type=int; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.operationSinglePid
+		operationSinglePid =
+		# cat=plugin.tx_operations/pids/0310/; type=int; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.vehicleSinglePid
+		vehicleSinglePid =
+		# cat=plugin.tx_operations/pids/0320/; type=int; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.resourceSinglePid
+		resourceSinglePid =
 
 		# cat=plugin.tx_operations/image/0200/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listImgWidth
 		listImgWidth = 100c
