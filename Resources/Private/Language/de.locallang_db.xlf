@@ -187,6 +187,14 @@
 				<source>Operations</source>
 				<target>Einsätze</target>
 			</trans-unit>
+			<trans-unit id="flexform.operationsListAndSearchAction">
+				<source>Operations - List view</source>
+				<target>Einsätze - Listansicht</target>
+			</trans-unit>
+			<trans-unit id="flexform.operationsShowAction">
+				<source>Operations - Detail view</source>
+				<target>Einsätze - Einzelansicht</target>
+			</trans-unit>
 			<trans-unit id="flexform.vehicles">
 				<source>Vehicles</source>
 				<target>Fahrzeuge</target>

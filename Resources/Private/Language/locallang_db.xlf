@@ -143,6 +143,12 @@
 			<trans-unit id="flexform.operations">
 				<source>Operations</source>
 			</trans-unit>
+			<trans-unit id="flexform.operationsListAndSearchAction">
+				<source>Operations - List view</source>
+			</trans-unit>
+			<trans-unit id="flexform.operationsShowAction">
+				<source>Operations - Detail view</source>
+			</trans-unit>
 			<trans-unit id="flexform.vehicles">
 				<source>Vehicles</source>
 			</trans-unit>

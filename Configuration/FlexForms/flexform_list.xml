@@ -16,7 +16,15 @@
 									<items>
 										<numIndex index="0">
 											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.operations</numIndex>
-											<numIndex index="1">Operation->list;Operation->show;Operation->search</numIndex>
+											<numIndex index="1">--div--</numIndex>
+										</numIndex>
+                    <numIndex index="4">
+											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.operationsListAndSearchAction</numIndex>
+											<numIndex index="1">Operation->list;Operation->search</numIndex>
+										</numIndex>
+                    <numIndex index="6">
+											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.operationsShowAction</numIndex>
+											<numIndex index="1">Operation->show;</numIndex>
 										</numIndex>
 
 										<numIndex index="9">
