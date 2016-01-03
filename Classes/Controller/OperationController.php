@@ -1,11 +1,11 @@
 <?php
 namespace KN\Operations\Controller;
-
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 /***************************************************************
  *  Copyright notice
  *
  *  (c) 2013 Karsten Nowak <captnnowi@gmx.de>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -38,7 +38,7 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 
 	/**
 	 * configuration manager
-	 * 
+	 *
 	 * @var \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface
 	 * @inject
 	 */
@@ -51,7 +51,7 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 	 * @inject
 	 */
 	protected $operationRepository;
-	
+
 	/**
 	 * typeRepository
 	 *
@@ -71,12 +71,12 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 		$operations = $this->operationRepository->findDemanded($demand, $this->settings);
 		$types = $this->typeRepository->findAll();
 		$years = $this->generateYears();
-		
+
 		$this->view->assign('types', $types);
 		$this->view->assign('begin',$years);
 		$this->view->assign('operations', $operations);
 	}
-	
+
 	/**
 	 * action search
 	 *
@@ -88,7 +88,7 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 		//\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($demand);
 		$demand = $this->updateDemandObjectFromSettings($demand, $this->settings);
 		$demanded = $this->operationRepository->findDemanded($demand, $this->settings);
-		
+
 		$years = $this->generateYears();
 		$types = $this->typeRepository->findAll();
 
@@ -117,7 +117,7 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 				}
 			}
 	 }
-	
+
 	/**
 	 * action show
 	 *
@@ -127,9 +127,9 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 	public function showAction(\KN\Operations\Domain\Model\Operation $operation) {
 		$this->view->assign('operation', $operation);
 	}
-	
-	
-	
+
+
+
 	/**
 	 * Update demand with current settings, if not exists it creates one
 	 *
@@ -143,20 +143,16 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 		}
 		return $demand;
 	}
-	
+
 	protected function generateYears(){
-		$now = (int)date("Y");
-		$date = $now;
-		$i = 0;
-		while($i<$this->settings['lastYears']){
-			$year = new Year();
-			$year->setYear($date);
-			$years[] = $year;
-			$i = $i+1;
-			$date = $now - $i;
-		}	
+		$query = $this->operationRepository->createQuery();
+		$statement = "SELECT FROM_UNIXTIME(begin, '%Y') AS year FROM tx_operations_domain_model_operation WHERE hidden = 0 AND deleted = 0 GROUP BY year ORDER BY year DESC LIMIT 0,".$this->settings['lastYears'];
+		$result = $query->statement($statement)->execute($returnRawQueryResult = true);
+	  foreach ($result as $year) {
+	      $years[] = $year['year'];
+	  }
 		return $years;
 	}
-	
+
 }
 ?>
