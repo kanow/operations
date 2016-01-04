@@ -5,7 +5,7 @@ namespace KN\Operations\Domain\Repository;
  *  Copyright notice
  *
  *  (c) 2013 Karsten Nowak <captnnowi@gmx.de>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -33,18 +33,18 @@ namespace KN\Operations\Domain\Repository;
  *
  */
 class OperationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
-	
-	
+
+
 	/**
 	* default ordering
-	* 
+	*
 	* @return array
 	*/
-	protected $defaultOrderings = array( 
-	    'begin' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING, 
-	); 
-	
-	
+	protected $defaultOrderings = array(
+	    'begin' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING,
+	);
+
+
 	/**
 	* Returns the objects of this repository matching the demand
 	*
@@ -52,16 +52,15 @@ class OperationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	* @param array $settings
 	* @return Tx_Extbase_Persistence_QueryResultInterface
 	*/
-		
+
 	public function findDemanded(\KN\Operations\Domain\Model\OperationDemand $demand, $settings) {
-		//\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($query);
 		$query = $this->generateQuery($demand, $settings);
 		return $query->execute();
 	}
-	
+
 	/**
 	 * Counts all available operations without the limit
-	 * 
+	 *
 	 * @param integer $count
 	 */
 	/*
@@ -69,7 +68,7 @@ class OperationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 		return $this->findDemanded($demand, NULL)->count();
 	}
 	*/
-	
+
 	/**
 	 * Generates the query
 	 *
@@ -80,7 +79,7 @@ class OperationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	protected function generateQuery(\KN\Operations\Domain\Model\OperationDemand $demand, $settings) {
 		$query = $this->createQuery();
 		//$query->getQuerySettings()->setRespectStoragePage(FALSE);
-		
+
 		$constraints = $this->createConstraintsFromDemand($query, $demand, $settings);
 		if (!empty($constraints)) {
 			$query->matching(
@@ -99,7 +98,7 @@ class OperationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 		//\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($query);
 		return $query;
 	}
-	
+
 	/**
 	 * Returns an array of constraints created from a given demand object.
 	 *
@@ -109,43 +108,43 @@ class OperationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	 * @return array<Tx_Extbase_Persistence_QOM_Constraint>
 	 */
 	protected function createConstraintsFromDemand(\TYPO3\CMS\Extbase\Persistence\QueryInterface $query, \KN\Operations\Domain\Model\OperationDemand $demand, $settings) {
-		
+
 		$constraints = array();
 
 		$fromTimestamp = mktime(0,0,0,1,1,$demand->getBegin());
 		$toTimestamp = mktime(23,59,59,12,31,$demand->getBegin());
-		
+
 		if($demand->getBegin()) {
 			$constraints[] = $query->logicalAnd(
 				$query->greaterThanOrEqual('begin', $fromTimestamp),
 				$query->lessThanOrEqual('begin', $toTimestamp)
 			);
 		}
-		
+
 		if($demand->getType()){
 			$constraints[] = $query->contains('type',$demand->getType());
 		}
-		
+
 		if($settings['showMap']) {
 			$constraints[] = $query->logicalAnd(
 				$query->greaterThan('latitude',0),
 				$query->greaterThan('longitude',0)
 			);
 		}
-		
+
 		$constraints = $this->cleanUnusedConstaints($constraints);
-	
+
 		return $constraints;
 	}
-	
-	
+
+
 	/**
 	 *  Clean not used constraints
 	 *
 	 * @param array $contrains
 	 * @return array
 	 */
-	
+
 	protected function cleanUnusedConstaints($constraints){
 		foreach ($constraints as $key => $value) {
 			if (is_null($value)) {
@@ -154,6 +153,6 @@ class OperationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 		}
 		return $constraints;
 	}
-	
+
 }
 ?>

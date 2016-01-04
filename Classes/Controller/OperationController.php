@@ -1,6 +1,6 @@
 <?php
 namespace KN\Operations\Controller;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
+
 /***************************************************************
  *  Copyright notice
  *
@@ -158,7 +158,7 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 		}
 
 		foreach ($result as $year) {
-	      $years[] = $year['year'];
+	      $years[$year['year']] = $year['year'];
 	  }
 		return $years;
 	}
