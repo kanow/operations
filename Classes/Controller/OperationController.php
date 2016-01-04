@@ -145,10 +145,19 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 	}
 
 	protected function generateYears(){
-		$query = $this->operationRepository->createQuery();
+		$currentTypo3Version = \KN\Operations\Utility\Div::getPartOfTypo3Version();
 		$statement = "SELECT FROM_UNIXTIME(begin, '%Y') AS year FROM tx_operations_domain_model_operation WHERE hidden = 0 AND deleted = 0 GROUP BY year ORDER BY year DESC LIMIT 0,".$this->settings['lastYears'];
-		$result = $query->statement($statement)->execute($returnRawQueryResult = true);
-	  foreach ($result as $year) {
+
+		$query = $this->operationRepository->createQuery();
+
+		if ($currentTypo3Version < 7) {
+			$query->getQuerySettings()->setReturnRawQueryResult(TRUE);
+			$result = $query->statement($statement)->execute();
+		} else {
+			$result = $query->statement($statement)->execute($returnRawQueryResult = true);
+		}
+
+		foreach ($result as $year) {
 	      $years[] = $year['year'];
 	  }
 		return $years;
