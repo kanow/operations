@@ -31,12 +31,12 @@ class PaginateController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetCont
 	 * @var \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
 	 */
 	protected $objects;
-	
+
 	/**
 	 * @var array
 	 */
 	protected $additionalParams;
-	
+
 	/**
 	 * @var string
 	 */
@@ -64,7 +64,14 @@ class PaginateController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetCont
 		$this->objects = $this->widgetConfiguration['objects'];
 		$this->additionalParams = $this->widgetConfiguration['additionalParams'];
 		$this->additionalParamsPrefix = $this->widgetConfiguration['additionalParamsPrefix'];
-		$this->configuration = \TYPO3\CMS\Core\Utility\GeneralUtility::array_merge_recursive_overrule($this->configuration, $this->widgetConfiguration['configuration'], TRUE);
+
+		if (\KN\Operations\Utility\Div::getPartOfTypo3Version() < 7) {
+			$this->configuration = \TYPO3\CMS\Core\Utility\GeneralUtility::array_merge_recursive_overrule($this->configuration, $this->widgetConfiguration['configuration'], TRUE);
+		} else {
+			//$this->configuration = \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule($this->configuration, $this->widgetConfiguration['configuration'], $addKeys = FALSE, $enableUnsetFeature = FALSE);
+			$this->configuration = array_merge($this->configuration, $this->widgetConfiguration['configuration']);
+		}
+
 		$this->numberOfPages = ceil(count($this->objects) / (integer) $this->configuration['itemsPerPage']);
 		$this->maximumNumberOfLinks = (integer) $this->configuration['maximumNumberOfLinks'];
 	}
