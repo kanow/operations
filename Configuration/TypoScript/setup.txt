@@ -20,7 +20,7 @@ plugin.tx_operations {
       0 = EXT:operations/Resources/Private/Partials/
       10 = {$plugin.tx_operations.view.partialRootPath}
     }
-		widget.KN\Operations\ViewHelpers\Widget\PaginateViewHelper.templateRootPath = EXT:operations/Resources/Private/Templates/
+		widget.KN\Operations\ViewHelpers\Widget\PaginateViewHelper.templateRootPath = {$plugin.tx_operations.view.templateRootPath}
 	}
 	persistence {
 		storagePid = {$plugin.tx_operations.persistence.storagePid}
