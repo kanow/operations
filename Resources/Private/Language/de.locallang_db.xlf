@@ -400,20 +400,20 @@
 				<target>Jahre zurück:Wieviel zurückliegende Jahre sollen im Filter für Jahre angezeigt werden </target>
 			</trans-unit>
 			<trans-unit id="tsc.listImgWidth">
-				<source>Max img width list:Max image width in list view, for vehicles and resources too (add "c" for cropping image)</source>
-				<target>Max. Bildbreite Liste:Max. Bildbreite in der Listenansicht, betrifft auch Fahrzeuge und Hilfsmittel (ein 'c' anhängen für zuschneiden der Bilder)</target>
+				<source>Max img width list:Max image width in list view of operations (add "c" for cropping image)</source>
+				<target>Max. Bildbreite Liste:Max. Bildbreite in der Listenansicht der Einsätze (ein 'c' anhängen für zuschneiden der Bilder)</target>
 			</trans-unit>
 			<trans-unit id="tsc.listImgHeight">
-				<source>Max img height list:Max image width in list view</source>
-				<target>Max. Bildhöhe Liste:Max. Bildhöhe in der Listenansicht, betrifft auch Fahrzeuge und Hilfsmittel</target>
+				<source>Max img height list:Max image width in list view of operations</source>
+				<target>Max. Bildhöhe Liste:Max. Bildhöhe in der Listenansicht der Einsätze</target>
 			</trans-unit>
 			<trans-unit id="tsc.singleImgWidth">
-				<source>Max img width list:Max image width in single view, for vehicles and resources too (add "c" for cropping image)</source>
-				<target>Max. Bildbreite Liste:Max. Bildbreite in der Einzelansicht, betrifft auch Fahrzeuge und Hilfsmittel (ein 'c' anhängen für zuschneiden der Bilder)</target>
+				<source>Max img width list:Max image width in single view, also for vehicles and resources (add "c" for cropping image)</source>
+				<target>Max. Bildbreite Liste:Max. Bildbreite in der Einzelansicht der Einsätze (ein 'c' anhängen für zuschneiden der Bilder)</target>
 			</trans-unit>
 			<trans-unit id="tsc.singleImgHeight">
-				<source>Max img height list:Max image width in single view, for vehicles and resources too</source>
-				<target>Max. Bildhöhe Liste:Max. Bildhöhe in der Einzelansicht, betrifft auch Fahrzeuge und Hilfsmittel</target>
+				<source>Max img height list:Max image width in single view, also for vehicles and resources</source>
+				<target>Max. Bildhöhe Liste:Max. Bildhöhe in der Einzelansicht der Einsätze</target>
 			</trans-unit>
 			<trans-unit id="tsc.increaseImage">
 				<source>Lightbox for images:Render images in single view with a wrapped link to increase image (e.g. with lightbox plugin)</source>
