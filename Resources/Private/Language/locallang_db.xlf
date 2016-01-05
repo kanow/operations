@@ -277,14 +277,14 @@
 			<trans-unit id="tsc.storagePid">
 				<source>Storage Pid:Default storage PID for all data of operations</source>
 			</trans-unit>
-			<trans-unit id="tsc.operationPid">
-				<source>Operation page:Page with operation plugin and using operations view</source>
+			<trans-unit id="tsc.operationSinglePid">
+				<source>Operation single page:Page with operation plugin single view</source>
 			</trans-unit>
-			<trans-unit id="tsc.vehiclePid">
-				<source>Vehicles page:Page with operation plugin and using vehicles view</source>
+			<trans-unit id="tsc.vehicleSinglePid">
+				<source>Vehicle single page:Page with operation plugin and using vehicle single view</source>
 			</trans-unit>
-			<trans-unit id="tsc.resourcePid">
-				<source>Resources page:Page with operation plugin and using resources view</source>
+			<trans-unit id="tsc.resourceSinglePid">
+				<source>Resource single page:Page with operation plugin and using resource single view</source>
 			</trans-unit>
 			<trans-unit id="tsc.hidePagination">
 				<source>Hide pagination:Hide the pagination in list view of operations</source>

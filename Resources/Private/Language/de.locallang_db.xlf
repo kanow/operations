@@ -367,15 +367,25 @@
 			</trans-unit>
 			<trans-unit id="tsc.operationPid">
 				<source>Operation page:Page with operation plugin and using operations view</source>
-				<target>Seite für Einsätze:Seite mit dem Plugin Operations und ausgewählter Anzeige für Einsätze</target>
 			</trans-unit>
 			<trans-unit id="tsc.vehiclePid">
 				<source>Vehicles page:Page with operation plugin and using vehicles view</source>
-				<target>Seite für Fahrzeuge:Seite mit dem Plugin Operations und ausgewählter Anzeige für Fahrzeuge</target>
 			</trans-unit>
 			<trans-unit id="tsc.resourcePid">
 				<source>Resources page:Page with operation plugin and using resources view</source>
-				<target>Seite für Hilfsmittel:Seite mit dem Plugin Operations und ausgewählter Anzeige für Hilfsmittel</target>
+
+			</trans-unit>
+			<trans-unit id="tsc.operationSinglePid">
+				<source>Operation single page:Page with operation plugin single view</source>
+				<target>Seite Einzelansicht Einsätze:Seite mit dem Operations Plugin und ausgewählter Einzelansicht für Einsätze</target>
+			</trans-unit>
+			<trans-unit id="tsc.vehicleSinglePid">
+				<source>Vehicle single page:Page with operation plugin and using vehicle single view</source>
+				<target>Seite Einzelansicht Fahrzeuge:Seite mit dem Operations Plugin und ausgewählter Einzelansicht für Fahrzeuge</target>
+			</trans-unit>
+			<trans-unit id="tsc.resourceSinglePid">
+				<source>Resource single page:Page with operation plugin and using resource single view</source>
+				<target>Seite Einzelansicht Hilfsmittel:Seite mit dem Operations Plugin und ausgewählter Einzelansicht für Hilfsmittel</target>
 			</trans-unit>
 			<trans-unit id="tsc.hidePagination">
 				<source>Hide pagination:Hide the pagination in list view of operations</source>
