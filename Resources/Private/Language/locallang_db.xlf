@@ -296,16 +296,16 @@
 				<source>Last years:How many years back are showing in filter for years</source>
 			</trans-unit>
 			<trans-unit id="tsc.listImgWidth">
-				<source>Max img width list:Max image width in list view, for vehicles and resources too (add "c" for cropping image)</source>
+				<source>Max img width list:Max image width in list view of operations (add "c" for cropping image)</source>
 			</trans-unit>
 			<trans-unit id="tsc.listImgHeight">
-				<source>Max img height list:Max image width in list view</source>
+				<source>Max img height list:Max image width in list view of operations</source>
 			</trans-unit>
 			<trans-unit id="tsc.singleImgWidth">
-				<source>Max img width list:Max image width in single view, for vehicles and resources too (add "c" for cropping image)</source>
+				<source>Max img width list:Max image width in single view, also for vehicles and resources (add "c" for cropping image)</source>
 			</trans-unit>
 			<trans-unit id="tsc.singleImgHeight">
-				<source>Max img height list:Max image width in single view, for vehicles and resources too</source>
+				<source>Max img height list:Max image width in single view, also for vehicles and resources</source>
 			</trans-unit>
 			<trans-unit id="tsc.increaseImage">
 				<source>Lightbox for images:Render images in single view with a wrapped link to increase image (e.g. with lightbox plugin)</source>
