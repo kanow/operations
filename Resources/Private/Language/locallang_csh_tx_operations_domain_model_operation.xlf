@@ -38,7 +38,7 @@
 				<source>Type of operation</source>
 			</trans-unit>
 			<trans-unit id="assistance.description">
-				<source>Assistance to this oparation</source>
+				<source>Assistance to this operation</source>
 			</trans-unit>
 			<trans-unit id="vehicles.description">
 				<source>Vehicles use on this operation</source>

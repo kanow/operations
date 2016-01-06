@@ -64,7 +64,7 @@
 				<target>Einsatzart</target>
 			</trans-unit>
 			<trans-unit id="tx_operations_domain_model_operation.assistance">
-				<source>Assistance to this oparation</source>
+				<source>Assistance to this operation</source>
 				<target>Unterstützung</target>
 			</trans-unit>
 			<trans-unit id="tx_operations_domain_model_operation.vehicles">
@@ -75,7 +75,7 @@
 				<source>resources</source>
 				<target>Eingesetzte Hilfsmittel</target>
 			</trans-unit>
-			
+
 			<trans-unit id="tx_operations_domain_model_assistance">
 				<source>Assistance</source>
 				<target>Unterstützung</target>
@@ -92,7 +92,7 @@
 				<source>A website url</source>
 				<target>Homepage</target>
 			</trans-unit>
-			
+
 			<trans-unit id="tx_operations_domain_model_vehicle">
 				<source>Vehicles</source>
 				<target>Fahrzeuge</target>
@@ -113,7 +113,7 @@
 				<source>Image of vehicle</source>
 				<target>Bild</target>
 			</trans-unit>
-			
+
 			<trans-unit id="tx_operations_domain_model_resources">
 				<source>Resources</source>
 				<target>Hifsmittel</target>
@@ -134,7 +134,7 @@
 				<source>Image of resource</source>
 				<target>Bild</target>
 			</trans-unit>
-			
+
 			<trans-unit id="tx_operations_domain_model_type">
 				<source>Types</source>
 				<target>Einsatzarten</target>
@@ -147,7 +147,7 @@
 				<source>icon for use in list</source>
 				<target>Bild</target>
 			</trans-unit>
-			
+
 			<trans-unit id="emptyResult">
 				<source>No results</source>
 				<target>Keine Ergebnisse</target>
@@ -184,7 +184,7 @@
 				<source>Reset filter</source>
 				<target>Alle Einsätze anzeigen</target>
 			</trans-unit>
-			
+
 			<trans-unit id="operationsFound">
 				<source>operations found</source>
 				<target>Einsätze gefunden</target>
@@ -209,12 +209,12 @@
 				<source>back</source>
 				<target>zurück</target>
 			</trans-unit>
-			
+
 			<trans-unit id="map.noscript">
 				<source>Please activate javascript to show map</source>
 				<target>Bitte aktiviert Javascript für die Anzeige der Karte</target>
 			</trans-unit>
-			
+
 			<trans-unit id="update.ScriptDo">
 				<source>This script will do the following:</source>
 				<target>Das Script wird folgende Aktionen ausführen:</target>
@@ -235,8 +235,8 @@
 				<source>Update</source>
 				<target>Jetzt Update durchführen</target>
 			</trans-unit>
-			
-			
+
+
 		</body>
 	</file>
 </xliff>

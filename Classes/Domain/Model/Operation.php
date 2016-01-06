@@ -5,7 +5,7 @@ namespace KN\Operations\Domain\Model;
  *  Copyright notice
  *
  *  (c) 2013 Karsten Nowak <captnnowi@gmx.de>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -41,7 +41,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @validate NotEmpty
 	 */
 	protected $number;
-	
+
 	/**
 	 * Operation onlyEld
 	 *
@@ -129,7 +129,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $type;
 
 	/**
-	 * Assistance to this oparation
+	 * Assistance to this operation
 	 * @lazy
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\KN\Operations\Domain\Model\Assistance>
 	 */
@@ -171,11 +171,11 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		 * You may modify the constructor of this class instead
 		 */
 		$this->type = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-		
+
 		$this->assistance = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-		
+
 		$this->vehicles = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-		
+
 		$this->resources = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->image = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
@@ -198,7 +198,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	public function setNumber($number) {
 		$this->number = $number;
 	}
-	
+
 	/**
 	 * Returns the onlyEld
 	 *

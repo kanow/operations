@@ -3,7 +3,7 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2013-11-11T21:36:44Z" product-name="operations">
 		<header/>
 		<body>
-		
+
 			<trans-unit id="list.header">
 				<source>List of operations</source>
 			</trans-unit>
@@ -50,7 +50,7 @@
 				<source>Type of operation</source>
 			</trans-unit>
 			<trans-unit id="tx_operations_domain_model_operation.assistance">
-				<source>Assistance to this oparation</source>
+				<source>Assistance to this operation</source>
 			</trans-unit>
 			<trans-unit id="tx_operations_domain_model_operation.vehicles">
 				<source>Vehicles use on this operation</source>
@@ -58,7 +58,7 @@
 			<trans-unit id="tx_operations_domain_model_operation.resources">
 				<source>resources</source>
 			</trans-unit>
-			
+
 			<trans-unit id="tx_operations_domain_model_assistance">
 				<source>Assistance</source>
 			</trans-unit>
@@ -71,7 +71,7 @@
 			<trans-unit id="tx_operations_domain_model_assistance.link">
 				<source>A website url</source>
 			</trans-unit>
-			
+
 			<trans-unit id="tx_operations_domain_model_vehicle">
 				<source>Vehicle</source>
 			</trans-unit>
@@ -87,7 +87,7 @@
 			<trans-unit id="tx_operations_domain_model_vehicle.image">
 				<source>Image of vehicle</source>
 			</trans-unit>
-			
+
 			<trans-unit id="tx_operations_domain_model_resources">
 				<source>Resources</source>
 			</trans-unit>
@@ -103,7 +103,7 @@
 			<trans-unit id="tx_operations_domain_model_resources.image">
 				<source>Image of resource</source>
 			</trans-unit>
-			
+
 			<trans-unit id="tx_operations_domain_model_type">
 				<source>Type</source>
 			</trans-unit>
@@ -113,7 +113,7 @@
 			<trans-unit id="tx_operations_domain_model_type.image">
 				<source>icon for use in list</source>
 			</trans-unit>
-			
+
 			<trans-unit id="emptyResult">
 				<source>No results</source>
 			</trans-unit>
@@ -141,7 +141,7 @@
 			<trans-unit id="filter.reset">
 				<source>Reset filter</source>
 			</trans-unit>
-			
+
 			<trans-unit id="operationsFound">
 				<source>operations found</source>
 			</trans-unit>
@@ -160,11 +160,11 @@
 			<trans-unit id="back">
 				<source>back</source>
 			</trans-unit>
-			
+
 			<trans-unit id="map.noscript">
 				<source>Please activate javascript to show map</source>
 			</trans-unit>
-			
+
 			<trans-unit id="update.ScriptDo">
 				<source>This script will do the following:</source>
 			</trans-unit>
@@ -180,7 +180,7 @@
 			<trans-unit id="update.Button">
 				<source>Update</source>
 			</trans-unit>
-			
+
 		</body>
 	</file>
 </xliff>
