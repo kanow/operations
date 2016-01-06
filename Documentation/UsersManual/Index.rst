@@ -16,18 +16,17 @@ Users manual
 Installing the Extension
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Look here: :ref:`Install <install>` for install the extension and create 4 pages for 
+Look here: :ref:`Install <install>`, to install the extension and create pages for
 
-- list and single view for operations (one page)
-- list and single view for vehicles (one page)
-- list and single view for resources (one page)
-- list all locations on a google map (one page)
+- list/search view for operations (one page)
+- single view for operation (one page)
+- list and single view page for vehicles (two pages)
+- list and single view for resources (two pages)
+- if you want it, a page for a list of all locations on a google map (one page)
 
-After this create sysfolder for data sets of vehicles, resources, assistance, type and operation itself.
-Set the pids of pages for vehicle, resource and operation view in typoscript constants.
-Look at the settings in plugin flexform fields or use typoscript constants to fit the settings.
-
-Now you can add your data for types, vehicles, resources and assistance to use this relations in operation reports.
+After this create sysfolder for data sets of vehicles, resources, assistance, type and operations.
+Set the pids of single view pages for vehicle, resource and operation in typoscript constants.
+Have a look to the settings in plugin flexform fields or use typoscript constants to fit the settings.
 
 Note: You must save the plugin in backend once after choosing the operations plugin! After the first saving all settings are shown!
 
@@ -35,13 +34,24 @@ Note: You must save the plugin in backend once after choosing the operations plu
 Use your own templates
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Please copy these three folders completely in your fileadmin folder:
+Please copy the needed folders and files in your fileadmin folder.
+
+You need at least one folder for "Layouts"
 
 - Resources/Private/Layouts
+
+one folder for Templates
+
 - Resources/Private/Templates
+
+and one folder for Partials
+
 - Resources/Private/Partials
 
-Then change the path in constants to your own. Now you can edit the template files if you want.
+
+Files and folders within these folders are not required. You copying only the files and folders you need.
+
+Then change the paths in constants to your own. Now you can edit and use the template files you want.
 
 
 Use the map view
@@ -53,9 +63,9 @@ In single view the google map is automatically shown, when coordinates are speci
 For showing the map in list view please activate the checkbox in plugin flexform. To override the automatic centering of the map in list view, you can use the settings in constants. Please note that the **override only works when you set all three values: latitude, longitude and zoom!**
 Please check that you have the right constant in ts. I had changed "overrideCenterLangList" to the correct acronym "overrideCenterLongList" in Version 1.1.0.
 
-The content in info window of google map you can change in fluid template in partial of operations. 
+The content in info window of google map you can change in fluid template in partial of operations.
 
-Since version 1.3.0 is it possible to use your own api key for google maps. Set this in constants when you need it.
+Since version 1.3.0 is it possible to use your own api key for google maps. Set this in constants if you need this.
 
 
 
@@ -131,5 +141,3 @@ Templates/Operation/List.html and Templates/Operation/Search.html
 
 
 If i forgot anything (i hope i did not ;-)) feel free to write an e-mail or open an issue on `forge`.
-
-
