@@ -19,8 +19,8 @@ Configuration
   Small examples/visuals are always encouraged.
 
 - Target group: Developers
-	
-	
+
+
 .. toctree::
    :maxdepth: 5
    :titlesonly:
@@ -29,3 +29,4 @@ Configuration
    Plugin/Index
    Reference/Index
    Imageslider/Index
+   Realurl/Index
