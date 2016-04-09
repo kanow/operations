@@ -26,6 +26,7 @@ $EM_CONF[$_EXTKEY] = array (
 	array (
 		'depends' =>
 		array (
+			'php' => '5.5',
 			'extbase' => '6.2',
 			'fluid' => '6.2',
 			'typo3' => '6.2.0-7.6.99',
