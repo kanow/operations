@@ -1,0 +1,13 @@
+mod.wizards.newContentElement.wizardItems.plugins {
+	elements {
+		operations {
+			iconIdentifier = ext-operations-wizard-icon
+			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.title
+			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.description
+			tt_content_defValues {
+				CType = list
+				list_type = operations_list
+			}
+		}
+	}
+}

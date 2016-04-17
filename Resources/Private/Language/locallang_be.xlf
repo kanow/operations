@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-04-17T20:23:49Z" product-name="operations">
+		<header/>
+		<body>
+
+			<trans-unit id="plugin.title">
+				<source>Operations</source>
+			</trans-unit>
+			<trans-unit id="plugin.description">
+				<source>Show firefighter operations</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

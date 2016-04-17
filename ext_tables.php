@@ -26,35 +26,41 @@ if($currentTypo3Version < 7){
 } else {
 	// new icon registery in TYPO3 7.6
 	$iconRegistry = GeneralCoreUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+	// register wizard icon for operation
+	$iconRegistry->registerIcon(
+		'ext-operations-wizard-icon',
+		BitmapIconProvider::class,
+		['source' => 'EXT:operations/Resources/Public/Icons/tx_operations_operation.svg']
+	);
 	// register icon for operation
 	$iconRegistry->registerIcon(
 		 'ext-operations-operation',
 		 BitmapIconProvider::class,
-		 ['source' => 'EXT:operations/Resources/Public/Icons/tx_operations_domain_model_operation.png']
+		 ['source' => 'EXT:operations/Resources/Public/Icons/tx_operations_operation.svg']
 	);
 	// register icon for assistance
 	$iconRegistry->registerIcon(
 		 'ext-operations-assistance',
 		 BitmapIconProvider::class,
-		 ['source' => 'EXT:operations/Resources/Public/Icons/tx_operations_domain_model_assistance.png']
+		 ['source' => 'EXT:operations/Resources/Public/Icons/tx_operations_assistance.svg']
 	);
 	// register icon for resource
 	$iconRegistry->registerIcon(
 		 'ext-operations-resource',
 		 BitmapIconProvider::class,
-		 ['source' => 'EXT:operations/Resources/Public/Icons/tx_operations_domain_model_resource.png']
+		 ['source' => 'EXT:operations/Resources/Public/Icons/tx_operations_resource.svg']
 	);
 	// register icon for vehicle
 	$iconRegistry->registerIcon(
 		 'ext-operations-vehicle',
 		 BitmapIconProvider::class,
-		 ['source' => 'EXT:operations/Resources/Public/Icons/tx_operations_domain_model_vehicle.png']
+		 ['source' => 'EXT:operations/Resources/Public/Icons/tx_operations_vehicle.svg']
 	);
 	// register icon for type
 	$iconRegistry->registerIcon(
 		 'ext-operations-type',
 		 BitmapIconProvider::class,
-		 ['source' => 'EXT:operations/Resources/Public/Icons/tx_operations_domain_model_type.png']
+		 ['source' => 'EXT:operations/Resources/Public/Icons/tx_operations_type.svg']
 	);
 }
 
@@ -67,6 +73,7 @@ ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 
 
 ExtensionManagementUtility::addLLrefForTCAdescr('tx_operations_domain_model_operation', 'EXT:operations/Resources/Private/Language/locallang_csh_tx_operations_domain_model_operation.xlf');
 ExtensionManagementUtility::allowTableOnStandardPages('tx_operations_domain_model_operation');
+/** @noinspection PhpUndefinedVariableInspection */
 $TCA['tx_operations_domain_model_operation'] = array(
 	'ctrl' => array(
 		'title'	=> 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation',
