@@ -68,7 +68,6 @@ class PaginateController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetCont
 		if (\KN\Operations\Utility\Div::getPartOfTypo3Version() < 7) {
 			$this->configuration = \TYPO3\CMS\Core\Utility\GeneralUtility::array_merge_recursive_overrule($this->configuration, $this->widgetConfiguration['configuration'], TRUE);
 		} else {
-			//$this->configuration = \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule($this->configuration, $this->widgetConfiguration['configuration'], $addKeys = FALSE, $enableUnsetFeature = FALSE);
 			$this->configuration = array_merge($this->configuration, $this->widgetConfiguration['configuration']);
 		}
 
