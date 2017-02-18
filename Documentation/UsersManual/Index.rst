@@ -103,7 +103,7 @@ Now clear all caches.
 New actions were added to the switchable controller actions in plugin flexform
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Two new action one for the list view of vehicles and one for the list view of resources. You have to change and save the plugin once in all content elements where they used.
+Two new actions, one for the list view of vehicles and one for the list view of resources. You have to change and save the plugin once in all content elements where they used.
 
 
 Clear all cache again.
@@ -140,4 +140,4 @@ Templates/Operation/List.html and Templates/Operation/Search.html
 - Add the new argument in line 23: <f:render partial="List/Form" arguments="{demand:demand,begin:begin,**types:types**}" />
 
 
-If i forgot anything (i hope i did not ;-)) feel free to write an e-mail or open an issue on `forge`.
+If I forgot anything (I hope I did not ;-)) feel free to write an e-mail or open an issue on `forge`.

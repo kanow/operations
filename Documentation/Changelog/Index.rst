@@ -21,6 +21,14 @@ Changelog
 		Changes:
 
  - :Version:
+		1.3.7
+  :Changes:
+		No changes, update extension manual.
+ - :Version:
+		1.3.6
+  :Changes:
+		Some Bugfixing. #72535 Fix error with pagination in TYPO3 7.6.
+ - :Version:
 		1.3.5
   :Changes:
 		Bugfix and update extension manual.
