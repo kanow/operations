@@ -3,11 +3,39 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 // get first main part of TYPO3 version number
 $currentTypo3Version = \KN\Operations\Utility\Div::getPartOfTypo3Version();
+$iconPath = ExtensionManagementUtility::extRelPath('operations');
 
-$TCA['tx_operations_domain_model_assistance'] = array(
-	'ctrl' => $TCA['tx_operations_domain_model_assistance']['ctrl'],
+ExtensionManagementUtility::addToInsertRecords('tx_operations_domain_model_assistance');
+
+$tx_operations_domain_model_assistance = array(
+	'ctrl' => array(
+                'title' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_assistance',
+                'label' => 'title',
+                'tstamp' => 'tstamp',
+                'crdate' => 'crdate',
+                'cruser_id' => 'cruser_id',
+                'dividers2tabs' => TRUE,
+                'sortby' => 'sorting',
+                'versioningWS' => 2,
+                'versioning_followPages' => TRUE,
+                'origUid' => 't3_origuid',
+                'languageField' => 'sys_language_uid',
+                'transOrigPointerField' => 'l10n_parent',
+                'transOrigDiffSourceField' => 'l10n_diffsource',
+                'delete' => 'deleted',
+                'enablecolumns' => array(
+                        'disabled' => 'hidden',
+                        'starttime' => 'starttime',
+                        'endtime' => 'endtime',
+                ),
+                'searchFields' => 'title,description,link,',
+                'iconfile' => $iconPath . '/Resources/Public/Icons/tx_operations_domain_model_assistance.png',
+                'typeicon_classes' => \KN\Operations\Utility\Div::getTypeIconClasses('ext-operations-assistance')
+        ),
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, link',
 	),
@@ -143,4 +171,4 @@ $TCA['tx_operations_domain_model_assistance'] = array(
 	),
 );
 
-?>
+return $tx_operations_domain_model_assistance;
