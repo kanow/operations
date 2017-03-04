@@ -72,6 +72,10 @@
 				<source>Resources</source>
 				<target>Hilfsmittel</target>
 			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.choose">
+				<source>Please choose...</source>
+				<target>Bitte w√hlen...</target>
+			</trans-unit>
 
 			<trans-unit id="tx_operations_domain_model_assistance">
 				<source>Assistance</source>

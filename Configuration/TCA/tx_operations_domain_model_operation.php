@@ -300,7 +300,9 @@ $tx_operations_domain_model_operation = array(
 					'_VERTICAL' => 1,
 				),
 				'renderType' => 'selectSingle',
-				'default' => 'bitte wählen'
+				'items' => array(
+					array('LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.choose','0')
+				)
 			),
 		),
 		'assistance' => array(
