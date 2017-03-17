@@ -91,4 +91,3 @@ if($currentTypo3Version < 7) {
 }
 $TCA['sys_file_reference']['columns']['uid_local']['config']['foreign_table'] = 'sys_file';
 
-?>
