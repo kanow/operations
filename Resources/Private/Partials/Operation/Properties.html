@@ -91,7 +91,7 @@
 			<f:for each="{operation.assistance}" as="assistance" iteration="count">
 				<f:if condition="{assistance.link}">
 				<f:then>
-					<o:typolink parameter="{assistance.link}" target="_blank" extTarget="_blank">{assistance.title}</o:typolink>{f:if(condition:count.isLast,else:', ')}
+					<f:link.typolink parameter="{assistance.link}" target="_blank">{assistance.title}</f:link.typolink>{f:if(condition:count.isLast,else:', ')}
 				</f:then>
 				<f:else>
 					{assistance.title}{f:if(condition:count.isLast,else:', ')}

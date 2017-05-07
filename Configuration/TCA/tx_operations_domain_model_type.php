@@ -3,8 +3,37 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-$TCA['tx_operations_domain_model_type'] = array(
-	'ctrl' => $TCA['tx_operations_domain_model_type']['ctrl'],
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
+$iconPath = ExtensionManagementUtility::extRelPath('operations');
+
+ExtensionManagementUtility::addToInsertRecords('tx_operations_domain_model_type');
+
+$tx_operations_domain_model_type = array(
+	'ctrl' => array(
+                'title' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_type',
+                'label' => 'title',
+                'tstamp' => 'tstamp',
+                'crdate' => 'crdate',
+                'cruser_id' => 'cruser_id',
+                'dividers2tabs' => TRUE,
+                'sortby' => 'sorting',
+                'versioningWS' => 2,
+                'versioning_followPages' => TRUE,
+                'origUid' => 't3_origuid',
+                'languageField' => 'sys_language_uid',
+                'transOrigPointerField' => 'l10n_parent',
+                'transOrigDiffSourceField' => 'l10n_diffsource',
+                'delete' => 'deleted',
+                'enablecolumns' => array(
+                        'disabled' => 'hidden',
+                        'starttime' => 'starttime',
+                        'endtime' => 'endtime',
+                ),
+                'searchFields' => 'uid,title',
+                'iconfile' => $iconPath . '/Resources/Public/Icons/tx_operations_domain_model_type.png',
+                'typeicon_classes' => \KN\Operations\Utility\Div::getTypeIconClasses('ext-operations-type')
+        ),
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, image',
 	),
@@ -24,8 +53,8 @@ $TCA['tx_operations_domain_model_type'] = array(
 				'foreign_table' => 'sys_language',
 				'foreign_table_where' => 'ORDER BY sys_language.title',
 				'items' => array(
-					array('LLL:EXT:lang/locallang_general.xlf:LGL.allLanguages', -1),
-					array('LLL:EXT:lang/locallang_general.xlf:LGL.default_value', 0)
+					array('LLL:EXT:lang/locallang_general.xlf:LGL.default_value', 0),
+					array('LLL:EXT:lang/locallang_general.xlf:LGL.allLanguages', -1)
 				),
 			),
 		),
@@ -105,22 +134,22 @@ $TCA['tx_operations_domain_model_type'] = array(
 			),
 		),
 		'image' => array(
-				'exclude' => 1,
-				'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_type.image',
-				'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('image', array(
-					'appearance' => array(
-						'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference'
+			'exclude' => 1,
+			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_type.image',
+			'config' => ExtensionManagementUtility::getFileFieldTCAConfig('image', array(
+				'appearance' => array(
+					'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference'
+				),
+				'foreign_types' => array(
+					\TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => array(
+						'showitem' => '
+						--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+						--palette--;;filePalette'
 					),
-					'foreign_types' => array(
-						\TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => array(
-							'showitem' => '
-							--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-							--palette--;;filePalette'
-						),
-					)
-				), $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'])
-			),
+				)
+			), $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'])
+		),
 	),
 );
 
-?>
+return $tx_operations_domain_model_type;

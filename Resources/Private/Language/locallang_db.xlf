@@ -55,6 +55,9 @@
 			<trans-unit id="tx_operations_domain_model_operation.resources">
 				<source>Resources</source>
 			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.choose">
+                                <source>Please choose...</source>
+                        </trans-unit>
 
 			<trans-unit id="tx_operations_domain_model_assistance">
 				<source>Assistance</source>

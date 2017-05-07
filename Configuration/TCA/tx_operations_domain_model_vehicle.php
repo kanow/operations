@@ -3,17 +3,46 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 // get first main part of TYPO3 version number
 $currentTypo3Version = \KN\Operations\Utility\Div::getPartOfTypo3Version();
+$iconPath = ExtensionManagementUtility::extRelPath('operations');
 
-$TCA['tx_operations_domain_model_resource'] = array(
-	'ctrl' => $TCA['tx_operations_domain_model_resource']['ctrl'],
+ExtensionManagementUtility::addToInsertRecords('tx_operations_domain_model_vehicle');
+
+$tx_operations_domain_model_vehicle = array(
+	'ctrl' => array(
+                'title' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_vehicle',
+                //'label' => 'title',
+                'label' => 'short',
+                'tstamp' => 'tstamp',
+                'crdate' => 'crdate',
+                'cruser_id' => 'cruser_id',
+                'dividers2tabs' => TRUE,
+                'sortby' => 'sorting',
+                'versioningWS' => 2,
+                'versioning_followPages' => TRUE,
+                'origUid' => 't3_origuid',
+                'languageField' => 'sys_language_uid',
+                'transOrigPointerField' => 'l10n_parent',
+                'transOrigDiffSourceField' => 'l10n_diffsource',
+                'delete' => 'deleted',
+                'enablecolumns' => array(
+                        'disabled' => 'hidden',
+                        'starttime' => 'starttime',
+                        'endtime' => 'endtime',
+                ),
+                'searchFields' => 'title,short,description,image,',
+                'iconfile' => $iconPath . '/Resources/Public/Icons/tx_operations_domain_model_vehicle.png',
+                'typeicon_classes' => \KN\Operations\Utility\Div::getTypeIconClasses('ext-operations-vehicle')
+        ),
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, short, description, image',
 	),
 	'types' => array(
 		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, short, description,
-		--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.img,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitleResources.img;paletteImg,
+		--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.img,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitleVehicles.img;paletteImg,
 		--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
 	),
 	'palettes' => array(
@@ -32,8 +61,8 @@ $TCA['tx_operations_domain_model_resource'] = array(
 				'foreign_table' => 'sys_language',
 				'foreign_table_where' => 'ORDER BY sys_language.title',
 				'items' => array(
-					array('LLL:EXT:lang/locallang_general.xlf:LGL.allLanguages', -1),
-					array('LLL:EXT:lang/locallang_general.xlf:LGL.default_value', 0)
+					array('LLL:EXT:lang/locallang_general.xlf:LGL.default_value', 0),
+					array('LLL:EXT:lang/locallang_general.xlf:LGL.allLanguages', -1)
 				),
 			),
 		),
@@ -46,8 +75,8 @@ $TCA['tx_operations_domain_model_resource'] = array(
 				'items' => array(
 					array('', 0),
 				),
-				'foreign_table' => 'tx_operations_domain_model_resource',
-				'foreign_table_where' => 'AND tx_operations_domain_model_resource.pid=###CURRENT_PID### AND tx_operations_domain_model_resource.sys_language_uid IN (-1,0)',
+				'foreign_table' => 'tx_operations_domain_model_vehicle',
+				'foreign_table_where' => 'AND tx_operations_domain_model_vehicle.pid=###CURRENT_PID### AND tx_operations_domain_model_vehicle.sys_language_uid IN (-1,0)',
 			),
 		),
 		'l10n_diffsource' => array(
@@ -104,7 +133,7 @@ $TCA['tx_operations_domain_model_resource'] = array(
 		),
 		'title' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_resource.title',
+			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_vehicle.title',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -113,7 +142,7 @@ $TCA['tx_operations_domain_model_resource'] = array(
 		),
 		'short' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_resource.short',
+			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_vehicle.short',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -122,7 +151,7 @@ $TCA['tx_operations_domain_model_resource'] = array(
 		),
 		'description' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_resource.description',
+			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_vehicle.description',
 			'config' => array(
 				'type' => 'text',
 				'cols' => 40,
@@ -143,11 +172,10 @@ $TCA['tx_operations_domain_model_resource'] = array(
 			),
 			'defaultExtras' => 'richtext:rte_transform[flag=rte_enabled|mode=ts]',
 		),
-		// mit FAL
 		'image' => array(
 				'exclude' => 1,
-				'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_resource.image',
-				'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('image', array(
+				'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_type.image',
+				'config' => ExtensionManagementUtility::getFileFieldTCAConfig('image', array(
 					'appearance' => array(
 						'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference'
 					),
@@ -163,4 +191,4 @@ $TCA['tx_operations_domain_model_resource'] = array(
 	),
 );
 
-?>
+return $tx_operations_domain_model_vehicle;

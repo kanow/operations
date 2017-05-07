@@ -3,11 +3,40 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 // get first main part of TYPO3 version number
 $currentTypo3Version = \KN\Operations\Utility\Div::getPartOfTypo3Version();
+$iconPath = ExtensionManagementUtility::extRelPath('operations');
 
-$TCA['tx_operations_domain_model_operation'] = array(
-	'ctrl' => $TCA['tx_operations_domain_model_operation']['ctrl'],
+ExtensionManagementUtility::addToInsertRecords('tx_operations_domain_model_operation');
+
+$tx_operations_domain_model_operation = array(
+	'ctrl' => array(
+                'title' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation',
+                'label' => 'title',
+                'tstamp' => 'tstamp',
+                'crdate' => 'crdate',
+                'cruser_id' => 'cruser_id',
+                'dividers2tabs' => TRUE,
+                //'sortby' => 'sorting',
+                'default_sortby' => 'ORDER BY begin DESC',
+                'versioningWS' => 2,
+                'versioning_followPages' => TRUE,
+                'origUid' => 't3_origuid',
+                'languageField' => 'sys_language_uid',
+                'transOrigPointerField' => 'l10n_parent',
+                'transOrigDiffSourceField' => 'l10n_diffsource',
+                'delete' => 'deleted',
+                'enablecolumns' => array(
+                        'disabled' => 'hidden',
+                        'starttime' => 'starttime',
+                        'endtime' => 'endtime',
+                ),
+                'searchFields' => 'number,title,location,begin,end,report,longitude,latitude,zoom,image,type,assistance,vehicles,resources,',
+                'iconfile' => $iconPath . '/Resources/Public/Icons/tx_operations_domain_model_operation.png',
+                'typeicon_classes' => \KN\Operations\Utility\Div::getTypeIconClasses('ext-operations-operation'),
+        ),
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, number, onlyEld, title, location, begin, end, teaser, report, longitude, latitude, zoom, image, type, assistance, vehicles, resources',
 	),
@@ -51,8 +80,8 @@ $TCA['tx_operations_domain_model_operation'] = array(
 				'foreign_table' => 'sys_language',
 				'foreign_table_where' => 'ORDER BY sys_language.title',
 				'items' => array(
-					array('LLL:EXT:lang/locallang_general.xlf:LGL.allLanguages', -1),
-					array('LLL:EXT:lang/locallang_general.xlf:LGL.default_value', 0)
+					array('LLL:EXT:lang/locallang_general.xlf:LGL.default_value', 0),
+					array('LLL:EXT:lang/locallang_general.xlf:LGL.allLanguages', -1)
 				),
 			),
 		),
@@ -241,7 +270,7 @@ $TCA['tx_operations_domain_model_operation'] = array(
 		'image' => array(
 				'exclude' => 1,
 				'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.image',
-				'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('image', array(
+				'config' => ExtensionManagementUtility::getFileFieldTCAConfig('image', array(
 					'appearance' => array(
 						'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference'
 					),
@@ -271,7 +300,9 @@ $TCA['tx_operations_domain_model_operation'] = array(
 					'_VERTICAL' => 1,
 				),
 				'renderType' => 'selectSingle',
-				'default' => 'bitte wählen'
+				'items' => array(
+					array('LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.choose','0')
+				)
 			),
 		),
 		'assistance' => array(
@@ -403,4 +434,4 @@ $TCA['tx_operations_domain_model_operation'] = array(
 	),
 );
 
-?>
+return $tx_operations_domain_model_operation;
