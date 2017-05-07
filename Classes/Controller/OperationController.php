@@ -33,6 +33,8 @@ namespace KN\Operations\Controller;
  *
  */
 use KN\Operations\Domain\Model\Year;
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 class OperationController extends \KN\Operations\Controller\BaseController {
 
@@ -145,17 +147,19 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 	}
 
 	protected function generateYears(){
-		$currentTypo3Version = \KN\Operations\Utility\Div::getPartOfTypo3Version();
-		$statement = "SELECT FROM_UNIXTIME(begin, '%Y') AS year FROM tx_operations_domain_model_operation WHERE hidden = 0 AND deleted = 0 GROUP BY year ORDER BY year DESC LIMIT 0,".$this->settings['lastYears'];
+        $connection = $this->objectManager->get(ConnectionPool::class)->getConnectionForTable('tx_operations_domain_model_operation');
+
+        $lastYears = $this->settings['lastYears'];
+        $rawsql = "SELECT FROM_UNIXTIME(begin, '%Y') AS year FROM tx_operations_domain_model_operation WHERE hidden = 0 AND deleted = 0 GROUP BY year ORDER BY year DESC LIMIT 0, $lastYears ";
+
+        $statement = $this->objectManager->get(
+            \Doctrine\DBAL\Statement::class,
+        	$rawsql,
+			$connection
+		);
 
 		$query = $this->operationRepository->createQuery();
-
-		if ($currentTypo3Version < 7) {
-			$query->getQuerySettings()->setReturnRawQueryResult(TRUE);
-			$result = $query->statement($statement)->execute();
-		} else {
-			$result = $query->statement($statement)->execute($returnRawQueryResult = true);
-		}
+		$result = $query->statement($statement);
 
 		foreach ($result as $year) {
 	      $years[$year['year']] = $year['year'];
