@@ -29,7 +29,7 @@ $EM_CONF[$_EXTKEY] = array (
 			'php' => '5.5',
 			'extbase' => '6.2',
 			'fluid' => '6.2',
-			'typo3' => '6.2-8.6',
+			'typo3' => '8.7 - 8.7.99',
 		),
 		'conflicts' =>
 		array (
