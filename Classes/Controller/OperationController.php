@@ -87,7 +87,6 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 	 * @return void
 	 */
 	public function searchAction(\KN\Operations\Domain\Model\OperationDemand $demand = NULL) {
-		//\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($demand);
 		$demand = $this->updateDemandObjectFromSettings($demand, $this->settings);
 		$demanded = $this->operationRepository->findDemanded($demand, $this->settings);
 
