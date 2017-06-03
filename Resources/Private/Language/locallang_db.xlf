@@ -280,6 +280,9 @@
 			<trans-unit id="tsc.storagePid">
 				<source>Storage Pid:Default storage PID for all data of operations</source>
 			</trans-unit>
+			<trans-unit id="tsc.recursive">
+				<source>Recursive storage:Recursive for storage PID. Used for all data of operations</source>
+			</trans-unit>
 			<trans-unit id="tsc.operationSinglePid">
 				<source>Operation single page:Page with operation plugin single view</source>
 			</trans-unit>

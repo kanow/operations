@@ -74,7 +74,7 @@
 			</trans-unit>
 			<trans-unit id="tx_operations_domain_model_operation.choose">
 				<source>Please choose...</source>
-				<target>Bitte w�hlen...</target>
+				<target>Bitte wählen...</target>
 			</trans-unit>
 
 			<trans-unit id="tx_operations_domain_model_assistance">
@@ -368,6 +368,10 @@
 			<trans-unit id="tsc.storagePid">
 				<source>Storage Pid:Default storage PID for all data of operations</source>
 				<target>Seite mit Einsatzdaten:Sysfolder in welchem die Einsatzdaten liegen (inkl. Fahrzeuge, Hilfsmittel etc.)</target>
+			</trans-unit>
+			<trans-unit id="tsc.recursive">
+				<source>Recursive storage:Recursive for storage PID. Used for all data of operations</source>
+				<target>Rekursiv für Sys-Ordner: Rekursive Einstellung für den Sys-Ordner in welchem alle Einsatzdaten liegen</target>
 			</trans-unit>
 			<trans-unit id="tsc.operationPid">
 				<source>Operation page:Page with operation plugin and using operations view</source>
