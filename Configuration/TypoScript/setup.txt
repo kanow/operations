@@ -24,6 +24,7 @@ plugin.tx_operations {
 	}
 	persistence {
 		storagePid = {$plugin.tx_operations.persistence.storagePid}
+		recursive = {$plugin.tx_operations.persistence.recursive}
 	}
 	features {
 		# uncomment the following line to enable the new Property Mapper.

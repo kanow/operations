@@ -41,6 +41,8 @@ plugin.tx_operations {
 	persistence {
 		# cat=plugin.tx_operations/pids/0090; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.storagePid
 		storagePid =
+		# cat=plugin.tx_operations/pids/0090; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.recursive
+		recursive = 1
 	}
 	settings {
 		# cat=plugin.tx_operations/list/0030/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.hidePagination
