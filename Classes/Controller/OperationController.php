@@ -34,7 +34,9 @@ namespace KN\Operations\Controller;
  */
 use KN\Operations\Domain\Model\Year;
 use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
+use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 
 class OperationController extends \KN\Operations\Controller\BaseController {
 
@@ -129,8 +131,6 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 		$this->view->assign('operation', $operation);
 	}
 
-
-
 	/**
 	 * Update demand with current settings, if not exists it creates one
 	 *
@@ -146,25 +146,22 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 	}
 
 	protected function generateYears(){
-        $connection = $this->objectManager->get(ConnectionPool::class)->getConnectionForTable('tx_operations_domain_model_operation');
-
         $lastYears = $this->settings['lastYears'];
-        $rawsql = "SELECT FROM_UNIXTIME(begin, '%Y') AS year FROM tx_operations_domain_model_operation WHERE hidden = 0 AND deleted = 0 GROUP BY year ORDER BY year DESC LIMIT 0, $lastYears ";
 
-        $statement = $this->objectManager->get(
-            \Doctrine\DBAL\Statement::class,
-        	$rawsql,
-			$connection
-		);
+        /** @var QueryBuilder $queryBuilder */
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
+            ->getQueryBuilderForTable('tx_operations_domain_model_operation');
+        $rows = $queryBuilder
+			->add('select','FROM_UNIXTIME(begin, \'%Y\') AS year',true)
+			->from('tx_operations_domain_model_operation')
+			->groupBy('year')
+			->add('orderby','ORDER BY year DESC LIMIT 0, '.$lastYears,true)
+			->execute()->fetchAll();
 
-		$query = $this->operationRepository->createQuery();
-		$result = $query->statement($statement);
-
-		foreach ($result as $year) {
+        foreach ($rows as $year) {
 	      $years[$year['year']] = $year['year'];
-	  }
+	  	}
+
 		return $years;
 	}
-
 }
-?>
