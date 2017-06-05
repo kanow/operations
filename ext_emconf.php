@@ -12,18 +12,14 @@ $EM_CONF[$_EXTKEY] = array (
 	'author' => 'Karsten Nowak',
 	'author_email' => 'captnnowi@gmx.de',
 	'author_company' => 'undkonsorten',
-	'constraints' =>
-	array (
-		'depends' =>
-		array (
+	'constraints' => array (
+		'depends' => array (
 			'php' => '5.6',
-			'typo3' => '8.7 - 8.7.99',
+			'typo3' => '8.7.0 - 8.7.99',
 		),
-		'conflicts' =>
-		array (
+		'conflicts' => array (
 		),
-		'suggests' =>
-		array (
+		'suggests' => array (
 		),
 	),
 );
