@@ -27,7 +27,7 @@
 			<f:else>
 				<f:if condition="{operation.report}">
 					<div class="teaser">
-						<f:format.crop maxCharacters="{settings.cropTeaser}" append="…">{operation.report}</f:format.crop>
+						<f:format.crop maxCharacters="{settings.cropTeaser}" append="…"><f:format.stripTags>{operation.report}</f:format.stripTags></f:format.crop>
 					</div>
 				</f:if>
 			</f:else>
