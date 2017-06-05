@@ -32,10 +32,8 @@ namespace KN\Operations\Controller;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-use KN\Operations\Domain\Model\Year;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 
 class OperationController extends \KN\Operations\Controller\BaseController {
