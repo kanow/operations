@@ -94,4 +94,3 @@ class UriViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper 
 	}
 }
 
-?>

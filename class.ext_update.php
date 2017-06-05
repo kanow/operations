@@ -149,4 +149,3 @@ class ext_update {
 	}
 
 }
-?>

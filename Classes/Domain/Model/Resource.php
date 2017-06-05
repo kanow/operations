@@ -156,4 +156,3 @@ class Resource extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
   }
 
 }
-?>

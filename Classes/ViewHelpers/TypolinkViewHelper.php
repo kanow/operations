@@ -67,4 +67,3 @@ class TypolinkViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHe
 		return $GLOBALS['TSFE']->cObj->cObjGetSingle('TEXT',$textContentConf);
 	}
 }
-?>

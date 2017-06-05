@@ -66,4 +66,3 @@ class VehicleController extends \KN\Operations\Controller\BaseController {
 
 
 }
-?>

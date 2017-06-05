@@ -137,4 +137,3 @@ $mapData = '<script type="text/javascript">'.$locations.$initialize.$loadScript.
 	}
 }
 
-?>

@@ -109,4 +109,3 @@ $mapData = '<script type="text/javascript">'.$initialize.$loadScript.'</script>'
 	}
 }
 
-?>

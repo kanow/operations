@@ -131,4 +131,3 @@ class LinkViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractTagBasedVi
 	}
 }
 
-?>

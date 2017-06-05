@@ -153,5 +153,3 @@ class OperationDemand extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 		return $returnArray;
 	}
 }
-
-?>

@@ -66,4 +66,3 @@ class ResourceController extends \KN\Operations\Controller\BaseController {
 
 
 }
-?>
