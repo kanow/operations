@@ -21,6 +21,10 @@ Changelog
 		Changes:
 
  - :Version:
+		2.0.0
+  :Changes:
+		TYPO3 8.7 compatibility, clean up code. TYPO3 8.7 is now minimum requirement
+ - :Version:
 		1.3.7
   :Changes:
 		No changes, update extension manual.
