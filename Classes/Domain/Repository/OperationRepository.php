@@ -3,6 +3,7 @@
 namespace Kanow\Operations\Domain\Repository;
 
 use Kanow\Operations\Domain\Model\OperationDemand;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
@@ -31,6 +32,7 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  *
@@ -131,6 +133,23 @@ class OperationRepository extends Repository
 
         if ($demand->getType()) {
             $constraints[] = $query->contains('type', $demand->getType());
+        }
+        // search
+        if(!empty($demand->getSearchString())){
+            $searchSubject = $demand->getSearchstring();
+            $searchFields = GeneralUtility::trimExplode(',', $settings['searchFields'], true);
+            $searchConstraints = [];
+            if (count($searchFields) === 0) {
+                throw new \UnexpectedValueException('No search fields in TypoScript setup defined', 1506861158);
+            }
+            foreach ($searchFields as $field) {
+                if (!empty($searchSubject)) {
+                    $searchConstraints[] = $query->like($field, '%' . $searchSubject . '%');
+                }
+            }
+            if (count($searchConstraints)) {
+                $constraints[] = $query->logicalOr($searchConstraints);
+            }
         }
 
         if ($settings['showMap']) {

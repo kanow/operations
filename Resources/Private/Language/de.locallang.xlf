@@ -176,6 +176,10 @@
 				<source>Choose Type...</source>
 				<target>Einsatzart auswählen...</target>
 			</trans-unit>
+			<trans-unit id="filter.searchstring.placeholder">
+				<source>searching for...</source>
+				<target>suchen nach...</target>
+			</trans-unit>
 			<trans-unit id="filter.submit">
 				<source>Send</source>
 				<target>Los</target>

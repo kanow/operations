@@ -60,9 +60,17 @@ class OperationDemand extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
 	 */
 	protected $begin;
+
+	/**
+	 * Searchstring
+	 *
+	 * @var string
+	 */
+	protected $searchstring;
 	
 	/**
-	 * @param integer onlyEld for demanded
+     * onlyEld for demanded
+	 * @param integer
 	 * @return void
 	 */
 	public function setOnlyEld($onlyEld) {
@@ -70,7 +78,8 @@ class OperationDemand extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 	}
 
 	/**
-	 * @return integer onlyEld of the demand
+     * onlyEld for demanded
+	 * @return integer
 	 */
 	public function getOnlyEld() {
 		return $this->onlyEld;
@@ -131,6 +140,25 @@ class OperationDemand extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 	 */
 	public function setBegin($begin) {
 		$this->begin = $begin;
+	}
+
+	/**
+	 * Returns the searchstring
+	 *
+	 * @return string
+	 */
+	public function getSearchstring() {
+		return $this->searchstring;
+	}
+
+	/**
+	 * Sets the searchstring
+	 *
+	 * @param string $searchstring
+	 * @return void
+	 */
+	public function setSearchstring($searchstring) {
+		$this->searchstring = $searchstring;
 	}
 	
 	const ARRAY_PROPERTIES = 'begin,type';

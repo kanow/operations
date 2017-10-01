@@ -135,6 +135,9 @@
 			<trans-unit id="filter.selectType.first">
 				<source>Choose Type...</source>
 			</trans-unit>
+			<trans-unit id="filter.searchstring.placeholder">
+				<source>searching for...</source>
+			</trans-unit>
 			<trans-unit id="filter.submit">
 				<source>Send</source>
 			</trans-unit>
