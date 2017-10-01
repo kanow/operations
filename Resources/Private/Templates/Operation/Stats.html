@@ -1,0 +1,28 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:o="http://typo3.org/ns/KN/Operations/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+<f:layout name="Default" />
+
+<f:section name="main">
+	<f:flashMessages />
+	<div class="operations stats">
+		<f:comment>
+		    <f:if condition="{settings.hideFilter}">
+    			<f:else>
+    				<f:render partial="List/Form" arguments="{demand:demand,begin:begin,types:types}" />
+    			</f:else>
+    		</f:if>
+		</f:comment>
+
+		
+		<f:if condition="{operations}">
+		<f:then>
+Statistiken
+		</f:then>
+		<f:else>
+			<p><f:translate key="emptyResult" /></p>
+		</f:else>
+		</f:if>
+	</div>
+</f:section>

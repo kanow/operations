@@ -1,0 +1,30 @@
+<T3DataStructure>
+  <sheets>
+    <sDEF>
+      <ROOT>
+        <TCEforms>
+          <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.general</sheetTitle>
+        </TCEforms>
+        <type>array</type>
+        <el>
+
+
+			<settings.stats.types>
+				<TCEforms>
+					<exclude>1</exclude>
+					<label>Test für Typen</label>
+					<config>
+						<type>input</type>
+						<size>60</size>
+						<default></default>
+						<eval></eval>
+					</config>
+				</TCEforms>
+			</settings.stats.types>
+
+        </el>
+      </ROOT>
+    </sDEF>
+
+  </sheets>
+</T3DataStructure>

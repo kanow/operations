@@ -203,6 +203,10 @@
 				<source>Operations - Detail view</source>
 				<target>Einsätze - Einzelansicht</target>
 			</trans-unit>
+			<trans-unit id="flexform.operationsStatsAction">
+				<source>Operations - Statistics</source>
+				<target>Einsätze - Statistiken</target>
+			</trans-unit>
 			<trans-unit id="flexform.vehicles">
 				<source>Vehicles</source>
 				<target>Fahrzeuge</target>

@@ -161,6 +161,9 @@
 			<trans-unit id="flexform.vehiclesShowAction">
 				<source>Vehicles - Single view</source>
 			</trans-unit>
+			<trans-unit id="flexform.operationsStatsAction">
+				<source>Operations - Statistics</source>
+			</trans-unit>
 			<trans-unit id="flexform.resources">
 				<source>Resources</source>
 			</trans-unit>
