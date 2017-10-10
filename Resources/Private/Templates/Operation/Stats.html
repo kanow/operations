@@ -1,28 +1,36 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-	  xmlns:o="http://typo3.org/ns/KN/Operations/ViewHelpers"
-	  data-namespace-typo3-fluid="true">
+      xmlns:o="http://typo3.org/ns/KN/Operations/ViewHelpers"
+      data-namespace-typo3-fluid="true">
 
-<f:layout name="Default" />
+<f:layout name="Default"/>
 
 <f:section name="main">
-	<f:flashMessages />
-	<div class="operations stats">
-		<f:comment>
-		    <f:if condition="{settings.hideFilter}">
-    			<f:else>
-    				<f:render partial="List/Form" arguments="{demand:demand,begin:begin,types:types}" />
-    			</f:else>
-    		</f:if>
-		</f:comment>
+    <f:flashMessages/>
+    <div class="operations stats">
+        <f:comment>
+            <f:if condition="{settings.hideFilter}">
+                <f:else>
+                    <f:render partial="List/Form" arguments="{demand:demand,begin:begin,types:types}"/>
+                </f:else>
+            </f:if>
+        </f:comment>
 
-		
-		<f:if condition="{operations}">
-		<f:then>
-Statistiken
-		</f:then>
-		<f:else>
-			<p><f:translate key="emptyResult" /></p>
-		</f:else>
-		</f:if>
-	</div>
+        <h1>Statistiken</h1>
+
+        <f:if condition="{operationsGroupedByYear}">
+            <f:then>
+                <table>
+                    <tr><th>Jahr</th><th>Anzahl Einsätze</th></tr>
+                    <f:for each="{operationsGroupedByYear}" as="item">
+                        <tr><td>{item.year}</td><td>{item.count}</td></tr>
+                    </f:for>
+                </table>
+            </f:then>
+            <f:else>
+                <p>
+                    <f:translate key="emptyResult"/>
+                </p>
+            </f:else>
+        </f:if>
+    </div>
 </f:section>

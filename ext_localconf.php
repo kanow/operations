@@ -7,7 +7,7 @@ if (!defined('TYPO3_MODE')) {
 	'Kanow.' . $_EXTKEY,
 	'List',
 	array(
-		'Operation' => 'list, show',
+		'Operation' => 'list, show, stats',
 		'Resource' => 'list, show',
 		'Vehicle' => 'list, show',
 		
@@ -18,6 +18,19 @@ if (!defined('TYPO3_MODE')) {
 		'Vehicle' => '',
 		'Resource' => '',
 		
+	)
+);
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+	'KN.' . $_EXTKEY,
+	'Stats',
+	array(
+		'Operation' => 'stats',
+
+	),
+	// non-cacheable actions
+	array(
+		'Operation' => 'stats',
+
 	)
 );
 

@@ -39,7 +39,7 @@ use Kanow\Operations\Domain\Model\OperationDemand;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
-use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
+use TYPO3\CMS\Extbase\Mvc\Controller\MvcPropertyMappingConfiguration;
 use TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException;
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 use TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter;
@@ -47,21 +47,19 @@ use TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter;
 class OperationController extends BaseController
 {
 
-    /**
-     * @var ConfigurationManagerInterface
-     */
-    protected $configurationManager;
-
-    public function injectConfigurationManager(ConfigurationManagerInterface $configurationManager): void
-    {
-        $this->configurationManager = $configurationManager;
-    }
+	/**
+	 * configuration manager
+	 *
+	 * @var \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface
+	 * @TYPO3\CMS\Extbase\Annotation\Inject
+	 */
+	protected $configurationManager;
 
 	/**
 	 * operationRepository
 	 *
 	 * @var \Kanow\Operations\Domain\Repository\OperationRepository
-	 */
+     */
 	protected $operationRepository;
 
 	/**
@@ -161,6 +159,27 @@ class OperationController extends BaseController
 	}
 
     /**
+     * action stats
+     *
+     * @param \KN\Operations\Domain\Model\OperationDemand $demand
+     * @return void
+     */
+    public function statsAction(\KN\Operations\Domain\Model\OperationDemand $demand = NULL) {
+        $demand = $this->updateDemandObjectFromSettings($demand, $this->settings);
+//        $operations = $this->operationRepository->findDemanded($demand, $this->settings);
+        $types = $this->typeRepository->findAll();
+        $years = $this->generateYears();
+
+        $operationsGroupedByYear = $this->operationRepository->countGroupedByYear($demand);
+
+        $this->view->assign('operationsGroupedByYear', $operationsGroupedByYear);
+        $this->view->assign('count', $this->operationRepository->countDemanded($demand));
+//        $this->view->assign('types', $types);
+//        $this->view->assign('begin',$years);
+//        $this->view->assign('operations', $operations);
+    }
+
+    /**
      * Update demand with current settings, if not exists it creates one
      *
      * @param OperationDemand
@@ -176,6 +195,7 @@ class OperationController extends BaseController
 	protected function generateYears(){
 	    $years = [];
         $lastYears = $this->settings['lastYears'];
+
         /** @var QueryBuilder $queryBuilder */
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable('tx_operations_domain_model_operation');
@@ -183,13 +203,12 @@ class OperationController extends BaseController
 			->add('select','FROM_UNIXTIME(begin, \'%Y\') AS year',true)
 			->from('tx_operations_domain_model_operation')
 			->groupBy('year')
-			->orderBy('year','DESC')
-            ->setMaxResults($lastYears)
-            ->execute()
-            ->fetchAll();
+			->add('orderby','ORDER BY year DESC LIMIT 0, '.$lastYears,true)
+			->execute()->fetchAll();
         foreach ($rows as $year) {
-            $years[$year['year']] = $year['year'];
-        }
+	      $years[$year['year']] = $year['year'];
+	  	}
+
 		return $years;
 	}
 }

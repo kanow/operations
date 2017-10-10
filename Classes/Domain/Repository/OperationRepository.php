@@ -32,6 +32,7 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
@@ -77,6 +78,51 @@ class OperationRepository extends Repository
         return $this->findDemanded($demand, NULL)->count();
     }
     */
+
+    /**
+     * Counts all available operations grouped by year
+     *
+     * @return array
+     */
+    public function countGroupedByYear() {
+        /** @var QueryBuilder $queryBuilder */
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
+            ->getQueryBuilderForTable('tx_operations_domain_model_operation');
+        $rows = $queryBuilder
+            ->add('select','COUNT(*) as count, FROM_UNIXTIME(begin, \'%Y\') as year',true)
+            ->from('tx_operations_domain_model_operation')
+            ->groupBy('year')
+            ->orderBy('year',ASC)
+            ->execute()->fetchAll();
+        return $rows;
+    }
+
+
+    /**
+     * Counts all available operations grouped by a property
+     *
+     * @todo remove or clean up this function
+     * @param string $property
+     * @param integer $count
+     * @return array
+     */
+    public function countGroupedBy($demand, $property) {
+        $groupedCounted = [];
+//        $groupedCounted['test'] = 1;
+
+        /** @var QueryBuilder $queryBuilder */
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
+            ->getQueryBuilderForTable('tx_operations_domain_model_operation');
+        $rows = $queryBuilder
+            ->add('select','COUNT(*) as count, FROM_UNIXTIME(begin, \'%Y\') as year',true)
+            ->from('tx_operations_domain_model_operation')
+            ->groupBy('year')
+            ->execute()->fetchAll();
+
+//        DebuggerUtility::var_dump($rows,__METHOD__);
+
+        return $groupedCounted;
+    }
 
     /**
      * Generates the query

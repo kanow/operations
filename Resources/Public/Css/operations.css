@@ -79,3 +79,10 @@ figure {margin:0}
 
 /* effects */
 .list.resources li .list-media {-webkit-transition:all 0.3s 0.2s;-moz-transition:all 0.3s 0.2s;-o-transition:all 0.3s 0.2s;transition:all 0.3s 0.2s;}
+
+table {
+    border-collapse: collapse;
+}
+table td {
+    border:1px solid #ccc;
+}
