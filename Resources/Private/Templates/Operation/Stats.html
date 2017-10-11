@@ -18,6 +18,9 @@
                         <tr><td>{item.year}</td><td>{item.count}</td></tr>
                     </f:for>
                 </table>
+                <div class="chart-container">
+                    <canvas id="myChart"></canvas>
+                </div>
             </f:then>
             <f:else>
                 <p>
@@ -26,4 +29,8 @@
             </f:else>
         </f:if>
     </div>
+</f:section>
+<f:section name="FooterAssets">
+    <script src="{f:uri.resource(path: 'Js/Chart.bundle.js')}"></script>
+    <script src="{f:uri.resource(path: 'Js/MyChart.js')}"></script>
 </f:section>
