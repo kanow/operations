@@ -240,6 +240,10 @@
 				<target>Jetzt Update durchführen</target>
 			</trans-unit>
 
+            <trans-unit id="noData">
+                <source>No data available</source>
+                <target>Keine Daten verfügbar</target>
+            </trans-unit>
 
 		</body>
 	</file>

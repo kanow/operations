@@ -184,6 +184,10 @@
 				<source>Update</source>
 			</trans-unit>
 
+			<trans-unit id="noData">
+                <source>No data available</source>
+            </trans-unit>
+
 		</body>
 	</file>
 </xliff>
