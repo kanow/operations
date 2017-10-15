@@ -32,8 +32,11 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+use Doctrine\Common\Util\Debug;
 use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /**
  *
@@ -68,16 +71,43 @@ class OperationRepository extends Repository
         return $query->execute();
     }
 
+	/**
+	 * Counts all available operations without the limit
+	 *
+	 * @param integer $count
+	 */
+	public function countDemanded($demand) {
+		return $this->findDemanded($demand, NULL)->count();
+	}
+
     /**
-     * Counts all available operations without the limit
+     * Counts all available operations grouped by a property
      *
-     * @param integer $count
+     * @param array $years
+     * @param array $types
+     * @return array
      */
-    /*
-    public function countDemanded($demand) {
-        return $this->findDemanded($demand, NULL)->count();
+    public function countGroupedByYearAndType($years,$types) {
+
+        /** @var QueryBuilder $queryBuilder */
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
+            ->getQueryBuilderForTable('tx_operations_domain_model_operation');
+        $result = $queryBuilder
+            ->add('select','ot.title as title, COUNT(*) as count, FROM_UNIXTIME(o.begin, \'%Y\') as year')
+            ->from('tx_operations_domain_model_type','ot')
+            ->innerJoin('ot','tx_operations_operation_type_mm','type_mm','type_mm.uid_foreign = ot.uid')
+            ->innerJoin('type_mm','tx_operations_domain_model_operation','o','type_mm.uid_local = o.uid')
+            ->groupBy('year')
+            ->addGroupBy('ot.uid')
+            ->execute()->fetchAll();
+//            ->execute();
+//        debug($queryBuilder->getSQL());
+        DebuggerUtility::var_dump($result,__METHOD__);
+        DebuggerUtility::var_dump($types,'Typen:'.__METHOD__);
+
+        return $result;
     }
-    */
+
 
     /**
      * Counts all available operations grouped by year
@@ -88,13 +118,16 @@ class OperationRepository extends Repository
         /** @var QueryBuilder $queryBuilder */
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable('tx_operations_domain_model_operation');
-        $rows = $queryBuilder
+
+        $statement = $queryBuilder
             ->add('select','COUNT(*) as count, FROM_UNIXTIME(begin, \'%Y\') as year',true)
             ->from('tx_operations_domain_model_operation')
             ->groupBy('year')
             ->orderBy('year',ASC)
-            ->execute()->fetchAll();
-        return $rows;
+            ->execute();
+        $result = $statement->fetchAll();
+
+        return $result;
     }
 
 
@@ -108,7 +141,6 @@ class OperationRepository extends Repository
      */
     public function countGroupedBy($demand, $property) {
         $groupedCounted = [];
-//        $groupedCounted['test'] = 1;
 
         /** @var QueryBuilder $queryBuilder */
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
@@ -118,8 +150,6 @@ class OperationRepository extends Repository
             ->from('tx_operations_domain_model_operation')
             ->groupBy('year')
             ->execute()->fetchAll();
-
-//        DebuggerUtility::var_dump($rows,__METHOD__);
 
         return $groupedCounted;
     }
