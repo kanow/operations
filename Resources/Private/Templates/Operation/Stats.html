@@ -9,14 +9,17 @@
     <div class="operations stats">
 
         <h1>Statistiken</h1>
-
-        <f:if condition="{operationsGroupedByYear}">
+        <f:if condition="{operationsGroupedByYearAndType}">
             <f:then>
                 <table>
-                    <tr><th>Jahr</th><th>Anzahl Einsätze</th></tr>
-                    <f:for each="{operationsGroupedByYear}" as="item">
-                        <tr><td>{item.year}</td><td>{item.count}</td></tr>
-                    </f:for>
+                    <thead><th>Title</th><f:for each="{years}" as="year"><th>{year}</th></f:for></thead>
+                    <tbody>
+                        <f:for each="{operationsGroupedByYearAndType}" as="item">
+                            <tr>
+                                <td>{item.title}</td><f:for each="{item.years}" as="year"><td>{year}</td></f:for>
+                            </tr>
+                        </f:for>
+                    </tbody>
                 </table>
                 <div class="chart-container">
                     <canvas id="myChart"></canvas>

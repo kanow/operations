@@ -167,31 +167,21 @@ class OperationController extends BaseController
      */
     public function statsAction(\KN\Operations\Domain\Model\OperationDemand $demand = NULL) {
         $demand = $this->updateDemandObjectFromSettings($demand, $this->settings);
-//        $operations = $this->operationRepository->findDemanded($demand, $this->settings);
-//        $groupedData = [];
-//
-////        $query = $this->createQuery();
-//        $types = $this->typeRepository->findAll();
-//        DebuggerUtility::var_dump($types);
-////
-//        foreach ($types as $type) {
-////            DebuggerUtility::var_dump($type->getUid());
-//            $groupedData[$type->getTitle()] = $this->operationRepository->countByType($type);
-//        }
+
         $years = $this->generateYears();
         $types = $this->typeRepository->findAll()->toArray();
-//                DebuggerUtility::var_dump($types);
-
 
         $operationsGroupedByYear = $this->operationRepository->countGroupedByYear();
         $operationsGroupedByYearAndType = $this->operationRepository->countGroupedByYearAndType($years,$types);
-//        DebuggerUtility::var_dump($operationsGroupedByYearAndType);
 
-        $this->view->assign('operationsGroupedByYear', $operationsGroupedByYear);
-        $this->view->assign('count', $this->operationRepository->countDemanded($demand));
-//        $this->view->assign('types', $types);
-//        $this->view->assign('begin',$years);
-//        $this->view->assign('operations', $operations);
+        $this->view->assignMultiple(
+            array(
+                'operationsGroupedByYear' => $operationsGroupedByYear,
+                'operationsGroupedByYearAndType' => $operationsGroupedByYearAndType,
+                'count' => $this->operationRepository->countDemanded($demand),
+                'years' => $years
+            )
+        );
     }
 
     /**

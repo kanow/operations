@@ -36,6 +36,7 @@ use Doctrine\Common\Util\Debug;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /**
@@ -93,21 +94,48 @@ class OperationRepository extends Repository
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable('tx_operations_domain_model_operation');
         $result = $queryBuilder
-            ->add('select','ot.title as title, COUNT(*) as count, FROM_UNIXTIME(o.begin, \'%Y\') as year')
+            ->add('select','ot.title as title, ot.uid as type_uid, COUNT(*) as count, FROM_UNIXTIME(o.begin, \'%Y\') as year')
             ->from('tx_operations_domain_model_type','ot')
             ->innerJoin('ot','tx_operations_operation_type_mm','type_mm','type_mm.uid_foreign = ot.uid')
             ->innerJoin('type_mm','tx_operations_domain_model_operation','o','type_mm.uid_local = o.uid')
             ->groupBy('year')
             ->addGroupBy('ot.uid')
             ->execute()->fetchAll();
-//            ->execute();
-//        debug($queryBuilder->getSQL());
-        DebuggerUtility::var_dump($result,__METHOD__);
-        DebuggerUtility::var_dump($types,'Typen:'.__METHOD__);
 
-        return $result;
+        $resultWithEmptyYears = [];
+        foreach ($result as $key => $value) {
+            if(!array_key_exists($value['type_uid'],$resultWithEmptyYears)) {
+                $resultWithEmptyYears[$value['type_uid']] = array(
+                    'title' => $value['title'],
+                    'years' => array(
+                        $value['year'] => $value['count']
+                    )
+                );
+            } else {
+                $resultWithEmptyYears[$value['type_uid']]['years'][$value['year']] = $value['count'];
+            }
+        }
+        // add empty years to result
+        foreach ($years as $year) {
+            foreach($resultWithEmptyYears as $key => $value) {
+                if(!isset($resultWithEmptyYears[$key]['years'][$year])) {
+                    $resultWithEmptyYears[$key]['years'][$year] = 0;
+                }
+            }
+            // add missing types to result
+            foreach ($types as $type) {
+                if(!array_key_exists($type->getUid(),$resultWithEmptyYears)) {
+                    $resultWithEmptyYears[$type->getUid()]['title'] =  $type->getTitle();
+                    $resultWithEmptyYears[$type->getUid()]['years'][$year] = 0;
+                }
+            }
+        }
+
+        // sort array by key (uid)
+        ksort($resultWithEmptyYears);
+
+        return $resultWithEmptyYears;
     }
-
 
     /**
      * Counts all available operations grouped by year
