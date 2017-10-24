@@ -11,12 +11,12 @@
         <h1>Statistiken</h1>
         <f:if condition="{operationsGroupedByYearAndType}">
             <f:then>
-                <table>
-                    <thead><th>Title</th><f:for each="{years}" as="year"><th>{year}</th></f:for></thead>
+                <table data-chart="myChart" class="dataset">
+                    <thead><tr><th></th><f:for each="{years}" as="year"><th class="label">{year}</th></f:for></tr></thead>
                     <tbody>
                         <f:for each="{operationsGroupedByYearAndType}" as="item">
-                            <tr>
-                                <td>{item.title}</td><f:for each="{item.years}" as="year"><td>{year}</td></f:for>
+                            <tr class="data-row">
+                                <td class="data-row-label">{item.title}</td><f:for each="{item.years}" as="year"><td class="data-row-data">{year}</td></f:for>
                             </tr>
                         </f:for>
                     </tbody>
