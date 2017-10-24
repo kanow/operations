@@ -1,36 +1,9 @@
-var ctx = document.getElementById("myChart").getContext('2d');
-
-var colors = [];
-colors.push(
-    {
-        fillColor : "rgba(95,0,0,0.5)",
-        strokeColor : "rgba(95,137,250,0.9)",
-        highlightFill: "rgba(95,137,250,0.75)",
-        highlightStroke: "rgba(95,137,250,1)"
-    });
-colors.push(
-    {
-        fillColor : "rgba(245,0,0,0.5)",
-        strokeColor : "rgba(245,75,75,0.8)",
-        highlightFill : "rgba(245,75,75,0.75)",
-        highlightStroke : "rgba(245,75,75,1)"
-    });
-colors.push(
-    {
-        fillColor : "rgba(98,0,0,0.5)",
-        strokeColor : "rgba(98,223,114,0.8)",
-        highlightFill : "rgba(98,223,114,0.75)",
-        highlightStroke : "rgba(98,223,114,1)",
-    });
-console.log(colors[1%3]);
-console.log(colors[2%3]);
 function generateLabelsFromTable()
 {
     var labels = [];
 
     var rows = $(".dataset .label");
-    rows.each(function(index){
-        var cols = $(this).find("th");
+    rows.each(function(){
         labels.push($(this).text());
     });
     return labels;
@@ -45,7 +18,7 @@ function generateDataSetsFromTable()
         var cols = $(this).find(".data-row-data");
         var label = $(this).find(".data-row-label").text();
         var data = [];
-        cols.each(function(innerIndex){
+        cols.each(function(){
             // we dont need first columns of the row
                 data.push($(this).text());
         });
@@ -53,8 +26,8 @@ function generateDataSetsFromTable()
         var dataset =
             {
                 label: label,
-                backgroundColor : colors[index%3].fillColor,
-                borderColor : colors[index%3].strokeColor,
+                backgroundColor : $(this).find(".data-row-label").data('color'),
+                // borderColor : colors[index%3].strokeColor,
                 // highlightFill: colors[index%3].highlightFill,
                 // highlightStroke: colors[index%3].highlightStroke,
                 data : data
@@ -65,6 +38,7 @@ function generateDataSetsFromTable()
     return datasets;
 }
 
+var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {
     // The type of chart we want to create
     type: 'bar',

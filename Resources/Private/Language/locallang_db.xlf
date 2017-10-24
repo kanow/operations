@@ -110,6 +110,9 @@
 			<trans-unit id="tx_operations_domain_model_type.title">
 				<source>Title</source>
 			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_type.color">
+				<source>Color (Css values)</source>
+			</trans-unit>
 			<trans-unit id="tx_operations_domain_model_type.image">
 				<source>Media</source>
 			</trans-unit>

@@ -16,7 +16,7 @@
                     <tbody>
                         <f:for each="{operationsGroupedByYearAndType}" as="item">
                             <tr class="data-row">
-                                <td class="data-row-label">{item.title}</td><f:for each="{item.years}" as="year"><td class="data-row-data">{year}</td></f:for>
+                                <td class="data-row-label" data-color="{item.color}">{item.title}</td><f:for each="{item.years}" as="year"><td class="data-row-data">{year}</td></f:for>
                             </tr>
                         </f:for>
                     </tbody>

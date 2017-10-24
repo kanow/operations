@@ -67,6 +67,7 @@ CREATE TABLE tx_operations_domain_model_type (
 
 	title varchar(255) DEFAULT '' NOT NULL,
 	image varchar(255) DEFAULT '' NOT NULL,
+	color varchar(25) DEFAULT '' NOT NULL,
 
 );
 

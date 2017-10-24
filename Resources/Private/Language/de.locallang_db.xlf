@@ -140,15 +140,19 @@
 				<target>Medien</target>
 			</trans-unit>
 
-			<trans-unit id="tx_operations_domain_model_types">
+			<trans-unit id="tx_operations_domain_model_type">
 				<source>Types</source>
 				<target>Einsatzart</target>
 			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_types.title">
+			<trans-unit id="tx_operations_domain_model_type.title">
 				<source>Title</source>
 				<target>Titel</target>
 			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_types.image">
+			<trans-unit id="tx_operations_domain_model_type.color">
+				<source>Color (Css values)</source>
+				<target>Farbe (Css Angaben)</target>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_type.image">
 				<source>Image</source>
 				<target>Bild</target>
 			</trans-unit>

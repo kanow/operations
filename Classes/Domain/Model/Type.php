@@ -49,6 +49,13 @@ class Type extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	protected $image;
 
+    /**
+     * Type color
+     *
+     * @var \string
+     */
+    protected $color;
+
 	/**
 	 * Returns the title
 	 *
@@ -82,7 +89,7 @@ class Type extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
    * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
    */
   public function getAllImages() {
-  $images = $this->getImage()->toArray();
+    $images = $this->getImage()->toArray();
     return $images;
   }
   /**
@@ -103,5 +110,23 @@ class Type extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
   public function setImage($image) {
           $this->image = $image;
   }
+    /**
+     * Returns the color
+     *
+     * @return \string $color
+     */
+    public function getColor() {
+        return $this->color;
+    }
+
+    /**
+     * Sets the color
+     *
+     * @param \string $color
+     * @return void
+     */
+    public function setColor($color) {
+        $this->title = $color;
+    }
 
 }

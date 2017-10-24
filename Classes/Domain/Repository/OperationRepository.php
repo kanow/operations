@@ -32,12 +32,9 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-use Doctrine\Common\Util\Debug;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /**
  *
@@ -94,7 +91,7 @@ class OperationRepository extends Repository
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable('tx_operations_domain_model_operation');
         $result = $queryBuilder
-            ->add('select','ot.title as title, ot.uid as type_uid, COUNT(*) as count, FROM_UNIXTIME(o.begin, \'%Y\') as year')
+            ->add('select','ot.color as color, ot.title as title, ot.uid as type_uid, COUNT(*) as count, FROM_UNIXTIME(o.begin, \'%Y\') as year')
             ->from('tx_operations_domain_model_type','ot')
             ->innerJoin('ot','tx_operations_operation_type_mm','type_mm','type_mm.uid_foreign = ot.uid')
             ->innerJoin('type_mm','tx_operations_domain_model_operation','o','type_mm.uid_local = o.uid')
@@ -107,6 +104,7 @@ class OperationRepository extends Repository
             if(!array_key_exists($value['type_uid'],$resultWithEmptyYears)) {
                 $resultWithEmptyYears[$value['type_uid']] = array(
                     'title' => $value['title'],
+                    'color' => $value['color'],
                     'years' => array(
                         $value['year'] => $value['count']
                     )
@@ -126,6 +124,7 @@ class OperationRepository extends Repository
             foreach ($types as $type) {
                 if(!array_key_exists($type->getUid(),$resultWithEmptyYears)) {
                     $resultWithEmptyYears[$type->getUid()]['title'] =  $type->getTitle();
+                    $resultWithEmptyYears[$type->getUid()]['color'] =  $type->getColor();
                     $resultWithEmptyYears[$type->getUid()]['years'][$year] = 0;
                 }
             }
@@ -137,6 +136,7 @@ class OperationRepository extends Repository
             ksort($value['years']);
             $resultWithEmptyYearsSorted[$key] = array(
                 'title' => $value['title'],
+                'color' => $value['color'],
                 'years' => $value['years']
             );
         }
