@@ -162,12 +162,9 @@ class OperationController extends BaseController
     /**
      * action stats
      *
-     * @param \KN\Operations\Domain\Model\OperationDemand $demand
      * @return void
      */
-    public function statsAction(\KN\Operations\Domain\Model\OperationDemand $demand = NULL) {
-        $demand = $this->updateDemandObjectFromSettings($demand, $this->settings);
-
+    public function statsAction() {
         $years = $this->generateYears();
         $types = $this->typeRepository->findAll()->toArray();
 
@@ -175,7 +172,6 @@ class OperationController extends BaseController
 
         $this->view->assignMultiple(
             array(
-                'operationsGroupedByYear' => $operationsGroupedByYear,
                 'operationsGroupedByYearAndType' => $operationsGroupedByYearAndType,
                 'count' => $this->operationRepository->countDemanded($demand),
                 'years' => $years
@@ -212,9 +208,7 @@ class OperationController extends BaseController
         foreach ($rows as $year) {
 	      $years[$year['year']] = $year['year'];
 	  	}
-
 		return $years;
 	}
-
 
 }

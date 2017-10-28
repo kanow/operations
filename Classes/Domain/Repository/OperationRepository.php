@@ -86,7 +86,6 @@ class OperationRepository extends Repository
      * @return array
      */
     public function countGroupedByYearAndType($years,$types) {
-
         /** @var QueryBuilder $queryBuilder */
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable('tx_operations_domain_model_operation');
@@ -265,12 +264,13 @@ class OperationRepository extends Repository
             }
         }
 
-        if ($settings['showMap']) {
-            $constraints[] = $query->logicalAnd([
-                $query->greaterThan('latitude', 0),
-                $query->greaterThan('longitude', 0)
-            ]);
-        }
+        // map constraints
+        if($settings['showMap']) {
+			$constraints[] = $query->logicalAnd(
+				$query->greaterThan('latitude',0),
+				$query->greaterThan('longitude',0)
+			);
+		}
 
         $constraints = $this->cleanUnusedConstaints($constraints);
         return $constraints;
