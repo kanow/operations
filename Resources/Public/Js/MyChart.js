@@ -1,7 +1,6 @@
 function generateLabelsFromTable()
 {
     var labels = [];
-
     var rows = $(".dataset .label");
     rows.each(function(){
         labels.push($(this).text());
@@ -22,17 +21,12 @@ function generateDataSetsFromTable()
             // we dont need first columns of the row
                 data.push($(this).text());
         });
-
         var dataset =
             {
                 label: label,
                 backgroundColor : $(this).find(".data-row-label").data('color'),
-                // borderColor : colors[index%3].strokeColor,
-                // highlightFill: colors[index%3].highlightFill,
-                // highlightStroke: colors[index%3].highlightStroke,
                 data : data
             }
-
         datasets.push(dataset);
     });
     return datasets;
@@ -46,9 +40,25 @@ var myChart = new Chart(ctx, {
         labels : generateLabelsFromTable(),
         datasets : generateDataSetsFromTable()
     },
-
     // Configuration options go here
     options: {
-        events: ['click']
+        events: ['mousemove'],
+        legend: {
+            position: 'bottom',
+            labels: {
+
+            }
+        },
+        tooltips: {
+            backgroundColor:'rgba(255,0,0,0.8)'
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    // suggestedMax: 20,
+                }
+            }]
+        }
+
     }
 });
