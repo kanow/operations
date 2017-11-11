@@ -23,7 +23,7 @@
 				<div class="countResult">
 					<span>{f:count(subject:operations)} {f:if(condition:'{f:count(subject:operations)} == 1',then:'{f:translate(key:"singleOperationFound")}',else:'{f:translate(key:"operationsFound")}')}</span>
 				</div>
-					<o:maplist objects="{operations}" as="operation" settings="{settings}">{operation.begin -> f:format.date(format:'d.m.Y, H:i \U\h\r')}<br /><f:link.action action="show" arguments="{operation:operation}">{operation.title}</f:link.action></o:maplist>
+					<f:format.raw><o:maplist objects="{operations}" as="operation" settings="{settings}">{operation.begin -> f:format.date(format:'d.m.Y, H:i \U\h\r')}<br /><f:link.action action="show" arguments="{operation:operation}">{operation.title}</f:link.action></o:maplist></f:format.raw>
 					<div id="map-canvas" class="map list"></div>
 					<noscript><p><f:translate key="map.noscript">Please activate javascript for map</f:translate></p></noscript>
 				</f:then>

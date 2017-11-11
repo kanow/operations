@@ -22,7 +22,7 @@
 					<f:for each="{operation.allImages}" as="image">
 						<li>
 								<f:if condition="{settings.increaseImage}"><a href="{image.originalResource.publicUrl}" title="{image.originalResource.alternative}"></f:if>
-									<f:image src="{image.uid}" alt="" treatIdAsReference="TRUE" alt="{image.originalResource.alternative}" width="{settings.singleImgWidth}" height="{settings.singleImgHeight}" />
+									<f:image src="{image.uid}" treatIdAsReference="TRUE" alt="{image.originalResource.alternative}" width="{settings.singleImgWidth}" height="{settings.singleImgHeight}" />
 							<!-- <p class="imgDescription">{image.originalResource.description}</p> -->
 								<f:if condition="{settings.increaseImage}"></a></f:if>
 						</li>
@@ -32,7 +32,7 @@
 	</f:if>
 
 	<f:if condition="{operation.longitude}">
-		<o:mapsingle object="{operation}" as="item" settings="{settings}">{item.begin -> f:format.date(format:'d.m.Y, H:i \U\h\r')}<br />{item.location}</o:mapsingle>
+		<f:format.raw><o:mapsingle object="{operation}" as="item" settings="{settings}">{item.begin -> f:format.date(format:'d.m.Y, H:i \U\h\r')}<br />{item.location}</o:mapsingle></f:format.raw>
 		<div id="map-canvas" class="map">
 			<noscript><p><f:translate key="map.noscript">Please activate javascript for map</f:translate></p></noscript>
 		</div>
