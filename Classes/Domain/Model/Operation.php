@@ -110,7 +110,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * Zoom for maps
-	 * @lazy
+	 * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
 	 * @var \integer
 	 */
 	protected $zoom;
@@ -130,21 +130,21 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * Assistance to this operation
-	 * @lazy
+	 * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\KN\Operations\Domain\Model\Assistance>
 	 */
 	protected $assistance;
 
 	/**
 	 * Vehicles use on this operation
-	 * @lazy
+	 * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\KN\Operations\Domain\Model\Vehicle>
 	 */
 	protected $vehicles;
 
 	/**
 	 * resources used
-	 * @lazy
+	 * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\KN\Operations\Domain\Model\Resource>
 	 */
 	protected $resources;
