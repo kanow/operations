@@ -38,7 +38,7 @@ class VehicleController extends \KN\Operations\Controller\BaseController {
 	 * vehicleRepository
 	 *
 	 * @var \KN\Operations\Domain\Repository\VehicleRepository
-	 * @inject
+	 * @TYPO3\CMS\Extbase\Annotation\Inject
 	 */
 	protected $vehicleRepository;
 

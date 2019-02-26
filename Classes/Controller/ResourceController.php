@@ -38,7 +38,7 @@ class ResourceController extends \KN\Operations\Controller\BaseController {
 	 * resourceRepository
 	 *
 	 * @var \KN\Operations\Domain\Repository\ResourceRepository
-	 * @inject
+	 * @TYPO3\CMS\Extbase\Annotation\Inject
 	 */
 	protected $resourceRepository;
 

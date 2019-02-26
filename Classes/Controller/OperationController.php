@@ -42,7 +42,7 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 	 * configuration manager
 	 *
 	 * @var \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface
-	 * @inject
+	 * @TYPO3\CMS\Extbase\Annotation\Inject
 	 */
 	protected $configurationManager;
 
@@ -50,7 +50,7 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 	 * operationRepository
 	 *
 	 * @var \KN\Operations\Domain\Repository\OperationRepository
-	 * @inject
+	 * @TYPO3\CMS\Extbase\Annotation\Inject
 	 */
 	protected $operationRepository;
 
@@ -58,7 +58,7 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 	 * typeRepository
 	 *
 	 * @var \KN\Operations\Domain\Repository\TypeRepository
-	 * @inject
+	 * @TYPO3\CMS\Extbase\Annotation\Inject
 	 */
 	protected $typeRepository;
 
