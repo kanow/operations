@@ -38,7 +38,7 @@ class Assistance extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * Title of the assistance
 	 *
 	 * @var \string
-	 * @validate NotEmpty
+	 * @TYPO3\CMS\Extbase\Annotation\Validate NotEmpty
 	 */
 	protected $title;
 
