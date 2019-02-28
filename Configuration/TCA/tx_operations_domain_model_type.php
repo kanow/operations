@@ -5,7 +5,7 @@ if (!defined ('TYPO3_MODE')) {
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
-$iconPath = ExtensionManagementUtility::extRelPath('operations');
+$iconPath = ExtensionManagementUtility::extPath('operations');
 
 ExtensionManagementUtility::addToInsertRecords('tx_operations_domain_model_type');
 
