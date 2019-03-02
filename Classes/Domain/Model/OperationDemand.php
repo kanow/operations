@@ -57,7 +57,7 @@ class OperationDemand extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 	 * Begin
 	 *
 	 * @var string
-	 * @TYPO3\CMS\Extbase\Annotation\Validate NotEmpty
+	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
 	 */
 	protected $begin;
 	

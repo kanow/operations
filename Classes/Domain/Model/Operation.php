@@ -38,7 +38,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * Operation number
 	 *
 	 * @var \string
-	 * @TYPO3\CMS\Extbase\Annotation\Validate NotEmpty
+	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
 	 */
 	protected $number;
 
@@ -53,7 +53,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * Title
 	 *
 	 * @var \string
-	 * @TYPO3\CMS\Extbase\Annotation\Validate NotEmpty
+	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
 	 */
 	protected $title;
 
@@ -61,7 +61,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * Location of operation
 	 *
 	 * @var \string
-	 * @TYPO3\CMS\Extbase\Annotation\Validate NotEmpty
+	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
 	 */
 	protected $location;
 
@@ -69,7 +69,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * Begin
 	 *
 	 * @var \DateTime
-	 * @TYPO3\CMS\Extbase\Annotation\Validate NotEmpty
+	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
 	 */
 	protected $begin;
 
