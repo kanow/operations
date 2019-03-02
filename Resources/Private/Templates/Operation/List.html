@@ -61,7 +61,7 @@
 										<div class="countResult">
 											<span>{f:count(subject:operations)} {f:if(condition:'{f:count(subject:operations)} == 1',then:'{f:translate(key:"singleOperationFound")}',else:'{f:translate(key:"operationsFound")}')}</span>
 										</div>
-										<o:widget.paginate objects="{operations}" as="paginatedOperations" pagination="pagination" configuration="{itemsPerPage: settings.itemsPerPage, insertAbove:settings.paginate.insertAbove, insertBelow:settings.paginate.insertBelow, maximumNumberOfLinks: settings.paginate.maxNumberOfLinks }" additionalParamsPrefix="tx_operations_list" additionalParams="{demand:demand.parameter}">
+											<f:widget.paginate objects="{operations}" as="paginatedOperations" configuration="{itemsPerPage: settings.itemsPerPage, insertAbove: settings.paginate.insertAbove, insertBelow: settings.paginate.insertBelow, maximumNumberOfLinks: settings.paginate.maxNumberOfLinks}">
 											<ul>
 												<f:for each="{paginatedOperations}" as="operation" iteration="oIterator">
 													<li class="clearfix{f:if(condition:'{oIterator.isOdd}',then:' odd')}">
@@ -69,7 +69,7 @@
 													</li>
 												</f:for>
 											</ul>
-										</o:widget.paginate>
+										</f:widget.paginate>
 									</f:else>
 								</f:if>
 							</f:else>
