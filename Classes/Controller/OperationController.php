@@ -82,7 +82,6 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 	/**
 	 * action search
 	 *
-	 * @dontverifyrequesthash
 	 * @param \KN\Operations\Domain\Model\OperationDemand $demand
 	 * @return void
 	 */
