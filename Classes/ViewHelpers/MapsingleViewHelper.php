@@ -24,33 +24,48 @@ namespace KN\Operations\ViewHelpers;
 	/**
 	* google map for operation
 	*/
+use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
- class MapsingleViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+ class MapsingleViewHelper extends AbstractViewHelper {
 
-	/**
-	 * 
-	 * @param \KN\Operations\Domain\Model\Operation	 $object current operation
-	 * @param array $settings
-	 * @param string $as
-	 * @return string
-	 */
+     protected $escapeOutput = false;
 
+     use CompileWithRenderStatic;
 
-	public function render(\KN\Operations\Domain\Model\Operation $object, $settings, $as) {
+     public function initializeArguments()
+     {
+         $this->registerArgument('object', '\KN\Operations\Domain\Model\Operation', 'The Operation object', true);
+         $this->registerArgument('settings', 'array', 'Settings', true);
+         $this->registerArgument('as', 'string', 'Render content as', true);
+     }
+
+     /**
+      *
+      * @param array $arguments
+      * @param \Closure $renderChildrenClosure
+      * @param RenderingContextInterface $renderingContext
+      * @return string
+      */
+     public static function renderStatic(
+         array $arguments,
+         \Closure $renderChildrenClosure,
+         RenderingContextInterface $renderingContext
+     ) {
+		$coordinates = "var Coordinates = new google.maps.LatLng(".$arguments['object']->getLatitude().",".$arguments['object']->getLongitude().");";
 		
-		$coordinates = "var Coordinates = new google.maps.LatLng(".$object->getLatitude().",".$object->getLongitude().");";
-		
-		if($object->getZoom()) {
-			$zoom = $object->getZoom();
+		if($arguments['object']->getZoom()) {
+			$zoom = $arguments['object']->getZoom();
 		} else {
-			$zoom = $settings[map][defaultZoomSingle];
+			$zoom = $arguments['settings'][map][defaultZoomSingle];
 		}
 		
-		$this->templateVariableContainer->add($as, $object);
+		$this->templateVariableContainer->add($arguments['as'], $arguments['object']);
 		$description = $this->renderChildren();
-		$this->templateVariableContainer->remove($as);
+		$this->templateVariableContainer->remove($arguments['as']);
 		
-		($settings['map']['styles']!='')?$mapStyles = ",\nstyles: [".$settings['map']['styles']."]\n":$mapStyles = "\n";
+		($arguments['settings']['map']['styles']!='')?$mapStyles = ",\nstyles: [".$arguments['settings']['map']['styles']."]\n":$mapStyles = "\n";
 		$mapOptions = "var mapOptions = {\n
     zoom:$zoom,\n
     center: Coordinates,\n
@@ -87,7 +102,7 @@ namespace KN\Operations\ViewHelpers;
 
 		$initialize = "function initialize() {".$coordinates."\n".$mapOptions."\n".$map."\n".$infowindow."\n".$marker."\n".$addListener."}";
 		
-		$apikey = $settings['map']['apikey'];
+		$apikey = $arguments['settings']['map']['apikey'];
 		if($apikey) {
 			$src = "http://maps.googleapis.com/maps/api/js?key=$apikey&sensor=false&callback=initialize";
 		} else {

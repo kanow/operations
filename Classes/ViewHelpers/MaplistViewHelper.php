@@ -25,36 +25,55 @@ namespace KN\Operations\ViewHelpers;
 	* list for google maps items
 	*/
 
- class MaplistViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
+ class MaplistViewHelper extends AbstractViewHelper {
+
+     use CompileWithRenderStatic;
+
+     protected $escapeOutput = false;
+
+     public function initializeArguments()
+     {
+         $this->registerArgument('objects', '\TYPO3\CMS\Extbase\Persistence\QueryResultInterface', 'The QueryResultinterface', true);
+         $this->registerArgument('settings', 'array', 'Settings', true);
+         $this->registerArgument('as', 'string', 'Render content as', true);
+     }
 
 	/**
 	 *
-	 * @param \TYPO3\CMS\Extbase\Persistence\QueryResultInterface $objects
-	 * @param array $settings
-	 * @param string $as
+	 * @param array $arguments
+	 * @param \Closure $renderChildrenClosure
+	 * @param RenderingContextInterface $renderingContext
 	 * @return string
 	 */
 
-	public function render(\TYPO3\CMS\Extbase\Persistence\QueryResultInterface $objects,$settings,$as) {
+	public static function renderStatic(
+        array $arguments,
+        \Closure $renderChildrenClosure,
+        RenderingContextInterface $renderingContext
+    ) {
 		
 		// get the location data from QueryResultInterface
-		foreach ($objects as $singleElement) {
+		foreach ($arguments['objects'] as $singleElement) {
 			if($singleElement->getLatitude() && $singleElement->getLongitude()) {
 				
 				$longitudes = $singleElement->getLongitude();
 				$latitudes = $singleElement->getLatitude();
 				
-					$this->templateVariableContainer->add($as, $singleElement);
+					$this->templateVariableContainer->add($arguments['as'], $singleElement);
 					$description = $this->renderChildren();
-					$this->templateVariableContainer->remove($as);
+					$this->templateVariableContainer->remove($arguments['as']);
 				
 				$locations .= '[\''.$description.'\','.$latitudes.','.$longitudes.'],';
 			}
 		}
 		
-		$overrideLatList = $settings['map']['overrideCenterLatList'];
-		$overrideLongList = $settings['map']['overrideCenterLongList'];
-		$overrideZoomList = $settings['map']['overrideZoomList'];
+		$overrideLatList = $arguments['settings']['map']['overrideCenterLatList'];
+		$overrideLongList = $arguments['settings']['map']['overrideCenterLongList'];
+		$overrideZoomList = $arguments['settings']['map']['overrideZoomList'];
 
 		$bounds = "var bounds = new google.maps.LatLngBounds();\n";
 		$fitBounds = "map.fitBounds(bounds);";
@@ -114,7 +133,7 @@ namespace KN\Operations\ViewHelpers;
 
 		$initialize = "\n function initialize() {\n $bounds \n $mapOptions \n $map \n $infowindow \n $markerI \n $markers \n $loopToAddMarkersAndCentering \n }\n";
 		
-		$apikey = $settings['map']['apikey'];
+		$apikey = $arguments['settings']['map']['apikey'];
 		if($apikey) {
 			$src = "http://maps.googleapis.com/maps/api/js?key=$apikey&sensor=false&callback=initialize";
 		} else {
