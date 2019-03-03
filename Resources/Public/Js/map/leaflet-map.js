@@ -14,12 +14,13 @@ L.tileLayer( 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 var mapData = jQuery('.leaflet-map').data('map');
 
 var myIcon = L.icon({
-  iconUrl: mapData.mapFolder + 'images/pin24.png',
-  iconRetinaUrl: mapData.mapFolder + 'images/pin48.png',
-  iconSize: [29, 24],
-  iconAnchor: [9, 21],
-  popupAnchor: [0, -14]
-})
+  iconUrl: mapData.mapFolder + 'images/operations-pin24.png',
+  iconRetinaUrl: mapData.mapFolder + 'images/operations-pin48.png',
+  iconSize: [16, 24],
+  iconAnchor: [16, 24],
+  popupAnchor: [-8, -20],
+});
+
 
 
 // get markers(items) from each item and push it to an array
