@@ -23,8 +23,21 @@
 				<div class="countResult">
 					<span>{f:count(subject:operations)} {f:if(condition:'{f:count(subject:operations)} == 1',then:'{f:translate(key:"singleOperationFound")}',else:'{f:translate(key:"operationsFound")}')}</span>
 				</div>
-					<f:format.raw><o:maplist objects="{operations}" as="operation" settings="{settings}">{operation.begin -> f:format.date(format:'d.m.Y, H:i \U\h\r')}<br /><f:link.action action="show" arguments="{operation:operation}">{operation.title}</f:link.action></o:maplist></f:format.raw>
-					<div id="map-canvas" class="map list"></div>
+					<f:variable name="mapFolder" value="{f:uri.resource(extensionName: 'operations', path: 'Js/map/', absolute: 1)}" />
+					<div id="leaflet-map" class="leaflet-map" data-map="{f:format.json(forceObject: false,value: {mapFolder:mapFolder})}"></div>
+					<ul class="list-data" style="display:none;">
+						<f:for each="{operations}" as="operation">
+							<f:variable name="uri" value="{f:uri.action(action:'show',arguments:'{operation:operation}',pageUid:settings.operationSinglePid, absolute: 1)}" />
+							<li class="list-item" data-marker="{f:format.json(value:{
+							title:operation.title,
+							uri:uri,
+							lat: operation.latitude,
+							lng: operation.longitude,
+							teaser: operation.teaser
+							})}">{operation.title}</li>
+						</f:for>
+					</ul>
+
 					<noscript><p><f:translate key="map.noscript">Please activate javascript for map</f:translate></p></noscript>
 				</f:then>
 				<f:else>

@@ -83,17 +83,30 @@ plugin.tx_operations {
 page {
 	includeJS {
 	}
+	includeJSLibs {
+		leaflet = //unpkg.com/leaflet@1.4.0/dist/leaflet.js
+		leaflet.external = 1
+	}
+	includeCSSLibs {
+		leaflet = //unpkg.com/leaflet@1.4.0/dist/leaflet.css
+		leaflet.external = 1
+	}
 	includeCSS {
 		operations = {$plugin.tx_operations.css}
 		flexslider = {$plugin.tx_operations.flexsliderCss}
 		magnificPopup = {$plugin.tx_operations.magnificCss}
 	}
 	includeJSFooter {
+
 		jquery = {$plugin.tx_operations.jquery}
+		jquery.external = 1
+
 		flexslider = {$plugin.tx_operations.flexsliderJs}
 		magnificPopup = {$plugin.tx_operations.magnificJs}
 		sliderJs = {$plugin.tx_operations.sliderJs}
 		lightboxJs = {$plugin.tx_operations.lightboxJs}
-		#map = EXT:operations/Resources/Public/Js/map.js
+
+		leafleatMap = EXT:operations/Resources/Public/Js/map/leaflet-map.js
+
 	}
 }

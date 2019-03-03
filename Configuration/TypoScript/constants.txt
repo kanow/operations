@@ -19,7 +19,7 @@ plugin.tx_operations {
 
 
 	# cat=tx_operations-templating/template/045/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.jquery
-	jquery = EXT:operations/Resources/Public/Js/jquery.min.1.8.3.js
+	jquery = //ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
 	# cat=tx_operations-templating/template/050/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.flexsliderJs
 	flexsliderJs = EXT:operations/Resources/Public/Js/flexslider-min.js
 	# cat=tx_operations-templating/template/055/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.magnificJs
