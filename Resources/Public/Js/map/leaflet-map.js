@@ -1,10 +1,10 @@
 // See post: http://asmaloney.com/2014/01/code/creating-an-interactive-map-with-leaflet-and-openstreetmap/
 
 var map = L.map( 'leaflet-map', {
-  center: [20.0, 5.0],
-  minZoom: 2,
-  zoom: 2
-})
+    // center and zoom ahs to be set manually if no fitBounds is activated
+    // center: [50.0, 11.0],
+    // zoom: 8
+});
 
 L.tileLayer( 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
@@ -21,11 +21,23 @@ var myIcon = L.icon({
   popupAnchor: [0, -14]
 })
 
-markers = [];
+
+// get markers(items) from each item and push it to an array
+var markers = [];
 jQuery('.list-item').each(function() {
-  markers.push(jQuery(this).data('marker'))
+    markers.push(jQuery(this).data('marker'))
 });
 
+// automatically zoom and centering depending of markers
+var arrayOfLatLngs = [];
+for (var i=0; i < markers.length; ++i)
+{
+    arrayOfLatLngs.push([markers[i].lat, markers[i].lng]);
+}
+var bounds = new L.LatLngBounds(arrayOfLatLngs);
+map.fitBounds(bounds);
+
+// set content for popup
 for ( var i=0; i < markers.length; ++i )
 {
   markerUri = markers[i].uri;
