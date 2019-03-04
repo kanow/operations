@@ -16,14 +16,16 @@
 .meta p {margin-bottom:5px;}
 .operations.list h1 {margin-bottom:40px;}
 .list ul, .images ul, .layer ul {list-style:none;}
-.list li {min-height:65px;padding:10px 2% 10px;position:relative;}
+.list li {padding:10px 2% 10px;position:relative;}
 .list .img {position:absolute;top:10px;right:10px;max-width:20%;}
 .list .left, .list .meta {padding-right:20%;}
 .list li h2 {margin:3px 0;}
 
-.pageBrowser {margin:20px 0;}
-.list .paginate li {min-height:10px;margin:2px 0;border-width:1px;border-style:solid;display:inline-block;padding:0;}
-.paginate a, .paginate li span {padding: 1px 5px 0;display:inline-block;}
+.f3-widget-paginator {margin:2em 0;}
+.f3-widget-paginator li {display:inline-block;padding:0;}
+.f3-widget-paginator a, .f3-widget-paginator li.current { display:inline-block; border-width:1px;border-style:solid; border-color: #4b0b00; background: rgb(193, 24, 19); padding:.5em;margin-right:.2em; color:#eeebff;font-weight:bold;}
+.f3-widget-paginator li.current {background: rgb(255, 255, 255);color:#666;)
+}
 .list li {clear:both;}
 .list li a {text-decoration:none;}
 
