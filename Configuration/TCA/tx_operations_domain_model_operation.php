@@ -41,16 +41,15 @@ $tx_operations_domain_model_operation = [
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, number, onlyEld, title, location, begin, end, teaser, report, longitude, latitude, zoom, image, type, assistance, vehicles, resources',
     ],
 	'types' => [
-		'1' => [
-            'showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource;;1,
+		'0' => [
+            'showitem' => 'sys_language_uid;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language;;;1-1-1, l10n_parent;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent, l10n_diffsource,hidden;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden,
 		--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.meta;paletteMeta,
 		title, location,
 		--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.time;paletteTime,
 		teaser,report,
 		--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.map,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.coordinates;paletteMap,
 		--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.relations,assistance,vehicles, resources,
-		--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.img,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.img;paletteImg,
-		--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, hidden, starttime, endtime'
+		--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.img,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.img;paletteImg,'
         ],
     ],
 	'palettes' => [

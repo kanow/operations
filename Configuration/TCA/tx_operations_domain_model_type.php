@@ -38,7 +38,9 @@ $tx_operations_domain_model_type = [
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, image',
     ],
 	'types' => [
-		'1' => ['showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, image,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'],
+		'0' => ['showitem' => 'sys_language_uid;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language;;;1-1-1, l10n_parent;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent, l10n_diffsource,hidden;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden,
+		title, image,'
+        ],
     ],
 	'palettes' => [
 		'1' => ['showitem' => ''],
