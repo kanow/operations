@@ -32,8 +32,14 @@
 	</f:if>
 
 	<f:if condition="{operation.longitude}">
-		<f:format.raw><o:mapsingle object="{operation}" as="item" settings="{settings}">{item.begin -> f:format.date(format:'d.m.Y, H:i \U\h\r')}<br />{item.location}</o:mapsingle></f:format.raw>
-		<div id="map-canvas" class="map">
+		<f:variable name="mapFolder" value="{f:uri.resource(extensionName: 'operations', path: 'Js/map/', absolute: 1)}" />
+		<div id="leaflet-map" class="leaflet-map single"
+			 data-map="{f:format.json(forceObject: false,value: {mapFolder:mapFolder,zoomControl:0})}"
+			 data-marker="{f:format.json(value:{
+				title:operation.location,
+				lat: operation.latitude,
+				lng: operation.longitude
+				})}">
 			<noscript><p><f:translate key="map.noscript">Please activate javascript for map</f:translate></p></noscript>
 		</div>
 	</f:if>
