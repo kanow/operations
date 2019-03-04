@@ -1,0 +1,11 @@
+<div class="countResult">
+    <span>{f:count(subject:operations)} {f:if(condition:'{f:count(subject:operations)} == 1',then:'{f:translate(key:"singleOperationFound")}',else:'{f:translate(key:"operationsFound")}')}</span>
+</div>
+
+<ul>
+    <f:for each="{operations}" as="operation" iteration="oIterator">
+        <li class="clearfix{f:if(condition:'{oIterator.isOdd}',then:' odd')}">
+            <f:render partial="List/Item" arguments="{operation: operation, settings:settings}" />
+        </li>
+    </f:for>
+</ul>

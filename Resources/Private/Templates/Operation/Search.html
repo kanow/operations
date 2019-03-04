@@ -18,57 +18,15 @@
 			<f:then>
 				<f:if condition="{settings.showMap}">
 					<f:then>
-						<div class="countResult">
-							<span>{f:count(subject:demanded)} {f:if(condition:'{f:count(subject:demanded)} == 1',then:'{f:translate(key:"singleOperationFound")}',else:'{f:translate(key:"operationsFound")}')}</span>
-						</div>
-						<o:maplist objects="{demanded}" as="operation" settings="{settings}">{operation.begin -> f:format.date(format:'d.m.Y, H:i \U\h\r')}<br /><f:link.action action="show" arguments="{operation:operation}">{operation.title}</f:link.action></o:maplist>
-						<div id="map-canvas" class="map list"></div>
-						<noscript><p><f:translate key="map.noscript">Please activate javascript for map</f:translate></p></noscript>
+						<f:render partial="List/Map" arguments="{operations:demanded}" />
 					</f:then>
 					<f:else>
 						<f:if condition="{settings.hidePagination}">
 							<f:then>
-								<div class="countResult">
-									<span>{f:count(subject:demanded)} {f:if(condition:'{f:count(subject:demanded)} == 1',then:'{f:translate(key:"singleOperationFound")}',else:'{f:translate(key:"operationsFound")}')}</span>
-								</div>
-					
-								<ul>
-									<f:for each="{demanded}" as="operation" iteration="oIterator">
-										<li class="clearfix{f:if(condition:'{oIterator.isOdd}',then:' odd')}">
-											<f:render partial="List/Item" arguments="{operation: operation, settings:settings, backAction:'search'}" />
-										</li>
-									</f:for>
-								</ul>
+								<f:render partial="List/ListWithoutPagination" arguments="{operations:demanded}" />
 							</f:then>
 							<f:else>
-								<f:if condition="{f:count(subject:demanded)} <=  {settings.itemsPerPage}">
-									<f:then>
-										<div class="countResult">
-											<span>{f:count(subject:demanded)} {f:if(condition:'{f:count(subject:demanded)} == 1',then:'{f:translate(key:"singleOperationFound")}',else:'{f:translate(key:"operationsFound")}')}</span>
-										</div>
-										<ul>
-											<f:for each="{demanded}" as="operation" iteration="oIterator">
-												<li class="clearfix{f:if(condition:'{oIterator.isOdd}',then:' odd')}">
-													<f:render partial="List/Item" arguments="{operation: operation, settings:settings, backAction:'search'}" />
-												</li>
-											</f:for>
-										</ul>
-									</f:then>
-									<f:else>
-										<div class="countResult">
-											<span>{f:count(subject:demanded)} {f:if(condition:'{f:count(subject:demanded)} == 1',then:'{f:translate(key:"singleOperationFound")}',else:'{f:translate(key:"operationsFound")}')}</span>
-										</div>
-										<f:widget.paginate objects="{demanded}" as="paginatedOperations" configuration="{itemsPerPage: settings.itemsPerPage, insertAbove:settings.paginate.insertAbove, insertBelow:settings.paginate.insertBelow, maximumNumberOfLinks: settings.paginate.maxNumberOfLinks }">
-											<ul>
-												<f:for each="{paginatedOperations}" as="operation" iteration="oIterator">
-													<li class="clearfix{f:if(condition:'{oIterator.isOdd}',then:' odd')}">
-														<f:render partial="List/Item" arguments="{operation: operation, settings:settings, backAction:'search'}" />
-													</li>
-												</f:for>
-											</ul>
-										</f:widget.paginate>
-									</f:else>
-								</f:if>
+								<f:render partial="List/ListWithPagination" arguments="{operations:demanded}" />
 							</f:else>
 						</f:if>
 					</f:else>

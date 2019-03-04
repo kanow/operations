@@ -1,0 +1,28 @@
+<f:if condition="{f:count(subject:operations)} <=  {settings.itemsPerPage}">
+    <f:then>
+        <div class="countResult">
+            <span>{f:count(subject:operations)} {f:if(condition:'{f:count(subject:operations)} == 1',then:'{f:translate(key:"singleOperationFound")}',else:'{f:translate(key:"operationsFound")}')}</span>
+        </div>
+        <ul>
+            <f:for each="{operations}" as="operation" iteration="oIterator">
+                <li class="clearfix{f:if(condition:'{oIterator.isOdd}',then:' odd')}">
+                    <f:render partial="List/Item" arguments="{operation: operation, settings:settings}" />
+                </li>
+            </f:for>
+        </ul>
+    </f:then>
+    <f:else>
+        <div class="countResult">
+            <span>{f:count(subject:operations)} {f:if(condition:'{f:count(subject:operations)} == 1',then:'{f:translate(key:"singleOperationFound")}',else:'{f:translate(key:"operationsFound")}')}</span>
+        </div>
+        <f:widget.paginate objects="{operations}" as="paginatedOperations" configuration="{itemsPerPage: settings.itemsPerPage, insertAbove: settings.paginate.insertAbove, insertBelow: settings.paginate.insertBelow, maximumNumberOfLinks: settings.paginate.maxNumberOfLinks}">
+            <ul>
+                <f:for each="{paginatedOperations}" as="operation" iteration="oIterator">
+                    <li class="clearfix{f:if(condition:'{oIterator.isOdd}',then:' odd')}">
+                        <f:render partial="List/Item" arguments="{operation: operation, settings:settings}" />
+                    </li>
+                </f:for>
+            </ul>
+        </f:widget.paginate>
+    </f:else>
+</f:if>
