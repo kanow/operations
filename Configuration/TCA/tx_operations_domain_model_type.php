@@ -5,11 +5,9 @@ if (!defined ('TYPO3_MODE')) {
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
-$iconPath = ExtensionManagementUtility::extPath('operations');
-
 ExtensionManagementUtility::addToInsertRecords('tx_operations_domain_model_type');
 
-$tx_operations_domain_model_type = [
+return [
 	'ctrl' => [
                 'title' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_type',
                 'label' => 'title',
@@ -31,8 +29,7 @@ $tx_operations_domain_model_type = [
                         'endtime' => 'endtime',
                 ],
                 'searchFields' => 'uid,title',
-                'iconfile' => $iconPath . '/Resources/Public/Icons/tx_operations_domain_model_type.png',
-                'typeicon_classes' => \KN\Operations\Utility\Div::getTypeIconClasses('ext-operations-type')
+                'typeicon_classes' => ['default' => 'ext-operations-type']
     ],
 	'interface' => [
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, image',
@@ -161,5 +158,3 @@ $tx_operations_domain_model_type = [
         ],
     ],
 ];
-
-return $tx_operations_domain_model_type;

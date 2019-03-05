@@ -7,11 +7,10 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 // get first main part of TYPO3 version number
 $currentTypo3Version = \KN\Operations\Utility\Div::getPartOfTypo3Version();
-$iconPath = ExtensionManagementUtility::extPath('operations');
 
 ExtensionManagementUtility::addToInsertRecords('tx_operations_domain_model_assistance');
 
-$tx_operations_domain_model_assistance = [
+return [
 	'ctrl' => [
                 'title' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_assistance',
                 'label' => 'title',
@@ -33,8 +32,7 @@ $tx_operations_domain_model_assistance = [
                         'endtime' => 'endtime',
                 ],
                 'searchFields' => 'title,description,link,',
-                'iconfile' => $iconPath . '/Resources/Public/Icons/tx_operations_domain_model_assistance.png',
-                'typeicon_classes' => \KN\Operations\Utility\Div::getTypeIconClasses('ext-operations-assistance')
+                'typeicon_classes' => ['default' => 'ext-operations-assistance']
     ],
 	'interface' => [
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, link',
@@ -180,5 +178,3 @@ $tx_operations_domain_model_assistance = [
         ],
     ],
 ];
-
-return $tx_operations_domain_model_assistance;

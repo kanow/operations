@@ -7,11 +7,10 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 // get first main part of TYPO3 version number
 $currentTypo3Version = \KN\Operations\Utility\Div::getPartOfTypo3Version();
-$iconPath = ExtensionManagementUtility::extPath('operations');
 
 ExtensionManagementUtility::addToInsertRecords('tx_operations_domain_model_operation');
 
-$tx_operations_domain_model_operation = [
+return [
 	'ctrl' => [
                 'title' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation',
                 'label' => 'title',
@@ -34,8 +33,7 @@ $tx_operations_domain_model_operation = [
                         'endtime' => 'endtime',
                 ],
                 'searchFields' => 'number,title,location,begin,end,report,longitude,latitude,zoom,image,type,assistance,vehicles,resources,',
-                'iconfile' => $iconPath . '/Resources/Public/Icons/tx_operations_domain_model_operation.png',
-                'typeicon_classes' => \KN\Operations\Utility\Div::getTypeIconClasses('ext-operations-operation'),
+                'typeicon_classes' => ['default' => 'ext-operations-operation'],
     ],
 	'interface' => [
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, number, onlyEld, title, location, begin, end, teaser, report, longitude, latitude, zoom, image, type, assistance, vehicles, resources',
@@ -442,5 +440,3 @@ $tx_operations_domain_model_operation = [
         ],
     ],
 ];
-
-return $tx_operations_domain_model_operation;
