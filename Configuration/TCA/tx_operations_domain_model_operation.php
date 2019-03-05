@@ -325,30 +325,17 @@ return [
 				'maxitems' => 9999,
 				'multiple' => 0,
 				'renderType' => 'selectMultipleSideBySide',
-				'wizards' => [
-					'_PADDING' => 1,
-					'_VERTICAL' => 1,
-					'edit' => [
-						'type' => 'popup',
-						'title' => 'Edit',
-						'module' => [
-							'name' => 'wizard_edit'
+                'fieldControl' => [
+                    'editPopup' => [
+                        'disabled' => false,
+                        'options' => [
+                            'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.edit',
                         ],
-						'icon' => 'actions-open',
-						'popup_onlyOpenIfSelected' => 1,
-						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
                     ],
-					'add' => [
-						'type' => 'script',
-						'title' => 'Create new',
-						'icon' => 'actions-add',
-						'params' => [
-							'table' => 'tx_operations_domain_model_assistance',
-							'pid' => '###CURRENT_PID###',
-							'setValue' => 'prepend'
-                        ],
-						'module' => [
-							'name' => 'wizard_add'
+                    'addRecord' => [
+                        'disabled' => false,
+                        'options' => [
+                            'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.createNew',
                         ],
                     ],
                 ],
@@ -367,30 +354,17 @@ return [
 				'maxitems' => 9999,
 				'multiple' => 0,
 				'renderType' => 'selectMultipleSideBySide',
-				'wizards' => [
-					'_PADDING' => 1,
-					'_VERTICAL' => 1,
-					'edit' => [
-						'type' => 'popup',
-						'title' => 'Edit',
-						'module' => [
-							'name' => 'wizard_edit'
+                'fieldControl' => [
+                    'editPopup' => [
+                        'disabled' => false,
+                        'options' => [
+                            'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.edit',
                         ],
-						'icon' => 'actions-open',
-						'popup_onlyOpenIfSelected' => 1,
-						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
                     ],
-					'add' => [
-						'type' => 'script',
-						'title' => 'Create new',
-						'icon' => 'actions-add',
-						'params' => [
-							'table' => 'tx_operations_domain_model_vehicle',
-							'pid' => '###CURRENT_PID###',
-							'setValue' => 'prepend'
-                        ],
-						'module' => [
-							'name' => 'wizard_add'
+                    'addRecord' => [
+                        'disabled' => false,
+                        'options' => [
+                            'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.createNew',
                         ],
                     ],
                 ],
@@ -409,30 +383,17 @@ return [
 				'maxitems' => 9999,
 				'multiple' => 0,
 				'renderType' => 'selectMultipleSideBySide',
-				'wizards' => [
-					'_PADDING' => 1,
-					'_VERTICAL' => 1,
-					'edit' => [
-						'type' => 'popup',
-						'title' => 'Edit',
-						'module' => [
-							'name' => 'wizard_edit'
+                'fieldControl' => [
+                    'editPopup' => [
+                        'disabled' => false,
+                        'options' => [
+                            'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.edit',
                         ],
-						'icon' => 'actions-open',
-						'popup_onlyOpenIfSelected' => 1,
-						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
                     ],
-					'add' => [
-						'type' => 'script',
-						'title' => 'Create new',
-						'icon' => 'actions-add',
-						'params' => [
-							'table' => 'tx_operations_domain_model_resource',
-							'pid' => '###CURRENT_PID###',
-							'setValue' => 'prepend'
-                        ],
-						'module' => [
-							'name' => 'wizard_add'
+                    'addRecord' => [
+                        'disabled' => false,
+                        'options' => [
+                            'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.createNew',
                         ],
                     ],
                 ],
