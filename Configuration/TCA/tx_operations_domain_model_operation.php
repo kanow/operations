@@ -97,7 +97,8 @@ return [
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
 			'config' => [
 				'type' => 'select',
-				'items' => [
+                'renderType' => 'selectSingle',
+                'items' => [
 					['', 0],
                 ],
 				'foreign_table' => 'tx_operations_domain_model_operation',
