@@ -157,23 +157,9 @@ return [
 			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_assistance.link',
 			'config' => [
 				'type' => 'input',
+                'renderType' => 'inputLink',
 				'size' => 30,
 				'eval' => 'trim',
-				'wizards' => [
-					'link' => [
-						'icon' => 'actions-wizard-link',
-						'JSopenParams' => 'height=300,width=500,status=0,menubar=0,scrollbars=1',
-						'module' => [
-							'name' => 'wizard_element_browser',
-							'urlParameters' => [
-								'mode' => 'wizard',
-                            ]
-                        ],
-						'title' => 'LLL:EXT:cms/locallang_ttc.xml:header_link_formlabel',
-						'type' => 'popup',
-                    ],
-					'_PADDING' => 2
-                ],
             ],
         ],
     ],
