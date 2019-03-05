@@ -61,26 +61,21 @@ $iconRegistry->registerIcon(
 
 
 
-$TCA['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'layout,select_key,pages';
+$TCA['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'select_key,pages';
 $TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
 ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:'.$_EXTKEY . '/Configuration/FlexForms/flexform_list.xml');
 
 ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Operations');
 
 ExtensionManagementUtility::addLLrefForTCAdescr('tx_operations_domain_model_operation', 'EXT:operations/Resources/Private/Language/locallang_csh_tx_operations_domain_model_operation.xlf');
-ExtensionManagementUtility::allowTableOnStandardPages('tx_operations_domain_model_operation');
 
 ExtensionManagementUtility::addLLrefForTCAdescr('tx_operations_domain_model_assistance', 'EXT:operations/Resources/Private/Language/locallang_csh_tx_operations_domain_model_assistance.xlf');
-ExtensionManagementUtility::allowTableOnStandardPages('tx_operations_domain_model_assistance');
 
 ExtensionManagementUtility::addLLrefForTCAdescr('tx_operations_domain_model_vehicle', 'EXT:operations/Resources/Private/Language/locallang_csh_tx_operations_domain_model_vehicle.xlf');
-ExtensionManagementUtility::allowTableOnStandardPages('tx_operations_domain_model_vehicle');
 
 ExtensionManagementUtility::addLLrefForTCAdescr('tx_operations_domain_model_resource', 'EXT:operations/Resources/Private/Language/locallang_csh_tx_operations_domain_model_resource.xlf');
-ExtensionManagementUtility::allowTableOnStandardPages('tx_operations_domain_model_resource');
 
 ExtensionManagementUtility::addLLrefForTCAdescr('tx_operations_domain_model_type', 'EXT:operations/Resources/Private/Language/locallang_csh_tx_operations_domain_model_type.xlf');
-ExtensionManagementUtility::allowTableOnStandardPages('tx_operations_domain_model_type');
 
 $TCA['sys_file_reference']['columns']['uid_local']['config']['foreign_table'] = 'sys_file';
 
