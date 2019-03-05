@@ -16,8 +16,7 @@ return [
                 'cruser_id' => 'cruser_id',
                 'dividers2tabs' => TRUE,
                 'sortby' => 'sorting',
-                'versioningWS' => 2,
-                'versioning_followPages' => TRUE,
+                'versioningWS' => true,
                 'origUid' => 't3_origuid',
                 'languageField' => 'sys_language_uid',
                 'transOrigPointerField' => 'l10n_parent',
@@ -35,7 +34,7 @@ return [
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, image',
     ],
 	'types' => [
-		'0' => ['showitem' => 'sys_language_uid;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language;;;1-1-1, l10n_parent;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent, l10n_diffsource,hidden;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden,
+		'0' => ['showitem' => 'sys_language_uid;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language, l10n_parent;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent, l10n_diffsource,hidden;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden,
 		title, image,'
         ],
     ],

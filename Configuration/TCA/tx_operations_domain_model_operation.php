@@ -20,8 +20,7 @@ return [
                 'dividers2tabs' => TRUE,
                 //'sortby' => 'sorting',
                 'default_sortby' => 'ORDER BY begin DESC',
-                'versioningWS' => 2,
-                'versioning_followPages' => TRUE,
+                'versioningWS' => true,
                 'origUid' => 't3_origuid',
                 'languageField' => 'sys_language_uid',
                 'transOrigPointerField' => 'l10n_parent',
@@ -40,7 +39,7 @@ return [
     ],
 	'types' => [
 		'0' => [
-            'showitem' => 'sys_language_uid;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language;;;1-1-1, l10n_parent;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent, l10n_diffsource,hidden;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden,
+            'showitem' => 'sys_language_uid;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language, l10n_parent;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent, l10n_diffsource,hidden;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden,
 		--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.meta;paletteMeta,
 		title, location,
 		--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.time;paletteTime,
@@ -234,7 +233,7 @@ return [
 				'eval' => 'trim',
 				'wizards' => [
 					'RTE' => [
-						'icon' => \KN\Operations\Utility\Div::getWizardIcon('rte',$currentTypo3Version),
+						'icon' => 'actions-wizard-rte',
 						'notNewRecords'=> 1,
 						'RTEonly' => 1,
 						'module' => [
@@ -334,14 +333,14 @@ return [
 						'module' => [
 							'name' => 'wizard_edit'
                         ],
-						'icon' => \KN\Operations\Utility\Div::getWizardIcon('edit',$currentTypo3Version),
+						'icon' => 'actions-open',
 						'popup_onlyOpenIfSelected' => 1,
 						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
                     ],
 					'add' => [
 						'type' => 'script',
 						'title' => 'Create new',
-						'icon' => \KN\Operations\Utility\Div::getWizardIcon('add',$currentTypo3Version),
+						'icon' => 'actions-add',
 						'params' => [
 							'table' => 'tx_operations_domain_model_assistance',
 							'pid' => '###CURRENT_PID###',
@@ -376,14 +375,14 @@ return [
 						'module' => [
 							'name' => 'wizard_edit'
                         ],
-						'icon' => \KN\Operations\Utility\Div::getWizardIcon('edit',$currentTypo3Version),
+						'icon' => 'actions-open',
 						'popup_onlyOpenIfSelected' => 1,
 						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
                     ],
 					'add' => [
 						'type' => 'script',
 						'title' => 'Create new',
-						'icon' => \KN\Operations\Utility\Div::getWizardIcon('add',$currentTypo3Version),
+						'icon' => 'actions-add',
 						'params' => [
 							'table' => 'tx_operations_domain_model_vehicle',
 							'pid' => '###CURRENT_PID###',
@@ -418,14 +417,14 @@ return [
 						'module' => [
 							'name' => 'wizard_edit'
                         ],
-						'icon' => \KN\Operations\Utility\Div::getWizardIcon('edit',$currentTypo3Version),
+						'icon' => 'actions-open',
 						'popup_onlyOpenIfSelected' => 1,
 						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
                     ],
 					'add' => [
 						'type' => 'script',
 						'title' => 'Create new',
-						'icon' => \KN\Operations\Utility\Div::getWizardIcon('add',$currentTypo3Version),
+						'icon' => 'actions-add',
 						'params' => [
 							'table' => 'tx_operations_domain_model_resource',
 							'pid' => '###CURRENT_PID###',

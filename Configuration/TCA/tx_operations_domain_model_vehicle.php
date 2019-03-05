@@ -12,35 +12,34 @@ ExtensionManagementUtility::addToInsertRecords('tx_operations_domain_model_vehic
 
 return [
 	'ctrl' => [
-                'title' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_vehicle',
-                //'label' => 'title',
-                'label' => 'short',
-                'tstamp' => 'tstamp',
-                'crdate' => 'crdate',
-                'cruser_id' => 'cruser_id',
-                'dividers2tabs' => TRUE,
-                'sortby' => 'sorting',
-                'versioningWS' => 2,
-                'versioning_followPages' => TRUE,
-                'origUid' => 't3_origuid',
-                'languageField' => 'sys_language_uid',
-                'transOrigPointerField' => 'l10n_parent',
-                'transOrigDiffSourceField' => 'l10n_diffsource',
-                'delete' => 'deleted',
-                'enablecolumns' => [
-                        'disabled' => 'hidden',
-                        'starttime' => 'starttime',
-                        'endtime' => 'endtime',
-                ],
-                'searchFields' => 'title,short,description,image,',
-                'typeicon_classes' => ['default' => 'ext-operations-vehicle']
+        'title' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_vehicle',
+        //'label' => 'title',
+        'label' => 'short',
+        'tstamp' => 'tstamp',
+        'crdate' => 'crdate',
+        'cruser_id' => 'cruser_id',
+        'dividers2tabs' => TRUE,
+        'sortby' => 'sorting',
+        'versioningWS' => true,
+        'origUid' => 't3_origuid',
+        'languageField' => 'sys_language_uid',
+        'transOrigPointerField' => 'l10n_parent',
+        'transOrigDiffSourceField' => 'l10n_diffsource',
+        'delete' => 'deleted',
+        'enablecolumns' => [
+                'disabled' => 'hidden',
+                'starttime' => 'starttime',
+                'endtime' => 'endtime',
+        ],
+        'searchFields' => 'title,short,description,image,',
+        'typeicon_classes' => ['default' => 'ext-operations-vehicle']
     ],
 	'interface' => [
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, short, description, image',
     ],
 	'types' => [
 		'0' => [
-            'showitem' => 'sys_language_uid;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language;;;1-1-1, l10n_parent;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent, l10n_diffsource,hidden;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden,
+            'showitem' => 'sys_language_uid;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language, l10n_parent;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent, l10n_diffsource,hidden;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden,
              title, short, description,
 		--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.img,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitleVehicles.img;paletteImg,'
         ],
@@ -167,7 +166,7 @@ return [
 				'eval' => 'trim',
 				'wizards' => [
 					'RTE' => [
-						'icon' => \KN\Operations\Utility\Div::getWizardIcon('rte',$currentTypo3Version),
+						'icon' => 'actions-wizard-rte',
 						'notNewRecords'=> 1,
 						'RTEonly' => 1,
 						'module' => [
@@ -181,20 +180,20 @@ return [
 			'defaultExtras' => 'richtext:rte_transform[flag=rte_enabled|mode=ts]',
         ],
 		'image' => [
-				'exclude' => 1,
-				'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_type.image',
-				'config' => ExtensionManagementUtility::getFileFieldTCAConfig('image', [
-					'appearance' => [
-						'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference'
+            'exclude' => 1,
+            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_type.image',
+            'config' => ExtensionManagementUtility::getFileFieldTCAConfig('image', [
+                'appearance' => [
+                    'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference'
+                ],
+                'foreign_types' => [
+                    \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                        'showitem' => '
+                        --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                        --palette--;;filePalette'
                     ],
-					'foreign_types' => [
-						\TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-							'showitem' => '
-							--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-							--palette--;;filePalette'
-                        ],
-                    ]
-                ], $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'])
+                ]
+            ], $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'])
         ],
     ],
 ];
