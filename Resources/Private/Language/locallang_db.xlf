@@ -40,8 +40,8 @@
 			<trans-unit id="tx_operations_domain_model_operation.zoom">
 				<source>Zoom</source>
 			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_operation.image">
-				<source>Image</source>
+			<trans-unit id="tx_operations_domain_model_operation.media">
+				<source>Media</source>
 			</trans-unit>
 			<trans-unit id="tx_operations_domain_model_operation.type">
 				<source>Type</source>
@@ -84,8 +84,8 @@
 			<trans-unit id="tx_operations_domain_model_vehicle.description">
 				<source>Description</source>
 			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_vehicle.image">
-				<source>Image</source>
+			<trans-unit id="tx_operations_domain_model_vehicle.media">
+				<source>Media</source>
 			</trans-unit>
 
 			<trans-unit id="tx_operations_domain_model_resource">
@@ -100,8 +100,8 @@
 			<trans-unit id="tx_operations_domain_model_resource.description">
 				<source>Description</source>
 			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_resource.image">
-				<source>Image</source>
+			<trans-unit id="tx_operations_domain_model_resource.media">
+				<source>Media</source>
 			</trans-unit>
 
 			<trans-unit id="tx_operations_domain_model_type">

@@ -14,7 +14,7 @@ CREATE TABLE tx_operations_domain_model_operation (
 	longitude varchar(255) DEFAULT '' NOT NULL,
 	latitude varchar(255) DEFAULT '' NOT NULL,
 	zoom int(11) DEFAULT '0' NOT NULL,
-	image varchar(255) DEFAULT '' NOT NULL,
+	media varchar(255) DEFAULT '' NOT NULL,
 	type int(11) unsigned DEFAULT '0' NOT NULL,
 	assistance int(11) unsigned DEFAULT '0' NOT NULL,
 	vehicles int(11) unsigned DEFAULT '0' NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE tx_operations_domain_model_vehicle (
 	title varchar(255) DEFAULT '' NOT NULL,
 	short varchar(255) DEFAULT '' NOT NULL,
 	description text NOT NULL,
-	image varchar(255) DEFAULT '' NOT NULL,
+	media varchar(255) DEFAULT '' NOT NULL,
 
 );
 
@@ -53,7 +53,7 @@ CREATE TABLE tx_operations_domain_model_resource (
 	title varchar(255) DEFAULT '' NOT NULL,
 	short varchar(255) DEFAULT '' NOT NULL,
 	description text NOT NULL,
-	image varchar(255) DEFAULT '' NOT NULL,
+	media varchar(255) DEFAULT '' NOT NULL,
 
 );
 

@@ -31,11 +31,11 @@ return [
                         'starttime' => 'starttime',
                         'endtime' => 'endtime',
                 ],
-                'searchFields' => 'number,title,location,begin,end,report,longitude,latitude,zoom,image,type,assistance,vehicles,resources,',
+                'searchFields' => 'number,title,location,begin,end,report,longitude,latitude,zoom,media,type,assistance,vehicles,resources,',
                 'typeicon_classes' => ['default' => 'ext-operations-operation'],
     ],
 	'interface' => [
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, number, onlyEld, title, location, begin, end, teaser, report, longitude, latitude, zoom, image, type, assistance, vehicles, resources',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, number, onlyEld, title, location, begin, end, teaser, report, longitude, latitude, zoom, media, type, assistance, vehicles, resources',
     ],
 	'types' => [
 		'0' => [
@@ -56,7 +56,7 @@ return [
 			'canNotCollapse' => 'TRUE'
         ],
 		'paletteImg' => [
-			'showitem' => 'image',
+			'showitem' => 'media',
 			'canNotCollapse' => 'TRUE'
         ],
 		'paletteTime' => [
@@ -264,9 +264,9 @@ return [
 				'eval' => 'int'
             ],
         ],
-		'image' => [
+		'media' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.image',
+            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.media',
             'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('media', [
                 'appearance' => [
                     'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference'

@@ -31,11 +31,11 @@ return [
                 'starttime' => 'starttime',
                 'endtime' => 'endtime',
         ],
-        'searchFields' => 'title,short,description,image,',
+        'searchFields' => 'title,short,description,media,',
         'typeicon_classes' => ['default' => 'ext-operations-vehicle']
     ],
 	'interface' => [
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, short, description, image',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, short, description, media',
     ],
 	'types' => [
 		'0' => [
@@ -46,7 +46,7 @@ return [
     ],
 	'palettes' => [
 		'paletteImg' => [
-			'showitem' => 'image',
+			'showitem' => 'media',
 			'canNotCollapse' => 'TRUE'
         ],
     ],
@@ -168,9 +168,9 @@ return [
 				'eval' => 'trim',
             ],
         ],
-		'image' => [
+		'media' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_type.image',
+            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_vehicle.media',
             'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('media', [
                 'appearance' => [
                     'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference'
