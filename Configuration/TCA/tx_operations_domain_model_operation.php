@@ -131,7 +131,6 @@ return [
 			'config' => [
 				'type' => 'input',
 				'size' => 13,
-				'max' => 20,
 				'eval' => 'datetime',
                 'renderType' => 'inputDateTime',
 				'checkbox' => 0,
@@ -148,7 +147,6 @@ return [
 			'config' => [
 				'type' => 'input',
 				'size' => 13,
-				'max' => 20,
 				'eval' => 'datetime',
                 'renderType' => 'inputDateTime',
 				'checkbox' => 0,
