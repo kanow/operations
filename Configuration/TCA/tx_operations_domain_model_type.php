@@ -143,18 +143,21 @@ return [
 		'image' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_type.image',
-			'config' => ExtensionManagementUtility::getFileFieldTCAConfig('image', [
-				'appearance' => [
-					'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference'
+            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('image', [
+                'appearance' => [
+                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
                 ],
-				'foreign_types' => [
-					\TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-						'showitem' => '
-						--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-						--palette--;;filePalette'
+                // custom configuration for displaying fields in the overlay/reference table
+                'overrideChildTca' => [
+                    'types' => [
+                        '0' => [
+                            'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette'
+                        ],
                     ],
-                ]
-            ], $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'])
+                ],
+            ], $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'])
         ],
     ],
 ];
