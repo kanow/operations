@@ -162,23 +162,11 @@ return [
 			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_vehicle.description',
 			'config' => [
 				'type' => 'text',
+                'enableRichtext' => true,
 				'cols' => 40,
 				'rows' => 15,
 				'eval' => 'trim',
-				'wizards' => [
-					'RTE' => [
-						'icon' => 'actions-wizard-rte',
-						'notNewRecords'=> 1,
-						'RTEonly' => 1,
-						'module' => [
-							'name' => 'wizard_rte',
-                        ],
-						'title' => 'LLL:EXT:cms/locallang_ttc.xlf:bodytext.W.RTE',
-						'type' => 'script'
-                    ]
-                ]
             ],
-			'defaultExtras' => 'richtext:rte_transform[flag=rte_enabled|mode=ts]',
         ],
 		'image' => [
             'exclude' => 1,
