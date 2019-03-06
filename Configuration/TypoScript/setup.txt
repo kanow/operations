@@ -8,19 +8,19 @@ config.tx_extbase.objects {
 plugin.tx_operations {
 	mvc.callDefaultActionIfActionCantBeResolved = 1
 	view {
-    templateRootPaths {
-      0 = EXT:operations/Resources/Private/Templates/
-      10 = {$plugin.tx_operations.view.templateRootPath}
-    }
-    layoutRootPaths {
-      0 = EXT:operations/Resources/Private/Layouts/
-      10 = {$plugin.tx_operations.view.layoutRootPath}
-    }
-    partialRootPaths {
-      0 = EXT:operations/Resources/Private/Partials/
-      10 = {$plugin.tx_operations.view.partialRootPath}
-    }
-		widget.KN\Operations\ViewHelpers\Widget\PaginateViewHelper.templateRootPath = {$plugin.tx_operations.view.templateRootPath}
+		templateRootPaths {
+		  0 = EXT:operations/Resources/Private/Templates/
+		  10 = {$plugin.tx_operations.view.templateRootPath}
+		}
+		layoutRootPaths {
+		  0 = EXT:operations/Resources/Private/Layouts/
+		  10 = {$plugin.tx_operations.view.layoutRootPath}
+		}
+		partialRootPaths {
+		  0 = EXT:operations/Resources/Private/Partials/
+		  10 = {$plugin.tx_operations.view.partialRootPath}
+		}
+#		widget.KN\Operations\ViewHelpers\Widget\PaginateViewHelper.templateRootPath = {$plugin.tx_operations.view.templateRootPath}
 	}
 	persistence {
 		storagePid = {$plugin.tx_operations.persistence.storagePid}
@@ -59,14 +59,14 @@ plugin.tx_operations {
 		single {
 			showNoReport = 1
 		}
-		map {
-			apikey = {$plugin.tx_operations.settings.map.apikey}
-			defaultZoomSingle = {$plugin.tx_operations.settings.map.defaultZoomSingle}
-			overrideCenterLatList = {$plugin.tx_operations.settings.map.overrideCenterLatList}
-			overrideCenterLongList = {$plugin.tx_operations.settings.map.overrideCenterLongList}
-			overrideZoomList = {$plugin.tx_operations.settings.map.overrideZoomList}
-			styles =
-		}
+#		map {
+#			apikey = {$plugin.tx_operations.settings.map.apikey}
+#			defaultZoomSingle = {$plugin.tx_operations.settings.map.defaultZoomSingle}
+#			overrideCenterLatList = {$plugin.tx_operations.settings.map.overrideCenterLatList}
+#			overrideCenterLongList = {$plugin.tx_operations.settings.map.overrideCenterLongList}
+#			overrideZoomList = {$plugin.tx_operations.settings.map.overrideZoomList}
+#			styles =
+#		}
 		paginate {
 			insertAbove = {$plugin.tx_operations.settings.paginate.insertAbove}
 			insertBelow = {$plugin.tx_operations.settings.paginate.insertBelow}
