@@ -133,6 +133,7 @@ return [
 				'size' => 13,
 				'max' => 20,
 				'eval' => 'datetime',
+                'renderType' => 'inputDateTime',
 				'checkbox' => 0,
 				'default' => 0,
 				'range' => [
@@ -149,6 +150,7 @@ return [
 				'size' => 13,
 				'max' => 20,
 				'eval' => 'datetime',
+                'renderType' => 'inputDateTime',
 				'checkbox' => 0,
 				'default' => 0,
 				'range' => [
@@ -199,6 +201,7 @@ return [
 				'type' => 'input',
 				'size' => 10,
 				'eval' => 'datetime,required',
+                'renderType' => 'inputDateTime',
 				'checkbox' => 1,
 				'default' => time()
             ],
@@ -210,6 +213,7 @@ return [
 				'type' => 'input',
 				'size' => 10,
 				'eval' => 'datetime',
+                'renderType' => 'inputDateTime',
 				'checkbox' => 1,
 				'default' => time()
             ],
