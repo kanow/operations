@@ -108,7 +108,6 @@ return [
         ],
 		'starttime' => [
 			'exclude' => 1,
-			'l10n_mode' => 'mergeIfNotBlank',
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.starttime',
 			'config' => [
 				'type' => 'input',
@@ -120,11 +119,11 @@ return [
 				'range' => [
 					'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
                 ],
+                'behaviour' => ['allowLanguageSynchronization' => true],
             ],
         ],
 		'endtime' => [
 			'exclude' => 1,
-			'l10n_mode' => 'mergeIfNotBlank',
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.endtime',
 			'config' => [
 				'type' => 'input',
@@ -136,6 +135,7 @@ return [
 				'range' => [
 					'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
                 ],
+                'behaviour' => ['allowLanguageSynchronization' => true],
             ],
         ],
 		'title' => [
