@@ -5,9 +5,6 @@ if (!defined ('TYPO3_MODE')) {
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
-// get first main part of TYPO3 version number
-$currentTypo3Version = \KN\Operations\Utility\Div::getPartOfTypo3Version();
-
 ExtensionManagementUtility::addToInsertRecords('tx_operations_domain_model_vehicle');
 
 return [
