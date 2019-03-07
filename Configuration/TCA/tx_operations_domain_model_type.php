@@ -3,10 +3,6 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-
-ExtensionManagementUtility::addToInsertRecords('tx_operations_domain_model_type');
-
 return [
 	'ctrl' => [
                 'title' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_type',
