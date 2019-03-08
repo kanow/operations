@@ -59,14 +59,6 @@ plugin.tx_operations {
 		single {
 			showNoReport = 1
 		}
-#		map {
-#			apikey = {$plugin.tx_operations.settings.map.apikey}
-#			defaultZoomSingle = {$plugin.tx_operations.settings.map.defaultZoomSingle}
-#			overrideCenterLatList = {$plugin.tx_operations.settings.map.overrideCenterLatList}
-#			overrideCenterLongList = {$plugin.tx_operations.settings.map.overrideCenterLongList}
-#			overrideZoomList = {$plugin.tx_operations.settings.map.overrideZoomList}
-#			styles =
-#		}
 		paginate {
 			insertAbove = {$plugin.tx_operations.settings.paginate.insertAbove}
 			insertBelow = {$plugin.tx_operations.settings.paginate.insertBelow}
@@ -81,8 +73,6 @@ plugin.tx_operations {
 }
 
 page {
-	includeJS {
-	}
 	includeJSLibs {
 		leaflet = //unpkg.com/leaflet@1.4.0/dist/leaflet.js
 		leaflet.external = 1
@@ -93,20 +83,10 @@ page {
 	}
 	includeCSS {
 		operations = {$plugin.tx_operations.css}
-		flexslider = {$plugin.tx_operations.flexsliderCss}
-		magnificPopup = {$plugin.tx_operations.magnificCss}
 	}
 	includeJSFooter {
-
 		jquery = {$plugin.tx_operations.jquery}
 		jquery.external = 1
-
-		flexslider = {$plugin.tx_operations.flexsliderJs}
-		magnificPopup = {$plugin.tx_operations.magnificJs}
-		sliderJs = {$plugin.tx_operations.sliderJs}
-		lightboxJs = {$plugin.tx_operations.lightboxJs}
-
 		leafleatMap = EXT:operations/Resources/Public/Js/map/leaflet-map.js
-
 	}
 }

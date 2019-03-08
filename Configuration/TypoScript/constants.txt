@@ -1,4 +1,3 @@
-
 # customsubcategory=template=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.subcategoryLabel.template
 # customsubcategory=media=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.subcategoryLabel.media
 # customsubcategory=pids=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.subcategoryLabel.pids
@@ -7,29 +6,11 @@
 # customsubcategory=map=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.subcategoryLabel.map
 
 
-
 plugin.tx_operations {
 	# cat=tx_operations-templating/template/030/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.css
 	css = EXT:operations/Resources/Public/Css/operations.css
-
-	# cat=tx_operations-templating/template/035/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.flexsliderCss
-	flexsliderCss = EXT:operations/Resources/Public/Css/flexslider.css
-	# cat=tx_operations-templating/template/040/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.magnificCss
-	magnificCss = EXT:operations/Resources/Public/Css/magnific.css
-
-
 	# cat=tx_operations-templating/template/045/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.jquery
 	jquery = //ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
-	# cat=tx_operations-templating/template/050/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.flexsliderJs
-	flexsliderJs = EXT:operations/Resources/Public/Js/flexslider-min.js
-	# cat=tx_operations-templating/template/055/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.magnificJs
-	magnificJs = EXT:operations/Resources/Public/Js/magnific.min.js
-	# cat=tx_operations-templating/template/060/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.sliderJs
-	sliderJs = EXT:operations/Resources/Public/Js/slider.js
-	# cat=tx_operations-templating/template/065/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.lightboxJs
-	lightboxJs = EXT:operations/Resources/Public/Js/lightbox.js
-
-
 
 	view {
 		# cat=tx_operations-templating/template/010/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.templateRootPath
@@ -85,19 +66,6 @@ plugin.tx_operations {
 		listMediaWidthResource = 320
 		# cat=tx_operations-media-settings/media/258/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeightResources
 		listMediaHeightResource =
-
-#		map {
-#			# cat=tx_operations-map-settings/map/260/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.apikey
-#			apikey =
-#			# cat=tx_operations-map-settings/map/261/; type=int+; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.defaultZoomSingle
-#			defaultZoomSingle = 15
-#			# cat=tx_operations-map-settings/map/262/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.overrideCenterLatList
-#			overrideCenterLatList =
-#			# cat=tx_operations-map-settings/map/263/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.overrideCenterLongList
-#			overrideCenterLongList =
-#			# cat=tx_operations-map-settings/map/264/; type=int+; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.overrideZoomList
-#			overrideZoomList =
-#		}
 
 		paginate {
 			# cat=tx_operations-list-settings/paginate/310/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.insertAbove
