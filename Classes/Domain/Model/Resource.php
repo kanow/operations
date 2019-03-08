@@ -57,10 +57,10 @@ class Resource extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $description;
 
 	/**
-		* Image
+		* Media
    	* @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
    	*/
-  	protected $image;
+  	protected $media;
 
 	/**
 	 * Returns the title
@@ -120,39 +120,39 @@ class Resource extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
   /**
-    * Returns the image
+    * Returns the media
     *
-    * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $image
+    * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $media
     */
-   public function getImage() {
-      return $this->image;
+   public function getMedia() {
+      return $this->media;
    }
   /**
-   * Returns all images
+   * Returns all media
    *
-   * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+   * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $media
    */
-  public function getAllImages() {
-  $images = $this->getImage()->toArray();
-    return $images;
+  public function getAllMedia() {
+    $allMedia = $this->getMedia()->toArray();
+    return $allMedia;
   }
   /**
-   * Returns the first image
+   * Returns the first media
    *
-   * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+   * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $media
    */
-  public function getFirstImage() {
-  $image = $this->getImage()->toArray();
-    return $image[0];
+  public function getFirstMedia() {
+    $media = $this->getMedia()->toArray();
+    return $media[0];
   }
   /**
-   * Sets the image
+   * Sets the media
    *
-   * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $image
+   * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $media
    * @return void
    */
-  public function setImage($image) {
-          $this->image = $image;
+  public function setMedia($media) {
+      $this->media = $media;
   }
 
 }

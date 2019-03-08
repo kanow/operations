@@ -12,10 +12,11 @@
 			<li class="clearfix {f:if(condition:'{oIterator.isOdd}',then:' odd')}">
 				<f:link.action action="show" pageUid="{settings.vehicleSinglePid}" arguments="{vehicle:vehicle}" class="clearfix">
 					<div class="left">{vehicle.title}<f:if condition="{vehicle.short}"><span class="short"> ({vehicle.short})</span></f:if></div>
-					<f:if condition="{vehicle.image}">
-					  <div class="imgBox"><f:image src="{vehicle.firstImage.uid}" treatIdAsReference="TRUE" alt="{vehicle.firstImage.originalResource.alternative}" width="{settings.listImgWidthVehicle}" height="{settings.listImgHeightVehicle}" /></div>
-						<div class="right">Bild</div>
-					</f:if>
+                    <f:if condition="{vehicle.firstMedia}">
+                        <figure class="list-media">
+                            <f:media file="{vehicle.firstMedia}" width="{settings.listImgWidthVehicle}" height="{settings.listImgHeightVehicle}" />
+                        </figure>
+                    </f:if>
 				</f:link.action>
 			</li>
 		</f:for>

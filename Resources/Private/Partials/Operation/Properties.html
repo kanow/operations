@@ -15,19 +15,27 @@
 		</f:if>
 	</div>
 	
-	<f:if condition="{operation.image}">
-		<div class="images">
-		<!--	<h2><f:translate key="tx_operations_domain_model_operation.image" /></h2> -->
-				<ul class="slides">
-					<f:for each="{operation.allImages}" as="image">
-						<li>
-								<f:if condition="{settings.increaseImage}"><a href="{image.originalResource.publicUrl}" title="{image.originalResource.alternative}"></f:if>
-									<f:image src="{image.uid}" treatIdAsReference="TRUE" alt="{image.originalResource.alternative}" width="{settings.singleImgWidth}" height="{settings.singleImgHeight}" />
-							<!-- <p class="imgDescription">{image.originalResource.description}</p> -->
-								<f:if condition="{settings.increaseImage}"></a></f:if>
-						</li>
-					</f:for>
-				</ul>
+	<f:if condition="{operation.media}">
+		<div class="media">
+			<h2><f:translate key="tx_operations_domain_model_operation.media" /></h2>
+			<f:for each="{operation.allMedia}" as="media">
+				<figure>
+					<f:if condition="{media.originalResource.type} == 2 && {settings.increaseImage}">
+						<f:then>
+							<!-- @todo better lightbox settings and functionality -->
+							<a href="{media.originalResource.publicUrl}" title="{media.originalResource.alternative}" target="_blank">
+								<f:media file="{media}" width="{settings.singleMediaWidth}" height="{settings.singleMediaHeight}" />
+							</a>
+						</f:then>
+						<f:else>
+							<f:media file="{media}" width="{settings.singleMediaWidth}" height="{settings.singleMediaHeight}" />
+						</f:else>
+					</f:if>
+					<f:if condition="{media.originalResource.description}">
+					    <figcaption>{media.originalResource.description}</figcaption>
+					</f:if>
+				</figure>
+			</f:for>
 		</div>
 	</f:if>
 

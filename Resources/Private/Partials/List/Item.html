@@ -36,11 +36,11 @@
 			</f:else>
 		</f:if>
 	</div>
-	<f:if condition="{settings.showImgInList}">
-		<f:if condition="{operation.image}">
-			<div class="img">
-			<f:image src="{operation.firstImage.uid}" treatIdAsReference="TRUE" alt="{operation.firstImage.originalResource.alternative}" width="{settings.listImgWidth}" height="{settings.listImgHeight}" />
-			</div>
+	<f:if condition="{settings.showMediaInList}">
+		<f:if condition="{operation.firstMedia}">
+			<figure class="list-media">
+				<f:media file="{operation.firstMedia}" width="{settings.listMediaWidth}" height="{settings.listMediaHeight}" />
+			</figure>
 		</f:if>
 	</f:if>
 </f:link.action>

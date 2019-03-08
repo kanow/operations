@@ -17,7 +17,7 @@
 .operations.list h1 {margin-bottom:40px;}
 .list ul, .images ul, .layer ul {list-style:none;}
 .list li {padding:10px 2% 10px;position:relative;}
-.list .img {position:absolute;top:10px;right:10px;max-width:20%;}
+.list .list-media {position:absolute;top:10px;right:10px;max-width:20%;}
 .list .left, .list .meta {padding-right:20%;}
 .list li h2 {margin:3px 0;}
 
@@ -38,16 +38,14 @@
 .layer.report p {padding-bottom:20px;}
 .layer.report li {margin-bottom:0;}
 /* controls slider */
-.single .images {position:relative;}
-.single .images img {display:block;}
-.single .images .flex-direction-nav {position:absolute;top:-20px;}
-.single .images .flex-direction-nav li a {opacity:0.6;left:70px;right:auto;width:0;height:0;border-width:0 40px 0;border-style:solid;}
-.single .images .flex-direction-nav li a:hover {opacity:1;}
-.single .images .flex-prev {border-top-width:15px !important;top:233px;}
-.single .images .flex-next {border-bottom-width:15px !important;top:12px;}
-.single .images .flex-prev, .single .images .flex-next {border-color:#d00;} 
-.single .images .flex-direction-nav li a {border-left-color:transparent;border-right-color:transparent;}
-.single.withoutMeta .images {clear:none;margin-top:30px;width:225px;float:right;}
+.single .media {position:relative;}
+.single .media img {display:block;}
+figure {margin:0}
+.media figure {
+  margin:0 0 1em;
+}
+
+.single.withoutMeta .media {clear:none;margin-top:30px;width:225px;float:right;}
 .single.withoutMeta .description {float:left;}
 .withoutMeta .backLink {clear:left;display:block;}
 
@@ -68,8 +66,8 @@
 
 .list.resources li, .list.vehicles li {min-height:initial;position:relative;}
 .list.resources li a, .list.vehicles li a {display:block;}
-.list.resources li .imgBox, .list.vehicles li .imgBox {position:absolute;right:20px;top:10px;/*display:none;*/opacity:0;z-index:100;max-width:25%;}
-.list.resources li:hover .imgBox, .list.vehicles li:hover .imgBox {/*display:block;*/opacity:1;}
+.list.resources li .list-media, .list.vehicles li .list-media {position:absolute;right:20px;top:10px;/*display:none;*/opacity:0;z-index:100;max-width:25%;}
+.list.resources li:hover .list-media, .list.vehicles li:hover .list-media {/*display:block;*/opacity:1;}
 .list.resources li .left, .list.vehicles li .left {float:left;}
 .list.resources li .right, .list.vehicles li .right {float:right;max-width:20%;margin-right:20px;}
 
@@ -77,4 +75,4 @@
 .list.resources .title {background:#fff;}
 
 /* effects */
-.list.resources li .imgBox {-webkit-transition:all 0.3s 0.2s;-moz-transition:all 0.3s 0.2s;-o-transition:all 0.3s 0.2s;transition:all 0.3s 0.2s;}
+.list.resources li .list-media {-webkit-transition:all 0.3s 0.2s;-moz-transition:all 0.3s 0.2s;-o-transition:all 0.3s 0.2s;transition:all 0.3s 0.2s;}

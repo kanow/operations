@@ -31,7 +31,7 @@ plugin.tx_operations {
 		#rewrittenPropertyMapper = 1
 	}
 	settings {
-		overrideFlexformSettingsIfEmpty = itemsPerPage,showImgInList,listImgWidth,listImgHeight,singleImgWidth,singleImgHeight,cropTeaser,hideFilter
+		overrideFlexformSettingsIfEmpty = itemsPerPage,showMediaInList,listMediaWidth,listMediaHeight,singleMediaWidth,singleMediaHeight,cropTeaser,hideFilter
 		operationSinglePid = {$plugin.tx_operations.settings.operationSinglePid}
 		vehicleSinglePid = {$plugin.tx_operations.settings.vehicleSinglePid}
 		resourceSinglePid = {$plugin.tx_operations.settings.resourceSinglePid}
@@ -39,16 +39,16 @@ plugin.tx_operations {
 		limit = {$plugin.tx_operations.settings.limit}
 		hidePagination = {$plugin.tx_operations.settings.hidePagination}
 		hideFilter = {$plugin.tx_operations.settings.hideFilter}
-		showImgInList = {$plugin.tx_operations.settings.showImgInList}
-		listImgWidth = {$plugin.tx_operations.settings.listImgWidth}
-		listImgHeight = {$plugin.tx_operations.settings.listImgHeight}
-		singleImgWidth = {$plugin.tx_operations.settings.singleImgWidth}
-		singleImgHeight = {$plugin.tx_operations.settings.singleImgHeight}
+		showMediaInList = {$plugin.tx_operations.settings.showMediaInList}
+		listMediaWidth = {$plugin.tx_operations.settings.listMediaWidth}
+		listMediaHeight = {$plugin.tx_operations.settings.listMediaHeight}
+		singleMediaWidth = {$plugin.tx_operations.settings.singleMediaWidth}
+		singleMediaHeight = {$plugin.tx_operations.settings.singleMediaHeight}
 		increaseImage = {$plugin.tx_operations.settings.increaseImage}
-		listImgWidthVehicle = {$plugin.tx_operations.settings.listImgWidthVehicle}
-		listImgHeightVehicle = {$plugin.tx_operations.settings.listImgHeightVehicle}
-		listImgWidthResources = {$plugin.tx_operations.settings.listImgWidthResource}
-		listImgHeightResources = {$plugin.tx_operations.settings.listImgHeightResource}
+		listMediaWidthVehicle = {$plugin.tx_operations.settings.listMediaWidthVehicle}
+		listMediaHeightVehicle = {$plugin.tx_operations.settings.listMediaHeightVehicle}
+		listMediaWidthResources = {$plugin.tx_operations.settings.listMediaWidthResource}
+		listMediaHeightResources = {$plugin.tx_operations.settings.listMediaHeightResource}
 		cropTeaser = 150
 		sortOrder = DESC
 		sortBy = begin

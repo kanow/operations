@@ -8,18 +8,16 @@
 	</div>
 </f:if>
 
-	<f:if condition="{resource.image}">
-		<div class="images layer">
-		<!--	<h2><f:translate key="tx_operations_domain_model_resources.image" /></h2> -->
-				<ul class="slides">
-					<f:for each="{resource.allImages}" as="image">
-						<li>
-							<f:if condition="{settings.increaseImage}"><a href="{image.originalResource.publicUrl}" title="{image.originalResource.alternative}"></f:if>
-								<f:image src="{image.uid}" alt="" treatIdAsReference="TRUE" alt="{image.originalResource.alternative}" width="{settings.singleImgWidth}" height="{settings.singleImgHeight}" />
-							<!-- <p class="imgDescription">{image.originalResource.description}</p> -->
-							<f:if condition="{settings.increaseImage}"></a></f:if>
-						</li>
-					</f:for>
-				</ul>
+	<f:if condition="{resource.media}">
+		<div class="media layer">
+		<!--	<h2><f:translate key="tx_operations_domain_model_resources.media" /></h2> -->
+			<f:for each="{resource.allMedia}" as="media">
+				<figure>
+					<f:media file="{media}" width="{settings.singleMediaWidth}" height="{settings.singleMediaHeight}" />
+					<f:if condition="{media.originalResource.description}">
+						<figcaption>{media.originalResource.description}</figcaption>
+					</f:if>
+				</figure>
+			</f:for>
 		</div>
 	</f:if>
