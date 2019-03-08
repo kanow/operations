@@ -10,16 +10,11 @@ $extensionName = strtolower(GeneralCoreUtility::underscoredToUpperCamelCase('ope
 $pluginName = strtolower('List');
 $pluginSignature = $extensionName.'_'.$pluginName;
 
-
-
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
     'KN.operations',
     'List',
     'Operations'
 );
-
-
-
 
 $TCA['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'select_key,pages';
 $TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';

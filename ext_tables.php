@@ -30,4 +30,3 @@ foreach ($llRefs as $llRef)
 {
     ExtensionManagementUtility::addLLrefForTCAdescr('tx_operations_domain_model_'.$llRef, 'EXT:operations/Resources/Private/Language/locallang_csh_tx_operations_domain_model_'.$llRef.'.xlf');
 }
-

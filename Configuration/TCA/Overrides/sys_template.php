@@ -5,4 +5,8 @@ if (!defined ('TYPO3_MODE')) {
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
-ExtensionManagementUtility::addStaticFile('operations', 'Configuration/TypoScript', 'Operations');
+ExtensionManagementUtility::addStaticFile(
+    'operations',
+    'Configuration/TypoScript',
+    'Operations'
+);
