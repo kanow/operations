@@ -11,7 +11,7 @@ $pluginName = strtolower('List');
 $pluginSignature = $extensionName.'_'.$pluginName;
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-    'KN.operations',
+    'operations',
     'List',
     'Operations'
 );
