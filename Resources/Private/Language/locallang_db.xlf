@@ -111,33 +111,33 @@
 				<source>Title</source>
 			</trans-unit>
 			<trans-unit id="tx_operations_domain_model_type.image">
-				<source>Image</source>
+				<source>Media</source>
 			</trans-unit>
 
 			<trans-unit id="flexform.sheet.general">
 				<source>Options</source>
 			</trans-unit>
-			<trans-unit id="flexform.sheet.img">
-				<source>Image options</source>
+			<trans-unit id="flexform.sheet.media">
+				<source>Media options</source>
 			</trans-unit>
 			<trans-unit id="flexform.sheet.template">
 				<source>Template options</source>
 			</trans-unit>
 
-			<trans-unit id="flexform.showImgInList">
+			<trans-unit id="flexform.showMediaInList">
 				<source>Thumbnail in list view</source>
 			</trans-unit>
-			<trans-unit id="flexform.listImgWidth">
-				<source>Image width in list view</source>
+			<trans-unit id="flexform.listMediaWidth">
+				<source>Media width in list view</source>
 			</trans-unit>
-			<trans-unit id="flexform.listImgHeight">
-				<source>Image height in list view</source>
+			<trans-unit id="flexform.listMediaHeight">
+				<source>Media height in list view</source>
 			</trans-unit>
-			<trans-unit id="flexform.singleImgWidth">
-				<source>Image width in single view</source>
+			<trans-unit id="flexform.singleMediaWidth">
+				<source>Media width in single view</source>
 			</trans-unit>
-			<trans-unit id="flexform.singleImgHeight">
-				<source>Image height in single view</source>
+			<trans-unit id="flexform.singleMediaHeight">
+				<source>Media height in single view</source>
 			</trans-unit>
 
 			<trans-unit id="flexform.controller">
@@ -201,14 +201,14 @@
 			<trans-unit id="tca.paletteTitle.coordinates">
 				<source>Coordinates</source>
 			</trans-unit>
-			<trans-unit id="tca.paletteTitle.img">
-				<source>Operation images</source>
+			<trans-unit id="tca.paletteTitle.media">
+				<source>Operation media</source>
 			</trans-unit>
-			<trans-unit id="tca.paletteTitleResources.img">
-				<source>Resource images</source>
+			<trans-unit id="tca.paletteTitleResources.media">
+				<source>Resource media</source>
 			</trans-unit>
-			<trans-unit id="tca.paletteTitleVehicles.img">
-				<source>Vehicle images</source>
+			<trans-unit id="tca.paletteTitleVehicles.media">
+				<source>Vehicle media</source>
 			</trans-unit>
 			<trans-unit id="tca.paletteTitle.meta">
 				<source>Meta data</source>
@@ -219,15 +219,15 @@
 			<trans-unit id="tca.divTitle.map">
 				<source>Map data</source>
 			</trans-unit>
-			<trans-unit id="tca.divTitle.img">
-				<source>Images</source>
+			<trans-unit id="tca.divTitle.media">
+				<source>Media</source>
 			</trans-unit>
 
 			<trans-unit id="tsc.subcategoryLabel.template">
 				<source>Resources (Template files, CSS, JS)</source>
 			</trans-unit>
-			<trans-unit id="tsc.subcategoryLabel.image">
-				<source>Settings for images</source>
+			<trans-unit id="tsc.subcategoryLabel.media">
+				<source>Settings for media</source>
 			</trans-unit>
 			<trans-unit id="tsc.subcategoryLabel.pids">
 				<source>Pids for views and storage</source>
@@ -301,35 +301,35 @@
 			<trans-unit id="tsc.lastYears">
 				<source>Last years:How many years back are showing in filter for years</source>
 			</trans-unit>
-			<trans-unit id="tsc.listImgWidth">
-				<source>Max img width list:Max image width in list view of operations (add "c" for cropping image)</source>
+			<trans-unit id="tsc.listMediaWidth">
+				<source>Max media width list:Max media width in list view of operations (add "c" for cropping)</source>
 			</trans-unit>
-			<trans-unit id="tsc.listImgHeight">
-				<source>Max img height list:Max image width in list view of operations</source>
+			<trans-unit id="tsc.listMediaHeight">
+				<source>Max media height list:Max media width in list view of operations</source>
 			</trans-unit>
-			<trans-unit id="tsc.singleImgWidth">
-				<source>Max img width list:Max image width in single view, also for vehicles and resources (add "c" for cropping image)</source>
+			<trans-unit id="tsc.singleMediaWidth">
+				<source>Max media width list:Max media width in single view, also for vehicles and resources (add "c" for cropping)</source>
 			</trans-unit>
-			<trans-unit id="tsc.singleImgHeight">
-				<source>Max img height list:Max image width in single view, also for vehicles and resources</source>
+			<trans-unit id="tsc.singleMediaHeight">
+				<source>Max media height list:Max media width in single view, also for vehicles and resources</source>
 			</trans-unit>
 			<trans-unit id="tsc.increaseImage">
 				<source>Lightbox for images:Render images in single view with a wrapped link to increase image (e.g. with lightbox plugin)</source>
 			</trans-unit>
-			<trans-unit id="tsc.showImgInList">
-				<source>First img in list:Show first image in listview</source>
+			<trans-unit id="tsc.showMediaInList">
+				<source>First media in list:Show first media in listview</source>
 			</trans-unit>
-			<trans-unit id="tsc.listImgWidthVehicle">
-				<source>Img width vehicles:Image width in list view of vehicles</source>
+			<trans-unit id="tsc.listMediaWidthVehicle">
+				<source>Media width vehicles:Media width in list view of vehicles</source>
 			</trans-unit>
-			<trans-unit id="tsc.listImgHeightVehicle">
-				<source>Img height vehicles:Image height in list view of vehicles</source>
+			<trans-unit id="tsc.listMediaHeightVehicle">
+				<source>Media height vehicles:Media height in list view of vehicles</source>
 			</trans-unit>
-			<trans-unit id="tsc.listImgWidthResources">
-				<source>Img width resources:Image width in list view of resources</source>
+			<trans-unit id="tsc.listMediaWidthResources">
+				<source>Media width resources:Media width in list view of resources</source>
 			</trans-unit>
-			<trans-unit id="tsc.listImgHeightResources">
-				<source>Img height resources:Image height in list view of resources</source>
+			<trans-unit id="tsc.listMediaHeightResources">
+				<source>Media height resources:Media height in list view of resources</source>
 			</trans-unit>
 
 			<trans-unit id="tsc.itemsPerPage">

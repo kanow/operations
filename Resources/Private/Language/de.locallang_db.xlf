@@ -153,34 +153,34 @@
 				<source>Options</source>
 				<target>Einstellungen</target>
 			</trans-unit>
-			<trans-unit id="flexform.sheet.img">
-				<source>Image options</source>
-				<target>Bildeinstellungen</target>
+			<trans-unit id="flexform.sheet.media">
+				<source>Media options</source>
+				<target>Medieneinstellungen</target>
 			</trans-unit>
 			<trans-unit id="flexform.sheet.template">
 				<source>Template options</source>
 				<target>Template-Einstellungen</target>
 			</trans-unit>
 
-			<trans-unit id="flexform.showImgInList">
+			<trans-unit id="flexform.showMediaInList">
 				<source>Thumbnail in list view</source>
 				<target>Vorschaubild in der Listansicht</target>
 			</trans-unit>
-			<trans-unit id="flexform.listImgWidth">
-				<source>Image width in list view</source>
-				<target>Bildbreite in der Listansicht</target>
+			<trans-unit id="flexform.listMediaWidth">
+				<source>Media width in list view</source>
+				<target>Medienbreite in der Listansicht</target>
 			</trans-unit>
-			<trans-unit id="flexform.listImgHeight">
-				<source>Image height in list view</source>
-				<target>Bildhöhe in der Listansicht</target>
+			<trans-unit id="flexform.listMediaHeight">
+				<source>Media height in list view</source>
+				<target>Medienhöhe in der Listansicht</target>
 			</trans-unit>
-			<trans-unit id="flexform.singleImgWidth">
-				<source>Image width in single view</source>
-				<target>Bildbreite in der Detailansicht</target>
+			<trans-unit id="flexform.singleMediaWidth">
+				<source>Media width in single view</source>
+				<target>Medienbreite in der Detailansicht</target>
 			</trans-unit>
-			<trans-unit id="flexform.singleImgHeight">
-				<source>Image height in single view</source>
-				<target>Bildhöhe in der Detailansicht</target>
+			<trans-unit id="flexform.singleMediaHeight">
+				<source>Media height in single view</source>
+				<target>Medienhöhe in der Detailansicht</target>
 			</trans-unit>
 
 			<trans-unit id="flexform.controller">
@@ -264,16 +264,16 @@
 				<source>Coordinates</source>
 				<target>Koordinaten</target>
 			</trans-unit>
-			<trans-unit id="tca.paletteTitle.img">
-				<source>Operation images</source>
+			<trans-unit id="tca.paletteTitle.media">
+				<source>Operation media</source>
 				<target>Einsatzbilder</target>
 			</trans-unit>
-			<trans-unit id="tca.paletteTitleResources.img">
-				<source>Resource images</source>
+			<trans-unit id="tca.paletteTitleResources.media">
+				<source>Resource media</source>
 				<target>Hilfsmittelbilder</target>
 			</trans-unit>
-			<trans-unit id="tca.paletteTitleVehicles.img">
-				<source>Vehicle images</source>
+			<trans-unit id="tca.paletteTitleVehicles.media">
+				<source>Vehicle media</source>
 				<target>Fahrzeugbilder</target>
 			</trans-unit>
 			<trans-unit id="tca.paletteTitle.meta">
@@ -288,18 +288,18 @@
 				<source>Map data</source>
 				<target>Kartendaten</target>
 			</trans-unit>
-			<trans-unit id="tca.divTitle.img">
-				<source>Images</source>
-				<target>Bilder</target>
+			<trans-unit id="tca.divTitle.media">
+				<source>Media</source>
+				<target>Medien</target>
 			</trans-unit>
 
 			<trans-unit id="tsc.subcategoryLabel.template">
 				<source>Resources (Template files, CSS, JS)</source>
 				<target>Dateien (Templatedateien, CSS, JS)</target>
 			</trans-unit>
-			<trans-unit id="tsc.subcategoryLabel.image">
-				<source>Settings for images</source>
-				<target>Bildeinstellungen</target>
+			<trans-unit id="tsc.subcategoryLabel.media">
+				<source>Settings for media</source>
+				<target>Medieneinstellungen</target>
 			</trans-unit>
 			<trans-unit id="tsc.subcategoryLabel.pids">
 				<source>Pids for views and storage</source>
@@ -407,45 +407,45 @@
 				<source>Last years:How many years back are showing in filter for years</source>
 				<target>Jahre zurück:Wieviel zurückliegende Jahre sollen im Filter für Jahre angezeigt werden </target>
 			</trans-unit>
-			<trans-unit id="tsc.listImgWidth">
-				<source>Max img width list:Max image width in list view of operations (add "c" for cropping image)</source>
-				<target>Max. Bildbreite Liste:Max. Bildbreite in der Listenansicht der Einsätze (ein 'c' anhängen für zuschneiden der Bilder)</target>
+			<trans-unit id="tsc.listMediaWidth">
+				<source>Max media width list:Max media width in list view of operations (add "c" for cropping)</source>
+				<target>Max. Medienbreite Liste:Max. Medienbreite in der Listenansicht der Einsätze (ein 'c' anhängen für zuschneiden)</target>
 			</trans-unit>
-			<trans-unit id="tsc.listImgHeight">
-				<source>Max img height list:Max image width in list view of operations</source>
-				<target>Max. Bildhöhe Liste:Max. Bildhöhe in der Listenansicht der Einsätze</target>
+			<trans-unit id="tsc.listMediaHeight">
+				<source>Max media height list:Max media width in list view of operations</source>
+				<target>Max. Medienhöhe Liste:Max. Medienhöhe in der Listenansicht der Einsätze</target>
 			</trans-unit>
-			<trans-unit id="tsc.singleImgWidth">
-				<source>Max img width list:Max image width in single view, also for vehicles and resources (add "c" for cropping image)</source>
-				<target>Max. Bildbreite Liste:Max. Bildbreite in der Einzelansicht der Einsätze (ein 'c' anhängen für zuschneiden der Bilder)</target>
+			<trans-unit id="tsc.singleMediaWidth">
+				<source>Max media width list:Max media width in single view, also for vehicles and resources (add "c" for cropping)</source>
+				<target>Max. Medienbreite Liste:Max. Medienbreite in der Einzelansicht der Einsätze (ein 'c' anhängen für zuschneiden)</target>
 			</trans-unit>
-			<trans-unit id="tsc.singleImgHeight">
-				<source>Max img height list:Max image width in single view, also for vehicles and resources</source>
-				<target>Max. Bildhöhe Liste:Max. Bildhöhe in der Einzelansicht der Einsätze</target>
+			<trans-unit id="tsc.singleMediaHeight">
+				<source>Max media height list:Max media width in single view, also for vehicles and resources</source>
+				<target>Max. Medienhöhe Liste:Max. Medienhöhe in der Einzelansicht der Einsätze</target>
 			</trans-unit>
 			<trans-unit id="tsc.increaseImage">
 				<source>Lightbox for images:Render images in single view with a wrapped link to increase image (e.g. with lightbox plugin)</source>
 				<target>Lightbox für Bilder:Bilder in der Einzelansicht mit einem Link herum um ein vergrößern zu ermöglichen (z.Bsp. mit einer Lightbox)</target>
 			</trans-unit>
-			<trans-unit id="tsc.showImgInList">
-				<source>First img in list:Show first image in listview</source>
-				<target>Bild in Liste:Erstes Bild aus Datensatz in der Listenansicht zeigen</target>
+			<trans-unit id="tsc.showMediaInList">
+				<source>First media in list:Show first media in listview</source>
+				<target>Medien in Liste:Erstes Medienelement aus Datensatz in der Listenansicht zeigen</target>
 			</trans-unit>
-			<trans-unit id="tsc.listImgWidthVehicle">
-				<source>Img width vehicles:Image width in list view of vehicles</source>
-				<target>Bildbreite Fahrzeuge:Bildbreite in der Listansicht der Fahrzeuge</target>
+			<trans-unit id="tsc.listMediaWidthVehicle">
+				<source>Media width vehicles:Media width in list view of vehicles</source>
+				<target>Medienbreite Fahrzeuge:Medienbreite in der Listansicht der Fahrzeuge</target>
 			</trans-unit>
-			<trans-unit id="tsc.listImgHeightVehicle">
-				<source>Img height vehicles:Image height in list view of vehicles</source>
-				<target>Bildhöhe Fahrzeuge:Bildhöhe in der Listansicht der Fahrzeuge</target>
+			<trans-unit id="tsc.listMediaHeightVehicle">
+				<source>Media height vehicles:Media height in list view of vehicles</source>
+				<target>Medienhöhe Fahrzeuge:Medienhöhe in der Listansicht der Fahrzeuge</target>
 			</trans-unit>
-			<trans-unit id="tsc.listImgWidthResources">
-				<source>Img width resources:Image width in list view of resources</source>
-				<target>Bildbreite Hilfsmittel:Bildbreite in der Listansicht der Hilfsmittel</target>
+			<trans-unit id="tsc.listMediaWidthResources">
+				<source>Media width resources:Media width in list view of resources</source>
+				<target>Medienbreite Hilfsmittel:Medienbreite in der Listansicht der Hilfsmittel</target>
 			</trans-unit>
-			<trans-unit id="tsc.listImgHeightResources">
-				<source>Img height resources:Image height in list view of resources</source>
-				<target>Bildhöhe Hilfsmittel:Bildhöhe in der Listansicht der Hilfsmittel</target>
+			<trans-unit id="tsc.listMediaHeightResources">
+				<source>Media height resources:Media height in list view of resources</source>
+				<target>Medienhöhe Hilfsmittel:Medienhöhe in der Listansicht der Hilfsmittel</target>
 			</trans-unit>
 
 			<trans-unit id="tsc.itemsPerPage">

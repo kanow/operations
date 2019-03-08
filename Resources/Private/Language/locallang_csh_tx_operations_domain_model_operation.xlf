@@ -31,8 +31,8 @@
 			<trans-unit id="zoom.description">
 				<source>Zoom for maps</source>
 			</trans-unit>
-			<trans-unit id="image.description">
-				<source>Images of operation</source>
+			<trans-unit id="media.description">
+				<source>Media of operation</source>
 			</trans-unit>
 			<trans-unit id="type.description">
 				<source>Type of operation</source>

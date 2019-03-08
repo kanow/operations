@@ -144,24 +144,24 @@
     <sIMG>
       <ROOT>
         <TCEforms>
-          <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.img</sheetTitle>
+          <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.media</sheetTitle>
         </TCEforms>
         <type>array</type>
         <el>
-	 				<settings.showImgInList>
+	 				<settings.showMediaInList>
 	 			    <TCEforms>
 						 <exclude>1</exclude>
-			         <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showImgInList</label>
+			         <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMediaInList</label>
 			         <config>
 			          <type>check</type>
 			         </config>
 					 	</TCEforms>
-	 				</settings.showImgInList>
+	 				</settings.showMediaInList>
 
-					<settings.listImgWidth>
+					<settings.listMediaWidth>
 		        <TCEforms>
 							<exclude>1</exclude>
-		         <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listImgWidth</label>
+		         <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listMediaWidth</label>
 		         <config>
 		          <type>input</type>
 		          <size>5</size>
@@ -169,12 +169,12 @@
 		          <eval>trim,alphanum</eval>
 		         </config>
 		        </TCEforms>
-	       </settings.listImgWidth>
+	       </settings.listMediaWidth>
 
- 					<settings.listImgHeight>
+ 					<settings.listMediaHeight>
 		        <TCEforms>
 							<exclude>1</exclude>
-		         <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listImgHeight</label>
+		         <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listMediaHeight</label>
 		         <config>
 		          <type>input</type>
 		          <size>5</size>
@@ -182,12 +182,12 @@
 		          <eval>trim,alphanum</eval>
 		         </config>
 		        </TCEforms>
-	       </settings.listImgHeight>
+	       </settings.listMediaHeight>
 
-         <settings.singleImgWidth>
+         <settings.singleMediaWidth>
             <TCEforms>
         		<exclude>1</exclude>
-             <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.singleImgWidth</label>
+             <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.singleMediaWidth</label>
              <config>
               <type>input</type>
               <size>5</size>
@@ -195,12 +195,12 @@
               <eval>trim,alphanum</eval>
              </config>
             </TCEforms>
-         </settings.singleImgWidth>
+         </settings.singleMediaWidth>
 
-          <settings.singleImgHeight>
+          <settings.singleMediaHeight>
             <TCEforms>
           	<exclude>1</exclude>
-             <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.singleImgHeight</label>
+             <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.singleMediaHeight</label>
              <config>
               <type>input</type>
               <size>5</size>
@@ -208,7 +208,7 @@
               <eval>trim,alphanum</eval>
              </config>
             </TCEforms>
-          </settings.singleImgHeight>
+          </settings.singleMediaHeight>
 
         </el>
       </ROOT>

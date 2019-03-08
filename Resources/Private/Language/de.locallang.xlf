@@ -55,9 +55,9 @@
 				<source>Zoom for maps</source>
 				<target>Zoom</target>
 			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_operation.image">
-				<source>Images of operation</source>
-				<target>Bilder zum Einsatz</target>
+			<trans-unit id="tx_operations_domain_model_operation.media">
+				<source>Media of operation</source>
+				<target>Medien zum Einsatz</target>
 			</trans-unit>
 			<trans-unit id="tx_operations_domain_model_operation.type">
 				<source>Type of operation</source>
@@ -109,9 +109,9 @@
 				<source>Description of vehicle</source>
 				<target>Beschreibung</target>
 			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_vehicle.image">
-				<source>Image of vehicle</source>
-				<target>Bild</target>
+			<trans-unit id="tx_operations_domain_model_vehicle.media">
+				<source>Media of vehicle</source>
+				<target>Medien von Fahrzeugen</target>
 			</trans-unit>
 
 			<trans-unit id="tx_operations_domain_model_resources">
@@ -130,9 +130,9 @@
 				<source>Description of resource</source>
 				<target>Beschreibung</target>
 			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_resources.image">
-				<source>Image of resource</source>
-				<target>Bild</target>
+			<trans-unit id="tx_operations_domain_model_resources.media">
+				<source>Media of resource</source>
+				<target>Medien von Hilfmitteln</target>
 			</trans-unit>
 
 			<trans-unit id="tx_operations_domain_model_type">
