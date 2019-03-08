@@ -21,6 +21,10 @@ Changelog
 		Changes:
 
  - :Version:
+		3.x
+  :Changes:
+		TYPO3 9.5 compatibility! Complete refactoring at all kind of code. Change field **image** to **media** on operation, resource and vehicle. Compare database after upgrade. SQL code for migration here: :ref:`Migration <migration>` Change map rendering from googleMap to leaflet. Remove slider and lightbox stuff. Please template your own if needed. please have a look on github commit history `operations <https://github.com/kanow/operations>`_
+ - :Version:
 		2.0.0
   :Changes:
 		TYPO3 8.7 compatibility, clean up code. TYPO3 8.7 is now minimum requirement
