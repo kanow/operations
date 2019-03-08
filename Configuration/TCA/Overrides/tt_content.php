@@ -16,7 +16,7 @@ $pluginSignature = $extensionName.'_'.$pluginName;
     'Operations'
 );
 
-$TCA['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'select_key,pages';
-$TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
+$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'select_key,pages';
+$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
 
 ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:operations/Configuration/FlexForms/flexform_list.xml');
