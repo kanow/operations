@@ -16,6 +16,8 @@ $pluginSignature = $extensionName.'_'.$pluginName;
     'Operations'
 );
 
+ExtensionManagementUtility::addToInsertRecords('tx_operations_domain_model_operation');
+
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'select_key,pages';
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
 
