@@ -6,6 +6,7 @@ CREATE TABLE tx_operations_domain_model_operation (
 	number varchar(255) DEFAULT '' NOT NULL,
 	onlyEld tinyint(4) unsigned DEFAULT '0' NOT NULL,
 	title varchar(255) DEFAULT '' NOT NULL,
+	path_segment varchar(2048),
 	location text NOT NULL,
 	begin int(11) DEFAULT '0' NOT NULL,
 	end int(11) DEFAULT '0' NOT NULL,
@@ -39,6 +40,7 @@ CREATE TABLE tx_operations_domain_model_assistance (
 CREATE TABLE tx_operations_domain_model_vehicle (
 
 	title varchar(255) DEFAULT '' NOT NULL,
+	path_segment varchar(2048),
 	short varchar(255) DEFAULT '' NOT NULL,
 	description text NOT NULL,
 	media varchar(255) DEFAULT '' NOT NULL,
@@ -51,6 +53,7 @@ CREATE TABLE tx_operations_domain_model_vehicle (
 CREATE TABLE tx_operations_domain_model_resource (
 
 	title varchar(255) DEFAULT '' NOT NULL,
+	path_segment varchar(2048),
 	short varchar(255) DEFAULT '' NOT NULL,
 	description text NOT NULL,
 	media varchar(255) DEFAULT '' NOT NULL,

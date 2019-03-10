@@ -20,6 +20,10 @@
 				<source>Title</source>
 				<target>Titel</target>
 			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.path_segment">
+				<source>Speaking Url path segment</source>
+				<target>Sprechende Url, Pfad Bestandteil</target>
+			</trans-unit>
 			<trans-unit id="tx_operations_domain_model_operation.location">
 				<source>Location</source>
 				<target>Einsatzort</target>

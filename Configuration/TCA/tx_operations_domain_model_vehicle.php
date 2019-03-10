@@ -28,12 +28,12 @@ return [
         'typeicon_classes' => ['default' => 'ext-operations-vehicle']
     ],
 	'interface' => [
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, short, description, media',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, short, description, media, path_segment',
     ],
 	'types' => [
 		'0' => [
             'showitem' => 'sys_language_uid;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language, l10n_parent;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent, l10n_diffsource,hidden;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden,
-             title, short, description,
+             title, path_segment, short, description,
 		--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.media,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitleVehicles.media;paletteImg,'
         ],
     ],
@@ -140,6 +140,20 @@ return [
 				'size' => 30,
 				'eval' => 'trim,required'
             ],
+        ],
+        'path_segment' => [
+            'exclude' => 1,
+            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.path_segment',
+            'config' => [
+                'type' => 'slug',
+                'generatorOptions' => [
+                    'fields' => ['title'],
+                    'fieldSeparator' => '/',
+                    'prefixParentPageSlug' => true
+                ],
+                'fallbackCharacter' => '-',
+                'eval' => 'uniqueInSite'
+            ]
         ],
 		'short' => [
 			'exclude' => 1,
