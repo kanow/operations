@@ -3,23 +3,11 @@
 
 <f:if condition="{f:count(subject:operations)} <=  {settings.itemsPerPage}">
     <f:then>
-        <ul>
-            <f:for each="{operations}" as="operation" iteration="oIterator">
-                <li class="clearfix{f:if(condition:'{oIterator.isOdd}',then:' odd')}">
-                    <f:render partial="List/Item" arguments="{operation: operation, settings:settings}" />
-                </li>
-            </f:for>
-        </ul>
+       <f:render partial="List/ListItems" arguments="{operations:operations}" />
     </f:then>
     <f:else>
         <f:widget.paginate objects="{operations}" as="paginatedOperations" configuration="{itemsPerPage: settings.itemsPerPage, insertAbove: settings.paginate.insertAbove, insertBelow: settings.paginate.insertBelow, maximumNumberOfLinks: settings.paginate.maxNumberOfLinks}">
-            <ul>
-                <f:for each="{paginatedOperations}" as="operation" iteration="oIterator">
-                    <li class="clearfix{f:if(condition:'{oIterator.isOdd}',then:' odd')}">
-                        <f:render partial="List/Item" arguments="{operation: operation, settings:settings}" />
-                    </li>
-                </f:for>
-            </ul>
+            <f:render partial="List/ListItems" arguments="{operations:paginatedOperations}" />
         </f:widget.paginate>
     </f:else>
 </f:if>

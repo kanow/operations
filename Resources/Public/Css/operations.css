@@ -14,20 +14,23 @@
 .backToList:active {margin-top:11px;margin-left:1px;}
 
 .meta p {margin-bottom:5px;}
-.operations.list h1 {margin-bottom:40px;}
-.list ul, .images ul, .layer ul {list-style:none;}
-.list li {padding:10px 2% 10px;position:relative;}
-.list .list-media {position:absolute;top:10px;right:10px;max-width:20%;}
-.list .left, .list .meta {padding-right:20%;}
-.list li h2 {margin:3px 0;}
+.list ul, .images ul, .layer ul {
+  list-style:none;
+  padding-left: 0;
+}
+.list-items li {padding:10px 0 10px;position:relative;}
+.list-items li:hover {background-color: rgba(193, 24, 19,.4);}
+.list-items .list-media {position:absolute;top:10px;right:10px;max-width:20%;}
+.list-items .left, .list-items .meta {padding-right:20%;}
+.list-items li h2 {margin:3px 0;}
 
 .f3-widget-paginator {margin:2em 0;}
 .f3-widget-paginator li {display:inline-block;padding:0;}
 .f3-widget-paginator a, .f3-widget-paginator li.current { display:inline-block; border-width:1px;border-style:solid; border-color: #4b0b00; background: rgb(193, 24, 19); padding:.5em;margin-right:.2em; color:#eeebff;font-weight:bold;}
 .f3-widget-paginator li.current {background: rgb(255, 255, 255);color:#666;)
 }
-.list li {clear:both;}
-.list li a {text-decoration:none;}
+.list-items li {clear:both;}
+.list-items li a {text-decoration:none;}
 
 .filter {margin:0 0 20px;float:right;}
 .filter .reset {margin:10px 0;display:inline-block;}

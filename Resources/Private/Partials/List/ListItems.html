@@ -1,0 +1,10 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+<ul class="list-items">
+	<f:for each="{operations}" as="operation" iteration="oIterator">
+		<li class="list-item{f:if(condition:'{oIterator.isOdd}',then:' odd')}">
+			<f:render partial="List/Item" arguments="{operation: operation, settings:settings}" />
+		</li>
+	</f:for>
+</ul>
