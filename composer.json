@@ -1,7 +1,7 @@
 {
   "name": "kn/operations",
   "type": "typo3-cms-extension",
-  "description": "Manage (firefighter,Feuerwehr) operations with detailed reports, images used resources or vehicles, google map view for locations, slider and lightbox for images. Possibly to use it for other reportable events like THW and so on.",
+  "description": "Manage (firefighter,Feuerwehr) operations with detailed reports, images used resources or vehicles, map view for locations. Possibly to use it for other reportable events like THW and so on.",
   "require": {
     "typo3/cms-core": "^9.5.0"
   },
