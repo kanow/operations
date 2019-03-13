@@ -29,4 +29,4 @@ Configuration
    Plugin/Index
    Reference/Index
    Imageslider/Index
-   Realurl/Index
+   SpeakingUrl/Index
