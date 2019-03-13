@@ -75,7 +75,7 @@
 		<ul>
 			<f:for each="{operation.vehicles}" as="vehicle" iteration="count">
 				<li>
-					 <f:link.action  action="show" arguments="{vehicle:vehicle}" controller="vehicle" pageUid="{settings.vehicleSinglePid}">
+					 <f:link.action  action="show" arguments="{vehicle:vehicle}" controller="Vehicle" pageUid="{settings.vehicleSinglePid}">
 					 	{vehicle.title}<f:if condition="{vehicle.short}"><span class="short"> ({vehicle.short})</span></f:if>
 					</f:link.action>
 				</li>
@@ -90,7 +90,7 @@
 		<ul>
 			<f:for each="{operation.resources}" as="resource" iteration="count">
 				<li>
-					<f:link.action  action="show" arguments="{resource:resource}" controller="resource" pageUid="{settings.resourceSinglePid}">
+					<f:link.action  action="show" arguments="{resource:resource}" controller="Resource" pageUid="{settings.resourceSinglePid}">
 					{resource.title}<f:if condition="{resource.short}"><span class="short"> ({resource.short})</span></f:if>
 					</f:link.action>
 				</li>
