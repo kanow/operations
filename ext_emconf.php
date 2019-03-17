@@ -2,7 +2,7 @@
 
 $EM_CONF[$_EXTKEY] = array (
 	'title' => 'Operations',
-	'description' => 'Manage (firefighter,Feuerwehr) operations with detailed reports, images used resources or vehicles, google map view for locations, slider and lightbox for images. Possibly to use it for other reportable events like THW and so on.',
+	'description' => 'Manage (firefighter,Feuerwehr) operations with detailed reports, images used resources or vehicles, map view for locations. Possibly to use it for other reportable events like THW and so on.',
 	'category' => 'plugin',
 	'version' => '2.0.2',
 	'state' => 'beta',
@@ -14,7 +14,6 @@ $EM_CONF[$_EXTKEY] = array (
 	'author_company' => 'undkonsorten',
 	'constraints' => array (
 		'depends' => array (
-			'php' => '7.2',
 			'typo3' => '9.5.0 - 9.5.99',
 		),
 		'conflicts' => array (
