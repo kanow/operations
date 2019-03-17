@@ -1,10 +1,3 @@
-
-config.tx_extbase.objects {
-    Tx_Fluid_ViewHelpers_Widget_Controller_PaginateController {
-        className = Tx_Operations_ViewHelpers_Widget_Controller_PaginateController
-    }
-}
-
 plugin.tx_operations {
 	mvc.callDefaultActionIfActionCantBeResolved = 1
 	view {
@@ -20,15 +13,10 @@ plugin.tx_operations {
 		  0 = EXT:operations/Resources/Private/Partials/
 		  10 = {$plugin.tx_operations.view.partialRootPath}
 		}
-#		widget.KN\Operations\ViewHelpers\Widget\PaginateViewHelper.templateRootPath = {$plugin.tx_operations.view.templateRootPath}
 	}
 	persistence {
 		storagePid = {$plugin.tx_operations.persistence.storagePid}
 		recursive = {$plugin.tx_operations.persistence.recursive}
-	}
-	features {
-		# uncomment the following line to enable the new Property Mapper.
-		#rewrittenPropertyMapper = 1
 	}
 	settings {
 		overrideFlexformSettingsIfEmpty = itemsPerPage,showMediaInList,listMediaWidth,listMediaHeight,singleMediaWidth,singleMediaHeight,cropTeaser,hideFilter
@@ -62,12 +50,7 @@ plugin.tx_operations {
 		paginate {
 			insertAbove = {$plugin.tx_operations.settings.paginate.insertAbove}
 			insertBelow = {$plugin.tx_operations.settings.paginate.insertBelow}
-			#lessPages = {$plugin.tx_operations.settings.paginate.lessPages}
 			maxNumberOfLinks = {$plugin.tx_operations.settings.paginate.maxNumberOfLinks}
-			#pagesBefore = {$plugin.tx_operations.settings.paginate.pagesBefore}
-			#pagesAfter = {$plugin.tx_operations.settings.paginate.pagesAfter}
-			templatePath =
-			prevNextHeaderTags = {$plugin.tx_operations.settings.paginate.prevNextHeaderTags}
 		}
 	}
 }
