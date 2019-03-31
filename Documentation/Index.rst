@@ -61,7 +61,6 @@ operations
 		- Icon for operation type is designed by `Alan Hussey <http://www.thenounproject.com/alanhussey>`_
 
 
-
 	**Table of Contents**
 
 .. toctree::
@@ -74,3 +73,9 @@ operations
 	UsersManual/Index
 	AdministratorManual/Index
 	Changelog/Index
+
+
+**Render documentation with Sphinx on Linux:**
+
+    - https://wiki.typo3.org/Rendering_reST_on_Linux
+    - https://www.fassing.eu/loesungen/typo3/dokumentation-mit-rest

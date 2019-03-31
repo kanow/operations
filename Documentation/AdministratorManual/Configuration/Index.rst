@@ -28,5 +28,4 @@ Configuration
 
    Plugin/Index
    Reference/Index
-   Imageslider/Index
    SpeakingUrl/Index

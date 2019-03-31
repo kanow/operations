@@ -12,38 +12,45 @@ Reference
 
 
 Typoscript Setup
-^^^^^^^^^^^^^^^^
+================
 
 Here you find the most important settings in typoscript. Please note that the recommended way to editing is in constants.
 For all possibly settings take a look at Classes/Configuration/TypoScript/setup.txt in extension folder.
 
 
 General settings
-""""""""""""""""
+================
 
 **plugin.tx_operations.settings**
 
-.. t3-field-list-table::
- :header-rows: 1
 
- - :Property:
-		Property:
-   :Type:
-		Data type:
-   :Description:
-		Description:
-   :Default:
-		Default:
+.. container:: ts-properties
+
+	==================================== ====================================== ============== ===============
+	Property                             Title                                  Sheet          Type
+	==================================== ====================================== ============== ===============
+	templateRootPath_                        Template RootPath                  General         string
+	==================================== ====================================== ============== ===============
+
+.. _tsTemplateRootPath:
+
+templateRootPath
+""""""""""""""""
+.. container:: table-row
+
+   Property
+         templateRootPath
+   Data type
+         string
+   Default
+         EXT:operations/Resources/Private/Templates/
+   Description
+         Default path to template files
 
 
- - :Property:
-		templateRootPath
-   :Type:
-		string
-   :Description:
-		Default path to template files
-   :Default:
-		EXT:operations/Resources/Private/Templates/
+
+
+
  - :Property:
 		partialRootPath
    :Type:
