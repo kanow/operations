@@ -35,6 +35,7 @@ namespace KN\Operations\Controller;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
+use TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException;
 
 class OperationController extends \KN\Operations\Controller\BaseController {
 
@@ -102,15 +103,16 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 
 	/**
 	 * Initialize method for special action
+     * @throws NoSuchArgumentException
 	 */
 	 public function initializeSearchAction() {
 			if ($this->arguments->hasArgument('demand')) {
 				if(function_exists('injectPropertyMappingConfiguration')) {
-					$mvcPropertyMappingConfiguration = \TYPO3\CMS\Extbase\Property\PropertyMappingConfigurationBuilder::build('TYPO3\\CMS\\Extbase\\Mvc\\Controller\\MvcPropertyMappingConfiguration');
+                    /** @var \TYPO3\CMS\Extbase\Mvc\Controller\MvcPropertyMappingConfiguration $mvcPropertyMappingConfiguration */
+                    $mvcPropertyMappingConfiguration = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Mvc\Controller\MvcPropertyMappingConfiguration::class);
 					$this->arguments->getArgument('demand')->injectPropertyMappingConfiguration($mvcPropertyMappingConfiguration);
 					$propertyMappingConfiguration = $this->arguments->getArgument('demand')->getPropertyMappingConfiguration();
 					$propertyMappingConfiguration->forProperty('*')->allowAllProperties();
-					$propertyMappingConfiguration->forProperty('*')->allowCreationForSubProperty('*');
 					$propertyMappingConfiguration->forProperty('*')->forProperty('*')->allowAllProperties();
 				} else {
 					$propertyMappingConfiguration = $this->arguments->getArgument('demand')->getPropertyMappingConfiguration();
