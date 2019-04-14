@@ -50,7 +50,8 @@ class OperationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	*
 	* @param \KN\Operations\Domain\Model\OperationDemand $demand
 	* @param array $settings
-	* @return Tx_Extbase_Persistence_QueryResultInterface
+	* @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+    * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
 	*/
 
 	public function findDemanded(\KN\Operations\Domain\Model\OperationDemand $demand, $settings) {
@@ -75,6 +76,7 @@ class OperationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	 * @param \KN\Operations\Domain\Model\OperationDemand $demand
 	 * @param array $settings
 	 * @return \TYPO3\CMS\Extbase\Persistence\QueryInterface
+     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
 	 */
 	protected function generateQuery(\KN\Operations\Domain\Model\OperationDemand $demand, $settings) {
 		$query = $this->createQuery();
@@ -103,9 +105,10 @@ class OperationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	 * Returns an array of constraints created from a given demand object.
 	 *
 	 * @param \TYPO3\CMS\Extbase\Persistence\QueryInterface $query
-	 * @param \KN\Operation\Domain\Model\OperationDemand $demand
+	 * @param \KN\Operations\Domain\Model\OperationDemand $demand
 	 * @param array $settings
 	 * @return array<Tx_Extbase_Persistence_QOM_Constraint>
+     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
 	 */
 	protected function createConstraintsFromDemand(\TYPO3\CMS\Extbase\Persistence\QueryInterface $query, \KN\Operations\Domain\Model\OperationDemand $demand, $settings) {
 
@@ -115,10 +118,10 @@ class OperationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 		$toTimestamp = mktime(23,59,59,12,31,$demand->getBegin());
 
 		if($demand->getBegin()) {
-			$constraints[] = $query->logicalAnd(
+			$constraints[] = $query->logicalAnd([
 				$query->greaterThanOrEqual('begin', $fromTimestamp),
 				$query->lessThanOrEqual('begin', $toTimestamp)
-			);
+			]);
 		}
 
 		if($demand->getType()){
@@ -126,10 +129,10 @@ class OperationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 		}
 
 		if($settings['showMap']) {
-			$constraints[] = $query->logicalAnd(
+			$constraints[] = $query->logicalAnd([
 				$query->greaterThan('latitude',0),
 				$query->greaterThan('longitude',0)
-			);
+			]);
 		}
 
 		$constraints = $this->cleanUnusedConstaints($constraints);
@@ -141,7 +144,7 @@ class OperationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	/**
 	 *  Clean not used constraints
 	 *
-	 * @param array $contrains
+	 * @param array $constraints
 	 * @return array
 	 */
 

@@ -67,6 +67,7 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 	 *
 	 * @param \KN\Operations\Domain\Model\OperationDemand $demand
 	 * @return void
+     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
 	 */
 	public function listAction(\KN\Operations\Domain\Model\OperationDemand $demand = NULL) {
 		$demand = $this->updateDemandObjectFromSettings($demand, $this->settings);
@@ -84,6 +85,7 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 	 *
 	 * @param \KN\Operations\Domain\Model\OperationDemand $demand
 	 * @return void
+     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
 	 */
 	public function searchAction(\KN\Operations\Domain\Model\OperationDemand $demand = NULL) {
 		$demand = $this->updateDemandObjectFromSettings($demand, $this->settings);
@@ -131,7 +133,7 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 	/**
 	 * Update demand with current settings, if not exists it creates one
 	 *
-	 * @param KN\Operation\Domain\Model\OperationDemand
+	 * @param \KN\Operations\Domain\Model\OperationDemand
 	 * @param array
 	 * @return void
 	 */
