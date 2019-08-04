@@ -1,6 +1,12 @@
 <?php
 namespace KN\Operations\Domain\Repository;
 
+use KN\Operations\Domain\Model\OperationDemand;
+use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
+use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
+use TYPO3\CMS\Extbase\Persistence\Repository;
+
 /***************************************************************
  *  Copyright notice
  *
@@ -32,7 +38,7 @@ namespace KN\Operations\Domain\Repository;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class OperationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+class OperationRepository extends Repository {
 
 
 	/**
@@ -41,20 +47,20 @@ class OperationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	* @return array
 	*/
 	protected $defaultOrderings = array(
-	    'begin' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING,
+	    'begin' => QueryInterface::ORDER_DESCENDING,
 	);
 
 
 	/**
 	* Returns the objects of this repository matching the demand
 	*
-	* @param \KN\Operations\Domain\Model\OperationDemand $demand
+	* @param OperationDemand $demand
 	* @param array $settings
-	* @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
-    * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
+	* @return QueryResultInterface
+    * @throws InvalidQueryException
 	*/
 
-	public function findDemanded(\KN\Operations\Domain\Model\OperationDemand $demand, $settings) {
+	public function findDemanded(OperationDemand $demand, $settings) {
 		$query = $this->generateQuery($demand, $settings);
 		return $query->execute();
 	}
@@ -73,12 +79,12 @@ class OperationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	/**
 	 * Generates the query
 	 *
-	 * @param \KN\Operations\Domain\Model\OperationDemand $demand
+	 * @param OperationDemand $demand
 	 * @param array $settings
-	 * @return \TYPO3\CMS\Extbase\Persistence\QueryInterface
-     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
+	 * @return QueryInterface
+     * @throws InvalidQueryException
 	 */
-	protected function generateQuery(\KN\Operations\Domain\Model\OperationDemand $demand, $settings) {
+	protected function generateQuery(OperationDemand $demand, $settings) {
 		$query = $this->createQuery();
 		//$query->getQuerySettings()->setRespectStoragePage(FALSE);
 
@@ -104,13 +110,13 @@ class OperationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	/**
 	 * Returns an array of constraints created from a given demand object.
 	 *
-	 * @param \TYPO3\CMS\Extbase\Persistence\QueryInterface $query
-	 * @param \KN\Operations\Domain\Model\OperationDemand $demand
+	 * @param QueryInterface $query
+	 * @param OperationDemand $demand
 	 * @param array $settings
-	 * @return array<Tx_Extbase_Persistence_QOM_Constraint>
-     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
+	 * @return array<\TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface>
+     * @throws InvalidQueryException
 	 */
-	protected function createConstraintsFromDemand(\TYPO3\CMS\Extbase\Persistence\QueryInterface $query, \KN\Operations\Domain\Model\OperationDemand $demand, $settings) {
+	protected function createConstraintsFromDemand(QueryInterface $query, OperationDemand $demand, $settings) {
 
 		$constraints = array();
 

@@ -1,6 +1,9 @@
 <?php
 namespace KN\Operations\Domain\Repository;
 
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
+use TYPO3\CMS\Extbase\Persistence\Repository;
+
 /***************************************************************
  *  Copyright notice
  *
@@ -32,7 +35,7 @@ namespace KN\Operations\Domain\Repository;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class TypeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+class TypeRepository extends Repository {
 
 	/**
 	* default ordering
@@ -40,7 +43,7 @@ class TypeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	* @return array
 	*/
 	protected $defaultOrderings = array( 
-	    'title' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING, 
+	    'title' => QueryInterface::ORDER_ASCENDING,
 	); 
 	
 	public function findAll() {

@@ -1,4 +1,5 @@
-<?php
+<?php /** @noinspection PhpFullyQualifiedNameUsageInspection */
+
 namespace KN\Operations\Controller;
 
 /***************************************************************
@@ -32,12 +33,19 @@ namespace KN\Operations\Controller;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
+
+use KN\Operations\Domain\Model\Operation;
+use KN\Operations\Domain\Model\OperationDemand;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
+use TYPO3\CMS\Extbase\Mvc\Controller\MvcPropertyMappingConfiguration;
 use TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException;
+use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
+use TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter;
 
-class OperationController extends \KN\Operations\Controller\BaseController {
+class OperationController extends BaseController
+{
 
 	/**
 	 * configuration manager
@@ -51,7 +59,6 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 	 * operationRepository
 	 *
 	 * @var \KN\Operations\Domain\Repository\OperationRepository
-	 * @TYPO3\CMS\Extbase\Annotation\Inject
 	 */
 	protected $operationRepository;
 
@@ -59,19 +66,38 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 	 * typeRepository
 	 *
 	 * @var \KN\Operations\Domain\Repository\TypeRepository
-	 * @TYPO3\CMS\Extbase\Annotation\Inject
 	 */
 	protected $typeRepository;
+
+    /**
+     * Inject a operation repository to enable DI
+     *
+     * @param \KN\Operations\Domain\Repository\OperationRepository $operationRepository
+     */
+    public function injectOperationRepository(\KN\Operations\Domain\Repository\OperationRepository $operationRepository)
+    {
+        $this->operationRepository = $operationRepository;
+    }
+
+    /**
+     * Inject a type repository to enable DI
+     *
+     * @param \KN\Operations\Domain\Repository\TypeRepository $typeRepository
+     */
+    public function injectTypeRepository(\KN\Operations\Domain\Repository\TypeRepository $typeRepository)
+    {
+        $this->typeRepository = $typeRepository;
+    }
 
 	/**
 	 * action list
 	 *
-	 * @param \KN\Operations\Domain\Model\OperationDemand $demand
+	 * @param OperationDemand $demand
 	 * @return void
-     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
+     * @throws InvalidQueryException
 	 */
-	public function listAction(\KN\Operations\Domain\Model\OperationDemand $demand = NULL) {
-		$demand = $this->updateDemandObjectFromSettings($demand, $this->settings);
+	public function listAction(OperationDemand $demand = NULL) {
+		$demand = $this->updateDemandObjectFromSettings($demand);
 		$operations = $this->operationRepository->findDemanded($demand, $this->settings);
 		$types = $this->typeRepository->findAll();
 		$years = $this->generateYears();
@@ -84,12 +110,12 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 	/**
 	 * action search
 	 *
-	 * @param \KN\Operations\Domain\Model\OperationDemand $demand
+	 * @param OperationDemand $demand
 	 * @return void
-     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
+     * @throws InvalidQueryException
 	 */
-	public function searchAction(\KN\Operations\Domain\Model\OperationDemand $demand = NULL) {
-		$demand = $this->updateDemandObjectFromSettings($demand, $this->settings);
+	public function searchAction(OperationDemand $demand = NULL) {
+		$demand = $this->updateDemandObjectFromSettings($demand);
 		$demanded = $this->operationRepository->findDemanded($demand, $this->settings);
 
 		$years = $this->generateYears();
@@ -108,8 +134,8 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 	 public function initializeSearchAction() {
 			if ($this->arguments->hasArgument('demand')) {
 				if(function_exists('injectPropertyMappingConfiguration')) {
-                    /** @var \TYPO3\CMS\Extbase\Mvc\Controller\MvcPropertyMappingConfiguration $mvcPropertyMappingConfiguration */
-                    $mvcPropertyMappingConfiguration = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Mvc\Controller\MvcPropertyMappingConfiguration::class);
+                    /** @var MvcPropertyMappingConfiguration $mvcPropertyMappingConfiguration */
+                    $mvcPropertyMappingConfiguration = GeneralUtility::makeInstance(MvcPropertyMappingConfiguration::class);
 					$this->arguments->getArgument('demand')->injectPropertyMappingConfiguration($mvcPropertyMappingConfiguration);
 					$propertyMappingConfiguration = $this->arguments->getArgument('demand')->getPropertyMappingConfiguration();
 					$propertyMappingConfiguration->forProperty('*')->allowAllProperties();
@@ -117,7 +143,7 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 				} else {
 					$propertyMappingConfiguration = $this->arguments->getArgument('demand')->getPropertyMappingConfiguration();
 					$propertyMappingConfiguration->allowAllProperties();
-					$propertyMappingConfiguration->setTypeConverterOption('TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter', \TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter::CONFIGURATION_CREATION_ALLOWED, TRUE);
+					$propertyMappingConfiguration->setTypeConverterOption('TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter', PersistentObjectConverter::CONFIGURATION_CREATION_ALLOWED, TRUE);
 				}
 			}
 	 }
@@ -125,21 +151,20 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 	/**
 	 * action show
 	 *
-	 * @param \KN\Operations\Domain\Model\Operation $operation
+	 * @param Operation $operation
 	 * @return void
 	 */
-	public function showAction(\KN\Operations\Domain\Model\Operation $operation) {
+	public function showAction(Operation $operation) {
 		$this->view->assign('operation', $operation);
 	}
 
-	/**
-	 * Update demand with current settings, if not exists it creates one
-	 *
-	 * @param \KN\Operations\Domain\Model\OperationDemand
-	 * @param array
-	 * @return void
-	 */
-	protected function updateDemandObjectFromSettings($demand , $settings) {
+    /**
+     * Update demand with current settings, if not exists it creates one
+     *
+     * @param OperationDemand
+     * @return OperationDemand
+     */
+	protected function updateDemandObjectFromSettings($demand) {
 		if(is_null($demand)){
 			$demand = $this->objectManager->get('KN\Operations\Domain\Model\OperationDemand');
 		}
@@ -147,6 +172,7 @@ class OperationController extends \KN\Operations\Controller\BaseController {
 	}
 
 	protected function generateYears(){
+	    $years = [];
         $lastYears = $this->settings['lastYears'];
 
         /** @var QueryBuilder $queryBuilder */

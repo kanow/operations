@@ -5,12 +5,13 @@ if (!defined ('TYPO3_MODE')) {
 
 use TYPO3\CMS\Core\Utility\GeneralUtility as GeneralCoreUtility;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 $extensionName = strtolower(GeneralCoreUtility::underscoredToUpperCamelCase('operations'));
 $pluginName = strtolower('List');
 $pluginSignature = $extensionName.'_'.$pluginName;
 
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+ExtensionUtility::registerPlugin(
     'operations',
     'List',
     'Operations'
