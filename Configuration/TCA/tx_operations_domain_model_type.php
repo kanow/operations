@@ -1,4 +1,7 @@
 <?php
+
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
@@ -139,7 +142,7 @@ return [
 		'image' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_type.image',
-            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('image', [
+            'config' => ExtensionManagementUtility::getFileFieldTCAConfig('image', [
                 'appearance' => [
                     'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
                 ],
