@@ -1,242 +1,264 @@
 <T3DataStructure>
-  <sheets>
-    <sDEF>
-      <ROOT>
-        <TCEforms>
-          <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.general</sheetTitle>
-        </TCEforms>
-        <type>array</type>
-        <el>
-					<switchableControllerActions>
-							<TCEforms>
-								<onChange>reload</onChange>
-								<label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.controller</label>
-								<config>
-									<type>select</type>
-									<items>
-										<numIndex index="0">
-											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.operations</numIndex>
-											<numIndex index="1">--div--</numIndex>
-										</numIndex>
-                    <numIndex index="4">
-											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.operationsListAndSearchAction</numIndex>
-											<numIndex index="1">Operation->list;Operation->search</numIndex>
-										</numIndex>
-                    <numIndex index="6">
-											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.operationsShowAction</numIndex>
-											<numIndex index="1">Operation->show;</numIndex>
-										</numIndex>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.general
+                    </sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <switchableControllerActions>
+                        <TCEforms>
+                            <onChange>reload</onChange>
+                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.controller
+                            </label>
+                            <config>
+                                <type>select</type>
+                                <items>
+                                    <numIndex index="0">
+                                        <numIndex index="0">
+                                            LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.operations
+                                        </numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4">
+                                        <numIndex index="0">
+                                            LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.operationsListAndSearchAction
+                                        </numIndex>
+                                        <numIndex index="1">Operation->list;Operation->search</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6">
+                                        <numIndex index="0">
+                                            LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.operationsShowAction
+                                        </numIndex>
+                                        <numIndex index="1">Operation->show;</numIndex>
+                                    </numIndex>
 
-										<numIndex index="9">
-											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.vehicles</numIndex>
-											<numIndex index="1">--div--</numIndex>
-										</numIndex>
-										<numIndex index="10">
-											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.vehiclesListAction</numIndex>
-											<numIndex index="1">Vehicle->list</numIndex>
-										</numIndex>
-										<numIndex index="11">
-											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.vehiclesShowAction</numIndex>
-											<numIndex index="1">Vehicle->show</numIndex>
-										</numIndex>
+                                    <numIndex index="9">
+                                        <numIndex index="0">
+                                            LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.vehicles
+                                        </numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="10">
+                                        <numIndex index="0">
+                                            LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.vehiclesListAction
+                                        </numIndex>
+                                        <numIndex index="1">Vehicle->list</numIndex>
+                                    </numIndex>
+                                    <numIndex index="11">
+                                        <numIndex index="0">
+                                            LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.vehiclesShowAction
+                                        </numIndex>
+                                        <numIndex index="1">Vehicle->show</numIndex>
+                                    </numIndex>
 
-										<numIndex index="19">
-											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.resources</numIndex>
-											<numIndex index="1">--div--</numIndex>
-										</numIndex>
-										<numIndex index="20">
-											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.resourcesListAction</numIndex>
-											<numIndex index="1">Resource->list</numIndex>
-										</numIndex>
-										<numIndex index="21">
-											<numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.resourcesShowAction</numIndex>
-											<numIndex index="1">Resource->show</numIndex>
-										</numIndex>
+                                    <numIndex index="19">
+                                        <numIndex index="0">
+                                            LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.resources
+                                        </numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="20">
+                                        <numIndex index="0">
+                                            LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.resourcesListAction
+                                        </numIndex>
+                                        <numIndex index="1">Resource->list</numIndex>
+                                    </numIndex>
+                                    <numIndex index="21">
+                                        <numIndex index="0">
+                                            LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.resourcesShowAction
+                                        </numIndex>
+                                        <numIndex index="1">Resource->show</numIndex>
+                                    </numIndex>
 
-									</items>
-								</config>
-							</TCEforms>
-					</switchableControllerActions>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </switchableControllerActions>
 
+                    <settings.cropTeaser>
+                        <TCEforms>
+                            <exclude>1</exclude>
+                            <label>
+                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.teaserMaxChars
+                            </label>
+                            <config>
+                                <type>input</type>
+                                <size>5</size>
+                                <default></default>
+                                <eval>trim,num</eval>
+                            </config>
+                        </TCEforms>
+                    </settings.cropTeaser>
 
-					<persistence.storagePid>
-							<TCEforms>
-								<exclude>1</exclude>
-								<label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.storageFolder</label>
-								<config>
-									<type>group</type>
-									<internal_type>db</internal_type>
-									<allowed>pages</allowed>
-									<size>3</size>
-									<maxitems>50</maxitems>
-									<minitems>0</minitems>
-									<show_thumbs>1</show_thumbs>
-									<wizards>
-										<suggest>
-											<type>suggest</type>
-										</suggest>
-									</wizards>
-								</config>
-							</TCEforms>
-					</persistence.storagePid>
+                    <settings.itemsPerPage>
+                        <TCEforms>
+                            <exclude>1</exclude>
+                            <label>
+                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.itemsPerPage
+                            </label>
+                            <config>
+                                <type>input</type>
+                                <size>5</size>
+                                <default></default>
+                                <eval>trim,num</eval>
+                            </config>
+                        </TCEforms>
+                    </settings.itemsPerPage>
 
-		      <settings.cropTeaser>
-			        <TCEforms>
-						<exclude>1</exclude>
-			         <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.teaserMaxChars</label>
-			         <config>
-			          <type>input</type>
-			          <size>5</size>
-			          <default></default>
-			          <eval>trim,num</eval>
-			         </config>
-			        </TCEforms>
-	       	</settings.cropTeaser>
+                    <settings.hidePagination>
+                        <TCEforms>
+                            <exclude>1</exclude>
+                            <label>
+                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.hidePagination
+                            </label>
+                            <config>
+                                <type>check</type>
+                            </config>
+                        </TCEforms>
+                    </settings.hidePagination>
 
-          <settings.itemsPerPage>
-			        <TCEforms>
-								<exclude>1</exclude>
-			         <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.itemsPerPage</label>
-			         <config>
-			          <type>input</type>
-			          <size>5</size>
-			          <default></default>
-			          <eval>trim,num</eval>
-			         </config>
-		        </TCEforms>
-	      	</settings.itemsPerPage>
+                    <settings.hideFilter>
+                        <TCEforms>
+                            <exclude>1</exclude>
+                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.hideFilter
+                            </label>
+                            <displayCond>FIELD:switchableControllerActions:=:Operation->list;Operation->search
+                            </displayCond>
+                            <config>
+                                <type>check</type>
+                            </config>
+                        </TCEforms>
+                    </settings.hideFilter>
 
-	 				<settings.hidePagination>
-	 			        <TCEforms>
-							<exclude>1</exclude>
-							<label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.hidePagination</label>
-	 			         <config>
-	 			          <type>check</type>
-	 			         </config>
-						</TCEforms>
-	 				</settings.hidePagination>
+                    <settings.showMap>
+                        <TCEforms>
+                            <exclude>1</exclude>
+                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMap
+                            </label>
+                            <displayCond>FIELD:switchableControllerActions:=:Operation->list;Operation->search
+                            </displayCond>
+                            <config>
+                                <type>check</type>
+                            </config>
+                        </TCEforms>
+                    </settings.showMap>
 
-	 				<settings.hideFilter>
-	 			    <TCEforms>
-							<exclude>1</exclude>
-							<label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.hideFilter</label>
-							<displayCond>FIELD:switchableControllerActions:=:Operation->list;Operation->search</displayCond>
-		 			        <config>
-		 			          <type>check</type>
-		 			        </config>
-						</TCEforms>
-	 				</settings.hideFilter>
+                </el>
+            </ROOT>
+        </sDEF>
+        <sIMG>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.media
+                    </sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.showMediaInList>
+                        <TCEforms>
+                            <exclude>1</exclude>
+                            <label>
+                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMediaInList
+                            </label>
+                            <config>
+                                <type>check</type>
+                            </config>
+                        </TCEforms>
+                    </settings.showMediaInList>
 
-	 				<settings.showMap>
-	 			    <TCEforms>
-							<exclude>1</exclude>
-							<label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMap</label>
-							<displayCond>FIELD:switchableControllerActions:=:Operation->list;Operation->search</displayCond>
-		 			        <config>
-		 			          <type>check</type>
-		 			        </config>
-						</TCEforms>
-	 				</settings.showMap>
+                    <settings.listMediaWidth>
+                        <TCEforms>
+                            <exclude>1</exclude>
+                            <label>
+                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listMediaWidth
+                            </label>
+                            <config>
+                                <type>input</type>
+                                <size>5</size>
+                                <default></default>
+                                <eval>trim,alphanum</eval>
+                            </config>
+                        </TCEforms>
+                    </settings.listMediaWidth>
 
-        </el>
-      </ROOT>
-    </sDEF>
-    <sIMG>
-      <ROOT>
-        <TCEforms>
-          <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.media</sheetTitle>
-        </TCEforms>
-        <type>array</type>
-        <el>
-	 				<settings.showMediaInList>
-	 			    <TCEforms>
-						 <exclude>1</exclude>
-			         <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMediaInList</label>
-			         <config>
-			          <type>check</type>
-			         </config>
-					 	</TCEforms>
-	 				</settings.showMediaInList>
+                    <settings.listMediaHeight>
+                        <TCEforms>
+                            <exclude>1</exclude>
+                            <label>
+                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listMediaHeight
+                            </label>
+                            <config>
+                                <type>input</type>
+                                <size>5</size>
+                                <default></default>
+                                <eval>trim,alphanum</eval>
+                            </config>
+                        </TCEforms>
+                    </settings.listMediaHeight>
 
-					<settings.listMediaWidth>
-		        <TCEforms>
-							<exclude>1</exclude>
-		         <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listMediaWidth</label>
-		         <config>
-		          <type>input</type>
-		          <size>5</size>
-		          <default></default>
-		          <eval>trim,alphanum</eval>
-		         </config>
-		        </TCEforms>
-	       </settings.listMediaWidth>
+                    <settings.singleMediaWidth>
+                        <TCEforms>
+                            <exclude>1</exclude>
+                            <label>
+                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.singleMediaWidth
+                            </label>
+                            <config>
+                                <type>input</type>
+                                <size>5</size>
+                                <default></default>
+                                <eval>trim,alphanum</eval>
+                            </config>
+                        </TCEforms>
+                    </settings.singleMediaWidth>
 
- 					<settings.listMediaHeight>
-		        <TCEforms>
-							<exclude>1</exclude>
-		         <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listMediaHeight</label>
-		         <config>
-		          <type>input</type>
-		          <size>5</size>
-		          <default></default>
-		          <eval>trim,alphanum</eval>
-		         </config>
-		        </TCEforms>
-	       </settings.listMediaHeight>
+                    <settings.singleMediaHeight>
+                        <TCEforms>
+                            <exclude>1</exclude>
+                            <label>
+                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.singleMediaHeight
+                            </label>
+                            <config>
+                                <type>input</type>
+                                <size>5</size>
+                                <default></default>
+                                <eval>trim,alphanum</eval>
+                            </config>
+                        </TCEforms>
+                    </settings.singleMediaHeight>
 
-         <settings.singleMediaWidth>
-            <TCEforms>
-        		<exclude>1</exclude>
-             <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.singleMediaWidth</label>
-             <config>
-              <type>input</type>
-              <size>5</size>
-              <default></default>
-              <eval>trim,alphanum</eval>
-             </config>
-            </TCEforms>
-         </settings.singleMediaWidth>
-
-          <settings.singleMediaHeight>
-            <TCEforms>
-          	<exclude>1</exclude>
-             <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.singleMediaHeight</label>
-             <config>
-              <type>input</type>
-              <size>5</size>
-              <default></default>
-              <eval>trim,alphanum</eval>
-             </config>
-            </TCEforms>
-          </settings.singleMediaHeight>
-
-        </el>
-      </ROOT>
-    </sIMG>
-    <sTemplate>
-      <ROOT>
-        <TCEforms>
-          <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.template</sheetTitle>
-        </TCEforms>
-        <type>array</type>
-        <el>
-          <settings.templateLayout>
-    				<TCEforms>
-    					<label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.templateLayout</label>
-    					<config>
-    						<type>select</type>
-    						<itemsProcFunc>KN\Operations\Hooks\ItemsProcFunc->user_templateLayout</itemsProcFunc>
-    						<items>
-    							<numIndex index="0" type="array">
-    								<numIndex index="0"></numIndex>
-    								<numIndex index="1"></numIndex>
-    							</numIndex>
-    						</items>
-    					</config>
-    				</TCEforms>
-    		  </settings.templateLayout>
-        </el>
-      </ROOT>
-    </sTemplate>
-  </sheets>
+                </el>
+            </ROOT>
+        </sIMG>
+        <sTemplate>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.template
+                    </sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.templateLayout>
+                        <TCEforms>
+                            <label>
+                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.templateLayout
+                            </label>
+                            <config>
+                                <type>select</type>
+                                <itemsProcFunc>KN\Operations\Hooks\ItemsProcFunc->user_templateLayout</itemsProcFunc>
+                                <items>
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0"></numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </settings.templateLayout>
+                </el>
+            </ROOT>
+        </sTemplate>
+    </sheets>
 </T3DataStructure>

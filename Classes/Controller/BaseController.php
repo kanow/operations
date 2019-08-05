@@ -1,4 +1,5 @@
 <?php
+
 namespace KN\Operations\Controller;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -9,7 +10,7 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
  *  Copyright notice
  *
  *  (c) 2015 Karsten Nowak <captnnowi@gmx.de>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -36,43 +37,72 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class BaseController extends ActionController {
+class BaseController extends ActionController
+{
 
-	/**
-	 * Constructor
-	 */
-	protected function initializeAction(){
-		$this->overrideFlexformSettings();
-	}
+    /**
+     * Constructor
+     */
+    protected function initializeAction()
+    {
+        $this->overrideFlexformSettings();
+        $this->storagePidFallback();
+    }
 
-	/**
-	 * overrides flexform settings with original typoscript values when
-	 * flexform value is empty and settings key is defined in
-	 * 'settings.overrideFlexformSettingsIfEmpty'
+    /**
+     * overrides flexform settings with original typoscript values when
+     * flexform value is empty and settings key is defined in
+     * 'settings.overrideFlexformSettingsIfEmpty'
      *
-	 * @return void
-	 */
-	public function overrideFlexformSettings() {
-		$originalSettings = $this->configurationManager->getConfiguration(
-		    ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS
+     * @return void
+     */
+    public function overrideFlexformSettings()
+    {
+        $originalSettings = $this->configurationManager->getConfiguration(
+            ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS
         );
-		$typoScriptSettings = $this->configurationManager->getConfiguration(
-		    ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK,
+        $typoScriptSettings = $this->configurationManager->getConfiguration(
+            ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK,
+            'operations',
+            'operations_list'
+        );
+        if (isset($typoScriptSettings['settings']['overrideFlexformSettingsIfEmpty'])) {
+			$overrideIfEmpty = GeneralUtility::trimExplode(',', $typoScriptSettings['settings']['overrideFlexformSettingsIfEmpty'], TRUE);
+            foreach ($overrideIfEmpty as $settingToOverride) {
+                // if flexform setting is empty and value is available in TS
+                if ((!isset($originalSettings[$settingToOverride]) || empty($originalSettings[$settingToOverride]))
+                    && isset($typoScriptSettings['settings'][$settingToOverride])) {
+                    $originalSettings[$settingToOverride] = $typoScriptSettings['settings'][$settingToOverride];
+                }
+            }
+            $this->settings = $originalSettings;
+        }
+    }
+
+
+    /**
+     * StoragePid fallback: TypoScript settings will be overridden by plugin date.
+     * No flexform settings, field pages of tt_content will be used.
+     *
+     */
+    protected function storagePidFallback()
+    {
+        $configuration = $this->configurationManager->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK,
             'operations',
             'operations_list'
         );
 
-		if(isset($typoScriptSettings['settings']['overrideFlexformSettingsIfEmpty'])) {
-			$overrideIfEmpty = GeneralUtility::trimExplode(',', $typoScriptSettings['settings']['overrideFlexformSettingsIfEmpty'], TRUE);
-			foreach ($overrideIfEmpty as $settingToOverride) {
-				// if flexform setting is empty and value is available in TS
-				if ((!isset($originalSettings[$settingToOverride]) || empty($originalSettings[$settingToOverride]))
-						&& isset($typoScriptSettings['settings'][$settingToOverride])) {
-					$originalSettings[$settingToOverride] = $typoScriptSettings['settings'][$settingToOverride];
-				}
-			}
-			$this->settings = $originalSettings;
-		}
-	}
+        // Storage PID in plugin data (tt_content->pages) overrides storagePid from TypoScript
+        if ($configuration['persistence']['storagePid']) {
+            $pid['persistence']['storagePid'] = $configuration['persistence']['storagePid'];
+            $this->configurationManager->setConfiguration(array_merge($configuration, $pid));
+        }
+        // Use current page as storagePid if neither set in TypoScript nor plugin data
+        elseif (!$configuration['persistence']['storagePid']) {
+            // Use current PID as storage PID
+            $pid['persistence']['storagePid'] = $GLOBALS["TSFE"]->id;
+            $this->configurationManager->setConfiguration(array_merge($configuration, $pid));
+        }
+    }
 
 }

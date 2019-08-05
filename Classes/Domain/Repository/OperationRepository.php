@@ -1,4 +1,5 @@
 <?php
+
 namespace KN\Operations\Domain\Repository;
 
 use KN\Operations\Domain\Model\OperationDemand;
@@ -38,129 +39,125 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class OperationRepository extends Repository {
+class OperationRepository extends Repository
+{
 
+    /**
+     * default ordering
+     *
+     * @return array
+     */
+    protected $defaultOrderings = array(
+        'begin' => QueryInterface::ORDER_DESCENDING,
+    );
 
-	/**
-	* default ordering
-	*
-	* @return array
-	*/
-	protected $defaultOrderings = array(
-	    'begin' => QueryInterface::ORDER_DESCENDING,
-	);
-
-
-	/**
-	* Returns the objects of this repository matching the demand
-	*
-	* @param OperationDemand $demand
-	* @param array $settings
-	* @return QueryResultInterface
-    * @throws InvalidQueryException
-	*/
-
-	public function findDemanded(OperationDemand $demand, $settings) {
-		$query = $this->generateQuery($demand, $settings);
-		return $query->execute();
-	}
-
-	/**
-	 * Counts all available operations without the limit
-	 *
-	 * @param integer $count
-	 */
-	/*
-	public function countDemanded($demand) {
-		return $this->findDemanded($demand, NULL)->count();
-	}
-	*/
-
-	/**
-	 * Generates the query
-	 *
-	 * @param OperationDemand $demand
-	 * @param array $settings
-	 * @return QueryInterface
+    /**
+     * Returns the objects of this repository matching the demand
+     *
+     * @param OperationDemand $demand
+     * @param array $settings
+     * @return QueryResultInterface
      * @throws InvalidQueryException
-	 */
-	protected function generateQuery(OperationDemand $demand, $settings) {
-		$query = $this->createQuery();
-		//$query->getQuerySettings()->setRespectStoragePage(FALSE);
+     */
+    public function findDemanded(OperationDemand $demand, $settings)
+    {
+        $query = $this->generateQuery($demand, $settings);
+        return $query->execute();
+    }
 
-		$constraints = $this->createConstraintsFromDemand($query, $demand, $settings);
-		if (!empty($constraints)) {
-			$query->matching(
-					$query->logicalAnd($constraints)
-			);
-		}
-		$limit = $settings['limit'];
-		if($limit<=0){
-			$limit = 300;
-		}
+    /**
+     * Counts all available operations without the limit
+     *
+     * @param integer $count
+     */
+    /*
+    public function countDemanded($demand) {
+        return $this->findDemanded($demand, NULL)->count();
+    }
+    */
+
+    /**
+     * Generates the query
+     *
+     * @param OperationDemand $demand
+     * @param array $settings
+     * @return QueryInterface
+     * @throws InvalidQueryException
+     */
+    protected function generateQuery(OperationDemand $demand, $settings)
+    {
+        $query = $this->createQuery();
+
+        $constraints = $this->createConstraintsFromDemand($query, $demand, $settings);
+        if (!empty($constraints)) {
+            $query->matching(
+                $query->logicalAnd($constraints)
+            );
+        }
+        $limit = $settings['limit'];
+        if ($limit <= 0) {
+            $limit = 300;
+        }
 		if ($demand->getLimit() != NULL) {
-			$query->setLimit((int) $demand->getLimit());
-		} else {
-			$query->setLimit((int) $limit);
-		}
-		//\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($query);
-		return $query;
-	}
+            $query->setLimit((int)$demand->getLimit());
+        } else {
+            $query->setLimit((int)$limit);
+        }
+        return $query;
+    }
 
-	/**
-	 * Returns an array of constraints created from a given demand object.
-	 *
-	 * @param QueryInterface $query
-	 * @param OperationDemand $demand
-	 * @param array $settings
-	 * @return array<\TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface>
+    /**
+     * Returns an array of constraints created from a given demand object.
+     *
+     * @param QueryInterface $query
+     * @param OperationDemand $demand
+     * @param array $settings
+     * @return array<\TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface>
      * @throws InvalidQueryException
-	 */
-	protected function createConstraintsFromDemand(QueryInterface $query, OperationDemand $demand, $settings) {
+     */
+    protected function createConstraintsFromDemand(QueryInterface $query, OperationDemand $demand, $settings)
+    {
+        $constraints = array();
 
-		$constraints = array();
+        $fromTimestamp = mktime(0, 0, 0, 1, 1, $demand->getBegin());
+        $toTimestamp = mktime(23, 59, 59, 12, 31, $demand->getBegin());
 
-		$fromTimestamp = mktime(0,0,0,1,1,$demand->getBegin());
-		$toTimestamp = mktime(23,59,59,12,31,$demand->getBegin());
+        if ($demand->getBegin()) {
+            $constraints[] = $query->logicalAnd([
+                $query->greaterThanOrEqual('begin', $fromTimestamp),
+                $query->lessThanOrEqual('begin', $toTimestamp)
+            ]);
+        }
 
-		if($demand->getBegin()) {
-			$constraints[] = $query->logicalAnd([
-				$query->greaterThanOrEqual('begin', $fromTimestamp),
-				$query->lessThanOrEqual('begin', $toTimestamp)
-			]);
-		}
+        if ($demand->getType()) {
+            $constraints[] = $query->contains('type', $demand->getType());
+        }
 
-		if($demand->getType()){
-			$constraints[] = $query->contains('type',$demand->getType());
-		}
+        if ($settings['showMap']) {
+            $constraints[] = $query->logicalAnd([
+                $query->greaterThan('latitude', 0),
+                $query->greaterThan('longitude', 0)
+            ]);
+        }
 
-		if($settings['showMap']) {
-			$constraints[] = $query->logicalAnd([
-				$query->greaterThan('latitude',0),
-				$query->greaterThan('longitude',0)
-			]);
-		}
+        $constraints = $this->cleanUnusedConstaints($constraints);
+        return $constraints;
+    }
 
-		$constraints = $this->cleanUnusedConstaints($constraints);
-
-		return $constraints;
-	}
-
-
-	/**
-	 *  Clean not used constraints
-	 *
-	 * @param array $constraints
-	 * @return array
-	 */
-
-	protected function cleanUnusedConstaints($constraints){
-		foreach ($constraints as $key => $value) {
-			if (is_null($value)) {
-				unset($constraints[$key]);
-			}
-		}
-		return $constraints;
-	}
+    /**
+     *  Clean not used constraints
+     *
+     * @param array $constraints
+     * @return array
+     */
+    protected function cleanUnusedConstaints($constraints)
+    {
+        foreach ($constraints as $key => $value) {
+            if (is_null($value)) {
+                unset($constraints[$key]);
+            }
+        }
+        return $constraints;
+    }
 
 }
