@@ -243,10 +243,6 @@
 				<source>Max chars of teaser text in list view</source>
 				<target>Maximale Zeichenanzahl Teasertext in der Listansicht</target>
 			</trans-unit>
-			<trans-unit id="flexform.storageFolder">
-				<source>Storage folder</source>
-				<target>Seite mit Datensätzen</target>
-			</trans-unit>
 			<trans-unit id="flexform.hideFilter">
 				<source>Hide filter for result</source>
 				<target>Filter für Ergebnisliste ausblenden</target>
