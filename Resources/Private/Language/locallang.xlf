@@ -53,7 +53,7 @@
 				<source>Assistance to this operation</source>
 			</trans-unit>
 			<trans-unit id="tx_operations_domain_model_operation.vehicles">
-				<source>Vehicles use on this operation</source>
+				<source>Vehicles used on this operation</source>
 			</trans-unit>
 			<trans-unit id="tx_operations_domain_model_operation.resources">
 				<source>resources</source>

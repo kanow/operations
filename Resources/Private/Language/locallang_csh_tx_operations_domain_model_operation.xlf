@@ -41,7 +41,7 @@
 				<source>Assistance to this operation</source>
 			</trans-unit>
 			<trans-unit id="vehicles.description">
-				<source>Vehicles use on this operation</source>
+				<source>Vehicles used on this operation</source>
 			</trans-unit>
 			<trans-unit id="resources.description">
 				<source>resources</source>

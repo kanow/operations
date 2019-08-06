@@ -68,7 +68,7 @@
 				<target>Unterstützung</target>
 			</trans-unit>
 			<trans-unit id="tx_operations_domain_model_operation.vehicles">
-				<source>Vehicles use on this operation</source>
+				<source>Vehicles used on this operation</source>
 				<target>Eingesetzte Fahrzeuge</target>
 			</trans-unit>
 			<trans-unit id="tx_operations_domain_model_operation.resources">
