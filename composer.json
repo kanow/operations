@@ -5,9 +5,10 @@
   "require": {
     "typo3/cms-core": "^9.5.0"
   },
-  "replace": {
-    "operations": "self.version",
-    "typo3-ter/operations": "self.version"
+  "extra": {
+    "typo3/cms": {
+      "operations": "operations"
+    }
   },
   "autoload": {
     "psr-4": {
