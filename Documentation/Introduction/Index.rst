@@ -8,37 +8,27 @@ Introduction
 ============
 
 
-.. tip::
 
-   New to reStructuredText and Sphinx?
-
-   Get an introduction:
-   https://docs.typo3.org/m/typo3/docs-how-to-document/master/en-us/WritingReST/Index.html
-
-   Use this cheat sheet as reference:
-   https://docs.typo3.org/m/typo3/docs-how-to-document/master/en-us/WritingReST/CheatSheet.html
 
 .. _what-it-does:
 
 What does it do?
 ================
 
-The aim of this chapter is to provide a general overview of your extension.
+The extension were written to manage firefighter operations in TYPO3 pages. The data for operations can be provided in TYPO3 Backend by editors. Many detailed information e.g. used vehicles, recources, assistance and more are possible. This extension can be used for other institutions like THW, police or security agencys too.
 
-* What does it do?
-* What problems does it solve?
-* Who is the target audience?
 
-This chapter should provide information that will help inform 
-potential users and assist them in deciding if they should 
-install and use this extension.
 
-.. important::
 
-   Don't forget to repeat your extension's version number in the
-   :file:`Settings.cfg` file, in the :code:`release` property. It will be
-   automatically picked up on the cover page by the :code:`|release|`
-   substitution.
+.. tip::
+
+  Features in the frontend:
+
+    - List/single view of reports
+    - filter list by type and year
+    - Show location on a map in single view
+    - Map with all locations instead of normal list view
+
 
 
 .. _screenshots:
