@@ -15,7 +15,7 @@ Download the extension in ExtensionManager in TYPO3 backend or get it
 
 .. code-block:: bash
 
-   composer require kn/operations
+   composer require kanow/operations
 
 - clone it directly from github
 
