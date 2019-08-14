@@ -7,14 +7,26 @@
 Configuration
 =============
 
-Target group: **Developers, Integrators**
 
-How is the extension configured? Aim to provide simple instructions detailing 
-how the extension is configured. Always assume that the user has no prior experience 
-of using your extension.
+Include static TypoScript
+=========================
 
-Try and provide a typical use case for your extension and detail each of the 
-steps required to get the extension running.
+The extension come with some TypoScript which needs to be included.
+
+#. Select the root page of your site.
+
+#. Switch to the **Template module** and select *Info/Modify*.
+
+#. Press the link **Edit the whole template record** and switch to the tab *Includes*.
+
+#. Select **Operations (operations)** at the field *Include static (from extensions):*
+
+.. figure:: ../Images/IncludeTs.png
+   :class: with-shadow
+   :alt: Include static TypoScript
+
+   Include static TypoScript
+
 
 
 Typical Example

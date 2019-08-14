@@ -8,10 +8,26 @@
 Installation
 ============
 
-Target group: **Administrators**
 
-- How is the extension installed?
-- Are there any dependencies that need to be resolved?
+Download the extension in ExtensionManager in TYPO3 backend or get it
 
-You can also refer to general TYPO3 documentation, for example the
-:ref:`t3install:start`.
+- with Composer
+
+.. code-block:: bash
+
+   composer require kn/operations
+
+- clone it directly from github
+
+.. code-block:: bash
+
+   git clone git@github.com:kanow/operations.git
+
+- download zip file from https://extensions.typo3.org/extension/operations/
+
+.. important::
+
+   From this version only TYPO3 9.5 is supported.
+
+
+

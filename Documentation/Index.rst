@@ -30,7 +30,7 @@ Operations
    `CC BY-NC-SA 4.0 <https://creativecommons.org/licenses/by-nc-sa/4.0/>`__ (Creative Commons)
    license
 
-Manage firefighter operations with detailed reports, images used resources or vehicles, map view for locations and more.  This extension was build to manage firefighter operations from "Freiwillige Feuerwehr Thale". Possibly to use it for other reportable operations or events like THW and so on.
+Manage firefighter operations with detailed reports, images used resources or vehicles, map view for locations and more.
 
 **TYPO3**
 
