@@ -1,6 +1,6 @@
 <?php /** @noinspection PhpFullyQualifiedNameUsageInspection */
 
-namespace KN\Operations\Controller;
+namespace Kanow\Operations\Controller;
 
 /***************************************************************
  *  Copyright notice
@@ -34,8 +34,8 @@ namespace KN\Operations\Controller;
  *
  */
 
-use KN\Operations\Domain\Model\Operation;
-use KN\Operations\Domain\Model\OperationDemand;
+use Kanow\Operations\Domain\Model\Operation;
+use Kanow\Operations\Domain\Model\OperationDemand;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
@@ -58,23 +58,23 @@ class OperationController extends BaseController
 	/**
 	 * operationRepository
 	 *
-	 * @var \KN\Operations\Domain\Repository\OperationRepository
+	 * @var \Kanow\Operations\Domain\Repository\OperationRepository
 	 */
 	protected $operationRepository;
 
 	/**
 	 * typeRepository
 	 *
-	 * @var \KN\Operations\Domain\Repository\TypeRepository
+	 * @var \Kanow\Operations\Domain\Repository\TypeRepository
 	 */
 	protected $typeRepository;
 
     /**
      * Inject a operation repository to enable DI
      *
-     * @param \KN\Operations\Domain\Repository\OperationRepository $operationRepository
+     * @param \Kanow\Operations\Domain\Repository\OperationRepository $operationRepository
      */
-    public function injectOperationRepository(\KN\Operations\Domain\Repository\OperationRepository $operationRepository)
+    public function injectOperationRepository(\Kanow\Operations\Domain\Repository\OperationRepository $operationRepository)
     {
         $this->operationRepository = $operationRepository;
     }
@@ -82,9 +82,9 @@ class OperationController extends BaseController
     /**
      * Inject a type repository to enable DI
      *
-     * @param \KN\Operations\Domain\Repository\TypeRepository $typeRepository
+     * @param \Kanow\Operations\Domain\Repository\TypeRepository $typeRepository
      */
-    public function injectTypeRepository(\KN\Operations\Domain\Repository\TypeRepository $typeRepository)
+    public function injectTypeRepository(\Kanow\Operations\Domain\Repository\TypeRepository $typeRepository)
     {
         $this->typeRepository = $typeRepository;
     }
@@ -166,7 +166,7 @@ class OperationController extends BaseController
      */
 	protected function updateDemandObjectFromSettings($demand) {
 		if(is_null($demand)){
-			$demand = $this->objectManager->get('KN\Operations\Domain\Model\OperationDemand');
+			$demand = $this->objectManager->get('Kanow\Operations\Domain\Model\OperationDemand');
 		}
 		return $demand;
 	}

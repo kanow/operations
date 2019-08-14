@@ -1,5 +1,5 @@
 <?php
-namespace KN\Operations\Domain\Model;
+namespace Kanow\Operations\Domain\Model;
 
 /***************************************************************
  *  Copyright notice

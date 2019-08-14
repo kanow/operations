@@ -247,7 +247,7 @@
                             </label>
                             <config>
                                 <type>select</type>
-                                <itemsProcFunc>KN\Operations\Hooks\ItemsProcFunc->user_templateLayout</itemsProcFunc>
+                                <itemsProcFunc>Kanow\Operations\Hooks\ItemsProcFunc->user_templateLayout</itemsProcFunc>
                                 <items>
                                     <numIndex index="0" type="array">
                                         <numIndex index="0"></numIndex>

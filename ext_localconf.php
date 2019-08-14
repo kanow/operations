@@ -4,7 +4,7 @@ if (!defined('TYPO3_MODE')) {
 }
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-	'KN.' . $_EXTKEY,
+	'Kanow.' . $_EXTKEY,
 	'List',
 	array(
 		'Operation' => 'list, show',

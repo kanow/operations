@@ -1,6 +1,6 @@
 <?php
 
-namespace KN\Operations\Controller;
+namespace Kanow\Operations\Controller;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;

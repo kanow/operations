@@ -1,5 +1,5 @@
 <?php
-namespace KN\Operations\Controller;
+namespace Kanow\Operations\Controller;
 
 /***************************************************************
  *  Copyright notice
@@ -32,12 +32,12 @@ namespace KN\Operations\Controller;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class VehicleController extends \KN\Operations\Controller\BaseController {
+class VehicleController extends \Kanow\Operations\Controller\BaseController {
 
 	/**
 	 * vehicleRepository
 	 *
-	 * @var \KN\Operations\Domain\Repository\VehicleRepository
+	 * @var \Kanow\Operations\Domain\Repository\VehicleRepository
 	 * @TYPO3\CMS\Extbase\Annotation\Inject
 	 */
 	protected $vehicleRepository;
@@ -56,10 +56,10 @@ class VehicleController extends \KN\Operations\Controller\BaseController {
 	/**
 	 * action show
 	 *
-	 * @param \KN\Operations\Domain\Model\Vehicle $vehicle
+	 * @param \Kanow\Operations\Domain\Model\Vehicle $vehicle
 	 * @return void
 	 */
-	public function showAction(\KN\Operations\Domain\Model\Vehicle $vehicle ) {
+	public function showAction(\Kanow\Operations\Domain\Model\Vehicle $vehicle ) {
 		$this->view->assign('vehicle', $vehicle);
 	}
 	

@@ -1,8 +1,8 @@
 <?php
 
-namespace KN\Operations\Domain\Repository;
+namespace Kanow\Operations\Domain\Repository;
 
-use KN\Operations\Domain\Model\OperationDemand;
+use Kanow\Operations\Domain\Model\OperationDemand;
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;

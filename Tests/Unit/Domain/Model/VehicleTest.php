@@ -1,6 +1,6 @@
 <?php
 
-namespace KN\Operations\Tests;
+namespace Kanow\Operations\Tests;
 /***************************************************************
  *  Copyright notice
  *
@@ -26,7 +26,7 @@ namespace KN\Operations\Tests;
  ***************************************************************/
 
 /**
- * Test case for class \KN\Operations\Domain\Model\Vehicle.
+ * Test case for class \Kanow\Operations\Domain\Model\Vehicle.
  *
  * @version $Id$
  * @copyright Copyright belongs to the respective authors
@@ -39,12 +39,12 @@ namespace KN\Operations\Tests;
  */
 class VehicleTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
-	 * @var \KN\Operations\Domain\Model\Vehicle
+	 * @var \Kanow\Operations\Domain\Model\Vehicle
 	 */
 	protected $fixture;
 
 	public function setUp() {
-		$this->fixture = new \KN\Operations\Domain\Model\Vehicle();
+		$this->fixture = new \Kanow\Operations\Domain\Model\Vehicle();
 	}
 
 	public function tearDown() {

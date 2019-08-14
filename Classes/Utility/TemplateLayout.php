@@ -1,6 +1,6 @@
 <?php
 
-namespace KN\Operations\Utility;
+namespace Kanow\Operations\Utility;
 
 /**
  * This file is part of the TYPO3 CMS project.

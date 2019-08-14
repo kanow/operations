@@ -1,5 +1,5 @@
 <?php
-namespace KN\Operations\Tests;
+namespace Kanow\Operations\Tests;
 /***************************************************************
  *  Copyright notice
  *
@@ -43,7 +43,7 @@ class VehicleControllerTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	protected $fixture;
 
 	public function setUp() {
-		$this->fixture = new \KN\Operations\Domain\Model\Vehicle();
+		$this->fixture = new \Kanow\Operations\Domain\Model\Vehicle();
 	}
 
 	public function tearDown() {

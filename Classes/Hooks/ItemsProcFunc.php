@@ -1,6 +1,6 @@
 <?php
 
-namespace KN\Operations\Hooks;
+namespace Kanow\Operations\Hooks;
 
 /**
  * This file is part of the TYPO3 CMS project.
@@ -14,7 +14,7 @@ namespace KN\Operations\Hooks;
  *
  * The TYPO3 project - inspiring people to share!
  */
-use KN\Operations\Utility\TemplateLayout;
+use Kanow\Operations\Utility\TemplateLayout;
 use TYPO3\CMS\Backend\Utility\BackendUtility as BackendUtilityCore;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 

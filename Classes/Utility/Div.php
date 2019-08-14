@@ -1,5 +1,5 @@
 <?php
-namespace KN\Operations\Utility;
+namespace Kanow\Operations\Utility;
 
 use TYPO3\CMS\Core\Utility\VersionNumberUtility;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;

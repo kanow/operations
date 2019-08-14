@@ -1,5 +1,5 @@
 <?php
-namespace KN\Operations\Controller;
+namespace Kanow\Operations\Controller;
 
 /***************************************************************
  *  Copyright notice
@@ -32,12 +32,12 @@ namespace KN\Operations\Controller;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class ResourceController extends \KN\Operations\Controller\BaseController {
+class ResourceController extends \Kanow\Operations\Controller\BaseController {
 
 	/**
 	 * resourceRepository
 	 *
-	 * @var \KN\Operations\Domain\Repository\ResourceRepository
+	 * @var \Kanow\Operations\Domain\Repository\ResourceRepository
 	 * @TYPO3\CMS\Extbase\Annotation\Inject
 	 */
 	protected $resourceRepository;
@@ -55,10 +55,10 @@ class ResourceController extends \KN\Operations\Controller\BaseController {
 	/**
 	 * action show
 	 *
-	 * @param \KN\Operations\Domain\Model\Resources $resources
+	 * @param \Kanow\Operations\Domain\Model\Resources $resources
 	 * @return void
 	 */
-	public function showAction(\KN\Operations\Domain\Model\Resource $resource) {
+	public function showAction(\Kanow\Operations\Domain\Model\Resource $resource) {
 		$this->view->assign('resource', $resource);
 	}
 	

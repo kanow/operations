@@ -1,6 +1,6 @@
 <?php
 
-namespace KN\Operations\Tests;
+namespace Kanow\Operations\Tests;
 /***************************************************************
  *  Copyright notice
  *
@@ -26,7 +26,7 @@ namespace KN\Operations\Tests;
  ***************************************************************/
 
 /**
- * Test case for class \KN\Operations\Domain\Model\Operation.
+ * Test case for class \Kanow\Operations\Domain\Model\Operation.
  *
  * @version $Id$
  * @copyright Copyright belongs to the respective authors
@@ -39,12 +39,12 @@ namespace KN\Operations\Tests;
  */
 class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
-	 * @var \KN\Operations\Domain\Model\Operation
+	 * @var \Kanow\Operations\Domain\Model\Operation
 	 */
 	protected $fixture;
 
 	public function setUp() {
-		$this->fixture = new \KN\Operations\Domain\Model\Operation();
+		$this->fixture = new \Kanow\Operations\Domain\Model\Operation();
 	}
 
 	public function tearDown() {
@@ -227,7 +227,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	 * @test
 	 */
 	public function setTypeForObjectStorageContainingTypeSetsType() { 
-		$type = new \KN\Operations\Domain\Model\Type();
+		$type = new \Kanow\Operations\Domain\Model\Type();
 		$objectStorageHoldingExactlyOneType = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
 		$objectStorageHoldingExactlyOneType->attach($type);
 		$this->fixture->setType($objectStorageHoldingExactlyOneType);
@@ -242,7 +242,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	 * @test
 	 */
 	public function addTypeToObjectStorageHoldingType() {
-		$type = new \KN\Operations\Domain\Model\Type();
+		$type = new \Kanow\Operations\Domain\Model\Type();
 		$objectStorageHoldingExactlyOneType = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
 		$objectStorageHoldingExactlyOneType->attach($type);
 		$this->fixture->addType($type);
@@ -257,7 +257,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	 * @test
 	 */
 	public function removeTypeFromObjectStorageHoldingType() {
-		$type = new \KN\Operations\Domain\Model\Type();
+		$type = new \Kanow\Operations\Domain\Model\Type();
 		$localObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
 		$localObjectStorage->attach($type);
 		$localObjectStorage->detach($type);
@@ -285,7 +285,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	 * @test
 	 */
 	public function setAssistanceForObjectStorageContainingAssistanceSetsAssistance() { 
-		$assistance = new \KN\Operations\Domain\Model\Assistance();
+		$assistance = new \Kanow\Operations\Domain\Model\Assistance();
 		$objectStorageHoldingExactlyOneAssistance = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
 		$objectStorageHoldingExactlyOneAssistance->attach($assistance);
 		$this->fixture->setAssistance($objectStorageHoldingExactlyOneAssistance);
@@ -300,7 +300,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	 * @test
 	 */
 	public function addAssistanceToObjectStorageHoldingAssistance() {
-		$assistance = new \KN\Operations\Domain\Model\Assistance();
+		$assistance = new \Kanow\Operations\Domain\Model\Assistance();
 		$objectStorageHoldingExactlyOneAssistance = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
 		$objectStorageHoldingExactlyOneAssistance->attach($assistance);
 		$this->fixture->addAssistance($assistance);
@@ -315,7 +315,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	 * @test
 	 */
 	public function removeAssistanceFromObjectStorageHoldingAssistance() {
-		$assistance = new \KN\Operations\Domain\Model\Assistance();
+		$assistance = new \Kanow\Operations\Domain\Model\Assistance();
 		$localObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
 		$localObjectStorage->attach($assistance);
 		$localObjectStorage->detach($assistance);
@@ -343,7 +343,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	 * @test
 	 */
 	public function setVehiclesForObjectStorageContainingVehicleSetsVehicles() { 
-		$vehicle = new \KN\Operations\Domain\Model\Vehicle();
+		$vehicle = new \Kanow\Operations\Domain\Model\Vehicle();
 		$objectStorageHoldingExactlyOneVehicles = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
 		$objectStorageHoldingExactlyOneVehicles->attach($vehicle);
 		$this->fixture->setVehicles($objectStorageHoldingExactlyOneVehicles);
@@ -358,7 +358,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	 * @test
 	 */
 	public function addVehicleToObjectStorageHoldingVehicles() {
-		$vehicle = new \KN\Operations\Domain\Model\Vehicle();
+		$vehicle = new \Kanow\Operations\Domain\Model\Vehicle();
 		$objectStorageHoldingExactlyOneVehicle = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
 		$objectStorageHoldingExactlyOneVehicle->attach($vehicle);
 		$this->fixture->addVehicle($vehicle);
@@ -373,7 +373,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	 * @test
 	 */
 	public function removeVehicleFromObjectStorageHoldingVehicles() {
-		$vehicle = new \KN\Operations\Domain\Model\Vehicle();
+		$vehicle = new \Kanow\Operations\Domain\Model\Vehicle();
 		$localObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
 		$localObjectStorage->attach($vehicle);
 		$localObjectStorage->detach($vehicle);
@@ -401,7 +401,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	 * @test
 	 */
 	public function setResourcesForObjectStorageContainingResourcesSetsResources() { 
-		$resource = new \KN\Operations\Domain\Model\Resources();
+		$resource = new \Kanow\Operations\Domain\Model\Resources();
 		$objectStorageHoldingExactlyOneResources = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
 		$objectStorageHoldingExactlyOneResources->attach($resource);
 		$this->fixture->setResources($objectStorageHoldingExactlyOneResources);
@@ -416,7 +416,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	 * @test
 	 */
 	public function addResourceToObjectStorageHoldingResources() {
-		$resource = new \KN\Operations\Domain\Model\Resources();
+		$resource = new \Kanow\Operations\Domain\Model\Resources();
 		$objectStorageHoldingExactlyOneResource = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
 		$objectStorageHoldingExactlyOneResource->attach($resource);
 		$this->fixture->addResource($resource);
@@ -431,7 +431,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	 * @test
 	 */
 	public function removeResourceFromObjectStorageHoldingResources() {
-		$resource = new \KN\Operations\Domain\Model\Resources();
+		$resource = new \Kanow\Operations\Domain\Model\Resources();
 		$localObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
 		$localObjectStorage->attach($resource);
 		$localObjectStorage->detach($resource);
