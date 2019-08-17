@@ -49,7 +49,7 @@ and one folder for Partials
 - Resources/Private/Partials
 
 
-Files and folders within these folders are not required. You copying only the files and folders you need.
+Files and folders within these folders are not required. Just copy the files and folders you need.
 
 Then change the paths in constants to your own. Now you can edit and use the template files you want.
 

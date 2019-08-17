@@ -59,10 +59,8 @@ Manage firefighter operations with detailed reports, images used resources or ve
 
 
    Introduction/Index
-   Editor/Index
    Installation/Index
    Configuration/Index
-   Developer/Index
-   KnownProblems/Index
+   Migration/Index
    Sitemap
 

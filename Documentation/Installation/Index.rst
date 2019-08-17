@@ -25,9 +25,6 @@ Download the extension in ExtensionManager in TYPO3 backend or get it
 
 - download zip file from https://extensions.typo3.org/extension/operations/
 
-.. important::
-
-   From this version only TYPO3 9.5 is supported.
 
 
 

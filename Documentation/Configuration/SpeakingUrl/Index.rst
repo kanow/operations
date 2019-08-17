@@ -3,14 +3,14 @@
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. include:: ../../../Includes.txt
+.. include:: ../../Includes.txt
 
-.. _speakingUrlSection
+.. _speakingUrl:
 
 
-
+=======================================
 Sample RouteEnhancer for speaking url's
-======================================
+=======================================
 
 
 

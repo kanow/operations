@@ -28,3 +28,8 @@ The extension were written to manage firefighter operations in TYPO3 pages. The 
     - filter list by type and year
     - Show location on a map in single view
     - Map with all locations instead of normal list view
+
+
+.. important::
+
+   From this version only TYPO3 9.5 is supported.
