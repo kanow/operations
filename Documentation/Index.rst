@@ -62,5 +62,6 @@ Manage firefighter operations with detailed reports, images used resources or ve
    Installation/Index
    Configuration/Index
    Migration/Index
+   Changelog/Index
    Sitemap
 

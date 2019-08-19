@@ -5,11 +5,9 @@
 
 .. include:: ../Includes.txt
 
-
 .. _migration:
-.. _forge: http://forge.typo3.org/projects/extension-operations
 
-
+=========
 Migration
 =========
 
