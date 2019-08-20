@@ -55,4 +55,4 @@ Clone the github repository and use following command to get a detailed list of 
 
 `git log 2.0.2..HEAD --abbrev-commit --pretty='%ad %s (Commit %h by %an)' --date=short`
 
-Replace the word *HEAD* with another version, if you wont to see the commits between this two versions.
+Replace the word *HEAD* with another version, if you want to see the commits between this two versions.
