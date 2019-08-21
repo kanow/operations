@@ -151,11 +151,13 @@ class OperationController extends BaseController
 	}
 
     /**
-     * action stats
+     * action statistics
      *
+     * @param OperationDemand $demand
      * @return void
      */
-    public function statsAction() {
+    public function statisticsAction(OperationDemand $demand = NULL) {
+        $demand = $this->updateDemandObjectFromSettings($demand);
         $years = $this->generateYears();
         $types = $this->typeRepository->findAll()->toArray();
 

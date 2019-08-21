@@ -70,8 +70,8 @@ class OperationRepository extends Repository
 
 	/**
 	 * Counts all available operations without the limit
-	 *
-	 * @param integer $count
+	 * @param OperationDemand $demand
+	 * @return integer $count
 	 */
 	public function countDemanded($demand) {
 		return $this->findDemanded($demand, NULL)->count();
