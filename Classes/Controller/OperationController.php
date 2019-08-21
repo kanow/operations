@@ -134,18 +134,9 @@ class OperationController extends BaseController
 	 */
 	 public function initializeSearchAction() {
 			if ($this->arguments->hasArgument('demand')) {
-				if(function_exists('injectPropertyMappingConfiguration')) {
-                    /** @var MvcPropertyMappingConfiguration $mvcPropertyMappingConfiguration */
-                    $mvcPropertyMappingConfiguration = GeneralUtility::makeInstance(MvcPropertyMappingConfiguration::class);
-					$this->arguments->getArgument('demand')->injectPropertyMappingConfiguration($mvcPropertyMappingConfiguration);
-					$propertyMappingConfiguration = $this->arguments->getArgument('demand')->getPropertyMappingConfiguration();
-					$propertyMappingConfiguration->forProperty('*')->allowAllProperties();
-					$propertyMappingConfiguration->forProperty('*')->forProperty('*')->allowAllProperties();
-				} else {
-					$propertyMappingConfiguration = $this->arguments->getArgument('demand')->getPropertyMappingConfiguration();
-					$propertyMappingConfiguration->allowAllProperties();
-					$propertyMappingConfiguration->setTypeConverterOption('TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter', PersistentObjectConverter::CONFIGURATION_CREATION_ALLOWED, TRUE);
-				}
+                $propertyMappingConfiguration = $this->arguments->getArgument('demand')->getPropertyMappingConfiguration();
+                $propertyMappingConfiguration->allowAllProperties();
+                $propertyMappingConfiguration->setTypeConverterOption('TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter', PersistentObjectConverter::CONFIGURATION_CREATION_ALLOWED, TRUE);
 			}
 	 }
 
