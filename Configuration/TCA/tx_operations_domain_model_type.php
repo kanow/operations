@@ -145,7 +145,7 @@ return [
             'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_type.color',
             'config' => array(
                 'type' => 'input',
-                'size' => 25,
+                'renderType' => 'colorpicker',
                 'eval' => 'trim'
             ),
         ),
