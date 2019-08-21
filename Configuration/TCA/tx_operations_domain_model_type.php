@@ -30,11 +30,11 @@ return [
                 'typeicon_classes' => ['default' => 'ext-operations-type']
     ],
 	'interface' => [
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, image',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, color, image',
     ],
 	'types' => [
 		'0' => ['showitem' => 'sys_language_uid;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language, l10n_parent;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent, l10n_diffsource,hidden;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden,
-		title, image,'
+		title, color, image,'
         ],
     ],
 	'palettes' => [
@@ -140,6 +140,15 @@ return [
 				'eval' => 'trim,required'
             ],
         ],
+        'color' => array(
+            'exclude' => 1,
+            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_type.color',
+            'config' => array(
+                'type' => 'input',
+                'size' => 25,
+                'eval' => 'trim'
+            ),
+        ),
 		'image' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_type.image',
