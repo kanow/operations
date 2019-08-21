@@ -9,10 +9,10 @@ mod.wizards.newContentElement.wizardItems.plugins {
 				list_type = operations_list
 			}
 		}
-		stats {
+		statistics {
 			iconIdentifier = ext-operations-wizard-icon
-			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:stats.plugin.title
-			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:stats.plugin.description
+			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:statistics.plugin.title
+			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:statistics.plugin.description
 			tt_content_defValues {
 				CType = list
 				list_type = operations_statistics

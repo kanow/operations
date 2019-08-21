@@ -10,26 +10,26 @@ if (!defined('TYPO3_MODE')) {
 		'Operation' => 'list, show, stats',
 		'Resource' => 'list, show',
 		'Vehicle' => 'list, show',
-		
+
 	),
 	// non-cacheable actions
 	array(
 		'Operation' => 'search',
 		'Vehicle' => '',
 		'Resource' => '',
-		
+
 	)
 );
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-	'KN.' . $_EXTKEY,
-	'Stats',
+	'Kanow.' . $_EXTKEY,
+	'Statistics',
 	array(
-		'Operation' => 'stats',
+		'Operation' => 'statistics',
 
 	),
 	// non-cacheable actions
 	array(
-		'Operation' => 'stats',
+		'Operation' => 'statistics',
 
 	)
 );

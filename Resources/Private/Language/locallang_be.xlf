@@ -10,10 +10,10 @@
 			<trans-unit id="plugin.description">
 				<source>Show firefighter operations</source>
 			</trans-unit>
-			<trans-unit id="stats.plugin.title">
+			<trans-unit id="statistics.plugin.title">
 				<source>Operations statistics</source>
 			</trans-unit>
-			<trans-unit id="stats.plugin.description">
+			<trans-unit id="statistics.plugin.description">
 				<source>Show statistics for the operations</source>
 			</trans-unit>
 

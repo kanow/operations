@@ -12,11 +12,11 @@
 				<source>Get firefighter operations</source>
 				<target>Einsätze von Feuwerwehren darstellen</target>
 			</trans-unit>
-			<trans-unit id="stats.plugin.title">
+			<trans-unit id="statistics.plugin.title">
 				<source>Operations statistics</source>
 				<target>Einsatzverwaltung Statistiken</target>
 			</trans-unit>
-			<trans-unit id="stats.plugin.description">
+			<trans-unit id="statistics.plugin.description">
 				<source>Show statistics for the operations</source>
 				<target>Statistiken für die Einsätze darstellen.</target>
 			</trans-unit>
