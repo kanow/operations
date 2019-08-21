@@ -72,6 +72,7 @@ return [
                 ],
 				'foreign_table' => 'tx_operations_domain_model_assistance',
 				'foreign_table_where' => 'AND tx_operations_domain_model_assistance.pid=###CURRENT_PID### AND tx_operations_domain_model_assistance.sys_language_uid IN (-1,0)',
+                'default' => 0
             ],
         ],
 		'l10n_diffsource' => [

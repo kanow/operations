@@ -95,11 +95,13 @@ return [
 			'config' => [
 				'type' => 'select',
                 'renderType' => 'selectSingle',
+                'eval' => 'int',
                 'items' => [
 					['', 0],
                 ],
 				'foreign_table' => 'tx_operations_domain_model_operation',
 				'foreign_table_where' => 'AND tx_operations_domain_model_operation.pid=###CURRENT_PID### AND tx_operations_domain_model_operation.sys_language_uid IN (-1,0)',
+                'default' => 0
             ],
         ],
 		'l10n_diffsource' => [
