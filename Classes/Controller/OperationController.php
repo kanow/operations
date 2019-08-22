@@ -39,6 +39,7 @@ use Kanow\Operations\Domain\Model\OperationDemand;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
+use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\MvcPropertyMappingConfiguration;
 use TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException;
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
@@ -47,13 +48,15 @@ use TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter;
 class OperationController extends BaseController
 {
 
-	/**
-	 * configuration manager
-	 *
-	 * @var \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface
-	 * @TYPO3\CMS\Extbase\Annotation\Inject
-	 */
-	protected $configurationManager;
+    /**
+     * @var ConfigurationManagerInterface
+     */
+    protected $configurationManager;
+
+    public function injectConfigurationManager(ConfigurationManagerInterface $configurationManager): void
+    {
+        $this->configurationManager = $configurationManager;
+    }
 
 	/**
 	 * operationRepository

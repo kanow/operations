@@ -1,11 +1,13 @@
 <?php
 namespace Kanow\Operations\Controller;
 
+use Kanow\Operations\Domain\Repository\VehicleRepository;
+
 /***************************************************************
  *  Copyright notice
  *
  *  (c) 2013 Karsten Nowak <captnnowi@gmx.de>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -35,12 +37,14 @@ namespace Kanow\Operations\Controller;
 class VehicleController extends \Kanow\Operations\Controller\BaseController {
 
 	/**
-	 * vehicleRepository
-	 *
-	 * @var \Kanow\Operations\Domain\Repository\VehicleRepository
-	 * @TYPO3\CMS\Extbase\Annotation\Inject
+	 * @var VehicleRepository
 	 */
 	protected $vehicleRepository;
+
+	public function injectVehicleRepository(VehicleRepository $vehicleRepository): void
+	{
+	    $this->vehicleRepository = $vehicleRepository;
+	}
 
 	/**
 	 * action list
@@ -62,7 +66,7 @@ class VehicleController extends \Kanow\Operations\Controller\BaseController {
 	public function showAction(\Kanow\Operations\Domain\Model\Vehicle $vehicle ) {
 		$this->view->assign('vehicle', $vehicle);
 	}
-	
+
 
 
 }

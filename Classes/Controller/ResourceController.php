@@ -1,11 +1,13 @@
 <?php
 namespace Kanow\Operations\Controller;
 
+use Kanow\Operations\Domain\Repository\ResourceRepository;
+
 /***************************************************************
  *  Copyright notice
  *
  *  (c) 2013 Karsten Nowak <captnnowi@gmx.de>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -35,12 +37,14 @@ namespace Kanow\Operations\Controller;
 class ResourceController extends \Kanow\Operations\Controller\BaseController {
 
 	/**
-	 * resourceRepository
-	 *
-	 * @var \Kanow\Operations\Domain\Repository\ResourceRepository
-	 * @TYPO3\CMS\Extbase\Annotation\Inject
+	 * @var ResourceRepository
 	 */
 	protected $resourceRepository;
+
+	public function injectResourceRepository(ResourceRepository $resourceRepository): void
+	{
+	    $this->resourceRepository = $resourceRepository;
+	}
 
 	/**
 	 * action list
@@ -61,8 +65,8 @@ class ResourceController extends \Kanow\Operations\Controller\BaseController {
 	public function showAction(\Kanow\Operations\Domain\Model\Resource $resource) {
 		$this->view->assign('resource', $resource);
 	}
-	
-	
+
+
 
 
 }
