@@ -40,7 +40,6 @@ use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
-use TYPO3\CMS\Extbase\Mvc\Controller\MvcPropertyMappingConfiguration;
 use TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException;
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 use TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter;
@@ -177,7 +176,6 @@ class OperationController extends BaseController
 	protected function generateYears(){
 	    $years = [];
         $lastYears = $this->settings['lastYears'];
-
         /** @var QueryBuilder $queryBuilder */
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable('tx_operations_domain_model_operation');
@@ -185,13 +183,13 @@ class OperationController extends BaseController
 			->add('select','FROM_UNIXTIME(begin, \'%Y\') AS year',true)
 			->from('tx_operations_domain_model_operation')
 			->groupBy('year')
-			->add('orderby','ORDER BY year DESC LIMIT 0, '.$lastYears,true)
-			->execute()->fetchAll();
-
+			->orderBy('year','DESC')
+            ->setMaxResults($lastYears)
+            ->execute()
+            ->fetchAll();
         foreach ($rows as $year) {
-	      $years[$year['year']] = $year['year'];
-	  	}
-
+            $years[$year['year']] = $year['year'];
+        }
 		return $years;
 	}
 }
