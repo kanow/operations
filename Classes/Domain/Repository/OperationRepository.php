@@ -85,6 +85,7 @@ class OperationRepository extends Repository
      * @return array
      */
     public function countGroupedByYearAndType($years,$types) {
+        $yearsString = implode(',', $years);
         /** @var QueryBuilder $queryBuilder */
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable('tx_operations_domain_model_operation');
@@ -93,6 +94,7 @@ class OperationRepository extends Repository
             ->from('tx_operations_domain_model_type','ot')
             ->innerJoin('ot','tx_operations_operation_type_mm','type_mm','type_mm.uid_foreign = ot.uid')
             ->innerJoin('type_mm','tx_operations_domain_model_operation','o','type_mm.uid_local = o.uid')
+            ->where('FROM_UNIXTIME(o.begin, \'%Y\') IN('. $yearsString .')' )
             ->groupBy('year')
             ->addGroupBy('ot.uid')
             ->execute()->fetchAll();
