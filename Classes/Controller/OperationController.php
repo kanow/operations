@@ -185,23 +185,24 @@ class OperationController extends BaseController
 		return $demand;
 	}
 
-	protected function generateYears(){
-	    $years = [];
+    protected function generateYears(){
+        $years = [];
         $lastYears = $this->settings['lastYears'];
-
         /** @var QueryBuilder $queryBuilder */
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable('tx_operations_domain_model_operation');
         $rows = $queryBuilder
-			->add('select','FROM_UNIXTIME(begin, \'%Y\') AS year',true)
-			->from('tx_operations_domain_model_operation')
-			->groupBy('year')
-			->add('orderby','ORDER BY year DESC LIMIT 0, '.$lastYears,true)
-			->execute()->fetchAll();
+            ->add('select','FROM_UNIXTIME(begin, \'%Y\') AS year',true)
+            ->from('tx_operations_domain_model_operation')
+            ->groupBy('year')
+            ->orderBy('year','DESC')
+            ->setMaxResults($lastYears)
+            ->execute()
+            ->fetchAll();
         foreach ($rows as $year) {
-	      $years[$year['year']] = $year['year'];
-	  	}
-		return $years;
-	}
+            $years[$year['year']] = $year['year'];
+        }
+        return $years;
+    }
 
 }
