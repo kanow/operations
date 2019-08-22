@@ -25,7 +25,7 @@ The extension come with some TypoScript which needs to be included.
 
 #. Select **Operations (operations)** at the field *Include static (from extensions):*
 
-.. figure:: ../Images/IncludeTs.png
+.. figure:: ../../Images/IncludeTs.png
    :class: with-shadow
    :alt: Include static TypoScript
 
