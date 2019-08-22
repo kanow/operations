@@ -19,8 +19,7 @@ Use it in your site configuration
 
 
 Here is a sample `Extbase Plugin Enhancer <https://docs.typo3.org/typo3cms/extensions/core/Changelog/9.5/Feature-86365-RoutingEnhancersAndAspects.html#extbase-plugin-enhancer>`_ to use speaking url's for single views of operations, vehicles,  resources and the pages in list with pagination.
-
-
+You don't know about the site configuration? Read here: `TYPO3 Site Configuration Storage <https://docs.typo3.org/m/typo3/reference-coreapi/9.5/en-us/ApiOverview/SiteHandling/Basics.html#site-configuration-storage>`_
 
 
 .. highlight:: yaml
