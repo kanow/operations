@@ -25,13 +25,14 @@ function generateDataSetsFromTable()
             {
                 label: label,
                 backgroundColor : $(this).find(".data-row-label").data('color'),
-                data : data
+                data : data,
+                stack: 'group1'
             }
         datasets.push(dataset);
     });
     return datasets;
-}
 
+}
 var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {
     // The type of chart we want to create
@@ -46,7 +47,6 @@ var myChart = new Chart(ctx, {
         legend: {
             position: 'bottom',
             labels: {
-
             }
         },
         tooltips: {
@@ -59,6 +59,5 @@ var myChart = new Chart(ctx, {
                 }
             }]
         }
-
     }
 });
