@@ -20,7 +20,7 @@ The extension were written to manage firefighter operations in TYPO3 pages. The 
 
 
 
-.. tip::
+.. note::
 
   Features in the frontend:
 
@@ -33,3 +33,7 @@ The extension were written to manage firefighter operations in TYPO3 pages. The 
 .. important::
 
    From this version only TYPO3 9.5 is supported.
+
+.. tip::
+
+    If the extension is useful for you and you would like to support my work you can make a donation on paypal: `PayPal Donation <https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZFPCNRYPD2MGA&source=url>`_
