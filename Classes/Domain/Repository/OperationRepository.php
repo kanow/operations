@@ -121,6 +121,8 @@ class OperationRepository extends Repository
             $preparedResult = $this->addMissingType($preparedResult, $types);
         }
         $resultWithEmptyYearsSorted = $this->sortResultByYears($preparedResult);
+        $resultWithEmptyYearsSorted = $this->sortResultByTypeUid($resultWithEmptyYearsSorted);
+
         return $resultWithEmptyYearsSorted;
     }
 
@@ -176,13 +178,21 @@ class OperationRepository extends Repository
                 'years' => $value['years']
             );
         }
-        // sort by array key (typeUid)
-        ksort($resultSorted);
         return $resultSorted;
     }
 
-
-
+    /*
+     * sort result by the key, that is the typeUid
+     *
+     * @param array $data
+     * @return array
+     */
+    protected function sortResultByTypeUid($data)
+    {
+        // sort by array key (typeUid)
+        ksort($data);
+        return $data;
+    }
 
     /*
      *  convert years array to comma separated list
@@ -216,7 +226,6 @@ class OperationRepository extends Repository
 
         return $result;
     }
-
 
     /**
      * Counts all available operations grouped by a property
