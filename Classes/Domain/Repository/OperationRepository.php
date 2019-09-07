@@ -248,6 +248,12 @@ class OperationRepository extends Repository
             ->execute()->fetchAll();
 
         return $groupedCounted;
+        // @todo check this array stuff to group by in array not on database query
+        //
+        //        $result = array();
+        //        foreach ($data as $element) {
+        //            $result[$element['id']][] = $element;
+        //        }
     }
 
     /**
