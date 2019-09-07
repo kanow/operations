@@ -168,7 +168,8 @@ class OperationRepository extends Repository
     protected function sortResultByYears($result)
     {
         foreach($result as $key => $value) {
-            ksort($value['years']);
+            // sort by array key (years) in revers order
+            krsort($value['years']);
             $resultSorted[$key] = array(
                 'title' => $value['title'],
                 'color' => $value['color'],
@@ -179,6 +180,9 @@ class OperationRepository extends Repository
         ksort($resultSorted);
         return $resultSorted;
     }
+
+
+
 
     /*
      *  convert years array to comma separated list
