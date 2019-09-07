@@ -222,7 +222,7 @@ class OperationRepository extends Repository
             ->add('select','COUNT(*) as count, FROM_UNIXTIME(begin, \'%Y\') as year',true)
             ->from('tx_operations_domain_model_operation')
             ->groupBy('year')
-            ->orderBy('year',ASC)
+            ->orderBy('year')
             ->execute();
         $result = $statement->fetchAll();
 
