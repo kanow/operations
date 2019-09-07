@@ -164,10 +164,12 @@ class OperationController extends BaseController
         $types = $this->typeRepository->findAll()->toArray();
 
         $operationsGroupedByYearAndType = $this->operationRepository->countGroupedByYearAndType($years,$types);
+        $operationsGroupedByYear = $this->operationRepository->countGroupedByYear($years);
 
         $this->view->assignMultiple(
             array(
                 'operationsGroupedByYearAndType' => $operationsGroupedByYearAndType,
+                'operationsGroupedByYear' => $operationsGroupedByYear,
                 'count' => $this->operationRepository->countDemanded($demand),
                 'years' => $years
             )

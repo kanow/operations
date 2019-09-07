@@ -11,6 +11,18 @@
 				<source>Map of operations</source>
 				<target>Kartenübersicht der Einsätze</target>
 			</trans-unit>
+			<trans-unit id="statistics.header">
+				<source>Statistics of operations</source>
+				<target>Statistiken der Einsätze</target>
+			</trans-unit>
+			<trans-unit id="statistics.sum.header">
+				<source>Sum</source>
+				<target>Summe</target>
+			</trans-unit>
+			<trans-unit id="statistics.chart.header">
+				<source>Chart</source>
+				<target>Diagramm</target>
+			</trans-unit>
 			<trans-unit id="backToList">
 				<source>back to list</source>
 				<target>zurück zur Liste</target>

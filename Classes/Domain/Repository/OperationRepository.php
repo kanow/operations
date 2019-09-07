@@ -212,9 +212,10 @@ class OperationRepository extends Repository
     /**
      * Counts all available operations grouped by year
      *
+     * @param array $years
      * @return array
      */
-    public function countGroupedByYear() {
+    public function countGroupedByYear($years) {
         /** @var QueryBuilder $queryBuilder */
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable('tx_operations_domain_model_operation');
@@ -222,8 +223,9 @@ class OperationRepository extends Repository
         $statement = $queryBuilder
             ->add('select','COUNT(*) as count, FROM_UNIXTIME(begin, \'%Y\') as year',true)
             ->from('tx_operations_domain_model_operation')
+            ->where('FROM_UNIXTIME(begin, \'%Y\') IN('. $this->convertYearsToString($years) .')' )
             ->groupBy('year')
-            ->orderBy('year')
+            ->orderBy('year', 'DESC')
             ->execute();
         $result = $statement->fetchAll();
 

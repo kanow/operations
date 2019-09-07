@@ -8,7 +8,7 @@
     <f:flashMessages/>
     <div class="operations stats">
 
-        <h1>Statistiken</h1>
+        <h1>{f:translate(key:"statistic.header")}</h1>
         <f:if condition="{operationsGroupedByYearAndType}">
             <f:then>
                 <table data-chart="myChart" class="dataset">
@@ -21,6 +21,13 @@
                         </f:for>
                     </tbody>
                 </table>
+
+                <h3>{f:translate(key:"statistics.sum.header")}</h3>
+                <table>
+                    <f:for as="sum" each="{operationsGroupedByYear}"><tr><th>{sum.year}</th><td>{sum.count}</td></tr></f:for>
+                </table>
+
+                <h3>{f:translate(key:"statistics.chart.header")}</h3>
                 <div class="chart-container">
                     <canvas id="myChart"></canvas>
                 </div>
