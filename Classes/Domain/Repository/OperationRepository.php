@@ -171,6 +171,7 @@ class OperationRepository extends Repository
      */
     protected function sortResultByYears($result)
     {
+        $resultSorted = [];
         foreach($result as $key => $value) {
             // sort by array key (years) in revers order
             krsort($value['years']);
