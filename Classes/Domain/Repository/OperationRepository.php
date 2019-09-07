@@ -74,9 +74,9 @@ class OperationRepository extends Repository
      * @return integer $count
      * @throws InvalidQueryException
      */
-	public function countDemanded($demand) {
-		return $this->findDemanded($demand, NULL)->count();
-	}
+    public function countDemanded($demand) {
+        return $this->findDemanded($demand, NULL)->count();
+    }
 
     /**
      * Counts all available operations grouped by a property
@@ -94,15 +94,15 @@ class OperationRepository extends Repository
             ->from('tx_operations_domain_model_type','ot')
             ->innerJoin('ot','tx_operations_operation_type_mm','type_mm','type_mm.uid_foreign = ot.uid')
             ->innerJoin('type_mm','tx_operations_domain_model_operation','o','type_mm.uid_local = o.uid')
-            ->where('FROM_UNIXTIME(o.begin, \'%Y\') IN('. $this->getStringFromYears($years) .')' )
+            ->where('FROM_UNIXTIME(o.begin, \'%Y\') IN('. $this->convertYearsToString($years) .')' )
             ->groupBy('year')
             ->addGroupBy('ot.uid')
             ->execute()->fetchAll();
 
-        $resultWithEmptyYears = [];
+        $preparedResult = [];
         foreach ($result as $key => $value) {
-            if(!array_key_exists($value['type_uid'],$resultWithEmptyYears)) {
-                $resultWithEmptyYears[$value['type_uid']] = array(
+            if(!array_key_exists($value['type_uid'],$preparedResult)) {
+                $preparedResult[$value['type_uid']] = array(
                     'title' => $value['title'],
                     'color' => $value['color'],
                     'years' => array(
@@ -110,47 +110,84 @@ class OperationRepository extends Repository
                     )
                 );
             } else {
-                $resultWithEmptyYears[$value['type_uid']]['years'][$value['year']] = $value['count'];
-            }
-        }
-        // add empty years to result
-        foreach ($years as $year) {
-            foreach($resultWithEmptyYears as $key => $value) {
-                if(!isset($resultWithEmptyYears[$key]['years'][$year])) {
-                    $resultWithEmptyYears[$key]['years'][$year] = 0;
-                }
-            }
-            // add missing types to result
-            foreach ($types as $type) {
-                if(!array_key_exists($type->getUid(),$resultWithEmptyYears)) {
-                    $resultWithEmptyYears[$type->getUid()]['title'] =  $type->getTitle();
-                    $resultWithEmptyYears[$type->getUid()]['color'] =  $type->getColor();
-                    $resultWithEmptyYears[$type->getUid()]['years'][$year] = 0;
-                }
+                $preparedResult[$value['type_uid']]['years'][$value['year']] = $value['count'];
             }
         }
 
-        // new array for sorted years in every single row
-        $resultWithEmptyYearsSorted = [];
-        foreach($resultWithEmptyYears as $key => $value) {
+        foreach ($years as $year) {
+            // add empty years to result
+            $preparedResult = $this->addEmptyYear($preparedResult,$year);
+            // add missing types to result
+            $preparedResult = $this->addMissingType($preparedResult, $types);
+        }
+        $resultWithEmptyYearsSorted = $this->sortResultByYears($preparedResult);
+        return $resultWithEmptyYearsSorted;
+    }
+
+    /*
+     * add missing type (no operations in year
+     *
+     * @param array $data
+     * @param array $types
+     */
+    protected function addMissingType($data,$types)
+    {
+        foreach ($types as $type) {
+            if(!array_key_exists($type->getUid(),$data)) {
+                $data[$type->getUid()]['title'] =  $type->getTitle();
+                $data[$type->getUid()]['color'] =  $type->getColor();
+                $data[$type->getUid()]['years'][$year] = 0;
+            }
+        }
+        return $data;
+    }
+
+    /*
+     * Add empty years to result array
+     *
+     * @param array $data
+     * @param string $year
+     * @return array
+     */
+    protected function addEmptyYear($data,$year)
+    {
+        foreach($data as $key => $value) {
+            if(!isset($data[$key]['years'][$year])) {
+                $data[$key]['years'][$year] = 0;
+            }
+        }
+        return $data;
+    }
+
+    /*
+     * sort result array by years
+     *
+     * @param array $result
+     * @return array
+     */
+    protected function sortResultByYears($result)
+    {
+        foreach($result as $key => $value) {
             ksort($value['years']);
-            $resultWithEmptyYearsSorted[$key] = array(
+            $resultSorted[$key] = array(
                 'title' => $value['title'],
                 'color' => $value['color'],
                 'years' => $value['years']
             );
         }
         // sort by array key (typeUid)
-        ksort($resultWithEmptyYearsSorted);
-
-        return $resultWithEmptyYearsSorted;
+        ksort($resultSorted);
+        return $resultSorted;
     }
 
     /*
+     *  convert years array to comma separated list
+     *  which can be check in sql
+     *
      * @param array $years
      * @return string
      */
-    protected function getStringFromYears($years)
+    protected function convertYearsToString($years)
     {
         return implode(',', $years);
     }
@@ -222,7 +259,7 @@ class OperationRepository extends Repository
         if ($limit <= 0) {
             $limit = 300;
         }
-		if ($demand->getLimit() != NULL) {
+        if ($demand->getLimit() != NULL) {
             $query->setLimit((int)$demand->getLimit());
         } else {
             $query->setLimit((int)$limit);
@@ -276,11 +313,11 @@ class OperationRepository extends Repository
 
         // map constraints
         if($settings['showMap']) {
-			$constraints[] = $query->logicalAnd(
-				$query->greaterThan('latitude',0),
-				$query->greaterThan('longitude',0)
-			);
-		}
+            $constraints[] = $query->logicalAnd(
+                $query->greaterThan('latitude',0),
+                $query->greaterThan('longitude',0)
+            );
+        }
 
         $constraints = $this->cleanUnusedConstaints($constraints);
         return $constraints;
