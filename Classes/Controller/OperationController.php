@@ -156,6 +156,7 @@ class OperationController extends BaseController
      *
      * @param OperationDemand $demand
      * @return void
+     * @throws InvalidQueryException
      */
     public function statisticsAction(OperationDemand $demand = NULL) {
         $demand = $this->updateDemandObjectFromSettings($demand);
