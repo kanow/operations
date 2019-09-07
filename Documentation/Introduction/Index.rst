@@ -28,6 +28,7 @@ The extension were written to manage firefighter operations in TYPO3 pages. The 
     - filter list by type and year
     - Show location on a map in single view
     - Map with all locations instead of normal list view
+    - Statistics by operation type with a bar chart (made with http://chartjs.org)
 
 
 .. important::

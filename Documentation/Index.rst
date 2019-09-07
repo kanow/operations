@@ -30,7 +30,7 @@ Operations
    `CC BY-NC-SA 4.0 <https://creativecommons.org/licenses/by-nc-sa/4.0/>`__ (Creative Commons)
    license
 
-Manage firefighter operations with detailed reports, images used resources or vehicles, map view for locations and more.
+Manage firefighter operations with detailed reports, images, used resources or vehicles, statistics, map view for locations….
 
 **TYPO3**
 
