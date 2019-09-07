@@ -305,10 +305,10 @@ class OperationRepository extends Repository
 
         // map constraints
         if($settings['showMap']) {
-            $constraints[] = $query->logicalAnd(
+            $constraints[] = $query->logicalAnd([
                 $query->greaterThan('latitude',0),
                 $query->greaterThan('longitude',0)
-            );
+            ]);
         }
 
         $constraints = $this->cleanUnusedConstaints($constraints);
