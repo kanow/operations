@@ -118,7 +118,7 @@ class OperationRepository extends Repository
             // add empty years to result
             $preparedResult = $this->addEmptyYear($preparedResult,$year);
             // add missing types to result
-            $preparedResult = $this->addMissingType($preparedResult, $types);
+            $preparedResult = $this->addMissingType($preparedResult, $types, $year);
         }
         $resultWithEmptyYearsSorted = $this->sortResultByYears($preparedResult);
         $resultWithEmptyYearsSorted = $this->sortResultByTypeUid($resultWithEmptyYearsSorted);
@@ -131,8 +131,10 @@ class OperationRepository extends Repository
      *
      * @param array $data
      * @param array $types
+     * @param string $year
+     * @return array
      */
-    protected function addMissingType($data,$types)
+    protected function addMissingType($data,$types,$year)
     {
         foreach ($types as $type) {
             if(!array_key_exists($type->getUid(),$data)) {
