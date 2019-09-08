@@ -15,6 +15,10 @@
 				<source>Statistics of operations</source>
 				<target>Statistiken der Einsätze</target>
 			</trans-unit>
+			<trans-unit id="statistics.dataTable.header">
+				<source>Table with data</source>
+				<target>Tabelle mit Daten</target>
+			</trans-unit>
 			<trans-unit id="statistics.sum.header">
 				<source>Sum</source>
 				<target>Summe</target>

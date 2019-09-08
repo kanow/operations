@@ -11,6 +11,7 @@
         <h1>{f:translate(key:"statistic.header")}</h1>
         <f:if condition="{operationsGroupedByYearAndType}">
             <f:then>
+                <h3>{f:translate(key:"statistics.dataTable.header")}</h3>
                 <table data-chart="myChart" class="dataset">
                     <thead><tr><th></th><f:for each="{years}" as="year"><th class="label">{year}</th></f:for></tr></thead>
                     <tbody>
