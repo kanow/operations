@@ -263,6 +263,10 @@
 				<source>Select Template Layout (set items in Page TS Config before using)</source>
 				<target>Template Layout auswählen (Einträge vorher im Page TS Config setzen)</target>
 			</trans-unit>
+			<trans-unit id="flexform.statistics.lastYears">
+				<source>Define last years for statistics to show</source>
+				<target>Anzahl der anzuzeigenden letzten Jahre bei den Statistiken</target>
+			</trans-unit>
 
 			<trans-unit id="tca.paletteTitle.time">
 				<source>Operation times</source>
