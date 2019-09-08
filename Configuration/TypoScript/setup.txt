@@ -19,7 +19,7 @@ plugin.tx_operations {
 		recursive = {$plugin.tx_operations.persistence.recursive}
 	}
 	settings {
-		overrideFlexformSettingsIfEmpty = itemsPerPage,showMediaInList,listMediaWidth,listMediaHeight,singleMediaWidth,singleMediaHeight,cropTeaser,hideFilter
+		overrideFlexformSettingsIfEmpty = itemsPerPage,showMediaInList,listMediaWidth,listMediaHeight,singleMediaWidth,singleMediaHeight,cropTeaser,hideFilter,lastYears
 		searchFields = title,teaser,location
 		operationSinglePid = {$plugin.tx_operations.settings.operationSinglePid}
 		vehicleSinglePid = {$plugin.tx_operations.settings.vehicleSinglePid}
