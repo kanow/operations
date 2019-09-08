@@ -12,6 +12,11 @@
 Changelog
 =========
 
+Update to 3.1.0
+====================================
+
+Some little bugfixes. Add a new plugin to display statistics in frontend.
+
 Update to 3.0.0 from a version below
 ====================================
 
