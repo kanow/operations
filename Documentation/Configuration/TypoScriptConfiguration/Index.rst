@@ -48,6 +48,8 @@ Minimal example of TypoScript to overwrite a setting in operations:
         }
     }
 
+.. _own-template-files:
+
 Use your own template files
 ===========================
 
