@@ -18,7 +18,7 @@ Display operation statistics
 There is nothing to configure. Add a content element and use the plugin "Operations Statistics". That's all.
 
 This will show you all operations grouped by type and year.
-The setting "lastYears" define wich years should be used for the statistics. Years without operations will be ignored.
+The setting "lastYears" define wich years should be used for the statistics. It is the same setting like in the normal list but can be overridden in flexform of the Statistics plugin. Years without operations will be ignored.
 
 Change templating for statistics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
