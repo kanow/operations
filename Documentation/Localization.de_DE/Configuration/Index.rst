@@ -4,7 +4,7 @@
 .. _configuration:
 
 =============
-Configuration
+Konfiguration
 =============
 
 

@@ -8,67 +8,74 @@
 .. _typoscript-configuration:
 
 ========================
-TypoScript configuration
+TypoScript Konfiguration
 ========================
 
 
-Include static TypoScript
-=========================
+Statisches TypoScript einbinden
+===============================
 
-The extension come with some TypoScript which needs to be included.
+Die Extension bringt einiges an TypoScript Konfiguration mit. Damit euer TYPO3 die Einstellungen auch kennt, müsst ihr
+das TypoScript einbinden. Ein möglicher Weg ist die Einbindung im Root-TS Template eurer Seite.
 
-#. Select the root page of your site.
+#. Wählt die Seite auf der sich euer Root-TS Template befindet
 
-#. Switch to the **Template module** and select *Info/Modify*.
+#. Wechselt links bei den Modulen auf das Modul **Template** wählt oberhalb im Dropdown *Info/Bearbeiten* aus
 
-#. Press the link **Edit the whole template record** and switch to the tab *Includes*.
+#. Über den Button **Vollständigen Template-Datensatz bearbeiten** kommt ihr in die Bearbeitungsmaske für den Template-Datensatz. Dort müsst ihr zum Reiter *Enthält* wechseln, wenn ihr da nicht schon seid
 
-#. Select **Operations (operations)** at the field *Include static (from extensions):*
+#. Jetzt könnt ihr bei dem Feld *Statische Templates einschließen (aus Erweiterungen)* in der rechten Box **Operations (operations)** auswählen
 
 .. figure:: ../../Images/IncludeTs.png
    :class: with-shadow
    :alt: Include static TypoScript
 
-   Include static TypoScript
+   Statisches TypoScript aus der Extension einfügen
 
 
 
-TypoScript Example
-==================
+TypoScript Beispiel
+===================
 
-Minimal example of TypoScript to overwrite a setting in operations:
+Wenn ihr Einstellungen überschreiben wollt, die nicht in Konstanten einstellbar sind, ist hier ist ein kleines Beispiel wie man die Einstellungen der Extension überschreiben oder auch neue Einstellungen hinzufügen kann. Später kann man diese dann in den Fluid-Templates auch abfragen.
 
 .. code-block:: typoscript
 
     plugin.tx_operations.settings {
-        # set length of cropped teaser
+        # Beispiel um die Zeichenanzahl des Teasertextes zu überschreiben
         cropTeaser = 200
         single {
+            # oder hier in der Einzelansicht keinen Bericht anzuzeigen
             showNoReport = 1
         }
     }
 
+Dieses TypoScript könnt ihr irgendwo in euren TS-Templates unterbringen. Wichtig dabei ist, das eure TS-Templates nach dem Statischen TypoScript der Extensions eingebunden werden.
+
 .. _own-template-files:
 
-Use your own template files
-===========================
+Eigene Template Datein nutzen
+=============================
 
-Please copy the needed folders and files in your fileadmin folder.
 
-You need at least one folder for *Layouts*, *Templates* and *Partials*
+Ihr könnt eure eigenen Templates nutzen. Kopiert dazu einf
 
-You find those folders in the extension folder of operations:
+Je nachdem welche Dateien ihr auslagern wollt, braucht ihr einen oder alle drei der folgenden Ordner.
+
+ *Layouts*, *Templates* and *Partials*
+
+Die Struktur wird euch in der Extension im Ordner *Resources/Private* vorgegeben
 
 * Resources/Private/Layouts
 * Resources/Private/Templates
 * Resources/Private/Partials
 
-You don't need to copy all files. Just copy the files and folders you need.
-Then change the paths in constants to your own. Now you can edit the files you want to change.
+Ihr müsst nicht alle Dateien kopieren, einfach nur die die ihr ändern wollt. Nur auf die Ordnerstruktur achten.
+Dann müsst ihr in den Konstanten die neue Pfade zu euren Templates angeben. Das macht ihr am besten im Konstanten Editor im TYPO3 Backend. Aber natürlich könnt ihr es auch an jeder anderen Stelle tun, an der man in TYPO3 Konstanten bearbeiten kann.
 
-Change the templates paths in TypoScript constants
-""""""""""""""""""""""""""""""""""""""""""""""""""
-Use the following TypoScript in  **constants** to change the paths
+Pfade in den TypoScript Konstanten anpassen
+"""""""""""""""""""""""""""""""""""""""""""
+Hier das TypoScript um im Feld  **Konstanten** im Backend Datensatz die Pfade zu ändern:
 
 .. code-block:: typoscript
 
@@ -79,3 +86,5 @@ Use the following TypoScript in  **constants** to change the paths
                    layoutRootPath = fileadmin/templates/ext/operations/Layouts/
            }
    }
+
+Im Beispiel liegen die neuen Pfade im fileadmin. Mittlerweile ist das aber nicht mehr der empfohlene Weg. Heutzutage ist das empfohlene Vorgehen eine entsprechend aufbereitete Extension für ein SitePackage oder Theme. Dort gibt sollten solche Templatedateien hin ausgelagert werden. Als Pafd könnte dann soetwas stehen: *EXT:site_package/Resources/Private/Extensions/Operations/Templates/*
