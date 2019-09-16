@@ -1,38 +1,44 @@
 <?php
 
-use TYPO3\CMS\Core\Utility\GeneralUtility as GeneralCoreUtility;
+use Kanow\Operations\Controller\OperationController;
+use Kanow\Operations\Controller\ResourceController;
+use Kanow\Operations\Controller\VehicleController;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 if (!defined('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+ExtensionUtility::configurePlugin(
     'Operations',
 	'List',
 	array(
-		'Operation' => 'list, show, stats',
-		'Resource' => 'list, show',
-		'Vehicle' => 'list, show',
+		OperationController::class => 'list, show, stats',
+        ResourceController::class => 'list, show',
+        VehicleController::class => 'list, show',
 
 	),
 	// non-cacheable actions
 	array(
-		'Operation' => 'search',
-		'Vehicle' => '',
-		'Resource' => '',
+        OperationController::class => 'search',
+        ResourceController::class => '',
+        VehicleController::class => '',
 
 	)
 );
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+ExtensionUtility::configurePlugin(
     'Operations',
 	'Statistics',
 	array(
-		'Operation' => 'statistics',
+		OperationController::class => 'statistics',
+
 	),
 	// non-cacheable actions
 	array(
-		'Operation' => 'statistics',
+		OperationController::class => 'statistics',
+
 	)
 );
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:operations/Configuration/TsConfig/ContentElementWizard.txt">');
+ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:operations/Configuration/TsConfig/ContentElementWizard.txt">');
