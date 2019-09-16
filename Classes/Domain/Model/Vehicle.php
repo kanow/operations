@@ -129,7 +129,7 @@ class Vehicle extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
   /**
     * Returns the media
     *
-    * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $media
+    * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage $media
     */
    public function getMedia() {
            return $this->media;
@@ -155,7 +155,7 @@ class Vehicle extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
   /**
    * Sets the media
    *
-   * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $media
+   * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $media
    * @return void
    */
   public function setMedia($media) {

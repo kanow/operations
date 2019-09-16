@@ -5,7 +5,7 @@ namespace Kanow\Operations\Domain\Model;
  *  Copyright notice
  *
  *  (c) 2013 Karsten Nowak <captnnowi@gmx.de>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -45,7 +45,7 @@ class Type extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * icon for use in list or for whatever
 	 *
-	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	protected $image;
 
@@ -78,7 +78,7 @@ class Type extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
    * Returns the image
    *
-   * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $image
+   * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage $image
    */
   public function getImage() {
           return $this->image;
@@ -104,7 +104,7 @@ class Type extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
   /**
    * Sets the image
    *
-   * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $image
+   * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $image
    * @return void
    */
   public function setImage($image) {
