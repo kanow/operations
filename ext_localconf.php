@@ -25,12 +25,10 @@ if (!defined('TYPO3_MODE')) {
 	'Statistics',
 	array(
 		'Operation' => 'statistics',
-
 	),
 	// non-cacheable actions
 	array(
 		'Operation' => 'statistics',
-
 	)
 );
 

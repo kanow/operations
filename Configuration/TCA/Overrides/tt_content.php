@@ -8,15 +8,15 @@ use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 $pluginConfiguration = [
     '0' => [
-        'pluginName' => 'List',
         'extensionName' => 'operations',
+        'pluginName' => 'List',
         'flexformFile' => 'FILE:EXT:operations/Configuration/FlexForms/flexform_list.xml',
         'title' => 'Operations',
         'icon' => 'ext-operations-wizard-icon'
     ],
     '1' => [
-        'pluginName' => 'Statistics',
         'extensionName' => 'operations',
+        'pluginName' => 'Statistics',
         'flexformFile' => 'FILE:EXT:operations/Configuration/FlexForms/flexform_statistics.xml',
         'title' => 'Operations Statistics',
         'icon' => 'ext-operations-wizard-icon'
