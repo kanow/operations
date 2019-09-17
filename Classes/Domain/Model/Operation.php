@@ -149,6 +149,14 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	protected $resources;
 
+    /**
+     * Category
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category>
+     *
+     */
+    protected $category;
+
 	/**
 	 * __construct
 	 *
@@ -165,19 +173,12 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @return void
 	 */
 	protected function initStorageObjects() {
-		/**
-		 * Do not modify this method!
-		 * It will be rewritten on each save in the extension builder
-		 * You may modify the constructor of this class instead
-		 */
 		$this->type = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-
 		$this->assistance = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-
 		$this->vehicles = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-
 		$this->resources = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->media = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->category = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	/**
@@ -581,6 +582,45 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	public function setResources(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $resources) {
 		$this->resources = $resources;
 	}
+
+    /**
+     * Adds a Category
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\Category $category
+     * @return void
+     */
+    public function addCategory(\TYPO3\CMS\Extbase\Domain\Model\Category $category) {
+        $this->category->attach($category);
+    }
+
+    /**
+     * Removes a Category
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\Category $categoryToRemove The Category to be removed
+     * @return void
+     */
+    public function removeCategory(\TYPO3\CMS\Extbase\Domain\Model\Category $categoryToRemove) {
+        $this->category->detach($categoryToRemove);
+    }
+
+    /**
+     * Returns the category
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category> $category
+     */
+    public function getCategory() {
+        return $this->category;
+    }
+
+    /**
+     * Sets the category
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category> $category
+     * @return void
+     */
+    public function setCategory(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $category) {
+        $this->category = $category;
+    }
 
 
 }

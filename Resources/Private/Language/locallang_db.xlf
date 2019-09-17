@@ -228,6 +228,12 @@
 			<trans-unit id="tca.divTitle.media">
 				<source>Media</source>
 			</trans-unit>
+            <trans-unit id="tca.fieldLabel.category">
+                <source>Category</source>
+            </trans-unit>
+			<trans-unit id="tabs.categories">
+				<source>Categories</source>
+			</trans-unit>
 
 			<trans-unit id="tsc.subcategoryLabel.template">
 				<source>Resources (Template files, CSS, JS)</source>

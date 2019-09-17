@@ -1,11 +1,15 @@
 <?php
 
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
+
+$extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('operations');
 
 return [
 	'ctrl' => [
@@ -32,7 +36,7 @@ return [
                 'typeicon_classes' => ['default' => 'ext-operations-operation'],
     ],
 	'interface' => [
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, number, onlyEld, title, location, begin, end, teaser, report, longitude, latitude, zoom, media, type, assistance, vehicles, resources,path_segment',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, number, onlyEld, title, location, begin, end, teaser, report, longitude, latitude, zoom, media, type, assistance, vehicles, resources,path_segment,category',
     ],
 	'types' => [
 		'0' => [
@@ -43,7 +47,8 @@ return [
 		teaser,report,
 		--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.map,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.coordinates;paletteMap,
 		--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.relations,assistance,vehicles, resources,
-		--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.media,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.media;paletteImg,'
+		--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.media,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.media;paletteImg,
+		--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tabs.categories, category'
         ],
     ],
 	'palettes' => [
@@ -423,6 +428,33 @@ return [
                         ],
                     ],
                 ],
+            ],
+        ],
+        'category' => [
+            'exclude' => 1,
+            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.fieldLabel.category',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectTree',
+                'foreign_table' => 'sys_category',
+                'foreign_table_where' => 'AND sys_category.hidden=0 AND sys_category.sys_language_uid IN (-1,0)',
+                'renderMode' => 'tree',
+                'treeConfig' => [
+                    'parentField' => 'parent',
+                    'rootUid' => $extensionConfiguration['rootCategory'],
+                    'appearance' => [
+                        'expandAll' => TRUE,
+                        'showHeader' => TRUE,
+                    ],
+                ],
+                'MM' => 'tx_operations_operation_category_mm',
+                'MM_match_fields' => [
+                    'field' => 'category'
+                ],
+                'size' => 10,
+                'autoSizeMax' => 30,
+                'maxitems' => 9999,
+                'multiple' => 0,
             ],
         ],
     ],

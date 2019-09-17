@@ -304,6 +304,14 @@
 				<source>Media</source>
 				<target>Medien</target>
 			</trans-unit>
+			<trans-unit id="tca.fieldLabel.category">
+				<source>Category</source>
+				<target>Kategorie</target>
+			</trans-unit>
+			<trans-unit id="tabs.categories">
+				<source>Categories</source>
+				<target>Kategorien</target>
+			</trans-unit>
 
 			<trans-unit id="tsc.subcategoryLabel.template">
 				<source>Resources (Template files, CSS, JS)</source>

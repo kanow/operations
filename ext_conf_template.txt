@@ -1,0 +1,2 @@
+# cat=basic;type=input; label=Uid of root category
+rootCategory =
