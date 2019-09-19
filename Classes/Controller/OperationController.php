@@ -40,6 +40,7 @@ use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
+use TYPO3\CMS\Extbase\Domain\Repository\CategoryRepository;
 use TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException;
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 use TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter;
@@ -64,13 +65,6 @@ class OperationController extends BaseController
      */
 	protected $operationRepository;
 
-	/**
-	 * typeRepository
-	 *
-	 * @var \Kanow\Operations\Domain\Repository\TypeRepository
-	 */
-	protected $typeRepository;
-
     /**
      * Inject a operation repository to enable DI
      *
@@ -82,6 +76,13 @@ class OperationController extends BaseController
     }
 
     /**
+     * typeRepository
+     *
+     * @var \Kanow\Operations\Domain\Repository\TypeRepository
+     */
+    protected $typeRepository;
+
+    /**
      * Inject a type repository to enable DI
      *
      * @param \Kanow\Operations\Domain\Repository\TypeRepository $typeRepository
@@ -89,6 +90,16 @@ class OperationController extends BaseController
     public function injectTypeRepository(\Kanow\Operations\Domain\Repository\TypeRepository $typeRepository)
     {
         $this->typeRepository = $typeRepository;
+    }
+
+    /**
+     * @var CategoryRepository
+     */
+    protected $categoryRepository;
+
+    public function injectCategoryRepository(CategoryRepository $categoryRepository): void
+    {
+        $this->categoryRepository = $categoryRepository;
     }
 
 	/**
@@ -101,6 +112,7 @@ class OperationController extends BaseController
 	public function listAction(OperationDemand $demand = NULL) {
 		$demand = $this->updateDemandObjectFromSettings($demand);
 		$operations = $this->operationRepository->findDemanded($demand, $this->settings);
+        $categories = $this->categoryRepository->findAll();
 		$types = $this->typeRepository->findAll();
 		$years = $this->generateYears();
 
