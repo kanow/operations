@@ -1,13 +1,10 @@
 <?php
-
-use TYPO3\CMS\Core\Utility\GeneralUtility as GeneralCoreUtility;
-
 if (!defined('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    GeneralCoreUtility::underscoredToUpperCamelCase($_EXTKEY),
+	'Kanow.' . $_EXTKEY,
 	'List',
 	array(
 		'Operation' => 'list, show, stats',
@@ -24,7 +21,7 @@ if (!defined('TYPO3_MODE')) {
 	)
 );
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    GeneralCoreUtility::underscoredToUpperCamelCase($_EXTKEY),
+	'Kanow.' . $_EXTKEY,
 	'Statistics',
 	array(
 		'Operation' => 'statistics',
