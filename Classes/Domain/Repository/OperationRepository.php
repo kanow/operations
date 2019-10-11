@@ -5,6 +5,7 @@ namespace Kanow\Operations\Domain\Repository;
 use Kanow\Operations\Domain\Model\OperationDemand;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
+use TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
@@ -285,6 +286,12 @@ class OperationRepository extends Repository
             ]);
         }
 
+        //category constraints
+        if ($settings['category'] != '') {
+            $categories = GeneralUtility::trimExplode(',', $settings['category']);
+            $constraints[] = $this->createCategoryConstraints($query, $categories, 'category', $settings);
+        }
+
         if ($demand->getType()) {
             $constraints[] = $query->contains('type', $demand->getType());
         }
@@ -316,6 +323,43 @@ class OperationRepository extends Repository
 
         $constraints = $this->cleanUnusedConstaints($constraints);
         return $constraints;
+    }
+
+    /**
+     * Build the constraints for the category logic
+     * @param QueryInterface $query
+     * @param mixed $categories
+     * @param string $property
+     * @param array $settings
+     * @return ConstraintInterface $constraint
+     * @throws InvalidQueryException
+     */
+    protected  function createCategoryConstraints(QueryInterface $query, $categories, $property, $settings){
+
+        if ($categories && count($categories) != 0) {
+            foreach ($categories as $category){
+                $categoryConstraint[] = $query->contains($property, $category);
+            }
+            switch ($settings['categoryConjunction']) {
+                case 'or':
+                    $constraint = $query->logicalOr($categoryConstraint);
+                    break;
+                case 'and':
+                    $constraint = $query->logicalAnd($categoryConstraint);
+                    break;
+                case 'notor':
+                    $constraint = $query->logicalOr($categoryConstraint);
+                    $constraint = $query->logicalNot($constraint);
+                    break;
+                case 'notand':
+                    $constraint = $query->logicalAnd($categoryConstraint);
+                    $constraint = $query->logicalNot($constraint);
+                    break;
+                case 'default':
+                    break;
+            }
+        }
+        return $constraint;
     }
 
     /**

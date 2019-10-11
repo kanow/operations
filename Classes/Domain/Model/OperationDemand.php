@@ -1,11 +1,14 @@
 <?php
 namespace Kanow\Operations\Domain\Model;
 
+use TYPO3\CMS\Extbase\Domain\Model\Category;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+
 /***************************************************************
  *  Copyright notice
  *
  *  (c) 2013 Karsten Nowak <captnnowi@gmx.de>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -33,21 +36,21 @@ namespace Kanow\Operations\Domain\Model;
  * @subpackage dto
  */
 class OperationDemand extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
-	
+
 	/**
 	 * Operation onlyEld for demand
 	 *
 	 * @var integer
 	 */
 	protected $onlyEld;
-	
+
 	/**
 	 * Type of operation
 	 *
 	 * @var integer
 	 */
 	protected $type;
-	
+
 	/**
 	 * @var integer
 	 */
@@ -67,7 +70,15 @@ class OperationDemand extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 	 * @var string
 	 */
 	protected $searchstring;
-	
+
+    /**
+     * Category
+     *
+     * @var ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category>
+     *
+     */
+    protected $category;
+
 	/**
      * onlyEld for demanded
 	 * @param integer
@@ -84,7 +95,7 @@ class OperationDemand extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 	public function getOnlyEld() {
 		return $this->onlyEld;
 	}
-	
+
 	/**
 	 * Returns the type
 	 *
@@ -93,7 +104,7 @@ class OperationDemand extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 	public function getType() {
 		return $this->type;
 	}
-	
+
 	/**
 	 * Sets the type
 	 *
@@ -103,7 +114,7 @@ class OperationDemand extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 	public function setType($type) {
 		$this->type = $type;
 	}
-	
+
 	/**
 	 * Set limit
 	 *
@@ -122,7 +133,7 @@ class OperationDemand extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 	public function getLimit() {
 		return $this->limit;
 	}
-	
+
 	/**
 	 * Returns the begin
 	 *
@@ -160,11 +171,11 @@ class OperationDemand extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 	public function setSearchstring($searchstring) {
 		$this->searchstring = $searchstring;
 	}
-	
+
 	const ARRAY_PROPERTIES = 'begin,type';
-	
+
 	/**
-	 * get demand parameter for additionalParams in pagination 
+	 * get demand parameter for additionalParams in pagination
 	 */
 	public function getParameter(){
 		$returnArray = array();
@@ -180,4 +191,43 @@ class OperationDemand extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 		}
 		return $returnArray;
 	}
+
+    /**
+     * Adds a Category
+     *
+     * @param Category $category
+     * @return void
+     */
+    public function addCategory(Category $category) {
+        $this->category->attach($category);
+    }
+
+    /**
+     * Removes a Category
+     *
+     * @param Category $categoryToRemove The Category to be removed
+     * @return void
+     */
+    public function removeCategory(Category $categoryToRemove) {
+        $this->category->detach($categoryToRemove);
+    }
+
+    /**
+     * Returns the category
+     *
+     * @return ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category> $category
+     */
+    public function getCategory() {
+        return $this->category;
+    }
+
+    /**
+     * Sets the category
+     *
+     * @param ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category> $category
+     * @return void
+     */
+    public function setCategory(ObjectStorage $category) {
+        $this->category = $category;
+    }
 }

@@ -36,6 +36,7 @@ namespace Kanow\Operations\Controller;
 
 use Kanow\Operations\Domain\Model\Operation;
 use Kanow\Operations\Domain\Model\OperationDemand;
+use Kanow\Operations\Utility\CategoryService;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
@@ -102,6 +103,16 @@ class OperationController extends BaseController
         $this->categoryRepository = $categoryRepository;
     }
 
+    /**
+     * @var CategoryService
+     */
+    protected $categoryService;
+
+    public function injectCategoryService(CategoryService $categoryService): void
+    {
+        $this->categoryService = $categoryService;
+    }
+
 	/**
 	 * action list
 	 *
@@ -119,6 +130,7 @@ class OperationController extends BaseController
 		$this->view->assign('types', $types);
 		$this->view->assign('begin',$years);
 		$this->view->assign('operations', $operations);
+		$this->view->assign('categories', $categories);
 	}
 
 	/**

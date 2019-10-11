@@ -201,6 +201,35 @@
 				<source>Define last years for statistics to show</source>
 			</trans-unit>
 
+			<trans-unit id="flexform.categoryConjunction.label">
+				<source>Categors conjunction</source>
+				<target>Kategorie Verknüpfungsart</target>
+			</trans-unit>
+			<trans-unit id="flexform.categoryConjunction.all">
+				<source>Show all</source>
+				<target>Alle (egal)</target>
+			</trans-unit>
+			<trans-unit id="flexform.categoryConjunction.or">
+				<source>Or</source>
+				<target>Oder</target>
+			</trans-unit>
+			<trans-unit id="flexform.categoryConjunction.and">
+				<source>and</source>
+				<target>und</target>
+			</trans-unit>
+			<trans-unit id="flexform.categoryConjunction.notor">
+				<source>not or</source>
+				<target>nicht oder</target>
+			</trans-unit>
+			<trans-unit id="flexform.categoryConjunction.notand">
+				<source>not and</source>
+				<target>nicht und</target>
+			</trans-unit>
+			<trans-unit id="flexform.category.label">
+				<source>Categories</source>
+				<target>Kategorien</target>
+			</trans-unit>
+
 			<trans-unit id="tca.paletteTitle.time">
 				<source>Operation times</source>
 			</trans-unit>
