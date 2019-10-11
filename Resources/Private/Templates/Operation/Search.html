@@ -13,7 +13,7 @@
 				<f:render partial="List/Form" arguments="{begin:begin, demand:demand, types:types}" />
 			</f:else>
 		</f:if>
-	
+
 		<f:if condition="{demanded}">
 			<f:then>
 				<f:if condition="{settings.showMap}">
@@ -23,7 +23,7 @@
 					<f:else>
 						<f:if condition="{settings.hidePagination}">
 							<f:then>
-								<f:render partial="List/ListWithoutPagination" arguments="{operations:demanded}" />
+								<f:render partial="List/ListItems" arguments="{operations:demanded}" />
 							</f:then>
 							<f:else>
 								<f:render partial="List/ListWithPagination" arguments="{operations:demanded}" />
