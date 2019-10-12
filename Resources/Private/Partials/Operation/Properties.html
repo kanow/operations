@@ -6,14 +6,17 @@
 		<f:if condition="{operation.location}">
 			<p><f:translate key="tx_operations_domain_model_operation.location" />:<br /><span>{operation.location}</span></p>
 		</f:if>
-		<f:if condition="{operation.begin}">	
+		<f:if condition="{operation.begin}">
 			<p><f:translate key="tx_operations_domain_model_operation.begin" />:<br /><span>{operation.begin -> f:format.date(format:'d.m.Y, H:i \U\h\r')}</span></p>
 		</f:if>
 		<f:if condition="{operation.end}">
 			<p><f:translate key="tx_operations_domain_model_operation.end" />:<br /><span>{operation.end -> f:format.date(format:'d.m.Y, H:i \U\h\r')}</span></p>
 		</f:if>
+        <f:if condition="{operation.category}">
+            <f:render partial="Operation/Category" arguments="{category:operation.category}" />
+        </f:if>
 	</div>
-	
+
 	<f:if condition="{operation.media}">
 		<div class="media">
 			<h2><f:translate key="tx_operations_domain_model_operation.media" /></h2>

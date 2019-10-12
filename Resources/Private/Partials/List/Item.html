@@ -13,6 +13,11 @@
 		<f:if condition="{operation.location}">
 			<span><f:translate key="tx_operations_domain_model_operation.location" />: {operation.location}</span>
 		</f:if>
+        <f:if condition="{operation.category}"> |
+            <f:for as="singleCategory" each="{operation.category}" iteration="categoryIterator">
+                <span>{singleCategory.title}{f:if(condition: categoryIterator.isLast,else:', ')}</span>
+            </f:for>
+        </f:if>
 	</div>
 
 	<div class="left">
