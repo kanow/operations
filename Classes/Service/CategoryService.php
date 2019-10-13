@@ -1,5 +1,5 @@
 <?php
-namespace Kanow\Operations\Utility;
+namespace Kanow\Operations\Service;
 use TYPO3\CMS\Extbase\Domain\Repository\CategoryRepository;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;

@@ -36,7 +36,7 @@ namespace Kanow\Operations\Controller;
 
 use Kanow\Operations\Domain\Model\Operation;
 use Kanow\Operations\Domain\Model\OperationDemand;
-use Kanow\Operations\Utility\CategoryService;
+use Kanow\Operations\Service\CategoryService;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
