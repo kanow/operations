@@ -122,8 +122,8 @@
                                 <type>select</type>
                                 <renderMode>tree</renderMode>
                                 <treeConfig>
+                                    <dataProvider>Kanow\Operations\TreeProvider\DatabaseTreeDataProvider</dataProvider>
                                     <parentField>parent</parentField>
-                                    <rootUid>1</rootUid>
                                     <appearance>
                                         <expandAll>1</expandAll>
                                         <showHeader>1</showHeader>
