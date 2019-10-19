@@ -193,26 +193,6 @@ class OperationDemand extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 	}
 
     /**
-     * Adds a Category
-     *
-     * @param Category $category
-     * @return void
-     */
-    public function addCategory(Category $category) {
-        $this->category->attach($category);
-    }
-
-    /**
-     * Removes a Category
-     *
-     * @param Category $categoryToRemove The Category to be removed
-     * @return void
-     */
-    public function removeCategory(Category $categoryToRemove) {
-        $this->category->detach($categoryToRemove);
-    }
-
-    /**
      * Returns the category
      *
      * @return intenger $category
