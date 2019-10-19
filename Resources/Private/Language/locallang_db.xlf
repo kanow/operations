@@ -379,6 +379,9 @@
 			<trans-unit id="tsc.limit">
 				<source>Limit:Limit the result in list view</source>
 			</trans-unit>
+			<trans-unit id="tsc.rootCategory">
+				<target>Root Kategorie:Uid der Start-Kategorie für den Kategoriebaum in der Operations Extensions. Diese Kategorien werden in den Fluid Templates für die Kategoriendarstellung genutzt.</target>
+			</trans-unit>
 
 			<trans-unit id="tsc.insertAbove">
 				<source>Pagination above:Show pagination above the list</source>

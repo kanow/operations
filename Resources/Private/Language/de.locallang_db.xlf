@@ -505,6 +505,10 @@
 				<source>Limit:Limit the result in list view</source>
 				<target>Max. Anzahl an Datensätzen:Maximale Anzahl der Ergebnisse in der Listenansicht</target>
 			</trans-unit>
+			<trans-unit id="tsc.rootCategory">
+				<source>RootCategory:Uid of the category which is the startingpoint for category tree in operations extension. Those categories are used to render categories in fluid templates.</source>
+				<target>Root Kategorie:Uid der Start-Kategorie für den Kategoriebaum in der Operations Extensions. Diese Kategorien werden in den Fluid Templates für die Kategoriendarstellung genutzt.</target>
+			</trans-unit>
 
 			<trans-unit id="tsc.insertAbove">
 				<source>Pagination above:Show pagination above the list</source>

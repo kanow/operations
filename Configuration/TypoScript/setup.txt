@@ -26,6 +26,7 @@ plugin.tx_operations {
 		resourceSinglePid = {$plugin.tx_operations.settings.resourceSinglePid}
 		itemsPerPage = {$plugin.tx_operations.settings.itemsPerPage}
 		limit = {$plugin.tx_operations.settings.limit}
+		rootCategory = {$plugin.tx_operations.settings.rootCategory}
 		hidePagination = {$plugin.tx_operations.settings.hidePagination}
 		hideFilter = {$plugin.tx_operations.settings.hideFilter}
 		showMediaInList = {$plugin.tx_operations.settings.showMediaInList}

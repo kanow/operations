@@ -123,8 +123,13 @@ class OperationController extends BaseController
 	public function listAction(OperationDemand $demand = NULL) {
 		$demand = $this->updateDemandObjectFromSettings($demand);
 		$operations = $this->operationRepository->findDemanded($demand, $this->settings);
-        $categories = $this->categoryRepository->findAll();
-		$types = $this->typeRepository->findAll();
+		$operationsRootCategory = $this->categoryRepository->findByUid($this->settings['rootCategory']);
+        if($operationsRootCategory != 0) {
+            $categories = $this->categoryService->findAllDescendants($operationsRootCategory);
+        } else {
+            $categories = $this->categoryRepository->findAll();
+        }
+        $types = $this->typeRepository->findAll();
 		$years = $this->generateYears();
 
 		$this->view->assign('types', $types);
