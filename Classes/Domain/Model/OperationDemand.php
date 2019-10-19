@@ -74,7 +74,7 @@ class OperationDemand extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
     /**
      * Category
      *
-     * @var ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category>
+     * @var integer
      *
      */
     protected $category;
@@ -215,7 +215,7 @@ class OperationDemand extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
     /**
      * Returns the category
      *
-     * @return ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category> $category
+     * @return intenger $category
      */
     public function getCategory() {
         return $this->category;
@@ -224,10 +224,10 @@ class OperationDemand extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
     /**
      * Sets the category
      *
-     * @param ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category> $category
+     * @param integer $category
      * @return void
      */
-    public function setCategory(ObjectStorage $category) {
+    public function setCategory($category) {
         $this->category = $category;
     }
 }

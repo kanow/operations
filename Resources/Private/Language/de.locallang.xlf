@@ -192,6 +192,10 @@
 				<source>Choose Type...</source>
 				<target>Einsatzart auswählen...</target>
 			</trans-unit>
+			<trans-unit id="filter.selectCategory.first">
+				<source>Choose Category...</source>
+				<target>Kategorie auswählen...</target>
+			</trans-unit>
 			<trans-unit id="filter.searchstring.placeholder">
 				<source>searching for...</source>
 				<target>suchen nach...</target>

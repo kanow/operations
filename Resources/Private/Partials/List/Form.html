@@ -5,16 +5,18 @@
 <div class="filter">
 	<!-- h2><f:translate key="filter" /></h2 -->
 	<f:form object="{demand}" controller="Operation" action="search" name="demand">
-		
+
 		<label for="begin"><f:translate key="filter.labelYear" /></label>
 		<f:form.select prependOptionLabel="{f:translate(key:'filter.selectYear.first')}" prependOptionValue="0" id="begin" name="begin" property="begin" options="{begin}" optionValueField="year" optionLabelField="year" />
-		
+
 		<f:form.select prependOptionLabel="{f:translate(key:'filter.selectType.first')}" prependOptionValue="0" id="type" name="type" property="type" options="{types}" optionValueField="uid" optionLabelField="title" />
 
+		<f:form.select prependOptionLabel="{f:translate(key:'filter.selectCategory.first')}" prependOptionValue="0" id="category" name="category" property="category" options="{categories}" optionValueField="uid" optionLabelField="title" />
+
 		<f:form.textfield property="searchstring" placeholder="{f:translate(key:'filter.searchstring.placeholder')}" />
-		
+
 		<f:form.submit class="button" value="{f:translate(key:'filter.submit')}" />
 	</f:form>
-	
+
 	<f:link.action action="list" class="reset"><f:translate key="filter.reset" /></f:link.action>
-</div>	
+</div>

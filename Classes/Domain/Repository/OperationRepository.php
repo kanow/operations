@@ -286,10 +286,14 @@ class OperationRepository extends Repository
             ]);
         }
 
-        //category constraints
+        //category constraints from plugin settings
         if ($settings['category'] != '') {
             $categories = GeneralUtility::trimExplode(',', $settings['category']);
             $constraints[] = $this->createCategoryConstraints($query, $categories, 'category', $settings);
+        }
+        // category constraints from filter form
+        if ($demand->getCategory()) {
+            $constraints[] = $query->contains('category', $demand->getCategory());
         }
 
         if ($demand->getType()) {

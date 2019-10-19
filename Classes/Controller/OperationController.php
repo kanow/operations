@@ -44,6 +44,7 @@ use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Extbase\Domain\Repository\CategoryRepository;
 use TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException;
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter;
 
 class OperationController extends BaseController
@@ -123,19 +124,13 @@ class OperationController extends BaseController
 	public function listAction(OperationDemand $demand = NULL) {
 		$demand = $this->updateDemandObjectFromSettings($demand);
 		$operations = $this->operationRepository->findDemanded($demand, $this->settings);
-		$operationsRootCategory = $this->categoryRepository->findByUid($this->settings['rootCategory']);
-        if($operationsRootCategory != 0) {
-            $categories = $this->categoryService->findAllDescendants($operationsRootCategory);
-        } else {
-            $categories = $this->categoryRepository->findAll();
-        }
         $types = $this->typeRepository->findAll();
 		$years = $this->generateYears();
 
 		$this->view->assign('types', $types);
 		$this->view->assign('begin',$years);
 		$this->view->assign('operations', $operations);
-		$this->view->assign('categories', $categories);
+		$this->view->assign('categories', $this->getOperationCategories());
 	}
 
 	/**
@@ -148,7 +143,6 @@ class OperationController extends BaseController
 	public function searchAction(OperationDemand $demand = NULL) {
 		$demand = $this->updateDemandObjectFromSettings($demand);
 		$demanded = $this->operationRepository->findDemanded($demand, $this->settings);
-
 		$years = $this->generateYears();
 		$types = $this->typeRepository->findAll();
 
@@ -156,6 +150,7 @@ class OperationController extends BaseController
 		$this->view->assign('begin',$years);
 		$this->view->assign('demanded', $demanded);
 		$this->view->assign('demand', $demand);
+        $this->view->assign('categories', $this->getOperationCategories());
 	}
 
 	/**
@@ -236,6 +231,21 @@ class OperationController extends BaseController
             $years[$year['year']] = $year['year'];
         }
         return $years;
+    }
+
+    /**
+     * Get operation categories
+     *
+     * @return ObjectStorage $categories
+     */
+    protected function getOperationCategories() {
+        $operationsRootCategory = $this->categoryRepository->findByUid($this->settings['rootCategory']);
+        if($operationsRootCategory != 0) {
+            $categories = $this->categoryService->findAllDescendants($operationsRootCategory);
+        } else {
+            $categories = $this->categoryRepository->findAll();
+        }
+        return $categories;
     }
 
 }
