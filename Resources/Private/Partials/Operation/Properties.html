@@ -3,6 +3,9 @@
 
 <div class="right">
 	<div class="meta">
+        <f:if condition="{operation.assignedType}">
+            <p><f:translate key="tx_operations_domain_model_operation.type" />: {operation.assignedType.title}</p>
+        </f:if>
 		<f:if condition="{operation.location}">
 			<p><f:translate key="tx_operations_domain_model_operation.location" />:<br /><span>{operation.location}</span></p>
 		</f:if>

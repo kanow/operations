@@ -10,7 +10,10 @@
 			</f:if>
 		</span>
 		</f:if>
-		<f:if condition="{operation.location}">
+		<f:if condition="{operation.assignedType}"> |
+			<span><f:translate key="tx_operations_domain_model_operation.type" />: {operation.assignedType.title}</span>
+		</f:if>
+		<f:if condition="{operation.location}"> |
 			<span><f:translate key="tx_operations_domain_model_operation.location" />: {operation.location}</span>
 		</f:if>
         <f:if condition="{operation.category}"> |

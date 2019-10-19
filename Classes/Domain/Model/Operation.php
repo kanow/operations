@@ -456,6 +456,16 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		return $this->type;
 	}
 
+    /**
+     * Returns directly the assigned type. Prevent to unnecessary iteration in operation data.
+     *
+     * @return ObjectStorage<\Kanow\Operations\Domain\Model\Type> $type
+     */
+    public function getAssignedType() {
+        $type = $this->getType()->toArray();
+        return $type[0];
+    }
+
 	/**
 	 * Sets the type
 	 *
