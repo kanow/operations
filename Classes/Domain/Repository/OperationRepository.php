@@ -100,6 +100,29 @@ class OperationRepository extends Repository
             ->addGroupBy('ot.uid')
             ->execute()->fetchAll();
 
+        $preparedResult = $this->prepareResultForChartArray($result);
+
+        foreach ($years as $year) {
+            // add empty years to result
+            $preparedResult = $this->addEmptyYear($preparedResult,$year);
+            // add missing types to result
+            $preparedResult = $this->addMissingType($preparedResult, $types, $year);
+        }
+        $resultWithEmptyYearsSorted = $this->sortResultByYears($preparedResult);
+        $resultWithEmptyYearsSorted = $this->sortResultByTypeUid($resultWithEmptyYearsSorted);
+
+        return $resultWithEmptyYearsSorted;
+    }
+
+    /**
+     * Prepare result for Chart.
+     * the "type_uid" will be the array key for the result instead of ascending uids
+     * the "year" will be the array key in new array key "years" with "count" as value
+     *
+     * @param array $result
+     * @return array $preparedResult
+     */
+    protected function prepareResultForChartArray($result) {
         $preparedResult = [];
         foreach ($result as $key => $value) {
             if(!array_key_exists($value['type_uid'],$preparedResult)) {
@@ -114,17 +137,7 @@ class OperationRepository extends Repository
                 $preparedResult[$value['type_uid']]['years'][$value['year']] = $value['count'];
             }
         }
-
-        foreach ($years as $year) {
-            // add empty years to result
-            $preparedResult = $this->addEmptyYear($preparedResult,$year);
-            // add missing types to result
-            $preparedResult = $this->addMissingType($preparedResult, $types, $year);
-        }
-        $resultWithEmptyYearsSorted = $this->sortResultByYears($preparedResult);
-        $resultWithEmptyYearsSorted = $this->sortResultByTypeUid($resultWithEmptyYearsSorted);
-
-        return $resultWithEmptyYearsSorted;
+        return $preparedResult;
     }
 
     /*
