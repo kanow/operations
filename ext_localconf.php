@@ -24,11 +24,11 @@ if (!defined('TYPO3_MODE')) {
 	'Kanow.' . $_EXTKEY,
 	'Statistics',
 	array(
-		'Operation' => 'statistics',
+		'Operation' => 'statistics,statisticsByCategory',
 	),
 	// non-cacheable actions
 	array(
-		'Operation' => 'statistics',
+		'Operation' => 'statistics, statisticsByCategory',
 	)
 );
 

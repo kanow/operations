@@ -7,6 +7,97 @@
         </TCEforms>
         <type>array</type>
         <el>
+            <switchableControllerActions>
+                <TCEforms>
+                    <onChange>reload</onChange>
+                    <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.controller
+                    </label>
+                    <config>
+                        <type>select</type>
+                        <items>
+                            <numIndex index="4">
+                                <numIndex index="0">
+                                    LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.statisticsAction
+                                </numIndex>
+                                <numIndex index="1">Operation->statistics</numIndex>
+                            </numIndex>
+                            <numIndex index="6">
+                                <numIndex index="0">
+                                    LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.statisticsByCategoryAction
+                                </numIndex>
+                                <numIndex index="1">Operation->statisticsByCategory</numIndex>
+                            </numIndex>
+
+                        </items>
+                    </config>
+                </TCEforms>
+            </switchableControllerActions>
+
+            <!-- Category Mode -->
+            <settings.categoryConjunction>
+                <TCEforms>
+                    <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.label</label>
+                    <displayCond>FIELD:switchableControllerActions:=:Operation->statisticsByCategory</displayCond>
+                    <config>
+                        <type>select</type>
+                        <renderType>selectSingle</renderType>
+                        <items>
+                            <numIndex index="0" type="array">
+                                <numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.all</numIndex>
+                                <numIndex index="1"></numIndex>
+                            </numIndex>
+                            <numIndex index="1">
+                                <numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.or</numIndex>
+                                <numIndex index="1">or</numIndex>
+                            </numIndex>
+                            <numIndex index="2">
+                                <numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.and</numIndex>
+                                <numIndex index="1">and</numIndex>
+                            </numIndex>
+                            <numIndex index="3">
+                                <numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.notor</numIndex>
+                                <numIndex index="1">notor</numIndex>
+                            </numIndex>
+                            <numIndex index="4">
+                                <numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.notand</numIndex>
+                                <numIndex index="1">notand</numIndex>
+                            </numIndex>
+                        </items>
+                    </config>
+                </TCEforms>
+            </settings.categoryConjunction>
+
+            <!-- Category -->
+            <settings.category>
+                <TCEforms>
+                    <exclude>1</exclude>
+                    <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.category.label</label>
+                    <displayCond>FIELD:switchableControllerActions:=:Operation->statisticsByCategory</displayCond>
+                    <config>
+                        <type>select</type>
+                        <renderMode>tree</renderMode>
+                        <treeConfig>
+                            <dataProvider>Kanow\Operations\TreeProvider\DatabaseTreeDataProvider</dataProvider>
+                            <parentField>parent</parentField>
+                            <appearance>
+                                <expandAll>1</expandAll>
+                                <showHeader>1</showHeader>
+                                <maxLevels>999</maxLevels>
+                            </appearance>
+                        </treeConfig>
+                        <foreign_table>sys_category</foreign_table>
+                        <allowed>sys_category</allowed>
+                        <maxitems>50</maxitems>
+                        <minitems>0</minitems>eration->statistics;
+                        <show_thumbs>1</show_thumbs>
+                        <wizards>
+                            <suggest>
+                                <type>suggest</type>
+                            </suggest>
+                        </wizards>
+                    </config>
+                </TCEforms>
+            </settings.category>
 
             <settings.lastYears>
                 <TCEforms>

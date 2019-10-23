@@ -70,6 +70,20 @@ class OperationRepository extends Repository
     }
 
     /**
+     * Category Returns the objects of this repository matching the demand
+     *
+     * @param OperationDemand $demand
+     * @param array $settings
+     * @return array
+     * @throws InvalidQueryException
+     */
+    public function findDemandedForStatistics(OperationDemand $demand, $settings)
+    {
+        $query = $this->generateQuery($demand, $settings);
+        return $query->execute(true);
+    }
+
+    /**
      * Counts all available operations without the limit
      * @param OperationDemand $demand
      * @return integer $count
@@ -80,13 +94,26 @@ class OperationRepository extends Repository
     }
 
     /**
-     * Counts all available operations grouped by a property
+     * Counts all available operations
+     * @param OperationDemand $demand
+     * @param array $settings
+     * @return integer $count
+     * @throws InvalidQueryException
+     */
+    public function countDemandedForStatistics($demand, $settings) {
+        return count($this->findDemandedForStatistics($demand, $settings));
+    }
+
+    /**
+     * Counts all available operations grouped by a year and type
+     * Optionally use operation uid list, which created before with category constraints
      *
      * @param array $years
      * @param array $types
+     * @param string $operationUids
      * @return array
      */
-    public function countGroupedByYearAndType($years,$types) {
+    public function countGroupedByYearAndType($years,$types, $operationUids = '') {
         /** @var QueryBuilder $queryBuilder */
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable('tx_operations_domain_model_operation');
@@ -95,8 +122,11 @@ class OperationRepository extends Repository
             ->from('tx_operations_domain_model_type','ot')
             ->innerJoin('ot','tx_operations_operation_type_mm','type_mm','type_mm.uid_foreign = ot.uid')
             ->innerJoin('type_mm','tx_operations_domain_model_operation','o','type_mm.uid_local = o.uid')
-            ->where('FROM_UNIXTIME(o.begin, \'%Y\') IN('. $this->convertYearsToString($years) .')' )
-            ->groupBy('year')
+            ->where('FROM_UNIXTIME(o.begin, \'%Y\') IN('. $this->convertYearsToString($years) .')' );
+        if($operationUids != '') {
+            $result = $result->andWhere($this->createAndWhereByOperationUids($operationUids));
+        }
+         $result = $result->groupBy('year')
             ->addGroupBy('ot.uid')
             ->execute()->fetchAll();
 
@@ -104,7 +134,7 @@ class OperationRepository extends Repository
 
         foreach ($years as $year) {
             // add empty years to result
-            $preparedResult = $this->addEmptyYear($preparedResult,$year);
+            $preparedResult = $this->addEmptyYear($preparedResult, $year);
             // add missing types to result
             $preparedResult = $this->addMissingType($preparedResult, $types, $year);
         }
@@ -112,6 +142,19 @@ class OperationRepository extends Repository
         $resultWithEmptyYearsSorted = $this->sortResultByTypeUid($resultWithEmptyYearsSorted);
 
         return $resultWithEmptyYearsSorted;
+    }
+
+    /**
+     * @param string $operationUids
+     * @return string
+     */
+    protected function createAndWhereByOperationUids($operationUids = '') {
+        if($operationUids != '') {
+            $andWhereString = 'o.uid IN('.$operationUids.')';
+        } else {
+            $andWhereString = '';
+        }
+        return $andWhereString;
     }
 
     /**
@@ -225,20 +268,25 @@ class OperationRepository extends Repository
 
     /**
      * Counts all available operations grouped by year
+     * Optionally use operation uid list, which created before with category constraints
      *
      * @param array $years
+     * @param string $operationUids
      * @return array
      */
-    public function countGroupedByYear($years) {
+    public function countGroupedByYear($years, $operationUids = '') {
         /** @var QueryBuilder $queryBuilder */
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable('tx_operations_domain_model_operation');
 
         $statement = $queryBuilder
             ->add('select','COUNT(*) as count, FROM_UNIXTIME(begin, \'%Y\') as year',true)
-            ->from('tx_operations_domain_model_operation')
-            ->where('FROM_UNIXTIME(begin, \'%Y\') IN('. $this->convertYearsToString($years) .')' )
-            ->groupBy('year')
+            ->from('tx_operations_domain_model_operation','o')
+            ->where('FROM_UNIXTIME(begin, \'%Y\') IN('. $this->convertYearsToString($years) .')' );
+        if($operationUids != '') {
+            $statement = $statement->andWhere($this->createAndWhereByOperationUids($operationUids));
+        }
+        $statement = $statement->groupBy('year')
             ->orderBy('year', 'DESC')
             ->execute();
         $result = $statement->fetchAll();

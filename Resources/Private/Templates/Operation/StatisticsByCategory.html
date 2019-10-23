@@ -1,0 +1,47 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:o="http://typo3.org/ns/KN/Operations/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Default"/>
+
+<f:section name="main">
+    <f:flashMessages/>
+    <div class="operations stats">
+
+        <h1>{f:translate(key:"statistic.header")}</h1>
+        <f:if condition="{operationsGroupedByYearAndType}">
+            <f:then>
+                <h3>{f:translate(key:"statistics.dataTable.header")}</h3>
+                <table data-chart="myChart" class="dataset">
+                    <thead><tr><th></th><f:for each="{years}" as="year"><th class="label">{year}</th></f:for></tr></thead>
+                    <tbody>
+                        <f:for each="{operationsGroupedByYearAndType}" as="item">
+                            <tr class="data-row">
+                                <td class="data-row-label" data-color="{item.color}">{item.title}</td><f:for each="{item.years}" as="year"><td class="data-row-data">{year}</td></f:for>
+                            </tr>
+                        </f:for>
+                    </tbody>
+                </table>
+
+                <h3>{f:translate(key:"statistics.sum.header")}</h3>
+                <table>
+                    <f:for as="sum" each="{operationsGroupedByYear}"><tr><th>{sum.year}</th><td>{sum.count}</td></tr></f:for>
+                </table>
+
+                <h3>{f:translate(key:"statistics.chart.header")}</h3>
+                <div class="chart-container">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </f:then>
+            <f:else>
+                <p>
+                    <f:translate key="noData"/>
+                </p>
+            </f:else>
+        </f:if>
+    </div>
+</f:section>
+<f:section name="FooterAssets">
+    <script src="{f:uri.resource(path: 'Js/Chart.bundle.js')}"></script>
+    <script src="{f:uri.resource(path: 'Js/MyChart.js')}"></script>
+</f:section>

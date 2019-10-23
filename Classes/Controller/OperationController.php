@@ -38,6 +38,7 @@ use Kanow\Operations\Domain\Model\Operation;
 use Kanow\Operations\Domain\Model\OperationDemand;
 use Kanow\Operations\Service\CategoryService;
 use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Utility\ArrayUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
@@ -174,7 +175,33 @@ class OperationController extends BaseController
 	public function showAction(Operation $operation) {
 		$this->view->assign('operation', $operation);
 	}
+    /**
+     * action statistics
+     *
+     * @param OperationDemand $demand
+     * @return void
+     * @throws InvalidQueryException
+     */
+    public function statisticsByCategoryAction(OperationDemand $demand = NULL) {
+        $demand = $this->updateDemandObjectFromSettings($demand);
+        //@todo find solution to ignore the limit in repository fro statistics functions
+        $operations = $this->operationRepository->findDemandedForStatistics($demand, $this->settings);
+        $operationUids = $this->buildUidList($operations);
+        $years = $this->generateYears();
+        $types = $this->typeRepository->findAll()->toArray();
 
+        $operationsGroupedByYearAndType = $this->operationRepository->countGroupedByYearAndType($years,$types, $operationUids);
+        $operationsGroupedByYear = $this->operationRepository->countGroupedByYear($years, $operationUids);
+
+        $this->view->assignMultiple(
+            array(
+                'operationsGroupedByYearAndType' => $operationsGroupedByYearAndType,
+                'operationsGroupedByYear' => $operationsGroupedByYear,
+                'count' => $this->operationRepository->countDemandedForStatistics($demand, $this->settings),
+                'years' => $years
+            )
+        );
+    }
     /**
      * action statistics
      *
@@ -246,6 +273,22 @@ class OperationController extends BaseController
             $categories = $this->categoryRepository->findAll();
         }
         return $categories;
+    }
+
+    /**
+     * collect all uids from result
+     *
+     * @param array $result
+     * @return string
+     */
+    protected function buildUidList(array $result)
+    {
+        $uidList = [];
+        foreach ($result as $item) {
+            $uidList[] = $item['uid'];
+        }
+        $uidList = implode(',',$uidList);
+        return $uidList;
     }
 
 }
