@@ -70,7 +70,7 @@ class OperationRepository extends Repository
     }
 
     /**
-     * Category Returns the objects of this repository matching the demand
+     * Category Returns the raw query result of this repository matching the demand
      *
      * @param OperationDemand $demand
      * @param array $settings
@@ -85,6 +85,8 @@ class OperationRepository extends Repository
 
     /**
      * Counts all available operations without the limit
+     * @todo maybe not longer needed. Can be removed soon
+     *
      * @param OperationDemand $demand
      * @return integer $count
      * @throws InvalidQueryException
@@ -124,7 +126,7 @@ class OperationRepository extends Repository
             ->innerJoin('type_mm','tx_operations_domain_model_operation','o','type_mm.uid_local = o.uid')
             ->where('FROM_UNIXTIME(o.begin, \'%Y\') IN('. $this->convertYearsToString($years) .')' );
         if($operationUids != '') {
-            $result = $result->andWhere($this->createAndWhereByOperationUids($operationUids));
+            $result = $result->andWhere($this->createAndWhereByOperationUids($operationUids, 'o'));
         }
          $result = $result->groupBy('year')
             ->addGroupBy('ot.uid')
@@ -145,12 +147,15 @@ class OperationRepository extends Repository
     }
 
     /**
+     * Create where string for using in querybuilder
+     *
      * @param string $operationUids
+     * @param string $alias
      * @return string
      */
-    protected function createAndWhereByOperationUids($operationUids = '') {
+    public function createAndWhereByOperationUids($operationUids = '', $alias = '') {
         if($operationUids != '') {
-            $andWhereString = 'o.uid IN('.$operationUids.')';
+            $andWhereString = $alias ? $alias . '.uid' : 'uid' . ' IN('.$operationUids.')';
         } else {
             $andWhereString = '';
         }
@@ -284,7 +289,7 @@ class OperationRepository extends Repository
             ->from('tx_operations_domain_model_operation','o')
             ->where('FROM_UNIXTIME(begin, \'%Y\') IN('. $this->convertYearsToString($years) .')' );
         if($operationUids != '') {
-            $statement = $statement->andWhere($this->createAndWhereByOperationUids($operationUids));
+            $statement = $statement->andWhere($this->createAndWhereByOperationUids($operationUids, 'o'));
         }
         $statement = $statement->groupBy('year')
             ->orderBy('year', 'DESC')

@@ -7,37 +7,10 @@
         </TCEforms>
         <type>array</type>
         <el>
-            <switchableControllerActions>
-                <TCEforms>
-                    <onChange>reload</onChange>
-                    <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.controller
-                    </label>
-                    <config>
-                        <type>select</type>
-                        <items>
-                            <numIndex index="4">
-                                <numIndex index="0">
-                                    LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.statisticsAction
-                                </numIndex>
-                                <numIndex index="1">Operation->statistics</numIndex>
-                            </numIndex>
-                            <numIndex index="6">
-                                <numIndex index="0">
-                                    LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.statisticsByCategoryAction
-                                </numIndex>
-                                <numIndex index="1">Operation->statisticsByCategory</numIndex>
-                            </numIndex>
-
-                        </items>
-                    </config>
-                </TCEforms>
-            </switchableControllerActions>
-
             <!-- Category Mode -->
             <settings.categoryConjunction>
                 <TCEforms>
                     <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.label</label>
-                    <displayCond>FIELD:switchableControllerActions:=:Operation->statisticsByCategory</displayCond>
                     <config>
                         <type>select</type>
                         <renderType>selectSingle</renderType>
@@ -72,7 +45,6 @@
                 <TCEforms>
                     <exclude>1</exclude>
                     <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.category.label</label>
-                    <displayCond>FIELD:switchableControllerActions:=:Operation->statisticsByCategory</displayCond>
                     <config>
                         <type>select</type>
                         <renderMode>tree</renderMode>

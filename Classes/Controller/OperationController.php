@@ -38,7 +38,6 @@ use Kanow\Operations\Domain\Model\Operation;
 use Kanow\Operations\Domain\Model\OperationDemand;
 use Kanow\Operations\Service\CategoryService;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Utility\ArrayUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
@@ -175,19 +174,21 @@ class OperationController extends BaseController
 	public function showAction(Operation $operation) {
 		$this->view->assign('operation', $operation);
 	}
+
     /**
-     * action statistics
+     * action for statistics
      *
      * @param OperationDemand $demand
      * @return void
      * @throws InvalidQueryException
      */
-    public function statisticsByCategoryAction(OperationDemand $demand = NULL) {
+    public function statisticsAction(OperationDemand $demand = NULL) {
         $demand = $this->updateDemandObjectFromSettings($demand);
-        //@todo find solution to ignore the limit in repository fro statistics functions
+
         $operations = $this->operationRepository->findDemandedForStatistics($demand, $this->settings);
         $operationUids = $this->buildUidList($operations);
-        $years = $this->generateYears();
+
+        $years = $this->generateYears($operationUids);
         $types = $this->typeRepository->findAll()->toArray();
 
         $operationsGroupedByYearAndType = $this->operationRepository->countGroupedByYearAndType($years,$types, $operationUids);
@@ -198,30 +199,6 @@ class OperationController extends BaseController
                 'operationsGroupedByYearAndType' => $operationsGroupedByYearAndType,
                 'operationsGroupedByYear' => $operationsGroupedByYear,
                 'count' => $this->operationRepository->countDemandedForStatistics($demand, $this->settings),
-                'years' => $years
-            )
-        );
-    }
-    /**
-     * action statistics
-     *
-     * @param OperationDemand $demand
-     * @return void
-     * @throws InvalidQueryException
-     */
-    public function statisticsAction(OperationDemand $demand = NULL) {
-        $demand = $this->updateDemandObjectFromSettings($demand);
-        $years = $this->generateYears();
-        $types = $this->typeRepository->findAll()->toArray();
-
-        $operationsGroupedByYearAndType = $this->operationRepository->countGroupedByYearAndType($years,$types);
-        $operationsGroupedByYear = $this->operationRepository->countGroupedByYear($years);
-
-        $this->view->assignMultiple(
-            array(
-                'operationsGroupedByYearAndType' => $operationsGroupedByYearAndType,
-                'operationsGroupedByYear' => $operationsGroupedByYear,
-                'count' => $this->operationRepository->countDemanded($demand),
                 'years' => $years
             )
         );
@@ -240,7 +217,13 @@ class OperationController extends BaseController
 		return $demand;
 	}
 
-    protected function generateYears(){
+    /**
+     * Get the years. Only from defined operation uid list.
+     *
+     * @param string $operationUids
+     * @return array
+     */
+    protected function generateYears($operationUids = ''){
         $years = [];
         $lastYears = $this->settings['lastYears'];
         /** @var QueryBuilder $queryBuilder */
@@ -248,8 +231,11 @@ class OperationController extends BaseController
             ->getQueryBuilderForTable('tx_operations_domain_model_operation');
         $rows = $queryBuilder
             ->add('select','FROM_UNIXTIME(begin, \'%Y\') AS year',true)
-            ->from('tx_operations_domain_model_operation')
-            ->groupBy('year')
+            ->from('tx_operations_domain_model_operation');
+        if($operationUids != '') {
+            $rows = $rows->andWhere($this->operationRepository->createAndWhereByOperationUids($operationUids));
+        }
+        $rows = $rows->groupBy('year')
             ->orderBy('year','DESC')
             ->setMaxResults($lastYears)
             ->execute()
@@ -276,7 +262,7 @@ class OperationController extends BaseController
     }
 
     /**
-     * collect all uids from result
+     * collect all uids from a result
      *
      * @param array $result
      * @return string
