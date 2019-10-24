@@ -233,7 +233,7 @@ class OperationController extends BaseController
             ->add('select','FROM_UNIXTIME(begin, \'%Y\') AS year',true)
             ->from('tx_operations_domain_model_operation');
         if($operationUids != '') {
-            $rows = $rows->andWhere($this->operationRepository->createAndWhereByOperationUids($operationUids));
+            $rows = $rows->andWhere('uid IN (' . $operationUids . ')');
         }
         $rows = $rows->groupBy('year')
             ->orderBy('year','DESC')

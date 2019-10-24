@@ -99,7 +99,7 @@ class OperationRepository extends Repository
      * Counts all available operations
      * @param OperationDemand $demand
      * @param array $settings
-     * @return integer $count
+     * @return integer
      * @throws InvalidQueryException
      */
     public function countDemandedForStatistics($demand, $settings) {
@@ -126,7 +126,7 @@ class OperationRepository extends Repository
             ->innerJoin('type_mm','tx_operations_domain_model_operation','o','type_mm.uid_local = o.uid')
             ->where('FROM_UNIXTIME(o.begin, \'%Y\') IN('. $this->convertYearsToString($years) .')' );
         if($operationUids != '') {
-            $result = $result->andWhere($this->createAndWhereByOperationUids($operationUids, 'o'));
+            $result = $result->andWhere('o.uid IN (' . $operationUids . ')');
         }
          $result = $result->groupBy('year')
             ->addGroupBy('ot.uid')
@@ -144,22 +144,6 @@ class OperationRepository extends Repository
         $resultWithEmptyYearsSorted = $this->sortResultByTypeUid($resultWithEmptyYearsSorted);
 
         return $resultWithEmptyYearsSorted;
-    }
-
-    /**
-     * Create where string for using in querybuilder
-     *
-     * @param string $operationUids
-     * @param string $alias
-     * @return string
-     */
-    public function createAndWhereByOperationUids($operationUids = '', $alias = '') {
-        if($operationUids != '') {
-            $andWhereString = $alias ? $alias . '.uid' : 'uid' . ' IN('.$operationUids.')';
-        } else {
-            $andWhereString = '';
-        }
-        return $andWhereString;
     }
 
     /**
@@ -289,7 +273,7 @@ class OperationRepository extends Repository
             ->from('tx_operations_domain_model_operation','o')
             ->where('FROM_UNIXTIME(begin, \'%Y\') IN('. $this->convertYearsToString($years) .')' );
         if($operationUids != '') {
-            $statement = $statement->andWhere($this->createAndWhereByOperationUids($operationUids, 'o'));
+            $statement = $statement->andWhere('o.uid IN (' . $operationUids . ')');
         }
         $statement = $statement->groupBy('year')
             ->orderBy('year', 'DESC')
