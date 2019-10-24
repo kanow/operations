@@ -188,6 +188,9 @@
 			<trans-unit id="flexform.teaserMaxChars">
 				<source>Max chars of teaser text in list view</source>
 			</trans-unit>
+			<trans-unit id="flexform.limit">
+				<source>Max result items</source>
+			</trans-unit>
 			<trans-unit id="flexform.hideFilter">
 				<source>Hide filter for result</source>
 			</trans-unit>
