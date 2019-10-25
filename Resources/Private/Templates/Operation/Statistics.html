@@ -11,8 +11,13 @@
         <h1>{f:translate(key:"statistic.header")}</h1>
         <f:if condition="{operationsGroupedByYearAndType}">
             <f:then>
+                <h3>{f:translate(key:"statistics.sum.header")}</h3>
+                <table>
+                    <f:for as="sum" each="{operationsGroupedByYear}"><tr><th>{sum.year}</th><td>{sum.count}</td></tr></f:for>
+                </table>
+
                 <h3>{f:translate(key:"statistics.dataTable.header")}</h3>
-                <table data-chart="myChart" class="dataset">
+                <table data-chart="myChart-{contentObjectData.uid}" class="myChart-{contentObjectData.uid} dataset">
                     <thead><tr><th></th><f:for each="{years}" as="year"><th class="label">{year}</th></f:for></tr></thead>
                     <tbody>
                         <f:for each="{operationsGroupedByYearAndType}" as="item">
@@ -23,14 +28,9 @@
                     </tbody>
                 </table>
 
-                <h3>{f:translate(key:"statistics.sum.header")}</h3>
-                <table>
-                    <f:for as="sum" each="{operationsGroupedByYear}"><tr><th>{sum.year}</th><td>{sum.count}</td></tr></f:for>
-                </table>
-
                 <h3>{f:translate(key:"statistics.chart.header")}</h3>
                 <div class="chart-container">
-                    <canvas id="myChart"></canvas>
+                    <canvas id="myChart-{contentObjectData.uid}" data-uid="{contentObjectData.uid}" class="operations-chart"></canvas>
                 </div>
             </f:then>
             <f:else>

@@ -1,18 +1,18 @@
-function generateLabelsFromTable()
+function generateLabelsFromTable(chartId)
 {
     var labels = [];
-    var rows = $(".dataset .label");
+    var rows = $("." + chartId + ".dataset .label");
     rows.each(function(){
         labels.push($(this).text());
     });
     return labels;
 }
-function generateDataSetsFromTable()
+function generateDataSetsFromTable(chartId)
 {
     var data;
     var label;
     var datasets = [];
-    var rows = $(".dataset .data-row");
+    var rows = $("." + chartId + ".dataset .data-row");
     rows.each(function(index){
         var cols = $(this).find(".data-row-data");
         var label = $(this).find(".data-row-label").text();
@@ -31,33 +31,41 @@ function generateDataSetsFromTable()
         datasets.push(dataset);
     });
     return datasets;
-
 }
-var ctx = document.getElementById("myChart").getContext('2d');
-var myChart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'bar',
-    data: {
-        labels : generateLabelsFromTable(),
-        datasets : generateDataSetsFromTable()
-    },
-    // Configuration options go here
-    options: {
-        events: ['mousemove'],
-        legend: {
-            position: 'bottom',
-            labels: {
-            }
+
+var charts = document.getElementsByClassName("operations-chart");
+Object.keys(charts).forEach(function(key) {
+    chartId = charts[key].id;
+
+    var ctx = document.getElementById(chartId).getContext('2d');
+    var myChart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'bar',
+        data: {
+            labels : generateLabelsFromTable(chartId),
+            datasets : generateDataSetsFromTable(chartId)
         },
-        tooltips: {
-            backgroundColor:'rgba(255,0,0,0.8)'
-        },
-        scales: {
-            yAxes: [{
-                ticks: {
-                    // suggestedMax: 20,
+        // Configuration options go here
+        options: {
+            events: ['mousemove'],
+            legend: {
+                position: 'bottom',
+                labels: {
                 }
-            }]
+            },
+            tooltips: {
+                backgroundColor:'rgba(255,0,0,0.8)'
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        // suggestedMax: 20,
+                    }
+                }]
+            }
         }
-    }
+    });
+
+
 });
+
