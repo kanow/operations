@@ -5,6 +5,7 @@ namespace Kanow\Operations\Controller;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Mvc\View\ViewInterface;
 
 /***************************************************************
  *  Copyright notice
@@ -47,6 +48,19 @@ class BaseController extends ActionController
     {
         $this->overrideFlexformSettings();
         $this->storagePidFallback();
+    }
+
+    /**
+     * Initializes the view before invoking an action method.
+     * Override this method to solve assign variables common for all actions
+     * or prepare the view in another way before the action is called.
+     *
+     * @param ViewInterface $view The view to be initialized
+     */
+    protected function initializeView(ViewInterface $view)
+    {
+        $view->assign('contentObjectData', $this->configurationManager->getContentObject()->data);
+        parent::initializeView($view);
     }
 
     /**
