@@ -206,31 +206,24 @@
 
 			<trans-unit id="flexform.categoryConjunction.label">
 				<source>Categors conjunction</source>
-				<target>Kategorie Verknüpfungsart</target>
 			</trans-unit>
 			<trans-unit id="flexform.categoryConjunction.all">
-				<source>Show all</source>
-				<target>Alle (egal)</target>
+				<source>Don't care, show all</source>
 			</trans-unit>
 			<trans-unit id="flexform.categoryConjunction.or">
-				<source>Or</source>
-				<target>Oder</target>
+				<source>Show items with selected categories - Mode: OR</source>
 			</trans-unit>
 			<trans-unit id="flexform.categoryConjunction.and">
-				<source>and</source>
-				<target>und</target>
+				<source>Show items with selected categories (and)</source>
 			</trans-unit>
 			<trans-unit id="flexform.categoryConjunction.notor">
-				<source>not or</source>
-				<target>nicht oder</target>
+				<source>Do NOT show items with selected categories - Mode: OR</source>
 			</trans-unit>
 			<trans-unit id="flexform.categoryConjunction.notand">
-				<source>not and</source>
-				<target>nicht und</target>
+				<source>Do NOT show items with selected categories - Mode: AND</source>
 			</trans-unit>
 			<trans-unit id="flexform.category.label">
 				<source>Categories</source>
-				<target>Kategorien</target>
 			</trans-unit>
 
 			<trans-unit id="tca.paletteTitle.time">
