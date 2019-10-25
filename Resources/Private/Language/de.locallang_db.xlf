@@ -274,7 +274,7 @@
 
 			<trans-unit id="flexform.categoryConjunction.label">
 				<source>Category Mode</source>
-                <target>Kategorie Modus</target>
+				<target>Kategorie Modus</target>
 			</trans-unit>
 			<trans-unit id="flexform.categoryConjunction.all">
 				<source>Don't care, show all</source>

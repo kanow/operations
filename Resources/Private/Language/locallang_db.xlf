@@ -205,7 +205,7 @@
 			</trans-unit>
 
 			<trans-unit id="flexform.categoryConjunction.label">
-				<source>Categors conjunction</source>
+				<source>Category Mode</source>
 			</trans-unit>
 			<trans-unit id="flexform.categoryConjunction.all">
 				<source>Don't care, show all</source>
