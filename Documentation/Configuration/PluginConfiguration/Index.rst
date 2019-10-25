@@ -44,15 +44,22 @@ Tab "Options"
     - Vehciles: List and single view of vehicles
     - Resources: List and single view of resources
    :Key:
-
  - :Property:
-		Record Storage Page
+		Category Mode
    :View:
-		All
+		Operations
    :Description:
-		Sysfolder where are the data sets in
+		Set category mode for selected categories.
    :Key:
-		persistence.storagePid
+		settings.categoryConjunction
+ - :Property:
+		Categories
+   :View:
+		Operations
+   :Description:
+		Categories can be select to constrain the result.
+   :Key:
+		settings.category
  - :Property:
 		Items per page
    :View:
@@ -61,14 +68,6 @@ Tab "Options"
 		How many items will showing in list view. When pagination is hide is this the limit for the complete result.
    :Key:
 		settings.itemsPerPage
- - :Property:
-		Max chars of teaser text in list view
-   :View:
-		Operations
-   :Description:
-		Maximum length of teaser Text in list view.
-   :Key:
-		settings.cropTeaser
  - :Property:
 		Hide pagination
    :View:
@@ -93,6 +92,14 @@ Tab "Options"
 		Show the listed result in frontend on a google map.
    :Key:
 		settings.showMap
+ - :Property:
+		Record Storage Page
+   :View:
+		All
+   :Description:
+		Sysfolder where are the data sets in
+   :Key:
+		persistence.storagePid
 
 
 Tab "Media options"
@@ -161,3 +168,11 @@ Tab "Template Options"
         }
    :Key:
         settings.templateLayout
+ - :Property:
+		Max chars of teaser text in list view
+   :View:
+		Operations
+   :Description:
+		Maximum length of teaser text in list view.
+   :Key:
+		settings.cropTeaser
