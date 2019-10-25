@@ -12,6 +12,22 @@
 Changelog
 =========
 
+Update to 3.2.0
+===============
+
+Now you can use categories to organize your operations. With those feature you can create a structure with a main fire department and sub departments. Show only operations from the main department or a single sub department in frontend.
+
+There is only a **flat** category handling. That means, if you select a category, no child categories are respected. Only the selected category.
+Set a root category in PageTS-Config to restrict the displayed categories in operation plugin in backend.
+
+.. code-block:: typoscript
+
+    tx_operations {
+        categoryRootId = 4
+    }
+
+Some little bugfixes, code improvements.
+
 Update to 3.1.0
 ====================================
 

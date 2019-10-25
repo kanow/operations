@@ -11,7 +11,7 @@
 
 
 Best Practice
-=========
+=============
 
 Speaking Urls
 ^^^^^^^^^^^^^
@@ -55,3 +55,30 @@ Typically that will be found in typo3conf folder (non composer) or config folder
                 type: PersistedAliasMapper
                 tableName: 'tx_operations_domain_model_resource'
                 routeFieldName: 'path_segment'
+
+
+Using Categories
+^^^^^^^^^^^^^^^^
+You can use categories to organize your operations. Create a structure with a main fire department and sub departments. Select categories in Operations plugin (List-, Search-View) to control the result in frontend.
+
+You don't need those main department and sub department stuff? Ok, use the categories for another stuff.
+
+.. important::
+
+    There is only a **flat** category handling. That means, if you select a category, no child categories are respected.
+
+Set a root category in PageTS-Config to restrict the displayed categories in operation plugin in backend.
+
+.. code-block:: typoscript
+
+    tx_operations {
+        categoryRootId = 4
+    }
+
+.. tip::
+
+    Set different Root-Category uid's on pages in tree, to show different categories in plugin. Depending on the related department or whatever.
+
+.. tip::
+
+    Categories can be used in Operations Statistics plugin too!
