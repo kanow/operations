@@ -15,16 +15,19 @@ Statistics configuration
 Display operation statistics
 ============================
 
-There is nothing to configure. Add a content element and use the plugin "Operations Statistics". That's all.
+Add a content element and use the plugin "Operations Statistics". Set category if you want and maybe the last years to show. That's all.
 
-This will show you all operations grouped by type and year.
-The setting "lastYears" define wich years should be used for the statistics. It is the same setting like in the normal list but can be overridden in flexform of the Statistics plugin. Years without operations will be ignored.
+This will show you all operations grouped by type and year depending of the settings you did.
+
+The setting "lastYears" define how many years descending from now should be respected for the statistics. Years without any operations will be ignored.
+
+It is the same setting as in the normal list and can be overridden directly in the "Operations Statistics" plugin.
 
 Change templating for statistics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you nee adapting the chart, please use your own JavaScript file and change the path to it in template file:
-`Resources/Private/Templates/Operation/statistics.html`
+If you need adapting the chart, please use your own JavaScript file and change the path to it in template file:
+`Resources/Private/Templates/Operation/Statistics.html`
 
 .. code-block:: html
 
@@ -32,7 +35,7 @@ If you nee adapting the chart, please use your own JavaScript file and change th
         <!-- chart library -->
         <script src="{f:uri.resource(path: 'Js/Chart.bundle.js')}"></script>
         <!-- change path to your own js file if you need -->
-        <script src="{f:uri.resource(path: 'Js/MyChart.js')}"></script>
+        <script src="{f:uri.resource(path: 'Js/OperationsChart.js')}"></script>
     </f:section>
 
 I suggest to put those things in an own extension/site package. Change the paths like described in :ref:`TypoScriptConfiguration <own-template-files>` .
@@ -40,7 +43,9 @@ I suggest to put those things in an own extension/site package. Change the paths
 
 .. important::
 
-   Do not remove the table with data from the template! They is used to generate the data in chart.
+   Do not remove the table with data from the template!
+   :html:`<table data-chart="operationsChart-{contentObjectData.uid}" class="operationsChart-{contentObjectData.uid} dataset">`
+   They is used to generate the data in chart.
    Hide the table with css.
 
 .. tip::
