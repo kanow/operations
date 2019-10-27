@@ -17,7 +17,7 @@
                 </table>
 
                 <h3>{f:translate(key:"statistics.dataTable.header")}</h3>
-                <table data-chart="myChart-{contentObjectData.uid}" class="myChart-{contentObjectData.uid} dataset">
+                <table data-chart="operationsChart-{contentObjectData.uid}" class="operationsChart-{contentObjectData.uid} dataset">
                     <thead><tr><th></th><f:for each="{years}" as="year"><th class="label">{year}</th></f:for></tr></thead>
                     <tbody>
                         <f:for each="{operationsGroupedByYearAndType}" as="item">
@@ -30,7 +30,7 @@
 
                 <h3>{f:translate(key:"statistics.chart.header")}</h3>
                 <div class="chart-container">
-                    <canvas id="myChart-{contentObjectData.uid}" data-uid="{contentObjectData.uid}" class="operations-chart"></canvas>
+                    <canvas id="operationsChart-{contentObjectData.uid}" data-uid="{contentObjectData.uid}" class="operations-chart"></canvas>
                 </div>
             </f:then>
             <f:else>
@@ -43,5 +43,5 @@
 </f:section>
 <f:section name="FooterAssets">
     <script src="{f:uri.resource(path: 'Js/Chart.bundle.js')}"></script>
-    <script src="{f:uri.resource(path: 'Js/MyChart.js')}"></script>
+    <script src="{f:uri.resource(path: 'Js/OperationsChart.js')}"></script>
 </f:section>

@@ -65,7 +65,4 @@ Object.keys(charts).forEach(function(key) {
             }
         }
     });
-
-
 });
-
