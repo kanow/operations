@@ -45,6 +45,7 @@ CREATE TABLE tx_operations_domain_model_vehicle (
 	short varchar(255) DEFAULT '' NOT NULL,
 	description text NOT NULL,
 	media varchar(255) DEFAULT '' NOT NULL,
+	link varchar(255) DEFAULT '' NOT NULL
 
 );
 
@@ -58,6 +59,7 @@ CREATE TABLE tx_operations_domain_model_resource (
 	short varchar(255) DEFAULT '' NOT NULL,
 	description text NOT NULL,
 	media varchar(255) DEFAULT '' NOT NULL,
+	link varchar(255) DEFAULT '' NOT NULL
 
 );
 

@@ -5,7 +5,7 @@ namespace Kanow\Operations\Domain\Model;
  *  Copyright notice
  *
  *  (c) 2013 Karsten Nowak <captnnowi@gmx.de>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -61,6 +61,13 @@ class Resource extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
    	* @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
    	*/
   	protected $media;
+
+    /**
+     * A website url or internal link
+     *
+     * @var \string
+     */
+    protected $link;
 
 	/**
 	 * Returns the title
@@ -154,5 +161,21 @@ class Resource extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
   public function setMedia($media) {
       $this->media = $media;
   }
+
+    /**
+     * @return string
+     */
+    public function getLink(): string
+    {
+        return $this->link;
+    }
+
+    /**
+     * @param string $link
+     */
+    public function setLink(string $link): void
+    {
+        $this->link = $link;
+    }
 
 }

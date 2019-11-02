@@ -87,6 +87,9 @@
 			<trans-unit id="tx_operations_domain_model_vehicle.media">
 				<source>Media</source>
 			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_vehicle.link">
+				<source>Link</source>
+			</trans-unit>
 
 			<trans-unit id="tx_operations_domain_model_resource">
 				<source>Resource</source>
@@ -102,6 +105,9 @@
 			</trans-unit>
 			<trans-unit id="tx_operations_domain_model_resource.media">
 				<source>Media</source>
+			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_resource.link">
+				<source>Link</source>
 			</trans-unit>
 
 			<trans-unit id="tx_operations_domain_model_type">
