@@ -81,9 +81,18 @@
 		<ul>
 			<f:for each="{operation.vehicles}" as="vehicle" iteration="count">
 				<li>
-					 <f:link.action  action="show" arguments="{vehicle:vehicle}" controller="Vehicle" pageUid="{settings.vehicleSinglePid}">
-					 	{vehicle.title}<f:if condition="{vehicle.short}"><span class="short"> ({vehicle.short})</span></f:if>
-					</f:link.action>
+                    <f:if condition="{vehicle.link}">
+                        <f:then>
+                            <f:link.typolink parameter="{vehicle.link}">
+                                <f:render section="vehicle-link" arguments="{vehicle:vehicle}" />
+                            </f:link.typolink>
+                        </f:then>
+                        <f:else>
+                            <f:link.action  action="show" arguments="{vehicle:vehicle}" controller="Vehicle" pageUid="{settings.vehicleSinglePid}">
+                                <f:render section="vehicle-link" arguments="{vehicle:vehicle}" />
+                            </f:link.action>
+                        </f:else>
+                    </f:if>
 				</li>
 			</f:for>
 		</ul>
@@ -96,9 +105,18 @@
 		<ul>
 			<f:for each="{operation.resources}" as="resource" iteration="count">
 				<li>
-					<f:link.action  action="show" arguments="{resource:resource}" controller="Resource" pageUid="{settings.resourceSinglePid}">
-					{resource.title}<f:if condition="{resource.short}"><span class="short"> ({resource.short})</span></f:if>
-					</f:link.action>
+                    <f:if condition="{resource.link}">
+                        <f:then>
+                            <f:link.typolink parameter="{resource.link}">
+                                <f:render section="resource-link" arguments="{resource:resource}" />
+                            </f:link.typolink>
+                        </f:then>
+                        <f:else>
+                            <f:link.action  action="show" arguments="{resource:resource}" controller="Resource" pageUid="{settings.resourceSinglePid}">
+                                <f:render section="resource-link" arguments="{resource:resource}" />
+                            </f:link.action>
+                        </f:else>
+                    </f:if>
 				</li>
 			</f:for>
 		</ul>
@@ -111,19 +129,25 @@
 		<p>
 			<f:for each="{operation.assistance}" as="assistance" iteration="count">
 				<f:if condition="{assistance.link}">
-				<f:then>
-					<f:link.typolink parameter="{assistance.link}" target="_blank">{assistance.title}</f:link.typolink>{f:if(condition:count.isLast,else:', ')}
-				</f:then>
-				<f:else>
-					{assistance.title}{f:if(condition:count.isLast,else:', ')}
-				</f:else>
+                    <f:then>
+                        <f:link.typolink parameter="{assistance.link}" target="_blank">{assistance.title}</f:link.typolink>{f:if(condition:count.isLast,else:', ')}
+                    </f:then>
+                    <f:else>
+                        {assistance.title}{f:if(condition:count.isLast,else:', ')}
+                    </f:else>
 				</f:if>
 			</f:for>
 		</p>
 	</div>
 </f:if>
 
+<f:section name="vehicle-link">
+    {vehicle.title}<f:if condition="{vehicle.short}"><span class="short"> ({vehicle.short})</span></f:if>
+</f:section>
 
+<f:section name="resource-link">
+    {resource.title}<f:if condition="{resource.short}"><span class="short"> ({resource.short})</span></f:if>
+</f:section>
 
 
 

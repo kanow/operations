@@ -10,16 +10,29 @@
 	<ul class="clearfix">
 		<f:for each="{vehicles}" as="vehicle" iteration="oIterator">
 			<li class="clearfix {f:if(condition:'{oIterator.isOdd}',then:' odd')}">
-				<f:link.action action="show" pageUid="{settings.vehicleSinglePid}" arguments="{vehicle:vehicle}" class="clearfix">
-					<div class="left">{vehicle.title}<f:if condition="{vehicle.short}"><span class="short"> ({vehicle.short})</span></f:if></div>
-                    <f:if condition="{vehicle.firstMedia}">
-                        <figure class="list-media">
-                            <f:media file="{vehicle.firstMedia}" width="{settings.listImgWidthVehicle}" height="{settings.listImgHeightVehicle}" />
-                        </figure>
-                    </f:if>
-				</f:link.action>
+                <f:if condition="{vehicle.link}">
+                    <f:then>
+                        <f:link.typolink parameter="{vehicle.link}">
+                            <f:render section="content" arguments="{vehicle:vehicle}" />
+                        </f:link.typolink>
+                    </f:then>
+                    <f:else>
+                        <f:link.action action="show" pageUid="{settings.vehicleSinglePid}" arguments="{vehicle:vehicle}" class="clearfix">
+                            <f:render section="content" arguments="{vehicle:vehicle}" />
+                        </f:link.action>
+                    </f:else>
+                </f:if>
 			</li>
 		</f:for>
 		</ul>
 	</div>
+</f:section>
+
+<f:section name="content">
+    <div class="left">{vehicle.title}<f:if condition="{vehicle.short}"><span class="short"> ({vehicle.short})</span></f:if></div>
+    <f:if condition="{vehicle.firstMedia}">
+        <figure class="list-media">
+            <f:media file="{vehicle.firstMedia}" width="{settings.listImgWidthVehicle}" height="{settings.listImgHeightVehicle}" />
+        </figure>
+    </f:if>
 </f:section>
