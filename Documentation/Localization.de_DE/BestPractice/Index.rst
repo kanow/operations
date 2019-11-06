@@ -14,9 +14,9 @@ Empfehlungen
 ============
 
 
-Benutzt Ketgorien
+Benutzt Kategorien
 ^^^^^^^^^^^^^^^^^
-Ihr könnt Ketgorien nutzte um die Einsätze zu strukturieren. Damit lassen sich Dinge wie: Haupt-Feuerwehrwache und Unter-Feuerwehrwachen abbilden. durch die Auswahl der verschiedenen Kategorien im Plugin, könnt ihr die Ausgabe im Frontend entsprechend anpassen.
+Ihr könnt Kategorien nutzen um die Einsätze zu strukturieren. Damit lassen sich Dinge wie: Haupt-Feuerwehrwache und Unter-Feuerwehrwachen abbilden. durch die Auswahl der verschiedenen Kategorien im Plugin, könnt ihr die Ausgabe im Frontend entsprechend anpassen.
 
 wenn ihr keine Kategorien braucht, dann ignoriert sie einfach.
 
