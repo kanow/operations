@@ -61,7 +61,7 @@ Using Categories
 ^^^^^^^^^^^^^^^^
 You can use categories to organize your operations. Create a structure with a main fire department and sub departments. Select categories in Operations plugin (List-, Search-View) to control the result in frontend.
 
-You don't need those main department and sub department stuff? Ok, use the categories for another stuff.
+You don't need those main department and sub department stuff? Ok, use the categories for whatever you want or ignore it.
 
 .. important::
 

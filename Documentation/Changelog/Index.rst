@@ -26,6 +26,8 @@ Set a root category in PageTS-Config to restrict the displayed categories in ope
         categoryRootId = 4
     }
 
+You can define new link targets for every single vehicles or resources data. Maybe another page in your project or an external link. By default it will be respected in list view of vehicles and resources and in that short list in the operation single view.
+
 Some little bugfixes, code improvements.
 
 Update to 3.1.0
