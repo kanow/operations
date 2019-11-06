@@ -39,4 +39,4 @@ Einrichtungen nutzen. Beispielsweise Polizei, Sicherheitsagenturen oder das THW 
 .. tip::
 
     Wenn dir diese Extension gefällt und du meine Arbeit unterstützen möchtest, kannst du mir gern
-eine Spende über PayPal zukommen lassen: `Hier spenden <https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZFPCNRYPD2MGA&source=url>`_
+    eine Spende über PayPal zukommen lassen: `Hier spenden <https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZFPCNRYPD2MGA&source=url>`_

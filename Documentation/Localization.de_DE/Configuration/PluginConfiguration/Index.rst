@@ -46,15 +46,6 @@ Reiter "Einstellungen"
    :Key:
 
  - :Property:
-		Maximale Zeichenanzahl Teasertext in der Listansicht
-   :View:
-		Operations
-   :Description:
-		Wie es der Titel schon sagt, die maximale Zeichanzahl des Teasertextes in der Listansicht. Wenn der Teaser länger sein sollte, wird der Text automatisch gekürzt.
-   :Key:
-		settings.cropTeaser
-
- - :Property:
         Datensätze pro Seite
    :View:
         Einsätze
@@ -109,8 +100,8 @@ Reiter "Einstellungen"
 		persistence.recursive
 
 
-Tab "Media options"
-"""""""""""""""""""
+Reiter "Medieneinstellungen"
+""""""""""""""""""""""""""""
 
 
 
@@ -127,20 +118,20 @@ Tab "Media options"
         Key:
 
  - :Property:
-        Thumbnail in list view
+        Vorschaubild in der Listenansicht
    :View:
         Operations
    :Description:
-        Show the first media of item as thumbnail in list
+        Zeigt das erste Bild des Einsatzes als kleines Vorschaubild in der Listenansicht
    :Key:
         settings.showMediaInList
 
  - :Property:
-        Media dimension in list/single view
+        Bildgrößen in List- und Einzelansicht
    :View:
         All
    :Description:
-        Set media dimensions for list and single view if you like.
+        Bildgrößenangaben für List- und Einzelansicht bei Bedarf ändern.
    :Key:
         settings.listMediaWidth
         settings.listMediaHeight
@@ -148,8 +139,8 @@ Tab "Media options"
         settings.singleMediaHeight
 
 
-Tab "Template Options"
-""""""""""""""""""""""
+Reiter "Template-Einstellungen"
+"""""""""""""""""""""""""""""""
 
 .. t3-field-list-table::
  :header-rows: 1
@@ -164,14 +155,26 @@ Tab "Template Options"
         Key:
 
  - :Property:
-        Template layout selector
+        Template Auswahlfeld
    :View:
         All
    :Description:
-        Set items in Page TS-Config before using
-        ::
-        tx_operations.templateLayouts {
-            key = value
-        }
+        Werte müssen vorher im Page TS-Config definiert werden.
+
+        Beispiel Page TS-Config::
+
+            tx_operations.templateLayouts {
+                layout1 = Mein extra Layout
+            }
+
    :Key:
         settings.templateLayout
+
+ - :Property:
+		Maximale Zeichenanzahl Teasertext in der Listansicht
+   :View:
+		Operations
+   :Description:
+		Wie es der Titel schon sagt, die maximale Zeichanzahl des Teasertextes in der Listansicht. Wenn der Teaser länger sein sollte, wird der Text automatisch gekürzt.
+   :Key:
+		settings.cropTeaser

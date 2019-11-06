@@ -105,8 +105,6 @@ Tab "Options"
 Tab "Media options"
 """""""""""""""""""
 
-
-
 .. t3-field-list-table::
  :header-rows: 1
 
@@ -162,12 +160,15 @@ Tab "Template Options"
         All
    :Description:
         Set items in Page TS-Config before using
-        ::
-        tx_operations.templateLayouts {
-            key = value
-        }
+        example::
+
+            tx_operations.templateLayouts {
+                key = value
+            }
+
    :Key:
         settings.templateLayout
+
  - :Property:
 		Max chars of teaser text in list view
    :View:

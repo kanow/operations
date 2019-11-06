@@ -7,24 +7,23 @@
 
 .. _statistics:
 
-========================
-Statistics configuration
-========================
+=======================
+Statistik Konfiguration
+=======================
 
 
-Display operation statistics
-============================
+Einsatzstatistik(en) anzeigen
+=============================
 
-There is nothing to configure. Add a content element and use the plugin "Operations Statistics". That's all.
+Erstellt einfach ein neues Inhaltselement und nutzt das Plugin "Operations Statistics". Wenn ihr wollt, könnt ihr noch eine Kategorieauswahl vornehmen.
 
-This will show you all operations grouped by type and year.
-The setting "lastYears" define wich years should be used for the statistics. It is the same setting like in the normal list but can be overridden in flexform of the Statistics plugin. Years without operations will be ignored.
+Das Plugin zeigt euch im Frontend eine Statistik der Einsätze gruppiert nach Jahr und Typ.
+die Einstellung "letzte Jahre" legt fest, wieviel Jahre zurück für die Statistik genutzt werden soll. Es ist die gleiche Einstellung wie bei der normalen Listansicht. Jahre in denen keine Einsätze stattfanden, werden ignoriert und nicht mitgezählt.
 
-Change templating for statistics
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Template für Statistiken anpassen
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you nee adapting the chart, please use your own JavaScript file and change the path to it in template file:
-`Resources/Private/Templates/Operation/statistics.html`
+Wenn ihr die Statistiken anpassen wollt, könnt ihr das mit einem eigenen JavaScript machen. Kopiert dazu die Templatedatei  `Resources/Private/Templates/Operation/Statistics.html` an einen Ort eurer Wahl und passt den Pfad für das JavaScript dann an:
 
 .. code-block:: html
 
@@ -35,15 +34,13 @@ If you nee adapting the chart, please use your own JavaScript file and change th
         <script src="{f:uri.resource(path: 'Js/MyChart.js')}"></script>
     </f:section>
 
-I suggest to put those things in an own extension/site package. Change the paths like described in :ref:`TypoScriptConfiguration <own-template-files>` .
+Am besten nutzt ihr dafür ein eigenes Seiten-Package/Theme-Extension. Ändern der Templatepfade wie hier beschrieben :ref:`TypoScriptConfiguration <own-template-files>` .
 
 
 .. important::
 
-   Do not remove the table with data from the template! They is used to generate the data in chart.
-   Hide the table with css.
+   Bitte nicht die Tabelle mit den Daten aus dem Template entfernen! Diese stellt die Daten für das Diagramm bereit. Wenn die Tabelle nicht angezeigt werden soll, blendet sie am besten mit CSS aus.
 
 .. tip::
 
-   You can build a switch with little JavaScript that toggles the view. Showing the table or the chart.
-   That is helpful for people with a disability.
+   Mit einem kleinen JavaScript kann man einen Umschalter bauen. Der blendet dann entweder das Diagramm oder die Tabelle ein. Das ist nützlich für Leute mit Sehbehinderungen.

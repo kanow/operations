@@ -11,13 +11,15 @@
 .. DEFINE SOME TEXT ROLES
 .. --------------------------------------------------
 
-.. role::   typoscript(code)
+.. role:: typoscript(code)
 
-.. role::   ts(typoscript)
-   :class:  typoscript
+.. role:: ts(typoscript)
+   :class: typoscript
 
-.. role::   php(code)
+.. role:: php(code)
 
-.. role::   html(code)
+.. role:: html(code)
+
+.. role:: yaml(code)
 
 .. highlight:: php

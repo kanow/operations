@@ -8,19 +8,20 @@
 .. _speakingUrl:
 
 
-=======================================
-Sample RouteEnhancer for speaking url's
-=======================================
+========================================
+Beispiel RouteEnhancer für lesbare Url's
+========================================
 
 
 
-Use it in your site configuration
----------------------------------
+Definition für eure "Site Configuration"
+----------------------------------------
 
 
-Here is a sample `Extbase Plugin Enhancer <https://docs.typo3.org/typo3cms/extensions/core/Changelog/9.5/Feature-86365-RoutingEnhancersAndAspects.html#extbase-plugin-enhancer>`_ to use speaking url's for single views of operations, vehicles,  resources and the pages in list with pagination.
-You don't know about the site configuration? Read here: `TYPO3 Site Configuration Storage <https://docs.typo3.org/m/typo3/reference-coreapi/9.5/en-us/ApiOverview/SiteHandling/Basics.html#site-configuration-storage>`_
+Der neue "RouteEnhancer" in TYPO3 wird benutzt um die Url's von Extensions lesbar zu kriegen. Generelle Erklärungen findet ihr hier: `Extbase Plugin Enhancer (englisch) <https://docs.typo3.org/typo3cms/extensions/core/Changelog/9.5/Feature-86365-RoutingEnhancersAndAspects.html#extbase-plugin-enhancer>`_
+Diese Konfiguration muss in der ebenfalls neu unter TYPO3 9.5 "Site Configuration" angegeben werden. Wenn ihr die Site Configuration noch nicht kennt gibt's hier die notwendige Einführung: `TYPO3 Site Configuration Storage (englisch) <https://docs.typo3.org/m/typo3/reference-coreapi/9.5/en-us/ApiOverview/SiteHandling/Basics.html#site-configuration-storage>`_
 
+Das nachfolgende Beispiel zeigt euch eine Konfiguration wie sie für die Extension `operations` aussehen kann. Damit bekommt ihr lesbare Url's für die List- und Einzelansicht, sowie die Seiten/Blätternavigation bei längeren Listen.
 
 .. highlight:: yaml
 
@@ -59,3 +60,5 @@ You don't know about the site configuration? Read here: `TYPO3 Site Configuratio
                     type: PersistedAliasMapper
                     tableName: 'tx_operations_domain_model_resource'
                     routeFieldName: 'path_segment'
+
+Natürlich könnt ihr diese Konfiguration nach euren Vorstellungen anpassen. Mindestens die Seiten ID's bei dem Punkt :yaml:`limitToPages` solltet ihr anpassen.

@@ -38,3 +38,4 @@ The extension were written to manage firefighter operations in TYPO3 pages. The 
 .. tip::
 
     If the extension is useful for you and you would like to support my work you can make a donation on paypal: `PayPal Donation <https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZFPCNRYPD2MGA&source=url>`_
+
