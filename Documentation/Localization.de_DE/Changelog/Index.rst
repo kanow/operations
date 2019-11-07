@@ -13,7 +13,7 @@
 ==========
 
 Update auf 3.2.0
-===============
+================
 
 Kategorien
 ^^^^^^^^^^
@@ -82,7 +82,7 @@ Siehe Seite Migration hier in der Doku :ref:`migration`
 
 
 Ausführliche Liste mit Hilfe des Git-Logs
-========================================================
+=========================================
 
 Klont das Github Repository von 'operations' und nutzt das folgende Kommando um eine Lsite der Commits zu bekommen. Ersetzt die Versionsnummer in dem Beispiel mit der Nummer der Version die ihr momentan benutzt.
 

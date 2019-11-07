@@ -7,13 +7,20 @@
 
 .. _install:
 
+=================
 Extend operations
------------------
+=================
 
 
 If you want to extend operations, there is an example extension on github.
 
 `extend_operations <https://github.com/kanow/extend_operations>`_
+
+.. note::
+
+    Those extensions is only running on TYPO3 8. They doesn't work on TYPO3 9.5!
+    Probably the code must be changed to get a running version on TYPO3 9.5.
+
 
 In this example extension is only one new property "subtitle" for the operation model. If you need more than this single field, you can add more in this way. Replace "newfield" with the name of your new property.
 
@@ -129,9 +136,7 @@ Add the field(s) to the database. Install the extension or use Install-Tool comp
     # Table structure for table 'tx_operations_domain_model_operation'
     #
     CREATE TABLE tx_operations_domain_model_operation (
-
         newfield varchar(255) DEFAULT '' NOT NULL,
-
     );
 
 Clear Install-Tool Cache and you should be able to see your new field(s) in the backend and after using the new field(s) in the fluid templates you can show them also in frontend. Please check your TypoScript and adapt fluid template paths.

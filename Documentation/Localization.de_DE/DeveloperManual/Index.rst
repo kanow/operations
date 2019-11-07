@@ -8,18 +8,17 @@
 
 .. _admin-manual:
 
-Developer Manual
-====================
+Für Entwickler
+==============
 
 
 Target group: **Developers**
 
 
-	
+
 .. toctree::
 	:maxdepth: 5
 	:titlesonly:
 	:glob:
 
 	Extending/Index
-	

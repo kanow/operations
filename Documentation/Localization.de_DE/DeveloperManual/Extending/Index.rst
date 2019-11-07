@@ -7,20 +7,27 @@
 
 .. _install:
 
-Extend operations
------------------
+====================
+Operations erweitern
+====================
 
 
-If you want to extend operations, there is an example extension on github.
+Es gibt eine Beispielextension auf Github mit der man `operations` um ein neues Feld/Eigenschaft erweitern kann.
 
 `extend_operations <https://github.com/kanow/extend_operations>`_
 
-In this example extension is only one new property "subtitle" for the operation model. If you need more than this single field, you can add more in this way. Replace "newfield" with the name of your new property.
+.. note::
+
+    Diese Extension ist schon etwas älter und läuft nur unter TYPO3 8, nicht unter 9.5!
+    Wahrscheinlich müsst ihr die Extension anpassen, damit sie unter 9.5 läuft.
+
+Wenn euch ein Feld/Eigenschaft fehlt, könnt ihr das mit solch einer Extension nachrüsten.
+In dieser Beispielextension wird das Model "operation" (der Einsatz) mit einer zusätzlichen Eigenschaft "subtitle" (Untertitel) erweitert. Wenn ihr mehr Felder/Eigenschaften braucht könnt ihr natürlich mehr Felder in der gleichen Art und Weise hinzufügen. Ersetzt "newfield" mit dem Namen eurer neuen Eigenschaft.
 
 Classes/Domain/Model/Operation.php
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Add the new property with getter and setter in the operation model. You can do this in the same way for the other models too.
+Neue Getter und Setter hinzufügen. In der gleichen Art könnt ihr das auch für ein anderes Model tun.
 
 .. code-block:: php
 
@@ -59,7 +66,7 @@ Add the new property with getter and setter in the operation model. You can do t
 Configuration/TCA/Overrides/tx_operations_domain_model_operation.php
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Write the TCA definition to show the new field in backend.
+TCA Konfiguration für die Anzeige der Felder im Backend.
 
 .. code-block:: php
 
@@ -98,7 +105,7 @@ Write the TCA definition to show the new field in backend.
 Resources/Private/Language/locallang_db.xlf
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Add a key for the new field in the locallang file.
+Locallang Key für die Übersetzungen der Feldnamen im Backend.
 
 .. code-block:: xml
 
@@ -121,7 +128,8 @@ Add a key for the new field in the locallang file.
 ext_tables.sql
 ^^^^^^^^^^^^^^
 
-Add the field(s) to the database. Install the extension or use Install-Tool compare to add the new fields.
+Neue Felder für die Datenbank. Installiert die Extension oder nutzt den Datenbank Compare im Install-Tool um die neuen Felder
+ nun auch hinzuzufügen.
 
 .. code-block:: sql
 
@@ -129,9 +137,7 @@ Add the field(s) to the database. Install the extension or use Install-Tool comp
     # Table structure for table 'tx_operations_domain_model_operation'
     #
     CREATE TABLE tx_operations_domain_model_operation (
-
         newfield varchar(255) DEFAULT '' NOT NULL,
-
     );
 
-Clear Install-Tool Cache and you should be able to see your new field(s) in the backend and after using the new field(s) in the fluid templates you can show them also in frontend. Please check your TypoScript and adapt fluid template paths.
+Leert den Cache im Install-Tool um die neuen Felder im Backend zu sehen. Später könnt ihr die neuen Daten auch im Fluid Template ausgeben lassen. Prüft dazu auch das TypoScript und passt ggf. die Template Pfade an.

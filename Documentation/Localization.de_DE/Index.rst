@@ -56,6 +56,7 @@ Verwaltung von Feuerwehreinsätzen in einer TYPO3 Webseite. Detaillierte Bericht
    Installation/Index
    Configuration/Index
    BestPractice/Index
+   DeveloperManual/Index
    Migration/Index
    Changelog/Index
    Sitemap
