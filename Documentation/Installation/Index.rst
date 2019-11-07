@@ -23,7 +23,7 @@ Download the extension in ExtensionManager in TYPO3 backend or get it
 
    git clone git@github.com:kanow/operations.git
 
-- download zip file from https://extensions.typo3.org/extension/operations/
+- download zip file from https://extensions.typo3.org/extension/operations/ and upload those file in extension manager.
 
 
 

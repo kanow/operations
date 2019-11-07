@@ -11,13 +11,14 @@
 Migration
 =========
 
-Migrate after changing image to media in 3.0.0
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Migration nach Änderung Feld image nach media
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Please backup your database before excute the following commands! There is no warranty for correct working!
+Achtung, bitte unbedingt die Datenbanktabellen von `operations` einmal vorher sichern. Ich übernehme keine Garantie für die Richtigkeit dieser SQL Anweisungen.
+
+Die nachfolgenden SQL Anweisungen schreiben die Angaben von image nach media in den `operations` Datenbanktabellen und die Feldnamen in der sys_file_reference Tabelle um.
 
 .. code-block:: sql
-    :linenos:
 
     UPDATE tx_operations_domain_model_operation LEFT JOIN sys_file_reference ON sys_file_reference.uid_foreign=tx_operations_domain_model_operation.uid AND sys_file_reference.tablenames='tx_operations_domain_model_operation' AND sys_file_reference.fieldname='image' SET tx_operations_domain_model_operation.media=tx_operations_domain_model_operation.image, tx_operations_domain_model_operation.image=0, sys_file_reference.fieldname='media' WHERE tx_operations_domain_model_operation.image > 0;
 

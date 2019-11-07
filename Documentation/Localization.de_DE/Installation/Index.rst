@@ -25,7 +25,7 @@ Andere Möglichkeiten sind:
 
    git clone git@github.com:kanow/operations.git
 
-- oder auch eine Zip Datei aus dem TER (TYPO3 Extensions Repository) laden https://extensions.typo3.org/extension/operations/
+- oder auch eine Zip Datei aus dem TER (TYPO3 Extensions Repository) laden https://extensions.typo3.org/extension/operations/ und diese dann direkt im Extension Manager im Backend hochladen.
 
 
 

@@ -12,18 +12,44 @@
 Änderungen
 ==========
 
-Update to 3.1.0
-====================================
+Update auf 3.2.0
+===============
 
-Some little bugfixes. Add a new plugin to display statistics in frontend.
+Kategorien
+^^^^^^^^^^
 
-Update to 3.0.0 from a version below
-====================================
+Ihr könnt nun Kategorien zur Einteilung der Einsatzdaten benutzen. Damit könnt ihr die Einsatzdaten für Haupt- und Unterwachen strukturieren und die Listen auch entsprechend im Frontend ausgeben.
 
-Setting for storagePid (sysfolder)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Momentan ist nur eine flache Hierachie bei den Kategorien möglich. Verschachtelungen / Unterkategorien werden bei der Ausgabe nicht beachtet. Das heißt, wenn eine Kategorie im Flexform für die Anzeige ausgewählt ist, kommen nur Einsätze mit dieser Kategorie raus. Zugewiesene Kind-Kategorien haben da keine Auswirkungen.
 
-Configuring the storagePid has changed. The old flexform setting `storageFolder` is not longer used. The TypoScript setting `persistence.storagePid` is the proper setting. In plugin element the core feature "Record storage Page [pages]" is used to override those setting in TypoScript. Now it's working correct with an general storagePid in TypoScript setup and overriding those value on a special page with the plugin setting. If you use the RecordStoragePage field in plugin element, the recursive setting from plugin is active. If not, then the recursive setting from TypoScript is active.
+Ihr habt die Möglichkeit im Page TS-Config eine Root-Kategorie (ID) festzulegen. Damit kann man die Kategorieliste bzw. deren Startpunkt im Flexform des Operation Plugins einschränken.
+
+.. code-block:: typoscript
+
+    tx_operations {
+        categoryRootId = 4
+    }
+
+Extra Linkfeld bei Fahrzeugen und Hilfsmitteln
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Außerdem kann man jetzt bei den Daten für Fahrzeuge und Hilfsmittel einen extra Link angeben, der die Einzelansicht ersetzen kann. Damit kann man statt der automatischen Verlinkung auf die Fahrzeugeinzelansicht einfach eine andere Seite als Ziel angeben. Auch ein externer Link ist möglich. Die Templates für die Listansicht der Fahrzeuge und Hilfsmittel sowie die kleine Liste in der Einsatz-Einzelansicht wurden dahingehend angepasst.
+
+Und auch in dieser Version kleinere Fehlerbehebungen.
+
+Update auf 3.1.0
+================
+
+Kleinere Fehlerbehebungen. Neuer Plugintyp für Statistiken Anzeige im Frontend.
+
+Update auf 3.0.0
+================
+
+Änderung der Einstellung für Ordner mit Datensätzen (Sysordner)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Die Konfiguration für den Speicherort/SysOrdner im Backend der Einsatzdaten hat sich geändert. Die alte Einstellung `storageFolder` wir nicht mehr genutzt. Die neue Einstellung  ist: `persistence.storagePid` im TypoScript. Im Plugin stellt ihr nun mit der Standardeinstellung von TYPO3 `Datensatzsammlung` ein. Mit dieser Änderung funktioniert jetzt auch die Überschreibung der Angabe der `storagePid` im TypoScript mit der im Plugin eingestellten Einstellung.
+Wenn die Einstellung `Datensatzsammlung` im Plugin genutzt wird, greift auch die Plugin-Einstellung für das Recursive Level.
 
 .. code-block:: typoscript
 
@@ -34,30 +60,36 @@ Configuring the storagePid has changed. The old flexform setting `storageFolder`
         }
     }
 
-It's recommend to set this in constant editor, not directly in TypoScript setup.
+.. tip::
+
+    Setzt diese Einstellung als generelle Einstellung in den Konstanten bzw. im Konstanten Editor von TYPO3.
 
 
-Settings for images
-^^^^^^^^^^^^^^^^^^^
+Änderung der Einstellungen für Bilder
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Many settings for images are changed into `media` settings. They are renamed as follows::
+Einige Einstellungen für Bilder wurden umbenannt in `media`. Sie wurden wie folgt umbenannt::
 
     settings.listImgWidth -> settings.listMediaWidth
     settings.showImgInList -> settings.showMediaInList
 
-Have a look at the new TypoScript setup in `configuration/TypoScript/setup.txt`.
+Schaut euch einfach mal das TypoScript in `configuration/TypoScript/setup.txt` an. Dort findet ihr die Änderungen.
 
-Database migration for images to media
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Datenbankmigration der `images` nach `media`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-See at the Migration page in documentation. :ref:`migration`
+Siehe Seite Migration hier in der Doku :ref:`migration`
 
 
-Detailed changelog with git log
-===============================
+Ausführliche Liste mit Hilfe des Git-Logs
+========================================================
 
-Clone the github repository and use following command to get a detailed list of the commits. Replace the version number in the command (2.0.2) with the number of version you are using before updating.
+Klont das Github Repository von 'operations' und nutzt das folgende Kommando um eine Lsite der Commits zu bekommen. Ersetzt die Versionsnummer in dem Beispiel mit der Nummer der Version die ihr momentan benutzt.
 
 `git log 2.0.2..HEAD --abbrev-commit --pretty='%ad %s (Commit %h by %an)' --date=short`
 
-Replace the word *HEAD* with another version, if you want to see the commits between this two versions.
+Wenn ihr das Wort *HEAD* mit einer Versionsnummer ersetzt, könnt ihr die Commits zwischen zwei Versionen anzeigen lassen.
+
+.. tip::
+
+    Ich versuche Commits mit "Breaking Changes" immer mit [!!!] zu kennzeichnen. Das hilft bei der Orientierung ob beim Update etwas kaputt gehen kann.
