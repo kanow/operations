@@ -12,6 +12,11 @@
 Änderungen
 ==========
 
+Update auf 3.2.2
+================
+
+Behebt einen Fehler wenn Concatenation für JS und CSS Datein im TYPO3 aktiviert ist.
+
 Update auf 3.2.0
 ================
 
