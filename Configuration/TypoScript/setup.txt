@@ -59,11 +59,11 @@ plugin.tx_operations {
 
 page {
 	includeJSLibs {
-		leaflet = //unpkg.com/leaflet@1.4.0/dist/leaflet.js
+		leaflet = https://unpkg.com/leaflet@1.4.0/dist/leaflet.js
 		leaflet.external = 1
 	}
 	includeCSSLibs {
-		leaflet = //unpkg.com/leaflet@1.4.0/dist/leaflet.css
+		leaflet = https://unpkg.com/leaflet@1.4.0/dist/leaflet.css
 		leaflet.external = 1
 	}
 	includeCSS {

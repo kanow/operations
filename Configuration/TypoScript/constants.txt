@@ -9,7 +9,7 @@ plugin.tx_operations {
 	# cat=tx_operations-templating/template/030/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.css
 	css = EXT:operations/Resources/Public/Css/operations.css
 	# cat=tx_operations-templating/template/045/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.jquery
-	jquery = //ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
+	jquery = https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
 
 	view {
 		# cat=tx_operations-templating/template/010/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.templateRootPath
