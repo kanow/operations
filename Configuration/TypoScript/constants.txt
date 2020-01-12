@@ -59,14 +59,27 @@ plugin.tx_operations {
 		# cat=tx_operations-media-settings/media/250/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.increaseImage
 		increaseImage = 1
 
-		# cat=tx_operations-media-settings/media/255/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidthVehicle
-		listMediaWidthVehicle = 320
-		# cat=tx_operations-media-settings/media/256/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeightVehicle
-		listMediaHeightVehicle =
-		# cat=tx_operations-media-settings/media/257/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidthResources
+
 		listMediaWidthResource = 320
 		# cat=tx_operations-media-settings/media/258/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeightResources
 		listMediaHeightResource =
+
+		list {
+			vehicles {
+				media {
+					# cat=tx_operations-media-settings/media/255/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidthVehicle
+					width = 100
+					# cat=tx_operations-media-settings/media/256/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeightVehicle
+					height =
+				}
+				# cat=tx_operations-media-settings/media/257/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidthResources
+				defaultImage {
+					# cat=tx_operations-media-settings/media/265/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listVehiclesDefaultImagePath
+					path = EXT:operations/Resources/Public/Icons/tx_operations_vehicle.svg
+					attribution =
+				}
+			}
+		}
 
 		paginate {
 			# cat=tx_operations-list-settings/paginate/310/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.insertAbove

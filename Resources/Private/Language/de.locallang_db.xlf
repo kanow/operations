@@ -508,6 +508,10 @@
 				<source>Media height resources:Media height in list view of resources</source>
 				<target>Medienhöhe Hilfsmittel:Medienhöhe in der Listansicht der Hilfsmittel</target>
 			</trans-unit>
+			<trans-unit id="tsc.listVehiclesDefaultImagePath">
+				<source>Fallback image for vehicles list view:Image that will be shown in the list of vehicles, if no media is in vehicle data.</source>
+				<target>Standardbild für Fahrzeugliste:Bild in der Fahrzeugliste wenn der Fahrzeugdatensatz kein Bild hat.</target>
+			</trans-unit>
 
 			<trans-unit id="tsc.itemsPerPage">
 				<source>Items per page:Items per page in listview</source>

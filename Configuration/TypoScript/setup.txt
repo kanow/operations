@@ -35,8 +35,7 @@ plugin.tx_operations {
 		singleMediaWidth = {$plugin.tx_operations.settings.singleMediaWidth}
 		singleMediaHeight = {$plugin.tx_operations.settings.singleMediaHeight}
 		increaseImage = {$plugin.tx_operations.settings.increaseImage}
-		listMediaWidthVehicle = {$plugin.tx_operations.settings.listMediaWidthVehicle}
-		listMediaHeightVehicle = {$plugin.tx_operations.settings.listMediaHeightVehicle}
+
 		listMediaWidthResources = {$plugin.tx_operations.settings.listMediaWidthResource}
 		listMediaHeightResources = {$plugin.tx_operations.settings.listMediaHeightResource}
 		cropTeaser = 150
@@ -44,7 +43,16 @@ plugin.tx_operations {
 		sortBy = begin
 		lastYears = {$plugin.tx_operations.settings.lastYears}
 		list {
-
+			vehicles {
+				media {
+					width = {$plugin.tx_operations.settings.list.vehicles.media.width}
+					height = {$plugin.tx_operations.settings.list.vehicles.media.height}
+				}
+				defaultImage {
+					path = {$plugin.tx_operations.settings.list.vehicles.defaultImage.path}
+					attribution = {$plugin.tx_operations.settings.list.vehicles.defaultImage.attribution}
+				}
+			}
 		}
 		single {
 			showNoReport = 1

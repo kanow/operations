@@ -6,10 +6,10 @@
 
 <f:section name="main">
 	<f:flashMessages />
-	<div class="list vehicles">
-	<ul class="clearfix">
+	<div class="vehicles__list">
+	<ul class="clearfix list-items">
 		<f:for each="{vehicles}" as="vehicle" iteration="oIterator">
-			<li class="clearfix {f:if(condition:'{oIterator.isOdd}',then:' odd')}">
+			<li class="clearfix {f:if(condition:'{oIterator.isOdd}',then:' odd')} vehicles__list--item">
                 <f:if condition="{vehicle.link}">
                     <f:then>
                         <f:link.typolink parameter="{vehicle.link}">
@@ -29,10 +29,19 @@
 </f:section>
 
 <f:section name="content">
-    <div class="left">{vehicle.title}<f:if condition="{vehicle.short}"><span class="short"> ({vehicle.short})</span></f:if></div>
-    <f:if condition="{vehicle.firstMedia}">
-        <figure class="list-media">
-            <f:media file="{vehicle.firstMedia}" width="{settings.listImgWidthVehicle}" height="{settings.listImgHeightVehicle}" />
-        </figure>
-    </f:if>
+    <figure class="vehicles__list--media list-media">
+        <f:if condition="{vehicle.firstMedia}">
+            <f:then>
+                <f:media file="{vehicle.firstMedia}" width="{settings.list.vehicles.media.width}" height="{settings.list.vehicles.media.height}" />
+            </f:then>
+            <f:else if="{settings.list.vehicles.defaultImage.path}">
+                <f:image src="{settings.list.vehicles.defaultImage.path}" maxWidth="50" title="{f:translate(key:'list.vehicles.defaultImage.title')}" />
+                <figcaption>{settings.list.vehicles.defaultImage.attribution}</figcaption>
+            </f:else>
+        </f:if>
+    </figure>
+    <div class="vehicles__list--title">
+        <h3>{vehicle.title}<f:if condition="{vehicle.short}"><span class="short"> ({vehicle.short})</span></f:if></h3>
+        <p><f:format.crop maxCharacters="35" respectWordBoundaries="1"><f:format.stripTags>{vehicle.description}</f:format.stripTags></f:format.crop></p>
+    </div>
 </f:section>
