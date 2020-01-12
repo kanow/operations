@@ -39,3 +39,11 @@ The extension were written to manage firefighter operations in TYPO3 pages. The 
 
     If the extension is useful for you and you would like to support my work you can make a donation on paypal: `PayPal Donation <https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZFPCNRYPD2MGA&source=url>`_
 
+.. note::
+
+    Icons for data in backend:
+        - Icon for operation is designed by `Julián Humberto Corrales <https://www.thenounproject.com>`_
+        - Icon for resource is designed by `Antonio Vicién Faure <https://www.thenounproject.com/antoniopolonio>`_
+        - Icon for vehicle: "Firetruck" by Rohan Gupta from the `Noun Project<https://thenounproject.com/rohangupta1>`_
+        - Icon for assistance is designed by `James Keuning <https://www.thenounproject.com/jmkeuning>`_
+        - Icon for operation type is designed by `Alan Hussey <https://www.thenounproject.com/alanhussey>`_
