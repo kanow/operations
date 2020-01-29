@@ -368,14 +368,17 @@
 			<trans-unit id="tsc.listMediaHeightVehicle">
 				<source>Media height vehicles:Media height in list view of vehicles</source>
 			</trans-unit>
-			<trans-unit id="tsc.listMediaWidthResources">
+			<trans-unit id="tsc.listMediaWidthResource">
 				<source>Media width resources:Media width in list view of resources</source>
 			</trans-unit>
-			<trans-unit id="tsc.listMediaHeightResources">
+			<trans-unit id="tsc.listMediaHeightResource">
 				<source>Media height resources:Media height in list view of resources</source>
 			</trans-unit>
 			<trans-unit id="tsc.listVehiclesDefaultImagePath">
-				<source>Fallback image for vehicles list view:Image that will be shown in the list of vehicles, if no media is in vehicle data.</source>
+				<source>Fallback image for vehicles list view:Image that will be shown in the list of vehicles, if no media is available.</source>
+			</trans-unit>
+			<trans-unit id="tsc.listResourcesDefaultImagePath">
+				<source>Fallback image for resources list view:Image that will be shown in the list of resources, if no media is available.</source>
 			</trans-unit>
 
 			<trans-unit id="tsc.itemsPerPage">

@@ -72,10 +72,24 @@ plugin.tx_operations {
 					# cat=tx_operations-media-settings/media/256/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeightVehicle
 					height =
 				}
-				# cat=tx_operations-media-settings/media/257/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidthResources
+				# cat=tx_operations-media-settings/media/257/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidthVehicle
 				defaultImage {
 					# cat=tx_operations-media-settings/media/265/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listVehiclesDefaultImagePath
 					path = EXT:operations/Resources/Public/Icons/tx_operations_vehicle.svg
+					attribution =
+				}
+			}
+			resources {
+				media {
+					# cat=tx_operations-media-settings/media/255/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidthResource
+					width = 100
+					# cat=tx_operations-media-settings/media/256/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeightResource
+					height =
+				}
+				# cat=tx_operations-media-settings/media/257/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidthResource
+				defaultImage {
+					# cat=tx_operations-media-settings/media/265/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listResourcesDefaultImagePath
+					path = EXT:operations/Resources/Public/Icons/tx_operations_resource.svg
 					attribution =
 				}
 			}

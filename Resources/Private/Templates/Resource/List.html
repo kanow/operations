@@ -5,10 +5,10 @@
 
 <f:section name="main">
 	<f:flashMessages />
-	<div class="list resources">
-		<ul class="clearfix">
+	<div class="resources__list">
+		<ul class="clearfix list-items">
 			<f:for each="{resources}" as="resource" iteration="oIterator">
-				<li class="clearfix {f:if(condition:'{oIterator.isOdd}',then:' odd')}">
+				<li class="clearfix {f:if(condition:'{oIterator.isOdd}',then:' odd')} resources__list--item">
                     <f:if condition="{resource.link}">
                         <f:then>
                             <f:link.typolink parameter="{resource.link}">
@@ -28,10 +28,19 @@
 </f:section>
 
 <f:section name="content">
-    <div class="left">{resource.title}<f:if condition="{resource.short}"><span class="short"> ({resource.short})</span></f:if></div>
-    <f:if condition="{resource.firstMedia}">
-        <div class="list-media">
-            <f:media file="{resource.firstMedia}" width="{settings.listImgWidthResources}" height="{settings.listImgHeightResources}" />
-        </div>
-    </f:if>
+    <figure class="resources__list--media list-media">
+        <f:if condition="{resource.firstMedia}">
+            <f:then>
+                <f:media file="{resource.firstMedia}" width="{settings.list.resources.media.width}" height="{settings.list.resources.media.height}" />
+            </f:then>
+            <f:else if="{settings.list.resources.defaultImage.path}">
+                <f:image src="{settings.list.resources.defaultImage.path}" maxWidth="50" title="{f:translate(key:'list.resources.defaultImage.title')}" />
+                <figcaption>{settings.list.resources.defaultImage.attribution}</figcaption>
+            </f:else>
+        </f:if>
+    </figure>
+    <div class="resources__list--title">
+        <h3>{resource.title}<f:if condition="{resource.short}"><span class="short"> ({resource.short})</span></f:if></h3>
+        <p><f:format.crop maxCharacters="35" respectWordBoundaries="1"><f:format.stripTags>{resource.description}</f:format.stripTags></f:format.crop></p>
+    </div>
 </f:section>

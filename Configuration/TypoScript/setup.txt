@@ -53,6 +53,16 @@ plugin.tx_operations {
 					attribution = {$plugin.tx_operations.settings.list.vehicles.defaultImage.attribution}
 				}
 			}
+			resources {
+				media {
+					width = {$plugin.tx_operations.settings.list.resources.media.width}
+					height = {$plugin.tx_operations.settings.list.resources.media.height}
+				}
+				defaultImage {
+					path = {$plugin.tx_operations.settings.list.resources.defaultImage.path}
+					attribution = {$plugin.tx_operations.settings.list.resources.defaultImage.attribution}
+				}
+			}
 		}
 		single {
 			showNoReport = 1
