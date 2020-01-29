@@ -68,6 +68,7 @@ page {
 	}
 	includeCSS {
 		operations = {$plugin.tx_operations.css}
+		map = EXT:operations/Resources/Public/Css/map.css
 	}
 	includeJSFooter {
 		jquery = {$plugin.tx_operations.jquery}
