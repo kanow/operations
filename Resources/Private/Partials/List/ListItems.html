@@ -3,7 +3,7 @@
 
 <ul class="list-items">
 	<f:for each="{operations}" as="operation" iteration="oIterator">
-		<li class="list-item{f:if(condition:'{oIterator.isOdd}',then:' odd')}">
+		<li class="operations__list--item{f:if(condition:'{oIterator.isOdd}',then:' odd')}">
 			<f:render partial="List/Item" arguments="{operation: operation, settings:settings}" />
 		</li>
 	</f:for>

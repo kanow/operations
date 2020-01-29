@@ -2,7 +2,8 @@
 	  data-namespace-typo3-fluid="true">
 
 <f:link.action action="show" arguments="{operation:operation}" pageUid="{settings.operationSinglePid}">
-	<div class="meta">
+
+	<div class="operations__list--meta">
 		<f:if condition="{operation.begin}">
 		<span>
 			<f:if condition="{operation.begin}">
@@ -23,31 +24,39 @@
         </f:if>
 	</div>
 
-	<div class="left">
-		<h2>
-			<span class="number">[{operation.number}]</span>
-				{operation.title}
-		</h2>
-		<f:if condition="{operation.teaser}">
-			<f:then>
-				<div class="teaser">
-					<f:format.crop maxCharacters="{settings.cropTeaser}" append="…">{operation.teaser}</f:format.crop>
-				</div>
-			</f:then>
-			<f:else>
-				<f:if condition="{operation.report}">
-					<div class="teaser">
-						<f:format.crop maxCharacters="{settings.cropTeaser}" append="…"><f:format.stripTags>{operation.report}</f:format.stripTags></f:format.crop>
-					</div>
-				</f:if>
-			</f:else>
-		</f:if>
+    <f:if condition="{settings.showMediaInList}">
+        <f:if condition="{operation.firstMedia}">
+            <figure class="operations__list--media list-media">
+                <f:media file="{operation.firstMedia}" width="{settings.listMediaWidth}" height="{settings.listMediaHeight}" />
+            </figure>
+        </f:if>
+    </f:if>
+
+	<div class="operations__list--title">
+		<h2>{operation.title}</h2>
 	</div>
-	<f:if condition="{settings.showMediaInList}">
-		<f:if condition="{operation.firstMedia}">
-			<figure class="list-media">
-				<f:media file="{operation.firstMedia}" width="{settings.listMediaWidth}" height="{settings.listMediaHeight}" />
-			</figure>
-		</f:if>
-	</f:if>
+
+    <f:if condition="{operation.teaser}">
+        <f:then>
+            <f:render section="teaser" arguments="{teaser:operation.teaser}" />
+        </f:then>
+        <f:else>
+            <f:render section="teaser" arguments="{teaser:operation.report, maxCharacters: settings.cropTeaser}" />
+        </f:else>
+    </f:if>
 </f:link.action>
+
+<f:section name="teaser">
+    <div class="operations__list--teaser">
+        <p>
+            <f:if condition="{maxCharacters}">
+                <f:then>
+                    <f:format.crop maxCharacters="{maxCharacters}" append="…">{teaser -> f:format.stripTags()}</f:format.crop>
+                </f:then>
+                <f:else>
+                    {teaser -> f:format.stripTags()}
+                </f:else>
+            </f:if>
+        </p>
+    </div>
+</f:section>
