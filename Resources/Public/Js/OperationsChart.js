@@ -1,7 +1,7 @@
 function generateLabelsFromTable(chartId)
 {
     var labels = [];
-    var rows = $("." + chartId + ".dataset .label");
+    var rows = $("." + chartId + ".dataset .chart-label");
     rows.each(function(){
         labels.push($(this).text());
     });
