@@ -5,9 +5,11 @@
 
 <f:section name="main">
 	<f:flashMessages />
-	<div class="single clearfix">
-		<h1 class="csc-firstHeader"><span class="number">{operation.number}</span>{operation.title}</h1>
+	<div class="operations__show clearfix">
 		<f:render partial="Operation/Properties" arguments="{operation:operation}" />
-		<a href="javascript:history.back()" class="backToList"><f:translate key="backToList" /></a>
+
 	</div>
+    <div class="operations__show--backlink">
+    <a href="javascript:history.back()" class="operations__show--backlink"><f:translate key="backToList" /></a>
+</div>
 </f:section>
