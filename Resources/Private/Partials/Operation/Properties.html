@@ -4,11 +4,10 @@
 
 
 <div class="operations__show--main">
-
     <header class="operations__show--header">
         <h1>{operation.title}</h1>
     </header>
-<hr />
+    <hr />
     <f:if condition="{operation.report}">
         <f:then>
             <div class="operations__show--report">
@@ -51,8 +50,53 @@
         </div>
     </f:if>
 
+
+</div>
+
+<div class="operations__show--aside">
+
+    <div class="operations__show--aside-number">
+        <span class="text"><f:translate key="tx_operations_domain_model_operation.number" /></span><span class="number">{operation.number}</span>
+    </div>
+    <div class="operations__show--aside-meta">
+        <f:if condition="{operation.assignedType}">
+            <h3><f:translate key="tx_operations_domain_model_operation.type" /></h3>
+            <p>{operation.assignedType.title}</p>
+        </f:if>
+
+        <f:if condition="{operation.begin}">
+            <h3><f:translate key="meta.operation-time">Einsatzzeit</f:translate></h3>
+            <p class="operations__show--aside-time"><f:translate key="meta.operation-begin" default="Beginn" />: <span>{operation.begin -> f:format.date(format:'d.m.Y, H:i \U\h\r')}</span></p>
+            <f:if condition="{operation.end}">
+                <p class="operations__show--aside-time"><f:translate key="meta.operation-end" default="Ende"/>: <span>{operation.end -> f:format.date(format:'d.m.Y, H:i \U\h\r')}</span></p>
+            </f:if>
+        </f:if>
+
+        <f:if condition="{operation.location}">
+            <h3><f:translate key="tx_operations_domain_model_operation.location" /></h3>
+            <p>{operation.location}</p>
+        </f:if>
+        <f:if condition="{operation.longitude}">
+            <f:variable name="mapFolder" value="{f:uri.resource(extensionName: 'operations', path: 'Js/map/', absolute: 1)}" />
+            <div id="leaflet-map" class="leaflet-map single operations__show--aside-map"
+                 data-map="{f:format.json(forceObject: false,value: {mapFolder:mapFolder,zoomControl:0})}"
+                 data-marker="{f:format.json(value:{
+                    title:operation.location,
+                    lat: operation.latitude,
+                    lng: operation.longitude
+                    })}">
+                <noscript><p><f:translate key="map.noscript">Please activate javascript for map</f:translate></p></noscript>
+            </div>
+        </f:if>
+
+        <f:if condition="{operation.category}">
+            <h3><f:translate key="meta.category" default="Kategorie" /></h3>
+            <p><f:render partial="Operation/Category" arguments="{category:operation.category}" /></p>
+        </f:if>
+    </div>
+
     <f:if condition="{operation.vehicles}">
-        <div class="operations__show--main-info">
+        <div class="operations__show--aside-info">
             <h3><f:translate key="tx_operations_domain_model_operation.vehicles" /></h3>
             <ul class="clearfix list-items">
                 <f:for each="{operation.vehicles}" as="item" iteration="count">
@@ -76,7 +120,7 @@
     </f:if>
 
     <f:if condition="{operation.resources}">
-        <div class="operations__show--main-info">
+        <div class="operations__show--aside-info">
             <h3><f:translate key="tx_operations_domain_model_operation.resources" /></h3>
             <ul class="clearfix list-items">
                 <f:for each="{operation.resources}" as="item" iteration="count">
@@ -100,7 +144,7 @@
     </f:if>
 
     <f:if condition="{operation.assistance}">
-        <div class="operations__show--main-info">
+        <div class="operations__show--aside-info">
             <h3><f:translate key="tx_operations_domain_model_operation.assistance" /></h3>
             <p>
                 <f:for each="{operation.assistance}" as="assistance" iteration="count">
@@ -116,48 +160,6 @@
             </p>
         </div>
     </f:if>
-</div>
-
-<div class="operations__show--aside">
-
-    <div class="operations__show--aside-number">
-        <span class="text"><f:translate key="tx_operations_domain_model_operation.number" /></span><span class="number">{operation.number}</span></div>
-    <div class="operations__show--aside-meta">
-
-        <f:if condition="{operation.assignedType}">
-            <h4><f:translate key="tx_operations_domain_model_operation.type" /></h4>
-            <p>{operation.assignedType.title}</p>
-        </f:if>
-        <f:if condition="{operation.begin}">
-            <h4><f:translate key="meta.operation-time">Einsatzzeit</f:translate></h4>
-            <p class="operations__show--aside-time"><f:translate key="meta.operation-begin" default="Beginn" />: <span>{operation.begin -> f:format.date(format:'d.m.Y, H:i \U\h\r')}</span></p>
-            <f:if condition="{operation.end}">
-                <p class="operations__show--aside-time"><f:translate key="meta.operation-end" default="Ende"/>: <span>{operation.end -> f:format.date(format:'d.m.Y, H:i \U\h\r')}</span></p>
-            </f:if>
-        </f:if>
-
-        <f:if condition="{operation.location}">
-            <h4><f:translate key="tx_operations_domain_model_operation.location" /></h4>
-            <p>{operation.location}</p>
-        </f:if>
-        <f:if condition="{operation.longitude}">
-            <f:variable name="mapFolder" value="{f:uri.resource(extensionName: 'operations', path: 'Js/map/', absolute: 1)}" />
-            <div id="leaflet-map" class="leaflet-map single operations__show--aside-map"
-                 data-map="{f:format.json(forceObject: false,value: {mapFolder:mapFolder,zoomControl:0})}"
-                 data-marker="{f:format.json(value:{
-                    title:operation.location,
-                    lat: operation.latitude,
-                    lng: operation.longitude
-                    })}">
-                <noscript><p><f:translate key="map.noscript">Please activate javascript for map</f:translate></p></noscript>
-            </div>
-        </f:if>
-
-        <f:if condition="{operation.category}">
-            <h4><f:translate key="meta.category" default="Kategorie" /></h4>
-            <p><f:render partial="Operation/Category" arguments="{category:operation.category}" /></p>
-        </f:if>
-    </div>
 </div>
 
 <f:section name="link-text">
