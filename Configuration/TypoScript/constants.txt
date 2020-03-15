@@ -47,13 +47,13 @@ plugin.tx_operations {
 		resourceSinglePid =
 
 		# cat=tx_operations-media-settings/media/200/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidth
-		listMediaWidth = 100c
+		listMediaWidth = 250c
 		# cat=tx_operations-media-settings/media/210/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeight
-		listMediaHeight = 65
+		listMediaHeight = 188
 		# cat=tx_operations-media-settings/media/220/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.singleMediaWidth
-		singleMediaWidth = 225c
+		singleMediaWidth = 260c
 		# cat=tx_operations-media-settings/media/230/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.singleMediaHeight
-		singleMediaHeight = 180
+		singleMediaHeight = 195
 		# cat=tx_operations-media-settings/media/240/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.showMediaInList
 		showMediaInList = 1
 		# cat=tx_operations-media-settings/media/250/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.increaseImage
