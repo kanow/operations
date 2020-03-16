@@ -24,6 +24,10 @@
         </f:if>
 	</div>
 
+    <div class="operations__list--title">
+        <h2>{operation.title}</h2>
+    </div>
+
     <f:if condition="{settings.showMediaInList}">
         <f:if condition="{operation.firstMedia}">
             <figure class="operations__list--media list-media">
@@ -32,11 +36,7 @@
         </f:if>
     </f:if>
 
-	<div class="operations__list--title">
-		<h2>{operation.title}</h2>
-	</div>
-
-    <f:if condition="{operation.teaser}">
+	<f:if condition="{operation.teaser}">
         <f:then>
             <f:render section="teaser" arguments="{teaser:operation.teaser}" />
         </f:then>
