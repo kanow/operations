@@ -6,19 +6,19 @@
 
 <f:section name="main">
     <f:flashMessages/>
-    <div class="operations stats">
+    <div class="operations__statistics">
 
         <h1>{f:translate(key:"statistic.header")}</h1>
         <f:if condition="{operationsGroupedByYearAndType}">
             <f:then>
                 <h3>{f:translate(key:"statistics.sum.header")}</h3>
-                <table>
-                    <f:for as="sum" each="{operationsGroupedByYear}"><tr><th>{sum.year}</th><td>{sum.count}</td></tr></f:for>
+                <table class="operations__statistics--summary unstriped hover">
+                    <f:for as="sum" each="{operationsGroupedByYear}"><tr><th class="text-left">{sum.year}</th><td class="text-left">{sum.count}</td></tr></f:for>
                 </table>
 
                 <h3>{f:translate(key:"statistics.dataTable.header")}</h3>
-                <table data-chart="operationsChart-{contentObjectData.uid}" class="operationsChart-{contentObjectData.uid} dataset">
-                    <thead><tr><th></th><f:for each="{years}" as="year"><th class="label">{year}</th></f:for></tr></thead>
+                <table data-chart="operationsChart-{contentObjectData.uid}" class="operationsChart-{contentObjectData.uid} dataset operations__statistics--data unstriped hover">
+                    <thead><tr><th></th><f:for each="{years}" as="year"><th class="chart-label">{year}</th></f:for></tr></thead>
                     <tbody>
                         <f:for each="{operationsGroupedByYearAndType}" as="item">
                             <tr class="data-row">

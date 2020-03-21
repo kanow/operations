@@ -1,0 +1,7 @@
+/* map canvas */
+.map {height:260px;/*width:225px;clear:right;float:right;*/}
+.map img {max-width:none;}
+.gm-style-iw, .gm-style-iw > div {overflow:hidden !important;line-height:1.3em;}
+/* list view */
+.leaflet-map {width:100%;height:450px;border:1px solid #f00;clear:both;}
+.leaflet-map.single {width:300px;height:200px;border:1px solid #f00;clear:both;}

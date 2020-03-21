@@ -265,6 +265,12 @@
                 <target>Keine Daten verfügbar</target>
             </trans-unit>
 
+            <trans-unit id="list.vehicles.defaultImage.title">
+                <source>Default image (vehicles) if no image available.</source>
+                <target>Standardbild (Fahrzeugliste), wenn kein Bild verfügbar ist.</target>
+            </trans-unit>
+
+
 		</body>
 	</file>
 </xliff>

@@ -500,13 +500,21 @@
 				<source>Media height vehicles:Media height in list view of vehicles</source>
 				<target>Medienhöhe Fahrzeuge:Medienhöhe in der Listansicht der Fahrzeuge</target>
 			</trans-unit>
-			<trans-unit id="tsc.listMediaWidthResources">
+			<trans-unit id="tsc.listMediaWidthResource">
 				<source>Media width resources:Media width in list view of resources</source>
 				<target>Medienbreite Hilfsmittel:Medienbreite in der Listansicht der Hilfsmittel</target>
 			</trans-unit>
-			<trans-unit id="tsc.listMediaHeightResources">
+			<trans-unit id="tsc.listMediaHeightResource">
 				<source>Media height resources:Media height in list view of resources</source>
 				<target>Medienhöhe Hilfsmittel:Medienhöhe in der Listansicht der Hilfsmittel</target>
+			</trans-unit>
+			<trans-unit id="tsc.listVehiclesDefaultImagePath">
+				<source>Fallback image for vehicles list view:Image that will be shown in the list of vehicles, if no media is available.</source>
+				<target>Standardbild für Fahrzeug:Bild in der Fahrzeugliste wenn kein Bild verfügbar ist.</target>
+			</trans-unit>
+			<trans-unit id="tsc.listResourcesDefaultImagePath">
+				<source>Fallback image for resources list view:Image that will be shown in the list of resources, if no media is available.</source>
+				<target>Standardbild für Hilfsmittel:Bild in der Hilfmittelliste wenn der Fahrzeugdatensatz kein Bild verfügbar ist.</target>
 			</trans-unit>
 
 			<trans-unit id="tsc.itemsPerPage">

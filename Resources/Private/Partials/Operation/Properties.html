@@ -1,155 +1,167 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
 	  data-namespace-typo3-fluid="true">
 
-<div class="right">
-	<div class="meta">
-        <f:if condition="{operation.assignedType}">
-            <p><f:translate key="tx_operations_domain_model_operation.type" />: {operation.assignedType.title}</p>
-        </f:if>
-		<f:if condition="{operation.location}">
-			<p><f:translate key="tx_operations_domain_model_operation.location" />:<br /><span>{operation.location}</span></p>
-		</f:if>
-		<f:if condition="{operation.begin}">
-			<p><f:translate key="tx_operations_domain_model_operation.begin" />:<br /><span>{operation.begin -> f:format.date(format:'d.m.Y, H:i \U\h\r')}</span></p>
-		</f:if>
-		<f:if condition="{operation.end}">
-			<p><f:translate key="tx_operations_domain_model_operation.end" />:<br /><span>{operation.end -> f:format.date(format:'d.m.Y, H:i \U\h\r')}</span></p>
-		</f:if>
-        <f:if condition="{operation.category}">
-            <f:render partial="Operation/Category" arguments="{category:operation.category}" />
-        </f:if>
-	</div>
 
-	<f:if condition="{operation.media}">
-		<div class="media">
-			<h2><f:translate key="tx_operations_domain_model_operation.media" /></h2>
-			<f:for each="{operation.allMedia}" as="media">
-				<figure>
-					<f:if condition="{media.originalResource.type} == 2 && {settings.increaseImage}">
-						<f:then>
-							<!-- @todo better lightbox settings and functionality -->
-							<a href="{media.originalResource.publicUrl}" title="{media.originalResource.alternative}" target="_blank">
-								<f:media file="{media}" width="{settings.singleMediaWidth}" height="{settings.singleMediaHeight}" />
-							</a>
-						</f:then>
-						<f:else>
-							<f:media file="{media}" width="{settings.singleMediaWidth}" height="{settings.singleMediaHeight}" />
-						</f:else>
-					</f:if>
-					<f:if condition="{media.originalResource.description}">
-					    <figcaption>{media.originalResource.description}</figcaption>
-					</f:if>
-				</figure>
-			</f:for>
-		</div>
-	</f:if>
 
-	<f:if condition="{operation.longitude}">
-		<f:variable name="mapFolder" value="{f:uri.resource(extensionName: 'operations', path: 'Js/map/', absolute: 1)}" />
-		<div id="leaflet-map" class="leaflet-map single"
-			 data-map="{f:format.json(forceObject: false,value: {mapFolder:mapFolder,zoomControl:0})}"
-			 data-marker="{f:format.json(value:{
-				title:operation.location,
-				lat: operation.latitude,
-				lng: operation.longitude
-				})}">
-			<noscript><p><f:translate key="map.noscript">Please activate javascript for map</f:translate></p></noscript>
-		</div>
-	</f:if>
+<div class="operations__show--main">
+    <header class="operations__show--header">
+        <h1>{operation.title}</h1>
+    </header>
+    <hr />
+    <f:if condition="{operation.report}">
+        <f:then>
+            <div class="operations__show--report">
+                <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{operation.report}</f:format.html>
+            </div>
+        </f:then>
+        <f:else>
+            <f:if condition="{settings.single.showNoReport}">
+                <div class="report layer">
+                    <p><f:translate key="noReport">Sorry, there is no report here</f:translate></p>
+                </div>
+            </f:if>
+        </f:else>
+    </f:if>
+
+    <f:if condition="{operation.media}">
+        <div class="operations__show--media">
+            <h2><f:translate key="tx_operations_domain_model_operation.media" /></h2>
+            <div class="operations__show--media-figure-wrap">
+                <f:for each="{operation.allMedia}" as="media">
+                    <figure>
+                        <f:if condition="{media.originalResource.type} == 2 && {settings.increaseImage}">
+                            <f:then>
+                                <!-- @todo better lightbox settings and functionality -->
+                                <a href="{media.originalResource.publicUrl}" title="{media.originalResource.alternative}" target="_blank">
+                                    <f:media file="{media}" width="{settings.singleMediaWidth}" height="{settings.singleMediaHeight}" />
+                                </a>
+                            </f:then>
+                            <f:else>
+                                <f:media file="{media}" width="{settings.singleMediaWidth}" height="{settings.singleMediaHeight}" />
+                            </f:else>
+                        </f:if>
+                        <f:if condition="{media.originalResource.description}">
+                            <figcaption>{media.originalResource.description}</figcaption>
+                        </f:if>
+                    </figure>
+                </f:for>
+            </div>
+
+        </div>
+    </f:if>
+
+
 </div>
 
-<f:if condition="{operation.report}">
-	<f:then>
-		<div class="report layer">
-			<h2><f:translate key="tx_operations_domain_model_operation.report" /></h2>
-			<f:format.html parseFuncTSPath="lib.parseFunc_RTE">{operation.report}</f:format.html>
-		</div>
-	</f:then>
-	<f:else>
-		<f:if condition="{settings.single.showNoReport}">
-			<div class="report layer">
-				<h2><f:translate key="tx_operations_domain_model_operation.report" /></h2>
-				<p><f:translate key="noReport">Sorry, there is no report here</f:translate></p>
-			</div>
-		</f:if>
-	</f:else>
-</f:if>
+<div class="operations__show--aside">
 
-<f:if condition="{operation.vehicles}">
-	<div class="vehicles layer">
-		<h2><f:translate key="tx_operations_domain_model_operation.vehicles" /></h2>
-		<ul>
-			<f:for each="{operation.vehicles}" as="vehicle" iteration="count">
-				<li>
-                    <f:if condition="{vehicle.link}">
+    <div class="operations__show--aside-number">
+        <span class="text"><f:translate key="tx_operations_domain_model_operation.number" /></span><span class="number">{operation.number}</span>
+    </div>
+    <div class="operations__show--aside-meta">
+        <f:if condition="{operation.assignedType}">
+            <h3><f:translate key="tx_operations_domain_model_operation.type" /></h3>
+            <p>{operation.assignedType.title}</p>
+        </f:if>
+
+        <f:if condition="{operation.begin}">
+            <h3><f:translate key="meta.operation-time">Einsatzzeit</f:translate></h3>
+            <p class="operations__show--aside-time"><f:translate key="meta.operation-begin" default="Beginn" />: <span>{operation.begin -> f:format.date(format:'d.m.Y, H:i \U\h\r')}</span></p>
+            <f:if condition="{operation.end}">
+                <p class="operations__show--aside-time"><f:translate key="meta.operation-end" default="Ende"/>: <span>{operation.end -> f:format.date(format:'d.m.Y, H:i \U\h\r')}</span></p>
+            </f:if>
+        </f:if>
+
+        <f:if condition="{operation.location}">
+            <h3><f:translate key="tx_operations_domain_model_operation.location" /></h3>
+            <p>{operation.location}</p>
+        </f:if>
+        <f:if condition="{operation.longitude}">
+            <f:variable name="mapFolder" value="{f:uri.resource(extensionName: 'operations', path: 'Js/map/', absolute: 1)}" />
+            <div id="leaflet-map" class="leaflet-map single operations__show--aside-map"
+                 data-map="{f:format.json(forceObject: false,value: {mapFolder:mapFolder,zoomControl:0})}"
+                 data-marker="{f:format.json(value:{
+                    title:operation.location,
+                    lat: operation.latitude,
+                    lng: operation.longitude
+                    })}">
+                <noscript><p><f:translate key="map.noscript">Please activate javascript for map</f:translate></p></noscript>
+            </div>
+        </f:if>
+
+        <f:if condition="{operation.category}">
+            <h3><f:translate key="meta.category" default="Kategorie" /></h3>
+            <p><f:render partial="Operation/Category" arguments="{category:operation.category}" /></p>
+        </f:if>
+    </div>
+
+    <f:if condition="{operation.vehicles}">
+        <div class="operations__show--aside-info">
+            <h3><f:translate key="tx_operations_domain_model_operation.vehicles" /></h3>
+            <ul class="clearfix list-items">
+                <f:for each="{operation.vehicles}" as="item" iteration="count">
+                    <li class="clearfix {f:if(condition:'{count.isOdd}',then:' odd')} operations__show--main-list-item">
+                        <f:if condition="{item.link}">
+                            <f:then>
+                                <f:link.typolink parameter="{item.link}">
+                                    <f:render section="link-text" arguments="{item:item}" />
+                                </f:link.typolink>
+                            </f:then>
+                            <f:else>
+                                <f:link.action  action="show" arguments="{vehicle:item}" controller="Vehicle" pageUid="{settings.vehicleSinglePid}">
+                                    <f:render section="link-text" arguments="{item:item}" />
+                                </f:link.action>
+                            </f:else>
+                        </f:if>
+                    </li>
+                </f:for>
+            </ul>
+        </div>
+    </f:if>
+
+    <f:if condition="{operation.resources}">
+        <div class="operations__show--aside-info">
+            <h3><f:translate key="tx_operations_domain_model_operation.resources" /></h3>
+            <ul class="clearfix list-items">
+                <f:for each="{operation.resources}" as="item" iteration="count">
+                    <li class="clearfix {f:if(condition:'{count.isOdd}',then:' odd')} operations__show--main-list-item">
+                        <f:if condition="{item.link}">
+                            <f:then>
+                                <f:link.typolink parameter="{item.link}">
+                                    <f:render section="link-text" arguments="{item:item}" />
+                                </f:link.typolink>
+                            </f:then>
+                            <f:else>
+                                <f:link.action  action="show" arguments="{resource:item}" controller="Vehicle" pageUid="{settings.resourceSinglePid}">
+                                    <f:render section="link-text" arguments="{item:item}" />
+                                </f:link.action>
+                            </f:else>
+                        </f:if>
+                    </li>
+                </f:for>
+            </ul>
+        </div>
+    </f:if>
+
+    <f:if condition="{operation.assistance}">
+        <div class="operations__show--aside-info">
+            <h3><f:translate key="tx_operations_domain_model_operation.assistance" /></h3>
+            <p>
+                <f:for each="{operation.assistance}" as="assistance" iteration="count">
+                    <f:if condition="{assistance.link}">
                         <f:then>
-                            <f:link.typolink parameter="{vehicle.link}">
-                                <f:render section="vehicle-link" arguments="{vehicle:vehicle}" />
-                            </f:link.typolink>
+                            <f:link.typolink parameter="{assistance.link}" target="_blank">{assistance.title}</f:link.typolink>{f:if(condition:count.isLast,else:', ')}
                         </f:then>
                         <f:else>
-                            <f:link.action  action="show" arguments="{vehicle:vehicle}" controller="Vehicle" pageUid="{settings.vehicleSinglePid}">
-                                <f:render section="vehicle-link" arguments="{vehicle:vehicle}" />
-                            </f:link.action>
+                            {assistance.title}{f:if(condition:count.isLast,else:', ')}
                         </f:else>
                     </f:if>
-				</li>
-			</f:for>
-		</ul>
-	</div>
-</f:if>
+                </f:for>
+            </p>
+        </div>
+    </f:if>
+</div>
 
-<f:if condition="{operation.resources}">
-	<div class="resources layer">
-		<h2><f:translate key="tx_operations_domain_model_operation.resources" /></h2>
-		<ul>
-			<f:for each="{operation.resources}" as="resource" iteration="count">
-				<li>
-                    <f:if condition="{resource.link}">
-                        <f:then>
-                            <f:link.typolink parameter="{resource.link}">
-                                <f:render section="resource-link" arguments="{resource:resource}" />
-                            </f:link.typolink>
-                        </f:then>
-                        <f:else>
-                            <f:link.action  action="show" arguments="{resource:resource}" controller="Resource" pageUid="{settings.resourceSinglePid}">
-                                <f:render section="resource-link" arguments="{resource:resource}" />
-                            </f:link.action>
-                        </f:else>
-                    </f:if>
-				</li>
-			</f:for>
-		</ul>
-	</div>
-</f:if>
-
-<f:if condition="{operation.assistance}">
-	<div class="assistance layer">
-		<h2><f:translate key="tx_operations_domain_model_operation.assistance" /></h2>
-		<p>
-			<f:for each="{operation.assistance}" as="assistance" iteration="count">
-				<f:if condition="{assistance.link}">
-                    <f:then>
-                        <f:link.typolink parameter="{assistance.link}" target="_blank">{assistance.title}</f:link.typolink>{f:if(condition:count.isLast,else:', ')}
-                    </f:then>
-                    <f:else>
-                        {assistance.title}{f:if(condition:count.isLast,else:', ')}
-                    </f:else>
-				</f:if>
-			</f:for>
-		</p>
-	</div>
-</f:if>
-
-<f:section name="vehicle-link">
-    {vehicle.title}<f:if condition="{vehicle.short}"><span class="short"> ({vehicle.short})</span></f:if>
+<f:section name="link-text">
+    {item.title}<f:if condition="{item.short}"><span class="short"> ({item.short})</span></f:if>
 </f:section>
-
-<f:section name="resource-link">
-    {resource.title}<f:if condition="{resource.short}"><span class="short"> ({resource.short})</span></f:if>
-</f:section>
-
-
-
-
-
