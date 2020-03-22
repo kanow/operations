@@ -4,8 +4,8 @@ $EM_CONF[$_EXTKEY] = array (
 	'title' => 'Operations',
 	'description' => 'TYPO3 extension to manage firefighter operations with detailed reports, images, used resources or vehicles, map view for locations.',
 	'category' => 'plugin',
-	'version' => '3.2.2',
-	'state' => 'beta',
+	'version' => '4.0.0',
+	'state' => 'stable',
 	'uploadfolder' => true,
 	'createDirs' => '',
 	'clearcacheonload' => true,
@@ -16,9 +16,10 @@ $EM_CONF[$_EXTKEY] = array (
 		'depends' => array (
 			'typo3' => '9.5.0 - 9.5.99',
 		),
-		'conflicts' => array (
-		),
-		'suggests' => array (
-		),
+        'conflicts' => array (
+        ),
+        'suggests' => array (
+            'fire_department' => '1.0.0 - 0.0.0',
+        ),
 	),
 );
