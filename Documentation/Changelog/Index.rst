@@ -12,6 +12,11 @@
 Changelog
 =========
 
+Update to 4.0.0
+===============
+
+Complete refactoring of the templates to prepare it for using with the TYPO3 Site Package for `fire department <https://extensions.typo3.org/extension/fire_department>`_. With this package all views becomes default styles. Check frontend views.
+
 Update to 3.2.2
 ===============
 
