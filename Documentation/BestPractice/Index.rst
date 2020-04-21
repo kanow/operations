@@ -23,7 +23,7 @@ You don't need those main department and sub department stuff? Ok, use the categ
 
     There is only a **flat** category handling. That means, if you select a category, no child categories are respected.
 
-Set a root category in PageTS-Config to restrict the displayed categories in operation plugin in backend.
+Set a root category in extension configuration (that is the global setting) or in PageTS-Config to restrict the displayed categories in operation plugin in backend. PageTS-Config setting overrides the setting in extension configuration.
 
 .. code-block:: typoscript
 
@@ -33,7 +33,7 @@ Set a root category in PageTS-Config to restrict the displayed categories in ope
 
 .. tip::
 
-    Set different Root-Category uid's on pages in tree, to show different categories in plugin. Depending on the related department or whatever.
+    Set a global Root-Category in extension configuration and use different Root-Category uid's on pages in the tree, to show different categories in plugin. Depending on the related department or whatever.
 
 .. tip::
 
