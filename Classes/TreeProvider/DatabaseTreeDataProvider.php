@@ -25,6 +25,8 @@ namespace Kanow\Operations\TreeProvider;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 use TYPO3\CMS\Backend\Utility\BackendUtility;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * TCA tree data provider which considers
@@ -53,12 +55,17 @@ class DatabaseTreeDataProvider extends \TYPO3\CMS\Core\Tree\TableConfiguration\D
      */
     protected function getRootCategoryId()
     {
+        $id = 0;
+        $categoryRootIdFromExtensionConfiguration = (int)GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('operations', 'rootCategory');
         $currentContentElement = $this->getContentElementRow($_REQUEST['uid']);
         $pageTsConfig = BackendUtility::getPagesTSconfig($currentContentElement['pid']);
-        if (isset($pageTsConfig['tx_operations.']['categoryRootId']) && is_integer((int)$pageTsConfig['tx_operations.']['categoryRootId']) ) {
-            $id = $pageTsConfig['tx_operations.']['categoryRootId'];
-        } else {
-            $id = 0;
+        $categoryRootIdFromPageTsConfig = (int)$pageTsConfig['tx_operations.']['categoryRootId'];
+
+        if ($categoryRootIdFromExtensionConfiguration > 0) {
+            $id = $categoryRootIdFromExtensionConfiguration;
+        }
+        if ($categoryRootIdFromPageTsConfig > 0) {
+            $id = $categoryRootIdFromPageTsConfig;
         }
         return $id;
     }
