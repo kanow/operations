@@ -121,7 +121,7 @@
                             <displayCond>FIELD:switchableControllerActions:=:Operation->list;Operation->search</displayCond>
                             <config>
                                 <type>select</type>
-                                <renderMode>tree</renderMode>
+                                <renderType>selectTree</renderType>
                                 <treeConfig>
                                     <dataProvider>Kanow\Operations\TreeProvider\DatabaseTreeDataProvider</dataProvider>
                                     <parentField>parent</parentField>
