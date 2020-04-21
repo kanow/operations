@@ -16,6 +16,7 @@
 
 		<f:if condition="{demanded}">
 			<f:then>
+                <f:render partial="List/CountResult" arguments="{count:'{f:count(subject:demanded)}'}" />
 				<f:if condition="{settings.showMap}">
 					<f:then>
 						<f:render partial="List/Map" arguments="{operations:demanded}" />
