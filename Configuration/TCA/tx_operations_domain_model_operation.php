@@ -35,9 +35,6 @@ return [
                 'searchFields' => 'number,title,location,begin,end,report,longitude,latitude,zoom,media,type,assistance,vehicles,resources,',
                 'typeicon_classes' => ['default' => 'ext-operations-operation'],
     ],
-	'interface' => [
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, number, onlyEld, title, location, begin, end, teaser, report, longitude, latitude, zoom, media, type, assistance, vehicles, resources,path_segment,category',
-    ],
 	'types' => [
 		'0' => [
             'showitem' => 'sys_language_uid;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language, l10n_parent;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent, l10n_diffsource,hidden;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden,

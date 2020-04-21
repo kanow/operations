@@ -26,9 +26,6 @@ return [
                 'searchFields' => 'title,description,link,',
                 'typeicon_classes' => ['default' => 'ext-operations-assistance']
     ],
-	'interface' => [
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, link',
-    ],
 	'types' => [
 		'0' => ['showitem' => 'sys_language_uid;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language, l10n_parent;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent, l10n_diffsource,hidden;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden,
 		title, description, link'

@@ -31,9 +31,6 @@ return [
         'searchFields' => 'title,short,description,media,',
         'typeicon_classes' => ['default' => 'ext-operations-vehicle']
     ],
-	'interface' => [
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, short, description, media, path_segment',
-    ],
 	'types' => [
 		'0' => [
             'showitem' => 'sys_language_uid;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language, l10n_parent;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent, l10n_diffsource,hidden;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden,
