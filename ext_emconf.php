@@ -14,12 +14,12 @@ $EM_CONF[$_EXTKEY] = array (
 	'author_company' => 'undkonsorten',
 	'constraints' => array (
 		'depends' => array (
-			'typo3' => '10.1.0',
+			'typo3' => '10.4.0 - 10.9.99',
 		),
         'conflicts' => array (
         ),
         'suggests' => array (
-            'fire_department' => '1.0.0 - 0.0.0',
+            'fire_department' => '1.1.0 - 0.0.0',
         ),
 	),
 );
