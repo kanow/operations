@@ -68,7 +68,7 @@
 				<source>Vehicles used on this operation</source>
 			</trans-unit>
 			<trans-unit id="tx_operations_domain_model_operation.resources">
-				<source>resources</source>
+				<source>Resources</source>
 			</trans-unit>
 
 			<trans-unit id="tx_operations_domain_model_assistance">
@@ -205,6 +205,10 @@
 
 			<trans-unit id="list.vehicles.defaultImage.title">
 				<source>Default image (vehicles) if no image available.</source>
+			</trans-unit>
+
+			<trans-unit id="meta.operation-time">
+				<source>Operating time</source>
 			</trans-unit>
 
 		</body>
