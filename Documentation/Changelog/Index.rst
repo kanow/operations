@@ -12,6 +12,11 @@
 Changelog
 =========
 
+Update to 5.0.0
+===============
+
+TYPO3 10 compatibility.
+
 Update to 4.0.0
 ===============
 
