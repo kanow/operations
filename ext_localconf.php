@@ -13,32 +13,32 @@ if (!defined('TYPO3_MODE')) {
 ExtensionUtility::configurePlugin(
     'Operations',
 	'List',
-	array(
+	[
 		OperationController::class => 'list, show, stats',
         ResourceController::class => 'list, show',
         VehicleController::class => 'list, show',
 
-	),
+    ],
 	// non-cacheable actions
-	array(
+	[
         OperationController::class => 'search',
         ResourceController::class => '',
         VehicleController::class => '',
 
-	)
+    ]
 );
 ExtensionUtility::configurePlugin(
     'Operations',
 	'Statistics',
-	array(
+	[
 		OperationController::class => 'statistics',
 
-	),
+    ],
 	// non-cacheable actions
-	array(
+	[
 		OperationController::class => 'statistics',
 
-	)
+    ]
 );
 
 ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:operations/Configuration/TsConfig/ContentElementWizard.txt">');
