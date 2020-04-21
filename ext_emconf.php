@@ -2,7 +2,7 @@
 
 $EM_CONF[$_EXTKEY] = array (
 	'title' => 'Operations',
-	'description' => 'TYPO3 extension to manage firefighter operations with detailed reports, images, used resources or vehicles, map view for locations.',
+	'description' => 'TYPO3 extension to manage firefighter operations with detailed reports, images, used resources or vehicles, map view for locations. Use extension fire_department to build a complete website for fire departments.',
 	'category' => 'plugin',
 	'version' => '4.0.0',
 	'state' => 'stable',
