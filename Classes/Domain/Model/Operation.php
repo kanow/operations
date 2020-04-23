@@ -1,4 +1,5 @@
 <?php
+
 namespace Kanow\Operations\Domain\Model;
 
 /***************************************************************
@@ -32,122 +33,123 @@ namespace Kanow\Operations\Domain\Model;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+{
 
-	/**
-	 * Operation number
-	 *
-	 * @var \string
-	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
-	 */
-	protected $number;
+    /**
+     * Operation number
+     *
+     * @var \string
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+     */
+    protected $number;
 
-	/**
-	 * Operation onlyEld
-	 *
-	 * @var \integer
-	 */
-	protected $onlyEld;
+    /**
+     * Operation onlyEld
+     *
+     * @var \integer
+     */
+    protected $onlyEld;
 
-	/**
-	 * Title
-	 *
-	 * @var \string
-	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
-	 */
-	protected $title;
+    /**
+     * Title
+     *
+     * @var \string
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+     */
+    protected $title;
 
-	/**
-	 * Location of operation
-	 *
-	 * @var \string
-	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
-	 */
-	protected $location;
+    /**
+     * Location of operation
+     *
+     * @var \string
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+     */
+    protected $location;
 
-	/**
-	 * Begin
-	 *
-	 * @var \DateTime
-	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
-	 */
-	protected $begin;
+    /**
+     * Begin
+     *
+     * @var \DateTime
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+     */
+    protected $begin;
 
-	/**
-	 * Ending
-	 *
-	 * @var \DateTime
-	 */
-	protected $end;
+    /**
+     * Ending
+     *
+     * @var \DateTime
+     */
+    protected $end;
 
-	/**
-	 * Operation short teaser
-	 *
-	 * @var \string
-	 */
-	protected $teaser;
+    /**
+     * Operation short teaser
+     *
+     * @var \string
+     */
+    protected $teaser;
 
-	/**
-	 * Operation report
-	 *
-	 * @var \string
-	 */
-	protected $report;
+    /**
+     * Operation report
+     *
+     * @var \string
+     */
+    protected $report;
 
-	/**
-	 * Longitude
-	 *
-	 * @var \string
-	 */
-	protected $longitude;
+    /**
+     * Longitude
+     *
+     * @var \string
+     */
+    protected $longitude;
 
-	/**
-	 * Latitude
-	 *
-	 * @var \string
-	 */
-	protected $latitude;
+    /**
+     * Latitude
+     *
+     * @var \string
+     */
+    protected $latitude;
 
-	/**
-	 * Zoom for maps
-	 * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
-	 * @var \integer
-	 */
-	protected $zoom;
+    /**
+     * Zoom for maps
+     *
+     * @var \integer
+     */
+    protected $zoom;
 
-	/**
-  	* Media
-   	* @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
-   	*/
-  	protected $media;
+    /**
+     * Media
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     */
+    protected $media;
 
-	/**
-	 * Type of operation
-	 *
-	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Type>
-	 */
-	protected $type;
+    /**
+     * Type of operation
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Type>
+     */
+    protected $type;
 
-	/**
-	 * Assistance to this operation
-	 * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
-	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Assistance>
-	 */
-	protected $assistance;
+    /**
+     * Assistance to this operation
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Assistance>
+     */
+    protected $assistance;
 
-	/**
-	 * Vehicles use on this operation
-	 * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
-	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Vehicle>
-	 */
-	protected $vehicles;
+    /**
+     * Vehicles use on this operation
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Vehicle>
+     */
+    protected $vehicles;
 
-	/**
-	 * resources used
-	 * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
-	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Resource>
-	 */
-	protected $resources;
+    /**
+     * resources used
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Resource>
+     */
+    protected $resources;
 
     /**
      * Category
@@ -157,441 +159,489 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
      */
     protected $category;
 
-	/**
-	 * __construct
-	 *
-	 * @return Operation
-	 */
-	public function __construct() {
-		//Do not remove the next line: It would break the functionality
-		$this->initStorageObjects();
-	}
+    /**
+     * __construct
+     *
+     * @return Operation
+     */
+    public function __construct()
+    {
+        //Do not remove the next line: It would break the functionality
+        $this->initStorageObjects();
+    }
 
-	/**
-	 * Initializes all ObjectStorage properties.
-	 *
-	 * @return void
-	 */
-	protected function initStorageObjects() {
-		$this->type = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-		$this->assistance = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-		$this->vehicles = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-		$this->resources = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-		$this->media = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+    /**
+     * Initializes all ObjectStorage properties.
+     *
+     * @return void
+     */
+    protected function initStorageObjects()
+    {
+        $this->type = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->assistance = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->vehicles = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->resources = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->media = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->category = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-	}
+    }
 
-	/**
-	 * Returns the number
-	 *
-	 * @return \string $number
-	 */
-	public function getNumber() {
-		return $this->number;
-	}
+    /**
+     * Returns the number
+     *
+     * @return \string $number
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
 
-	/**
-	 * Sets the number
-	 *
-	 * @param \string $number
-	 * @return void
-	 */
-	public function setNumber($number) {
-		$this->number = $number;
-	}
+    /**
+     * Sets the number
+     *
+     * @param \string $number
+     * @return void
+     */
+    public function setNumber($number)
+    {
+        $this->number = $number;
+    }
 
-	/**
-	 * Returns the onlyEld
-	 *
-	 * @return \integer $onlyEld
-	 */
-	public function getOnlyEld() {
-		return $this->onlyEld;
-	}
+    /**
+     * Returns the onlyEld
+     *
+     * @return \integer $onlyEld
+     */
+    public function getOnlyEld()
+    {
+        return $this->onlyEld;
+    }
 
-	/**
-	 * Sets the onlyEld
-	 *
-	 * @param \integer $onlyEld
-	 * @return void
-	 */
-	public function setOnlyEld($onlyEld) {
-		$this->onlyEld = $onlyEld;
-	}
+    /**
+     * Sets the onlyEld
+     *
+     * @param \integer $onlyEld
+     * @return void
+     */
+    public function setOnlyEld($onlyEld)
+    {
+        $this->onlyEld = $onlyEld;
+    }
 
-	/**
-	 * Returns the title
-	 *
-	 * @return \string $title
-	 */
-	public function getTitle() {
-		return $this->title;
-	}
+    /**
+     * Returns the title
+     *
+     * @return \string $title
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
 
-	/**
-	 * Sets the title
-	 *
-	 * @param \string $title
-	 * @return void
-	 */
-	public function setTitle($title) {
-		$this->title = $title;
-	}
+    /**
+     * Sets the title
+     *
+     * @param \string $title
+     * @return void
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
 
-	/**
-	 * Returns the location
-	 *
-	 * @return \string $location
-	 */
-	public function getLocation() {
-		return $this->location;
-	}
+    /**
+     * Returns the location
+     *
+     * @return \string $location
+     */
+    public function getLocation()
+    {
+        return $this->location;
+    }
 
-	/**
-	 * Sets the location
-	 *
-	 * @param \string $location
-	 * @return void
-	 */
-	public function setLocation($location) {
-		$this->location = $location;
-	}
+    /**
+     * Sets the location
+     *
+     * @param \string $location
+     * @return void
+     */
+    public function setLocation($location)
+    {
+        $this->location = $location;
+    }
 
-	/**
-	 * Returns the begin
-	 *
-	 * @return \DateTime $begin
-	 */
-	public function getBegin() {
-		return $this->begin;
-	}
+    /**
+     * Returns the begin
+     *
+     * @return \DateTime $begin
+     */
+    public function getBegin()
+    {
+        return $this->begin;
+    }
 
-	/**
-	 * Sets the begin
-	 *
-	 * @param \DateTime $begin
-	 * @return void
-	 */
-	public function setBegin($begin) {
-		$this->begin = $begin;
-	}
+    /**
+     * Sets the begin
+     *
+     * @param \DateTime $begin
+     * @return void
+     */
+    public function setBegin($begin)
+    {
+        $this->begin = $begin;
+    }
 
 
-	/**
-	 * Returns the end
-	 *
-	 * @return \DateTime $end
-	 */
-	public function getEnd() {
-		return $this->end;
-	}
+    /**
+     * Returns the end
+     *
+     * @return \DateTime $end
+     */
+    public function getEnd()
+    {
+        return $this->end;
+    }
 
-	/**
-	 * Sets the end
-	 *
-	 * @param \DateTime $end
-	 * @return void
-	 */
-	public function setEnd($end) {
-		$this->end = $end;
-	}
+    /**
+     * Sets the end
+     *
+     * @param \DateTime $end
+     * @return void
+     */
+    public function setEnd($end)
+    {
+        $this->end = $end;
+    }
 
-	/**
-	 * Returns the teaser
-	 *
-	 * @return \string $teaser
-	 */
-	public function getTeaser() {
-		return $this->teaser;
-	}
+    /**
+     * Returns the teaser
+     *
+     * @return \string $teaser
+     */
+    public function getTeaser()
+    {
+        return $this->teaser;
+    }
 
-	/**
-	 * Sets the teaser
-	 *
-	 * @param \string $teaser
-	 * @return void
-	 */
-	public function setTeaser($teaser) {
-		$this->teaser = $teaser;
-	}
+    /**
+     * Sets the teaser
+     *
+     * @param \string $teaser
+     * @return void
+     */
+    public function setTeaser($teaser)
+    {
+        $this->teaser = $teaser;
+    }
 
-	/**
-	 * Returns the report
-	 *
-	 * @return \string $report
-	 */
-	public function getReport() {
-		return $this->report;
-	}
+    /**
+     * Returns the report
+     *
+     * @return \string $report
+     */
+    public function getReport()
+    {
+        return $this->report;
+    }
 
-	/**
-	 * Sets the report
-	 *
-	 * @param \string $report
-	 * @return void
-	 */
-	public function setReport($report) {
-		$this->report = $report;
-	}
+    /**
+     * Sets the report
+     *
+     * @param \string $report
+     * @return void
+     */
+    public function setReport($report)
+    {
+        $this->report = $report;
+    }
 
-	/**
-	 * Returns the longitude
-	 *
-	 * @return \string $longitude
-	 */
-	public function getLongitude() {
-		return $this->longitude;
-	}
+    /**
+     * Returns the longitude
+     *
+     * @return \string $longitude
+     */
+    public function getLongitude()
+    {
+        return $this->longitude;
+    }
 
-	/**
-	 * Sets the longitude
-	 *
-	 * @param \string $longitude
-	 * @return void
-	 */
-	public function setLongitude($longitude) {
-		$this->longitude = $longitude;
-	}
+    /**
+     * Sets the longitude
+     *
+     * @param \string $longitude
+     * @return void
+     */
+    public function setLongitude($longitude)
+    {
+        $this->longitude = $longitude;
+    }
 
-	/**
-	 * Returns the latitude
-	 *
-	 * @return \string $latitude
-	 */
-	public function getLatitude() {
-		return $this->latitude;
-	}
+    /**
+     * Returns the latitude
+     *
+     * @return \string $latitude
+     */
+    public function getLatitude()
+    {
+        return $this->latitude;
+    }
 
-	/**
-	 * Sets the latitude
-	 *
-	 * @param \string $latitude
-	 * @return void
-	 */
-	public function setLatitude($latitude) {
-		$this->latitude = $latitude;
-	}
+    /**
+     * Sets the latitude
+     *
+     * @param \string $latitude
+     * @return void
+     */
+    public function setLatitude($latitude)
+    {
+        $this->latitude = $latitude;
+    }
 
-	/**
-	 * Returns the zoom
-	 *
-	 * @return \integer $zoom
-	 */
-	public function getZoom() {
-		return $this->zoom;
-	}
+    /**
+     * Returns the zoom
+     *
+     * @return \integer $zoom
+     */
+    public function getZoom()
+    {
+        return $this->zoom;
+    }
 
-	/**
-	 * Sets the zoom
-	 *
-	 * @param \integer $zoom
-	 * @return void
-	 */
-	public function setZoom($zoom) {
-		$this->zoom = $zoom;
-	}
+    /**
+     * Sets the zoom
+     *
+     * @param \integer $zoom
+     * @return void
+     */
+    public function setZoom($zoom)
+    {
+        $this->zoom = $zoom;
+    }
 
- /**
-   * Returns the media
-   *
-   * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage $media
-   */
-  public function getMedia() {
-          return $this->media;
-  }
-  /**
-   * Returns all media elements
-   *
-   * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $media
-   */
-  public function getAllMedia() {
-    $allMedia = $this->getMedia()->toArray();
-    return $allMedia;
-  }
-  /**
-   * Returns the first media
-   *
-   * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $media
-   */
-  public function getFirstMedia() {
-    $media = $this->getMedia()->toArray();
-    return $media[0];
-  }
-  /**
-   * Sets the media
-   *
-   * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $media
-   * @return void
-   */
-  public function setMedia($media) {
-    $this->media = $media;
-  }
+    /**
+     * Returns the media
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage $media
+     */
+    public function getMedia()
+    {
+        return $this->media;
+    }
 
-	/**
-	 * Adds a Type
-	 *
-	 * @param \Kanow\Operations\Domain\Model\Type $type
-	 * @return void
-	 */
-	public function addType(\Kanow\Operations\Domain\Model\Type $type) {
+    /**
+     * Returns all media elements
+     *
+     * @return array $media
+     */
+    public function getAllMedia()
+    {
+        $allMedia = $this->getMedia()->toArray();
+        return $allMedia;
+    }
+
+    /**
+     * Returns the first media
+     *
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $media
+     */
+    public function getFirstMedia()
+    {
+        $media = $this->getMedia()->toArray();
+        return $media[0];
+    }
+
+    /**
+     * Sets the media
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $media
+     * @return void
+     */
+    public function setMedia($media)
+    {
+        $this->media = $media;
+    }
+
+    /**
+     * Adds a Type
+     *
+     * @param \Kanow\Operations\Domain\Model\Type $type
+     * @return void
+     */
+    public function addType(\Kanow\Operations\Domain\Model\Type $type)
+    {
         $this->type->attach($type);
-	}
+    }
 
-	/**
-	 * Removes a Type
-	 *
-	 * @param \Kanow\Operations\Domain\Model\Type $typeToRemove The Type to be removed
-	 * @return void
-	 */
-	public function removeType(\Kanow\Operations\Domain\Model\Type $typeToRemove) {
-		$this->type->detach($typeToRemove);
-	}
+    /**
+     * Removes a Type
+     *
+     * @param \Kanow\Operations\Domain\Model\Type $typeToRemove The Type to be removed
+     * @return void
+     */
+    public function removeType(\Kanow\Operations\Domain\Model\Type $typeToRemove)
+    {
+        $this->type->detach($typeToRemove);
+    }
 
-	/**
-	 * Returns the type
-	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Type> $type
-	 */
-	public function getType() {
-		return $this->type;
-	}
+    /**
+     * Returns the type
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Type> $type
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
 
     /**
      * Returns directly the assigned type. Prevent to unnecessary iteration in operation data.
      *
-     * @return ObjectStorage<\Kanow\Operations\Domain\Model\Type> $type
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Type> $type
      */
-    public function getAssignedType() {
+    public function getAssignedType()
+    {
         $type = $this->getType()->toArray();
         return $type[0];
     }
 
-	/**
-	 * Sets the type
-	 *
-	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Type> $type
-	 * @return void
-	 */
-	public function setType(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $type) {
-		$this->type = $type;
-	}
+    /**
+     * Sets the type
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Type> $type
+     * @return void
+     */
+    public function setType(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $type)
+    {
+        $this->type = $type;
+    }
 
-	/**
-	 * Adds a Assistance
-	 *
-	 * @param \Kanow\Operations\Domain\Model\Assistance $assistance
-	 * @return void
-	 */
-	public function addAssistance(\Kanow\Operations\Domain\Model\Assistance $assistance) {
-		$this->assistance->attach($assistance);
-	}
+    /**
+     * Adds a Assistance
+     *
+     * @param \Kanow\Operations\Domain\Model\Assistance $assistance
+     * @return void
+     */
+    public function addAssistance(\Kanow\Operations\Domain\Model\Assistance $assistance)
+    {
+        $this->assistance->attach($assistance);
+    }
 
-	/**
-	 * Removes a Assistance
-	 *
-	 * @param \Kanow\Operations\Domain\Model\Assistance $assistanceToRemove The Assistance to be removed
-	 * @return void
-	 */
-	public function removeAssistance(\Kanow\Operations\Domain\Model\Assistance $assistanceToRemove) {
-		$this->assistance->detach($assistanceToRemove);
-	}
+    /**
+     * Removes a Assistance
+     *
+     * @param \Kanow\Operations\Domain\Model\Assistance $assistanceToRemove The Assistance to be removed
+     * @return void
+     */
+    public function removeAssistance(\Kanow\Operations\Domain\Model\Assistance $assistanceToRemove)
+    {
+        $this->assistance->detach($assistanceToRemove);
+    }
 
-	/**
-	 * Returns the assistance
-	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Assistance> $assistance
-	 */
-	public function getAssistance() {
-		return $this->assistance;
-	}
+    /**
+     * Returns the assistance
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Assistance> $assistance
+     */
+    public function getAssistance()
+    {
+        return $this->assistance;
+    }
 
-	/**
-	 * Sets the assistance
-	 *
-	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Assistance> $assistance
-	 * @return void
-	 */
-	public function setAssistance(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $assistance) {
-		$this->assistance = $assistance;
-	}
+    /**
+     * Sets the assistance
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Assistance> $assistance
+     * @return void
+     */
+    public function setAssistance(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $assistance)
+    {
+        $this->assistance = $assistance;
+    }
 
-	/**
-	 * Adds a Vehicle
-	 *
-	 * @param \Kanow\Operations\Domain\Model\Vehicle $vehicle
-	 * @return void
-	 */
-	public function addVehicle(\Kanow\Operations\Domain\Model\Vehicle $vehicle) {
-		$this->vehicles->attach($vehicle);
-	}
+    /**
+     * Adds a Vehicle
+     *
+     * @param \Kanow\Operations\Domain\Model\Vehicle $vehicle
+     * @return void
+     */
+    public function addVehicle(\Kanow\Operations\Domain\Model\Vehicle $vehicle)
+    {
+        $this->vehicles->attach($vehicle);
+    }
 
-	/**
-	 * Removes a Vehicle
-	 *
-	 * @param \Kanow\Operations\Domain\Model\Vehicle $vehicleToRemove The Vehicle to be removed
-	 * @return void
-	 */
-	public function removeVehicle(\Kanow\Operations\Domain\Model\Vehicle $vehicleToRemove) {
-		$this->vehicles->detach($vehicleToRemove);
-	}
+    /**
+     * Removes a Vehicle
+     *
+     * @param \Kanow\Operations\Domain\Model\Vehicle $vehicleToRemove The Vehicle to be removed
+     * @return void
+     */
+    public function removeVehicle(\Kanow\Operations\Domain\Model\Vehicle $vehicleToRemove)
+    {
+        $this->vehicles->detach($vehicleToRemove);
+    }
 
-	/**
-	 * Returns the vehicles
-	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Vehicle> $vehicles
-	 */
-	public function getVehicles() {
-		return $this->vehicles;
-	}
+    /**
+     * Returns the vehicles
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Vehicle> $vehicles
+     */
+    public function getVehicles()
+    {
+        return $this->vehicles;
+    }
 
-	/**
-	 * Sets the vehicles
-	 *
-	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Vehicle> $vehicles
-	 * @return void
-	 */
-	public function setVehicles(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $vehicles) {
-		$this->vehicles = $vehicles;
-	}
+    /**
+     * Sets the vehicles
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Vehicle> $vehicles
+     * @return void
+     */
+    public function setVehicles(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $vehicles)
+    {
+        $this->vehicles = $vehicles;
+    }
 
-	/**
-	 * Adds a Resources
-	 *
-	 * @param \Kanow\Operations\Domain\Model\Resources $resource
-	 * @return void
-	 */
-	public function addResource(\Kanow\Operations\Domain\Model\Resource $resource) {
-		$this->resources->attach($resource);
-	}
+    /**
+     * Adds a Resources
+     *
+     * @param \Kanow\Operations\Domain\Model\Resources $resource
+     * @return void
+     */
+    public function addResource(\Kanow\Operations\Domain\Model\Resource $resource)
+    {
+        $this->resources->attach($resource);
+    }
 
-	/**
-	 * Removes a Resources
-	 *
-	 * @param \Kanow\Operations\Domain\Model\Resources $resourceToRemove The Resources to be removed
-	 * @return void
-	 */
-	public function removeResource(\Kanow\Operations\Domain\Model\Resource $resourceToRemove) {
-		$this->resources->detach($resourceToRemove);
-	}
+    /**
+     * Removes a Resources
+     *
+     * @param \Kanow\Operations\Domain\Model\Resources $resourceToRemove The Resources to be removed
+     * @return void
+     */
+    public function removeResource(\Kanow\Operations\Domain\Model\Resource $resourceToRemove)
+    {
+        $this->resources->detach($resourceToRemove);
+    }
 
-	/**
-	 * Returns the resources
-	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Resources> $resources
-	 */
-	public function getResources() {
-		return $this->resources;
-	}
+    /**
+     * Returns the resources
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Resources> $resources
+     */
+    public function getResources()
+    {
+        return $this->resources;
+    }
 
-	/**
-	 * Sets the resources
-	 *
-	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Resources> $resources
-	 * @return void
-	 */
-	public function setResources(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $resources) {
-		$this->resources = $resources;
-	}
+    /**
+     * Sets the resources
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Resources> $resources
+     * @return void
+     */
+    public function setResources(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $resources)
+    {
+        $this->resources = $resources;
+    }
 
     /**
      * Adds a Category
@@ -599,7 +649,8 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
      * @param \TYPO3\CMS\Extbase\Domain\Model\Category $category
      * @return void
      */
-    public function addCategory(\TYPO3\CMS\Extbase\Domain\Model\Category $category) {
+    public function addCategory(\TYPO3\CMS\Extbase\Domain\Model\Category $category)
+    {
         $this->category->attach($category);
     }
 
@@ -609,7 +660,8 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
      * @param \TYPO3\CMS\Extbase\Domain\Model\Category $categoryToRemove The Category to be removed
      * @return void
      */
-    public function removeCategory(\TYPO3\CMS\Extbase\Domain\Model\Category $categoryToRemove) {
+    public function removeCategory(\TYPO3\CMS\Extbase\Domain\Model\Category $categoryToRemove)
+    {
         $this->category->detach($categoryToRemove);
     }
 
@@ -618,7 +670,8 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
      *
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category> $category
      */
-    public function getCategory() {
+    public function getCategory()
+    {
         return $this->category;
     }
 
@@ -628,7 +681,8 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category> $category
      * @return void
      */
-    public function setCategory(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $category) {
+    public function setCategory(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $category)
+    {
         $this->category = $category;
     }
 

@@ -195,7 +195,7 @@ class OperationDemand extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
     /**
      * Returns the category
      *
-     * @return intenger $category
+     * @return integer $category
      */
     public function getCategory() {
         return $this->category;

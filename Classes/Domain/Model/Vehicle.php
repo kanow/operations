@@ -1,4 +1,5 @@
 <?php
+
 namespace Kanow\Operations\Domain\Model;
 
 /***************************************************************
@@ -32,35 +33,36 @@ namespace Kanow\Operations\Domain\Model;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class Vehicle extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Vehicle extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+{
 
-	/**
-	 * Title of vehicle
-	 *
-	 * @var \string
-	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
-	 */
-	protected $title;
+    /**
+     * Title of vehicle
+     *
+     * @var \string
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+     */
+    protected $title;
 
-	/**
-	 * Abbreviation of vehicle
-	 *
-	 * @var \string
-	 */
-	protected $short;
+    /**
+     * Abbreviation of vehicle
+     *
+     * @var \string
+     */
+    protected $short;
 
-	/**
-	 * Description of vehicle
-	 *
-	 * @var \string
-	 */
-	protected $description;
+    /**
+     * Description of vehicle
+     *
+     * @var \string
+     */
+    protected $description;
 
-	/**
-  	* Media
-   	* @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
-   	*/
-  	protected $media;
+    /**
+     * Media
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     */
+    protected $media;
 
     /**
      * A website url or internal link
@@ -69,98 +71,111 @@ class Vehicle extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
      */
     protected $link;
 
-	/**
-	 * Returns the title
-	 *
-	 * @return \string $title
-	 */
-	public function getTitle() {
-		return $this->title;
-	}
+    /**
+     * Returns the title
+     *
+     * @return \string $title
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
 
-	/**
-	 * Sets the title
-	 *
-	 * @param \string $title
-	 * @return void
-	 */
-	public function setTitle($title) {
-		$this->title = $title;
-	}
+    /**
+     * Sets the title
+     *
+     * @param \string $title
+     * @return void
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
 
-	/**
-	 * Returns the short
-	 *
-	 * @return \string $short
-	 */
-	public function getShort() {
-		return $this->short;
-	}
+    /**
+     * Returns the short
+     *
+     * @return \string $short
+     */
+    public function getShort()
+    {
+        return $this->short;
+    }
 
-	/**
-	 * Sets the short
-	 *
-	 * @param \string $short
-	 * @return void
-	 */
-	public function setShort($short) {
-		$this->short = $short;
-	}
+    /**
+     * Sets the short
+     *
+     * @param \string $short
+     * @return void
+     */
+    public function setShort($short)
+    {
+        $this->short = $short;
+    }
 
-	/**
-	 * Returns the description
-	 *
-	 * @return \string $description
-	 */
-	public function getDescription() {
-		return $this->description;
-	}
+    /**
+     * Returns the description
+     *
+     * @return \string $description
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
 
-	/**
-	 * Sets the description
-	 *
-	 * @param \string $description
-	 * @return void
-	 */
-	public function setDescription($description) {
-		$this->description = $description;
-	}
+    /**
+     * Sets the description
+     *
+     * @param \string $description
+     * @return void
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
 
-  /**
-    * Returns the media
-    *
-    * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage $media
-    */
-   public function getMedia() {
-           return $this->media;
-   }
-  /**
-   * Returns all media
-   *
-   * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $media
-   */
-  public function getAllMedia() {
-  $allMedia = $this->getMedia()->toArray();
-    return $allMedia;
-  }
-  /**
-   * Returns the first media
-   *
-   * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $media
-   */
-  public function getFirstMedia() {
-  $media = $this->getMedia()->toArray();
-    return $media[0];
-  }
-  /**
-   * Sets the media
-   *
-   * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $media
-   * @return void
-   */
-  public function setMedia($media) {
-          $this->media = $media;
-  }
+    /**
+     * Returns the media
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage $media
+     */
+    public function getMedia()
+    {
+        return $this->media;
+    }
+
+    /**
+     * Returns all media
+     *
+     * @return array $media
+     */
+    public function getAllMedia()
+    {
+        $allMedia = $this->getMedia()->toArray();
+        return $allMedia;
+    }
+
+    /**
+     * Returns the first media
+     *
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $media
+     */
+    public function getFirstMedia()
+    {
+        $media = $this->getMedia()->toArray();
+        return $media[0];
+    }
+
+    /**
+     * Sets the media
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $media
+     * @return void
+     */
+    public function setMedia($media)
+    {
+        $this->media = $media;
+    }
 
     /**
      * @return string
