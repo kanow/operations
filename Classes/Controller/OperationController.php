@@ -36,7 +36,9 @@ namespace Kanow\Operations\Controller;
 
 use Kanow\Operations\Domain\Model\Operation;
 use Kanow\Operations\Domain\Model\OperationDemand;
+use Kanow\Operations\Domain\Repository\OperationRepository;
 use Kanow\Operations\Service\CategoryService;
+use Kanow\Operations\Domain\Repository\TypeRepository;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
@@ -63,16 +65,14 @@ class OperationController extends BaseController
 	/**
 	 * operationRepository
 	 *
-	 * @var \Kanow\Operations\Domain\Repository\OperationRepository
+	 * @var OperationRepository
      */
 	protected $operationRepository;
 
     /**
-     * Inject a operation repository to enable DI
-     *
-     * @param \Kanow\Operations\Domain\Repository\OperationRepository $operationRepository
+     * Inject operation repository to enable DI
      */
-    public function injectOperationRepository(\Kanow\Operations\Domain\Repository\OperationRepository $operationRepository)
+    public function injectOperationRepository(OperationRepository $operationRepository): void
     {
         $this->operationRepository = $operationRepository;
     }
@@ -80,16 +80,14 @@ class OperationController extends BaseController
     /**
      * typeRepository
      *
-     * @var \Kanow\Operations\Domain\Repository\TypeRepository
+     * @var TypeRepository
      */
     protected $typeRepository;
 
     /**
-     * Inject a type repository to enable DI
-     *
-     * @param \Kanow\Operations\Domain\Repository\TypeRepository $typeRepository
+     * Inject type repository to enable DI
      */
-    public function injectTypeRepository(\Kanow\Operations\Domain\Repository\TypeRepository $typeRepository)
+    public function injectTypeRepository(TypeRepository $typeRepository): void
     {
         $this->typeRepository = $typeRepository;
     }
