@@ -206,11 +206,11 @@ class OperationController extends BaseController
      * Update demand with current settings, if not exists it creates one
      *
      * @param OperationDemand
-     * @return OperationDemand
+     * @return object
      */
 	protected function updateDemandObjectFromSettings($demand) {
 		if(is_null($demand)){
-			$demand = $this->objectManager->get('Kanow\Operations\Domain\Model\OperationDemand');
+            $demand = GeneralUtility::makeInstance('Kanow\Operations\Domain\Model\OperationDemand');
 		}
 		return $demand;
 	}
