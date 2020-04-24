@@ -12,6 +12,29 @@
 Changelog
 =========
 
+
+Update to x.x.x
+===============
+
+Fix exception in list view of operations. Stand out just in TYPO3 10.
+
+Improve translation handling with excluding some fields they don't need to be translated. Catgeories, resources, vehicles, lat and long, assistance, type, onlEld are the same in all languages.
+
+Of course data for categories, resources, vehicles, assistance and type can be translated. Then translated field values are shown. Probably this depends on your language settings for sys_language_mode and sys_language_overlay.
+
+
+.. note::
+   I've tested translations with the following settings in my site configuration.
+    * default language: german (0), second language: english (1)
+    * Connected mode for translations.
+
+   .. code-block:: yaml
+
+       fallbackType: strict
+       fallbacks: '0,1'
+
+   With those settings the translated relations (resources,vehicles,…) of the operation were shown in frontend if they are translated. Otherwise default language were used. In search form (type, categories), only translated values are shown. If those properties are not translated, then they won't be shown in the form.
+
 Update to 5.0.0
 ===============
 
