@@ -168,6 +168,8 @@ return [
         ],
 		'onlyEld' => [
 			'exclude' => 1,
+            'l10n_mode' => 'exclude',
+            'l10n_display' => 'defaultAsReadonly',
 			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.onlyEld',
 			'config' => [
 				'type' => 'check',
@@ -208,6 +210,7 @@ return [
         ],
 		'begin' => [
 			'exclude' => 1,
+            'l10n_mode' => 'exclude',
 			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.begin',
 			'config' => [
 				'type' => 'input',
@@ -220,6 +223,7 @@ return [
         ],
 		'end' => [
 			'exclude' => 1,
+            'l10n_mode' => 'exclude',
 			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.end',
 			'config' => [
 				'type' => 'input',
@@ -253,6 +257,8 @@ return [
         ],
 		'longitude' => [
 			'exclude' => 1,
+            'l10n_mode' => 'exclude',
+            'l10n_display' => 'defaultAsReadonly',
 			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.longitude',
 			'config' => [
 				'type' => 'input',
@@ -262,6 +268,8 @@ return [
         ],
 		'latitude' => [
 			'exclude' => 1,
+            'l10n_mode' => 'exclude',
+            'l10n_display' => 'defaultAsReadonly',
 			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.latitude',
 			'config' => [
 				'type' => 'input',
@@ -319,6 +327,7 @@ return [
         ],
 		'type' => [
 			'exclude' => 1,
+            'l10n_mode' => 'exclude',
 			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.type',
 			'config' => [
 				'type' => 'select',
@@ -341,11 +350,13 @@ return [
         ],
 		'assistance' => [
 			'exclude' => 1,
+            'l10n_mode' => 'exclude',
 			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.assistance',
 			'config' => [
 				'type' => 'select',
 				'foreign_table' => 'tx_operations_domain_model_assistance',
 				'MM' => 'tx_operations_operation_assistance_mm',
+                'foreign_table_where' => 'AND tx_operations_domain_model_assistance.sys_language_uid = ###REC_FIELD_sys_language_uid###',
 				'size' => 10,
 				'autoSizeMax' => 40,
 				'minitems' => 0,
@@ -370,11 +381,13 @@ return [
         ],
 		'vehicles' => [
 			'exclude' => 1,
+            'l10n_mode' => 'exclude',
 			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.vehicles',
 			'config' => [
 				'type' => 'select',
 				'foreign_table' => 'tx_operations_domain_model_vehicle',
 				'MM' => 'tx_operations_operation_vehicle_mm',
+                'foreign_table_where' => 'AND tx_operations_domain_model_vehicle.sys_language_uid = ###REC_FIELD_sys_language_uid###',
 				'size' => 10,
 				'autoSizeMax' => 40,
 				'minitems' => 0,
@@ -399,11 +412,13 @@ return [
         ],
 		'resources' => [
 			'exclude' => 1,
+            'l10n_mode' => 'exclude',
 			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.resources',
 			'config' => [
 				'type' => 'select',
 				'foreign_table' => 'tx_operations_domain_model_resource',
 				'MM' => 'tx_operations_operation_resource_mm',
+                'foreign_table_where' => 'AND tx_operations_domain_model_resource.sys_language_uid = ###REC_FIELD_sys_language_uid###',
 				'size' => 10,
 				'autoSizeMax' => 40,
 				'minitems' => 0,
@@ -428,6 +443,7 @@ return [
         ],
         'category' => [
             'exclude' => 1,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.fieldLabel.category',
             'config' => [
                 'type' => 'select',
