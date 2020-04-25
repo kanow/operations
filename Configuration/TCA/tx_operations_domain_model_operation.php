@@ -332,6 +332,7 @@ return [
 			'config' => [
 				'type' => 'select',
 				'foreign_table' => 'tx_operations_domain_model_type',
+                'foreign_table_where' => 'AND tx_operations_domain_model_type.sys_language_uid = ###REC_FIELD_sys_language_uid###',
 				'MM' => 'tx_operations_operation_type_mm',
 				'size' => 1,
 				'autoSizeMax' => 40,
