@@ -3,6 +3,7 @@
 namespace Kanow\Operations\Domain\Repository;
 
 use Kanow\Operations\Domain\Model\OperationDemand;
+use TYPO3\CMS\Core\Context\Context;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 use TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface;
@@ -156,10 +157,28 @@ class OperationRepository extends Repository
      */
     protected function prepareResultForChartArray($result) {
         $preparedResult = [];
+
+        $languageAspect = GeneralUtility::makeInstance(Context::class)->getAspect('language');
+        $lang_uid = $languageAspect->getId();
+
+        if($lang_uid > 0) {
+            $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
+                ->getQueryBuilderForTable('tx_operations_domain_model_type');
+        }
+
         foreach ($result as $key => $value) {
+            if($lang_uid > 0) {
+                $translatedType = $queryBuilder
+                    ->add('select','type.title')
+                    ->from('tx_operations_domain_model_type', 'type')
+                    ->where('type.l10n_parent = ' . $value["type_uid"]);
+                $translatedType = $translatedType->execute()->fetch();
+            }
+            $title = $translatedType['title'] ?? $value['title'];
+
             if(!array_key_exists($value['type_uid'],$preparedResult)) {
                 $preparedResult[$value['type_uid']] = array(
-                    'title' => $value['title'],
+                    'title' => $title,
                     'color' => $value['color'],
                     'years' => array(
                         $value['year'] => $value['count']
