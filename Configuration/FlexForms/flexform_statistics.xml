@@ -47,7 +47,7 @@
                     <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.category.label</label>
                     <config>
                         <type>select</type>
-                        <renderMode>tree</renderMode>
+                        <renderType>selectTree</renderType>
                         <treeConfig>
                             <dataProvider>Kanow\Operations\TreeProvider\DatabaseTreeDataProvider</dataProvider>
                             <parentField>parent</parentField>
