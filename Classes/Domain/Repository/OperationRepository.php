@@ -3,7 +3,9 @@
 namespace Kanow\Operations\Domain\Repository;
 
 use Kanow\Operations\Domain\Model\OperationDemand;
+use Kanow\Operations\Domain\Model\Type;
 use TYPO3\CMS\Core\Context\Context;
+use TYPO3\CMS\Core\Context\LanguageAspect;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 use TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface;
@@ -159,6 +161,7 @@ class OperationRepository extends Repository
         $preparedResult = [];
 
         $languageAspect = GeneralUtility::makeInstance(Context::class)->getAspect('language');
+        /** @var LanguageAspect $languageAspect */
         $lang_uid = $languageAspect->getId();
 
         if($lang_uid > 0) {
@@ -168,6 +171,7 @@ class OperationRepository extends Repository
 
         foreach ($result as $key => $value) {
             if($lang_uid > 0) {
+                /** @var QueryBuilder $queryBuilder */
                 $translatedType = $queryBuilder
                     ->add('select','type.title')
                     ->from('tx_operations_domain_model_type', 'type')
@@ -202,6 +206,7 @@ class OperationRepository extends Repository
     protected function addMissingType($data,$types,$year)
     {
         foreach ($types as $type) {
+            /** @var Type $type */
             if(!array_key_exists($type->getUid(),$data)) {
                 $data[$type->getUid()]['title'] =  $type->getTitle();
                 $data[$type->getUid()]['color'] =  $type->getColor();
@@ -297,9 +302,7 @@ class OperationRepository extends Repository
         $statement = $statement->groupBy('year')
             ->orderBy('year', 'DESC')
             ->execute();
-        $result = $statement->fetchAll();
-
-        return $result;
+        return $statement->fetchAll();
     }
 
     /**
@@ -341,7 +344,11 @@ class OperationRepository extends Repository
      * @return array<\TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface>
      * @throws InvalidQueryException
      */
-    protected function createConstraintsFromDemand(QueryInterface $query, OperationDemand $demand, $settings)
+    protected function createConstraintsFromDemand(
+        QueryInterface $query,
+        OperationDemand $demand,
+        $settings
+    )
     {
         $constraints = array();
 
@@ -356,6 +363,7 @@ class OperationRepository extends Repository
         }
 
         //category constraints from plugin settings
+        /** @var array $settings */
         if ($settings['category'] != '') {
             $categories = GeneralUtility::trimExplode(',', $settings['category']);
             $constraints[] = $this->createCategoryConstraints($query, $categories, 'category', $settings);
@@ -410,6 +418,7 @@ class OperationRepository extends Repository
     protected  function createCategoryConstraints(QueryInterface $query, $categories, $property, $settings){
 
         if ($categories && count($categories) != 0) {
+            $categoryConstraint = [];
             foreach ($categories as $category){
                 $categoryConstraint[] = $query->contains($property, $category);
             }
