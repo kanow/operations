@@ -13,7 +13,7 @@ Changelog
 =========
 
 
-Update to x.x.x
+Update to 5.1.0
 ===============
 
 Fix exception in list view of operations. Stand out just in TYPO3 10.
