@@ -40,11 +40,13 @@ use Kanow\Operations\Domain\Repository\OperationRepository;
 use Kanow\Operations\Service\CategoryService;
 use Kanow\Operations\Domain\Repository\TypeRepository;
 use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Pagination\SimplePagination;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Extbase\Domain\Repository\CategoryRepository;
 use TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException;
+use TYPO3\CMS\Extbase\Pagination\QueryResultPaginator;
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter;
@@ -135,12 +137,22 @@ class OperationController extends BaseController
 	 * action search
 	 *
 	 * @param OperationDemand $demand
+     * @param int $currentPage
 	 * @return void
      * @throws InvalidQueryException
 	 */
-	public function searchAction(OperationDemand $demand = NULL) {
+	public function searchAction(OperationDemand $demand = NULL, int $currentPage = 1) {
 		$demand = $this->updateDemandObjectFromSettings($demand);
 		$demanded = $this->operationRepository->findDemanded($demand, $this->settings);
+
+		$currentPage = $this->request->hasArgument('currentPage') ? $this->request->getArgument('currentPage') : $currentPage;
+        $paginator = new QueryResultPaginator($demanded, $currentPage, 2);
+        $pagination = new SimplePagination($paginator);
+//        $paginator->getNumberOfPages(); // returns 3
+//        $paginator->getCurrentPageNumber(); // returns 3, basically just returns the input value
+//        $paginator->getKeyOfFirstPaginatedItem(); // returns 4
+//        $paginator->getKeyOfLastPaginatedItem(); // returns 4
+
 		$years = $this->generateYears();
 		$types = $this->typeRepository->findAll();
 
@@ -149,6 +161,13 @@ class OperationController extends BaseController
 		$this->view->assign('demanded', $demanded);
 		$this->view->assign('demand', $demand);
         $this->view->assign('categories', $this->getOperationCategories());
+
+        $this->view->assignMultiple([
+            'paginator' => $paginator,
+            'pagination' => $pagination,
+//            'currentPage' => $paginator->getCurrentPageNumber(),
+//            'paginatedItems' => $paginator->getPaginatedItems()
+        ]);
 	}
 
 	/**

@@ -27,7 +27,7 @@
 								<f:render partial="List/ListItems" arguments="{operations:demanded}" />
 							</f:then>
 							<f:else>
-								<f:render partial="List/ListWithPagination" arguments="{operations:demanded}" />
+								<f:render partial="List/ListWithPagination" arguments="{operations:paginator.paginatedItems, paginator:paginator, pagination:pagination, demand:demand, currentPage: currentPage}" />
 							</f:else>
 						</f:if>
 					</f:else>
