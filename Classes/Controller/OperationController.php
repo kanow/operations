@@ -44,6 +44,7 @@ use TYPO3\CMS\Core\Pagination\SimplePagination;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
+use TYPO3\CMS\Extbase\Domain\Model\Category;
 use TYPO3\CMS\Extbase\Domain\Repository\CategoryRepository;
 use TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException;
 use TYPO3\CMS\Extbase\Pagination\QueryResultPaginator;
@@ -114,44 +115,52 @@ class OperationController extends BaseController
         $this->categoryService = $categoryService;
     }
 
-	/**
-	 * action list
-	 *
-	 * @param OperationDemand $demand
-	 * @return void
+    /**
+     * action list
+     *
+     * @param OperationDemand $demand
+     * @param int $currentPage
+     * @return void
      * @throws InvalidQueryException
-	 */
-	public function listAction(OperationDemand $demand = NULL) {
+     * @throws NoSuchArgumentException
+     */
+	public function listAction(OperationDemand $demand = NULL, int $currentPage = 1) {
 		$demand = $this->updateDemandObjectFromSettings($demand);
 		$operations = $this->operationRepository->findDemanded($demand, $this->settings);
         $types = $this->typeRepository->findAll();
 		$years = $this->generateYears();
 
+        $currentPage = $this->request->hasArgument('currentPage') ? $this->request->getArgument('currentPage') : $currentPage;
+        $paginator = new QueryResultPaginator($operations, $currentPage, $this->settings['itemsPerPage']);
+        $pagination = new SimplePagination($paginator);
+
 		$this->view->assign('types', $types);
 		$this->view->assign('begin',$years);
 		$this->view->assign('operations', $operations);
 		$this->view->assign('categories', $this->getOperationCategories());
+
+        $this->view->assignMultiple([
+            'paginator' => $paginator,
+            'pagination' => $pagination,
+        ]);
 	}
 
-	/**
-	 * action search
-	 *
-	 * @param OperationDemand $demand
+    /**
+     * action search
+     *
+     * @param OperationDemand $demand
      * @param int $currentPage
-	 * @return void
+     * @return void
      * @throws InvalidQueryException
-	 */
+     * @throws NoSuchArgumentException
+     */
 	public function searchAction(OperationDemand $demand = NULL, int $currentPage = 1) {
 		$demand = $this->updateDemandObjectFromSettings($demand);
 		$demanded = $this->operationRepository->findDemanded($demand, $this->settings);
 
 		$currentPage = $this->request->hasArgument('currentPage') ? $this->request->getArgument('currentPage') : $currentPage;
-        $paginator = new QueryResultPaginator($demanded, $currentPage, 2);
+        $paginator = new QueryResultPaginator($demanded, $currentPage, $this->settings['itemsPerPage']);
         $pagination = new SimplePagination($paginator);
-//        $paginator->getNumberOfPages(); // returns 3
-//        $paginator->getCurrentPageNumber(); // returns 3, basically just returns the input value
-//        $paginator->getKeyOfFirstPaginatedItem(); // returns 4
-//        $paginator->getKeyOfLastPaginatedItem(); // returns 4
 
 		$years = $this->generateYears();
 		$types = $this->typeRepository->findAll();
@@ -165,8 +174,6 @@ class OperationController extends BaseController
         $this->view->assignMultiple([
             'paginator' => $paginator,
             'pagination' => $pagination,
-//            'currentPage' => $paginator->getCurrentPageNumber(),
-//            'paginatedItems' => $paginator->getPaginatedItems()
         ]);
 	}
 
@@ -271,6 +278,7 @@ class OperationController extends BaseController
     protected function getOperationCategories() {
         $operationsRootCategory = $this->categoryRepository->findByUid($this->settings['rootCategory']);
         if($operationsRootCategory != 0) {
+            /** @var Category $operationsRootCategory */
             $categories = $this->categoryService->findAllDescendants($operationsRootCategory);
         } else {
             $categories = $this->categoryRepository->findAll();
