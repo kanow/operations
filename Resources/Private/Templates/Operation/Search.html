@@ -27,7 +27,13 @@
 								<f:render partial="List/ListItems" arguments="{operations:demanded}" />
 							</f:then>
 							<f:else>
-								<f:render partial="List/ListWithPagination" arguments="{operations:paginator.paginatedItems, paginator:paginator, pagination:pagination, demand:demand, currentPage: currentPage}" />
+                                <f:if condition="{settings.paginate.insertAbove}">
+                                    <f:render partial="List/Pagination" arguments="{paginator:paginator, pagination:pagination, demand:demand}" />
+                                </f:if>
+								<f:render partial="List/ListItems" arguments="{operations:paginator.paginatedItems}" />
+                                <f:if condition="{settings.paginate.insertBelow}">
+                                    <f:render partial="List/Pagination" arguments="{paginator:paginator, pagination:pagination, demand:demand}" />
+                                </f:if>
 							</f:else>
 						</f:if>
 					</f:else>
