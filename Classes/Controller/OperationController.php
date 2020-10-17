@@ -132,7 +132,8 @@ class OperationController extends BaseController
 
         $currentPage = $this->request->hasArgument('currentPage') ? $this->request->getArgument('currentPage') : $currentPage;
         $paginator = new QueryResultPaginator($operations, $currentPage, $this->settings['itemsPerPage']);
-        $pagination = new SimplePagination($paginator);
+        $simplePagination = new SimplePagination($paginator);
+        $pagination = $this->buildSimplePagination($simplePagination, $paginator);
 
 		$this->view->assign('types', $types);
 		$this->view->assign('begin',$years);
@@ -140,8 +141,8 @@ class OperationController extends BaseController
 		$this->view->assign('categories', $this->getOperationCategories());
 
         $this->view->assignMultiple([
-            'paginator' => $paginator,
             'pagination' => $pagination,
+            'paginator' => $paginator
         ]);
 	}
 
@@ -160,7 +161,8 @@ class OperationController extends BaseController
 
 		$currentPage = $this->request->hasArgument('currentPage') ? $this->request->getArgument('currentPage') : $currentPage;
         $paginator = new QueryResultPaginator($demanded, $currentPage, $this->settings['itemsPerPage']);
-        $pagination = new SimplePagination($paginator);
+        $simplePagination = new SimplePagination($paginator);
+        $pagination = $this->buildSimplePagination($simplePagination, $paginator);
 
 		$years = $this->generateYears();
 		$types = $this->typeRepository->findAll();
@@ -172,8 +174,8 @@ class OperationController extends BaseController
         $this->view->assign('categories', $this->getOperationCategories());
 
         $this->view->assignMultiple([
-            'paginator' => $paginator,
             'pagination' => $pagination,
+            'paginator' => $paginator
         ]);
 	}
 
@@ -300,6 +302,29 @@ class OperationController extends BaseController
         }
         $uidList = implode(',',$uidList);
         return $uidList;
+    }
+
+    /**
+     * build simple pagination
+     *
+     * @param SimplePagination $simplePagination
+     * @param QueryResultPaginator $paginator
+     * @return array
+     */
+    protected function buildSimplePagination(SimplePagination $simplePagination, QueryResultPaginator $paginator)
+    {
+        $firstPage = $simplePagination->getFirstPageNumber();
+        $lastPage = $simplePagination->getLastPageNumber();
+        return [
+            'lastPageNumber' => $lastPage,
+            'firstPageNumber' => $firstPage,
+            'nextPageNumber' => $simplePagination->getNextPageNumber(),
+            'previousPageNumber' => $simplePagination->getPreviousPageNumber(),
+            'startRecordNumber' => $simplePagination->getStartRecordNumber(),
+            'endRecordNumber' => $simplePagination->getEndRecordNumber(),
+            'currentPageNumber' => $paginator->getCurrentPageNumber(),
+            'pages' => range($firstPage, $lastPage)
+        ];
     }
 
 }

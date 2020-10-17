@@ -2,6 +2,7 @@
       data-namespace-typo3-fluid="true">
 
 <nav class="pagination-wrap">
+    <p>Datensätze: {pagination.startRecordNumber} - {pagination.endRecordNumber}</p>
     <ul class="pagination">
         <f:if condition="{pagination.previousPageNumber} && {pagination.previousPageNumber} >= {pagination.firstPageNumber}">
             <f:then>
@@ -27,11 +28,16 @@
                 </li>
             </f:else>
         </f:if>
-        <li>
-                <span>
-                    Datensätze: {pagination.startRecordNumber} - {pagination.endRecordNumber}
-                </span>
-        </li>
+
+        <f:for each="{pagination.pages}" as="page">
+            <li>
+                <f:if condition="{page} == {pagination.currentPageNumber}">
+                    <f:then><span>{page}</span></f:then>
+                    <f:else><f:link.action action="search" arguments="{demand:demand, currentPage: page}">{page}</f:link.action></f:else>
+                </f:if>
+            </li>
+        </f:for>
+
         <f:if condition="{pagination.nextPageNumber} && {pagination.nextPageNumber} <= {pagination.lastPageNumber}">
             <f:then>
                 <li class="pagination-next">
