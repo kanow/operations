@@ -12,6 +12,59 @@
 Änderungen
 ==========
 
+Update to 6.0.0
+===============
+
+Neue Pagination API von TYPO3 wird benutzt. Die alte Fluid Widget Pagination wurde entfernt.
+
+Das TypoScript Setting `maxNumberOfLinks` wird nicht länger benutzt und daher ebenfalls entfernt.
+Wenn ihr die Standard Templates von operations benutzt, solltet ihr nichts weiter tun müssen.
+Wenn nicht, prüft bitte eure ausgelagerten Templates und führt die Änderungen nach. Folgende Dateien müsst ihr prüfen:
+
+* Resources/Private/Templates/Operation/List.html
+* Resources/Private/Templates/Operation/Search.html
+* Resources/Private/Partials/List/Pagination.html
+
+Update to 5.1.0
+===============
+
+Fehlerbehebung für eine Exception in der List Ansicht in TYPO3 10 auf.
+
+Die Übersetzungen der Einsätze im Backend zeigen jetzt nur die für eine Übersetzung notwendigen Felder an. Kategorien, Hilfsmittel,
+Fahrzeuge, Unterstützung, Koordinaten, Typ, Einsatzleitdienst sind nicht sprachabhängig.
+
+Natürlich können die Datensätze für Kategorien, Hilfsmittel, Fahrzeuge, Unterstützung und Typ selbst weiterhin übersetzt werden. Je nachdem wie die Einstellungen für
+`sys_language_mode` und `sys_language_overlay` gesetzt sind, gibt es einen Fallback falls keine Überstezung für die aktueller Sprache existiert.
+
+
+
+.. note::
+   I've tested translations with the following settings in my site configuration.
+   Beispiel für Einstellungen bezüglich der Sprachen in der Site-Config
+    * Standardsprache: deutsch (0), zweite Sprache: english (1)
+    * Connected mode für Übersetzungen (Übersetzung hat einen Elterndatensatz)
+
+   .. code-block:: yaml
+
+       fallbackType: strict
+       fallbacks: '0,1'
+
+   Mit diesen Einstellungen wird werden die übersetzten Verknüpfungen (Hilfsmittel, Fahrzeuge,…) im Frontend ausgegeben
+   wenn sie übersetzt sind. Wenn nicht wird die Standardsprache benutzt.
+   Im Suchformular (Typ, Kategorien) werden nur übersetzte Daten angezeigt. Wenn diese Datensätze nicht übersetzt sind,
+   werden sie nicht angezeigt.
+
+Update to 5.0.0
+===============
+
+TYPO3 10 Kompatibilität.
+
+Update to 4.0.0
+===============
+
+Komplettumbau der Template Dateien um das Site-Package `fire department <https://extensions.typo3.org/extension/fire_department>`_ ganz einfach zu nutzen. Damit kann man jetzt einfach Standard-Styles verwenden.
+
+
 Update auf 3.2.2
 ================
 
