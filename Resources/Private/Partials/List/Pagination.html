@@ -2,29 +2,23 @@
       data-namespace-typo3-fluid="true">
 
 <nav class="pagination-wrap">
-    <p>Datensätze: {pagination.startRecordNumber} - {pagination.endRecordNumber}</p>
+    <p><f:translate key="pagination.visibleOperations" />: {pagination.startRecordNumber} - {pagination.endRecordNumber}</p>
     <ul class="pagination">
         <f:if condition="{pagination.previousPageNumber} && {pagination.previousPageNumber} >= {pagination.firstPageNumber}">
             <f:then>
                 <li class="pagination-first">
-                    <a href="{f:uri.action(action:'search', arguments:{demand:demand, currentPage: 1})}" title="pagination.first">first</a>
+                    <a href="{f:uri.action(action:'search', arguments:{demand:demand, currentPage: 1})}" title="pagination.first">{f:translate(key: 'pagination.first')}</a>
                 </li>
                 <li class="pagination-previous">
-                    <a href="{f:uri.action(action:'search', arguments:{demand:demand, currentPage: pagination.previousPageNumber})}" title="pagination.previous">
-                        previous
-                    </a>
+                    <a href="{f:uri.action(action:'search', arguments:{demand:demand, currentPage: pagination.previousPageNumber})}" title="pagination.previous">{f:translate(key: 'pagination.previous')}</a>
                 </li>
             </f:then>
             <f:else>
                 <li class="pagination-first disabled">
-                        <span>
-                            first
-                        </span>
+                        <span>{f:translate(key: 'pagination.first')}</span>
                 </li>
                 <li class="pagination-previous disabled">
-                        <span>
-                            previous
-                        </span>
+                        <span>{f:translate(key: 'pagination.previous')}</span>
                 </li>
             </f:else>
         </f:if>
@@ -40,26 +34,18 @@
         <f:if condition="{pagination.nextPageNumber} && {pagination.nextPageNumber} <= {pagination.lastPageNumber}">
             <f:then>
                 <li class="pagination-next">
-                    <a href="{f:uri.action(action:'search', arguments:{demand:demand, currentPage: pagination.nextPageNumber})}" title="pagination.next">
-                        next
-                    </a>
+                    <a href="{f:uri.action(action:'search', arguments:{demand:demand, currentPage: pagination.nextPageNumber})}" title="pagination.next">{f:translate(key: 'pagination.next')}</a>
                 </li>
                 <li class="pagination-last">
-                    <a href="{f:uri.action(action:'search', arguments:{demand:demand, currentPage: pagination.lastPageNumber})}" title="pagination.last">
-                        last
-                    </a>
+                    <a href="{f:uri.action(action:'search', arguments:{demand:demand, currentPage: pagination.lastPageNumber})}" title="pagination.last">{f:translate(key: 'pagination.last')}</a>
                 </li>
             </f:then>
             <f:else>
                 <li class="pagination-next disabled">
-                        <span>
-                            next
-                        </span>
+                    <span>{f:translate(key: 'pagination.next')}</span>
                 </li>
                 <li class="pagination-last disabled">
-                        <span>
-                            last
-                        </span>
+                    <span>{f:translate(key: 'pagination.last')}</span>
                 </li>
             </f:else>
         </f:if>
