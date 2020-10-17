@@ -131,10 +131,12 @@ class OperationController extends BaseController
         $types = $this->typeRepository->findAll();
 		$years = $this->generateYears();
 
-        $currentPage = $this->request->hasArgument('currentPage') ? $this->request->getArgument('currentPage') : $currentPage;
-        $paginator = new QueryResultPaginator($operations, $currentPage, $this->settings['itemsPerPage']);
-        $simplePagination = new SimplePagination($paginator);
-        $pagination = $this->buildSimplePagination($simplePagination, $paginator);
+        if ($this->settings['hidePagination'] != 1) {
+            $currentPage = $this->request->hasArgument('currentPage') ? $this->request->getArgument('currentPage') : $currentPage;
+            $paginator = new QueryResultPaginator($operations, $currentPage, $this->settings['itemsPerPage']);
+            $simplePagination = new SimplePagination($paginator);
+            $pagination = $this->buildSimplePagination($simplePagination, $paginator);
+        }
 
         $this->view->assignMultiple([
             'types' =>  $types,
@@ -160,10 +162,12 @@ class OperationController extends BaseController
         /** @var OperationDemand $demand */
         $demanded = $this->operationRepository->findDemanded($demand, $this->settings);
 
-		$currentPage = $this->request->hasArgument('currentPage') ? $this->request->getArgument('currentPage') : $currentPage;
-        $paginator = new QueryResultPaginator($demanded, $currentPage, $this->settings['itemsPerPage']);
-        $simplePagination = new SimplePagination($paginator);
-        $pagination = $this->buildSimplePagination($simplePagination, $paginator);
+        if ($this->settings['hidePagination'] != 1) {
+            $currentPage = $this->request->hasArgument('currentPage') ? $this->request->getArgument('currentPage') : $currentPage;
+            $paginator = new QueryResultPaginator($demanded, $currentPage, $this->settings['itemsPerPage']);
+            $simplePagination = new SimplePagination($paginator);
+            $pagination = $this->buildSimplePagination($simplePagination, $paginator);
+        }
 
 		$years = $this->generateYears();
 		$types = $this->typeRepository->findAll();
