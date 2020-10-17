@@ -126,7 +126,8 @@ class OperationController extends BaseController
      */
 	public function listAction(OperationDemand $demand = NULL, int $currentPage = 1) {
 		$demand = $this->updateDemandObjectFromSettings($demand);
-		$operations = $this->operationRepository->findDemanded($demand, $this->settings);
+        /** @var OperationDemand $demand */
+        $operations = $this->operationRepository->findDemanded($demand, $this->settings);
         $types = $this->typeRepository->findAll();
 		$years = $this->generateYears();
 
@@ -135,12 +136,11 @@ class OperationController extends BaseController
         $simplePagination = new SimplePagination($paginator);
         $pagination = $this->buildSimplePagination($simplePagination, $paginator);
 
-		$this->view->assign('types', $types);
-		$this->view->assign('begin',$years);
-		$this->view->assign('operations', $operations);
-		$this->view->assign('categories', $this->getOperationCategories());
-
         $this->view->assignMultiple([
+            'types' =>  $types,
+            'begin' => $years,
+            'operations' =>  $operations,
+            'categories' =>  $this->getOperationCategories(),
             'pagination' => $pagination,
             'paginator' => $paginator
         ]);
@@ -157,7 +157,8 @@ class OperationController extends BaseController
      */
 	public function searchAction(OperationDemand $demand = NULL, int $currentPage = 1) {
 		$demand = $this->updateDemandObjectFromSettings($demand);
-		$demanded = $this->operationRepository->findDemanded($demand, $this->settings);
+        /** @var OperationDemand $demand */
+        $demanded = $this->operationRepository->findDemanded($demand, $this->settings);
 
 		$currentPage = $this->request->hasArgument('currentPage') ? $this->request->getArgument('currentPage') : $currentPage;
         $paginator = new QueryResultPaginator($demanded, $currentPage, $this->settings['itemsPerPage']);
@@ -167,13 +168,12 @@ class OperationController extends BaseController
 		$years = $this->generateYears();
 		$types = $this->typeRepository->findAll();
 
-		$this->view->assign('types', $types);
-		$this->view->assign('begin',$years);
-		$this->view->assign('demanded', $demanded);
-		$this->view->assign('demand', $demand);
-        $this->view->assign('categories', $this->getOperationCategories());
-
         $this->view->assignMultiple([
+            'types' => $types,
+            'begin' => $years,
+            'demanded' => $demanded,
+            'demand' => $demand,
+            'categories' => $this->getOperationCategories(),
             'pagination' => $pagination,
             'paginator' => $paginator
         ]);
@@ -211,6 +211,7 @@ class OperationController extends BaseController
     public function statisticsAction(OperationDemand $demand = NULL) {
         $demand = $this->updateDemandObjectFromSettings($demand);
 
+        /** @var OperationDemand $demand */
         $operations = $this->operationRepository->findDemandedForStatistics($demand, $this->settings);
         $operationUids = $this->buildUidList($operations);
 
@@ -233,7 +234,7 @@ class OperationController extends BaseController
     /**
      * Update demand with current settings, if not exists it creates one
      *
-     * @param OperationDemand
+     * @param OperationDemand $demand
      * @return object
      */
 	protected function updateDemandObjectFromSettings($demand) {
