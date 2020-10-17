@@ -33,13 +33,13 @@ You don't know about the site configuration? Read here: `TYPO3 Site Configuratio
             extension: Operations
             plugin: List
             routes:
-            - { routePath: '/list-{page}', _controller: 'Operation::list', _arguments: {'page': '@widget_0/currentPage'} }
+            - { routePath: '/{localized_page}-{page}', _controller: 'Operation::list', _arguments: {'page': 'currentPage'} }
             - { routePath: '/{operation_title}', _controller: 'Operation::show', _arguments: {'operation_title': 'operation'} }
             - { routePath: '/{vehicle_title}', _controller: 'Vehicle::show', _arguments: {'vehicle_title': 'vehicle'} }
             - { routePath: '/{resource_title}', _controller: 'Resource::show', _arguments: {'resource_title': 'resource'} }
             defaultController: 'Operation::list'
             defaults:
-                page: '0'
+                page: '1'
             requirements:
                 page: '\d+'
             aspects:
@@ -59,3 +59,9 @@ You don't know about the site configuration? Read here: `TYPO3 Site Configuratio
                     type: PersistedAliasMapper
                     tableName: 'tx_operations_domain_model_resource'
                     routeFieldName: 'path_segment'
+                localized_page:
+                    type: LocaleModifier
+                    default: 'page'
+                    localeMap:
+                      - locale: 'de_DE.*'
+                      value: 'seite'
