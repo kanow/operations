@@ -7,10 +7,10 @@
         <f:if condition="{pagination.previousPageNumber} && {pagination.previousPageNumber} >= {pagination.firstPageNumber}">
             <f:then>
                 <li class="pagination-first">
-                    <a href="{f:uri.action(action:'search', arguments:{demand:demand, currentPage: 1})}" title="pagination.first">{f:translate(key: 'pagination.first')}</a>
+                    <f:link.action action="{action}" arguments="{demand:demand, currentPage: 1}" title="{f:translate(key: 'pagination.first')}">{f:translate(key: 'pagination.first')}</f:link.action>
                 </li>
                 <li class="pagination-previous">
-                    <a href="{f:uri.action(action:'search', arguments:{demand:demand, currentPage: pagination.previousPageNumber})}" title="pagination.previous">{f:translate(key: 'pagination.previous')}</a>
+                    <f:link.action action="{action}" arguments="{demand:demand, currentPage: pagination.previousPageNumber}" title="{f:translate(key: 'pagination.previous')}">{f:translate(key: 'pagination.previous')}</f:link.action>
                 </li>
             </f:then>
             <f:else>
@@ -24,20 +24,19 @@
         </f:if>
 
         <f:for each="{pagination.pages}" as="page">
-                <f:if condition="{page} == {pagination.currentPageNumber}">
-                    <f:then><li class="current"><span>{page}</span></li></f:then>
-                    <f:else><li><f:link.action action="search" arguments="{demand:demand, currentPage: page}">{page}</f:link.action></li></f:else>
-                </f:if>
-
+            <f:if condition="{page} == {pagination.currentPageNumber}">
+                <f:then><li class="current"><span>{page}</span></li></f:then>
+                <f:else><li><f:link.action action="{action}" arguments="{demand:demand, currentPage: page}">{page}</f:link.action></li></f:else>
+            </f:if>
         </f:for>
 
         <f:if condition="{pagination.nextPageNumber} && {pagination.nextPageNumber} <= {pagination.lastPageNumber}">
             <f:then>
                 <li class="pagination-next">
-                    <a href="{f:uri.action(action:'search', arguments:{demand:demand, currentPage: pagination.nextPageNumber})}" title="pagination.next">{f:translate(key: 'pagination.next')}</a>
+                    <f:link.action action="{action}" arguments="{demand:demand, currentPage: pagination.nextPageNumber}" title="{f:translate(key: 'pagination.next')}">{f:translate(key: 'pagination.next')}</f:link.action>
                 </li>
                 <li class="pagination-last">
-                    <a href="{f:uri.action(action:'search', arguments:{demand:demand, currentPage: pagination.lastPageNumber})}" title="pagination.last">{f:translate(key: 'pagination.last')}</a>
+                    <f:link.action action="{action}" arguments="{demand:demand, currentPage: pagination.lastPageNumber}" title="{f:translate(key: 'pagination.last')}">{f:translate(key: 'pagination.last')}</f:link.action>
                 </li>
             </f:then>
             <f:else>
