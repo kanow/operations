@@ -6,7 +6,7 @@
     <ul class="pagination">
         <f:if condition="{pagination.previousPageNumber} && {pagination.previousPageNumber} >= {pagination.firstPageNumber}">
             <f:then>
-                <li class="first">
+                <li class="pagination-first">
                     <a href="{f:uri.action(action:'search', arguments:{demand:demand, currentPage: 1})}" title="pagination.first">first</a>
                 </li>
                 <li class="pagination-previous">
@@ -16,7 +16,7 @@
                 </li>
             </f:then>
             <f:else>
-                <li class="disabled">
+                <li class="pagination-first disabled">
                         <span>
                             first
                         </span>
@@ -30,12 +30,11 @@
         </f:if>
 
         <f:for each="{pagination.pages}" as="page">
-            <li>
                 <f:if condition="{page} == {pagination.currentPageNumber}">
-                    <f:then><span>{page}</span></f:then>
-                    <f:else><f:link.action action="search" arguments="{demand:demand, currentPage: page}">{page}</f:link.action></f:else>
+                    <f:then><li class="current"><span>{page}</span></li></f:then>
+                    <f:else><li><f:link.action action="search" arguments="{demand:demand, currentPage: page}">{page}</f:link.action></li></f:else>
                 </f:if>
-            </li>
+
         </f:for>
 
         <f:if condition="{pagination.nextPageNumber} && {pagination.nextPageNumber} <= {pagination.lastPageNumber}">
@@ -57,7 +56,7 @@
                             next
                         </span>
                 </li>
-                <li class="disabled">
+                <li class="pagination-last disabled">
                         <span>
                             last
                         </span>
