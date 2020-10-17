@@ -6,7 +6,7 @@
        <f:render partial="List/ListItems" arguments="{operations:operations}" />
     </f:then>
     <f:else>
-        <f:widget.paginate objects="{operations}" as="paginatedOperations" configuration="{itemsPerPage: settings.itemsPerPage, insertAbove: settings.paginate.insertAbove, insertBelow: settings.paginate.insertBelow, maximumNumberOfLinks: settings.paginate.maxNumberOfLinks}">
+        <f:widget.paginate objects="{operations}" as="paginatedOperations" configuration="{addQueryStringMethod:'GET,POST',itemsPerPage: settings.itemsPerPage, insertAbove: settings.paginate.insertAbove, insertBelow: settings.paginate.insertBelow, maximumNumberOfLinks: settings.paginate.maxNumberOfLinks}">
             <f:render partial="List/ListItems" arguments="{operations:paginatedOperations}" />
         </f:widget.paginate>
     </f:else>
