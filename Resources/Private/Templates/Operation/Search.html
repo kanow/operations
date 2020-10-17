@@ -28,6 +28,7 @@
 							</f:then>
 							<f:else>
                                 <f:if condition="{settings.paginate.insertAbove}">
+                                    <p><f:translate key="pagination.visibleOperations" />: {pagination.startRecordNumber} - {pagination.endRecordNumber}</p>
                                     <f:render partial="List/Pagination" arguments="{pagination:pagination, demand:demand, action:'search'}" />
                                 </f:if>
 								<f:render partial="List/ListItems" arguments="{operations:paginator.paginatedItems}" />
