@@ -195,7 +195,7 @@ return [
                     'prefixParentPageSlug' => true
                 ],
                 'fallbackCharacter' => '-',
-                'eval' => 'unique'
+                'eval' => $extensionConfiguration['slugBehaviour'],
             ]
         ],
 		'location' => [

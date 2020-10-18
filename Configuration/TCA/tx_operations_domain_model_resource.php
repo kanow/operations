@@ -1,12 +1,14 @@
 <?php
 
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
-
+$extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('operations');
 return [
 	'ctrl' => [
                 'title' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_resource',
@@ -152,7 +154,7 @@ return [
                     'prefixParentPageSlug' => true
                 ],
                 'fallbackCharacter' => '-',
-                'eval' => 'unique'
+                'eval' => $extensionConfiguration['slugBehaviour'],
             ]
         ],
 		'short' => [
