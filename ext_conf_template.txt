@@ -1,2 +1,4 @@
-# cat=basic;type=input; label=Uid of root category
+# cat=basic;type=input; label=LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:extconf.rootCategoryUid
 rootCategory =
+# cat=basic;type=options[Unique=unique,Unique in Site=uniqueInSite]; label=LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:extconf.slugBehaviour
+slugBehaviour=unique
