@@ -11,18 +11,26 @@
 Operations erweitern
 ====================
 
+.. note::
 
-Es gibt eine Beispielextension auf Github mit der man `operations` um ein neues Feld/Eigenschaft erweitern kann.
+   Die Entwicklung von TYPO3 ist ziemlich schnell voran gekommen. Daher sind wahrscheinlich einige
+   Angaben im Code unter der aktuellen TYPO3 Version nicht so einfach lauffähig.
+   Auch wenn ich diesen Teil der Doku wohl nicht immer auf den aktuellsten Stand bringen kann
+   lasse ich das Beispiel hier aber trotzdem drin. So bekommt man eine grobe Vorstellung von dem was notwendig ist.
+
+Es gibt auch eine Beispielextension auf Github mit der man `operations` um ein neues Feld/Eigenschaft erweitern kann.
 
 `extend_operations <https://github.com/kanow/extend_operations>`_
 
 .. note::
 
-    Diese Extension ist schon etwas älter und läuft nur unter TYPO3 8, nicht unter 9.5!
-    Wahrscheinlich müsst ihr die Extension anpassen, damit sie unter 9.5 läuft.
+    Auch diese Extension ist schon etwas älter und läuft nur unter TYPO3 8, nicht unter der aktuellen TYPO3 Version!
+    Sehr wahrscheinlich müsst ihr die Extension anpassen, damit sie unter einem aktuellen TYPO3 läuft.
 
 Wenn euch ein Feld/Eigenschaft fehlt, könnt ihr das mit solch einer Extension nachrüsten.
-In dieser Beispielextension wird das Model "operation" (der Einsatz) mit einer zusätzlichen Eigenschaft "subtitle" (Untertitel) erweitert. Wenn ihr mehr Felder/Eigenschaften braucht könnt ihr natürlich mehr Felder in der gleichen Art und Weise hinzufügen. Ersetzt "newfield" mit dem Namen eurer neuen Eigenschaft.
+In dieser Beispielextension wird das Model "operation" (der Einsatz) mit einer zusätzlichen Eigenschaft
+"subtitle" (Untertitel) erweitert. Wenn ihr mehr Felder/Eigenschaften braucht könnt ihr natürlich mehr Felder
+in der gleichen Art und Weise hinzufügen. Ersetzt "newfield" mit dem Namen eurer neuen Eigenschaft.
 
 Classes/Domain/Model/Operation.php
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

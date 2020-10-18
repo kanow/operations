@@ -12,17 +12,27 @@
 Changelog
 =========
 
-Update to 6.0.0
+Update to 6.x
 ===============
 
-Use new Pagination API of TYPO3 10. The old Fluid Pagination Widget was removed. TypoScript setting `maxNumberOfLinks` not longer
-necessary and therefore removed.
+Bugfix and maintenance release.
+Use new Pagination API of TYPO3 10. The old Fluid Pagination Widget was removed. TypoScript setting `maxNumberOfLinks`
+not longer necessary and therefore removed.
 If you using the original template files for List and Search Action from operations version 5.1.x, then nothing should
 to do. If not, check if you exclude one of the following files and have a look at the changes:
 
 * Resources/Private/Templates/Operation/List.html
 * Resources/Private/Templates/Operation/Search.html
 * Resources/Private/Partials/List/Pagination.html
+
+If you configured the current page of pagination in the url (in the site configuration) you have to change the
+configuration for the page argument. It's not longer that `@widget` stuff. Have a look at the
+:ref:`Speaking url example page in manual <speakingUrl>`.
+
+
+Slug behaviour was changed to `unique` With an updated TYPO3 version it is now possible to use the sysfolder with
+operations data outside of the page tree. You can use one folder for multiple Sites in the same TYPO3 Instance.
+If you need uniqueInSite for your page, then you can switch that behaviour in the BE module "Settings" -> Extension Configuration.
 
 Update to 5.1.0
 ===============

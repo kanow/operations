@@ -12,8 +12,10 @@
 Änderungen
 ==========
 
-Update to 6.0.0
+Update to 6.x
 ===============
+
+In dieser Version wurden Fehler behoben und kleine Wartungsarbeiten vorgenommen.
 
 Neue Pagination API von TYPO3 wird benutzt. Die alte Fluid Widget Pagination wurde entfernt.
 
@@ -24,6 +26,16 @@ Wenn nicht, prüft bitte eure ausgelagerten Templates und führt die Änderungen
 * Resources/Private/Templates/Operation/List.html
 * Resources/Private/Templates/Operation/Search.html
 * Resources/Private/Partials/List/Pagination.html
+
+Falls ihr die Ausgabe der aktuellen Seite der PAgination in der Url konfiguroert habt müsst ihr diese anpassen.
+Das alte @widget Zeug wird nicht mehr genutzt. Schaut einfach mal auf die :ref:`Beispielkonfiguration für schöne Url's<speakingUrl>`.
+
+Das Verhalten bei der Überprüfung der path_segment Felder (slug) wurde umgestellt auf `unique`. Damit kann man jetzt
+den Sysordner mit den Daten auch außerhalb seiner Root-Seite haben. Die Einzelansicht funktioniert damit jetzt auch.
+Installationen mit mehreren Seiten die sich einen solchen Sysordner teilen hatten bisher ein Problem. Mit einer
+aktuellen TYPO3 Version sollte das jetzt alles laufen.
+Falls ihr jedoch den anderen Fall braucht, könnt ihr das in der Extension Konfiguration im BE Modul Einstellungen
+ändern.
 
 Update to 5.1.0
 ===============
@@ -39,7 +51,6 @@ Natürlich können die Datensätze für Kategorien, Hilfsmittel, Fahrzeuge, Unte
 
 
 .. note::
-   I've tested translations with the following settings in my site configuration.
    Beispiel für Einstellungen bezüglich der Sprachen in der Site-Config
     * Standardsprache: deutsch (0), zweite Sprache: english (1)
     * Connected mode für Übersetzungen (Übersetzung hat einen Elterndatensatz)

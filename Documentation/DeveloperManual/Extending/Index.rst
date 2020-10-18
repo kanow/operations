@@ -11,6 +11,11 @@
 Extend operations
 =================
 
+.. note::
+
+   TYPO3 development was quickly going forward. Therefore some code snippets are not up to date.
+   I can't update those part of documention in the future. But I leave the example her to become an idea
+   how it works.
 
 If you want to extend operations, there is an example extension on github.
 
@@ -18,8 +23,8 @@ If you want to extend operations, there is an example extension on github.
 
 .. note::
 
-    Those extensions is only running on TYPO3 8. They doesn't work on TYPO3 9.5!
-    Probably the code must be changed to get a running version on TYPO3 9.5.
+    Those extensions is only running on TYPO3 8. They doesn't work on current TYPO3 version!
+    Probably the code must be changed to get a running version on current TYPO3.
 
 
 In this example extension is only one new property "subtitle" for the operation model. If you need more than this single field, you can add more in this way. Replace "newfield" with the name of your new property.
