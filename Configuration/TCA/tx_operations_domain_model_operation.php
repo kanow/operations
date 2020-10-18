@@ -195,7 +195,7 @@ return [
                     'prefixParentPageSlug' => true
                 ],
                 'fallbackCharacter' => '-',
-                'eval' => 'uniqueInSite'
+                'eval' => 'unique'
             ]
         ],
 		'location' => [
