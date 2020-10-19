@@ -16,10 +16,11 @@ Update to 6.x
 ===============
 
 Bugfix and maintenance release.
-Use new Pagination API of TYPO3 10. The old Fluid Pagination Widget was removed. TypoScript setting `maxNumberOfLinks`
+Attention, Breaking Changes in this version! The new Pagination API of TYPO3 10 is used.
+The old Fluid Pagination Widget was removed. TypoScript setting `maxNumberOfLinks`
 not longer necessary and therefore removed.
-If you using the original template files for List and Search Action from operations version 5.1.x, then nothing should
-to do. If not, check if you exclude one of the following files and have a look at the changes:
+If you use the original template files for List and Search Action from operations version 5.1.x, then nothing should
+to do for you. If not, check if you changed one of the following files and have a look at the changes in original files:
 
 * Resources/Private/Templates/Operation/List.html
 * Resources/Private/Templates/Operation/Search.html

@@ -15,9 +15,9 @@
 Update to 6.x
 ===============
 
-In dieser Version wurden Fehler behoben und kleine Wartungsarbeiten vorgenommen.
+In dieser Version wurden kleine und große Fehler behoben und Wartungsarbeiten vorgenommen.
 
-Neue Pagination API von TYPO3 wird benutzt. Die alte Fluid Widget Pagination wurde entfernt.
+Achtung, Breaking Change! Neue Pagination API von TYPO3 wird benutzt. Die alte Fluid Widget Pagination wurde entfernt.
 
 Das TypoScript Setting `maxNumberOfLinks` wird nicht länger benutzt und daher ebenfalls entfernt.
 Wenn ihr die Standard Templates von operations benutzt, solltet ihr nichts weiter tun müssen.
