@@ -14,7 +14,7 @@ $EM_CONF[$_EXTKEY] = array (
 	'author_company' => 'undkonsorten',
 	'constraints' => array (
 		'depends' => array (
-			'typo3' => '10.4.0 - 10.9.99',
+			'typo3' => '10.4.0 - 11.1.99',
 		),
         'conflicts' => array (
         ),
