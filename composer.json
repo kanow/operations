@@ -1,7 +1,7 @@
 {
   "name": "kanow/operations",
   "type": "typo3-cms-extension",
-  "description": "Manage (firefighter,Feuerwehr) operations with detailed reports, images used resources or vehicles, map view for locations. Possibly to use it for other reportable events like THW and so on.",
+  "description": "Manage firefighter operations with detailed reports, images used resources or vehicles, map view for locations. Possibly to use it for other reportable events like THW and so on.",
   "license": ["GPL-2.0-or-later"],
   "keywords": [
     "TYPO3",
@@ -14,7 +14,7 @@
   },
   "extra": {
     "typo3/cms": {
-      "operations": "operations"
+      "extension-key": "operations"
     }
   },
   "autoload": {
