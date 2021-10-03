@@ -10,9 +10,11 @@ Build
 #  but we add it here for convenience)
 *~
 *.bak
-*.idea
 *.project
-*.swp
 .project
 .webprj
 nbproject
+
+.Build/
+Build/testing-docker/.env
+composer.lock
