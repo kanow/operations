@@ -26,7 +26,7 @@ namespace Kanow\Operations\Tests;
  ***************************************************************/
 
 /**
- * Test case for class \Kanow\Operations\Domain\Model\Resources.
+ * Test case for class \Kanow\Operations\Domain\Model\Resource.
  *
  * @version $Id$
  * @copyright Copyright belongs to the respective authors
@@ -39,12 +39,12 @@ namespace Kanow\Operations\Tests;
  */
 class ResourcesTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
-	 * @var \Kanow\Operations\Domain\Model\Resources
+	 * @var \Kanow\Operations\Domain\Model\Resource
 	 */
 	protected $fixture;
 
 	public function setUp() {
-		$this->fixture = new \Kanow\Operations\Domain\Model\Resources();
+		$this->fixture = new \Kanow\Operations\Domain\Model\Resource();
 	}
 
 	public function tearDown() {

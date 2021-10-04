@@ -60,7 +60,7 @@ class ResourceController extends BaseController {
 	/**
 	 * action show
 	 *
-	 * @param \Kanow\Operations\Domain\Model\Resources $resources
+	 * @param \Kanow\Operations\Domain\Model\Resource $resources
 	 * @return void
 	 */
 	public function showAction(Resource $resource) {

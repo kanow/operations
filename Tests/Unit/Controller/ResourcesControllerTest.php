@@ -43,7 +43,7 @@ class ResourcesControllerTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase
 	protected $fixture;
 
 	public function setUp() {
-		$this->fixture = new \Kanow\Operations\Domain\Model\Resources();
+		$this->fixture = new \Kanow\Operations\Domain\Model\Resource();
 	}
 
 	public function tearDown() {

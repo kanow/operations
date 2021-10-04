@@ -603,9 +603,9 @@ class Operation extends AbstractEntity
     }
 
     /**
-     * Adds a Resources
+     * Adds a Resource
      *
-     * @param \Kanow\Operations\Domain\Model\Resources $resource
+     * @param \Kanow\Operations\Domain\Model\Resource $resource
      * @return void
      */
     public function addResource(Resource $resource)
@@ -614,9 +614,9 @@ class Operation extends AbstractEntity
     }
 
     /**
-     * Removes a Resources
+     * Removes a Resource
      *
-     * @param \Kanow\Operations\Domain\Model\Resources $resourceToRemove The Resources to be removed
+     * @param \Kanow\Operations\Domain\Model\Resource $resourceToRemove The Resources to be removed
      * @return void
      */
     public function removeResource(Resource $resourceToRemove)
@@ -627,7 +627,7 @@ class Operation extends AbstractEntity
     /**
      * Returns the resources
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Resources> $resources
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Resource> $resources
      */
     public function getResources()
     {
@@ -637,7 +637,7 @@ class Operation extends AbstractEntity
     /**
      * Sets the resources
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Resources> $resources
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Resource> $resources
      * @return void
      */
     public function setResources(ObjectStorage $resources)
