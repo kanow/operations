@@ -1,6 +1,7 @@
 <?php
 namespace Kanow\Operations\Domain\Model;
 
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 /***************************************************************
  *  Copyright notice
  *
@@ -24,7 +25,6 @@ namespace Kanow\Operations\Domain\Model;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
 /**
  *
  *
@@ -32,7 +32,7 @@ namespace Kanow\Operations\Domain\Model;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class Assistance extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Assistance extends AbstractEntity {
 
 	/**
 	 * Title of the assistance

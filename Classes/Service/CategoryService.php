@@ -1,5 +1,8 @@
 <?php
 namespace Kanow\Operations\Service;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Domain\Model\Category;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Domain\Repository\CategoryRepository;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
@@ -34,7 +37,7 @@ use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class CategoryService extends \TYPO3\CMS\Core\Utility\GeneralUtility {
+class CategoryService extends GeneralUtility {
 
     /**
      * @var CategoryRepository
@@ -53,8 +56,8 @@ class CategoryService extends \TYPO3\CMS\Core\Utility\GeneralUtility {
 	 * @return ObjectStorage $resultStorage
 	 */
 
-	public function findAllDescendants (\TYPO3\CMS\Extbase\Domain\Model\Category $parentCategory){
-		$this->categoryRepository->setDefaultOrderings(array('title'=>\TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING));
+	public function findAllDescendants (Category $parentCategory){
+		$this->categoryRepository->setDefaultOrderings(array('title'=>QueryInterface::ORDER_ASCENDING));
 		$allCategories = $this->categoryRepository->findAll();
 
 		$storage = $regions = $this->buildStorageFormQuery($allCategories);

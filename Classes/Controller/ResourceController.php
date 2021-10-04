@@ -1,6 +1,7 @@
 <?php
 namespace Kanow\Operations\Controller;
 
+use Kanow\Operations\Domain\Model\Resource;
 use Kanow\Operations\Domain\Repository\ResourceRepository;
 
 /***************************************************************
@@ -34,7 +35,7 @@ use Kanow\Operations\Domain\Repository\ResourceRepository;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class ResourceController extends \Kanow\Operations\Controller\BaseController {
+class ResourceController extends BaseController {
 
 	/**
 	 * @var ResourceRepository
@@ -62,7 +63,7 @@ class ResourceController extends \Kanow\Operations\Controller\BaseController {
 	 * @param \Kanow\Operations\Domain\Model\Resources $resources
 	 * @return void
 	 */
-	public function showAction(\Kanow\Operations\Domain\Model\Resource $resource) {
+	public function showAction(Resource $resource) {
 		$this->view->assign('resource', $resource);
 	}
 

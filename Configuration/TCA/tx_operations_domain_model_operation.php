@@ -18,7 +18,6 @@ return [
                 'tstamp' => 'tstamp',
                 'crdate' => 'crdate',
                 'cruser_id' => 'cruser_id',
-                'dividers2tabs' => TRUE,
                 //'sortby' => 'sorting',
                 'default_sortby' => 'ORDER BY begin DESC',
                 'versioningWS' => true,
@@ -37,15 +36,7 @@ return [
     ],
 	'types' => [
 		'0' => [
-            'showitem' => 'sys_language_uid;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language, l10n_parent;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent, l10n_diffsource,hidden;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden,
-		--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.meta;paletteMeta,
-		title, path_segment, location,
-		--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.time;paletteTime,
-		teaser,report,
-		--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.map,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.coordinates;paletteMap,
-		--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.relations,assistance,vehicles, resources,
-		--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.media,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.media;paletteImg,
-		--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tabs.categories, category'
+            'showitem' => 'sys_language_uid;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language,l10n_parent;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent,l10n_diffsource,hidden;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.meta;paletteMeta,title,path_segment,location,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.time;paletteTime,teaser,report,--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.map,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.coordinates;paletteMap,--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.relations,assistance,vehicles,resources,--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.media,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.media;paletteImg,--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tabs.categories,category'
         ],
     ],
 	'palettes' => [
@@ -70,7 +61,7 @@ return [
 	'columns' => [
 		'sys_language_uid' => [
 			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
+			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
 			'config' => [
 				'type' => 'select',
 				'renderType' => 'selectSingle',
@@ -78,11 +69,11 @@ return [
 				'foreign_table_where' => 'ORDER BY sys_language.title',
                 'items' => [
                     [
-                        'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
+                        'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
                         0
                     ],
                     [
-                        'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
+                        'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
                         -1,
                         'flags-multiple'
                     ],
@@ -92,7 +83,7 @@ return [
         ],
 		'l10n_parent' => [
 			'displayCond' => 'FIELD:sys_language_uid:>:0',
-			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
+			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
 			'config' => [
 				'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -111,7 +102,7 @@ return [
             ],
         ],
 		't3ver_label' => [
-			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.versionLabel',
+			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.versionLabel',
 			'config' => [
 				'type' => 'input',
 				'size' => 30,
@@ -120,14 +111,14 @@ return [
         ],
 		'hidden' => [
 			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
+			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
 			'config' => [
 				'type' => 'check',
             ],
         ],
 		'starttime' => [
 			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.starttime',
+			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
 			'config' => [
 				'type' => 'input',
 				'size' => 13,
@@ -143,7 +134,7 @@ return [
         ],
 		'endtime' => [
 			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.endtime',
+			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
 			'config' => [
 				'type' => 'input',
 				'size' => 13,
@@ -339,10 +330,6 @@ return [
 				'minItems' => 0,
 				'maxitems' => 1,
 				'multiple' => 0,
-				'wizards' => [
-					'_PADDING' => 1,
-					'_VERTICAL' => 1,
-                ],
 				'renderType' => 'selectSingle',
 				'items' => [
 					['LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.choose','0']
@@ -465,7 +452,7 @@ return [
                     'field' => 'category'
                 ],
                 'size' => 10,
-                'autoSizeMax' => 30,
+                'size' => 30,
                 'maxitems' => 9999,
                 'multiple' => 0,
             ],

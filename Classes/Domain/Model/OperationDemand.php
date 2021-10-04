@@ -1,6 +1,7 @@
 <?php
 namespace Kanow\Operations\Domain\Model;
 
+use TYPO3\CMS\Extbase\DomainObject\AbstractValueObject;
 use TYPO3\CMS\Extbase\Domain\Model\Category;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
@@ -35,7 +36,7 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
  * @package operations
  * @subpackage dto
  */
-class OperationDemand extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
+class OperationDemand extends AbstractValueObject {
 
 	/**
 	 * Operation onlyEld for demand

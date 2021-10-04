@@ -1,6 +1,7 @@
 <?php
 namespace Kanow\Operations\Controller;
 
+use Kanow\Operations\Domain\Model\Vehicle;
 use Kanow\Operations\Domain\Repository\VehicleRepository;
 
 /***************************************************************
@@ -34,7 +35,7 @@ use Kanow\Operations\Domain\Repository\VehicleRepository;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class VehicleController extends \Kanow\Operations\Controller\BaseController {
+class VehicleController extends BaseController {
 
 	/**
 	 * @var VehicleRepository
@@ -63,7 +64,7 @@ class VehicleController extends \Kanow\Operations\Controller\BaseController {
 	 * @param \Kanow\Operations\Domain\Model\Vehicle $vehicle
 	 * @return void
 	 */
-	public function showAction(\Kanow\Operations\Domain\Model\Vehicle $vehicle ) {
+	public function showAction(Vehicle $vehicle ) {
 		$this->view->assign('vehicle', $vehicle);
 	}
 

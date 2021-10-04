@@ -1,6 +1,7 @@
 <?php
 namespace Kanow\Operations\Domain\Repository;
 
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /***************************************************************
@@ -42,7 +43,7 @@ class VehicleRepository extends Repository {
      * @return array
      */
     protected $defaultOrderings = array(
-        'sorting' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
+        'sorting' => QueryInterface::ORDER_ASCENDING,
     );
 
 }

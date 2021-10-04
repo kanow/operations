@@ -2,6 +2,9 @@
 
 namespace Kanow\Operations\Domain\Model;
 
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+use TYPO3\CMS\Extbase\Domain\Model\Category;
 /***************************************************************
  *  Copyright notice
  *
@@ -25,7 +28,6 @@ namespace Kanow\Operations\Domain\Model;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
 /**
  *
  *
@@ -33,7 +35,7 @@ namespace Kanow\Operations\Domain\Model;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class Operation extends AbstractEntity
 {
 
     /**
@@ -177,12 +179,12 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     protected function initStorageObjects()
     {
-        $this->type = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->assistance = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->vehicles = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->resources = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->media = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->category = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->type = new ObjectStorage();
+        $this->assistance = new ObjectStorage();
+        $this->vehicles = new ObjectStorage();
+        $this->resources = new ObjectStorage();
+        $this->media = new ObjectStorage();
+        $this->category = new ObjectStorage();
     }
 
     /**
@@ -466,7 +468,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \Kanow\Operations\Domain\Model\Type $type
      * @return void
      */
-    public function addType(\Kanow\Operations\Domain\Model\Type $type)
+    public function addType(Type $type)
     {
         $this->type->attach($type);
     }
@@ -477,7 +479,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \Kanow\Operations\Domain\Model\Type $typeToRemove The Type to be removed
      * @return void
      */
-    public function removeType(\Kanow\Operations\Domain\Model\Type $typeToRemove)
+    public function removeType(Type $typeToRemove)
     {
         $this->type->detach($typeToRemove);
     }
@@ -509,7 +511,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Type> $type
      * @return void
      */
-    public function setType(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $type)
+    public function setType(ObjectStorage $type)
     {
         $this->type = $type;
     }
@@ -520,7 +522,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \Kanow\Operations\Domain\Model\Assistance $assistance
      * @return void
      */
-    public function addAssistance(\Kanow\Operations\Domain\Model\Assistance $assistance)
+    public function addAssistance(Assistance $assistance)
     {
         $this->assistance->attach($assistance);
     }
@@ -531,7 +533,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \Kanow\Operations\Domain\Model\Assistance $assistanceToRemove The Assistance to be removed
      * @return void
      */
-    public function removeAssistance(\Kanow\Operations\Domain\Model\Assistance $assistanceToRemove)
+    public function removeAssistance(Assistance $assistanceToRemove)
     {
         $this->assistance->detach($assistanceToRemove);
     }
@@ -552,7 +554,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Assistance> $assistance
      * @return void
      */
-    public function setAssistance(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $assistance)
+    public function setAssistance(ObjectStorage $assistance)
     {
         $this->assistance = $assistance;
     }
@@ -563,7 +565,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \Kanow\Operations\Domain\Model\Vehicle $vehicle
      * @return void
      */
-    public function addVehicle(\Kanow\Operations\Domain\Model\Vehicle $vehicle)
+    public function addVehicle(Vehicle $vehicle)
     {
         $this->vehicles->attach($vehicle);
     }
@@ -574,7 +576,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \Kanow\Operations\Domain\Model\Vehicle $vehicleToRemove The Vehicle to be removed
      * @return void
      */
-    public function removeVehicle(\Kanow\Operations\Domain\Model\Vehicle $vehicleToRemove)
+    public function removeVehicle(Vehicle $vehicleToRemove)
     {
         $this->vehicles->detach($vehicleToRemove);
     }
@@ -595,7 +597,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Vehicle> $vehicles
      * @return void
      */
-    public function setVehicles(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $vehicles)
+    public function setVehicles(ObjectStorage $vehicles)
     {
         $this->vehicles = $vehicles;
     }
@@ -606,7 +608,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \Kanow\Operations\Domain\Model\Resources $resource
      * @return void
      */
-    public function addResource(\Kanow\Operations\Domain\Model\Resource $resource)
+    public function addResource(Resource $resource)
     {
         $this->resources->attach($resource);
     }
@@ -617,7 +619,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \Kanow\Operations\Domain\Model\Resources $resourceToRemove The Resources to be removed
      * @return void
      */
-    public function removeResource(\Kanow\Operations\Domain\Model\Resource $resourceToRemove)
+    public function removeResource(Resource $resourceToRemove)
     {
         $this->resources->detach($resourceToRemove);
     }
@@ -638,7 +640,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Resources> $resources
      * @return void
      */
-    public function setResources(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $resources)
+    public function setResources(ObjectStorage $resources)
     {
         $this->resources = $resources;
     }
@@ -649,7 +651,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \TYPO3\CMS\Extbase\Domain\Model\Category $category
      * @return void
      */
-    public function addCategory(\TYPO3\CMS\Extbase\Domain\Model\Category $category)
+    public function addCategory(Category $category)
     {
         $this->category->attach($category);
     }
@@ -660,7 +662,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \TYPO3\CMS\Extbase\Domain\Model\Category $categoryToRemove The Category to be removed
      * @return void
      */
-    public function removeCategory(\TYPO3\CMS\Extbase\Domain\Model\Category $categoryToRemove)
+    public function removeCategory(Category $categoryToRemove)
     {
         $this->category->detach($categoryToRemove);
     }
@@ -681,7 +683,7 @@ class Operation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category> $category
      * @return void
      */
-    public function setCategory(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $category)
+    public function setCategory(ObjectStorage $category)
     {
         $this->category = $category;
     }

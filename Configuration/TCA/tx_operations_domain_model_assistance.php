@@ -10,7 +10,6 @@ return [
                 'tstamp' => 'tstamp',
                 'crdate' => 'crdate',
                 'cruser_id' => 'cruser_id',
-                'dividers2tabs' => TRUE,
                 'sortby' => 'sorting',
                 'versioningWS' => true,
                 'origUid' => 't3_origuid',
@@ -27,8 +26,7 @@ return [
                 'typeicon_classes' => ['default' => 'ext-operations-assistance']
     ],
 	'types' => [
-		'0' => ['showitem' => 'sys_language_uid;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language, l10n_parent;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent, l10n_diffsource,hidden;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden,
-		title, description, link'
+		'0' => ['showitem' => 'sys_language_uid;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language,l10n_parent;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent,l10n_diffsource,hidden;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden,title,description,link'
         ],
     ],
 	'palettes' => [
@@ -37,7 +35,7 @@ return [
 	'columns' => [
 		'sys_language_uid' => [
 			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
+			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
 			'config' => [
 				'type' => 'select',
 				'renderType' => 'selectSingle',
@@ -45,11 +43,11 @@ return [
 				'foreign_table_where' => 'ORDER BY sys_language.title',
 				'items' => [
 				    [
-				        'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
+				        'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
                         0
                     ],
                     [
-                        'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
+                        'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
                         -1,
                         'flags-multiple'
                     ],
@@ -59,7 +57,7 @@ return [
         ],
 		'l10n_parent' => [
 			'displayCond' => 'FIELD:sys_language_uid:>:0',
-			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
+			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
 			'config' => [
 				'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -77,7 +75,7 @@ return [
             ],
         ],
 		't3ver_label' => [
-			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.versionLabel',
+			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.versionLabel',
 			'config' => [
 				'type' => 'input',
 				'size' => 30,
@@ -86,14 +84,14 @@ return [
         ],
 		'hidden' => [
 			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
+			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
 			'config' => [
 				'type' => 'check',
             ],
         ],
 		'starttime' => [
 			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.starttime',
+			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
 			'config' => [
 				'type' => 'input',
 				'size' => 13,
@@ -109,7 +107,7 @@ return [
         ],
 		'endtime' => [
 			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.endtime',
+			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
 			'config' => [
 				'type' => 'input',
 				'size' => 13,
