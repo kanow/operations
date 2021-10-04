@@ -164,7 +164,6 @@ class Operation extends AbstractEntity
     /**
      * __construct
      *
-     * @return Operation
      */
     public function __construct()
     {
