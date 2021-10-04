@@ -6,7 +6,7 @@ use Kanow\Operations\Controller\VehicleController;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
-if (!defined('TYPO3_MODE')) {
+if (!defined('TYPO3')) {
 	die ('Access denied.');
 }
 

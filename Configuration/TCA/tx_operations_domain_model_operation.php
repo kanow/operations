@@ -5,7 +5,7 @@ use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-if (!defined ('TYPO3_MODE')) {
+if (!defined ('TYPO3')) {
 	die ('Access denied.');
 }
 
