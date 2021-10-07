@@ -16,6 +16,9 @@
 			<trans-unit id="tx_operations_domain_model_operation.title">
 				<source>Title</source>
 			</trans-unit>
+			<trans-unit id="tx_operations_domain_model_operation.path_segment">
+				<source>URL Segment</source>
+			</trans-unit>
 			<trans-unit id="tx_operations_domain_model_operation.location">
 				<source>Location</source>
 			</trans-unit>
