@@ -451,7 +451,6 @@ return [
                 'MM_match_fields' => [
                     'field' => 'category'
                 ],
-                'size' => 10,
                 'size' => 30,
                 'maxitems' => 9999,
                 'multiple' => 0,
