@@ -434,22 +434,13 @@ return [
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.fieldLabel.category',
             'config' => [
-                'type' => 'select',
-                'renderType' => 'selectTree',
-                'foreign_table' => 'sys_category',
-                'foreign_table_where' => 'AND sys_category.hidden=0 AND sys_category.sys_language_uid IN (-1,0)',
-                'renderMode' => 'tree',
+                'type' => 'category',
                 'treeConfig' => [
-                    'parentField' => 'parent',
-                    'rootUid' => $extensionConfiguration['rootCategory'],
+                    'startingPoints' => $extensionConfiguration['rootCategory'],
                     'appearance' => [
                         'expandAll' => TRUE,
                         'showHeader' => TRUE,
                     ],
-                ],
-                'MM' => 'tx_operations_operation_category_mm',
-                'MM_match_fields' => [
-                    'field' => 'category'
                 ],
                 'size' => 30,
                 'maxitems' => 9999,

@@ -1,3 +1,4 @@
+<!--suppress CheckTagEmptyBody -->
 <T3DataStructure>
     <sheets>
         <sDEF>
@@ -120,19 +121,15 @@
                             <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.category.label</label>
                             <displayCond>FIELD:switchableControllerActions:=:Operation->list;Operation->search</displayCond>
                             <config>
-                                <type>select</type>
-                                <renderType>selectTree</renderType>
+                                <type>category</type>
                                 <treeConfig>
                                     <dataProvider>Kanow\Operations\TreeProvider\DatabaseTreeDataProvider</dataProvider>
-                                    <parentField>parent</parentField>
                                     <appearance>
                                         <expandAll>1</expandAll>
                                         <showHeader>1</showHeader>
                                         <maxLevels>999</maxLevels>
                                     </appearance>
                                 </treeConfig>
-                                <foreign_table>sys_category</foreign_table>
-                                <allowed>sys_category</allowed>
                                 <maxitems>50</maxitems>
                                 <minitems>0</minitems>
                                 <show_thumbs>1</show_thumbs>
