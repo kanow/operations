@@ -42,3 +42,6 @@ ExtensionUtility::configurePlugin(
 );
 
 ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:operations/Configuration/TsConfig/ContentElementWizard.txt">');
+
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['operations_migrateCategoryRelations']
+    = \Kanow\Operations\Updates\MigrateCategoryRelations::class;

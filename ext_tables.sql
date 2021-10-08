@@ -20,7 +20,7 @@ CREATE TABLE tx_operations_domain_model_operation (
 	assistance int(11) unsigned DEFAULT '0' NOT NULL,
 	vehicles int(11) unsigned DEFAULT '0' NOT NULL,
 	resources int(11) unsigned DEFAULT '0' NOT NULL,
-	category int(11) unsigned DEFAULT '0' NOT NULL,
+	category int(11) unsigned DEFAULT '0' NOT NULL
 
 );
 
@@ -70,7 +70,7 @@ CREATE TABLE tx_operations_domain_model_type (
 
 	title varchar(255) DEFAULT '' NOT NULL,
 	image varchar(255) DEFAULT '' NOT NULL,
-	color varchar(25) DEFAULT '' NOT NULL,
+	color varchar(25) DEFAULT '' NOT NULL
 
 );
 
@@ -121,20 +121,6 @@ CREATE TABLE tx_operations_operation_resource_mm (
 	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
 	sorting int(11) unsigned DEFAULT '0' NOT NULL,
 	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-
-	KEY uid_local (uid_local),
-	KEY uid_foreign (uid_foreign)
-);
-
-#
-# Table structure for table 'tx_operations_operation_category_mm'
-#
-CREATE TABLE tx_operations_operation_category_mm (
-	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-	sorting int(11) unsigned DEFAULT '0' NOT NULL,
-	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-	field varchar(50) DEFAULT '' NOT NULL,
 
 	KEY uid_local (uid_local),
 	KEY uid_foreign (uid_foreign)
