@@ -41,7 +41,7 @@ class Operation extends AbstractEntity
     /**
      * Operation number
      *
-     * @var \string
+     * @var string
      * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
     protected $number;
@@ -49,14 +49,14 @@ class Operation extends AbstractEntity
     /**
      * Operation onlyEld
      *
-     * @var \integer
+     * @var integer
      */
     protected $onlyEld;
 
     /**
      * Title
      *
-     * @var \string
+     * @var string
      * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
     protected $title;
@@ -64,7 +64,7 @@ class Operation extends AbstractEntity
     /**
      * Location of operation
      *
-     * @var \string
+     * @var string
      * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
     protected $location;
@@ -87,35 +87,35 @@ class Operation extends AbstractEntity
     /**
      * Operation short teaser
      *
-     * @var \string
+     * @var string
      */
     protected $teaser;
 
     /**
      * Operation report
      *
-     * @var \string
+     * @var string
      */
     protected $report;
 
     /**
      * Longitude
      *
-     * @var \string
+     * @var string
      */
     protected $longitude;
 
     /**
      * Latitude
      *
-     * @var \string
+     * @var string
      */
     protected $latitude;
 
     /**
      * Zoom for maps
      *
-     * @var \integer
+     * @var integer
      */
     protected $zoom;
 
@@ -189,7 +189,7 @@ class Operation extends AbstractEntity
     /**
      * Returns the number
      *
-     * @return \string $number
+     * @return string $number
      */
     public function getNumber()
     {
@@ -199,7 +199,7 @@ class Operation extends AbstractEntity
     /**
      * Sets the number
      *
-     * @param \string $number
+     * @param string $number
      * @return void
      */
     public function setNumber($number)
@@ -210,7 +210,7 @@ class Operation extends AbstractEntity
     /**
      * Returns the onlyEld
      *
-     * @return \integer $onlyEld
+     * @return integer $onlyEld
      */
     public function getOnlyEld()
     {
@@ -220,7 +220,7 @@ class Operation extends AbstractEntity
     /**
      * Sets the onlyEld
      *
-     * @param \integer $onlyEld
+     * @param integer $onlyEld
      * @return void
      */
     public function setOnlyEld($onlyEld)
@@ -231,7 +231,7 @@ class Operation extends AbstractEntity
     /**
      * Returns the title
      *
-     * @return \string $title
+     * @return string $title
      */
     public function getTitle()
     {
@@ -241,7 +241,7 @@ class Operation extends AbstractEntity
     /**
      * Sets the title
      *
-     * @param \string $title
+     * @param string $title
      * @return void
      */
     public function setTitle($title)
@@ -252,7 +252,7 @@ class Operation extends AbstractEntity
     /**
      * Returns the location
      *
-     * @return \string $location
+     * @return string $location
      */
     public function getLocation()
     {
@@ -262,7 +262,7 @@ class Operation extends AbstractEntity
     /**
      * Sets the location
      *
-     * @param \string $location
+     * @param string $location
      * @return void
      */
     public function setLocation($location)
@@ -316,7 +316,7 @@ class Operation extends AbstractEntity
     /**
      * Returns the teaser
      *
-     * @return \string $teaser
+     * @return string $teaser
      */
     public function getTeaser()
     {
@@ -326,7 +326,7 @@ class Operation extends AbstractEntity
     /**
      * Sets the teaser
      *
-     * @param \string $teaser
+     * @param string $teaser
      * @return void
      */
     public function setTeaser($teaser)
@@ -337,7 +337,7 @@ class Operation extends AbstractEntity
     /**
      * Returns the report
      *
-     * @return \string $report
+     * @return string $report
      */
     public function getReport()
     {
@@ -347,7 +347,7 @@ class Operation extends AbstractEntity
     /**
      * Sets the report
      *
-     * @param \string $report
+     * @param string $report
      * @return void
      */
     public function setReport($report)
@@ -358,7 +358,7 @@ class Operation extends AbstractEntity
     /**
      * Returns the longitude
      *
-     * @return \string $longitude
+     * @return string $longitude
      */
     public function getLongitude()
     {
@@ -368,7 +368,7 @@ class Operation extends AbstractEntity
     /**
      * Sets the longitude
      *
-     * @param \string $longitude
+     * @param string $longitude
      * @return void
      */
     public function setLongitude($longitude)
@@ -379,7 +379,7 @@ class Operation extends AbstractEntity
     /**
      * Returns the latitude
      *
-     * @return \string $latitude
+     * @return string $latitude
      */
     public function getLatitude()
     {
@@ -389,7 +389,7 @@ class Operation extends AbstractEntity
     /**
      * Sets the latitude
      *
-     * @param \string $latitude
+     * @param string $latitude
      * @return void
      */
     public function setLatitude($latitude)
@@ -400,7 +400,7 @@ class Operation extends AbstractEntity
     /**
      * Returns the zoom
      *
-     * @return \integer $zoom
+     * @return integer $zoom
      */
     public function getZoom()
     {
@@ -410,7 +410,7 @@ class Operation extends AbstractEntity
     /**
      * Sets the zoom
      *
-     * @param \integer $zoom
+     * @param integer $zoom
      * @return void
      */
     public function setZoom($zoom)

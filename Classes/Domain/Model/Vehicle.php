@@ -39,7 +39,7 @@ class Vehicle extends AbstractEntity
     /**
      * Title of vehicle
      *
-     * @var \string
+     * @var string
      * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
     protected $title;
@@ -47,14 +47,14 @@ class Vehicle extends AbstractEntity
     /**
      * Abbreviation of vehicle
      *
-     * @var \string
+     * @var string
      */
     protected $short;
 
     /**
      * Description of vehicle
      *
-     * @var \string
+     * @var string
      */
     protected $description;
 
@@ -67,14 +67,14 @@ class Vehicle extends AbstractEntity
     /**
      * A website url or internal link
      *
-     * @var \string
+     * @var string
      */
     protected $link;
 
     /**
      * Returns the title
      *
-     * @return \string $title
+     * @return string $title
      */
     public function getTitle()
     {
@@ -84,7 +84,7 @@ class Vehicle extends AbstractEntity
     /**
      * Sets the title
      *
-     * @param \string $title
+     * @param string $title
      * @return void
      */
     public function setTitle($title)
@@ -95,7 +95,7 @@ class Vehicle extends AbstractEntity
     /**
      * Returns the short
      *
-     * @return \string $short
+     * @return string $short
      */
     public function getShort()
     {
@@ -105,7 +105,7 @@ class Vehicle extends AbstractEntity
     /**
      * Sets the short
      *
-     * @param \string $short
+     * @param string $short
      * @return void
      */
     public function setShort($short)
@@ -116,7 +116,7 @@ class Vehicle extends AbstractEntity
     /**
      * Returns the description
      *
-     * @return \string $description
+     * @return string $description
      */
     public function getDescription()
     {
@@ -126,7 +126,7 @@ class Vehicle extends AbstractEntity
     /**
      * Sets the description
      *
-     * @param \string $description
+     * @param string $description
      * @return void
      */
     public function setDescription($description)

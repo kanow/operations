@@ -37,7 +37,7 @@ class Assistance extends AbstractEntity {
 	/**
 	 * Title of the assistance
 	 *
-	 * @var \string
+	 * @var string
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
 	 */
 	protected $title;
@@ -45,21 +45,21 @@ class Assistance extends AbstractEntity {
 	/**
 	 * Description of assistance
 	 *
-	 * @var \string
+	 * @var string
 	 */
 	protected $description;
 
 	/**
 	 * A website url
 	 *
-	 * @var \string
+	 * @var string
 	 */
 	protected $link;
 
 	/**
 	 * Returns the title
 	 *
-	 * @return \string $title
+	 * @return string $title
 	 */
 	public function getTitle() {
 		return $this->title;
@@ -68,7 +68,7 @@ class Assistance extends AbstractEntity {
 	/**
 	 * Sets the title
 	 *
-	 * @param \string $title
+	 * @param string $title
 	 * @return void
 	 */
 	public function setTitle($title) {
@@ -78,7 +78,7 @@ class Assistance extends AbstractEntity {
 	/**
 	 * Returns the description
 	 *
-	 * @return \string $description
+	 * @return string $description
 	 */
 	public function getDescription() {
 		return $this->description;
@@ -87,7 +87,7 @@ class Assistance extends AbstractEntity {
 	/**
 	 * Sets the description
 	 *
-	 * @param \string $description
+	 * @param string $description
 	 * @return void
 	 */
 	public function setDescription($description) {
@@ -97,7 +97,7 @@ class Assistance extends AbstractEntity {
 	/**
 	 * Returns the link
 	 *
-	 * @return \string $link
+	 * @return string $link
 	 */
 	public function getLink() {
 		return $this->link;
@@ -106,7 +106,7 @@ class Assistance extends AbstractEntity {
 	/**
 	 * Sets the link
 	 *
-	 * @param \string $link
+	 * @param string $link
 	 * @return void
 	 */
 	public function setLink($link) {

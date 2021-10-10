@@ -37,7 +37,7 @@ class Resource extends AbstractEntity {
 	/**
 	 * Title of resource
 	 *
-	 * @var \string
+	 * @var string
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
 	 */
 	protected $title;
@@ -45,14 +45,14 @@ class Resource extends AbstractEntity {
 	/**
 	 * Abbreviation title
 	 *
-	 * @var \string
+	 * @var string
 	 */
 	protected $short;
 
 	/**
 	 * Description of resource
 	 *
-	 * @var \string
+	 * @var string
 	 */
 	protected $description;
 
@@ -65,14 +65,14 @@ class Resource extends AbstractEntity {
     /**
      * A website url or internal link
      *
-     * @var \string
+     * @var string
      */
     protected $link;
 
 	/**
 	 * Returns the title
 	 *
-	 * @return \string $title
+	 * @return string $title
 	 */
 	public function getTitle() {
 		return $this->title;
@@ -81,7 +81,7 @@ class Resource extends AbstractEntity {
 	/**
 	 * Sets the title
 	 *
-	 * @param \string $title
+	 * @param string $title
 	 * @return void
 	 */
 	public function setTitle($title) {
@@ -91,7 +91,7 @@ class Resource extends AbstractEntity {
 	/**
 	 * Returns the short
 	 *
-	 * @return \string $short
+	 * @return string $short
 	 */
 	public function getShort() {
 		return $this->short;
@@ -100,7 +100,7 @@ class Resource extends AbstractEntity {
 	/**
 	 * Sets the short
 	 *
-	 * @param \string $short
+	 * @param string $short
 	 * @return void
 	 */
 	public function setShort($short) {
@@ -110,7 +110,7 @@ class Resource extends AbstractEntity {
 	/**
 	 * Returns the description
 	 *
-	 * @return \string $description
+	 * @return string $description
 	 */
 	public function getDescription() {
 		return $this->description;
@@ -119,7 +119,7 @@ class Resource extends AbstractEntity {
 	/**
 	 * Sets the description
 	 *
-	 * @param \string $description
+	 * @param string $description
 	 * @return void
 	 */
 	public function setDescription($description) {

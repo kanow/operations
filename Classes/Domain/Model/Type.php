@@ -37,7 +37,7 @@ class Type extends AbstractEntity {
 	/**
 	 * Operation type
 	 *
-	 * @var \string
+	 * @var string
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
 	 */
 	protected $title;
@@ -52,14 +52,14 @@ class Type extends AbstractEntity {
     /**
      * Type color
      *
-     * @var \string
+     * @var string
      */
     protected $color;
 
 	/**
 	 * Returns the title
 	 *
-	 * @return \string $title
+	 * @return string $title
 	 */
 	public function getTitle() {
 		return $this->title;
@@ -68,7 +68,7 @@ class Type extends AbstractEntity {
 	/**
 	 * Sets the title
 	 *
-	 * @param \string $title
+	 * @param string $title
 	 * @return void
 	 */
 	public function setTitle($title) {
@@ -96,7 +96,7 @@ class Type extends AbstractEntity {
     /**
      * Returns the color
      *
-     * @return \string $color
+     * @return string $color
      */
     public function getColor() {
         return $this->color;
@@ -105,7 +105,7 @@ class Type extends AbstractEntity {
     /**
      * Sets the color
      *
-     * @param \string $color
+     * @param string $color
      * @return void
      */
     public function setColor($color) {
