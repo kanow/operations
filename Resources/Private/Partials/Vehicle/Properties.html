@@ -1,3 +1,4 @@
+<!--suppress HtmlRequiredLangAttribute -->
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
 	  data-namespace-typo3-fluid="true">
 
@@ -10,7 +11,7 @@
 	<f:if condition="{vehicle.media}">
 		<div class="media layer">
 		<!--	<h2><f:translate key="tx_operations_domain_model_operation.media" /></h2> -->
-			<f:for each="{vehicle.allMedia}" as="media">
+			<f:for each="{vehicle.media}" as="media">
 				<figure>
 					<f:media file="{media}" width="{settings.singleMediaWidth}" height="{settings.singleMediaHeight}" />
 					<f:if condition="{media.originalResource.description}">

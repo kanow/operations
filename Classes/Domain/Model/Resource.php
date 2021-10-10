@@ -134,15 +134,7 @@ class Resource extends AbstractEntity {
    public function getMedia() {
       return $this->media;
    }
-  /**
-   * Returns all media
-   *
-   * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $media
-   */
-  public function getAllMedia() {
-    $allMedia = $this->getMedia()->toArray();
-    return $allMedia;
-  }
+
   /**
    * Returns the first media
    *

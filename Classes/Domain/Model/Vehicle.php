@@ -145,17 +145,6 @@ class Vehicle extends AbstractEntity
     }
 
     /**
-     * Returns all media
-     *
-     * @return array $media
-     */
-    public function getAllMedia()
-    {
-        $allMedia = $this->getMedia()->toArray();
-        return $allMedia;
-    }
-
-    /**
      * Returns the first media
      *
      * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $media
