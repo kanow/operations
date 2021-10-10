@@ -35,14 +35,16 @@ Operations
 
 Manage firefighter operations with detailed reports, images, used resources or vehicles, statistics, map view for locations….
 
+**Official documentation**
+
+This document is included as part of the official TYPO3 documentation.
+
 **Community Documentation:**
 
-   This documentation is documentation for the TYPO3 extension operations.
-
-   It is maintained as part of this third party extension.
-
-   If you find an error or something is missing, please:
-   `Report a Problem <https://github.com/kanow/operations/issues>`__
+This documentation is documentation for the TYPO3 extension operations.
+It is maintained as part of this third party extension.
+If you find an error or something is missing, please:
+`Report a Problem <https://github.com/kanow/operations/issues>`__
 
 
 **Sitemap:**

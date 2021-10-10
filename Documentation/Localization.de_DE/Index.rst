@@ -35,16 +35,17 @@ Operations
 
 Verwaltung von Feuerwehreinsätzen in einer TYPO3 Webseite. Detaillierte Berichte mit Bildern, genutzten Fahrzeuge und Hilfsmitteln, Statistiken der Einsätze, Darstellung der Einsätze auf einer Karte.
 
+**Ofizielle Dokumentation**
+
+Dieses Dokument ist Bestandteil der offiziellen TYPO3 Dokumentation.
 
 
 **Community Documentation:**
 
-   Diese Anleitung ist für die TYPO3 Extension `operations`.
-
-   Die Anleitung ist Teil der Extension.
-
-   Falls ihr einen Fehler findet oder ein Problem habt:
-   `Hier Ticket erstellen <https://github.com/kanow/operations/issues>`__
+Diese Anleitung ist für die TYPO3 Extension `operations`.
+Die Anleitung wird innerhalb der Extension mit aktualiseert.
+Falls ihr einen Fehler findet oder ein Problem habt:
+`Hier Ticket erstellen <https://github.com/kanow/operations/issues>`__
 
 
 **Sitemap:**
