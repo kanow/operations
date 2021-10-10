@@ -16,30 +16,35 @@ Operations
 :Version:
    |release|
 
-:Language:
+:Sprache:
    de
 
-:Authors:
+:Autor:
    Karsten Nowak
 
-:Email:
+:E-Mail:
    captnnowi@gmx.de
 
-:License:
+:Lizenz:
    Diese Extension ist veröffentlicht unter der
    `CC BY-NC-SA 4.0 <https://creativecommons.org/licenses/by-nc-sa/4.0/>`__ (Creative Commons)
    Lizenz.
 
-Verwaltung von Feuerwehreinsätzen in einer TYPO3 Webseite. Detaillierte Berichte mit Bilder, genutzten Fahrzeuge und Hilfsmitteln, Statistiken der Einsätze, Darstellung der Einsätze auf einer Karte.
+:Voraussetzungen:
+  Die aktuelle Version läuft unter TYPO3 11.5
 
-**TYPO3**
+Verwaltung von Feuerwehreinsätzen in einer TYPO3 Webseite. Detaillierte Berichte mit Bildern, genutzten Fahrzeuge und Hilfsmitteln, Statistiken der Einsätze, Darstellung der Einsätze auf einer Karte.
 
-   Der Inhalt dieser Anleitung bezieht sich auf das TYPO3 CMS,
-   ein GNU/GPL CMS/Framework verfügbar unter `typo3.org
-   <https://typo3.org/>`_ .
 
-   Falls jemand einen Fehler findet, bitte hier melden:
-   `Ticket erstellen <https://github.com/kanow/operations/issues>`__
+
+**Community Documentation:**
+
+   Diese Anleitung ist für die TYPO3 Extension `operations`.
+
+   Die Anleitung ist Teil der Extension.
+
+   Falls ihr einen Fehler findet oder ein Problem habt:
+   `Hier Ticket erstellen <https://github.com/kanow/operations/issues>`__
 
 
 **Sitemap:**
