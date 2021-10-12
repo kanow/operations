@@ -50,7 +50,7 @@ Falls ihr einen Fehler findet oder ein Problem habt:
 
 **Sitemap:**
 
-   :ref:`sitemap`
+:ref:`sitemap`
 
 
 .. toctree::
