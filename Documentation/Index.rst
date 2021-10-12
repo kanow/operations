@@ -58,7 +58,6 @@ If you find an error or something is missing, please:
    Introduction/Index
    Installation/Index
    Configuration/Index
-   Migration/Index
    Changelog/Index
    Sitemap
 
