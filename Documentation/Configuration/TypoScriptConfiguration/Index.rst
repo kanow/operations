@@ -16,6 +16,11 @@ Include static TypoScript
 =========================
 
 The extension come with some TypoScript which needs to be included.
+You can include TypoScript in different ways. The preferred way should be include TypoScript from Extensions
+in your Site Package. See  :ref:`Include TypoScript in Site Package <t3sitepackage:typoscript-configuration`>
+
+The old way is also possible. Include TypoScript of the Extension in your root TypoScript Template (`sys_template`)
+in database.
 
 #. Select the root page of your site.
 
@@ -36,46 +41,66 @@ The extension come with some TypoScript which needs to be included.
 TypoScript Example
 ==================
 
-Minimal example of TypoScript to overwrite a setting in operations:
+You can override TypoScript in your Site Package or in database sys_templates. Minimal example of TypoScript to
+overwrite some settings from the Extension:
 
 .. code-block:: typoscript
 
-    plugin.tx_operations.settings {
-        # set length of cropped teaser
-        cropTeaser = 200
-        single {
-            showNoReport = 1
-        }
+    plugin.tx_operations {
+      persistence.storagePid = 45
+      settings {
+        cropTeaser = 150
+        itemsPerPage = 8
+      }
     }
+
+.. note::
+
+   Add your own additional settings if you need some and use those settings in Fluid Templates.
+
+.. important::
+
+   Add your own TypoScript after includes of TypoScript from the `operations`!
 
 .. _own-template-files:
 
 Use your own template files
 ===========================
 
+If you need changes on the template files, you should copy the needed files to your :ref:`Site Package <t3tmsa:tmsa-Sitepackages>`.
+You need the same folder structure as described her: :ref:`Fluid Templates <t3sitepackage:fluid-templates#directory-structure>`,
 Please copy the needed folders and files in your fileadmin folder.
 
-You need at least one folder for *Layouts*, *Templates* and *Partials*
 
-You find those folders in the extension folder of operations:
+You find those structure also in operations:
 
 * Resources/Private/Layouts
 * Resources/Private/Templates
 * Resources/Private/Partials
 
 You don't need to copy all files. Just copy the files and folders you need.
-Then change the paths in constants to your own. Now you can edit the files you want to change.
+
+.. important::
+
+   If you copy files from subfolders, you must keep the existing subfolder structure also in your Site Packages!
+   That means `Templates\Operation\List.html` must be copied to a subfolder `Operation` in the `Templates` folder.
+
+After that you can change the paths in constants to your own :ref:`Site Package <t3tmsa:tmsa-Sitepackages>`.
+This way you can edit some files but not all. It's easier if you upgrade `operations`. Probably you have to change less files after updating.
+
 
 Change the templates paths in TypoScript constants
 """"""""""""""""""""""""""""""""""""""""""""""""""
-Use the following TypoScript in  **constants** to change the paths
+Here an example for TypoScript constants to change the paths
 
 .. code-block:: typoscript
 
    plugin.tx_operations {
            view {
-                   templateRootPath = fileadmin/templates/ext/operations/Templates/
-                   partialRootPath = fileadmin/templates/ext/operations/Partials/
-                   layoutRootPath = fileadmin/templates/ext/operations/Layouts/
+                   templateRootPath = EXT:your_site_package/Resources/Private/Extensions/operations/Templates/
+                   partialRootPath = EXT:your_site_package/Resources/Private/Extensions/operations/Partials/
+                   layoutRootPath = EXT:your_site_package/Resources/Private/Extensions/operations/Layouts/
            }
    }
+
+It's recommended to set those constants in your :ref:`Site Package <t3tmsa:tmsa-Sitepackages>`
