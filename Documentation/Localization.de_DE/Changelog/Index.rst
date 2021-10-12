@@ -145,7 +145,7 @@ Einige Einstellungen für Bilder wurden umbenannt in `media`. Sie wurden wie fol
 Schaut euch einfach mal das TypoScript in `configuration/TypoScript/setup.txt` an. Dort findet ihr die Änderungen.
 
 Datenbankmigration des Felds `images` nach `media`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Achtung, bitte unbedingt die Datenbanktabellen von `operations` einmal vorher sichern. Ich übernehme keine Garantie
 für die Richtigkeit dieser SQL Anweisungen.
