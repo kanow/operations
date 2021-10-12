@@ -13,7 +13,7 @@ Plugin configuration
 
 The most important configuration settings can be done in the content element plugin.
 
-Because of using Extbase every setting can also be done by using typoscript but remember that the settings of the plugin always override the settings from typoscript.
+Because of using Extbase every setting can also be done by using TypoScript but remember that the settings of the plugin always override the settings from TypoScript.
 
 
 Tab "Options"
