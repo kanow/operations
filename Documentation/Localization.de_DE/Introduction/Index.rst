@@ -25,14 +25,14 @@ von vergangenen Einsätzen abbilden. Im Frontend sind verschiedene Darstellungen
 
 .. note::
 
-  Darstellungen im Frontend (auf der Webseite):
+   Darstellungen im Frontend (auf der Webseite):
 
-    - List- und Einzelansicht von Einsatzberichten
-    - Möglichkeit des Filterns der Liste nach Jahren, Einsatztyp und Kategorie
-    - Suche nach Begriffen ist ebenfalls möglich
-    - In der Einzelansicht den Einsatzort auf einer Karte zeigen (entsprechende Geo Daten müssen dazu angegeben sein)
-    - Eine Karte mit allen Einsätzen statt der normalen Liste
-    - Einsatzstatistik gruppiert nach Jahr und Einsatztyp mit einem Balkendiagramm und/oder einer Tabelle (http://chartjs.org)
+   - List- und Einzelansicht von Einsatzberichten
+   - Möglichkeit des Filterns der Liste nach Jahren, Einsatztyp und Kategorie
+   - Suche nach Begriffen ist ebenfalls möglich
+   - In der Einzelansicht den Einsatzort auf einer Karte zeigen (entsprechende Geo Daten müssen dazu angegeben sein)
+   - Eine Karte mit allen Einsätzen statt der normalen Liste
+   - Einsatzstatistik gruppiert nach Jahr und Einsatztyp mit einem Balkendiagramm und/oder einer Tabelle (http://chartjs.org)
 
 
 .. tip::
@@ -47,10 +47,11 @@ von vergangenen Einsätzen abbilden. Im Frontend sind verschiedene Darstellungen
 
 .. note::
 
-    Icons bei die Daten im Backend:
-        - Icon für Einsatz von `Julián Humberto Corrales <https://www.thenounproject.com>`_
-        - Icon für Hilfsmittel von `Antonio Vicién Faure <https://www.thenounproject.com/antoniopolonio>`_
-        - Icon für Fahrzueg: "Firetruck" von Rohan Gupta im `Noun Project <https://thenounproject.com/rohangupta1>`_
-        - Icon für Unterstützung von `James Keuning <https://www.thenounproject.com/jmkeuning>`_
-        - Icon für Einsatzart von `Alan Hussey <https://www.thenounproject.com/alanhussey>`_
+   Icons bei die Daten im Backend:
+
+   - Icon für Einsatz von `Julián Humberto Corrales <https://www.thenounproject.com>`_
+   - Icon für Hilfsmittel von `Antonio Vicién Faure <https://www.thenounproject.com/antoniopolonio>`_
+   - Icon für Fahrzueg: "Firetruck" von Rohan Gupta im `Noun Project <https://thenounproject.com/rohangupta1>`_
+   - Icon für Unterstützung von `James Keuning <https://www.thenounproject.com/jmkeuning>`_
+   - Icon für Einsatzart von `Alan Hussey <https://www.thenounproject.com/alanhussey>`_
 

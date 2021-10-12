@@ -22,13 +22,13 @@ Different views in frontend possible.
 
 .. note::
 
-  Features in the frontend:
+   Features in the frontend:
 
-    - List/single view of reports
-    - filter by type, year and category or text
-    - Show location on a map in single view
-    - Map with all locations instead of normal list view
-    - Statistics by operation type with a bar chart (made with http://chartjs.org)
+   - List/single view of reports
+   - filter by type, year and category or text
+   - Show location on a map in single view
+   - Map with all locations instead of normal list view
+   - Statistics by operation type with a bar chart (made with http://chartjs.org)
 
 
 .. tip::
