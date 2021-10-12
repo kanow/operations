@@ -60,7 +60,6 @@ Falls ihr einen Fehler findet oder ein Problem habt:
    Installation/Index
    Configuration/Index
    BestPractice/Index
-   DeveloperManual/Index
    Migration/Index
    Changelog/Index
    Sitemap
