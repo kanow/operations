@@ -49,7 +49,7 @@ If you find an error or something is missing, please:
 
 **Sitemap:**
 
-   :ref:`sitemap`
+:ref:`sitemap`
 
 
 .. toctree::
