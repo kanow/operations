@@ -223,13 +223,13 @@
 				<source>Show items with selected categories - Mode: OR</source>
 			</trans-unit>
 			<trans-unit id="flexform.categoryConjunction.and">
-				<source>Show items with selected categories (and)</source>
+				<source>Show items with selected categories - Mode: AND</source>
 			</trans-unit>
 			<trans-unit id="flexform.categoryConjunction.notor">
-				<source>Do NOT show items with selected categories - Mode: OR</source>
+				<source>Do NOT show items with selected categories - Mode: NOT OR</source>
 			</trans-unit>
 			<trans-unit id="flexform.categoryConjunction.notand">
-				<source>Do NOT show items with selected categories - Mode: AND</source>
+				<source>Do NOT show items with selected categories - Mode: NOT AND</source>
 			</trans-unit>
 			<trans-unit id="flexform.category.label">
 				<source>Categories</source>
