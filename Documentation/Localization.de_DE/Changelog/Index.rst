@@ -79,7 +79,7 @@ Komplettumbau der Template Dateien um das Site-Package `fire department <https:/
 Update auf 3.2.2
 ================
 
-Behebt einen Fehler wenn Concatenation für JS und CSS Datein im TYPO3 aktiviert ist.
+Behebt einen Fehler wenn Concatenation für JS und CSS Dateien im TYPO3 aktiviert ist.
 
 Update auf 3.2.0
 ================
