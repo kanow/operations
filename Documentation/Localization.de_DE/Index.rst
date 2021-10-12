@@ -30,8 +30,6 @@ Operations
    `CC BY-NC-SA 4.0 <https://creativecommons.org/licenses/by-nc-sa/4.0/>`__ (Creative Commons)
    Lizenz.
 
-:Voraussetzungen:
-  Die aktuelle Version läuft unter TYPO3 11.5
 
 Verwaltung von Feuerwehreinsätzen in einer TYPO3 Webseite. Detaillierte Berichte mit Bildern, genutzten Fahrzeuge und Hilfsmitteln, Statistiken der Einsätze, Darstellung der Einsätze auf einer Karte.
 

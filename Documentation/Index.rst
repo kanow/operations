@@ -30,8 +30,6 @@ Operations
    `CC BY-NC-SA 4.0 <https://creativecommons.org/licenses/by-nc-sa/4.0/>`__ (Creative Commons)
    license
 
-:Requirements:
-  Current version is running on TYPO3 11.5
 
 Manage firefighter operations with detailed reports, images, used resources or vehicles, statistics, map view for locations….
 
