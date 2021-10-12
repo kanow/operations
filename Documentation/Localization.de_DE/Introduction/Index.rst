@@ -55,3 +55,10 @@ von vergangenen Einsätzen abbilden. Im Frontend sind verschiedene Darstellungen
    - Icon für Unterstützung von `James Keuning <https://www.thenounproject.com/jmkeuning>`_
    - Icon für Einsatzart von `Alan Hussey <https://www.thenounproject.com/alanhussey>`_
 
+
+.. toctree::
+   :maxdepth: 5
+   :titlesonly:
+   :glob:
+
+   Support/Index
