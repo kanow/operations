@@ -59,7 +59,6 @@ Falls ihr einen Fehler findet oder ein Problem habt:
    Introduction/Index
    Installation/Index
    Configuration/Index
-   BestPractice/Index
    Migration/Index
    Changelog/Index
    Sitemap

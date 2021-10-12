@@ -15,5 +15,6 @@ Konfiguration
 
    TypoScriptConfiguration/Index
    PluginConfiguration/Index
+   Categories/Index
    SpeakingUrl/Index
    Statistics/Index
