@@ -12,6 +12,23 @@
 Changelog
 =========
 
+Update to 7.0.0
+===============
+
+This version is only running on TYPO3 11. In that version I fixed some small bugs and switch to some new features
+of TYPO3 11.
+There is an upgrade wizard of operations to migrate old category relations.
+In this version sys_category_mm table is used and the old relation table was removed.
+
+.. attention::
+
+   Don't delete the table `tx_operations_operation_category_mm` before data was migrated to
+   `sys_category_mm` table.
+
+If you are using default templates, then you shouldn't have problems with the other changes. Please check your site
+after updating the Extension.
+
+
 Update to 6.x
 ===============
 
