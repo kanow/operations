@@ -12,8 +12,9 @@ Plugin configuration
 ====================
 
 The most important configuration settings can be done in the content element plugin.
-
-Because of using Extbase every setting can also be done by using TypoScript but remember that the settings of the plugin always override the settings from TypoScript.
+Those setting can also be done by using TypoScript but settings in the plugin always override the settings
+in TypoScript. With that is possible to set default settings in TypoScript and override it
+in a plugin if necessary.
 
 
 Tab "Options"
@@ -34,16 +35,13 @@ Tab "Options"
 		Key:
 
  - :Property:
-		What to display
+		Show
    :View:
 		All
    :Description:
-        `Selection of view:`
-
-    - Operations: List and single view of operations
-    - Vehciles: List and single view of vehicles
-    - Resources: List and single view of resources
+      Choose list or single view for operations, vehicles or resources.
    :Key:
+
  - :Property:
 		Category Mode
    :View:
@@ -52,6 +50,7 @@ Tab "Options"
 		Set category mode for selected categories.
    :Key:
 		settings.categoryConjunction
+
  - :Property:
 		Categories
    :View:
@@ -60,46 +59,69 @@ Tab "Options"
 		Categories can be select to constrain the result.
    :Key:
 		settings.category
+
+ - :Property:
+		Max result items
+   :View:
+		All
+   :Description:
+		Limit the result for the list.
+   :Key:
+		settings.limit
+
  - :Property:
 		Items per page
    :View:
 		Operations
    :Description:
-		How many items will showing in list view. When pagination is hide is this the limit for the complete result.
+		How many items per page are showing with activated pagination.
    :Key:
 		settings.itemsPerPage
+
  - :Property:
 		Hide pagination
    :View:
 		Operations
    :Description:
-		Hide the pagination and show the whole in one list. Default Limit for whole list is 200.
+		Hide the pagination and show the result in one list. Default Limit for whole list is 200.
    :Key:
 		settings.hidePagination
+
  - :Property:
-		Hide filter for result
+		Hide filter
    :View:
 		Operations
    :Description:
-		Hide the form to filter the list by years (more selection can be added in future)
+		Hide the form to filter the list
    :Key:
 		settings.hideFilter
+
  - :Property:
 		Show list of operations on a map
    :View:
 		Operations
    :Description:
-		Show the listed result in frontend on a google map.
+		Show the result on a map.
    :Key:
 		settings.showMap
+
  - :Property:
 		Record Storage Page
    :View:
 		All
    :Description:
-		Sysfolder where are the data sets in
+		Sysfolder for operations data.
    :Key:
 		persistence.storagePid
+
+ - :Property:
+		Recursive
+   :View:
+		All
+   :Description:
+		Recursive setting for the sysfolder.
+   :Key:
+		persistence.recursive
 
 
 Tab "Media options"
@@ -120,7 +142,7 @@ Tab "Media options"
  - :Property:
         Thumbnail in list view
    :View:
-        Operations
+        All
    :Description:
         Show the first media of item as thumbnail in list
    :Key:
@@ -131,7 +153,7 @@ Tab "Media options"
    :View:
         All
    :Description:
-        Set media dimensions for list and single view if you like.
+        Set media dimensions for list and single view.
    :Key:
         settings.listMediaWidth
         settings.listMediaHeight
@@ -155,16 +177,17 @@ Tab "Template Options"
         Key:
 
  - :Property:
-        Template layout selector
+        Select Template Layout
    :View:
         All
    :Description:
-        Set items in Page TS-Config before using
-        example::
+      With this is possible to use other layout variants in Fluid templates.
+      Set items in Page TS-Config before using
+      example::
 
-            tx_operations.templateLayouts {
-                key = value
-            }
+         tx_operations.templateLayouts {
+             key = value
+         }
 
    :Key:
         settings.templateLayout
@@ -172,8 +195,8 @@ Tab "Template Options"
  - :Property:
 		Max chars of teaser text in list view
    :View:
-		Operations
+		All
    :Description:
-		Maximum length of teaser text in list view.
+		Maximum length of teaser text in list view. Text will be cropped automatically.
    :Key:
 		settings.cropTeaser
