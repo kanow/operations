@@ -50,7 +50,7 @@ class CategoryService extends GeneralUtility {
     }
 
     /**
-	 * Finds all descendants of an given category
+	 * Finds all descendants of a given category
 	 *
 	 * @param \TYPO3\CMS\Extbase\Domain\Model\Category $parentCategory
 	 * @return ObjectStorage $resultStorage
@@ -60,7 +60,7 @@ class CategoryService extends GeneralUtility {
 		$this->categoryRepository->setDefaultOrderings(array('title'=>QueryInterface::ORDER_ASCENDING));
 		$allCategories = $this->categoryRepository->findAll();
 
-		$storage = $regions = $this->buildStorageFormQuery($allCategories);
+		$storage = $regions = $this->buildStorageFromQuery($allCategories);
 		$resultStorage = new ObjectStorage;
 		$stack = array();
 		array_push($stack, $parentCategory);
@@ -82,7 +82,7 @@ class CategoryService extends GeneralUtility {
 	 * @param QueryResultInterface|array
 	 * @return ObjectStorage
 	 */
-	protected function buildStorageFormQuery (QueryResultInterface $query){
+	protected function buildStorageFromQuery (QueryResultInterface $query){
 		$storage = new ObjectStorage;
 		foreach($query as $category){
 			if($category->getParent()!=NULL) $storage->attach($category);
