@@ -4,7 +4,6 @@ namespace Kanow\Operations\Domain\Model;
 
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
-use TYPO3\CMS\Extbase\Domain\Model\Category;
 /***************************************************************
  *  Copyright notice
  *
@@ -156,7 +155,7 @@ class Operation extends AbstractEntity
     /**
      * Category
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Category>
      *
      */
     protected $category;
@@ -636,7 +635,7 @@ class Operation extends AbstractEntity
     /**
      * Adds a Category
      *
-     * @param \TYPO3\CMS\Extbase\Domain\Model\Category $category
+     * @param \Kanow\Operations\Domain\Model\Category $category
      * @return void
      */
     public function addCategory(Category $category)
@@ -647,7 +646,7 @@ class Operation extends AbstractEntity
     /**
      * Removes a Category
      *
-     * @param \TYPO3\CMS\Extbase\Domain\Model\Category $categoryToRemove The Category to be removed
+     * @param \Kanow\Operations\Domain\Model\Category $categoryToRemove The Category to be removed
      * @return void
      */
     public function removeCategory(Category $categoryToRemove)
@@ -658,7 +657,7 @@ class Operation extends AbstractEntity
     /**
      * Returns the category
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category> $category
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Category> $category
      */
     public function getCategory()
     {
@@ -668,7 +667,7 @@ class Operation extends AbstractEntity
     /**
      * Sets the category
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category> $category
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Category> $category
      * @return void
      */
     public function setCategory(ObjectStorage $category)

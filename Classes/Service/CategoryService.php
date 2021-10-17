@@ -1,7 +1,7 @@
 <?php
 namespace Kanow\Operations\Service;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Domain\Model\Category;
+use Kanow\Operations\Domain\Model\Category;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use Kanow\Operations\Domain\Repository\CategoryRepository;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
@@ -52,7 +52,7 @@ class CategoryService extends GeneralUtility {
     /**
 	 * Finds all descendants of a given category
 	 *
-	 * @param \TYPO3\CMS\Extbase\Domain\Model\Category $parentCategory
+	 * @param \Kanow\Operations\Domain\Model\Category $parentCategory
 	 * @return ObjectStorage $resultStorage
 	 */
 

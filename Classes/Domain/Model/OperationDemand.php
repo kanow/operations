@@ -2,8 +2,6 @@
 namespace Kanow\Operations\Domain\Model;
 
 use TYPO3\CMS\Extbase\DomainObject\AbstractValueObject;
-use TYPO3\CMS\Extbase\Domain\Model\Category;
-use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /***************************************************************
  *  Copyright notice
