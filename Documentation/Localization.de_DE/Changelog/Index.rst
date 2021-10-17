@@ -12,8 +12,50 @@
 Änderungen
 ==========
 
+Update auf 7.0.0
+================
+
+Diese Version läuft nur noch unter TYPO3 11. In dieser Version wurden ein paar kleine Bugs behoben und auf verschiedene neue
+TYPO3 11 Features umgestellt.
+
+Änderung der Kategorie Verknüpfung
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Die Datenbanktabelle für die Verknüpfungen der Kategorien mit den Einsätzen wurde umgestellt.
+Es gibt einen :ref:`Upgrade Wizard <t3install:postupgradetasks>`, mit dem ihr die Verknüpfungen automatisch
+in die neue Tabelle schreiben könnt.
+Es wird jetzt die Tabelle genutzt, die auch von TYPO3 als Standard für MM Verknüpfungen von Kategorien vorgesehen ist.
+
+.. attention::
+
+   Wichtig! Die Tabelle `tx_operations_operation_category_mm` darf nicht entfernt/geleert werden
+   bevor der Upgrade Wizard alle Relationen in die neue Tabelle `sys_category_mm` kopiert hat.
+
+
+Breaking Change
+^^^^^^^^^^^^^^^
+
+Die Einstellung in den "Extension Settings" für die `rootCategory`, bei der ihr die Uid der obersten Kategorie
+für die Einsätze angeben konntet, wurde entfernt. Ebenso das zugehörige TypoScript Setting, sowie die Möglichkeit
+das in den Seiteneigenschaften per Page TS zu setzen.
+
+Diese Einstellung muss jetzt in der :ref:`Site Configuration <t3coreapi:sitehandling-basics>`
+vorgenommen werden. Durch diese Änderung wird einiges an Code eingespart und die neuen Möglichketen
+von TYPO3 11 genutzt.
+
+Folgendes muss in eurer :ref:`Site Configuration <t3coreapi:sitehandling-basics>` ergänzt werden:
+
+.. code-block:: yaml
+
+    settings:
+     operations:
+       rootCategory: 2
+
+Wenn ihr die Standard Template Dateien aus der Extension nutzt, solltet ihr keine weiteren Probleme
+durch das Update haben. Hoffe ich zumindest ;-).
+
 Update to 6.x
-===============
+=============
 
 In dieser Version wurden kleine und große Fehler behoben und Wartungsarbeiten vorgenommen.
 

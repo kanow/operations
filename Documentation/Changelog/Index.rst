@@ -16,8 +16,7 @@ Update to 7.0.0
 ===============
 
 This version is only running on TYPO3 11. In that version I fixed some small bugs and switch to some new features
-of TYPO3 11.
-There is an upgrade wizard of operations to migrate old category relations.
+of TYPO3 11. There is an :ref:`Upgrade Wizard <t3install:postupgradetasks>` of operations to migrate old category relations.
 In this version sys_category_mm table is used and the old relation table was removed.
 
 .. attention::
@@ -25,9 +24,26 @@ In this version sys_category_mm table is used and the old relation table was rem
    Don't delete the table `tx_operations_operation_category_mm` before data was migrated to
    `sys_category_mm` table.
 
+
+Breaking Change
+^^^^^^^^^^^^^^^
+
+Extension setting for `rootCategory` is removed!
+To restrict the categories in plugin/operation/filter view many code was needed. With TYPO3 11 this is
+not longer necessary because of the new TCA type "category" with "startingpoints" and using values from
+:ref:`Site Configuration <t3coreapi:sitehandling-basics>` to define the startingpoints.
+Therefore I switched to set this rootCategory in :ref:`Site Config <t3coreapi:sitehandling-basics>`.
+
+Example code for your :ref:`Site Configuration <t3coreapi:sitehandling-basics>`:
+
+.. code-block:: yaml
+
+    settings:
+     operations:
+       rootCategory: 2
+
 If you are using default templates, then you shouldn't have problems with the other changes. Please check your site
 after updating the Extension.
-
 
 Update to 6.x
 ===============
