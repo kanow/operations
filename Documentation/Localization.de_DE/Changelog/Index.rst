@@ -22,7 +22,7 @@ TYPO3 11 Features umgestellt.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Die Datenbanktabelle für die Verknüpfungen der Kategorien mit den Einsätzen wurde umgestellt.
-Es gibt einen :ref:`Upgrade Wizard <t3install:postupgradetasks>`, mit dem ihr die Verknüpfungen automatisch
+Es gibt einen :ref:`Upgrade Wizard <t3install:postupgradetasks>` mit dem ihr die Verknüpfungen automatisch
 in die neue Tabelle schreiben könnt.
 Es wird jetzt die Tabelle genutzt, die auch von TYPO3 als Standard für MM Verknüpfungen von Kategorien vorgesehen ist.
 

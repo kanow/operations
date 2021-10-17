@@ -64,7 +64,7 @@ configuration for the page argument. It's not longer that `@widget` stuff. Have 
 :ref:`Speaking url example page in manual <speakingUrl>`.
 
 
-Slug behaviour was changed to `unique` With an updated TYPO3 version it is now possible to use the sysfolder with
+Slug behaviour was changed to `unique`. With an updated TYPO3 version it is now possible to use the sysfolder with
 operations data outside of the page tree. You can use one folder for multiple Sites in the same TYPO3 Instance.
 If you need uniqueInSite for your page, then you can switch that behaviour in the BE module "Settings" -> Extension Configuration.
 
