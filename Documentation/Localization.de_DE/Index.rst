@@ -33,7 +33,8 @@ Operations
 :Rendered:
 		|today|
 
-Verwaltung von Feuerwehreinsätzen in einer TYPO3 Webseite. Detaillierte Berichte mit Bildern, genutzten Fahrzeuge und Hilfsmitteln, Statistiken der Einsätze, Darstellung der Einsätze auf einer Karte.
+Verwaltung von Feuerwehreinsätzen in einer TYPO3 Webseite. Detaillierte Berichte mit Bildern, genutzten Fahrzeugen
+und Hilfsmitteln, Statistiken der Einsätze, Darstellung der Einsätze auf einer Karte.
 
 **Ofizielle Dokumentation**
 
