@@ -39,6 +39,7 @@ use Kanow\Operations\Domain\Model\OperationDemand;
 use Kanow\Operations\Domain\Repository\OperationRepository;
 use Kanow\Operations\Service\CategoryService;
 use Kanow\Operations\Domain\Repository\TypeRepository;
+use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Pagination\SimplePagination;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -283,8 +284,10 @@ class OperationController extends BaseController
      * @return ObjectStorage $categories
      */
     protected function getOperationCategories() {
-        $operationsRootCategory = $this->categoryRepository->findByUid($this->settings['rootCategory']);
-        if($operationsRootCategory != 0) {
+        $site = $this->getRequest()->getAttribute('site');
+        $configuration = $site->getConfiguration();
+        $operationsRootCategory = $this->categoryRepository->findByUid((int)$configuration['settings']['operations']['rootCategory']);
+        if($operationsRootCategory != null) {
             /** @var Category $operationsRootCategory */
             $categories = $this->categoryService->findAllDescendants($operationsRootCategory);
         } else {
@@ -332,4 +335,11 @@ class OperationController extends BaseController
         ];
     }
 
+    /**
+     * @return ServerRequestInterface
+     */
+    protected function getRequest(): ServerRequestInterface
+    {
+        return $GLOBALS['TYPO3_REQUEST'];
+    }
 }

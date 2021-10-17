@@ -36,8 +36,6 @@ plugin.tx_operations {
 		itemsPerPage = 10
 		# cat=tx_operations-list-settings/list/041/; type=int+; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.limit
 		limit = 200
-		# cat=tx_operations-list-settings/list/050/; type=int+; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.rootCategory
-		rootCategory = 0
 
 		# cat=tx_operations-storage-and-pids/pids/300/; type=int; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.operationSinglePid
 		operationSinglePid =

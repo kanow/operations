@@ -49,7 +49,7 @@
                     <config>
                         <type>category</type>
                         <treeConfig>
-                            <dataProvider>Kanow\Operations\TreeProvider\DatabaseTreeDataProvider</dataProvider>
+                            <startingPoints>###SITE:settings.operations.rootCategory###</startingPoints>
                             <appearance>
                                 <expandAll>1</expandAll>
                                 <showHeader>1</showHeader>

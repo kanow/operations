@@ -17,9 +17,6 @@
 				<source>Show statistics for the operations</source>
 			</trans-unit>
 
-			<trans-unit id="extconf.rootCategoryUid">
-				<source>Uid of root category</source>
-			</trans-unit>
 			<trans-unit id="extconf.slugBehaviour">
 				<source>Slug behaviour for path_segment fields</source>
 			</trans-unit>

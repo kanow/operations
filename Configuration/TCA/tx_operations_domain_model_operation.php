@@ -436,7 +436,7 @@ return [
             'config' => [
                 'type' => 'category',
                 'treeConfig' => [
-                    'startingPoints' => $extensionConfiguration['rootCategory'],
+                    'startingPoints' => '###SITE:settings.operations.rootCategory###',
                     'appearance' => [
                         'expandAll' => TRUE,
                         'showHeader' => TRUE,
