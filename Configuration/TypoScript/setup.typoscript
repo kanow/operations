@@ -89,6 +89,6 @@ page {
 	includeJSFooter {
 		jquery = {$plugin.tx_operations.jquery}
 		jquery.external = 1
-		leafleatMap = EXT:operations/Resources/Public/Js/map/leaflet-map.js
+		leafletMap = EXT:operations/Resources/Public/Js/map/leaflet-map.js
 	}
 }
