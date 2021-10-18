@@ -38,15 +38,9 @@ und Hilfsmitteln, Statistiken der Einsätze, Darstellung der Einsätze auf einer
 
 **Ofizielle Dokumentation**
 
-Dieses Dokument ist Bestandteil der offiziellen TYPO3 Dokumentation.
-
-
-**Community Documentation:**
-
-Diese Anleitung ist für die TYPO3 Extension `operations`.
-Die Anleitung wird innerhalb der Extension mit aktualiseert.
-Falls ihr einen Fehler findet oder ein Problem habt:
-`Hier Ticket erstellen <https://github.com/kanow/operations/issues>`__
+Dieses Dokument ist Bestandteil der offiziellen `TYPO3 Dokumentation <https://docs.typo3.org/>`_.
+TYPO3 ist ein freies, unter der GNU/GPL Lizenz veröffentlichtes CMS/Framework,
+verfügbar unter `www.typo3.org <https://www.typo3.org/>`_.
 
 
 **Sitemap:**

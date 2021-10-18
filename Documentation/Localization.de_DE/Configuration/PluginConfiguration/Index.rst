@@ -50,7 +50,7 @@ Reiter "Einstellungen"
    :Description:
         Wieviel Datensätze sollen maximal ausgegeben werden.
    :Key:
-        settings.limit
+        :typoscript:`settings.limit`
 
  - :Property:
         Datensätze pro Seite
@@ -59,7 +59,7 @@ Reiter "Einstellungen"
    :Description:
         Wieviel Datensätze pro Seite sollen bei aktivierter Blätternavigation angezeigt werden.
    :Key:
-        settings.itemsPerPage
+        :typoscript:`settings.itemsPerPage`
 
  - :Property:
 		Alle Ergebnisse auf einer Seite anzeigen
@@ -68,7 +68,7 @@ Reiter "Einstellungen"
    :Description:
 		Zeigt alle ausgegebenern Einsätze in einer Liste an. Die Blätternavigation ist hier deaktiviert. Das Standardlimit liegt hierfür bei 200.
    :Key:
-		settings.hidePagination
+		:typoscript:`settings.hidePagination`
 
  - :Property:
 		Filter für Ergebnisliste ausblenden
@@ -77,7 +77,7 @@ Reiter "Einstellungen"
    :Description:
 		Blendet das Formular mit der Suche und den verschiedenen Filtermöglichkeiten in der Ergebnisliste aus.
    :Key:
-		settings.hideFilter
+		:typoscript:`settings.hideFilter`
 
  - :Property:
 		Zeige Liste der Einsätze auf einer Karte
@@ -86,7 +86,7 @@ Reiter "Einstellungen"
    :Description:
 		Statt einer Liste werden die Einsätze auf einer Karte dargestellt. Vorraussetzung hierfür sind allerdings die Geo-Daten (Längen- und Breitengrade) in den Einsatzdaten.
    :Key:
-		settings.showMap
+		:typoscript:`settings.showMap`
 
  - :Property:
 		Datensatzsammlung
@@ -95,7 +95,7 @@ Reiter "Einstellungen"
    :Description:
 		Seite/Ordner aus dem Seitenbaum wo die Datensätzen angelegt sind
    :Key:
-		persistence.storagePid
+		:typoscript:`persistence.storagePid`
 
  - :Property:
 		Rekursiv
@@ -104,7 +104,7 @@ Reiter "Einstellungen"
    :Description:
 		Bestimmt das Level/die Ebenen, wie tief nach unten die Ordner nach Einsatzdaten durchsucht werden sollen.
    :Key:
-		persistence.recursive
+		:typoscript:`persistence.recursive`
 
 
 Reiter "Medieneinstellungen"
@@ -131,7 +131,7 @@ Reiter "Medieneinstellungen"
    :Description:
         Zeigt das erste Bild des Einsatzes als kleines Vorschaubild in der Listenansicht an.
    :Key:
-        settings.showMediaInList
+        :typoscript:`settings.showMediaInList`
 
  - :Property:
         Bildgrößen in List- und Einzelansicht
@@ -140,10 +140,10 @@ Reiter "Medieneinstellungen"
    :Description:
         Bildgrößenangaben für List- und Einzelansicht.
    :Key:
-        settings.listMediaWidth
-        settings.listMediaHeight
-        settings.singleMediaWidth
-        settings.singleMediaHeight
+        :typoscript:`settings.listMediaWidth`
+        :typoscript:`settings.listMediaHeight`
+        :typoscript:`settings.singleMediaWidth`
+        :typoscript:`settings.singleMediaHeight`
 
 
 Reiter "Template-Einstellungen"
@@ -167,7 +167,7 @@ Reiter "Template-Einstellungen"
         Alle
    :Description:
       Hiermit ist es möglich andere Layout Varianten im Fluid Templates nutzen zu können.
-      Die Werte müssen vorher im Page TS-Config definiert werden.
+      Die Werte müssen vorher im :ref:`Page TS-Config <t3tsconfig:typoscript-syntax-using-setting>` definiert werden.
 
       Beispiel Page TS-Config::
 
@@ -176,7 +176,7 @@ Reiter "Template-Einstellungen"
          }
 
    :Key:
-        settings.templateLayout
+        :typoscript:`settings.templateLayout`
 
  - :Property:
 		Maximale Zeichenanzahl Teasertext in der Listansicht
@@ -185,4 +185,4 @@ Reiter "Template-Einstellungen"
    :Description:
 		Die maximale Länge / Zeichanzahl des Teasertextes in der Listansicht. Längerer Text wird automatisch gekürzt.
    :Key:
-		settings.cropTeaser
+		:typoscript:`settings.cropTeaser`

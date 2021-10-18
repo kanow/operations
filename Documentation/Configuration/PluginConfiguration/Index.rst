@@ -13,8 +13,8 @@ Plugin configuration
 
 The most important configuration settings can be done in the content element plugin.
 Those setting can also be done by using TypoScript but settings in the plugin always override the settings
-in TypoScript. With that is possible to set default settings in TypoScript and override it
-in a plugin if necessary.
+in TypoScript. With that it's possible to set default settings in TypoScript and override it
+in a plugin for some pages if necessary.
 
 
 Tab "Options"
@@ -49,7 +49,7 @@ Tab "Options"
    :Description:
 		Set category mode for selected categories.
    :Key:
-		settings.categoryConjunction
+		:typoscript:`settings.categoryConjunction`
 
  - :Property:
 		Categories
@@ -58,7 +58,7 @@ Tab "Options"
    :Description:
 		Categories can be select to constrain the result.
    :Key:
-		settings.category
+		:typoscript:`settings.category`
 
  - :Property:
 		Max result items
@@ -67,7 +67,7 @@ Tab "Options"
    :Description:
 		Limit the result for the list.
    :Key:
-		settings.limit
+		:typoscript:`settings.limit`
 
  - :Property:
 		Items per page
@@ -76,7 +76,7 @@ Tab "Options"
    :Description:
 		How many items per page are showing with activated pagination.
    :Key:
-		settings.itemsPerPage
+		:typoscript:`settings.itemsPerPage`
 
  - :Property:
 		Hide pagination
@@ -85,7 +85,7 @@ Tab "Options"
    :Description:
 		Hide the pagination and show the result in one list. Default Limit for whole list is 200.
    :Key:
-		settings.hidePagination
+		:typoscript:`settings.hidePagination`
 
  - :Property:
 		Hide filter
@@ -94,7 +94,7 @@ Tab "Options"
    :Description:
 		Hide the form to filter the list
    :Key:
-		settings.hideFilter
+		:typoscript:`settings.hideFilter`
 
  - :Property:
 		Show list of operations on a map
@@ -103,7 +103,7 @@ Tab "Options"
    :Description:
 		Show the result on a map.
    :Key:
-		settings.showMap
+		:typoscript:`settings.showMap`
 
  - :Property:
 		Record Storage Page
@@ -112,7 +112,7 @@ Tab "Options"
    :Description:
 		Sysfolder for operations data.
    :Key:
-		persistence.storagePid
+		:typoscript:`persistence.storagePid`
 
  - :Property:
 		Recursive
@@ -121,7 +121,7 @@ Tab "Options"
    :Description:
 		Recursive setting for the sysfolder.
    :Key:
-		persistence.recursive
+		:typoscript:`persistence.recursive`
 
 
 Tab "Media options"
@@ -146,7 +146,7 @@ Tab "Media options"
    :Description:
         Show the first media of item as thumbnail in list
    :Key:
-        settings.showMediaInList
+        :typoscript:`settings.showMediaInList`
 
  - :Property:
         Media dimension in list/single view
@@ -155,10 +155,10 @@ Tab "Media options"
    :Description:
         Set media dimensions for list and single view.
    :Key:
-        settings.listMediaWidth
-        settings.listMediaHeight
-        settings.singleMediaWidth
-        settings.singleMediaHeight
+        :typoscript:`settings.listMediaWidth`
+        :typoscript:`settings.listMediaHeight`
+        :typoscript:`settings.singleMediaWidth`
+        :typoscript:`settings.singleMediaHeight`
 
 
 Tab "Template Options"
@@ -182,7 +182,7 @@ Tab "Template Options"
         All
    :Description:
       With this is possible to use other layout variants in Fluid templates.
-      Set items in Page TS-Config before using
+      Set items in :ref:`Page TS-Config <t3tsconfig:typoscript-syntax-using-setting>` before using
       example::
 
          tx_operations.templateLayouts {
@@ -190,7 +190,7 @@ Tab "Template Options"
          }
 
    :Key:
-        settings.templateLayout
+        :typoscript:`settings.templateLayout`
 
  - :Property:
 		Max chars of teaser text in list view
@@ -199,4 +199,5 @@ Tab "Template Options"
    :Description:
 		Maximum length of teaser text in list view. Text will be cropped automatically.
    :Key:
-		settings.cropTeaser
+		:typoscript:`settings.cropTeaser`
+

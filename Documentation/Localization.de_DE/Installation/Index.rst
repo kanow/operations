@@ -23,8 +23,9 @@ bzw. die richtige Version habt!
 
    git clone git@github.com:kanow/operations.git
 
-Ihr könnt euch die Extension auch als zip Datei direkt aus dem TER (TYPO3 Extensions Repository) laden
-https://extensions.typo3.org/extension/operations/ und diese dann direkt im Extension Manager im Backend hochladen.
+Ihr könnt euch die Extension auch völlig "old school" als zip Datei direkt aus dem TER (TYPO3 Extensions Repository)
+laden https://extensions.typo3.org/extension/operations/ und diese dann direkt im Extension Manager
+im Backend hochladen.
 
 
 Mehr Information wie man in TYPO3 Extensions installieren kann findet ihr auch in dem Bereich "Erste Schritte" in der

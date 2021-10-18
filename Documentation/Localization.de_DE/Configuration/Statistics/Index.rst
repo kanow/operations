@@ -28,7 +28,7 @@ JavaScript für Statistiken anpassen
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Wenn ihr die Statistiken anpassen wollt, könnt ihr das mit einem eigenen JavaScript machen. Kopiert dazu die
-Templatedatei `Resources/Private/Templates/Operation/Statistics.html` an einen Ort eurer Wahl
+Templatedatei ``Resources/Private/Templates/Operation/Statistics.html`` an einen Ort eurer Wahl
 und passt den Pfad für das JavaScript hier an:
 
 .. code-block:: html
@@ -45,12 +45,14 @@ Am besten nutzt ihr dafür ein eigenes :ref:`Site Package / Theme Extension <t3t
 Ändert dann die Templatepfade wie hier beschrieben :ref:`TypoScriptConfiguration <own-template-files>` .
 
 
-.. important::
+.. attention::
 
-   Bitte nicht die Tabelle mit den Daten aus dem Template entfernen!
+   Bitte nicht diese Tabelle mit den Daten aus dem Template entfernen!
    :html:`<table data-chart="operationsChart-{contentObjectData.uid}" class="operationsChart-{contentObjectData.uid} dataset">`
-   Diese stellt die Daten für das Diagramm bereit. Wenn die Tabelle nicht angezeigt werden soll, blendet sie am besten mit CSS aus.
+   Diese stellt die Daten für das Diagramm bereit. Wenn die Tabelle nicht angezeigt werden soll, blendet sie
+   am besten mit CSS aus.
 
 .. tip::
 
-   Mit einem kleinen JavaScript kann man einen Umschalter bauen. Der blendet dann entweder das Diagramm oder die Tabelle ein. Das ist nützlich für Leute mit Sehbehinderungen.
+   Mit einem kleinen JavaScript kann man einen Umschalter bauen. Der blendet dann entweder das Diagramm oder
+   die Tabelle ein. Das ist nützlich für Leute mit Sehbehinderungen.

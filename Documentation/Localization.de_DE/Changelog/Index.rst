@@ -35,9 +35,9 @@ Es wird jetzt die Tabelle genutzt, die auch von TYPO3 als Standard für MM Verkn
 Breaking Change
 ^^^^^^^^^^^^^^^
 
-Die Einstellung in den "Extension Settings" für die `rootCategory`, bei der ihr die Uid der obersten Kategorie
-für die Einsätze angeben konntet, wurde entfernt. Ebenso das zugehörige TypoScript Setting, sowie die Möglichkeit
-das in den Seiteneigenschaften per Page TS zu setzen.
+Die Einstellung in den "Extension Settings" für die ``rootCategory``, bei der ihr die Uid der obersten Kategorie
+für die Einsätze angeben konntet, wurde verschoben. Das zugehörige TypoScript Setting, sowie die Möglichkeit
+das in den Seiteneigenschaften per Page TS zu setzen wurde komplett entfernt.
 
 Diese Einstellung muss jetzt in der :ref:`Site Configuration <t3coreapi:sitehandling-basics>`
 vorgenommen werden. Durch diese Änderung wird einiges an Code eingespart und die neuen Möglichketen

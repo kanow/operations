@@ -14,23 +14,23 @@ Beispiel RouteEnhancer für lesbare Url's
 
 
 
-Definition für eure "Site Configuration"
-----------------------------------------
+Definition für eure Site Configuration
+======================================
 
 
-Schöne Url's werden in TYPO3 mit Hilfe von sogenannten "Route Enhancern" konfiguriert. Eine Beschreibung dieser
-Funktionalität findet ihr hier:
+Schöne und lesbare Url's werden in TYPO3 mit Hilfe von sogenannten "Route Enhancern" konfiguriert. Eine Beschreibung
+dieser Funktionalität findet ihr hier:
 :ref:`Advanced routing configuration <t3coreapi:routing-advanced-routing-configuration>`.
-Damit werden auch die schönen/lesbaren Url's für die Einzelansichten der Einsätze, Fahrzeuge und Hilfsmittel gebaut.
-Diese Konfiguration wird dann in eurer "Site Configuration" eingefügt.
 
 Mehr Information zum Url Routing von TYPO3: :ref:`Speaking Urls <t3tmsa:Speaking-Urls>`
 
-Information zur Nutzung der "Site Configuration" in TYPO3: :ref:`Sitehandling <t3coreapi:sitehandling-basics>`
+Information zur Nutzung der Site Configuration in TYPO3: :ref:`Sitehandling <t3coreapi:sitehandling-basics>`
 
+Damit werden auch die schönen/lesbaren Url's für die Einzelansichten der Einsätze, Fahrzeuge und Hilfsmittel gebaut.
+Diese Konfiguration muss dazu in eurer "Site Configuration" eingefügt werden.
 
 Nachfolgend findet ihr ein Beispiel für eine solche Konfiguration, wie ich sie in meiner Testumgebung einsetze.
-Damit bekommt ihr lesbare Url's für die Einzelansicht, sowie die Seiten/Blätternavigation bei längeren Listen.
+Damit bekommt ihr lesbare Url's für die Einzelansichten, sowie die Seiten/Blätternavigation bei längeren Listen.
 
 .. highlight:: yaml
 
@@ -94,8 +94,8 @@ Damit bekommt ihr lesbare Url's für die Einzelansicht, sowie die Seiten/Blätte
                   value: 'seite'
 
 
-Diese Beispiel habt ihr auch in der TYPO3 Extension `fire_department <https://extensions.typo3.org/extension/fire_department>`__
-im Ordner: `Configuration/Yaml/Routes/Operations.yaml`.
+Dieses Beispiel findet ihr auch in der TYPO3 Extension `fire_department <https://extensions.typo3.org/extension/fire_department>`_
+im Ordner: ``Configuration/Yaml/Routes/Operations.yaml``.
 Das könnt ihr dann einfach mit einem :yaml:`@import` in eure "Site Configuration" einbauen und dann noch die Einstellung
 für :yaml:`limitToPages` setzen.
 
@@ -109,7 +109,8 @@ für :yaml:`limitToPages` setzen.
         OperationsPlugin:
           limitToPages: [5,7,9]
 
-.. note::
+.. tip::
 
-   Ihr könnt diese Datei auch in euer eigenes "Site Package" kopierne und dieses dann importieren wenn das Beispiel nicht ausreicht oder ihr etwas anders haben wollt.
+   Ihr könnt die Datei auch in euer eigenes "Site Package" kopieren und diese dann importieren wenn das Beispiel
+   nicht ausreicht oder ihr etwas ändern wollt.
 

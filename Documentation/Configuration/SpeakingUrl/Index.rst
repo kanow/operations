@@ -14,8 +14,8 @@ Sample RouteEnhancer for speaking url's
 
 
 
-Use it in your site configuration
----------------------------------
+Usage in your Site Configuration
+================================
 
 
 Url routing for TYPO3 Extensions are explained more detailed here
@@ -25,10 +25,9 @@ pagination.
 
 More information about Routing: :ref:`Speaking Urls <t3tmsa:Speaking-Urls>`
 
-You don't know about the site configuration? Read here: :ref:`Sitehandling <t3coreapi:sitehandling-basics>`
+You don't know about the Site Configuration? Read here: :ref:`Sitehandling <t3coreapi:sitehandling-basics>`
 
-
-Here is an example RouteEnhancer configuration that I'm using in my develop installation.
+Here is an example RouteEnhancer configuration that I'm using in my develop environment.
 
 
 .. highlight:: yaml
@@ -37,7 +36,7 @@ Here is an example RouteEnhancer configuration that I'm using in my develop inst
 
       routeEnhancers:
         OperationsPlugin:
-          # set `limitToPages:` for route enhancer directly in your site config
+          # set "limitToPages" for route enhancer directly in your site config
           type: Extbase
           extension: Operations
           plugin: List
@@ -93,9 +92,9 @@ Here is an example RouteEnhancer configuration that I'm using in my develop inst
                   value: 'seite'
 
 
-This example is included in TYPO3 Extension `fire_department <https://extensions.typo3.org/extension/fire_department>`__
-in folder: `Configuration/Yaml/Routes/Operations.yaml`.
-Use an import statement in your site config and set :yaml:`limitToPages`:
+This example is included in TYPO3 Extension `fire_department <https://extensions.typo3.org/extension/fire_department>`_
+in folder: ``Configuration/Yaml/Routes/Operations.yaml``.
+Use an :yaml:`@import` statement in your site config and set :yaml:`limitToPages`:
 
 .. highlight:: yaml
 
@@ -107,6 +106,7 @@ Use an import statement in your site config and set :yaml:`limitToPages`:
         OperationsPlugin:
           limitToPages: [5,7,9]
 
-.. note::
+.. tip::
 
-   Copy that file to your Site Package and use the import for those file if you don't want to use the default configuration.
+   Copy that file to your Site Package and use the import for those file if you don't want using the default
+   configuration.

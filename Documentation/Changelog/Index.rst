@@ -16,8 +16,15 @@ Update to 7.0.0
 ===============
 
 This version is only running on TYPO3 11. In that version I fixed some small bugs and switch to some new features
-of TYPO3 11. There is an :ref:`Upgrade Wizard <t3install:postupgradetasks>` of operations to migrate old category relations.
-In this version sys_category_mm table is used and the old relation table was removed.
+of TYPO3 11.
+
+Changing of category relations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Database table for category relations was changed.
+There is an :ref:`Upgrade Wizard <t3install:postupgradetasks>` of operations to migrate old category relations
+automatically to the new table.
+In this version `sys_category_mm` table is used and the old relation table should be removed.
 
 .. attention::
 
@@ -28,10 +35,11 @@ In this version sys_category_mm table is used and the old relation table was rem
 Breaking Change
 ^^^^^^^^^^^^^^^
 
-Extension setting for `rootCategory` is removed!
+Extension setting for ``rootCategory`` is moved to Site Configuration! Related setting in TypoScript and Page TS-Config
+was completely removed.
 To restrict the categories in plugin/operation/filter view many code was needed. With TYPO3 11 this is
 not longer necessary because of the new TCA type "category" with "startingpoints" and using values from
-:ref:`Site Configuration <t3coreapi:sitehandling-basics>` to define the startingpoints.
+:ref:`Site Configuration <t3coreapi:sitehandling-basics>` to define that startingpoints.
 Therefore I switched to set this rootCategory in :ref:`Site Config <t3coreapi:sitehandling-basics>`.
 
 Example code for your :ref:`Site Configuration <t3coreapi:sitehandling-basics>`:
@@ -108,6 +116,9 @@ Fix error if concatenation for JS and CSS files is activated in TYPO3.
 Update to 3.2.0
 ===============
 
+Categories
+^^^^^^^^^^
+
 Now you can use categories to organize your operations. With those feature you can create a structure with a main fire department and sub departments. Show only operations from the main department or a single sub department in frontend.
 
 There is only a **flat** category handling. That means, if you select a category, no child categories are respected. Only the selected category.
@@ -119,12 +130,15 @@ Set a root category in PageTS-Config to restrict the displayed categories in ope
         categoryRootId = 4
     }
 
+Additional link field on vehicles and resources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 You can define new link targets for every single vehicles or resources data. Maybe another page in your project or an external link. By default it will be respected in list view of vehicles and resources and in that short list in the operation single view.
 
 Some little bugfixes, code improvements.
 
 Update to 3.1.0
-====================================
+===============
 
 Some little bugfixes. Add a new plugin to display statistics in frontend.
 
