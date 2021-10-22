@@ -70,6 +70,7 @@ plugin.tx_operations {
 			insertAbove = {$plugin.tx_operations.settings.paginate.insertAbove}
 			insertBelow = {$plugin.tx_operations.settings.paginate.insertBelow}
 		}
+		noLimitForStatistics = 1
 	}
 }
 

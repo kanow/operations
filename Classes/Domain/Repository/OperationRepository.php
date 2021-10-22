@@ -82,7 +82,7 @@ class OperationRepository extends Repository
      */
     public function findDemandedForStatistics(OperationDemand $demand, $settings)
     {
-        $query = $this->generateQuery($demand, $settings);
+        $query = $this->generateQuery($demand, $settings, $settings['noLimitForStatistics'] ?? false);
         return $query->execute(true);
     }
 
@@ -308,12 +308,9 @@ class OperationRepository extends Repository
     /**
      * Generates the query
      *
-     * @param OperationDemand $demand
-     * @param array $settings
-     * @return QueryInterface
      * @throws InvalidQueryException
      */
-    protected function generateQuery(OperationDemand $demand, $settings)
+    protected function generateQuery(OperationDemand $demand,array $settings, bool $noLimit = false): QueryInterface
     {
         $query = $this->createQuery();
 
@@ -323,14 +320,16 @@ class OperationRepository extends Repository
                 $query->logicalAnd($constraints)
             );
         }
-        $limit = $settings['limit'];
-        if ($limit <= 0) {
-            $limit = 300;
-        }
-        if ($demand->getLimit() != NULL) {
-            $query->setLimit((int)$demand->getLimit());
-        } else {
-            $query->setLimit((int)$limit);
+        if(!$noLimit) {
+            $limit = $settings['limit'];
+            if ($limit <= 0) {
+                $limit = 300;
+            }
+            if ($demand->getLimit() != null) {
+                $query->setLimit((int)$demand->getLimit());
+            } else {
+                $query->setLimit((int)$limit);
+            }
         }
         return $query;
     }
