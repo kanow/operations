@@ -69,6 +69,7 @@ plugin.tx_operations {
 		paginate {
 			insertAbove = {$plugin.tx_operations.settings.paginate.insertAbove}
 			insertBelow = {$plugin.tx_operations.settings.paginate.insertBelow}
+			maximumLinks = {$plugin.tx_operations.settings.paginate.maximumLinks}
 		}
 		noLimitForStatistics = 1
 	}

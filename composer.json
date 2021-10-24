@@ -10,7 +10,8 @@
     "operations"
   ],
   "require": {
-    "typo3/cms-core": "^11.5"
+    "typo3/cms-core": "^11.5",
+    "georgringer/numbered-pagination": "^1.0.2"
   },
   "replace": {
     "typo3-ter/operations": "self.version"

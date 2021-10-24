@@ -135,8 +135,7 @@ class OperationController extends BaseController
         if ($this->settings['hidePagination'] != 1) {
             $currentPage = $this->request->hasArgument('currentPage') ? $this->request->getArgument('currentPage') : $currentPage;
             $paginator = new QueryResultPaginator($operations, $currentPage, $this->settings['itemsPerPage']);
-            $simplePagination = new SimplePagination($paginator);
-            $pagination = $this->buildSimplePagination($simplePagination, $paginator);
+            $pagination = new \GeorgRinger\NumberedPagination\NumberedPagination($paginator, (int)$this->settings['paginate']['maximumLinks']);
         }
 
         $this->view->assignMultiple([
@@ -166,8 +165,7 @@ class OperationController extends BaseController
         if ($this->settings['hidePagination'] != 1) {
             $currentPage = $this->request->hasArgument('currentPage') ? $this->request->getArgument('currentPage') : $currentPage;
             $paginator = new QueryResultPaginator($demanded, $currentPage, $this->settings['itemsPerPage']);
-            $simplePagination = new SimplePagination($paginator);
-            $pagination = $this->buildSimplePagination($simplePagination, $paginator);
+            $pagination = new \GeorgRinger\NumberedPagination\NumberedPagination($paginator, (int)$this->settings['paginate']['maximumLinks']);
         }
 
 		$years = $this->generateYears();

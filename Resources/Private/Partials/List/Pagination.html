@@ -1,3 +1,4 @@
+<!--suppress HtmlRequiredLangAttribute -->
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
@@ -21,14 +22,17 @@
                 </li>
             </f:else>
         </f:if>
-
-        <f:for each="{pagination.pages}" as="page">
-            <f:if condition="{page} == {pagination.currentPageNumber}">
-                <f:then><li class="current"><span>{page}</span></li></f:then>
-                <f:else><li><f:link.action action="{action}" arguments="{demand:demand, currentPage: page}">{page}</f:link.action></li></f:else>
-            </f:if>
+        <f:if condition="{pagination.hasLessPages}">
+            <li>…</li>
+        </f:if>
+        <f:for each="{pagination.allPageNumbers}" as="page">
+            <li class="{f:if(condition: '{page} == {paginator.currentPageNumber}', then:'current')}">
+                <f:link.action action="{action}" arguments="{demand:demand, currentPage: page}">{page}</f:link.action>
+            </li>
         </f:for>
-
+        <f:if condition="{pagination.hasMorePages}">
+            <li>…</li>
+        </f:if>
         <f:if condition="{pagination.nextPageNumber} && {pagination.nextPageNumber} <= {pagination.lastPageNumber}">
             <f:then>
                 <li class="pagination-next">

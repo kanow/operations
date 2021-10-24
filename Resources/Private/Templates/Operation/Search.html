@@ -1,5 +1,5 @@
+<!--suppress HtmlRequiredLangAttribute -->
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-	  xmlns:o="http://typo3.org/ns/Kanow/Operations/ViewHelpers"
 	  data-namespace-typo3-fluid="true">
 
 <f:layout name="Default" />
@@ -29,11 +29,11 @@
 							<f:else>
                                 <f:if condition="{settings.paginate.insertAbove}">
                                     <p><f:translate key="pagination.visibleOperations" />: {pagination.startRecordNumber} - {pagination.endRecordNumber}</p>
-                                    <f:render partial="List/Pagination" arguments="{pagination:pagination, demand:demand, action:'search'}" />
+                                    <f:render partial="List/Pagination" arguments="{pagination: pagination, paginator: paginator, demand:demand, action:'search'}" />
                                 </f:if>
 								<f:render partial="List/ListItems" arguments="{operations:paginator.paginatedItems}" />
                                 <f:if condition="{settings.paginate.insertBelow}">
-                                    <f:render partial="List/Pagination" arguments="{pagination:pagination, demand:demand, action:'search'}" />
+                                    <f:render partial="List/Pagination" arguments="{pagination: pagination, paginator: paginator, demand:demand, action:'search'}" />
                                 </f:if>
 							</f:else>
 						</f:if>

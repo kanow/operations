@@ -98,6 +98,8 @@ plugin.tx_operations {
 			insertAbove = 1
 			# cat=tx_operations-list-settings/paginate/320/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.insertBelow
 			insertBelow = 1
+			# cat=tx_operations-list-settings/paginate/320/; type=int; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.maxNumberOfLinks
+			maximumLinks = 6
 		}
 	}
 }
