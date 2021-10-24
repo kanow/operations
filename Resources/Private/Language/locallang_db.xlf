@@ -406,12 +406,6 @@
 			<trans-unit id="tsc.maxNumberOfLinks">
 				<source>maxNumberOfLinks</source>
 			</trans-unit>
-			<trans-unit id="tsc.pagesBefore">
-				<source>pagesBefore</source>
-			</trans-unit>
-			<trans-unit id="tsc.pagesAfter">
-				<source>pagesAfter</source>
-			</trans-unit>
 			<trans-unit id="tsc.prevNextHeaderTags">
 				<source>Show prev/next:Show prev/next in pagination</source>
 			</trans-unit>
