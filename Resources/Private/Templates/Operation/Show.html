@@ -69,9 +69,9 @@
 
 				<f:if condition="{operation.begin}">
 					<h3><f:translate key="meta.operation-time">Einsatzzeit</f:translate></h3>
-					<p class="operations__show--aside-time"><f:translate key="meta.operation-begin" default="Beginn" />: <span>{operation.begin -> f:format.date(format:'d.m.Y, H:i \U\h\r')}</span></p>
+					<p class="operations__show--aside-time"><f:translate key="meta.operation-begin" default="Begin" />: <span>{operation.begin -> f:format.date(format:'d.m.Y, H:i \U\h\r')}</span></p>
 					<f:if condition="{operation.end}">
-						<p class="operations__show--aside-time"><f:translate key="meta.operation-end" default="Ende"/>: <span>{operation.end -> f:format.date(format:'d.m.Y, H:i \U\h\r')}</span></p>
+						<p class="operations__show--aside-time"><f:translate key="meta.operation-end" default="End"/>: <span>{operation.end -> f:format.date(format:'d.m.Y, H:i \U\h\r')}</span></p>
 					</f:if>
 				</f:if>
 
@@ -93,7 +93,7 @@
 				</f:if>
 
 				<f:if condition="{operation.category}">
-					<h3><f:translate key="meta.category" default="Kategorie" /></h3>
+					<h3><f:translate key="meta.categories" default="Categories" /></h3>
 					<p><f:render partial="Operation/Category" arguments="{category:operation.category}" /></p>
 				</f:if>
 			</div>

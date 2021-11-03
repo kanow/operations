@@ -210,6 +210,15 @@
 			<trans-unit id="meta.operation-time">
 				<source>Operating time</source>
 			</trans-unit>
+			<trans-unit id="meta.operation-begin">
+				<source>Begin</source>
+			</trans-unit>
+			<trans-unit id="meta.operation-end">
+				<source>End</source>
+			</trans-unit>
+			<trans-unit id="meta.categories">
+				<source>Categories</source>
+			</trans-unit>
 
             <trans-unit id="pagination.visibleOperations">
                 <source>Visible Operations</source>
