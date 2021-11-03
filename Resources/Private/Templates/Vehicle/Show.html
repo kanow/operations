@@ -1,5 +1,5 @@
+<!--suppress HtmlRequiredLangAttribute -->
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-	  xmlns:o="http://typo3.org/ns/Kanow/Operations/ViewHelpers"
 	  data-namespace-typo3-fluid="true">
 
 <f:layout name="Default" />
@@ -7,7 +7,7 @@
 <f:section name="main">
 	<f:flashMessages />
 	<div class="withoutMeta single clearfix">
-		<h1 class="csc-firstHeader"><span class="number">{vehicle.short}</span>{vehicle.title}</h1>
+		<h1 class="csc-firstHeader"><f:if condition="{vehicle.short}"><span class="number">{vehicle.short}</span> - </f:if>{vehicle.title}</h1>
 		<f:render partial="Vehicle/Properties" arguments="{vehicle:vehicle}" />
 		<a class="backToList" href="javascript:history.back();"><f:translate key="back">back</f:translate></a>
 	</div>
