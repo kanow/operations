@@ -136,6 +136,7 @@ return [
         ],
         'color' => array(
             'exclude' => 1,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_type.color',
             'config' => array(
                 'type' => 'input',
