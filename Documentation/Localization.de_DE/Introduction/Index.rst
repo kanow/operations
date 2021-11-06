@@ -59,8 +59,7 @@ von vergangenen Einsätzen abbilden. Im :ref:`Frontend <t3start:concepts>` sind 
 
 
 .. toctree::
-   :maxdepth: 5
-   :titlesonly:
-   :glob:
+   :hidden:
 
+   Screenshots/Index
    Support/Index
