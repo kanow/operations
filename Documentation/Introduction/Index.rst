@@ -51,8 +51,7 @@ Different views in :ref:`Frontend <t3start:concepts>` possible.
         - Icon for operation type is designed by `Alan Hussey <https://www.thenounproject.com/alanhussey>`_
 
 .. toctree::
-   :maxdepth: 5
-   :titlesonly:
-   :glob:
+   :hidden:
 
+   Screenshots/Index
    Support/Index
