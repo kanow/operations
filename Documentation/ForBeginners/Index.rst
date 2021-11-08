@@ -23,5 +23,3 @@ If yes, then we can start.
    PageTree/Index
    AddData/Index
    AddFrontendPlugins/Index
-   ReadableUrls/Index
-
