@@ -12,10 +12,10 @@ The TypoScript
 ==============
 
 To get `operations` working you need to load the TypoScript of the extension. I described this already here in the docs
-:ref:`TypoScript Configuration <typoscript-configuration>`. Here I will be do it a little bit more detailed.
+:ref:`TypoScript Configuration <typoscript-configuration>`. Here I will do it a little bit more detailed.
 I hope that will help beginners to understand it easier.
 
-I assume that you have already a page tree for your site. If not, please create it first. I have
+I assume that you have already a page tree for your site. If not, please create them first. I have
 :ref:`here <pagetree>` an example for a useful page tree of a firefighter website.
 
 
@@ -30,7 +30,7 @@ Include TypoScript of `operations` in the database
       :alt: Root page in page tree
       :class: with-shadow
 
-2. Switch to the Template module in the left
+2. Switch to the Template module on the left
 
    .. image:: /Images/Backend/template-module.png
       :alt: Template module on the left
@@ -76,7 +76,7 @@ Include TypoScript of `operations` in the database
 Use Constant editor to configure some individual settings
 =========================================================
 
-There some settings that need to be adjusted to your installation. A simple way to find such settings is the
+There are some settings that need to be adjusted to your installation. A simple way to find such settings is the
 :ref:`TYPO3 Constant Editor <t3tsref:constant-editor>`. To use them click on the module :guilabel:`"Web" > "Template"`
 on the left side, then select your Homepage in page tree and select "Constant Editor" in the select box in Docheader.
 
@@ -125,10 +125,10 @@ The necessary settings are:
 
          .. container:: card-body
 
-            This is the uid of the single view page of operations.
+            This is the uid of the single view page for operations.
 
             .. image:: /Images/Backend/operation-singleviewpage.png
-               :alt: Single view page in page tree of operations
+               :alt: Single view page in page tree for operations
 
    .. container:: col-md-6 pl-0 pr-3 py-3 m-0
 
@@ -140,10 +140,10 @@ The necessary settings are:
 
          .. container:: card-body
 
-            This is the uid of the single view page of vehicles.
+            This is the uid of the single view page for vehicles.
 
             .. image:: /Images/Backend/vehicle-singleviewpage.png
-               :alt: Single view page in page tree of vehicles
+               :alt: Single view page in page tree for vehicles
 
    .. container:: col-md-6 pl-0 pr-3 py-3 m-0
 
@@ -155,10 +155,10 @@ The necessary settings are:
 
          .. container:: card-body
 
-            This is the uid of the single view page of resources.
+            This is the uid of the single view page for resources.
 
             .. image:: /Images/Backend/resource-singleviewpage.png
-               :alt: Single view page in page tree of resources
+               :alt: Single view page in page tree for resources
 
 
 

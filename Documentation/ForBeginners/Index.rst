@@ -11,7 +11,7 @@ If you are not familiar with TYPO3 and/or using and installing extensions, this 
 I will guide you step by step trough the installation and configuration of the extension `operations`.
 I assume you have already installed your TYPO3 and you are logged in in Backend?
 
-If yes, then we can start.
+If yes, we can start.
 
 .. toctree::
    :maxdepth: 5
@@ -19,7 +19,7 @@ If yes, then we can start.
    :glob:
 
    InstallOperations/Index
-   TheTypoScript/Index
    PageTree/Index
+   TheTypoScript/Index
    AddData/Index
    AddFrontendPlugins/Index

@@ -23,3 +23,13 @@ they are important for the configuration.
 .. image:: /Images/Backend/pagetree.png
    :alt: Example page tree for a firefighter website with operations
    :class: with-shadow
+
+.. note::
+
+   The pages for the single views should be hidden in menu. You can set this in the page properties
+   with and disable the switch "Page enabled in menus".
+
+
+.. image:: /Images/Backend/disable-pageinmenu.png
+   :alt: Switch to disable page in menu
+   :class: with-shadow

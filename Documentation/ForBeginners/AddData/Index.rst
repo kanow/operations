@@ -26,10 +26,10 @@ You should start with data for the relations. Types, vehicles, resources and ass
 
    .. note::
 
-      You need the translation of the sysfolder only if you have a multilanguage site and you want
+      You need the translation of the sysfolder only if you have a multilanguage site and you are planning to
       translate the operation data.
 
-   .. attention::
+   .. important::
 
       Without the translated sysfolder you can't translate the operation data!
 
@@ -53,19 +53,35 @@ You should start with data for the relations. Types, vehicles, resources and ass
 
    .. tip::
 
-      Create a root/main category first, that is the parent category for all operation categories.
+      Create a root/main category first that is the parent category for all operation categories.
       You can restrict the visibility of categories in frontend plugins and in operation data with the
       setting in Site Configuration.
 
-5. Set root category uid in Site configuration to restrict the visible categories in frontend plugins and operation data. If you don't have a Site Configuration yet, create one in :guilabel:`"Site Management" > "Sites"` module.
+5. Set root category uid in Site Configuration to restrict the visible categories in frontend plugins and operation
+   data. If you don't have a Site Configuration yet, create one in :guilabel:`"Site Management" > "Sites"` module.
 
    .. image:: /Images/Backend/module-siteconfig.png
       :alt: Create a new category
       :class: with-shadow
 
+   .. image:: /Images/Backend/button-addsiteconfiguration.png
+      :alt: Button "Add news Site Configuration"
+      :class: with-shadow
+
    |
 
-   Some lines of code in a Site Configuration. Add the setting on the first level.
+   When creating a new site configuration, a folder in the file system is created located at
+   :file:`<project-root>/config/sites/<identifier>/`. The site configuration is stored in a
+   file called :file:`config.yaml`.
+
+   .. note::
+      If you are using a non-composer based installation, the location is :file:`typo3conf/sites/`.
+      If your are using a composer based installation, the location is :file:`<project-root>/config/sites`.
+
+   .. hint::
+      Add this folder to your version control.
+
+   Here are few lines of example code in a Site Configuration. Add `settings` on the first level.
 
    .. code:: yaml
 
@@ -76,3 +92,7 @@ You should start with data for the relations. Types, vehicles, resources and ass
           rootCategory: 2
       ...
 
+   |
+
+   Sure, you need more than these few line for a working Site Configuration. This is just an example where
+   you can add the `settings`.

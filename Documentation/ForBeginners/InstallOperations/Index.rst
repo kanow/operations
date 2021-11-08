@@ -25,7 +25,7 @@ The installation with composer is the preferred way for modern TYPO3 Installatio
 Install operations by downloading it in Extension Manager
 =========================================================
 
-Most of the beginners in TYPO3 are not familiar with Composer and using the backend for it. Therefore I want to
+Most of the beginners in TYPO3 are not familiar with Composer and using the backend for installing extensions. Therefore I want to
 describe how to install `operations` with Extension Manager in backend.
 
 .. rst-class:: bignums

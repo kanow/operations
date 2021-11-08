@@ -11,15 +11,15 @@
 Add frontend plugins
 ====================
 
-Ok, your almost ready with the configuration and preparing data in backend.
+Ok, you are almost ready with the configuration and preparing data in backend.
 The last step before you see the results in frontend is creating the frontend plugins.
 
 `operations` comes with two frontend plugins. One is called "Operations" and the other is "Operations Statistics".
 That is what you see in the field "Selected Plugin".
 
 The "Operations" plugin will show you the list and single views for operations, resources or vehicles in frontend.
-The single different views are controlled by the so called `Switchable Controller Actions`. That is the field
-"Show" in tab "Plugin". That will be changed in future but for now is this the way to go.
+The different views are controlled by the so called `Switchable Controller Actions`. That is the field
+"Show" in tab "Plugin". That will be changed in the future but for now is this the way to go.
 
 The "Operations Statistics" plugin will show you the statistics of operations in the last years, grouped by
 year and type.
