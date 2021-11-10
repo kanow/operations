@@ -38,7 +38,7 @@ Ok, let's go.
 2. Switch to tha tab "Plugins" in open modal box to see the entries of `Operations`. Choose your plugin.
 
    .. image:: /Images/Backend/newcontent-plugins.png
-      :alt: The button to create new content elements
+      :alt: Create new plugins
       :class: with-shadow
 
 3. Switch to tha tab "Plugin" in the Content Element (you should be automatically already there) and

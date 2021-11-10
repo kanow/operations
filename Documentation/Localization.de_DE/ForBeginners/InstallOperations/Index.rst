@@ -33,84 +33,84 @@ Daher beschreibe ich hier die Installation von `operations` im Backend mit dem E
 1. Geht zu :guilabel:`"Verwaltungswerkzeuge" > "Erweiterungen"`
 
    .. image:: /Images/Backend/admintools-extensions.png
-      :alt: Screen of AdminTools
+      :alt: Bildschirmausschnitt der Module: Verwaltungswerkzeuge
       :class: with-shadow
 
 
 2. Am oberen Fensterrand wählt  :guilabel:`"Erweiterungen hinzufügen"`
 
    .. image:: /Images/Backend/get-extensions.png
-      :alt: Screen of Dropdown in Extensions Manager
+      :alt: Bildschirmausschnitt der Auswahlbox im Extension Manager
       :class: with-shadow
 
 
-3. Klickt :guilabel:`"Jetzt updaten"` Der Button ist rechts am Rand.
+3. Klickt :guilabel:`"Jetzt aktualisieren"` Der Button ist rechts am Rand.
 
    .. image:: /Images/Backend/update-now.png
-      :alt: Update Button in Extensions Manager
+      :alt: Jetzt aktualisieren Button im Extensions Manager
       :class: with-shadow
 
-4. Gebt den Namen der Extension operations) in das Suchfeld ein.
+4. Gebt den Namen der Extension (operations) in das Suchfeld ein.
 
    .. image:: /Images/Backend/searchfield.png
-      :alt: Searchfield in Extensions Manager
+      :alt: Suchfeld für Extensions im Extensions Manager
       :class: with-shadow
 
 5. Klickt auf  :guilabel:`"Absenden"`
 
    .. image:: /Images/Backend/searchfield-go.png
-      :alt: Searchfield in Extensions Manager with search button
+      :alt: Absenden der Suche im Extensions Manager
       :class: with-shadow
 
 6. Importiert die Extension mit Klick auf das Icon vor dem Extensionname :guilabel:`"Importieren and installieren"`
 
    .. image:: /Images/Backend/import.png
-      :alt: Import Button in Extensions Manager
+      :alt: Importieren Button im Extensions Manager
       :class: with-shadow
 
    |
 
-   Jetzt ist die Extension zwar importiert aber noch nicht aktiviert. Aktiviert sie nun:
+   Jetzt ist die Extension zwar importiert aber noch nicht aktiviert.
 
-7. Wähle :guilabel:`"Installierte Erweiterungen"` am oberen Rand.
+7. Aktiviert die Extension nun. Wählt :guilabel:`"Installierte Erweiterungen"` am oberen Rand in der Auswahlbox.
 
    .. image:: /Images/Backend/installed-extensions.png
-      :alt: Screen of Dropdown in Extensions Manager
+      :alt: Bildschirmausschnitt der Auswahlbox im Extension Manager
       :class: with-shadow
 
 8. Klickt auf das :guilabel:`"+"` Icon in der :guilabel:`"A/D"` Spalte um die Extension zu aktivieren.
 
    .. image:: /Images/Backend/activate.png
-      :alt: Button Activate in Extensions Manager
+      :alt: Button zum Aktivieren der Extension im Extensions Manager
       :class: with-shadow
 
-**Jetzt habt ihr die Extension `operations` erfolgreich installiert.**
+**Jetzt habt ihr die Extension erfolgreich installiert.**
 
 Operations installieren nach download einer Zip Datei
 =====================================================
 
 Viele User gehen über das TYPO3 Extension Repository `TER <https://extensions.typo3.org/extension/operations>`__
-und laden sich die Extension vorher manuell auf ihren Computer herunten um sie dann zu installieren.
-Deswegen beschreibe ich auch das hier noch.
+und laden sich die Extension vorher manuell auf ihren Computer herunter um sie dann zu installieren.
+Deswegen beschreibe ich auch diese Schritte hier noch.
 
 .. rst-class:: bignums
 
 1. Geht hier auch wieder zu :guilabel:`"Verwaltungswerkzeuge" > "Erweiterungen"`
 
    .. image:: /Images/Backend/admintools-extensions.png
-      :alt: Screen of AdminTools
+      :alt: Bildschirmausschnitt der Module: Verwaltungswerkzeuge
       :class: with-shadow
 
-2. Klickt auf das kleine Icon um das Uploadformular zu öffnen und wählt die Datei von eurem Rechner aus.
+2. Klickt auf das kleine Icon um das Uploadformular zu öffnen und wählt dann die Datei auf eurem Rechner aus.
 
    .. image:: /Images/Backend/upload.png
-      :alt: Upload button in Extensions Manager
+      :alt: Button für Upload einer Extension im Extensions Manager
       :class: with-shadow
 
    |
 
    .. image:: /Images/Backend/choose-file.png
-      :alt: Upload form in Extensions Manager
+      :alt: Upload Formular im Extensions Manager
       :class: with-shadow
 
-3.  Nach dem Upload müsst ihr die Extension nur noch installieren. Das geht genauso wie vorher in Step 8 beschrieben.
+3.  Nach dem Upload müsst ihr die Extension nur noch installieren. Das geht genauso wie vorher in Schritt 8 beschrieben.

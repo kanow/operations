@@ -24,7 +24,7 @@ Uid Angaben von Seiten die wichtig sind und die ihr dann eventuell erst einmal a
 Das macht es unnötig kompliziert.
 
 .. image:: /Images/Backend/pagetree.png
-   :alt: Example page tree for a firefighter website with operations
+   :alt: Beispiel Seitenbaum für eine Feuerwehr Webseite mit Einsätzen
    :class: with-shadow
 
 .. note::
@@ -34,5 +34,5 @@ Das macht es unnötig kompliziert.
 
 
 .. image:: /Images/Backend/disable-pageinmenu.png
-   :alt: Switch to disable page in menu
+   :alt: Schalter um Seiten im Menü zu verbergen
    :class: with-shadow

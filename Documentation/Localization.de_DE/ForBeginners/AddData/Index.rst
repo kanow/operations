@@ -8,7 +8,7 @@
 .. _adddata:
 
 ========================
-Daten im Backend pflegen
+Daten im Backend anlegen
 ========================
 
 Wenn ihr einen SysOrdner für die Einsatzdaten habt, könnt ihr anfangen diese anzulegen.
@@ -22,7 +22,7 @@ da diese bei den Einsätzen später benötigt werden.
 1. Geht zum Modul :guilabel:`"Web" > "Liste"` und wählt im Seitenbaum den SysOrdner für die Einsatzdaten aus.
 
    .. image:: /Images/Backend/sysfolder-operations.png
-      :alt: Sysfolder with operations data
+      :alt: SysOrdner für die Einsatzdaten
       :class: with-shadow
 
    .. note::
@@ -37,19 +37,19 @@ da diese bei den Einsätzen später benötigt werden.
 2. Klickt auf das :guilabel:`"+"` Icon oben am Rand um einen neuen Datensatz anzulegen.
 
    .. image:: /Images/Backend/button-createnew.png
-      :alt: Button to create new data
+      :alt: Button zum Anlegen für neue Datensätze
       :class: with-shadow
 
 3. Jetzt wählt ihr den gewünschten Datensatztyp aus den ihr anlegen wollt.
 
    .. image:: /Images/Backend/choose-datatype.png
-      :alt: List datatypes of operations
+      :alt: Liste der Datentypen für Einsatzverwaltung
       :class: with-shadow
 
 4. Wenn ihr mit Kategorien arbeiten wollt, legt diese auch an.
 
    .. image:: /Images/Backend/create-category.png
-      :alt: Create a new category
+      :alt: Eine Kategorie anlegen
       :class: with-shadow
 
    .. tip::
@@ -63,11 +63,13 @@ da diese bei den Einsätzen später benötigt werden.
    eine im :guilabel:`"Seiten Verwaltung" > "Seiten"` Modul.
 
    .. image:: /Images/Backend/module-siteconfig.png
-      :alt: Create a new category
+      :alt: Modul für Seitenkonfiguration
       :class: with-shadow
 
+   |
+
    .. image:: /Images/Backend/button-addsiteconfiguration.png
-      :alt: Button "Add news Site Configuration"
+      :alt: Button Eine neue Seitenkonfiguration anlegen
       :class: with-shadow
 
    |

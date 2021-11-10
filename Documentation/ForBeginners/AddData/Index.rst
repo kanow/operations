@@ -61,12 +61,13 @@ You should start with data for the relations. Types, vehicles, resources and ass
    data. If you don't have a Site Configuration yet, create one in :guilabel:`"Site Management" > "Sites"` module.
 
    .. image:: /Images/Backend/module-siteconfig.png
-      :alt: Create a new category
+      :alt: Site Configuration module
       :class: with-shadow
 
+   |
+
    .. image:: /Images/Backend/button-addsiteconfiguration.png
-      :alt: Button "Add news Site Configuration"
-      :class: with-shadow
+      :alt: Button Add news Site Configuration"      :class: with-shadow
 
    |
 

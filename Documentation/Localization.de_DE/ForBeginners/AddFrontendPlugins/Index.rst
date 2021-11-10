@@ -32,20 +32,20 @@ Ok, jetzt gehts los.
    die Seite für euer Inhaltselement aus. Legt ein neues Inhaltselement an.
 
    .. image:: /Images/Backend/create-content.png
-      :alt: The button to create new content elements
+      :alt: Button für das Anlegen neuer Inhalte
       :class: with-shadow
 
 2. Geht zum Reiter "Plugins" in dem öffnenden Fenster und wählt aus den Einträgen das gewünschte Einsatzplugin aus.
 
    .. image:: /Images/Backend/newcontent-plugins.png
-      :alt: The button to create new content elements
+      :alt: Neues Plugins erstellen
       :class: with-shadow
 
 3. Geht jetzt im Inhaltselement wieder zum Reiter "Plugin" (sollte schon angewählt sein)
    wählt die gewünschte Ansicht im Feld "Anzeigen von" (the Switchable Controller Action) aus.
 
    .. image:: /Images/Backend/switchablecontrolleractions.png
-      :alt: Field for Switchable Controller Actions
+      :alt: Feld für Switchable Controller Actions
       :class: with-shadow
 
    |

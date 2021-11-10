@@ -31,31 +31,31 @@ TypoScript von `operations` in der Datenbank einfügen
 1. Wählt im Seitenbaum eure Root Seite aus. Das ist die Seite mit der Weltkugel.
 
    .. image:: /Images/Backend/rootpage.png
-      :alt: Root page in page tree
+      :alt: Root Seite im Seitenbaum
       :class: with-shadow
 
 2. Wechselt links bei den Modulen zum "Template" Modul
 
    .. image:: /Images/Backend/template-module.png
-      :alt: Template module on the left
+      :alt: Template Modul links
       :class: with-shadow
 
 3. In der Auswahlbox oben im Fenster wählt ihr "Info/Bearbeiten"
 
    .. image:: /Images/Backend/choose-infomodify.png
-      :alt: Open select box for TS Template
+      :alt: Auswahlbox für TypoScript Template Werkzeuge
       :class: with-shadow
 
 4. Klickt auf den Button "Vollständigen Templatedatensatz bearbeiten"
 
    .. image:: /Images/Backend/button-wholetemplate.png
-      :alt: Button to edit the whole template
+      :alt: Button für vollständigen Templatedatensatz bearbeiten
       :class: with-shadow
 
 5. Nun wechselt zum Reiter "Enthält" und wählt dein Eintrag von "Operations" aus
 
    .. image:: /Images/Backend/include-ts.png
-      :alt: Include TypoScript from operations
+      :alt: TypoScript von operations einfügen
       :class: with-shadow
 
    |
@@ -73,7 +73,7 @@ TypoScript von `operations` in der Datenbank einfügen
    Ihr könnt hinterher den TypoScriptObjectBrowser nutzen um zu prüfen ob das TypoScript erfolgreich eingefügt wurde.
 
    .. image:: /Images/Backend/tsob.png
-      :alt: operations TypoScript in TypoScript Object Browser
+      :alt: operations TypoScript angezeigt im TypoScript Object Browser
       :class: with-shadow
 
 
@@ -90,7 +90,7 @@ schaut euch die einzelnen Einstelllungen mal an. Ein paar Voreinstellungen sind 
 Diese könnt ihr anpassen oder auch erst einmal so lassen.
 
 .. image:: /Images/Backend/tx_operations-constants.png
-   :alt: Tx_Operations constants in constant editor
+   :alt: Tx_Operations Konstanten im Konstanten Editor
    :class: with-shadow
 
 |
