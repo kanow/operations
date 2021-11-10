@@ -12,6 +12,22 @@
 Änderungen
 ==========
 
+Update to 7.1.0
+===============
+
+*  Vor dem Update gab es immer ein Limit bei den Einsatzdaten. Auch für die Statistiken.
+   Das ist da aber eher nicht sinnvoll.
+   Jetzt gibt es erstmal kein Limit für die Statistikdaten. Ihr könnte das aber deaktivieren um das alte Verhalten
+   wieder zu haben. Deaktiviert das einfach mit dem TypoScript setting `noLimitForStatistics = 0`.
+
+*  Die Extension "numbered_pagination" von Georg Ringer wird jetzt für die Paginierung der Liste verwendet. Die ist
+   komfortabler und zeigt nicht immer alle Seiten an sondern nur einen bestimmten Teil. Schaut ins TypoScript
+   und nach euren Fluid Templates/Partials für die Änderungen. Die Extension wird bei Composer basierten Installationen
+   einfach mit installiert. Bei nicht Composer basierten Installationen müsst ihr die Extension extra installieren.
+
+*  Die Farbe bei der Einsatzart ist nun bei Übersetzungen ausgenommen. Damit ist es nicht mehr notwendig die Farbe
+   extra bei der Übersetzung anzugeben.
+
 Update auf 7.0.0
 ================
 

@@ -12,6 +12,20 @@
 Changelog
 =========
 
+Update to 7.1.0
+===============
+
+*  Before this update you always had a limit for operations data. That is not useful in statistics view.
+   Now there is no limit by default for statistics. You can deactivate this to get back the old behaviour
+   with the TypoScript setting `noLimitForStatistics = 0`.
+
+*  Now the extension "numbered_pagination" by georg ringer is used for the pagination. Check the TypoScript settings and
+   Fluid Templates/Partials for changes. The extension will be installed automatically on composer based TYPO3
+   installations. If you have a non composer installation you have to install the extension by yourself manually before
+   updating operations.
+
+*  The colors in operation type are now excluded on translations. You dont have to set a color for the translation.
+
 Update to 7.0.0
 ===============
 
