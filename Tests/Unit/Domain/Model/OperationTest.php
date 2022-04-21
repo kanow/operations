@@ -1,11 +1,13 @@
 <?php
 
 namespace Kanow\Operations\Tests;
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+
 /***************************************************************
  *  Copyright notice
  *
  *  (c) 2013 Karsten Nowak <captnnowi@gmx.de>
- *  			
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -37,17 +39,18 @@ namespace Kanow\Operations\Tests;
  *
  * @author Karsten Nowak <captnnowi@gmx.de>
  */
-class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
+class OperationTest extends UnitTestCase {
 	/**
 	 * @var \Kanow\Operations\Domain\Model\Operation
 	 */
 	protected $fixture;
 
-	public function setUp() {
+    public function setUp(): void {
+        parent::setUp();
 		$this->fixture = new \Kanow\Operations\Domain\Model\Operation();
 	}
 
-	public function tearDown() {
+	public function tearDown(): void {
 		unset($this->fixture);
 	}
 
@@ -59,7 +62,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setNumberForStringSetsNumber() { 
+	public function setNumberForStringSetsNumber() {
 		$this->fixture->setNumber('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -67,7 +70,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getNumber()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
@@ -76,7 +79,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setTitleForStringSetsTitle() { 
+	public function setTitleForStringSetsTitle() {
 		$this->fixture->setTitle('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -84,7 +87,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getTitle()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
@@ -93,7 +96,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setLocationForStringSetsLocation() { 
+	public function setLocationForStringSetsLocation() {
 		$this->fixture->setLocation('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -101,7 +104,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getLocation()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
@@ -111,7 +114,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	 * @test
 	 */
 	public function setBeginForDateTimeSetsBegin() { }
-	
+
 	/**
 	 * @test
 	 */
@@ -121,7 +124,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	 * @test
 	 */
 	public function setEndForDateTimeSetsEnd() { }
-	
+
 	/**
 	 * @test
 	 */
@@ -130,7 +133,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setReportForStringSetsReport() { 
+	public function setReportForStringSetsReport() {
 		$this->fixture->setReport('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -138,7 +141,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getReport()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
@@ -147,7 +150,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setLongitudeForStringSetsLongitude() { 
+	public function setLongitudeForStringSetsLongitude() {
 		$this->fixture->setLongitude('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -155,7 +158,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getLongitude()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
@@ -164,7 +167,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setLatitudeForStringSetsLatitude() { 
+	public function setLatitudeForStringSetsLatitude() {
 		$this->fixture->setLatitude('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -172,11 +175,11 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getLatitude()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
-	public function getZoomReturnsInitialValueForInteger() { 
+	public function getZoomReturnsInitialValueForInteger() {
 		$this->assertSame(
 			0,
 			$this->fixture->getZoom()
@@ -186,7 +189,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setZoomForIntegerSetsZoom() { 
+	public function setZoomForIntegerSetsZoom() {
 		$this->fixture->setZoom(12);
 
 		$this->assertSame(
@@ -194,7 +197,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getZoom()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
@@ -203,19 +206,19 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setImageForStringSetsImage() { 
-		$this->fixture->setImage('Conceived at T3CON10');
+	public function setMediaForStringSetsMedia() {
+		$this->fixture->setMedia('Conceived at T3CON10');
 
 		$this->assertSame(
 			'Conceived at T3CON10',
-			$this->fixture->getImage()
+			$this->fixture->getMedia()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
-	public function getTypeReturnsInitialValueForType() { 
+	public function getTypeReturnsInitialValueForType() {
 		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
 		$this->assertEquals(
 			$newObjectStorage,
@@ -226,7 +229,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setTypeForObjectStorageContainingTypeSetsType() { 
+	public function setTypeForObjectStorageContainingTypeSetsType() {
 		$type = new \Kanow\Operations\Domain\Model\Type();
 		$objectStorageHoldingExactlyOneType = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
 		$objectStorageHoldingExactlyOneType->attach($type);
@@ -237,7 +240,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getType()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
@@ -269,11 +272,11 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getType()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
-	public function getAssistanceReturnsInitialValueForAssistance() { 
+	public function getAssistanceReturnsInitialValueForAssistance() {
 		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
 		$this->assertEquals(
 			$newObjectStorage,
@@ -284,7 +287,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setAssistanceForObjectStorageContainingAssistanceSetsAssistance() { 
+	public function setAssistanceForObjectStorageContainingAssistanceSetsAssistance() {
 		$assistance = new \Kanow\Operations\Domain\Model\Assistance();
 		$objectStorageHoldingExactlyOneAssistance = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
 		$objectStorageHoldingExactlyOneAssistance->attach($assistance);
@@ -295,7 +298,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getAssistance()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
@@ -327,11 +330,11 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getAssistance()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
-	public function getVehiclesReturnsInitialValueForVehicle() { 
+	public function getVehiclesReturnsInitialValueForVehicle() {
 		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
 		$this->assertEquals(
 			$newObjectStorage,
@@ -342,7 +345,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setVehiclesForObjectStorageContainingVehicleSetsVehicles() { 
+	public function setVehiclesForObjectStorageContainingVehicleSetsVehicles() {
 		$vehicle = new \Kanow\Operations\Domain\Model\Vehicle();
 		$objectStorageHoldingExactlyOneVehicles = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
 		$objectStorageHoldingExactlyOneVehicles->attach($vehicle);
@@ -353,7 +356,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getVehicles()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
@@ -385,11 +388,11 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getVehicles()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
-	public function getResourcesReturnsInitialValueForResources() { 
+	public function getResourcesReturnsInitialValueForResources() {
 		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
 		$this->assertEquals(
 			$newObjectStorage,
@@ -400,7 +403,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setResourcesForObjectStorageContainingResourcesSetsResources() { 
+	public function setResourcesForObjectStorageContainingResourcesSetsResources() {
 		$resource = new \Kanow\Operations\Domain\Model\Resource();
 		$objectStorageHoldingExactlyOneResources = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
 		$objectStorageHoldingExactlyOneResources->attach($resource);
@@ -411,7 +414,7 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getResources()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
@@ -443,5 +446,5 @@ class OperationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getResources()
 		);
 	}
-	
+
 }

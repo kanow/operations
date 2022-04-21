@@ -1,11 +1,13 @@
 <?php
 
 namespace Kanow\Operations\Tests;
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+
 /***************************************************************
  *  Copyright notice
  *
  *  (c) 2013 Karsten Nowak <captnnowi@gmx.de>
- *  			
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -37,17 +39,18 @@ namespace Kanow\Operations\Tests;
  *
  * @author Karsten Nowak <captnnowi@gmx.de>
  */
-class TypeTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
+class TypeTest extends UnitTestCase {
 	/**
 	 * @var \Kanow\Operations\Domain\Model\Type
 	 */
 	protected $fixture;
 
-	public function setUp() {
+    public function setUp(): void {
+        parent::setUp();
 		$this->fixture = new \Kanow\Operations\Domain\Model\Type();
 	}
 
-	public function tearDown() {
+	public function tearDown(): void {
 		unset($this->fixture);
 	}
 
@@ -59,7 +62,7 @@ class TypeTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setTitleForStringSetsTitle() { 
+	public function setTitleForStringSetsTitle() {
 		$this->fixture->setTitle('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -67,7 +70,7 @@ class TypeTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getTitle()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
@@ -76,7 +79,7 @@ class TypeTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setImageForStringSetsImage() { 
+	public function setImageForStringSetsImage() {
 		$this->fixture->setImage('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -84,5 +87,5 @@ class TypeTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getImage()
 		);
 	}
-	
+
 }

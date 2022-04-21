@@ -1,11 +1,13 @@
 <?php
 
 namespace Kanow\Operations\Tests;
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+
 /***************************************************************
  *  Copyright notice
  *
  *  (c) 2013 Karsten Nowak <captnnowi@gmx.de>
- *  			
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -37,17 +39,18 @@ namespace Kanow\Operations\Tests;
  *
  * @author Karsten Nowak <captnnowi@gmx.de>
  */
-class ResourcesTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
+class ResourcesTest extends UnitTestCase {
 	/**
 	 * @var \Kanow\Operations\Domain\Model\Resource
 	 */
 	protected $fixture;
 
-	public function setUp() {
+    public function setUp(): void {
+        parent::setUp();
 		$this->fixture = new \Kanow\Operations\Domain\Model\Resource();
 	}
 
-	public function tearDown() {
+	public function tearDown(): void {
 		unset($this->fixture);
 	}
 
@@ -59,7 +62,7 @@ class ResourcesTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setTitleForStringSetsTitle() { 
+	public function setTitleForStringSetsTitle() {
 		$this->fixture->setTitle('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -67,7 +70,7 @@ class ResourcesTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getTitle()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
@@ -76,7 +79,7 @@ class ResourcesTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setShortForStringSetsShort() { 
+	public function setShortForStringSetsShort() {
 		$this->fixture->setShort('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -84,7 +87,7 @@ class ResourcesTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getShort()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
@@ -93,7 +96,7 @@ class ResourcesTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setDescriptionForStringSetsDescription() { 
+	public function setDescriptionForStringSetsDescription() {
 		$this->fixture->setDescription('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -101,7 +104,7 @@ class ResourcesTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getDescription()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
@@ -110,7 +113,7 @@ class ResourcesTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setImageForStringSetsImage() { 
+	public function setImageForStringSetsImage() {
 		$this->fixture->setImage('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -118,5 +121,5 @@ class ResourcesTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getImage()
 		);
 	}
-	
+
 }
