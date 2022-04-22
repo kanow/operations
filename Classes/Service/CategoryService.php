@@ -37,14 +37,14 @@ use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class CategoryService extends GeneralUtility {
+class CategoryService {
 
     /**
      * @var CategoryRepository
      */
     protected $categoryRepository;
 
-    public function injectCategoryRepository(CategoryRepository $categoryRepository): void
+    public function __construct(CategoryRepository $categoryRepository)
     {
         $this->categoryRepository = $categoryRepository;
     }

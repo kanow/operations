@@ -61,25 +61,12 @@ class OperationController extends BaseController
      */
     protected $configurationManager;
 
-    public function injectConfigurationManager(ConfigurationManagerInterface $configurationManager): void
-    {
-        $this->configurationManager = $configurationManager;
-    }
-
 	/**
 	 * operationRepository
 	 *
 	 * @var OperationRepository
      */
 	protected $operationRepository;
-
-    /**
-     * Inject operation repository to enable DI
-     */
-    public function injectOperationRepository(OperationRepository $operationRepository): void
-    {
-        $this->operationRepository = $operationRepository;
-    }
 
     /**
      * typeRepository
@@ -89,31 +76,36 @@ class OperationController extends BaseController
     protected $typeRepository;
 
     /**
-     * Inject type repository to enable DI
-     */
-    public function injectTypeRepository(TypeRepository $typeRepository): void
-    {
-        $this->typeRepository = $typeRepository;
-    }
-
-    /**
      * @var CategoryRepository
      */
     protected $categoryRepository;
-
-    public function injectCategoryRepository(CategoryRepository $categoryRepository): void
-    {
-        $this->categoryRepository = $categoryRepository;
-    }
 
     /**
      * @var CategoryService
      */
     protected $categoryService;
 
-    public function injectCategoryService(CategoryService $categoryService): void
+
+    /**
+     * @param OperationRepository $operationRepository
+     * @param CategoryRepository $categoryRepository
+     * @param CategoryService $categoryService
+     * @param TypeRepository $typeRepository
+     * @param ConfigurationManagerInterface $configurationManager
+     */
+    public function __construct(
+        OperationRepository $operationRepository,
+        CategoryRepository $categoryRepository,
+        CategoryService $categoryService,
+        TypeRepository $typeRepository,
+        ConfigurationManagerInterface $configurationManager
+    )
     {
+        $this->operationRepository = $operationRepository;
+        $this->categoryRepository = $categoryRepository;
         $this->categoryService = $categoryService;
+        $this->typeRepository = $typeRepository;
+        $this->configurationManager = $configurationManager;
     }
 
     /**

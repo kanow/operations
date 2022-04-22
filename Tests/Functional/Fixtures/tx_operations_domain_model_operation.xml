@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dataset>
+    <!--findRecordsByUid-->
+    <tx_operations_domain_model_operation>
+        <uid>1</uid>
+        <pid>1</pid>
+        <title>Einsatztest</title>
+    </tx_operations_domain_model_operation>
+</dataset>
