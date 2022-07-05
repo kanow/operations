@@ -58,7 +58,7 @@ class BaseController extends ActionController
      * @param ViewInterface $view The view to be initialized
      * @noinspection PhpSignatureMismatchDuringInheritanceInspection
      */
-    protected function initializeView(ViewInterface $view)
+    protected function initializeView($view)
     {
         $view->assign('contentObjectData', $this->configurationManager->getContentObject()->data);
     }
