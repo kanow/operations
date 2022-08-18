@@ -2,6 +2,7 @@
 
 namespace Kanow\Operations\Tests\Functional;
 
+use Kanow\Operations\Domain\Model\OperationDemand;
 use Kanow\Operations\Domain\Repository\OperationRepository;
 use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -33,7 +34,6 @@ class OperationRepositoryTest extends FunctionalTestCase
         } else {
             $this->operationRepository = GeneralUtility::makeInstance(ObjectManager::class)->get(OperationRepository::class);
         }
-//        $this->importDataSet('PACKAGE:typo3/testing-framework/Resources/Core/Functional/Fixtures/pages.xml');
         $this->importDataSet(__DIR__ . '/../../Fixtures/tx_operations_domain_model_operation.xml');
     }
 
@@ -47,5 +47,29 @@ class OperationRepositoryTest extends FunctionalTestCase
         $_GET['id'] = 1;
         $operation = $this->operationRepository->findByUid(1);
         $this->assertEquals($operation->getTitle(), 'Einsatztest');
+    }
+
+    /**
+     * Test if record by year constraint works
+     *
+     * @test
+     *
+     * @return void
+     */
+    public function findRecordsByYear(): void
+    {
+        $demand = new OperationDemand();
+        $_GET['id'] = 1;
+        $settings = [];
+
+        // year 2020
+        $demand->setBegin('2020');
+        $this->assertEquals((int)$this->operationRepository->findDemanded($demand, $settings)->count(), 0);
+        // year 2021
+        $demand->setBegin('2021');
+        $this->assertEquals((int)$this->operationRepository->findDemanded($demand, $settings)->count(), 1);
+        // year 2022
+        $demand->setBegin('2022');
+        $this->assertEquals((int)$this->operationRepository->findDemanded($demand, $settings)->count(), 2);
     }
 }
