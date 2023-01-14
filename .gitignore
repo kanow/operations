@@ -3,6 +3,8 @@
 *.swo
 
 Build
+.Build
+composer.lock
 
 # ignore generated documentation
 *GENERATED*
@@ -10,9 +12,7 @@ Build
 #  but we add it here for convenience)
 *~
 *.bak
-*.idea
 *.project
-*.swp
 .project
 .webprj
 nbproject
