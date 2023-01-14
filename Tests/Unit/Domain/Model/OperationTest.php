@@ -70,7 +70,7 @@ class OperationTest extends UnitTestCase {
     {
         $value = 'This is an operation title';
         $this->subject->setTitle($value);
-        $this->assertSame($value, $this->subject->getTitle());
+        $this->assertEquals($value, $this->subject->getTitle());
     }
 
     /**
@@ -81,7 +81,7 @@ class OperationTest extends UnitTestCase {
         $value = '2023';
         $this->subject->setNumber($value);
         $this->assertIsString($this->subject->getNumber());
-        $this->assertSame($value, $this->subject->getNumber());
+        $this->assertEquals($value, $this->subject->getNumber());
     }
 
     /**
@@ -92,7 +92,7 @@ class OperationTest extends UnitTestCase {
         $value = 1;
         $this->subject->setOnlyEld($value);
         $this->assertIsInt($this->subject->getOnlyEld());
-        $this->assertSame($value, $this->subject->getOnlyEld());
+        $this->assertEquals($value, $this->subject->getOnlyEld());
     }
 
     /**
@@ -102,7 +102,7 @@ class OperationTest extends UnitTestCase {
     {
         $value = 'My location';
         $this->subject->setLocation($value);
-        $this->assertSame($value, $this->subject->getLocation());
+        $this->assertEquals($value, $this->subject->getLocation());
     }
 
     /**
@@ -113,7 +113,7 @@ class OperationTest extends UnitTestCase {
         $value = '1600899999';
         //$value = new \DateTime();
         $this->subject->setBegin($value);
-        $this->assertSame($value, $this->subject->getBegin());
+        $this->assertEquals($value, $this->subject->getBegin());
     }
 
     /**
@@ -123,7 +123,7 @@ class OperationTest extends UnitTestCase {
     {
         $value = '1610899999';
         $this->subject->setEnd($value);
-        $this->assertSame($value, $this->subject->getEnd());
+        $this->assertEquals($value, $this->subject->getEnd());
     }
 
     /**
@@ -133,7 +133,7 @@ class OperationTest extends UnitTestCase {
     {
         $value = 'This is an operation teaser';
         $this->subject->setTeaser($value);
-        $this->assertSame($value, $this->subject->getTeaser());
+        $this->assertEquals($value, $this->subject->getTeaser());
     }
 
     /**
@@ -143,7 +143,7 @@ class OperationTest extends UnitTestCase {
     {
         $value = 'This is an operation report';
         $this->subject->setReport($value);
-        $this->assertSame($value, $this->subject->getReport());
+        $this->assertEquals($value, $this->subject->getReport());
     }
 
     /**
@@ -153,7 +153,7 @@ class OperationTest extends UnitTestCase {
     {
         $value = '11.03773';
         $this->subject->setLongitude($value);
-        $this->assertSame($value, $this->subject->getLongitude());
+        $this->assertEquals($value, $this->subject->getLongitude());
     }
 
     /**
@@ -163,7 +163,7 @@ class OperationTest extends UnitTestCase {
     {
         $value = '51.75745';
         $this->subject->setLatitude($value);
-        $this->assertSame($value, $this->subject->getLatitude());
+        $this->assertEquals($value, $this->subject->getLatitude());
     }
 
     /**
@@ -174,20 +174,20 @@ class OperationTest extends UnitTestCase {
         $value = 15;
         $this->subject->setZoom($value);
         $this->assertIsInt($this->subject->getZoom());
-        $this->assertSame($value, $this->subject->getZoom());
+        $this->assertEquals($value, $this->subject->getZoom());
     }
 
     /**
      * @test
      */
-    public function mediaCanBeAdded(): void
+    public function mediaCanBeSet(): void
     {
         $mediaItem = new FileReference();
         $media = new ObjectStorage();
         $media->attach($mediaItem);
         $this->subject->setMedia($media);
-        $this->assertEquals($media, $this->subject->getMedia());
-        $this->assertEquals($mediaItem, $this->subject->getFirstMedia());
+        $this->assertSame($media, $this->subject->getMedia());
+        $this->assertSame($mediaItem, $this->subject->getFirstMedia());
     }
 
     /**
@@ -202,7 +202,7 @@ class OperationTest extends UnitTestCase {
         $operationType->attach($type);
 
         $this->subject->setType($operationType);
-        $this->assertEquals($operationType,$this->subject->getType());
+        $this->assertSame($operationType,$this->subject->getType());
     }
 
 }

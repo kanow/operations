@@ -109,7 +109,7 @@ class Type extends AbstractEntity {
      * @return void
      */
     public function setColor($color) {
-        $this->title = $color;
+        $this->color = $color;
     }
 
 }
