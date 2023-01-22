@@ -389,7 +389,7 @@ class OperationRepository extends Repository
             ]);
         }
 
-        $constraints = $this->cleanUnusedConstaints($constraints);
+        $constraints = $this->cleanUnusedConstraints($constraints);
         return $constraints;
     }
 
@@ -437,7 +437,7 @@ class OperationRepository extends Repository
      * @param array $constraints
      * @return array
      */
-    protected function cleanUnusedConstaints($constraints)
+    protected function cleanUnusedConstraints($constraints)
     {
         foreach ($constraints as $key => $value) {
             if (is_null($value)) {
