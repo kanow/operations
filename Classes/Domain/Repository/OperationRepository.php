@@ -87,18 +87,6 @@ class OperationRepository extends Repository
     }
 
     /**
-     * Counts all available operations without the limit
-     * @todo maybe not longer needed. Can be removed soon
-     *
-     * @param OperationDemand $demand
-     * @return integer $count
-     * @throws InvalidQueryException
-     */
-    public function countDemanded($demand) {
-        return $this->findDemanded($demand, NULL)->count();
-    }
-
-    /**
      * Counts all available operations
      * @param OperationDemand $demand
      * @param array $settings
