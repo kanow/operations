@@ -43,4 +43,21 @@ class OperationRepositoryTest extends UnitTestCase
         $result = $method->invokeArgs($this->mockedOperationRepository, array($yearsAsArray));
         $this->assertSame($result, $yearsAsString);
     }
+
+    /**
+     * @test
+     */
+    public function cleanUnusedConstraintsRemoveNullValues()
+    {
+        $constraints = [
+            '0' => 'This is not null.',
+            '1' => null,
+            '2' => 'This is also not null.'
+        ];
+        $reflector = new \ReflectionClass(OperationRepository::class);
+        $method = $reflector->getMethod('cleanUnusedConstraints');
+        $method->setAccessible(true);
+        $result = $method->invokeArgs($this->mockedOperationRepository, array($constraints));
+        $this->assertCount('2', $result);
+    }
 }
