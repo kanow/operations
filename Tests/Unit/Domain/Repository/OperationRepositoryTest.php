@@ -12,6 +12,20 @@ class OperationRepositoryTest extends UnitTestCase
     /** @var \Kanow\Operations\Domain\Repository\OperationRepository|\PHPUnit\Framework\MockObject\|\TYPO3\TestingFramework\Core\AccessibleObjectInterface */
     protected $mockedOperationRepository;
 
+    /**
+     * @var $statisticResultArray array
+     */
+    protected $statisticResultArray = [
+        '0' => [
+            'title' => 'one',
+            'color' => '#081dc2',
+            'years' => [
+                '2018' => 35,
+                '2015' => 25,
+                '2023' => 20
+            ]
+        ]
+    ];
 
     protected function setUp(): void
     {
@@ -59,5 +73,40 @@ class OperationRepositoryTest extends UnitTestCase
         $method->setAccessible(true);
         $result = $method->invokeArgs($this->mockedOperationRepository, array($constraints));
         $this->assertCount('2', $result);
+    }
+
+    /**
+     * @test
+     */
+    public function addEmptyYearAddsNewYear(): void
+    {
+        $result = $this->statisticResultArray;
+        $newYear = '2020';
+        $reflector = new \ReflectionClass(OperationRepository::class);
+        $method = $reflector->getMethod('addEmptyYear');
+        $method->setAccessible(true);
+        $resultWithNewYear = $method->invokeArgs($this->mockedOperationRepository, array($result, $newYear));
+        $this->assertIsArray($resultWithNewYear);
+        $this->assertEquals('2020', array_key_last($resultWithNewYear['0']['years']));
+    }
+
+    /**
+     * @test
+     */
+    public function sortResultByYearsReturnSortedResult(): void
+    {
+        $result = $this->statisticResultArray;
+        $reflector = new \ReflectionClass(OperationRepository::class);
+        $method = $reflector->getMethod('sortResultByYears');
+        $method->setAccessible(true);
+        $resultSorted = $method->invokeArgs($this->mockedOperationRepository, array($result));
+        $this->assertIsArray($resultSorted);
+        $this->assertArrayHasKey('years',$resultSorted['0']);
+        $this->assertEquals($result['0']['title'], $resultSorted['0']['title']);
+        $this->assertEquals($result['0']['color'], $resultSorted['0']['color'], );
+        $this->assertNotSame(array_key_first($result['0']['years']), array_key_first($resultSorted['0']['years']));
+        $this->assertNotSame(array_key_last($result['0']['years']), array_key_last($resultSorted['0']['years']));
+        $this->assertEquals('2023', array_key_first($resultSorted['0']['years']));
+        $this->assertEquals('2015', array_key_last($resultSorted['0']['years']));
     }
 }
