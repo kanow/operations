@@ -61,7 +61,7 @@ class OperationRepositoryTest extends UnitTestCase
     /**
      * @test
      */
-    public function cleanUnusedConstraintsRemoveNullValues()
+    public function cleanUnusedConstraintsRemoveNullValues(): void
     {
         $constraints = [
             '0' => 'This is not null.',
