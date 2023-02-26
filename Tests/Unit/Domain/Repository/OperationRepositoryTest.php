@@ -151,4 +151,18 @@ class OperationRepositoryTest extends UnitTestCase
         $this->assertEquals('2023', array_key_first($resultSorted['1']['years']));
         $this->assertEquals('2015', array_key_last($resultSorted['1']['years']));
     }
+
+    /**
+     * @test
+     */
+    public function sortResultByTypeUidReturnSortedResult(): void
+    {
+        $data = $this->statisticResultArray;
+
+        $reflector = new \ReflectionClass(OperationRepository::class);
+        $method = $reflector->getMethod('sortResultByTypeUid');
+        $method->setAccessible(true);
+        $dataSorted = $method->invokeArgs($this->mockedOperationRepository, array($data));
+        $this->assertEquals(5, array_key_last($dataSorted));
+    }
 }
