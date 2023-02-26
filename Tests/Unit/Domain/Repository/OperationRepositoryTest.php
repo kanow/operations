@@ -165,4 +165,24 @@ class OperationRepositoryTest extends UnitTestCase
         $dataSorted = $method->invokeArgs($this->mockedOperationRepository, array($data));
         $this->assertEquals(5, array_key_last($dataSorted));
     }
+
+    /**
+     * @test
+     */
+    public function cleanUnusedConstraintsReturnCleanedArray(): void
+    {
+        $constraintsArray = [
+            0 => 'is set',
+            1 => 0,
+            2 => null
+        ];
+
+        $reflector = new \ReflectionClass(OperationRepository::class);
+        $method = $reflector->getMethod('cleanUnusedConstraints');
+        $method->setAccessible(true);
+        $cleanedConstraintsArray = $method->invokeArgs($this->mockedOperationRepository, array($constraintsArray));
+        $this->assertArrayNotHasKey(2, $cleanedConstraintsArray);
+        $this->assertEquals(1, array_key_last($cleanedConstraintsArray));
+        $this->assertSame($cleanedConstraintsArray['0'], 'is set');
+    }
 }
