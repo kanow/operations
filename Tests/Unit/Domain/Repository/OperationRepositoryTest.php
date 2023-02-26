@@ -2,8 +2,10 @@
 
 namespace Kanow\Operations\Tests\Unit\Domain\Repository\Operation;
 
+use Kanow\Operations\Domain\Model\Type;
 use Kanow\Operations\Domain\Repository\OperationRepository;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
@@ -17,8 +19,8 @@ class OperationRepositoryTest extends UnitTestCase
      */
     protected $statisticResultArray = [
         '0' => [
-            'title' => 'one',
-            'color' => '#081dc2',
+            'title' => 'One',
+            'color' => '#000',
             'years' => [
                 '2018' => 35,
                 '2015' => 25,
@@ -88,6 +90,28 @@ class OperationRepositoryTest extends UnitTestCase
         $resultWithNewYear = $method->invokeArgs($this->mockedOperationRepository, array($result, $newYear));
         $this->assertIsArray($resultWithNewYear);
         $this->assertEquals('2020', array_key_last($resultWithNewYear['0']['years']));
+    }
+
+    /**
+     * @test
+     */
+    public function addMissingTypeAddsType(): void
+    {
+        $data = $this->statisticResultArray;
+        $type = new Type();
+        $type->setTitle('BMA');
+        $type->setColor('#cccccc');
+        $type->_setProperty('uid',1);
+        $types = new ObjectStorage();
+        $types->attach($type);
+
+        $reflector = new \ReflectionClass(OperationRepository::class);
+        $method = $reflector->getMethod('addMissingType');
+        $method->setAccessible(true);
+
+        $newResultWithAddedType = $method->invokeArgs($this->mockedOperationRepository, [$data,$types,'2023']);
+
+        $this->assertArrayHasKey(1,$newResultWithAddedType);
     }
 
     /**
