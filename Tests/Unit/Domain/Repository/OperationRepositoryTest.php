@@ -18,9 +18,27 @@ class OperationRepositoryTest extends UnitTestCase
      * @var $statisticResultArray array
      */
     protected $statisticResultArray = [
-        '0' => [
+        '1' => [
             'title' => 'One',
             'color' => '#000',
+            'years' => [
+                '2018' => 35,
+                '2015' => 25,
+                '2023' => 20
+            ]
+        ],
+        '5' => [
+            'title' => 'Two',
+            'color' => '#f0f',
+            'years' => [
+                '2018' => 35,
+                '2015' => 25,
+                '2023' => 20
+            ]
+        ],
+        '3' => [
+            'title' => 'Three',
+            'color' => '#AA0',
             'years' => [
                 '2018' => 35,
                 '2015' => 25,
@@ -89,7 +107,7 @@ class OperationRepositoryTest extends UnitTestCase
         $method->setAccessible(true);
         $resultWithNewYear = $method->invokeArgs($this->mockedOperationRepository, array($result, $newYear));
         $this->assertIsArray($resultWithNewYear);
-        $this->assertEquals('2020', array_key_last($resultWithNewYear['0']['years']));
+        $this->assertEquals('2020', array_key_last($resultWithNewYear['1']['years']));
     }
 
     /**
@@ -101,7 +119,7 @@ class OperationRepositoryTest extends UnitTestCase
         $type = new Type();
         $type->setTitle('BMA');
         $type->setColor('#cccccc');
-        $type->_setProperty('uid',1);
+        $type->_setProperty('uid',7);
         $types = new ObjectStorage();
         $types->attach($type);
 
@@ -111,7 +129,7 @@ class OperationRepositoryTest extends UnitTestCase
 
         $newResultWithAddedType = $method->invokeArgs($this->mockedOperationRepository, [$data,$types,'2023']);
 
-        $this->assertArrayHasKey(1,$newResultWithAddedType);
+        $this->assertArrayHasKey(7,$newResultWithAddedType);
     }
 
     /**
@@ -125,12 +143,12 @@ class OperationRepositoryTest extends UnitTestCase
         $method->setAccessible(true);
         $resultSorted = $method->invokeArgs($this->mockedOperationRepository, array($result));
         $this->assertIsArray($resultSorted);
-        $this->assertArrayHasKey('years',$resultSorted['0']);
-        $this->assertEquals($result['0']['title'], $resultSorted['0']['title']);
-        $this->assertEquals($result['0']['color'], $resultSorted['0']['color'], );
-        $this->assertNotSame(array_key_first($result['0']['years']), array_key_first($resultSorted['0']['years']));
-        $this->assertNotSame(array_key_last($result['0']['years']), array_key_last($resultSorted['0']['years']));
-        $this->assertEquals('2023', array_key_first($resultSorted['0']['years']));
-        $this->assertEquals('2015', array_key_last($resultSorted['0']['years']));
+        $this->assertArrayHasKey('years',$resultSorted['1']);
+        $this->assertEquals($result['1']['title'], $resultSorted['1']['title']);
+        $this->assertEquals($result['1']['color'], $resultSorted['1']['color'], );
+        $this->assertNotSame(array_key_first($result['1']['years']), array_key_first($resultSorted['1']['years']));
+        $this->assertNotSame(array_key_last($result['1']['years']), array_key_last($resultSorted['1']['years']));
+        $this->assertEquals('2023', array_key_first($resultSorted['1']['years']));
+        $this->assertEquals('2015', array_key_last($resultSorted['1']['years']));
     }
 }
