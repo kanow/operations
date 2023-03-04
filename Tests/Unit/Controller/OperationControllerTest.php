@@ -38,7 +38,7 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
  ***************************************************************/
 
 /**
- * Test case for class Tx_Operations_Controller_OperationController.
+ * Test case for class Kanow\Operations\Controller\OperationController.
  *
  * @version $Id$
  * @copyright Copyright belongs to the respective authors
