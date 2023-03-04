@@ -1,5 +1,18 @@
 <?php
 namespace Kanow\Operations\Tests;
+use Kanow\Operations\Controller\OperationController;
+use Kanow\Operations\Domain\Model\Operation;
+use Kanow\Operations\Domain\Repository\OperationRepository;
+use PHPUnit\Framework\MockObject\MockObject;
+use Prophecy\PhpUnit\ProphecyTrait;
+use Prophecy\Prophecy\ObjectProphecy;
+use Prophecy\Prophecy\ProphecySubjectInterface;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
+use TYPO3\CMS\Fluid\View\TemplateView;
+use TYPO3\TestingFramework\Core\AccessibleObjectInterface;
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+
 /***************************************************************
  *  Copyright notice
  *
@@ -36,25 +49,58 @@ namespace Kanow\Operations\Tests;
  *
  * @author Karsten Nowak <captnnowi@gmx.de>
  */
-class OperationControllerTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
-	/**
-	 * @var 
-	 */
-	protected $fixture;
+class OperationControllerTest extends UnitTestCase {
 
-	public function setUp() {
-		$this->fixture = new \Kanow\Operations\Domain\Model\Operation();
-	}
+    use ProphecyTrait;
 
-	public function tearDown() {
-		unset($this->fixture);
+    /**
+     * @var OperationController&MockObject&AccessibleObjectInterface
+     */
+    private $mockedOperation;
+
+    /**
+     * @var ObjectProphecy<TemplateView>
+     */
+    private $viewProphecy;
+
+    /**
+     * @var ObjectProphecy<OperationRepository>
+     */
+    private $operationRepositoryProphecy;
+
+	protected function setUp(): void {
+		parent::setUp();
+
+        $this->mockedOperation = $this->getAccessibleMock(OperationController::class,['forward', 'redirect', 'redirectToUri']);
+
+        $this->viewProphecy = $this->prophesize(TemplateView::class);
+        $view = $this->viewProphecy->reveal();
+        $this->mockedOperation->_set('view', $view);
+
+        $this->operationRepositoryProphecy = $this->prophesize(OperationRepository::class);
+        /** @var OperationRepository&ProphecySubjectInterface $operationRepository */
+        $operationRepository = $this->operationRepositoryProphecy->reveal();
+        $this->mockedOperation->injectOperationRepository($operationRepository);
+
 	}
 
 	/**
 	 * @test
 	 */
-	public function dummyMethod() {
-		$this->markTestIncomplete();
+	public function isActionController(): void
+    {
+		self::assertInstanceOf(ActionController::class, $this->mockedOperation);
 	}
+
+    /**
+     * @test
+     */
+    public function showActionAssignsPassedOperationToView(): void
+    {
+        $operation = new Operation();
+        $this->viewProphecy->assign('operation', $operation)->shouldBeCalled();
+
+        $this->mockedOperation->showAction($operation);
+    }
 
 }
