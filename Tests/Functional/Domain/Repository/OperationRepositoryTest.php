@@ -29,11 +29,7 @@ class OperationRepositoryTest extends FunctionalTestCase
     {
         parent::setUp();
         $versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
-        if ($versionInformation->getMajorVersion() === 11) {
-            $this->operationRepository = $this->getContainer()->get(OperationRepository::class);
-        } else {
-            $this->operationRepository = GeneralUtility::makeInstance(ObjectManager::class)->get(OperationRepository::class);
-        }
+        $this->operationRepository = $this->getContainer()->get(OperationRepository::class);
         $this->importCSVDataSet(ORIGINAL_ROOT . 'typo3conf/ext/operations/Tests/Functional/Fixtures/DomainModelOperation.csv');
     }
 
