@@ -15,4 +15,8 @@ Execute test
 
     Build/Scripts/runTests.sh -p 7.4 -s functional -d sqlite -v
 
+Now use mariadb due to erros with missinf `FROM_UNIXTIME` in SQLite. 
+
+    Build/Scripts/runTests.sh -p 8.1 -s functional -d mariadb -v
+
 Change PHP version (`-p`) if necessary.

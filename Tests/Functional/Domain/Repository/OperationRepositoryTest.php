@@ -40,7 +40,6 @@ class OperationRepositoryTest extends FunctionalTestCase
      */
     public function findRecordsByUid(): void
     {
-        $_GET['id'] = 1;
         $operation = $this->operationRepository->findByUid(1);
         $this->assertEquals($operation->getTitle(), 'Einsatztest');
     }
@@ -49,8 +48,6 @@ class OperationRepositoryTest extends FunctionalTestCase
      * Test if record by year constraint works
      *
      * @test
-     *
-     * @return void
      */
     public function findRecordsByYear(): void
     {
@@ -67,5 +64,52 @@ class OperationRepositoryTest extends FunctionalTestCase
         // year 2022
         $demand->setBegin('2022');
         $this->assertEquals((int)$this->operationRepository->findDemanded($demand, $settings)->count(), 2);
+    }
+
+    /**
+     * Count result for statistics without limit
+     * if the setting noLimitForStatistics is active
+     *
+     * @test
+     */
+    public function noLimitSettingForStatisticsIsRespected(): void
+    {
+        $_GET['id'] = 1;
+        $demand = new OperationDemand();
+        $demand->setLimit(2);
+        $settings = [
+            'noLimitForStatistics' => 0
+        ];
+        $this->assertEquals(2, (int)$this->operationRepository->countDemandedForStatistics($demand, $settings));
+        $settings['noLimitForStatistics'] = 1;
+        $this->assertEquals(3, (int)$this->operationRepository->countDemandedForStatistics($demand, $settings));
+    }
+
+    /**
+     * Count operations grouped by year
+     *
+     * @test
+     */
+    public function countOperationsByYear(): void
+    {
+        $years = [
+            '2020' => 2020,
+            '2021' => 2021,
+            '2022' => 2022,
+        ];
+        $expectedResult = [
+            0 => [
+                'count' => 2,
+                'year' => '2022',
+            ],
+            1 => [
+                'count' => 1,
+                'year' => '2021',
+            ],
+        ];
+        $operationUids = '1,2,3';
+        $result = $this->operationRepository->countGroupedByYear($years, $operationUids);
+        $this->assertEquals($expectedResult, $result);
+
     }
 }
