@@ -1,0 +1,5 @@
+"tx_operations_domain_model_operation",,,,,,
+,"uid","pid","title","onlyEld","begin","end"
+,1,1,"Einsatztest",0,1660774000,1660814089
+,2,1,"Einsatztest nur ELD",1,1657663800,1657749600
+,3,1,"Einsatztest 3",0,1609459200,1609543000

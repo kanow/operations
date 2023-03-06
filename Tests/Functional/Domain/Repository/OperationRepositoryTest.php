@@ -34,7 +34,7 @@ class OperationRepositoryTest extends FunctionalTestCase
         } else {
             $this->operationRepository = GeneralUtility::makeInstance(ObjectManager::class)->get(OperationRepository::class);
         }
-        $this->importDataSet(__DIR__ . '/../../Fixtures/tx_operations_domain_model_operation.xml');
+        $this->importCSVDataSet(ORIGINAL_ROOT . 'typo3conf/ext/operations/Tests/Functional/Fixtures/DomainModelOperation.csv');
     }
 
     /**
