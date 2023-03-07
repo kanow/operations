@@ -2,9 +2,6 @@
 *.swp
 *.swo
 
-Build
-.Build
-composer.lock
 
 # ignore generated documentation
 *GENERATED*
@@ -12,7 +9,14 @@ composer.lock
 #  but we add it here for convenience)
 *~
 *.bak
+*.idea
 *.project
+*.swp
 .project
 .webprj
 nbproject
+
+Build
+.Build/
+Build/testing-docker/.env
+composer.lock

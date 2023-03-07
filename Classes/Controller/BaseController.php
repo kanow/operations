@@ -5,7 +5,7 @@ namespace Kanow\Operations\Controller;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use TYPO3Fluid\Fluid\View\ViewInterface;
+use TYPO3\CMS\Extbase\Mvc\View\ViewInterface;
 
 /***************************************************************
  *  Copyright notice
@@ -56,7 +56,6 @@ class BaseController extends ActionController
      * or prepare the view in another way before the action is called.
      *
      * @param ViewInterface $view The view to be initialized
-     * @noinspection PhpSignatureMismatchDuringInheritanceInspection
      */
     protected function initializeView($view)
     {
