@@ -71,17 +71,11 @@ class OperationControllerTest extends UnitTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
-        $this->mockedOperation = $this->getAccessibleMock(OperationController::class,['forward', 'redirect', 'redirectToUri']);
+        $this->mockedOperation = $this->getAccessibleMock(OperationController::class,['forward', 'redirect', 'redirectToUri'],[],'', false);
 
         $this->viewProphecy = $this->prophesize(TemplateView::class);
         $view = $this->viewProphecy->reveal();
         $this->mockedOperation->_set('view', $view);
-
-        $this->operationRepositoryProphecy = $this->prophesize(OperationRepository::class);
-        /** @var OperationRepository&ProphecySubjectInterface $operationRepository */
-        $operationRepository = $this->operationRepositoryProphecy->reveal();
-        $this->mockedOperation->injectOperationRepository($operationRepository);
-
 	}
 
 	/**
