@@ -112,4 +112,9 @@ class OperationRepositoryTest extends FunctionalTestCase
         $this->assertEquals($expectedResult, $result);
 
     }
+
+    public function tearDown(): void
+    {
+        unset($this->operationRepository);
+    }
 }
