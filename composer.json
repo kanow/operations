@@ -49,6 +49,8 @@
   "scripts": {
     "post-autoload-dump": [
       "TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
-    ]
+    ],
+    "testUnit": ".Build/bin/phpunit -c Build/UnitTests.xml",
+    "testFunctional": ".Build/bin/phpunit -c Build/FunctionalTests.xml"
   }
 }
