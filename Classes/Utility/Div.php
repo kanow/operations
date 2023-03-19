@@ -32,6 +32,7 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
  *
  * @package operations
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
+ * @deprecated It seems that those class not longer needed. Will be removed soon.
  */
 class Div {
 
