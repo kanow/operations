@@ -30,7 +30,7 @@ class OperationRepositoryTest extends FunctionalTestCase
         parent::setUp();
         $versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
         $this->operationRepository = $this->getContainer()->get(OperationRepository::class);
-        $this->importCSVDataSet(ORIGINAL_ROOT . 'typo3conf/ext/operations/Tests/Functional/Fixtures/DomainModelOperation.csv');
+        $this->importCSVDataSet(ORIGINAL_ROOT . 'typo3conf/ext/operations/Tests/Functional/Fixtures/TxOperations.csv');
     }
 
     /**
