@@ -20,3 +20,11 @@ Now use mariadb due to erros with missinf `FROM_UNIXTIME` in SQLite.
     Build/Scripts/runTests.sh -p 8.1 -s functional -d mariadb -v
 
 Change PHP version (`-p`) if necessary.
+
+## CodeCoverage
+
+* activate xdebug `ddev xdebug`
+* set env variable to activate xdebug mode `export XDEBUG_MODE=coverage`
+* execute command with codecoverage and filter option
+
+  .Build/bin/phpunit -c Build/UnitTests.xml --coverage-html Build/Reports/CodeCoverage/ --coverage-filter "Classes/*"
