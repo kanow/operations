@@ -7,11 +7,11 @@ CREATE TABLE tx_operations_domain_model_operation (
 	onlyEld tinyint(4) unsigned DEFAULT '0' NOT NULL,
 	title varchar(255) DEFAULT '' NOT NULL,
 	path_segment varchar(2048),
-	location text DEFAULT '' NOT NULL,
+	location text,
 	begin int(11) DEFAULT '0' NOT NULL,
 	end int(11) DEFAULT '0' NOT NULL,
-	teaser text DEFAULT '' NOT NULL,
-	report text DEFAULT '' NOT NULL,
+	teaser text,
+	report text,
 	longitude varchar(255) DEFAULT '' NOT NULL,
 	latitude varchar(255) DEFAULT '' NOT NULL,
 	zoom int(11) DEFAULT '0' NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE tx_operations_domain_model_operation (
 CREATE TABLE tx_operations_domain_model_assistance (
 
 	title varchar(255) DEFAULT '' NOT NULL,
-	description text NOT NULL,
+	description text,
 	link varchar(255) DEFAULT '' NOT NULL
 
 );
@@ -43,7 +43,7 @@ CREATE TABLE tx_operations_domain_model_vehicle (
 	title varchar(255) DEFAULT '' NOT NULL,
 	path_segment varchar(2048),
 	short varchar(255) DEFAULT '' NOT NULL,
-	description text NOT NULL,
+	description text,
 	media varchar(255) DEFAULT '' NOT NULL,
 	link varchar(255) DEFAULT '' NOT NULL
 
@@ -57,7 +57,7 @@ CREATE TABLE tx_operations_domain_model_resource (
 	title varchar(255) DEFAULT '' NOT NULL,
 	path_segment varchar(2048),
 	short varchar(255) DEFAULT '' NOT NULL,
-	description text NOT NULL,
+	description text,
 	media varchar(255) DEFAULT '' NOT NULL,
 	link varchar(255) DEFAULT '' NOT NULL
 
