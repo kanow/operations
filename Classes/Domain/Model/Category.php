@@ -2,6 +2,8 @@
 
 namespace Kanow\Operations\Domain\Model;
 
+use TYPO3\CMS\Extbase\Annotation\Validate;
+use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 
@@ -39,7 +41,7 @@ class Category extends AbstractEntity
 {
     /**
      * @var string
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+     * @Validate("NotEmpty")
      */
     protected $title = '';
 
@@ -50,7 +52,7 @@ class Category extends AbstractEntity
 
     /**
      * @var \Kanow\Operations\Domain\Model\Category|null
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @Lazy
      */
     protected $parent;
 

@@ -11,7 +11,7 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 class OperationRepositoryTest extends UnitTestCase
 {
-    /** @var \Kanow\Operations\Domain\Repository\OperationRepository|\PHPUnit\Framework\MockObject\|\TYPO3\TestingFramework\Core\AccessibleObjectInterface */
+    /** @var OperationRepository|\PHPUnit\Framework\MockObject \|\TYPO3\TestingFramework\Core\AccessibleObjectInterface */
     protected $mockedOperationRepository;
 
     /**

@@ -1,6 +1,9 @@
 <?php
 namespace Kanow\Operations\Domain\Model;
 
+use TYPO3\CMS\Extbase\Annotation\Validate;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 /***************************************************************
  *  Copyright notice
@@ -35,19 +38,19 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 class Type extends AbstractEntity {
 
 	/**
-	 * Operation type
-	 *
-	 * @var string
-	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
-	 */
-	protected $title;
+  * Operation type
+  *
+  * @var string
+  * @Validate("NotEmpty")
+  */
+ protected $title;
 
 	/**
-	 * icon for use in list or for whatever
-	 *
-	 * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
-	 */
-	protected $image;
+  * icon for use in list or for whatever
+  *
+  * @var FileReference
+  */
+ protected $image;
 
     /**
      * Type color
@@ -78,7 +81,7 @@ class Type extends AbstractEntity {
 	/**
    * Returns the image
    *
-   * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+   * @return FileReference $image
    */
   public function getImage() {
           return $this->image;
@@ -87,7 +90,7 @@ class Type extends AbstractEntity {
   /**
    * Sets the image
    *
-   * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $image
+   * @param ObjectStorage $image
    * @return void
    */
   public function setImage($image) {

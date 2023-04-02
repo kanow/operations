@@ -25,7 +25,6 @@ namespace Kanow\Operations\Controller;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
 /**
  *
  *
@@ -33,7 +32,8 @@ namespace Kanow\Operations\Controller;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-
+use Psr\Http\Message\ResponseInterface;
+use GeorgRinger\NumberedPagination\NumberedPagination;
 use Kanow\Operations\Domain\Model\Operation;
 use Kanow\Operations\Domain\Model\OperationDemand;
 use Kanow\Operations\Domain\Repository\OperationRepository;
@@ -117,7 +117,7 @@ class OperationController extends BaseController
      * @throws InvalidQueryException
      * @throws NoSuchArgumentException
      */
-	public function listAction(OperationDemand $demand = NULL, int $currentPage = 1) {
+	public function listAction(OperationDemand $demand = NULL, int $currentPage = 1): ResponseInterface {
 		$demand = $this->updateDemandObjectFromSettings($demand);
         /** @var OperationDemand $demand */
         $operations = $this->operationRepository->findDemanded($demand, $this->settings);
@@ -127,7 +127,7 @@ class OperationController extends BaseController
         if ($this->settings['hidePagination'] != 1) {
             $currentPage = $this->request->hasArgument('currentPage') ? $this->request->getArgument('currentPage') : $currentPage;
             $paginator = new QueryResultPaginator($operations, $currentPage, $this->settings['itemsPerPage']);
-            $pagination = new \GeorgRinger\NumberedPagination\NumberedPagination($paginator, (int)$this->settings['paginate']['maximumLinks']);
+            $pagination = new NumberedPagination($paginator, (int)$this->settings['paginate']['maximumLinks']);
         }
 
         $this->view->assignMultiple([
@@ -138,6 +138,7 @@ class OperationController extends BaseController
             'pagination' => $pagination,
             'paginator' => $paginator
         ]);
+        return $this->htmlResponse();
 	}
 
     /**
@@ -149,7 +150,7 @@ class OperationController extends BaseController
      * @throws InvalidQueryException
      * @throws NoSuchArgumentException
      */
-	public function searchAction(OperationDemand $demand = NULL, int $currentPage = 1) {
+	public function searchAction(OperationDemand $demand = NULL, int $currentPage = 1): ResponseInterface {
 		$demand = $this->updateDemandObjectFromSettings($demand);
         /** @var OperationDemand $demand */
         $demanded = $this->operationRepository->findDemanded($demand, $this->settings);
@@ -157,7 +158,7 @@ class OperationController extends BaseController
         if ($this->settings['hidePagination'] != 1) {
             $currentPage = $this->request->hasArgument('currentPage') ? $this->request->getArgument('currentPage') : $currentPage;
             $paginator = new QueryResultPaginator($demanded, $currentPage, $this->settings['itemsPerPage']);
-            $pagination = new \GeorgRinger\NumberedPagination\NumberedPagination($paginator, (int)$this->settings['paginate']['maximumLinks']);
+            $pagination = new NumberedPagination($paginator, (int)$this->settings['paginate']['maximumLinks']);
         }
 
 		$years = $this->generateYears();
@@ -172,6 +173,7 @@ class OperationController extends BaseController
             'pagination' => $pagination,
             'paginator' => $paginator
         ]);
+        return $this->htmlResponse();
 	}
 
 	/**
@@ -192,8 +194,9 @@ class OperationController extends BaseController
 	 * @param Operation $operation
 	 * @return void
 	 */
-	public function showAction(Operation $operation) {
+	public function showAction(Operation $operation): ResponseInterface {
 		$this->view->assign('operation', $operation);
+  return $this->htmlResponse();
 	}
 
     /**
@@ -203,7 +206,7 @@ class OperationController extends BaseController
      * @return void
      * @throws InvalidQueryException
      */
-    public function statisticsAction(OperationDemand $demand = NULL) {
+    public function statisticsAction(OperationDemand $demand = NULL): ResponseInterface {
         $demand = $this->updateDemandObjectFromSettings($demand);
 
         /** @var OperationDemand $demand */
@@ -224,6 +227,7 @@ class OperationController extends BaseController
                 'years' => $years
             )
         );
+        return $this->htmlResponse();
     }
 
     /**

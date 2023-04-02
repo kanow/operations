@@ -1,6 +1,7 @@
 <?php
 namespace Kanow\Operations\Controller;
 
+use Psr\Http\Message\ResponseInterface;
 use Kanow\Operations\Domain\Model\Vehicle;
 use Kanow\Operations\Domain\Repository\VehicleRepository;
 
@@ -52,20 +53,22 @@ class VehicleController extends BaseController {
 	 *
 	 * @return void
 	 */
-	public function listAction() {
+	public function listAction(): ResponseInterface {
 		//\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($vehicles);
 		$vehicles = $this->vehicleRepository->findAll();
 		$this->view->assign('vehicles', $vehicles);
+  return $this->htmlResponse();
 	}
 
 	/**
-	 * action show
-	 *
-	 * @param \Kanow\Operations\Domain\Model\Vehicle $vehicle
-	 * @return void
-	 */
-	public function showAction(Vehicle $vehicle ) {
+  * action show
+  *
+  * @param Vehicle $vehicle
+  * @return void
+  */
+ public function showAction(Vehicle $vehicle ): ResponseInterface {
 		$this->view->assign('vehicle', $vehicle);
+  return $this->htmlResponse();
 	}
 
 

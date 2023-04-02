@@ -1,6 +1,7 @@
 <?php
 namespace Kanow\Operations\Domain\Model;
 
+use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\DomainObject\AbstractValueObject;
 
 /***************************************************************
@@ -56,12 +57,12 @@ class OperationDemand extends AbstractValueObject {
 	protected $limit;
 
 	/**
-	 * Begin
-	 *
-	 * @var string
-	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
-	 */
-	protected $begin;
+  * Begin
+  *
+  * @var string
+  * @Validate("NotEmpty")
+  */
+ protected $begin;
 
 	/**
 	 * Searchstring

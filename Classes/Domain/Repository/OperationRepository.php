@@ -328,7 +328,7 @@ class OperationRepository extends Repository
      * @param QueryInterface $query
      * @param OperationDemand $demand
      * @param array $settings
-     * @return array<\TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface>
+     * @return array<ConstraintInterface>
      * @throws InvalidQueryException
      */
     protected function createConstraintsFromDemand(

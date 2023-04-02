@@ -2,6 +2,9 @@
 
 namespace Kanow\Operations\Domain\Model;
 
+use TYPO3\CMS\Extbase\Annotation\Validate;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
+use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 /***************************************************************
@@ -41,7 +44,7 @@ class Operation extends AbstractEntity
      * Operation number
      *
      * @var string
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+     * @Validate("NotEmpty")
      */
     protected $number;
 
@@ -56,7 +59,7 @@ class Operation extends AbstractEntity
      * Title
      *
      * @var string
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+     * @Validate("NotEmpty")
      */
     protected $title;
 
@@ -64,7 +67,7 @@ class Operation extends AbstractEntity
      * Location of operation
      *
      * @var string
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+     * @Validate("NotEmpty")
      */
     protected $location;
 
@@ -72,7 +75,7 @@ class Operation extends AbstractEntity
      * Begin
      *
      * @var \DateTime
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+     * @Validate("NotEmpty")
      */
     protected $begin;
 
@@ -120,43 +123,42 @@ class Operation extends AbstractEntity
 
     /**
      * Media
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     * @var ObjectStorage<FileReference>
      */
     protected $media;
 
     /**
      * Type of operation
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Type>
+     * @var ObjectStorage<Type>
      */
     protected $type;
 
     /**
      * Assistance to this operation
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Assistance>
+     * @Lazy
+     * @var ObjectStorage<Assistance>
      */
     protected $assistance;
 
     /**
      * Vehicles use on this operation
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Vehicle>
+     * @Lazy
+     * @var ObjectStorage<Vehicle>
      */
     protected $vehicles;
 
     /**
      * resources used
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Resource>
+     * @Lazy
+     * @var ObjectStorage<Resource>
      */
     protected $resources;
 
     /**
      * Category
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Category>
-     *
+     * @var ObjectStorage<Category>
      */
     protected $category;
 
@@ -420,7 +422,7 @@ class Operation extends AbstractEntity
     /**
      * Returns the media
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage $media
+     * @return ObjectStorage $media
      */
     public function getMedia()
     {
@@ -430,7 +432,7 @@ class Operation extends AbstractEntity
     /**
      * Returns the first media
      *
-     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $media
+     * @return FileReference $media
      */
     public function getFirstMedia()
     {
@@ -441,7 +443,7 @@ class Operation extends AbstractEntity
     /**
      * Sets the media
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $media
+     * @param ObjectStorage $media
      * @return void
      */
     public function setMedia($media)
@@ -452,7 +454,7 @@ class Operation extends AbstractEntity
     /**
      * Adds a Type
      *
-     * @param \Kanow\Operations\Domain\Model\Type $type
+     * @param Type $type
      * @return void
      */
     public function addType(Type $type)
@@ -463,7 +465,7 @@ class Operation extends AbstractEntity
     /**
      * Removes a Type
      *
-     * @param \Kanow\Operations\Domain\Model\Type $typeToRemove The Type to be removed
+     * @param Type $typeToRemove The Type to be removed
      * @return void
      */
     public function removeType(Type $typeToRemove)
@@ -474,7 +476,7 @@ class Operation extends AbstractEntity
     /**
      * Returns the type
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Type> $type
+     * @return ObjectStorage<Type> $type
      */
     public function getType()
     {
@@ -484,7 +486,7 @@ class Operation extends AbstractEntity
     /**
      * Returns directly the assigned type. Prevent to unnecessary iteration in operation data.
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Type> $type
+     * @return ObjectStorage<Type> $type
      */
     public function getAssignedType()
     {
@@ -495,7 +497,7 @@ class Operation extends AbstractEntity
     /**
      * Sets the type
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Type> $type
+     * @param ObjectStorage<Type> $type
      * @return void
      */
     public function setType(ObjectStorage $type)
@@ -506,7 +508,7 @@ class Operation extends AbstractEntity
     /**
      * Adds a Assistance
      *
-     * @param \Kanow\Operations\Domain\Model\Assistance $assistance
+     * @param Assistance $assistance
      * @return void
      */
     public function addAssistance(Assistance $assistance)
@@ -517,7 +519,7 @@ class Operation extends AbstractEntity
     /**
      * Removes a Assistance
      *
-     * @param \Kanow\Operations\Domain\Model\Assistance $assistanceToRemove The Assistance to be removed
+     * @param Assistance $assistanceToRemove The Assistance to be removed
      * @return void
      */
     public function removeAssistance(Assistance $assistanceToRemove)
@@ -528,7 +530,7 @@ class Operation extends AbstractEntity
     /**
      * Returns the assistance
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Assistance> $assistance
+     * @return ObjectStorage<Assistance> $assistance
      */
     public function getAssistance()
     {
@@ -538,7 +540,7 @@ class Operation extends AbstractEntity
     /**
      * Sets the assistance
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Assistance> $assistance
+     * @param ObjectStorage<Assistance> $assistance
      * @return void
      */
     public function setAssistance(ObjectStorage $assistance)
@@ -549,7 +551,7 @@ class Operation extends AbstractEntity
     /**
      * Adds a Vehicle
      *
-     * @param \Kanow\Operations\Domain\Model\Vehicle $vehicle
+     * @param Vehicle $vehicle
      * @return void
      */
     public function addVehicle(Vehicle $vehicle)
@@ -560,7 +562,7 @@ class Operation extends AbstractEntity
     /**
      * Removes a Vehicle
      *
-     * @param \Kanow\Operations\Domain\Model\Vehicle $vehicleToRemove The Vehicle to be removed
+     * @param Vehicle $vehicleToRemove The Vehicle to be removed
      * @return void
      */
     public function removeVehicle(Vehicle $vehicleToRemove)
@@ -571,7 +573,7 @@ class Operation extends AbstractEntity
     /**
      * Returns the vehicles
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Vehicle> $vehicles
+     * @return ObjectStorage<Vehicle> $vehicles
      */
     public function getVehicles()
     {
@@ -581,7 +583,7 @@ class Operation extends AbstractEntity
     /**
      * Sets the vehicles
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Vehicle> $vehicles
+     * @param ObjectStorage<Vehicle> $vehicles
      * @return void
      */
     public function setVehicles(ObjectStorage $vehicles)
@@ -592,7 +594,7 @@ class Operation extends AbstractEntity
     /**
      * Adds a Resource
      *
-     * @param \Kanow\Operations\Domain\Model\Resource $resource
+     * @param Resource $resource
      * @return void
      */
     public function addResource(Resource $resource)
@@ -603,7 +605,7 @@ class Operation extends AbstractEntity
     /**
      * Removes a Resource
      *
-     * @param \Kanow\Operations\Domain\Model\Resource $resourceToRemove The Resources to be removed
+     * @param Resource $resourceToRemove The Resources to be removed
      * @return void
      */
     public function removeResource(Resource $resourceToRemove)
@@ -614,7 +616,7 @@ class Operation extends AbstractEntity
     /**
      * Returns the resources
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Resource> $resources
+     * @return ObjectStorage<Resource> $resources
      */
     public function getResources()
     {
@@ -624,7 +626,7 @@ class Operation extends AbstractEntity
     /**
      * Sets the resources
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Resource> $resources
+     * @param ObjectStorage<Resource> $resources
      * @return void
      */
     public function setResources(ObjectStorage $resources)
@@ -635,7 +637,7 @@ class Operation extends AbstractEntity
     /**
      * Adds a Category
      *
-     * @param \Kanow\Operations\Domain\Model\Category $category
+     * @param Category $category
      * @return void
      */
     public function addCategory(Category $category)
@@ -646,7 +648,7 @@ class Operation extends AbstractEntity
     /**
      * Removes a Category
      *
-     * @param \Kanow\Operations\Domain\Model\Category $categoryToRemove The Category to be removed
+     * @param Category $categoryToRemove The Category to be removed
      * @return void
      */
     public function removeCategory(Category $categoryToRemove)
@@ -657,7 +659,7 @@ class Operation extends AbstractEntity
     /**
      * Returns the category
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Category> $category
+     * @return ObjectStorage<Category> $category
      */
     public function getCategory()
     {
@@ -667,7 +669,7 @@ class Operation extends AbstractEntity
     /**
      * Sets the category
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Kanow\Operations\Domain\Model\Category> $category
+     * @param ObjectStorage<Category> $category
      * @return void
      */
     public function setCategory(ObjectStorage $category)

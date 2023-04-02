@@ -1,6 +1,9 @@
 <?php
 namespace Kanow\Operations\Domain\Model;
 
+use TYPO3\CMS\Extbase\Annotation\Validate;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 /***************************************************************
  *  Copyright notice
@@ -35,12 +38,12 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 class Resource extends AbstractEntity {
 
 	/**
-	 * Title of resource
-	 *
-	 * @var string
-	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
-	 */
-	protected $title;
+  * Title of resource
+  *
+  * @var string
+  * @Validate("NotEmpty")
+  */
+ protected $title;
 
 	/**
 	 * Abbreviation title
@@ -57,10 +60,10 @@ class Resource extends AbstractEntity {
 	protected $description;
 
 	/**
-		* Media
-   	* @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
-   	*/
-  	protected $media;
+    * Media
+    * @var ObjectStorage<FileReference>
+    */
+   protected $media;
 
     /**
      * A website url or internal link
@@ -129,7 +132,7 @@ class Resource extends AbstractEntity {
   /**
     * Returns the media
     *
-    * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage $media
+    * @return ObjectStorage $media
     */
    public function getMedia() {
       return $this->media;
@@ -138,7 +141,7 @@ class Resource extends AbstractEntity {
   /**
    * Returns the first media
    *
-   * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $media
+   * @return FileReference $media
    */
   public function getFirstMedia() {
     $media = $this->getMedia()->toArray();
@@ -147,7 +150,7 @@ class Resource extends AbstractEntity {
   /**
    * Sets the media
    *
-   * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $media
+   * @param ObjectStorage $media
    * @return void
    */
   public function setMedia($media) {

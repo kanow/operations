@@ -1,6 +1,7 @@
 <?php
 namespace Kanow\Operations\Domain\Model;
 
+use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 /***************************************************************
  *  Copyright notice
@@ -35,12 +36,12 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 class Assistance extends AbstractEntity {
 
 	/**
-	 * Title of the assistance
-	 *
-	 * @var string
-	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
-	 */
-	protected $title;
+  * Title of the assistance
+  *
+  * @var string
+  * @Validate("NotEmpty")
+  */
+ protected $title;
 
 	/**
 	 * Description of assistance

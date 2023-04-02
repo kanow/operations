@@ -1,6 +1,7 @@
 <?php
 namespace Kanow\Operations\Controller;
 
+use Psr\Http\Message\ResponseInterface;
 use Kanow\Operations\Domain\Model\Resource;
 use Kanow\Operations\Domain\Repository\ResourceRepository;
 
@@ -52,19 +53,21 @@ class ResourceController extends BaseController {
 	 *
 	 * @return void
 	 */
-	public function listAction() {
+	public function listAction(): ResponseInterface {
 		$resources = $this->resourceRepository->findAll();
 		$this->view->assign('resources', $resources);
+  return $this->htmlResponse();
 	}
 
 	/**
-	 * action show
-	 *
-	 * @param \Kanow\Operations\Domain\Model\Resource $resource
-	 * @return void
-	 */
-	public function showAction(Resource $resource) {
+  * action show
+  *
+  * @param Resource $resource
+  * @return void
+  */
+ public function showAction(Resource $resource): ResponseInterface {
 		$this->view->assign('resource', $resource);
+  return $this->htmlResponse();
 	}
 
 

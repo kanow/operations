@@ -50,13 +50,12 @@ class CategoryService {
     }
 
     /**
-	 * Finds all descendants of a given category
-	 *
-	 * @param \Kanow\Operations\Domain\Model\Category $parentCategory
-	 * @return ObjectStorage $resultStorage
-	 */
-
-	public function findAllDescendants (Category $parentCategory){
+  * Finds all descendants of a given category
+  *
+  * @param Category $parentCategory
+  * @return ObjectStorage $resultStorage
+  */
+ public function findAllDescendants (Category $parentCategory){
 		$this->categoryRepository->setDefaultOrderings(array('title'=>QueryInterface::ORDER_ASCENDING));
 		$allCategories = $this->categoryRepository->findAll();
 

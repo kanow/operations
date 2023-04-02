@@ -2,6 +2,9 @@
 
 namespace Kanow\Operations\Domain\Model;
 
+use TYPO3\CMS\Extbase\Annotation\Validate;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 /***************************************************************
  *  Copyright notice
@@ -40,7 +43,7 @@ class Vehicle extends AbstractEntity
      * Title of vehicle
      *
      * @var string
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+     * @Validate("NotEmpty")
      */
     protected $title;
 
@@ -60,7 +63,7 @@ class Vehicle extends AbstractEntity
 
     /**
      * Media
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     * @var ObjectStorage<FileReference>
      */
     protected $media;
 
@@ -137,7 +140,7 @@ class Vehicle extends AbstractEntity
     /**
      * Returns the media
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage $media
+     * @return ObjectStorage $media
      */
     public function getMedia()
     {
@@ -147,7 +150,7 @@ class Vehicle extends AbstractEntity
     /**
      * Returns the first media
      *
-     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $media
+     * @return FileReference $media
      */
     public function getFirstMedia()
     {
@@ -158,7 +161,7 @@ class Vehicle extends AbstractEntity
     /**
      * Sets the media
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $media
+     * @param ObjectStorage $media
      * @return void
      */
     public function setMedia($media)
