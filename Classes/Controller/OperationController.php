@@ -307,29 +307,6 @@ class OperationController extends BaseController
     }
 
     /**
-     * build simple pagination
-     *
-     * @param SimplePagination $simplePagination
-     * @param QueryResultPaginator $paginator
-     * @return array
-     */
-    protected function buildSimplePagination(SimplePagination $simplePagination, QueryResultPaginator $paginator)
-    {
-        $firstPage = $simplePagination->getFirstPageNumber();
-        $lastPage = $simplePagination->getLastPageNumber();
-        return [
-            'lastPageNumber' => $lastPage,
-            'firstPageNumber' => $firstPage,
-            'nextPageNumber' => $simplePagination->getNextPageNumber(),
-            'previousPageNumber' => $simplePagination->getPreviousPageNumber(),
-            'startRecordNumber' => $simplePagination->getStartRecordNumber(),
-            'endRecordNumber' => $simplePagination->getEndRecordNumber(),
-            'currentPageNumber' => $paginator->getCurrentPageNumber(),
-            'pages' => range($firstPage, $lastPage)
-        ];
-    }
-
-    /**
      * @return ServerRequestInterface
      */
     protected function getRequest(): ServerRequestInterface
