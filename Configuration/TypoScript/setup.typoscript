@@ -67,6 +67,8 @@ plugin.tx_operations {
 			showNoReport = 1
 		}
 		paginate {
+			# set class in your TypoScript if other pagination than SimplePagination should be used
+			class = GeorgRinger\NumberedPagination\NumberedPagination
 			insertAbove = {$plugin.tx_operations.settings.paginate.insertAbove}
 			insertBelow = {$plugin.tx_operations.settings.paginate.insertBelow}
 			maximumLinks = {$plugin.tx_operations.settings.paginate.maximumLinks}

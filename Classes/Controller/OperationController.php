@@ -32,6 +32,8 @@ namespace Kanow\Operations\Controller;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
+use Psr\Log\LoggerAwareInterface;
+use TYPO3\CMS\Core\SingletonInterface;
 use Psr\Http\Message\ResponseInterface;
 use GeorgRinger\NumberedPagination\NumberedPagination;
 use Kanow\Operations\Domain\Model\Operation;
@@ -126,8 +128,15 @@ class OperationController extends BaseController
 
         if ($this->settings['hidePagination'] != 1) {
             $currentPage = $this->request->hasArgument('currentPage') ? $this->request->getArgument('currentPage') : $currentPage;
-            $paginator = new QueryResultPaginator($operations, $currentPage, $this->settings['itemsPerPage']);
-            $pagination = new NumberedPagination($paginator, (int)$this->settings['paginate']['maximumLinks']);
+            $paginationConfiguration = $this->settings['paginate'] ?? [];
+            $itemsPerPage = (int)(($paginationConfiguration['itemsPerPage'] ?? '') ?: 10);
+            $maximumNumberOfLinks = (int)($paginationConfiguration['maximumLinks'] ?? 0);
+            /* @todo use new core pagination in TYPO3 12 by default, if this is available.
+             only use SimplePagination as fallback in TYPO3 11 */
+            $paginationClass = $paginationConfiguration['class'] ?? SimplePagination::class;
+
+            $paginator = new QueryResultPaginator($operations, $currentPage, $itemsPerPage);
+            $pagination = $this->getPagination($paginationClass, $maximumNumberOfLinks, $paginator);
         }
 
         $this->view->assignMultiple([
@@ -157,8 +166,15 @@ class OperationController extends BaseController
 
         if ($this->settings['hidePagination'] != 1) {
             $currentPage = $this->request->hasArgument('currentPage') ? $this->request->getArgument('currentPage') : $currentPage;
-            $paginator = new QueryResultPaginator($demanded, $currentPage, $this->settings['itemsPerPage']);
-            $pagination = new NumberedPagination($paginator, (int)$this->settings['paginate']['maximumLinks']);
+            $paginationConfiguration = $this->settings['paginate'] ?? [];
+            $itemsPerPage = (int)(($paginationConfiguration['itemsPerPage'] ?? '') ?: 10);
+            $maximumNumberOfLinks = (int)($paginationConfiguration['maximumLinks'] ?? 0);
+            /* @todo use new core pagination in TYPO3 12 by default, if this is available.
+            only use SimplePagination as fallback in TYPO3 11 */
+            $paginationClass = $paginationConfiguration['class'] ?? SimplePagination::class;
+
+            $paginator = new QueryResultPaginator($demanded, $currentPage, $itemsPerPage);
+            $pagination = $this->getPagination($paginationClass, $maximumNumberOfLinks, $paginator);
         }
 
 		$years = $this->generateYears();
@@ -312,5 +328,23 @@ class OperationController extends BaseController
     protected function getRequest(): ServerRequestInterface
     {
         return $GLOBALS['TYPO3_REQUEST'];
+    }
+
+    /**
+     * @param $paginationClass
+     * @param int $maximumNumberOfLinks
+     * @param $paginator
+     * @return NumberedPagination|mixed|LoggerAwareInterface|string|SimplePagination|SingletonInterface
+     */
+    protected function getPagination($paginationClass, int $maximumNumberOfLinks, $paginator)
+    {
+        if (class_exists(NumberedPagination::class) && $paginationClass === NumberedPagination::class && $maximumNumberOfLinks) {
+            $pagination = GeneralUtility::makeInstance(NumberedPagination::class, $paginator, $maximumNumberOfLinks);
+        } elseif (class_exists($paginationClass)) {
+            $pagination = GeneralUtility::makeInstance($paginationClass, $paginator);
+        } else {
+            $pagination = GeneralUtility::makeInstance(SimplePagination::class, $paginator);
+        }
+        return $pagination;
     }
 }
