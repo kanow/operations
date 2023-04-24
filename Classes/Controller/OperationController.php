@@ -280,8 +280,8 @@ class OperationController extends BaseController
         $rows = $rows->groupBy('year')
             ->orderBy('year','DESC')
             ->setMaxResults($lastYears)
-            ->execute()
-            ->fetchAll();
+            ->executeQuery()
+            ->fetchAllAssociative();
         foreach ($rows as $year) {
             $years[$year['year']] = $year['year'];
         }
