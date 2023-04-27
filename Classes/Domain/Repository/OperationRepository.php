@@ -343,10 +343,10 @@ class OperationRepository extends Repository
         $toTimestamp = mktime(23, 59, 59, 12, 31, $demand->getBegin());
 
         if ($demand->getBegin()) {
-            $constraints[] = $query->logicalAnd([
+            $constraints[] = $query->logicalAnd(
                 $query->greaterThanOrEqual('begin', $fromTimestamp),
                 $query->lessThanOrEqual('begin', $toTimestamp)
-            ]);
+            );
         }
 
         //category constraints from plugin settings
@@ -377,16 +377,16 @@ class OperationRepository extends Repository
                 }
             }
             if (count($searchConstraints)) {
-                $constraints[] = $query->logicalOr($searchConstraints);
+                $constraints[] = $query->logicalOr(...$searchConstraints);
             }
         }
 
         // map constraints
         if($settings['showMap']) {
-            $constraints[] = $query->logicalAnd([
+            $constraints[] = $query->logicalAnd(
                 $query->greaterThan('latitude',0),
                 $query->greaterThan('longitude',0)
-            ]);
+            );
         }
 
         $constraints = $this->cleanUnusedConstraints($constraints);
@@ -411,17 +411,17 @@ class OperationRepository extends Repository
             }
             switch ($settings['categoryConjunction']) {
                 case 'or':
-                    $constraint = $query->logicalOr($categoryConstraint);
+                    $constraint = $query->logicalOr(...$categoryConstraint);
                     break;
                 case 'and':
-                    $constraint = $query->logicalAnd($categoryConstraint);
+                    $constraint = $query->logicalAnd(...$categoryConstraint);
                     break;
                 case 'notor':
-                    $constraint = $query->logicalOr($categoryConstraint);
+                    $constraint = $query->logicalOr(...$categoryConstraint);
                     $constraint = $query->logicalNot($constraint);
                     break;
                 case 'notand':
-                    $constraint = $query->logicalAnd($categoryConstraint);
+                    $constraint = $query->logicalAnd(...$categoryConstraint);
                     $constraint = $query->logicalNot($constraint);
                     break;
                 case 'default':
