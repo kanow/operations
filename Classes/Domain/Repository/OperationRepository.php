@@ -121,7 +121,7 @@ class OperationRepository extends Repository
         }
          $result = $result->groupBy('year')
             ->addGroupBy('ot.uid')
-            ->execute()->fetchAll();
+            ->executeQuery()->fetchAllAssociative();
 
         $preparedResult = $this->prepareResultForChartArray($result);
 
@@ -164,7 +164,7 @@ class OperationRepository extends Repository
                     ->add('select','type.title')
                     ->from('tx_operations_domain_model_type', 'type')
                     ->where('type.l10n_parent = ' . $value["type_uid"]);
-                $translatedType = $translatedType->execute()->fetch();
+                $translatedType = $translatedType->executeQuery()->fetchAllAssociative();
             }
             $title = $translatedType['title'] ?? $value['title'];
 
@@ -289,8 +289,8 @@ class OperationRepository extends Repository
         }
         $statement = $statement->groupBy('year')
             ->orderBy('year', 'DESC')
-            ->execute();
-        return $statement->fetchAll();
+            ->executeQuery();
+        return $statement->fetchAllAssociative();
     }
 
     /**

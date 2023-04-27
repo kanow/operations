@@ -61,10 +61,8 @@ class TypeRepository extends Repository {
         $result = $queryBuilder
             ->select('title')
             ->from('tx_operations_domain_model_type')
-            ->execute()->fetchAll();
+            ->executeQuery()->fetchAllAssociative();
         return $result;
-        /** @var TYPE_NAME $result */
-//        DebuggerUtility::var_dump($result, __METHOD__);
     }
 
 

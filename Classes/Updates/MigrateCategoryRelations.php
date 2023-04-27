@@ -88,7 +88,7 @@ class MigrateCategoryRelations implements  ChattyInterface, UpgradeWizardInterfa
             )
             ->addSelectLiteral('"tx_operations_domain_model_operation" AS tablenames')
             ->from(self::OLD_MM_TABLE)
-            ->execute()->fetchAllAssociative();
+            ->executeQuery()->fetchAllAssociative();
         $this->output->writeln(sprintf('%s old category relations found.', count($oldRelations)));
 
         if(count($oldRelations) > 0) {
@@ -115,7 +115,7 @@ class MigrateCategoryRelations implements  ChattyInterface, UpgradeWizardInterfa
             $sqlForOldTable = $queryBuilderForOldTable->select('uid_local')
                 ->from(self::OLD_MM_TABLE)
                 ->groupBy('uid_local')
-                ->execute();
+                ->executeQuery();
             $foreignData = $sqlForOldTable->fetchFirstColumn();
             $this->output->writeln('Found old category relations in operation data with uids: ' . implode(',',$foreignData) . '.');
 
@@ -129,7 +129,7 @@ class MigrateCategoryRelations implements  ChattyInterface, UpgradeWizardInterfa
                     ->andWhere($queryBuilderForNewTable->expr()->eq('fieldname',
                         $queryBuilderForNewTable->createNamedParameter(self::RELATION_FIELD, \PDO::PARAM_STR)))
                     ->groupBy('uid_foreign')
-                    ->execute();
+                    ->executeQuery();
                 $foreignDataInNewRelationTable = $sqlForNewTable->fetchFirstColumn();
                 $relationsNotMigrated = array_diff($foreignData, $foreignDataInNewRelationTable);
 
