@@ -10,7 +10,7 @@
     "operations"
   ],
   "require": {
-    "typo3/cms-core": "^11.5 || ^12.3"
+    "typo3/cms-core": "^11.5 || ^12.4"
   },
   "replace": {
     "typo3-ter/operations": "self.version"
