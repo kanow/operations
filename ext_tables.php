@@ -1,4 +1,5 @@
 <?php
+use TYPO3\CMS\Core\Imaging\IconRegistry;
 if (!defined('TYPO3')) {
 	die ('Access denied.');
 }
@@ -15,7 +16,7 @@ $icons = [
     'type' => 'tx_operations_type.svg'
 ];
 
-$iconRegistry = GeneralCoreUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+$iconRegistry = GeneralCoreUtility::makeInstance(IconRegistry::class);
 foreach ($icons as $key => $value)
 {
     $iconRegistry->registerIcon(

@@ -17,7 +17,6 @@ return [
                 'label' => 'title',
                 'tstamp' => 'tstamp',
                 'crdate' => 'crdate',
-                'cruser_id' => 'cruser_id',
                 //'sortby' => 'sorting',
                 'default_sortby' => 'ORDER BY begin DESC',
                 'versioningWS' => true,

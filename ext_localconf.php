@@ -1,5 +1,6 @@
 <?php
 
+use Kanow\Operations\Updates\MigrateCategoryRelations;
 use Kanow\Operations\Controller\OperationController;
 use Kanow\Operations\Controller\ResourceController;
 use Kanow\Operations\Controller\VehicleController;
@@ -44,4 +45,4 @@ ExtensionUtility::configurePlugin(
 ExtensionManagementUtility::addPageTSConfig('@import "EXT:operations/Configuration/TsConfig/ContentElementWizard.page.typoscript"');
 
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['operations_migrateCategoryRelations']
-    = \Kanow\Operations\Updates\MigrateCategoryRelations::class;
+    = MigrateCategoryRelations::class;

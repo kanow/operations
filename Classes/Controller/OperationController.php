@@ -200,7 +200,7 @@ class OperationController extends BaseController
 			if ($this->arguments->hasArgument('demand')) {
                 $propertyMappingConfiguration = $this->arguments->getArgument('demand')->getPropertyMappingConfiguration();
                 $propertyMappingConfiguration->allowAllProperties();
-                $propertyMappingConfiguration->setTypeConverterOption('TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter', PersistentObjectConverter::CONFIGURATION_CREATION_ALLOWED, TRUE);
+                $propertyMappingConfiguration->setTypeConverterOption(PersistentObjectConverter::class, PersistentObjectConverter::CONFIGURATION_CREATION_ALLOWED, TRUE);
 			}
 	 }
 
@@ -254,7 +254,7 @@ class OperationController extends BaseController
      */
 	protected function updateDemandObjectFromSettings($demand) {
 		if(is_null($demand)){
-            $demand = GeneralUtility::makeInstance('Kanow\Operations\Domain\Model\OperationDemand');
+            $demand = GeneralUtility::makeInstance(OperationDemand::class);
 		}
 		return $demand;
 	}
