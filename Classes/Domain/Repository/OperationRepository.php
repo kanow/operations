@@ -305,7 +305,7 @@ class OperationRepository extends Repository
         $constraints = $this->createConstraintsFromDemand($query, $demand, $settings);
         if (!empty($constraints)) {
             $query->matching(
-                $query->logicalAnd($constraints)
+                $query->logicalAnd(...$constraints)
             );
         }
         if(!$noLimit) {
@@ -328,16 +328,17 @@ class OperationRepository extends Repository
      * @param QueryInterface $query
      * @param OperationDemand $demand
      * @param array $settings
-     * @return array<ConstraintInterface>
      * @throws InvalidQueryException
+     * @return (\TYPO3\CMS\Extbase\Persistence\Generic\Qom\AndInterface|\TYPO3\CMS\Extbase\Persistence\Generic\Qom\ComparisonInterface|\TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface|\TYPO3\CMS\Extbase\Persistence\Generic\Qom\NotInterface|\TYPO3\CMS\Extbase\Persistence\Generic\Qom\OrInterface|null)[]
+     *
      */
     protected function createConstraintsFromDemand(
         QueryInterface $query,
         OperationDemand $demand,
-        $settings
-    )
+        array $settings
+    ): array
     {
-        $constraints = array();
+        $constraints = [];
 
         $fromTimestamp = mktime(0, 0, 0, 1, 1, $demand->getBegin());
         $toTimestamp = mktime(23, 59, 59, 12, 31, $demand->getBegin());
@@ -402,7 +403,13 @@ class OperationRepository extends Repository
      * @return ConstraintInterface $constraint
      * @throws InvalidQueryException
      */
-    protected  function createCategoryConstraints(QueryInterface $query, $categories, $property, $settings){
+    protected  function createCategoryConstraints(
+        QueryInterface $query,
+        $categories,
+        $property,
+        $settings
+    ): ?\TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface
+    {
 
         if ($categories && count($categories) != 0) {
             $categoryConstraint = [];
