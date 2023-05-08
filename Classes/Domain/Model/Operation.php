@@ -130,28 +130,28 @@ class Operation extends AbstractEntity
     /**
      * Type of operation
      *
-     * @var ObjectStorage<Type>
+     * @var ObjectStorage<\Kanow\Operations\Domain\Model\Type>
      */
     protected $type;
 
     /**
      * Assistance to this operation
      * @Lazy
-     * @var ObjectStorage<Assistance>
+     * @var ObjectStorage<\Kanow\Operations\Domain\Model\Assistance>
      */
     protected $assistance;
 
     /**
      * Vehicles use on this operation
      * @Lazy
-     * @var ObjectStorage<Vehicle>
+     * @var ObjectStorage<\Kanow\Operations\Domain\Model\Vehicle>
      */
     protected $vehicles;
 
     /**
      * resources used
      * @Lazy
-     * @var ObjectStorage<Resource>
+     * @var ObjectStorage<\Kanow\Operations\Domain\Model\Resource>
      */
     protected $resources;
 
@@ -476,7 +476,7 @@ class Operation extends AbstractEntity
     /**
      * Returns the type
      *
-     * @return ObjectStorage<Type> $type
+     * @return ObjectStorage<\Kanow\Operations\Domain\Model\Type> $type
      */
     public function getType()
     {
@@ -486,7 +486,7 @@ class Operation extends AbstractEntity
     /**
      * Returns directly the assigned type. Prevent to unnecessary iteration in operation data.
      *
-     * @return ObjectStorage<Type> $type
+     * @return ObjectStorage<\Kanow\Operations\Domain\Model\Type> $type
      */
     public function getAssignedType()
     {
@@ -497,7 +497,7 @@ class Operation extends AbstractEntity
     /**
      * Sets the type
      *
-     * @param ObjectStorage<Type> $type
+     * @param ObjectStorage<\Kanow\Operations\Domain\Model\Type> $type
      * @return void
      */
     public function setType(ObjectStorage $type)
@@ -530,7 +530,7 @@ class Operation extends AbstractEntity
     /**
      * Returns the assistance
      *
-     * @return ObjectStorage<Assistance> $assistance
+     * @return ObjectStorage<\Kanow\Operations\Domain\Model\Assistance> $assistance
      */
     public function getAssistance()
     {
@@ -540,7 +540,7 @@ class Operation extends AbstractEntity
     /**
      * Sets the assistance
      *
-     * @param ObjectStorage<Assistance> $assistance
+     * @param ObjectStorage<\Kanow\Operations\Domain\Model\Assistance> $assistance
      * @return void
      */
     public function setAssistance(ObjectStorage $assistance)
@@ -573,7 +573,7 @@ class Operation extends AbstractEntity
     /**
      * Returns the vehicles
      *
-     * @return ObjectStorage<Vehicle> $vehicles
+     * @return ObjectStorage<\Kanow\Operations\Domain\Model\Vehicle> $vehicles
      */
     public function getVehicles()
     {
@@ -583,7 +583,7 @@ class Operation extends AbstractEntity
     /**
      * Sets the vehicles
      *
-     * @param ObjectStorage<Vehicle> $vehicles
+     * @param ObjectStorage<\Kanow\Operations\Domain\Model\Vehicle> $vehicles
      * @return void
      */
     public function setVehicles(ObjectStorage $vehicles)
@@ -616,7 +616,7 @@ class Operation extends AbstractEntity
     /**
      * Returns the resources
      *
-     * @return ObjectStorage<Resource> $resources
+     * @return ObjectStorage<\Kanow\Operations\Domain\Model\Resource> $resources
      */
     public function getResources()
     {
@@ -626,7 +626,7 @@ class Operation extends AbstractEntity
     /**
      * Sets the resources
      *
-     * @param ObjectStorage<Resource> $resources
+     * @param ObjectStorage<\Kanow\Operations\Domain\Model\Resource> $resources
      * @return void
      */
     public function setResources(ObjectStorage $resources)
