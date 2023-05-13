@@ -199,17 +199,17 @@ class OperationController extends BaseController
         return $this->htmlResponse();
 	}
 
-	/**
-	 * Initialize method for special action
-     * @throws NoSuchArgumentException
-	 */
-	 public function initializeSearchAction() {
-			if ($this->arguments->hasArgument('demand')) {
-                $propertyMappingConfiguration = $this->arguments->getArgument('demand')->getPropertyMappingConfiguration();
-                $propertyMappingConfiguration->allowAllProperties();
-                $propertyMappingConfiguration->setTypeConverterOption(PersistentObjectConverter::class, PersistentObjectConverter::CONFIGURATION_CREATION_ALLOWED, TRUE);
-			}
-	 }
+    /**
+     * Initializes the current action
+     */
+    public function initializeAction(): void
+    {
+        if ($this->arguments->hasArgument('demand')) {
+            $propertyMappingConfiguration = $this->arguments->getArgument('demand')->getPropertyMappingConfiguration();
+            $propertyMappingConfiguration->allowAllProperties();
+            $propertyMappingConfiguration->setTypeConverterOption(PersistentObjectConverter::class, PersistentObjectConverter::CONFIGURATION_CREATION_ALLOWED, TRUE);
+        }
+    }
 
 	/**
 	 * action show
