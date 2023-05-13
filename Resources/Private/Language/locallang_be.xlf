@@ -7,14 +7,53 @@
 			<trans-unit id="plugin.title">
 				<source>Operations</source>
 			</trans-unit>
-			<trans-unit id="plugin.description">
-				<source>Show firefighter operations</source>
+			<trans-unit id="plugin.list.title">
+				<source>Operations list</source>
 			</trans-unit>
-			<trans-unit id="statistics.plugin.title">
+			<trans-unit id="plugin.list.description">
+				<source>Show list of firefighter operations</source>
+			</trans-unit>
+			<trans-unit id="plugin.show.title">
+				<source>Operations detail</source>
+			</trans-unit>
+			<trans-unit id="plugin.show.description">
+				<source>Detail view for a firefighter operation</source>
+			</trans-unit>
+			<trans-unit id="plugin.search.title">
+				<source>Operations search</source>
+			</trans-unit>
+			<trans-unit id="plugin.search.description">
+				<source>Search firefighter operations</source>
+			</trans-unit>
+			<trans-unit id="statistics.plugin.statistics.title">
 				<source>Operations statistics</source>
 			</trans-unit>
-			<trans-unit id="statistics.plugin.description">
+			<trans-unit id="statistics.plugin.statistics.description">
 				<source>Show statistics for the operations</source>
+			</trans-unit>
+			<trans-unit id="plugin.vehicles_list.title">
+				<source>Vehicles list</source>
+			</trans-unit>
+			<trans-unit id="plugin.vehicles_list.description">
+				<source>Show list of vehicles</source>
+			</trans-unit>
+			<trans-unit id="plugin.vehicles_show.title">
+				<source>Vehicles show</source>
+			</trans-unit>
+			<trans-unit id="plugin.vehicles_show.description">
+				<source>Single view of a vehicle</source>
+			</trans-unit>
+			<trans-unit id="plugin.resources_list.title">
+				<source>Resources list</source>
+			</trans-unit>
+			<trans-unit id="plugin.resources_list.description">
+				<source>Show list of resources</source>
+			</trans-unit>
+			<trans-unit id="plugin.resources_show.title">
+				<source>Resources show</source>
+			</trans-unit>
+			<trans-unit id="plugin.resources_show.description">
+				<source>Single view of a resource</source>
 			</trans-unit>
 
 			<trans-unit id="extconf.slugBehaviour">

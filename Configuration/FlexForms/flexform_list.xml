@@ -4,87 +4,16 @@
         <sDEF>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.general
+                    <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.settings
                     </sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el>
-                    <switchableControllerActions>
-                        <TCEforms>
-                            <onChange>reload</onChange>
-                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.controller
-                            </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items>
-                                    <numIndex index="0">
-                                        <numIndex index="0">
-                                            LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.operations
-                                        </numIndex>
-                                        <numIndex index="1">--div--</numIndex>
-                                    </numIndex>
-                                    <numIndex index="4">
-                                        <numIndex index="0">
-                                            LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.operationsListAndSearchAction
-                                        </numIndex>
-                                        <numIndex index="1">Operation->list;Operation->search</numIndex>
-                                    </numIndex>
-                                    <numIndex index="6">
-                                        <numIndex index="0">
-                                            LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.operationsShowAction
-                                        </numIndex>
-                                        <numIndex index="1">Operation->show;</numIndex>
-                                    </numIndex>
-
-                                    <numIndex index="9">
-                                        <numIndex index="0">
-                                            LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.vehicles
-                                        </numIndex>
-                                        <numIndex index="1">--div--</numIndex>
-                                    </numIndex>
-                                    <numIndex index="10">
-                                        <numIndex index="0">
-                                            LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.vehiclesListAction
-                                        </numIndex>
-                                        <numIndex index="1">Vehicle->list</numIndex>
-                                    </numIndex>
-                                    <numIndex index="11">
-                                        <numIndex index="0">
-                                            LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.vehiclesShowAction
-                                        </numIndex>
-                                        <numIndex index="1">Vehicle->show</numIndex>
-                                    </numIndex>
-
-                                    <numIndex index="19">
-                                        <numIndex index="0">
-                                            LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.resources
-                                        </numIndex>
-                                        <numIndex index="1">--div--</numIndex>
-                                    </numIndex>
-                                    <numIndex index="20">
-                                        <numIndex index="0">
-                                            LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.resourcesListAction
-                                        </numIndex>
-                                        <numIndex index="1">Resource->list</numIndex>
-                                    </numIndex>
-                                    <numIndex index="21">
-                                        <numIndex index="0">
-                                            LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.resourcesShowAction
-                                        </numIndex>
-                                        <numIndex index="1">Resource->show</numIndex>
-                                    </numIndex>
-
-                                </items>
-                            </config>
-                        </TCEforms>
-                    </switchableControllerActions>
 
                     <!-- Category Mode -->
                     <settings.categoryConjunction>
                         <TCEforms>
                             <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.label</label>
-                            <displayCond>FIELD:switchableControllerActions:=:Operation->list;Operation->search</displayCond>
                             <config>
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
@@ -119,7 +48,6 @@
                         <TCEforms>
                             <exclude>1</exclude>
                             <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.category.label</label>
-                            <displayCond>FIELD:switchableControllerActions:=:Operation->list;Operation->search</displayCond>
                             <config>
                                 <type>category</type>
                                 <treeConfig>
@@ -189,7 +117,6 @@
                             <exclude>1</exclude>
                             <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.hideFilter
                             </label>
-                            <displayCond>FIELD:switchableControllerActions:=:Operation->list;Operation->search</displayCond>
                             <config>
                                 <type>check</type>
                             </config>
@@ -201,7 +128,6 @@
                             <exclude>1</exclude>
                             <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMap
                             </label>
-                            <displayCond>FIELD:switchableControllerActions:=:Operation->list;Operation->search</displayCond>
                             <config>
                                 <type>check</type>
                             </config>
@@ -260,36 +186,6 @@
                             </config>
                         </TCEforms>
                     </settings.listMediaHeight>
-
-                    <settings.singleMediaWidth>
-                        <TCEforms>
-                            <exclude>1</exclude>
-                            <label>
-                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.singleMediaWidth
-                            </label>
-                            <config>
-                                <type>input</type>
-                                <size>5</size>
-                                <default></default>
-                                <eval>trim,alphanum</eval>
-                            </config>
-                        </TCEforms>
-                    </settings.singleMediaWidth>
-
-                    <settings.singleMediaHeight>
-                        <TCEforms>
-                            <exclude>1</exclude>
-                            <label>
-                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.singleMediaHeight
-                            </label>
-                            <config>
-                                <type>input</type>
-                                <size>5</size>
-                                <default></default>
-                                <eval>trim,alphanum</eval>
-                            </config>
-                        </TCEforms>
-                    </settings.singleMediaHeight>
 
                 </el>
             </ROOT>

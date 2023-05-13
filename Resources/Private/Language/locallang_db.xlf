@@ -126,7 +126,7 @@
 				<source>Media</source>
 			</trans-unit>
 
-			<trans-unit id="flexform.sheet.general">
+			<trans-unit id="flexform.sheet.settings">
 				<source>Options</source>
 			</trans-unit>
 			<trans-unit id="flexform.sheet.media">

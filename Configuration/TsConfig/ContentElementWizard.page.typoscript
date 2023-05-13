@@ -1,22 +1,64 @@
-mod.wizards.newContentElement.wizardItems.plugins {
+mod.wizards.newContentElement.wizardItems.ext-operations {
+	header = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.title
+	after = plugins,common,forms,menu
+	before = special
 	elements {
-		operations {
+		operationList {
 			iconIdentifier = ext-operations-wizard-icon
-			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.title
-			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.description
+			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.list.title
+			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.list.description
 			tt_content_defValues {
-				CType = list
-				list_type = operations_list
+				CType = operations_list
 			}
 		}
-		statistics {
+		operationShow {
 			iconIdentifier = ext-operations-wizard-icon
-			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:statistics.plugin.title
-			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:statistics.plugin.description
+			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.show.title
+			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.show.description
 			tt_content_defValues {
-				CType = list
-				list_type = operations_statistics
+				CType = operations_show
+			}
+		}
+		operationStatistics {
+			iconIdentifier = ext-operations-wizard-icon
+			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:statistics.plugin.statistics.title
+			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:statistics.plugin.statistics.description
+			tt_content_defValues {
+				CType = operations_statistics
+			}
+		}
+		vehicleList {
+			iconIdentifier = ext-operations-vehicle
+			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.vehicles_list.title
+			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.vehicles_list.description
+			tt_content_defValues {
+				CType = operations_vehicleslist
+			}
+		}
+		vehicleShow {
+			iconIdentifier = ext-operations-vehicle
+			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.vehicles_show.title
+			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.vehicles_show.description
+			tt_content_defValues {
+				CType = operations_vehicleshow
+			}
+		}
+		resourceList {
+			iconIdentifier = ext-operations-resource
+			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.resources_list.title
+			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.resources_list.description
+			tt_content_defValues {
+				CType = operations_resourceslist
+			}
+		}
+		resourceShow {
+			iconIdentifier = ext-operations-resource
+			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.resources_show.title
+			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.resources_show.description
+			tt_content_defValues {
+				CType = operations_resourcesshow
 			}
 		}
 	}
+	show = *
 }

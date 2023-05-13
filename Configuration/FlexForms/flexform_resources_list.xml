@@ -1,0 +1,86 @@
+<!--suppress CheckTagEmptyBody -->
+<T3DataStructure>
+    <sheets>
+        <sIMG>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.media
+                    </sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.showMediaInList>
+                        <TCEforms>
+                            <exclude>1</exclude>
+                            <label>
+                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMediaInList
+                            </label>
+                            <config>
+                                <type>check</type>
+                            </config>
+                        </TCEforms>
+                    </settings.showMediaInList>
+
+                    <settings.listMediaWidth>
+                        <TCEforms>
+                            <exclude>1</exclude>
+                            <label>
+                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listMediaWidth
+                            </label>
+                            <config>
+                                <type>input</type>
+                                <size>5</size>
+                                <default></default>
+                                <eval>trim,alphanum</eval>
+                            </config>
+                        </TCEforms>
+                    </settings.listMediaWidth>
+
+                    <settings.listMediaHeight>
+                        <TCEforms>
+                            <exclude>1</exclude>
+                            <label>
+                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listMediaHeight
+                            </label>
+                            <config>
+                                <type>input</type>
+                                <size>5</size>
+                                <default></default>
+                                <eval>trim,alphanum</eval>
+                            </config>
+                        </TCEforms>
+                    </settings.listMediaHeight>
+                </el>
+            </ROOT>
+        </sIMG>
+        <sTemplate>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.template
+                    </sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.templateLayout>
+                        <TCEforms>
+                            <label>
+                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.templateLayout
+                            </label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <itemsProcFunc>Kanow\Operations\Hooks\ItemsProcFunc->user_templateLayout</itemsProcFunc>
+                                <items>
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0"></numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </settings.templateLayout>
+                </el>
+            </ROOT>
+        </sTemplate>
+    </sheets>
+</T3DataStructure>

@@ -46,7 +46,7 @@ class ItemsProcFunc
     {
         $row = $this->getContentElementRow($config['row']['uid']);
 
-        $templateLayouts = $this->templateLayoutsUtility->getAvailableTemplateLayouts($row['pid']);
+        $templateLayouts = $this->templateLayoutsUtility->getAvailableTemplateLayouts($row['pid'] ?? null);
         foreach ($templateLayouts as $layout) {
             $additionalLayout = [
                 $this->getLanguageService()->sL($layout[0]),

@@ -49,6 +49,7 @@ use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use Kanow\Operations\Domain\Model\Category;
 use Kanow\Operations\Domain\Repository\CategoryRepository;
+use TYPO3\CMS\Extbase\Http\ForwardResponse;
 use TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException;
 use TYPO3\CMS\Extbase\Pagination\QueryResultPaginator;
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
@@ -120,6 +121,12 @@ class OperationController extends BaseController
      * @throws NoSuchArgumentException
      */
 	public function listAction(OperationDemand $demand = NULL, int $currentPage = 1): ResponseInterface {
+
+        if ($this->request->hasArgument('demand')) {
+            $forwardResponse = new ForwardResponse('search');
+            return $forwardResponse->withArguments($this->request->getArguments());
+        }
+
 		$demand = $this->updateDemandObjectFromSettings($demand);
         /** @var OperationDemand $demand */
         $operations = $this->operationRepository->findDemanded($demand, $this->settings);

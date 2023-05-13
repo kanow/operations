@@ -30,7 +30,7 @@ class TemplateLayout implements SingletonInterface
      * @param int $pageUid
      * @return array
      */
-    public function getAvailableTemplateLayouts($pageUid)
+    public function getAvailableTemplateLayouts($pageUid = null)
     {
         $templateLayouts = [];
 
@@ -40,13 +40,15 @@ class TemplateLayout implements SingletonInterface
         }
 
         // Add TsConfig values
-        foreach ($this->getTemplateLayoutsFromTsConfig($pageUid) as $templateKey => $title) {
-            if (str_starts_with($title, '--div--')) {
-                $optGroupParts = GeneralUtility::trimExplode(',', $title, true, 2);
-                $title = $optGroupParts[1];
-                $templateKey = $optGroupParts[0];
+        if($pageUid) {
+            foreach ($this->getTemplateLayoutsFromTsConfig($pageUid) as $templateKey => $title) {
+                if (str_starts_with($title, '--div--')) {
+                    $optGroupParts = GeneralUtility::trimExplode(',', $title, true, 2);
+                    $title = $optGroupParts[1];
+                    $templateKey = $optGroupParts[0];
+                }
+                $templateLayouts[] = [$title, $templateKey];
             }
-            $templateLayouts[] = [$title, $templateKey];
         }
         return $templateLayouts;
     }
