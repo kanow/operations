@@ -4,6 +4,7 @@ use Kanow\Operations\Updates\MigrateCategoryRelations;
 use Kanow\Operations\Controller\OperationController;
 use Kanow\Operations\Controller\ResourceController;
 use Kanow\Operations\Controller\VehicleController;
+use Kanow\Operations\Updates\MigratePlugins;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
@@ -106,3 +107,5 @@ ExtensionManagementUtility::addTypoScriptSetup(trim('
 
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['operations_migrateCategoryRelations']
     = MigrateCategoryRelations::class;
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['operations_migratePlugins']
+    = MigratePlugins::class;
