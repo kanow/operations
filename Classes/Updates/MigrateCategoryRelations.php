@@ -61,7 +61,7 @@ class MigrateCategoryRelations implements  ChattyInterface, UpgradeWizardInterfa
      */
     public function getTitle(): string
     {
-        return sprintf('Migrate category relations from "%s" table', self::OLD_MM_TABLE);
+        return sprintf('EXT Operations: Migrate category relations from "%s" table', self::OLD_MM_TABLE);
     }
 
     /**
