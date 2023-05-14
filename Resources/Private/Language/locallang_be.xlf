@@ -7,52 +7,52 @@
 			<trans-unit id="plugin.title">
 				<source>Operations</source>
 			</trans-unit>
-			<trans-unit id="plugin.list.title">
+			<trans-unit id="plugin.operationlist.title">
 				<source>Operations list</source>
 			</trans-unit>
-			<trans-unit id="plugin.list.description">
+			<trans-unit id="plugin.operationlist.description">
 				<source>Show list of firefighter operations</source>
 			</trans-unit>
-			<trans-unit id="plugin.show.title">
+			<trans-unit id="plugin.operationshow.title">
 				<source>Operations detail</source>
 			</trans-unit>
-			<trans-unit id="plugin.show.description">
+			<trans-unit id="plugin.operationshow.description">
 				<source>Detail view for a firefighter operation</source>
 			</trans-unit>
-			<trans-unit id="plugin.search.title">
+			<trans-unit id="plugin.operationsearch.title">
 				<source>Operations search</source>
 			</trans-unit>
-			<trans-unit id="plugin.search.description">
+			<trans-unit id="plugin.operationsearch.description">
 				<source>Search firefighter operations</source>
 			</trans-unit>
-			<trans-unit id="statistics.plugin.statistics.title">
+			<trans-unit id="plugin.operationstatistics.title">
 				<source>Operations statistics</source>
 			</trans-unit>
-			<trans-unit id="statistics.plugin.statistics.description">
+			<trans-unit id="plugin.operationstatistics.description">
 				<source>Show statistics for the operations</source>
 			</trans-unit>
-			<trans-unit id="plugin.vehicles_list.title">
+			<trans-unit id="plugin.vehiclelist.title">
 				<source>Vehicles list</source>
 			</trans-unit>
-			<trans-unit id="plugin.vehicles_list.description">
+			<trans-unit id="plugin.vehiclelist.description">
 				<source>Show list of vehicles</source>
 			</trans-unit>
-			<trans-unit id="plugin.vehicles_show.title">
+			<trans-unit id="plugin.vehicleshow.title">
 				<source>Vehicles show</source>
 			</trans-unit>
-			<trans-unit id="plugin.vehicles_show.description">
+			<trans-unit id="plugin.vehicleshow.description">
 				<source>Single view of a vehicle</source>
 			</trans-unit>
-			<trans-unit id="plugin.resources_list.title">
+			<trans-unit id="plugin.resourcelist.title">
 				<source>Resources list</source>
 			</trans-unit>
-			<trans-unit id="plugin.resources_list.description">
+			<trans-unit id="plugin.resourcelist.description">
 				<source>Show list of resources</source>
 			</trans-unit>
-			<trans-unit id="plugin.resources_show.title">
+			<trans-unit id="plugin.resourceshow.title">
 				<source>Resources show</source>
 			</trans-unit>
-			<trans-unit id="plugin.resources_show.description">
+			<trans-unit id="plugin.resourceshow.description">
 				<source>Single view of a resource</source>
 			</trans-unit>
 

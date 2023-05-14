@@ -13,7 +13,7 @@ if (!defined('TYPO3')) {
 
 ExtensionUtility::configurePlugin(
     'Operations',
-    'List',
+    'OperationList',
     [
         OperationController::class => 'list',
     ],
@@ -24,7 +24,7 @@ ExtensionUtility::configurePlugin(
 );
 ExtensionUtility::configurePlugin(
     'Operations',
-    'Show',
+    'OperationShow',
     [
         OperationController::class => 'show',
     ],
@@ -33,7 +33,7 @@ ExtensionUtility::configurePlugin(
 );
 ExtensionUtility::configurePlugin(
     'Operations',
-	'Statistics',
+	'OperationStatistics',
 	[
 		OperationController::class => 'statistics',
 
@@ -47,45 +47,45 @@ ExtensionUtility::configurePlugin(
 );
 ExtensionUtility::configurePlugin(
     'Operations',
-    'VehiclesList',
+    'VehicleList',
     [
-        OperationController::class => 'list',
+        VehicleController::class => 'list',
     ],
     [
-        OperationController::class => '',
-    ],
-    ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
-);
-ExtensionUtility::configurePlugin(
-    'Operations',
-    'VehiclesShow',
-    [
-        OperationController::class => 'show',
-    ],
-    [
-        OperationController::class => '',
+        VehicleController::class => '',
     ],
     ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
 );
 ExtensionUtility::configurePlugin(
     'Operations',
-    'ResourcesList',
+    'VehicleShow',
     [
-        OperationController::class => 'list',
+        VehicleController::class => 'show',
     ],
     [
-        OperationController::class => '',
+        VehicleController::class => '',
     ],
     ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
 );
 ExtensionUtility::configurePlugin(
     'Operations',
-    'ResourcesShow',
+    'ResourceList',
     [
-        OperationController::class => 'show',
+        ResourceController::class => 'list',
     ],
     [
-        OperationController::class => '',
+        ResourceController::class => '',
+    ],
+    ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
+);
+ExtensionUtility::configurePlugin(
+    'Operations',
+    'ResourceShow',
+    [
+        ResourceController::class => 'show',
+    ],
+    [
+        ResourceController::class => '',
     ],
     ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
 );
@@ -94,13 +94,13 @@ ExtensionManagementUtility::addPageTSConfig('@import "EXT:operations/Configurati
 
 ExtensionManagementUtility::addTypoScriptSetup(trim('
     plugin {
-        tx_operations_list.view.pluginNamespace = tx_operations_pi1
-        tx_operations_show.view.pluginNamespace = tx_operations_pi1
-        tx_operations_statistics.view.pluginNamespace = tx_operations_pi1
-        tx_operations_vehicleslist.view.pluginNamespace = tx_operations_pi1
-        tx_operations_vehiclesshow.view.pluginNamespace = tx_operations_pi1
-        tx_operations_resourceslist.view.pluginNamespace = tx_operations_pi1
-        tx_operations_resourcesshow.view.pluginNamespace = tx_operations_pi1
+        tx_operations_operationlist.view.pluginNamespace = tx_operations_pi1
+        tx_operations_operationshow.view.pluginNamespace = tx_operations_pi1
+        tx_operations_operationstatistics.view.pluginNamespace = tx_operations_pi1
+        tx_operations_vehiclelist.view.pluginNamespace = tx_operations_pi1
+        tx_operations_vehicleshow.view.pluginNamespace = tx_operations_pi1
+        tx_operations_resourcelist.view.pluginNamespace = tx_operations_pi1
+        tx_operations_resourceshow.view.pluginNamespace = tx_operations_pi1
     }
 '));
 

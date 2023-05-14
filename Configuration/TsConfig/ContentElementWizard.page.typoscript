@@ -5,58 +5,58 @@ mod.wizards.newContentElement.wizardItems.ext-operations {
 	elements {
 		operationList {
 			iconIdentifier = ext-operations-wizard-icon
-			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.list.title
-			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.list.description
+			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.operationlist.title
+			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.operationlist.description
 			tt_content_defValues {
-				CType = operations_list
+				CType = operations_operationlist
 			}
 		}
 		operationShow {
 			iconIdentifier = ext-operations-wizard-icon
-			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.show.title
-			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.show.description
+			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.operationshow.title
+			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.operationshow.description
 			tt_content_defValues {
-				CType = operations_show
+				CType = operations_operationshow
 			}
 		}
 		operationStatistics {
 			iconIdentifier = ext-operations-wizard-icon
-			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:statistics.plugin.statistics.title
-			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:statistics.plugin.statistics.description
+			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.operationstatistics.title
+			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.operationstatistics.description
 			tt_content_defValues {
-				CType = operations_statistics
+				CType = operations_operationstatistics
 			}
 		}
 		vehicleList {
 			iconIdentifier = ext-operations-vehicle
-			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.vehicles_list.title
-			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.vehicles_list.description
+			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.vehiclelist.title
+			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.vehiclelist.description
 			tt_content_defValues {
-				CType = operations_vehicleslist
+				CType = operations_vehiclelist
 			}
 		}
 		vehicleShow {
 			iconIdentifier = ext-operations-vehicle
-			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.vehicles_show.title
-			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.vehicles_show.description
+			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.vehiclehow.title
+			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.vehiclehow.description
 			tt_content_defValues {
-				CType = operations_vehicleshow
+				CType = operations_vehiclehow
 			}
 		}
 		resourceList {
 			iconIdentifier = ext-operations-resource
-			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.resources_list.title
-			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.resources_list.description
+			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.resourcelist.title
+			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.resourcelist.description
 			tt_content_defValues {
-				CType = operations_resourceslist
+				CType = operations_resourcelist
 			}
 		}
 		resourceShow {
 			iconIdentifier = ext-operations-resource
-			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.resources_show.title
-			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.resources_show.description
+			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.resourceshow.title
+			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.resourceshow.description
 			tt_content_defValues {
-				CType = operations_resourcesshow
+				CType = operations_resourceshow
 			}
 		}
 	}
