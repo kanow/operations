@@ -14,7 +14,7 @@ Configuration
    :glob:
 
    TypoScriptConfiguration/Index
-   PluginConfiguration/Index
+   Plugins/Index
    Categories/Index
    SpeakingUrl/Index
    Statistics/Index

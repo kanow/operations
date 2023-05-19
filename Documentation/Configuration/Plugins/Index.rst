@@ -5,7 +5,7 @@
 
 .. include:: ../../Includes.txt
 
-.. _plugin-configuration:
+.. _plugins:
 
 ====================
 Plugin configuration
