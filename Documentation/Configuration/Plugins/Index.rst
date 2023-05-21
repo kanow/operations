@@ -7,197 +7,55 @@
 
 .. _plugins:
 
-====================
-Plugin configuration
-====================
+==========================
+Plugins / Content Elements
+==========================
 
-The most important configuration settings can be done in the content element plugin.
-Those setting can also be done by using TypoScript but settings in the plugin always override the settings
-in TypoScript. With that it's possible to set default settings in TypoScript and override it
-in a plugin for some pages if necessary.
+There are different plugins for different views.
+Depending on used plugin you have different settings directly in the plugin.
+Those setting can also be set by using TypoScript but settings in the plugin always
+overrides those settings in TypoScript. With that behaviour it's possible to set default settings in TypoScript and override it in a Plugin for some pages, if necessary.
 
+.. container:: row m-0 p-0
 
-Tab "Options"
-"""""""""""""
+   .. container:: col-md-12 pl-0 pr-6 py-6 m-0
 
+      .. container:: card px-0 h-100
 
+         .. rst-class:: card-header h3
 
-.. t3-field-list-table::
- :header-rows: 1
+            .. rubric:: Plugins for operations
 
- - :Property:
-		Property:
-   :View:
-		View:
-   :Description:
-		Description:
-   :Key:
-		Key:
+         .. container:: card-body
 
- - :Property:
-		Show
-   :View:
-		All
-   :Description:
-      Choose list or single view for operations, vehicles or resources.
-   :Key:
+            List view for operations
 
- - :Property:
-		Category Mode
-   :View:
-		Operations
-   :Description:
-		Set category mode for selected categories.
-   :Key:
-		:typoscript:`settings.categoryConjunction`
+            Single View for operations
 
- - :Property:
-		Categories
-   :View:
-		Operations
-   :Description:
-		Categories can be select to constrain the result.
-   :Key:
-		:typoscript:`settings.category`
+   .. container:: col-md-12 pl-0 pr-6 py-6 m-0
 
- - :Property:
-		Max result items
-   :View:
-		All
-   :Description:
-		Limit the result for the list.
-   :Key:
-		:typoscript:`settings.limit`
+      .. container:: card px-0 h-100
 
- - :Property:
-		Items per page
-   :View:
-		Operations
-   :Description:
-		How many items per page are showing with activated pagination.
-   :Key:
-		:typoscript:`settings.itemsPerPage`
+         .. rst-class:: card-header h3
 
- - :Property:
-		Hide pagination
-   :View:
-		Operations
-   :Description:
-		Hide the pagination and show the result in one list. Default Limit for whole list is 200.
-   :Key:
-		:typoscript:`settings.hidePagination`
+            .. rubric:: Plugins for vehicles
 
- - :Property:
-		Hide filter
-   :View:
-		Operations
-   :Description:
-		Hide the form to filter the list
-   :Key:
-		:typoscript:`settings.hideFilter`
+         .. container:: card-body
 
- - :Property:
-		Show list of operations on a map
-   :View:
-		Operations
-   :Description:
-		Show the result on a map.
-   :Key:
-		:typoscript:`settings.showMap`
+            List view for vehicles
 
- - :Property:
-		Record Storage Page
-   :View:
-		All
-   :Description:
-		Sysfolder for operations data.
-   :Key:
-		:typoscript:`persistence.storagePid`
+            Single View for vehicles
 
- - :Property:
-		Recursive
-   :View:
-		All
-   :Description:
-		Recursive setting for the sysfolder.
-   :Key:
-		:typoscript:`persistence.recursive`
+   .. container:: col-md-12 pl-0 pr-6 py-6 m-0
 
+      .. container:: card px-0 h-100
 
-Tab "Media options"
-"""""""""""""""""""
+         .. rst-class:: card-header h3
 
-.. t3-field-list-table::
- :header-rows: 1
+            .. rubric:: Plugins for resources
 
- - :Property:
-        Property:
-   :View:
-        View:
-   :Description:
-        Description:
-   :Key:
-        Key:
+         .. container:: card-body
 
- - :Property:
-        Thumbnail in list view
-   :View:
-        All
-   :Description:
-        Show the first media of item as thumbnail in list
-   :Key:
-        :typoscript:`settings.showMediaInList`
+            List view for resources
 
- - :Property:
-        Media dimension in list/single view
-   :View:
-        All
-   :Description:
-        Set media dimensions for list and single view.
-   :Key:
-        :typoscript:`settings.listMediaWidth`
-        :typoscript:`settings.listMediaHeight`
-        :typoscript:`settings.singleMediaWidth`
-        :typoscript:`settings.singleMediaHeight`
-
-
-Tab "Template Options"
-""""""""""""""""""""""
-
-.. t3-field-list-table::
- :header-rows: 1
-
- - :Property:
-        Property:
-   :View:
-        View:
-   :Description:
-        Description:
-   :Key:
-        Key:
-
- - :Property:
-        Select Template Layout
-   :View:
-        All
-   :Description:
-      With this is possible to use other layout variants in Fluid templates.
-      Set items in :ref:`Page TS-Config <t3tsconfig:typoscript-syntax-using-setting>` before using
-      example::
-
-         tx_operations.templateLayouts {
-             key = value
-         }
-
-   :Key:
-        :typoscript:`settings.templateLayout`
-
- - :Property:
-		Max chars of teaser text in list view
-   :View:
-		All
-   :Description:
-		Maximum length of teaser text in list view. Text will be cropped automatically.
-   :Key:
-		:typoscript:`settings.cropTeaser`
-
+            Single View for resources
