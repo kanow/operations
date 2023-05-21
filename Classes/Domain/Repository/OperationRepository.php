@@ -308,11 +308,8 @@ class OperationRepository extends Repository
                 $query->logicalAnd(...$constraints)
             );
         }
-        if(!$noLimit) {
-            $limit = $settings['limit'];
-            if ($limit <= 0) {
-                $limit = 300;
-            }
+        $limit = $settings['limit'] ?? 0;
+        if(!$noLimit && $limit > 0) {
             if ($demand->getLimit() != null) {
                 $query->setLimit((int)$demand->getLimit());
             } else {

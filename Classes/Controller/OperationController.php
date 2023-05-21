@@ -204,6 +204,8 @@ class OperationController extends BaseController
      */
     public function initializeAction(): void
     {
+        $this->overrideFlexformSettings();
+        $this->storagePidFallback();
         if ($this->arguments->hasArgument('demand')) {
             $propertyMappingConfiguration = $this->arguments->getArgument('demand')->getPropertyMappingConfiguration();
             $propertyMappingConfiguration->allowAllProperties();
@@ -354,4 +356,62 @@ class OperationController extends BaseController
         }
         return $pagination;
     }
+
+
+    /**
+     * overrides flexform settings with original typoscript values when
+     * flexform value is empty and settings key is defined in
+     * 'settings.overrideFlexformSettingsIfEmpty'
+     *
+     * @return void
+     */
+    public function overrideFlexformSettings()
+    {
+        $originalSettings = $this->configurationManager->getConfiguration(
+            ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS
+        );
+        $typoScriptSettings = $this->configurationManager->getConfiguration(
+            ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK,
+            'operations',
+            'operations_list'
+        );
+        if (isset($typoScriptSettings['settings']['overrideFlexformSettingsIfEmpty'])) {
+            $overrideIfEmpty = GeneralUtility::trimExplode(',', $typoScriptSettings['settings']['overrideFlexformSettingsIfEmpty'], TRUE);
+            foreach ($overrideIfEmpty as $settingToOverride) {
+                // if flexform setting is empty and value is available in TS
+                if ((!isset($originalSettings[$settingToOverride]) || empty($originalSettings[$settingToOverride]))
+                    && isset($typoScriptSettings['settings'][$settingToOverride])) {
+                    $originalSettings[$settingToOverride] = $typoScriptSettings['settings'][$settingToOverride];
+                }
+            }
+            $this->settings = $originalSettings;
+        }
+    }
+
+
+    /**
+     * StoragePid fallback: TypoScript settings will be overridden by plugin date.
+     * No flexform settings, field pages of tt_content will be used.
+     *
+     */
+    protected function storagePidFallback()
+    {
+        $configuration = $this->configurationManager->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK,
+            'operations',
+            'operations_list'
+        );
+
+        // Storage PID in plugin data (tt_content->pages) overrides storagePid from TypoScript
+        if ($configuration['persistence']['storagePid']) {
+            $pid['persistence']['storagePid'] = $configuration['persistence']['storagePid'];
+            $this->configurationManager->setConfiguration(array_merge($configuration, $pid));
+        }
+        // Use current page as storagePid if neither set in TypoScript nor plugin data
+        elseif (!$configuration['persistence']['storagePid']) {
+            // Use current PID as storage PID
+            $pid['persistence']['storagePid'] = $GLOBALS["TSFE"]->id;
+            $this->configurationManager->setConfiguration(array_merge($configuration, $pid));
+        }
+    }
+
 }
