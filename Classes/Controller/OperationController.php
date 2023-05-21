@@ -398,7 +398,7 @@ class OperationController extends BaseController
     {
         $configuration = $this->configurationManager->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK,
             'operations',
-            'operations_list'
+            'operations_pi1'
         );
 
         // Storage PID in plugin data (tt_content->pages) overrides storagePid from TypoScript

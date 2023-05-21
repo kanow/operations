@@ -80,7 +80,7 @@ foreach ($pluginConfiguration as $plugin) {
             --palette--;;general,
             --palette--;;headers,
         --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.plugin,
-            pi_flexform,
+            pi_flexform, pages,recursive,
         --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
             --palette--;;frames,
             --palette--;;appearanceLinks,
