@@ -136,7 +136,7 @@ class OperationController extends BaseController
         if ($this->settings['hidePagination'] != 1) {
             $currentPage = $this->request->hasArgument('currentPage') ? $this->request->getArgument('currentPage') : $currentPage;
             $paginationConfiguration = $this->settings['paginate'] ?? [];
-            $itemsPerPage = (int)(($paginationConfiguration['itemsPerPage'] ?? '') ?: 10);
+            $itemsPerPage = (int)($paginationConfiguration['itemsPerPage'] ?? 0);
             $maximumNumberOfLinks = (int)($paginationConfiguration['maximumLinks'] ?? 0);
             /* @todo use new core pagination in TYPO3 12 by default, if this is available.
              only use SimplePagination as fallback in TYPO3 11 */
