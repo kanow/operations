@@ -41,7 +41,7 @@
 				<source>Vehicles show</source>
 			</trans-unit>
 			<trans-unit id="plugin.vehicleshow.description">
-				<source>Single view of a vehicle</source>
+				<source>Detail view of a vehicle</source>
 			</trans-unit>
 			<trans-unit id="plugin.resourcelist.title">
 				<source>Resources list</source>
@@ -53,7 +53,7 @@
 				<source>Resources show</source>
 			</trans-unit>
 			<trans-unit id="plugin.resourceshow.description">
-				<source>Single view of a resource</source>
+				<source>Detail view of a resource</source>
 			</trans-unit>
 
 			<trans-unit id="extconf.slugBehaviour">
