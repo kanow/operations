@@ -10,49 +10,49 @@ $pluginConfiguration = [
     '0' => [
         'extensionName' => 'operations',
         'pluginName' => 'OperationList',
-        'flexformFile' => 'FILE:EXT:operations/Configuration/FlexForms/flexform_list.xml',
+        'flexformFile' => 'FILE:EXT:operations/Configuration/FlexForms/flexform_operation_list.xml',
         'title' => 'Operation list view',
         'icon' => 'ext-operations-wizard-icon'
     ],
     '1' => [
         'extensionName' => 'operations',
         'pluginName' => 'OperationShow',
-        'flexformFile' => 'FILE:EXT:operations/Configuration/FlexForms/flexform_show.xml',
+        'flexformFile' => 'FILE:EXT:operations/Configuration/FlexForms/flexform_operation_show.xml',
         'title' => 'Operation single view',
         'icon' => 'ext-operations-wizard-icon'
     ],
     '2' => [
         'extensionName' => 'operations',
         'pluginName' => 'OperationStatistics',
-        'flexformFile' => 'FILE:EXT:operations/Configuration/FlexForms/flexform_statistics.xml',
+        'flexformFile' => 'FILE:EXT:operations/Configuration/FlexForms/flexform_operation_statistics.xml',
         'title' => 'Operation Statistics view',
         'icon' => 'ext-operations-wizard-icon'
     ],
     '3' => [
         'extensionName' => 'operations',
         'pluginName' => 'VehicleList',
-        'flexformFile' => 'FILE:EXT:operations/Configuration/FlexForms/flexform_vehicles_list.xml',
+        'flexformFile' => 'FILE:EXT:operations/Configuration/FlexForms/flexform_vehicle_list.xml',
         'title' => 'Vehicle list view',
         'icon' => 'ext-operations-vehicle'
     ],
     '4' => [
         'extensionName' => 'operations',
         'pluginName' => 'VehicleShow',
-        'flexformFile' => 'FILE:EXT:operations/Configuration/FlexForms/flexform_vehicles_show.xml',
+        'flexformFile' => 'FILE:EXT:operations/Configuration/FlexForms/flexform_vehicle_show.xml',
         'title' => 'Vehicle single view',
         'icon' => 'ext-operations-vehicle'
     ],
     '5' => [
         'extensionName' => 'operations',
         'pluginName' => 'ResourceList',
-        'flexformFile' => 'FILE:EXT:operations/Configuration/FlexForms/flexform_resources_list.xml',
+        'flexformFile' => 'FILE:EXT:operations/Configuration/FlexForms/flexform_resource_list.xml',
         'title' => 'Resource list view',
         'icon' => 'ext-operations-resource'
     ],
     '6' => [
         'extensionName' => 'operations',
         'pluginName' => 'ResourceShow',
-        'flexformFile' => 'FILE:EXT:operations/Configuration/FlexForms/flexform_resources_show.xml',
+        'flexformFile' => 'FILE:EXT:operations/Configuration/FlexForms/flexform_resource_show.xml',
         'title' => 'Resource single view',
         'icon' => 'ext-operations-resource'
     ]
