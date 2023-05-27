@@ -12,6 +12,7 @@
             <settings.categoryConjunction>
                 <TCEforms>
                     <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.label</label>
+                    <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.description</description>
                     <config>
                         <type>select</type>
                         <renderType>selectSingle</renderType>
@@ -46,6 +47,7 @@
                 <TCEforms>
                     <exclude>1</exclude>
                     <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.category.label</label>
+                    <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.category.description</description>
                     <config>
                         <type>category</type>
                         <treeConfig>
@@ -72,6 +74,7 @@
                 <TCEforms>
                     <exclude>1</exclude>
                     <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.statistics.lastYears</label>
+                    <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.statistics.lastYears.description</description>
                     <config>
                         <type>input</type>
                         <size>5</size>

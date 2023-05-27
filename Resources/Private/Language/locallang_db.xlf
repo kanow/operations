@@ -139,17 +139,20 @@
 			<trans-unit id="flexform.showMediaInList">
 				<source>Thumbnail in list view</source>
 			</trans-unit>
+			<trans-unit id="flexform.showMediaInList.description">
+				<source>Show the first media of an item as thumbnail in the list.</source>
+			</trans-unit>
 			<trans-unit id="flexform.listMediaWidth">
-				<source>Media width in list view</source>
+				<source>Width of media elements</source>
 			</trans-unit>
 			<trans-unit id="flexform.listMediaHeight">
-				<source>Media height in list view</source>
+				<source>Height of media elements</source>
 			</trans-unit>
 			<trans-unit id="flexform.singleMediaWidth">
-				<source>Media width in single view</source>
+				<source>Width of media elements</source>
 			</trans-unit>
 			<trans-unit id="flexform.singleMediaHeight">
-				<source>Media height in single view</source>
+				<source>Height of media elements</source>
 			</trans-unit>
 
 			<trans-unit id="flexform.controller">
@@ -188,33 +191,60 @@
 			<trans-unit id="flexform.itemsPerPage">
 				<source>Items per page</source>
 			</trans-unit>
+			<trans-unit id="flexform.itemsPerPage.description">
+				<source>How many items per page are showing with activated pagination.</source>
+			</trans-unit>
 			<trans-unit id="flexform.showPaginator">
 				<source>Show pagination</source>
 			</trans-unit>
 			<trans-unit id="flexform.hidePagination">
 				<source>Hide pagination</source>
 			</trans-unit>
+			<trans-unit id="flexform.hidePagination.description">
+				<source>Hide the pagination and show the result in one list. If there are a lot of data, page load can take an extremely long time on first call or uncached pages.</source>
+			</trans-unit>
 			<trans-unit id="flexform.teaserMaxChars">
 				<source>Max chars of teaser text in list view</source>
+			</trans-unit>
+			<trans-unit id="flexform.teaserMaxChars.description">
+				<source>Max length of teaser text in list view. If set, text will be cropped automatically.</source>
 			</trans-unit>
 			<trans-unit id="flexform.limit">
 				<source>Max result items</source>
 			</trans-unit>
+			<trans-unit id="flexform.limit.description">
+				<source>Max result items for the list. Default setting in constants is 200.</source>
+			</trans-unit>
 			<trans-unit id="flexform.hideFilter">
 				<source>Hide filter for result</source>
 			</trans-unit>
+			<trans-unit id="flexform.hideFilter.description">
+				<source>Don't show a form for filtering the list view.</source>
+			</trans-unit>
 			<trans-unit id="flexform.showMap">
-				<source>Show list of operations on a map</source>
+				<source>Show a map</source>
+			</trans-unit>
+			<trans-unit id="flexform.showMap.description">
+				<source>Show the result list as items on a map instead of the normal list.</source>
 			</trans-unit>
 			<trans-unit id="flexform.templateLayout">
-				<source>Select Template Layout (set items in Page TS Config before using)</source>
+				<source>Template Layout</source>
+			</trans-unit>
+			<trans-unit id="flexform.templateLayout.description">
+				<source>Use different layout variants in Fluid templates. Define own variants in Page TS-Config before use.</source>
 			</trans-unit>
 			<trans-unit id="flexform.statistics.lastYears">
-				<source>Define last years for statistics to show</source>
+				<source>Last years for statistics</source>
+			</trans-unit>
+			<trans-unit id="flexform.statistics.lastYears.description">
+				<source>Define the number of last years back for statistics to show.</source>
 			</trans-unit>
 
 			<trans-unit id="flexform.categoryConjunction.label">
 				<source>Category Mode</source>
+			</trans-unit>
+			<trans-unit id="flexform.categoryConjunction.description">
+				<source>Set category mode for selected categories.</source>
 			</trans-unit>
 			<trans-unit id="flexform.categoryConjunction.all">
 				<source>Don't care, show all</source>
@@ -233,6 +263,9 @@
 			</trans-unit>
 			<trans-unit id="flexform.category.label">
 				<source>Categories</source>
+			</trans-unit>
+			<trans-unit id="flexform.category.description">
+				<source>Select one or more categories to constrain the result.</source>
 			</trans-unit>
 
 			<trans-unit id="tca.paletteTitle.time">

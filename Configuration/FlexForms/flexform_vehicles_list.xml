@@ -12,9 +12,8 @@
                     <settings.showMediaInList>
                         <TCEforms>
                             <exclude>1</exclude>
-                            <label>
-                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMediaInList
-                            </label>
+                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMediaInList</label>
+                            <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMediaInList.description</description>
                             <config>
                                 <type>check</type>
                             </config>
@@ -24,9 +23,7 @@
                     <settings.listMediaWidth>
                         <TCEforms>
                             <exclude>1</exclude>
-                            <label>
-                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listMediaWidth
-                            </label>
+                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listMediaWidth</label>
                             <config>
                                 <type>input</type>
                                 <size>5</size>
@@ -39,9 +36,7 @@
                     <settings.listMediaHeight>
                         <TCEforms>
                             <exclude>1</exclude>
-                            <label>
-                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listMediaHeight
-                            </label>
+                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listMediaHeight</label>
                             <config>
                                 <type>input</type>
                                 <size>5</size>
@@ -63,9 +58,8 @@
                 <el>
                     <settings.templateLayout>
                         <TCEforms>
-                            <label>
-                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.templateLayout
-                            </label>
+                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.templateLayout</label>
+                            <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.templateLayout.description</description>
                             <config>
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>

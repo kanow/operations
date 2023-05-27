@@ -14,6 +14,7 @@
                     <settings.categoryConjunction>
                         <TCEforms>
                             <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.label</label>
+                            <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.description</description>
                             <config>
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
@@ -48,6 +49,7 @@
                         <TCEforms>
                             <exclude>1</exclude>
                             <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.category.label</label>
+                            <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.category.description</description>
                             <config>
                                 <type>category</type>
                                 <treeConfig>
@@ -73,9 +75,8 @@
                     <settings.limit>
                         <TCEforms>
                             <exclude>1</exclude>
-                            <label>
-                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.limit
-                            </label>
+                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.limit</label>
+                            <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.limit.description</description>
                             <config>
                                 <type>input</type>
                                 <size>5</size>
@@ -88,9 +89,8 @@
                     <settings.itemsPerPage>
                         <TCEforms>
                             <exclude>1</exclude>
-                            <label>
-                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.itemsPerPage
-                            </label>
+                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.itemsPerPage</label>
+                            <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.itemsPerPage.description</description>
                             <config>
                                 <type>input</type>
                                 <size>5</size>
@@ -103,9 +103,8 @@
                     <settings.hidePagination>
                         <TCEforms>
                             <exclude>1</exclude>
-                            <label>
-                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.hidePagination
-                            </label>
+                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.hidePagination</label>
+                            <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.hidePagination.description</description>
                             <config>
                                 <type>check</type>
                             </config>
@@ -115,8 +114,8 @@
                     <settings.hideFilter>
                         <TCEforms>
                             <exclude>1</exclude>
-                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.hideFilter
-                            </label>
+                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.hideFilter</label>
+                            <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.hideFilter.description</description>
                             <config>
                                 <type>check</type>
                             </config>
@@ -126,8 +125,8 @@
                     <settings.showMap>
                         <TCEforms>
                             <exclude>1</exclude>
-                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMap
-                            </label>
+                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMap</label>
+                            <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMap.description</description>
                             <config>
                                 <type>check</type>
                             </config>
@@ -148,9 +147,8 @@
                     <settings.showMediaInList>
                         <TCEforms>
                             <exclude>1</exclude>
-                            <label>
-                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMediaInList
-                            </label>
+                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMediaInList</label>
+                            <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMediaInList.description</description>
                             <config>
                                 <type>check</type>
                             </config>
@@ -160,9 +158,7 @@
                     <settings.listMediaWidth>
                         <TCEforms>
                             <exclude>1</exclude>
-                            <label>
-                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listMediaWidth
-                            </label>
+                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listMediaWidth</label>
                             <config>
                                 <type>input</type>
                                 <size>5</size>
@@ -175,9 +171,7 @@
                     <settings.listMediaHeight>
                         <TCEforms>
                             <exclude>1</exclude>
-                            <label>
-                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listMediaHeight
-                            </label>
+                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listMediaHeight</label>
                             <config>
                                 <type>input</type>
                                 <size>5</size>
@@ -200,9 +194,8 @@
                 <el>
                     <settings.templateLayout>
                         <TCEforms>
-                            <label>
-                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.templateLayout
-                            </label>
+                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.templateLayout</label>
+                            <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.templateLayout.description</description>
                             <config>
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
@@ -220,9 +213,8 @@
                     <settings.cropTeaser>
                         <TCEforms>
                             <exclude>1</exclude>
-                            <label>
-                                LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.teaserMaxChars
-                            </label>
+                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.teaserMaxChars</label>
+                            <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.teaserMaxChars.description</description>
                             <config>
                                 <type>input</type>
                                 <size>5</size>
