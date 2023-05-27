@@ -37,10 +37,10 @@ mod.wizards.newContentElement.wizardItems.ext-operations {
 		}
 		vehicleShow {
 			iconIdentifier = ext-operations-vehicle
-			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.vehiclehow.title
-			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.vehiclehow.description
+			title = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.vehicleshow.title
+			description = LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.vehicleshow.description
 			tt_content_defValues {
-				CType = operations_vehiclehow
+				CType = operations_vehicleshow
 			}
 		}
 		resourceList {
