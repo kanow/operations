@@ -96,5 +96,3 @@ foreach ($pluginConfiguration as $plugin) {
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
     ';
 }
-
-ExtensionManagementUtility::addToInsertRecords('tx_operations_domain_model_operation');
