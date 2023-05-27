@@ -6,11 +6,16 @@ use Kanow\Operations\Controller\ResourceController;
 use Kanow\Operations\Controller\VehicleController;
 use Kanow\Operations\Updates\MigratePlugins;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\VersionNumberUtility;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+use GeorgRinger\NumberedPagination\NumberedPagination;
 
 if (!defined('TYPO3')) {
 	die ('Access denied.');
 }
+$typo3VersionNumber = VersionNumberUtility::convertVersionNumberToInteger(
+    VersionNumberUtility::getNumericTypo3Version()
+);
 
 ExtensionUtility::configurePlugin(
     'Operations',
@@ -109,3 +114,14 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['operations_m
     = MigrateCategoryRelations::class;
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['operations_migratePlugins']
     = MigratePlugins::class;
+
+if($typo3VersionNumber > 12000000) {
+    $suggestedPaginationClassName = 'TYPO3\CMS\Core\Pagination\SlidingWindowPagination';
+} elseif (($typo3VersionNumber > 11000000 && $typo3VersionNumber < 12000000) && class_exists(NumberedPagination::class)) {
+    $suggestedPaginationClassName = 'GeorgRinger\NumberedPagination\NumberedPagination';
+}
+if($suggestedPaginationClassName) {
+    ExtensionManagementUtility::addTypoScriptSetup(trim('
+# set class in your TypoScript if other pagination should be used
+plugin.tx_operations.settings.paginate.class = ' . $suggestedPaginationClassName));
+}

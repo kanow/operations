@@ -33,6 +33,7 @@ namespace Kanow\Operations\Controller;
  *
  */
 use Psr\Log\LoggerAwareInterface;
+use TYPO3\CMS\Core\Pagination\SlidingWindowPagination;
 use TYPO3\CMS\Core\SingletonInterface;
 use Psr\Http\Message\ResponseInterface;
 use GeorgRinger\NumberedPagination\NumberedPagination;
@@ -343,15 +344,20 @@ class OperationController extends BaseController
      * @param $paginationClass
      * @param int $maximumNumberOfLinks
      * @param $paginator
-     * @return NumberedPagination|mixed|LoggerAwareInterface|string|SimplePagination|SingletonInterface
+     * @return NumberedPagination|mixed|LoggerAwareInterface|string|SimplePagination|SlidingWindowPagination|SingletonInterface
      */
     protected function getPagination($paginationClass, int $maximumNumberOfLinks, $paginator)
     {
         if (class_exists(NumberedPagination::class) && $paginationClass === NumberedPagination::class && $maximumNumberOfLinks) {
             $pagination = GeneralUtility::makeInstance(NumberedPagination::class, $paginator, $maximumNumberOfLinks);
-        } elseif (class_exists($paginationClass)) {
+        }
+        elseif (class_exists(SlidingWindowPagination::class) && $paginationClass === SlidingWindowPagination::class && $maximumNumberOfLinks) {
+            $pagination = GeneralUtility::makeInstance(SlidingWindowPagination::class, $paginator, $maximumNumberOfLinks);
+        }
+        elseif (class_exists($paginationClass)) {
             $pagination = GeneralUtility::makeInstance($paginationClass, $paginator);
-        } else {
+        }
+        else {
             $pagination = GeneralUtility::makeInstance(SimplePagination::class, $paginator);
         }
         return $pagination;
