@@ -58,7 +58,7 @@ This document is included as part of the official `TYPO3 documentation <https://
    Introduction/Index
    Installation/Index
    Configuration/Index
-   ForBeginners/Index
+   GeneralProcedure/Index
    Changelog/Index
    Sitemap
 

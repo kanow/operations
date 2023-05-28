@@ -13,8 +13,8 @@ Configuration
    :titlesonly:
    :glob:
 
+   Templates/Index
    TypoScriptConfiguration/Index
    Plugins/Index
    Categories/Index
    SpeakingUrl/Index
-   Statistics/Index

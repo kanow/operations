@@ -24,6 +24,10 @@ Or you can clone it directly from github. Please check whether your are in corre
 The old way is downloading the extension in Extension Manager in TYPO3 backend or downloading a zip file
 from https://extensions.typo3.org/extension/operations/ and upload those file in Extension Manager.
 
+.. note::
+
+   I'm only testing the installation method via composer.
+
 You can find more information about installing TYPO3 Extensions in :ref:`Getting Started <t3start:extensions_index>` documentation of TYPO3.
 
 .. note::

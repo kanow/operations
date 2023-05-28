@@ -34,7 +34,7 @@ Different views in :ref:`Frontend <t3start:concepts>` possible.
 .. tip::
 
    Extension `FireDepartment <https://extensions.typo3.org/extension/fire_department>`_ can be used
-   as :ref:`Site Package <t3sitepackage:start>`.
+   as :ref:`Site Package <t3sitepackage:start>` for a website.
    Styles already optimized for operation default templates.
 
 .. tip::
