@@ -42,6 +42,17 @@ Dieses Dokument ist Bestandteil der offiziellen `TYPO3 Dokumentation <https://do
 TYPO3 ist ein freies, unter der GNU/GPL Lizenz veröffentlichtes CMS/Framework,
 verfügbar unter `www.typo3.org <https://www.typo3.org/>`_.
 
+.. note::
+
+   In der deutschen Übersetzung dieser Dokumentation gibt es Links auf andere
+   Teile der TYPO3 Dokumentation. Dort sind die meisten Dokumente allerdings nur
+   in Englisch verfügbar.
+   Die wenigsten Extensions für TYPO3 haben eine deutsche Übersetzung
+   vorliegen. Ich habe auch keine Resonanz ob jemand eine deutsche Übersetzung
+   dieser Dokumentation benötigt. Daher vermute ich einfach mal,
+   dass es dem einen oder anderen schon weiterhilft. Auch wenn die Links
+   auf die TYPO3 Dokumentation auf englische Seiten zeigen.
+
 
 **Sitemap:**
 
