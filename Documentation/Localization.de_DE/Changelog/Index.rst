@@ -12,6 +12,48 @@
 Änderungen
 ==========
 
+Update to 8.0.0
+===============
+
+Diese Version bringt TYPO3 12 Kompatibilität mit und behält die Kompatibilität
+zu TYPO3 11. `operations` läuft aktuell also mit beiden LTS Versionen von
+TYPO3.
+
+Die feste Abhängigkeit zu Georg Ringers `numbered_pagination` wurde aufgelöst,
+da es zum aktuellen Zeitpunkt der Entwicklung noch keine 12er kompatible
+Version davon gab. Wird es vielleicht auch gar nicht geben, da der TYPO3 Kern
+mittlerweile eine eigene Lösung mitbringt.
+Für TYPO3 11 Installationen bedeutet dies, dass man sich selbst um die
+Installation der `numbered_pagination` kümmern muss.
+`operations` wählt abhängig von der TYPO3 Version entweder die
+`NumberedPagination` Klasse (wenn vorhanden) oder die neuere `SlidingWindowPagination` aus.
+Wenn keins von beiden verfügbar ist, wird dann die `SimplePagination` genutzt.
+Im TypoScript gibt es die Möglichkeit diese genutzte Klasse zu überschreiben.
+
+.. code-block:: typoscript
+
+   plugin.tx_operations {
+      settings {
+         paginate {
+            class = Vendor/YourOwn/PaginationClass
+         }
+      }
+   }
+
+
+Wichtige Änderung
+^^^^^^^^^^^^^^^^^
+
+Statt der alten "SwitchableControllerActions" in den Plugins werden jetzt
+echte Inhaltselemente verwendet. Es gibt einen "Migrate old plugins"
+:ref:`Upgrade Assistenten <t3install:postupgradetasks>` der nach
+der Installation ausgeführt werden muss. Damit werden alte Plugins in die
+neuen Inhaltselemente umgewandelt. Entsprechende Einstellungen sollten mit
+übernommen werden.
+
+Falls die Einzelansicht für der Einsätze nicht auf einer extra Seite, mit der
+extra Action dafür genutzt wurde, sind eventuell manuelle Anpassungen nötig.
+
 Update to 7.1.0
 ===============
 

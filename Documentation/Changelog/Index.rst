@@ -12,6 +12,45 @@
 Changelog
 =========
 
+Update to 8.0.0
+===============
+
+This version brings TYPO3 12 compatibility and retains compatibility with
+TYPO3 11. So `operations` currently runs with both LTS versions of TYPO3.
+
+The hard dependency to Georg Ringer's `numbered_pagination` has been removed.
+There was no 12 compatible version of it available. Maybe there won't be one,
+because the TYPO3 core has now its own solution.
+For TYPO3 11 installations this means that you have to take care of the
+installation of the `numbered_pagination` yourself.
+Depending on the TYPO3 version, `operations` selects either the
+`NumberedPagination` class (if exists) or the newer `SlidingWindowPagination` class.
+If neither is available, then `SimplePagination` is used.
+In TypoScript there is the possibility to override this.
+
+.. code-block:: typoscript
+
+   plugin.tx_operations {
+      settings {
+         paginate {
+            class = Vendor/YourOwn/PaginationClass
+         }
+      }
+   }
+
+
+Breaking Change
+^^^^^^^^^^^^^^^
+
+Instead of the old "SwitchableControllerActions" in the plugins now real
+content elements are used. There is an "Migrate old plugins"
+:ref:`Upgrade Wizard <t3install:postupgradetasks>` which must be
+executed after installing the update. This converts old plugins into the
+new content elements. Corresponding settings should be applied.
+
+If the single view for the operations was not on an extra page, with the
+extra action, manually adjustments may be necessary.
+
 Update to 7.1.0
 ===============
 
