@@ -12,7 +12,7 @@ Daten im Backend anlegen
 ========================
 
 Wenn ihr einen SysOrdner für die Einsatzdaten habt, könnt ihr anfangen diese anzulegen.
-Ihr solltet mit den notwendigen Verknüpfungen (Einsatzart, Fahrzeuge, Hilfsmittel) anfangen
+Ihr solltet mit den notwendigen Verknüpfungen (Einsatzart, Fahrzeuge, Hilfsmittel) anfangen,
 da diese bei den Einsätzen später benötigt werden.
 
 

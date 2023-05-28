@@ -56,7 +56,7 @@ verfügbar unter `www.typo3.org <https://www.typo3.org/>`_.
    Introduction/Index
    Installation/Index
    Configuration/Index
-   ForBeginners/Index
+   GeneralProcedure/Index
    Changelog/Index
    Sitemap
 

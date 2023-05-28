@@ -15,10 +15,25 @@ Introduction
 What does it do?
 ================
 
-The extension were build to manage firefighter operations in a TYPO3 website. The data for operations
-are managed in :ref:`TYPO3 Backend <t3start:concepts>` by editors. Many detailed information e.g. used vehicles, recources, assistance
-and more are possible. This extension can be used for other institutions like THW, police or security agencys too.
-Different views in :ref:`Frontend <t3start:concepts>` possible.
+The extension were build to manage firefighter operations in a TYPO3 website.
+Quite originally the
+`Freiwillige Feuerwehr der Stadt Thale <www.feuerwehr-stadt-thale.de>`_,
+long time ago, got this extension from me in a TYPO3 website.
+In the meanwhile someone else takes care of it and this someone means
+Wordpress is quite great. Well, what to say ;-).
+If it makes happy, you're welcome.
+But the download numbers of the extension also suggest me,
+that there are other TYPO3 sites with need for this extension.
+But that's just by the way.
+
+The data for operations are managed in
+:ref:`TYPO3 Backend <t3start:concepts>` by editors. Many detailed information
+e.g. used vehicles, recources, assistance and more are possible.
+
+This extension can be used for other institutions like THW, police or security
+agencies too.
+
+Different views in :ref:`Frontend <t3start:concepts>` are possible.
 
 .. note::
 
@@ -26,10 +41,11 @@ Different views in :ref:`Frontend <t3start:concepts>` possible.
 
    - List/single view of reports
    - filter by type, year and category or text
-   - Show location on a map in single view
-   - Map with all locations instead of normal list view
-   - Statistics by operation type with a bar chart (made with `Chart.js <https://chartjs.org>`_)
-
+   - Show location on a map in single view (geo data are necessary for this)
+   - Map with all locations instead of normal list view (geo data are
+     necessary for this)
+   - Statistics by operation type with a bar chart
+     (made with `Chart.js <https://chartjs.org>`_)
 
 .. tip::
 

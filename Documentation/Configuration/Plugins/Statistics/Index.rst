@@ -13,18 +13,21 @@ Statistics configuration
 
 
 Display operations statistics
-============================
+=============================
 
-Add a content element type "Operation Statistics view". Set category if you want and the last
-years to show.
-Of courses, storage pid should be already set in TypoScript. If not you have to set this in plugin settings too.
+Add a content element type "Operation Statistics view". Set category if
+you want and the last years to show.
+Of courses, storage pid should be already set in TypoScript.
+If not you have to set this in plugin settings too.
 
-This will show you all operations grouped by type and year depending on the settings you did.
+This will show you all operations grouped by type and year depending on the
+settings you did.
 
-The setting "lastYears" define how many years descending from now should be respected for the statistics.
+The setting "lastYears" define how many years descending from now should be
+respected for the statistics.
+It's the same setting as in the normal list and can be overridden directly in the "Operation Statistics" plugin.
 Years without any operations will be ignored.
 
-It is the same setting as in the normal list and can be overridden directly in the "Operation Statistics" plugin.
 
 Change JavaScript for statistics
 ================================
@@ -49,11 +52,13 @@ here :ref:`Templates <fluid-template-files>`.
 .. attention::
 
    Do not remove those table with data from the template!
-   :html:`<table data-chart="operationsChart-{contentObjectData.uid}" class="operationsChart-{contentObjectData.uid} dataset">`
+   :html:`<table data-chart="operationsChart-{contentObjectData.uid}"
+   class="operationsChart-{contentObjectData.uid} dataset">`
    That is used to generate the data in the chart.
    Hide the table with css if necessary.
 
 .. tip::
 
-   You can build a switch with little JavaScript that toggles the view. Showing the table or the chart.
+   You can build a switch with little JavaScript that toggles the view.
+   Showing the table or the chart.
    That is helpful for people with a disabilities.

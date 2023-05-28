@@ -19,12 +19,13 @@ The installation with composer is the preferred way for modern TYPO3 Installatio
 
 .. tip::
 
-   You find detailed information about installing extensions with composer here in
-   TYPO3 documentation :ref:`Getting Started <t3start:extensions_management>`.
+   You find detailed information about installing extensions with composer here
+   in the TYPO3 documentation
+   :ref:`Getting Started <t3start:extensions_management>`.
 
 I don't prefer the old way to install the extension in the TYPO3 Extension Manager. If you still use this installation
 method, you can find infos here: :ref:`Managing Extensions - Legacy Guide <t3start:extensions_legacy_management>`.
 
 After installing `operations`, the next steps are to load and configure the TypoScript.
-That is necessary to get `operations` working. I described this already here in the docs
+That is necessary to get `operations` working. I described this already here in the docs:
 :ref:`TypoScript Configuration <typoscript-configuration>`.

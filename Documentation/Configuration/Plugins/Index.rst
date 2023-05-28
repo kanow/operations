@@ -11,20 +11,26 @@
 Plugins / Content Elements
 ==========================
 
-There are different plugins for different views.
-Depending on used plugin you have different settings directly in the plugin.
+There are different content elements for different views.
+Depending on used content element you have different settings in the tab
+"Plugin".
 
 .. tip::
 
-   You find description for those settings below the field title in the plugin.
+   You find description for those settings below the field title.
 
-Those setting can also be set by using TypoScript but settings in the plugin always
-overrides those settings in TypoScript.
+Those setting can also be set by using TypoScript but settings in the content
+element always overrides those settings from TypoScript.
 
 .. tip::
 
    With that behaviour it's possible to set default settings in TypoScript
    and override it in a Plugin for some pages, if necessary.
+
+.. _different-content-types:
+
+Different content types
+=======================
 
 .. container:: row m-0 p-0
 
@@ -34,7 +40,7 @@ overrides those settings in TypoScript.
 
          .. rst-class:: card-header h3
 
-            .. rubric:: Plugins for operations
+            .. rubric:: Content elements for operations
 
          .. container:: card-body
 
@@ -50,7 +56,7 @@ overrides those settings in TypoScript.
 
          .. rst-class:: card-header h3
 
-            .. rubric:: Plugins for vehicles
+            .. rubric:: Content elements for vehicles
 
          .. container:: card-body
 
@@ -64,7 +70,7 @@ overrides those settings in TypoScript.
 
          .. rst-class:: card-header h3
 
-            .. rubric:: Plugins for resources
+            .. rubric:: Content elements for resources
 
          .. container:: card-body
 

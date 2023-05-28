@@ -1,11 +1,11 @@
 .. include:: ../Includes.txt
 
 
-.. _forbeginners:
+.. _general-procedure:
 
-==============
-Für Einsteiger
-==============
+===================
+Generelles Vorgehen
+===================
 
 Wenn ihr noch neu seid im Umgang mit TYPO3 und/oder der Installation und Nutzung von Extensions, dann ist diese
 Kapitel für euch.
@@ -25,6 +25,5 @@ Im Backend eingeloggt? Ok, dann gehts los.
 
    InstallOperations/Index
    PageTree/Index
-   TheTypoScript/Index
    AddData/Index
    AddFrontendPlugins/Index

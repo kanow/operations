@@ -16,11 +16,13 @@ Include static TypoScript
 =========================
 
 The extension come with some TypoScript which needs to be included.
-You can include TypoScript in different ways. The preferred way should be include TypoScript from Extensions
-in your Site Package. See  :ref:`Include TypoScript in Site Package <t3sitepackage:typoscript-configuration>`
+You can include TypoScript in different ways. The preferred way should be
+include TypoScript from Extensions in your Site Package.
+See  :ref:`Include TypoScript in Site Package
+<t3sitepackage:typoscript-configuration>`
 
-The old way is also possible. Include TypoScript of the Extension in your root TypoScript Template (`sys_template`)
-in database.
+The old way is also possible. Include TypoScript of the Extension in your root
+TypoScript Template (`sys_template`) in database.
 
 #. Select the root page of your site.
 

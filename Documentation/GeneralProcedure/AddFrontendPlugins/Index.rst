@@ -8,7 +8,7 @@
 .. _addfrontendplugins:
 
 ====================
-Add frontend plugins
+Add content elements
 ====================
 
 Ok, you are almost ready with the configuration and preparing data in backend.

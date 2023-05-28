@@ -13,10 +13,8 @@ Sample RouteEnhancer for speaking url's
 =======================================
 
 
-
 Usage in your Site Configuration
 ================================
-
 
 Url routing for TYPO3 Extensions are explained more detailed here
 :ref:`Advanced routing configuration <t3coreapi:routing-advanced-routing-configuration>`.

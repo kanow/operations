@@ -13,10 +13,8 @@ Beispiel RouteEnhancer für lesbare Url's
 ========================================
 
 
-
 Definition für eure Site Configuration
 ======================================
-
 
 Schöne und lesbare Url's werden in TYPO3 mit Hilfe von sogenannten "Route Enhancern" konfiguriert. Eine Beschreibung
 dieser Funktionalität findet ihr hier:
