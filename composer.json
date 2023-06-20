@@ -33,6 +33,9 @@
       "cms-package-dir": "{$vendor-dir}/typo3/cms",
       "web-dir": ".Build/Web",
       "extension-key": "operations"
+    },
+    "branch-alias": {
+      "dev-main": "7.1.x-dev"
     }
   },
   "autoload": {
