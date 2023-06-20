@@ -60,18 +60,7 @@ You should start with data for the relations. Types, vehicles, resources and ass
 5. Set root category uid in Site Configuration to restrict the visible categories in frontend plugins and operation
    data. If you don't have a Site Configuration yet, create one in :guilabel:`"Site Management" > "Sites"` module.
 
-   .. image:: /Images/Backend/module-siteconfig.png
-      :alt: Site Configuration module
-      :class: with-shadow
-
-   |
-
-   .. image:: /Images/Backend/button-addsiteconfiguration.png
-      :alt: Button Add news Site Configuration"      :class: with-shadow
-
-   |
-
-   When creating a new site configuration, a folder in the file system is created located at
+   If you have site configuration, a folder in the file system is created located at
    :file:`<project-root>/config/sites/<identifier>/`. The site configuration is stored in a
    file called :file:`config.yaml`.
 

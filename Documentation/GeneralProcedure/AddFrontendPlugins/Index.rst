@@ -40,13 +40,13 @@ Ok, let's go.
 
 2. Switch to tha tab "Operations" in open modal box to see all entries. Choose your type.
 
-   .. image:: /Images/Backend/newcontent-plugins.png
+   .. image:: /Images/Backend/AddNewContent.png
       :alt: Create new content elements
       :class: with-shadow
 
 3. Switch to tha tab "Plugin" in the Content Element and configure needed settings for the selected type.
 
-   .. image:: /Images/Backend/switchablecontrolleractions.png
+   .. image:: /Images/Backend/SwitchToPlugin.png
       :alt: Field for Switchable Controller Actions
       :class: with-shadow
 
