@@ -4,9 +4,8 @@ use Kanow\Operations\Controller\VehicleController;
 use Kanow\Operations\Domain\Model\Vehicle;
 use Kanow\Operations\Domain\Repository\VehicleRepository;
 use PHPUnit\Framework\MockObject\MockObject;
-use Prophecy\PhpUnit\ProphecyTrait;
-use Prophecy\Prophecy\ObjectProphecy;
-use Prophecy\Prophecy\ProphecySubjectInterface;
+use TYPO3\CMS\Core\Http\HtmlResponse;
+use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Fluid\View\TemplateView;
@@ -50,38 +49,39 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
  * @author Karsten Nowak <captnnowi@gmx.de>
  */
 class VehicleControllerTest extends UnitTestCase {
-
-    use ProphecyTrait;
-
     /**
      * @var VehicleController&MockObject&AccessibleObjectInterface
      */
-    private $mockedVehicle;
+    private VehicleController $subject;
 
     /**
-     * @var ObjectProphecy<TemplateView>
+     * @var TemplateView&MockObject
      */
-    private $viewProphecy;
+    private TemplateView $viewMock;
 
     /**
-     * @var ObjectProphecy<VehicleRepository>
+     * @var VehicleRepository&MockObject
      */
-    private $vehicleRepositoryProphecy;
+    private VehicleRepository $vehicleRepositoryMock;
 
     protected function setUp(): void {
         parent::setUp();
 
-        $this->mockedVehicle = $this->getAccessibleMock(VehicleController::class,['forward', 'redirect', 'redirectToUri']);
+        // We need to create an accessible mock in order to be able to set the protected `view`.
+        $methodsToMock = ['htmlResponse', 'redirect', 'redirectToUri'];
+        if ((new Typo3Version())->getMajorVersion() <= 11) {
+            $methodsToMock[] = 'forward';
+        }
+        $this->subject = $this->getAccessibleMock(VehicleController::class, $methodsToMock);
 
-        $this->viewProphecy = $this->prophesize(TemplateView::class);
-        $view = $this->viewProphecy->reveal();
-        $this->mockedVehicle->_set('view', $view);
+        $this->viewMock = $this->createMock(TemplateView::class);
+        $this->subject->_set('view', $this->viewMock);
 
-        $this->vehicleRepositoryProphecy = $this->prophesize(VehicleRepository::class);
-        /** @var VehicleRepository&ProphecySubjectInterface $vehicleRepository */
-        $vehicleRepository = $this->vehicleRepositoryProphecy->reveal();
-        $this->mockedVehicle->injectVehicleRepository($vehicleRepository);
-    
+        $this->vehicleRepositoryMock = $this->getMockBuilder(VehicleRepository::class)->disableOriginalConstructor()->getMock();
+        $this->subject->injectVehicleRepository($this->vehicleRepositoryMock);
+
+        $responseMock = $this->createMock(HtmlResponse::class);
+        $this->subject->method('htmlResponse')->willReturn($responseMock);
     }
 
     /**
@@ -89,7 +89,7 @@ class VehicleControllerTest extends UnitTestCase {
      */
     public function isActionController(): void
     {
-        self::assertInstanceOf(ActionController::class, $this->mockedVehicle);
+        self::assertInstanceOf(ActionController::class, $this->subject);
     }
 
     /**
@@ -97,11 +97,11 @@ class VehicleControllerTest extends UnitTestCase {
      */
     public function listActionAssignsAllVehicleAsVehiclesToView(): void
     {
-        $vehicles = $this->prophesize(QueryResultInterface::class)->reveal();
-        $this->vehicleRepositoryProphecy->findAll()->willReturn($vehicles);
-        $this->viewProphecy->assign('vehicles', $vehicles)->shouldBeCalled();
+        $vehicles = $this->createMock(QueryResultInterface::class);
+        $this->vehicleRepositoryMock->method('findAll')->willReturn($vehicles);
+        $this->viewMock->expects(self::once())->method('assign')->with('vehicles', $vehicles);
 
-        $this->mockedVehicle->listAction();
+        $this->subject->listAction();
     }
 
     /**
@@ -110,9 +110,9 @@ class VehicleControllerTest extends UnitTestCase {
     public function showActionAssignsPassedVehicleToView(): void
     {
         $vehicle = new Vehicle();
-        $this->viewProphecy->assign('vehicle', $vehicle)->shouldBeCalled();
+        $this->viewMock->expects(self::once())->method('assign')->with('vehicle', $vehicle);
 
-        $this->mockedVehicle->showAction($vehicle);
+        $this->subject->showAction($vehicle);
     }
 
 }

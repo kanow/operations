@@ -4,11 +4,9 @@ use Kanow\Operations\Controller\OperationController;
 use Kanow\Operations\Domain\Model\Operation;
 use Kanow\Operations\Domain\Repository\OperationRepository;
 use PHPUnit\Framework\MockObject\MockObject;
-use Prophecy\PhpUnit\ProphecyTrait;
-use Prophecy\Prophecy\ObjectProphecy;
-use Prophecy\Prophecy\ProphecySubjectInterface;
+use TYPO3\CMS\Core\Http\HtmlResponse;
+use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Fluid\View\TemplateView;
 use TYPO3\TestingFramework\Core\AccessibleObjectInterface;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
@@ -51,31 +49,40 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
  */
 class OperationControllerTest extends UnitTestCase {
 
-    use ProphecyTrait;
 
     /**
      * @var OperationController&MockObject&AccessibleObjectInterface
      */
-    private $mockedOperation;
+    private OperationController $subject;
 
     /**
-     * @var ObjectProphecy<TemplateView>
+     * @var TemplateView&MockObject
      */
-    private $viewProphecy;
+    private TemplateView $viewMock;
 
     /**
-     * @var ObjectProphecy<OperationRepository>
+     * @var OperationRepository&MockObject
      */
-    private $operationRepositoryProphecy;
+    private OperationRepository $operationRepositoryMock;
 
 	protected function setUp(): void {
 		parent::setUp();
 
-        $this->mockedOperation = $this->getAccessibleMock(OperationController::class,null,[],'', false);
+        // We need to create an accessible mock in order to be able to set the protected `view`.
+        $methodsToMock = ['htmlResponse', 'redirect', 'redirectToUri'];
+        if ((new Typo3Version())->getMajorVersion() <= 11) {
+            $methodsToMock[] = 'forward';
+        }
+        $this->subject = $this->getAccessibleMock(OperationController::class, $methodsToMock);
 
-        $this->viewProphecy = $this->prophesize(TemplateView::class);
-        $view = $this->viewProphecy->reveal();
-        $this->mockedOperation->_set('view', $view);
+        $this->viewMock = $this->createMock(TemplateView::class);
+        $this->subject->_set('view', $this->viewMock);
+
+        $this->operationRepositoryMock = $this->getMockBuilder(OperationRepository::class)->disableOriginalConstructor()->getMock();
+        $this->subject->injectOperationRepository($this->operationRepositoryMock);
+
+        $responseMock = $this->createMock(HtmlResponse::class);
+        $this->subject->method('htmlResponse')->willReturn($responseMock);
 	}
 
 	/**
@@ -83,7 +90,7 @@ class OperationControllerTest extends UnitTestCase {
 	 */
 	public function isActionController(): void
     {
-		self::assertInstanceOf(ActionController::class, $this->mockedOperation);
+        self::assertInstanceOf(ActionController::class, $this->subject);
 	}
 
     /**
@@ -92,9 +99,9 @@ class OperationControllerTest extends UnitTestCase {
     public function showActionAssignsPassedOperationToView(): void
     {
         $operation = new Operation();
-        $this->viewProphecy->assign('operation', $operation)->shouldBeCalled();
+        $this->viewMock->expects(self::once())->method('assign')->with('operation', $operation);
 
-        $this->mockedOperation->showAction($operation);
+        $this->subject->showAction($operation);
     }
 
 }

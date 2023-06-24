@@ -4,9 +4,8 @@ use Kanow\Operations\Controller\ResourceController;
 use Kanow\Operations\Domain\Model\Resource;
 use Kanow\Operations\Domain\Repository\ResourceRepository;
 use PHPUnit\Framework\MockObject\MockObject;
-use Prophecy\PhpUnit\ProphecyTrait;
-use Prophecy\Prophecy\ObjectProphecy;
-use Prophecy\Prophecy\ProphecySubjectInterface;
+use TYPO3\CMS\Core\Http\HtmlResponse;
+use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Fluid\View\TemplateView;
@@ -51,37 +50,39 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
  */
 class ResourceControllerTest extends UnitTestCase {
 
-    use ProphecyTrait;
-
     /**
      * @var ResourceController&MockObject&AccessibleObjectInterface
      */
-    private $mockedResource;
+    private ResourceController $subject;
 
     /**
-     * @var ObjectProphecy<TemplateView>
+     * @var TemplateView&MockObject
      */
-    private $viewProphecy;
+    private TemplateView $viewMock;
 
     /**
-     * @var ObjectProphecy<ResourceRepository>
+     * @var ResourceRepository&MockObject
      */
-    private $resourceRepositoryProphecy;
+    private ResourceRepository $resourceRepositoryMock;
 
     protected function setUp(): void {
         parent::setUp();
 
-        $this->mockedResource = $this->getAccessibleMock(ResourceController::class,['forward', 'redirect', 'redirectToUri']);
+        // We need to create an accessible mock in order to be able to set the protected `view`.
+        $methodsToMock = ['htmlResponse', 'redirect', 'redirectToUri'];
+        if ((new Typo3Version())->getMajorVersion() <= 11) {
+            $methodsToMock[] = 'forward';
+        }
+        $this->subject = $this->getAccessibleMock(ResourceController::class, $methodsToMock);
 
-        $this->viewProphecy = $this->prophesize(TemplateView::class);
-        $view = $this->viewProphecy->reveal();
-        $this->mockedResource->_set('view', $view);
+        $this->viewMock = $this->createMock(TemplateView::class);
+        $this->subject->_set('view', $this->viewMock);
 
-        $this->resourceRepositoryProphecy = $this->prophesize(ResourceRepository::class);
-        /** @var ResourceRepository&ProphecySubjectInterface $resourceRepository */
-        $resourceRepository = $this->resourceRepositoryProphecy->reveal();
-        $this->mockedResource->injectResourceRepository($resourceRepository);
+        $this->resourceRepositoryMock = $this->getMockBuilder(ResourceRepository::class)->disableOriginalConstructor()->getMock();
+        $this->subject->injectResourceRepository($this->resourceRepositoryMock);
 
+        $responseMock = $this->createMock(HtmlResponse::class);
+        $this->subject->method('htmlResponse')->willReturn($responseMock);
     }
 
     /**
@@ -89,7 +90,7 @@ class ResourceControllerTest extends UnitTestCase {
      */
     public function isActionController(): void
     {
-        self::assertInstanceOf(ActionController::class, $this->mockedResource);
+        self::assertInstanceOf(ActionController::class, $this->subject);
     }
 
     /**
@@ -97,11 +98,11 @@ class ResourceControllerTest extends UnitTestCase {
      */
     public function listActionAssignsAllResourceAsResourcesToView(): void
     {
-        $resources = $this->prophesize(QueryResultInterface::class)->reveal();
-        $this->resourceRepositoryProphecy->findAll()->willReturn($resources);
-        $this->viewProphecy->assign('resources', $resources)->shouldBeCalled();
+        $resources = $this->createMock(QueryResultInterface::class);
+        $this->resourceRepositoryMock->method('findAll')->willReturn($resources);
+        $this->viewMock->expects(self::once())->method('assign')->with('resources', $resources);
 
-        $this->mockedResource->listAction();
+        $this->subject->listAction();
     }
 
     /**
@@ -110,9 +111,9 @@ class ResourceControllerTest extends UnitTestCase {
     public function showActionAssignsPassedResourceToView(): void
     {
         $resource = new Resource();
-        $this->viewProphecy->assign('resource', $resource)->shouldBeCalled();
+        $this->viewMock->expects(self::once())->method('assign')->with('resource', $resource);
 
-        $this->mockedResource->showAction($resource);
+        $this->subject->showAction($resource);
     }
 
 }
