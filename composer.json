@@ -24,8 +24,8 @@
     }
   },
   "require-dev": {
-    "typo3/testing-framework": "dev-main",
-    "phpspec/prophecy-phpunit": "dev-master"
+    "typo3/testing-framework": "~7.0@dev",
+    "phpunit/phpunit": "^9.6.9"
   },
   "extra": {
     "typo3/cms": {
