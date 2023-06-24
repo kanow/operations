@@ -30,10 +30,9 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractValueObject;
 
 /**
  * Operation Demand object which holds all information to get the correct
- * media records.
+ * record.
  *
  * @package operations
- * @subpackage dto
  */
 class OperationDemand extends AbstractValueObject {
 
@@ -57,12 +56,12 @@ class OperationDemand extends AbstractValueObject {
 	protected $limit;
 
 	/**
-  * Begin
-  *
-  * @var string
-  * @Validate("NotEmpty")
-  */
- protected $begin;
+    * Begin
+    *
+    * @var string
+    * @Validate("NotEmpty")
+    */
+     protected $begin;
 
 	/**
 	 * Searchstring

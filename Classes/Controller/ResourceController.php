@@ -1,4 +1,5 @@
 <?php
+
 namespace Kanow\Operations\Controller;
 
 use Psr\Http\Message\ResponseInterface;
@@ -36,41 +37,42 @@ use Kanow\Operations\Domain\Repository\ResourceRepository;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class ResourceController extends BaseController {
+class ResourceController extends BaseController
+{
 
-	/**
-	 * @var ResourceRepository
-	 */
-	protected $resourceRepository;
+    /**
+     * @var ResourceRepository
+     */
+    protected ResourceRepository $resourceRepository;
 
-	public function injectResourceRepository(ResourceRepository $resourceRepository): void
-	{
-	    $this->resourceRepository = $resourceRepository;
-	}
+    public function injectResourceRepository(ResourceRepository $resourceRepository): void
+    {
+        $this->resourceRepository = $resourceRepository;
+    }
 
-	/**
-	 * action list
-	 *
-	 * @return void
-	 */
-	public function listAction(): ResponseInterface {
-		$resources = $this->resourceRepository->findAll();
-		$this->view->assign('resources', $resources);
-  return $this->htmlResponse();
-	}
+    /**
+     * action list
+     *
+     * @return void
+     */
+    public function listAction(): ResponseInterface
+    {
+        $resources = $this->resourceRepository->findAll();
+        $this->view->assign('resources', $resources);
+        return $this->htmlResponse();
+    }
 
-	/**
-  * action show
-  *
-  * @param Resource $resource
-  * @return void
-  */
- public function showAction(Resource $resource): ResponseInterface {
-		$this->view->assign('resource', $resource);
-  return $this->htmlResponse();
-	}
-
-
+    /**
+     * action show
+     *
+     * @param Resource $resource
+     * @return void
+     */
+    public function showAction(Resource $resource): ResponseInterface
+    {
+        $this->view->assign('resource', $resource);
+        return $this->htmlResponse();
+    }
 
 
 }

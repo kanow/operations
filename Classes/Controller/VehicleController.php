@@ -1,4 +1,5 @@
 <?php
+
 namespace Kanow\Operations\Controller;
 
 use Psr\Http\Message\ResponseInterface;
@@ -36,41 +37,42 @@ use Kanow\Operations\Domain\Repository\VehicleRepository;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class VehicleController extends BaseController {
+class VehicleController extends BaseController
+{
 
-	/**
-	 * @var VehicleRepository
-	 */
-	protected $vehicleRepository;
+    /**
+     * @var VehicleRepository
+     */
+    protected VehicleRepository $vehicleRepository;
 
-	public function injectVehicleRepository(VehicleRepository $vehicleRepository): void
-	{
-	    $this->vehicleRepository = $vehicleRepository;
-	}
+    public function injectVehicleRepository(VehicleRepository $vehicleRepository): void
+    {
+        $this->vehicleRepository = $vehicleRepository;
+    }
 
-	/**
-	 * action list
-	 *
-	 * @return void
-	 */
-	public function listAction(): ResponseInterface {
-		//\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($vehicles);
-		$vehicles = $this->vehicleRepository->findAll();
-		$this->view->assign('vehicles', $vehicles);
-  return $this->htmlResponse();
-	}
+    /**
+     * action list
+     *
+     * @return void
+     */
+    public function listAction(): ResponseInterface
+    {
+        $vehicles = $this->vehicleRepository->findAll();
+        $this->view->assign('vehicles', $vehicles);
+        return $this->htmlResponse();
+    }
 
-	/**
-  * action show
-  *
-  * @param Vehicle $vehicle
-  * @return void
-  */
- public function showAction(Vehicle $vehicle ): ResponseInterface {
-		$this->view->assign('vehicle', $vehicle);
-  return $this->htmlResponse();
-	}
-
+    /**
+     * action show
+     *
+     * @param Vehicle $vehicle
+     * @return void
+     */
+    public function showAction(Vehicle $vehicle): ResponseInterface
+    {
+        $this->view->assign('vehicle', $vehicle);
+        return $this->htmlResponse();
+    }
 
 
 }
