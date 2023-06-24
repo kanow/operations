@@ -60,66 +60,65 @@ use TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter;
 class OperationController extends BaseController
 {
 
-    /**
-     * @var ConfigurationManagerInterface
-     */
-    protected $configurationManager;
-
 	/**
 	 * operationRepository
-	 *
-	 * @var OperationRepository
      */
-	protected $operationRepository;
-
-    /**
-     * typeRepository
-     *
-     * @var TypeRepository
-     */
-    protected $typeRepository;
-
-    /**
-     * @var CategoryRepository
-     */
-    protected $categoryRepository;
-
-    /**
-     * @var CategoryService
-     */
-    protected $categoryService;
-
+	private OperationRepository $operationRepository;
 
     /**
      * @param OperationRepository $operationRepository
-     * @param CategoryRepository $categoryRepository
-     * @param CategoryService $categoryService
-     * @param TypeRepository $typeRepository
-     * @param ConfigurationManagerInterface $configurationManager
      */
-    public function __construct(
-        OperationRepository $operationRepository,
-        CategoryRepository $categoryRepository,
-        CategoryService $categoryService,
-        TypeRepository $typeRepository,
-        ConfigurationManagerInterface $configurationManager
-    )
+    public function injectOperationRepository(OperationRepository $operationRepository): void
     {
         $this->operationRepository = $operationRepository;
-        $this->categoryRepository = $categoryRepository;
-        $this->categoryService = $categoryService;
+    }
+
+    /**
+     * typeRepository
+     */
+    private TypeRepository $typeRepository;
+
+    /**
+     * @param TypeRepository $typeRepository
+     */
+    public function injectTypeRepository(TypeRepository $typeRepository): void
+    {
         $this->typeRepository = $typeRepository;
-        $this->configurationManager = $configurationManager;
+    }
+
+    /**
+     * categoryRepository
+     */
+    private CategoryRepository $categoryRepository;
+
+    /**
+     * @param CategoryRepository $categoryRepository
+     */
+    public function injectCategoryRepository(CategoryRepository $categoryRepository): void
+    {
+        $this->categoryRepository = $categoryRepository;
+    }
+
+    /**
+     * category service
+     */
+    private CategoryService $categoryService;
+
+    /**
+     * @param CategoryService $categoryService
+     */
+    public function injectCategoryService(CategoryService $categoryService): void
+    {
+        $this->categoryService = $categoryService;
     }
 
     /**
      * action list
      *
-     * @param OperationDemand $demand
+     * @param OperationDemand|null $demand
      * @param int $currentPage
-     * @return void
+     * @return ResponseInterface
      * @throws InvalidQueryException
-     * @throws NoSuchArgumentException
      */
 	public function listAction(OperationDemand $demand = NULL, int $currentPage = 1): ResponseInterface {
 
