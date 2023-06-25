@@ -93,6 +93,19 @@ class OperationControllerTest extends UnitTestCase {
         self::assertInstanceOf(ActionController::class, $this->subject);
 	}
 
+//    /**
+//     * @test
+//     */
+    //@todo test throws an error with accessing $request before intialization
+//    public function listActionAssignsAllOperationAsOperationsToView(): void
+//    {
+//        $operations = $this->createMock(QueryResultInterface::class);
+//        $this->operationRepositoryMock->method('findAll')->willReturn($operations);
+//        $this->viewMock->expects(self::once())->method('assign')->with('operations', $operations);
+//
+//        $this->subject->listAction();
+//    }
+
     /**
      * @test
      */
