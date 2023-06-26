@@ -4,20 +4,22 @@ namespace Kanow\Operations\Tests\Unit\Domain\Repository\Operation;
 
 use Kanow\Operations\Domain\Model\Type;
 use Kanow\Operations\Domain\Repository\OperationRepository;
-use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+use TYPO3\CMS\Extbase\Object\ObjectManagerInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 class OperationRepositoryTest extends UnitTestCase
 {
-    /** @var OperationRepository|\PHPUnit\Framework\MockObject \|\TYPO3\TestingFramework\Core\AccessibleObjectInterface */
-    protected $mockedOperationRepository;
+    /**
+     * @var OperationRepository
+     */
+    private OperationRepository $subject;
 
     /**
      * @var $statisticResultArray array
      */
-    protected $statisticResultArray = [
+    protected array $statisticResultArray = [
         '1' => [
             'title' => 'One',
             'color' => '#000',
@@ -49,10 +51,15 @@ class OperationRepositoryTest extends UnitTestCase
 
     protected function setUp(): void
     {
-        $this->mockedOperationRepository = $this->getAccessibleMock(OperationRepository::class, ['getQueryBuilder'], [], '', false);
+        parent::setUp();
 
-        $mockedQueryBuilder = $this->getAccessibleMock(QueryBuilder::class, ['escapeStrForLike', 'createNamedParameter'], [], '', false);
-        $this->mockedOperationRepository->expects($this->any())->method('getQueryBuilder')->withAnyParameters()->will($this->returnValue($mockedQueryBuilder));
+        if (\interface_exists(ObjectManagerInterface::class)) {
+            $objectManager = $this->createMock(ObjectManagerInterface::class);
+            // @phpstan-ignore-next-line This line is 11LTS-specific, but we're running PHPStan on TYPO3 12.
+            $this->subject = new OperationRepository($objectManager);
+        } else {
+            $this->subject = new OperationRepository();
+        }
     }
 
     /**
@@ -60,7 +67,7 @@ class OperationRepositoryTest extends UnitTestCase
      */
     public function isRepository(): void
     {
-        self::assertInstanceOf(Repository::class, $this->mockedOperationRepository);
+        self::assertInstanceOf(Repository::class, $this->subject);
     }
 
     /**
@@ -74,7 +81,7 @@ class OperationRepositoryTest extends UnitTestCase
         $reflector = new \ReflectionClass(OperationRepository::class);
         $method = $reflector->getMethod('convertYearsToString');
         $method->setAccessible(true);
-        $result = $method->invokeArgs($this->mockedOperationRepository, array($yearsAsArray));
+        $result = $method->invokeArgs($this->subject, array($yearsAsArray));
         $this->assertSame($result, $yearsAsString);
     }
 
@@ -91,7 +98,7 @@ class OperationRepositoryTest extends UnitTestCase
         $reflector = new \ReflectionClass(OperationRepository::class);
         $method = $reflector->getMethod('cleanUnusedConstraints');
         $method->setAccessible(true);
-        $result = $method->invokeArgs($this->mockedOperationRepository, array($constraints));
+        $result = $method->invokeArgs($this->subject, array($constraints));
         $this->assertCount('2', $result);
     }
 
@@ -105,7 +112,7 @@ class OperationRepositoryTest extends UnitTestCase
         $reflector = new \ReflectionClass(OperationRepository::class);
         $method = $reflector->getMethod('addEmptyYear');
         $method->setAccessible(true);
-        $resultWithNewYear = $method->invokeArgs($this->mockedOperationRepository, array($result, $newYear));
+        $resultWithNewYear = $method->invokeArgs($this->subject, array($result, $newYear));
         $this->assertIsArray($resultWithNewYear);
         $this->assertEquals('2020', array_key_last($resultWithNewYear['1']['years']));
     }
@@ -127,7 +134,7 @@ class OperationRepositoryTest extends UnitTestCase
         $method = $reflector->getMethod('addMissingType');
         $method->setAccessible(true);
 
-        $newResultWithAddedType = $method->invokeArgs($this->mockedOperationRepository, [$data,$types,'2023']);
+        $newResultWithAddedType = $method->invokeArgs($this->subject, [$data,$types,'2023']);
 
         $this->assertArrayHasKey(7,$newResultWithAddedType);
     }
@@ -141,7 +148,7 @@ class OperationRepositoryTest extends UnitTestCase
         $reflector = new \ReflectionClass(OperationRepository::class);
         $method = $reflector->getMethod('sortResultByYears');
         $method->setAccessible(true);
-        $resultSorted = $method->invokeArgs($this->mockedOperationRepository, array($result));
+        $resultSorted = $method->invokeArgs($this->subject, array($result));
         $this->assertIsArray($resultSorted);
         $this->assertArrayHasKey('years',$resultSorted['1']);
         $this->assertEquals($result['1']['title'], $resultSorted['1']['title']);
@@ -162,7 +169,7 @@ class OperationRepositoryTest extends UnitTestCase
         $reflector = new \ReflectionClass(OperationRepository::class);
         $method = $reflector->getMethod('sortResultByTypeUid');
         $method->setAccessible(true);
-        $dataSorted = $method->invokeArgs($this->mockedOperationRepository, array($data));
+        $dataSorted = $method->invokeArgs($this->subject, array($data));
         $this->assertEquals(5, array_key_last($dataSorted));
     }
 
@@ -180,7 +187,7 @@ class OperationRepositoryTest extends UnitTestCase
         $reflector = new \ReflectionClass(OperationRepository::class);
         $method = $reflector->getMethod('cleanUnusedConstraints');
         $method->setAccessible(true);
-        $cleanedConstraintsArray = $method->invokeArgs($this->mockedOperationRepository, array($constraintsArray));
+        $cleanedConstraintsArray = $method->invokeArgs($this->subject, array($constraintsArray));
         $this->assertArrayNotHasKey(2, $cleanedConstraintsArray);
         $this->assertEquals(1, array_key_last($cleanedConstraintsArray));
         $this->assertSame($cleanedConstraintsArray['0'], 'is set');
