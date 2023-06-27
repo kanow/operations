@@ -20,7 +20,7 @@ class OperationRepositoryTest extends FunctionalTestCase
     /**
      * @var array
      */
-    protected $testExtensionsToLoad = [
+    protected array $testExtensionsToLoad = [
         'typo3conf/ext/operations'
     ];
 
