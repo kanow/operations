@@ -1,6 +1,7 @@
 <?php
 
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
+use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -9,6 +10,68 @@ if (!defined ('TYPO3')) {
 	die ('Access denied.');
 }
 $extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('operations');
+
+$imageSettingsFalMedia = [
+    'behaviour' => [
+        'allowLanguageSynchronization' => true,
+    ],
+    'appearance' => [
+        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
+        'showPossibleLocalizationRecords' => true,
+        'showAllLocalizationLink' => true,
+        'showSynchronizationLink' => true,
+    ],
+    // custom configuration for displaying fields in the overlay/reference table
+    'overrideChildTca' => [
+        'types' => [
+            '0' => [
+                'showitem' => '
+                    --palette--;;imageoverlayPalette,
+                    --palette--;;filePalette'
+            ],
+            File::FILETYPE_TEXT => [
+                'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette'
+            ],
+            File::FILETYPE_IMAGE => [
+                'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette'
+            ],
+            File::FILETYPE_AUDIO => [
+                'showitem' => '
+                                --palette--;;audioOverlayPalette,
+                                --palette--;;filePalette'
+            ],
+            File::FILETYPE_VIDEO => [
+                'showitem' => '
+                                --palette--;;videoOverlayPalette,
+                                --palette--;;filePalette'
+            ],
+        ],
+    ],
+];
+
+$versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
+if ($versionInformation->getMajorVersion() > 11) {
+    $imageConfigurationFalMedia = [
+        'type' => 'file',
+        'appearance' => $imageSettingsFalMedia['appearance'],
+        'behaviour' => $imageSettingsFalMedia['behaviour'],
+        'overrideChildTca' => $imageSettingsFalMedia['overrideChildTca'],
+        'allowed' => 'common-image-types',
+    ];
+} else {
+    /** @noinspection PhpDeprecationInspection */
+    // @extensionScannerIgnoreLine
+    $imageConfigurationFalMedia = ExtensionManagementUtility::getFileFieldTCAConfig(
+        'fal_media',
+        $imageSettingsFalMedia,
+        $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+    );
+}
+
 return [
 	'ctrl' => [
                 'title' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_resource',
@@ -160,41 +223,7 @@ return [
 		'media' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_resource.media',
-            'config' => ExtensionManagementUtility::getFileFieldTCAConfig('media', [
-                'appearance' => [
-                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference'
-                ],
-                // custom configuration for displaying fields in the overlay/reference table
-                'overrideChildTca' => [
-                    'types' => [
-                        '0' => [
-                            'showitem' => '
-                                --palette--;;imageoverlayPalette,
-                                --palette--;;filePalette'
-                        ],
-                        File::FILETYPE_TEXT => [
-                            'showitem' => '
-                                --palette--;;imageoverlayPalette,
-                                --palette--;;filePalette'
-                        ],
-                        File::FILETYPE_IMAGE => [
-                            'showitem' => '
-                                --palette--;;imageoverlayPalette,
-                                --palette--;;filePalette'
-                        ],
-                        File::FILETYPE_AUDIO => [
-                            'showitem' => '
-                                --palette--;;audioOverlayPalette,
-                                --palette--;;filePalette'
-                        ],
-                        File::FILETYPE_VIDEO => [
-                            'showitem' => '
-                                --palette--;;videoOverlayPalette,
-                                --palette--;;filePalette'
-                        ],
-                    ],
-                ],
-            ], $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'])
+            'config' => $imageConfigurationFalMedia,
         ],
         'link' => [
             'exclude' => 1,
