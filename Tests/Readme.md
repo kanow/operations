@@ -21,6 +21,16 @@ Now use mariadb due to erros with missinf `FROM_UNIXTIME` in SQLite.
 
 Change PHP version (`-p`) if necessary.
 
+# use composer Script to execute tests
+
+Got inside ddev/docker container, switch to `operations` folder. Execute:
+
+    composer testUnit
+
+or
+
+    composer testFunctional
+
 ## CodeCoverage
 
 * activate xdebug `ddev xdebug`

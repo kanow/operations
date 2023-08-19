@@ -1,8 +1,20 @@
 <?php
+
+use TYPO3\CMS\Core\Information\Typo3Version;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 if (!defined ('TYPO3')) {
 	die ('Access denied.');
 }
-
+$versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
+$typo3Version = $versionInformation->getMajorVersion();
+if ($typo3Version > 11) {
+    $renderTypeLinkField = 'link';
+    $renderTypeDatetime = 'dateTime';
+} else {
+    $renderTypeLinkField = 'inputLink';
+    $renderTypeDatetime = 'inputDateTime';
+}
 return [
 	'ctrl' => [
                 'title' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_assistance',
@@ -43,8 +55,10 @@ return [
 			'config' => [
 				'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [
-					['', 0],
+                'items' => $typo3Version < 12 ? [
+                    ['', 0],
+                ] : [
+                    ['label' => '', 'value' => 0],
                 ],
 				'foreign_table' => 'tx_operations_domain_model_assistance',
 				'foreign_table_where' => 'AND tx_operations_domain_model_assistance.pid=###CURRENT_PID### AND tx_operations_domain_model_assistance.sys_language_uid IN (-1,0)',
@@ -78,7 +92,7 @@ return [
 				'type' => 'input',
 				'size' => 13,
 				'eval' => 'datetime',
-                'renderType' => 'inputDateTime',
+                'renderType' => $renderTypeDatetime,
 				'checkbox' => 0,
 				'default' => 0,
 				'range' => [
@@ -94,7 +108,7 @@ return [
 				'type' => 'input',
 				'size' => 13,
 				'eval' => 'datetime',
-                'renderType' => 'inputDateTime',
+                'renderType' => $renderTypeDatetime,
 				'checkbox' => 0,
 				'default' => 0,
 				'range' => [
@@ -109,7 +123,8 @@ return [
 			'config' => [
 				'type' => 'input',
 				'size' => 30,
-				'eval' => 'trim,required'
+				'eval' => 'trim',
+                'required' => true
             ],
         ],
 		'description' => [
@@ -127,7 +142,7 @@ return [
 			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_assistance.link',
 			'config' => [
 				'type' => 'input',
-                'renderType' => 'inputLink',
+                'renderType' => $renderTypeLinkField,
 				'size' => 30,
 				'eval' => 'trim',
             ],

@@ -7,6 +7,7 @@ use Kanow\Operations\Domain\Repository\OperationRepository;
 use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
+use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
 use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 
 class OperationRepositoryTest extends FunctionalTestCase
@@ -15,7 +16,9 @@ class OperationRepositoryTest extends FunctionalTestCase
     /**
      * @var OperationRepository
      */
-    protected $operationRepository;
+    private OperationRepository $subject;
+
+    private PersistenceManager $persistenceManager;
 
     /**
      * @var array
@@ -24,13 +27,13 @@ class OperationRepositoryTest extends FunctionalTestCase
         'typo3conf/ext/operations'
     ];
 
-    /** @noinspection PhpMultipleClassDeclarationsInspection */
     public function setUp(): void
     {
         parent::setUp();
-        $versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
-        $this->operationRepository = $this->getContainer()->get(OperationRepository::class);
-        $this->importCSVDataSet(ORIGINAL_ROOT . 'typo3conf/ext/operations/Tests/Functional/Fixtures/TxOperations.csv');
+
+        $this->persistenceManager = GeneralUtility::makeInstance(PersistenceManager::class);
+        $this->subject = $this->getContainer()->get(OperationRepository::class);
+        $this->importCSVDataSet(__DIR__ . '/../../Fixtures/TxOperations.csv');
     }
 
     /**
@@ -40,7 +43,7 @@ class OperationRepositoryTest extends FunctionalTestCase
      */
     public function findRecordsByUid(): void
     {
-        $operation = $this->operationRepository->findByUid(1);
+        $operation = $this->subject->findByUid(1);
         $this->assertEquals($operation->getTitle(), 'Einsatztest');
     }
 
@@ -54,16 +57,17 @@ class OperationRepositoryTest extends FunctionalTestCase
         $demand = new OperationDemand();
         $_GET['id'] = 1;
         $settings = [];
-
+        $settings['dontRespectStoragePage'] = 1;
+        date_default_timezone_set('Europe/Berlin');
         // year 2020
         $demand->setBegin('2020');
-        $this->assertEquals((int)$this->operationRepository->findDemanded($demand, $settings)->count(), 0);
+        $this->assertEquals((int)$this->subject->findDemanded($demand, $settings)->count(), 0);
         // year 2021
         $demand->setBegin('2021');
-        $this->assertEquals((int)$this->operationRepository->findDemanded($demand, $settings)->count(), 1);
+        $this->assertEquals((int)$this->subject->findDemanded($demand, $settings)->count(), 1);
         // year 2022
         $demand->setBegin('2022');
-        $this->assertEquals((int)$this->operationRepository->findDemanded($demand, $settings)->count(), 2);
+        $this->assertEquals((int)$this->subject->findDemanded($demand, $settings)->count(), 2);
     }
 
     /**
@@ -76,13 +80,16 @@ class OperationRepositoryTest extends FunctionalTestCase
     {
         $_GET['id'] = 1;
         $demand = new OperationDemand();
-        $demand->setLimit(2);
         $settings = [
-            'noLimitForStatistics' => 0
+            'limit' => 2,
+            'noLimitForStatistics' => 0,
+            'dontRespectStoragePage' => 1
         ];
-        $this->assertEquals(2, (int)$this->operationRepository->countDemandedForStatistics($demand, $settings));
+        $this->assertEquals(2, (int)$this->subject->countDemandedForStatistics($demand, $settings));
+        $demand->setLimit(1);
+        $this->assertEquals(1, (int)$this->subject->countDemandedForStatistics($demand, $settings));
         $settings['noLimitForStatistics'] = 1;
-        $this->assertEquals(3, (int)$this->operationRepository->countDemandedForStatistics($demand, $settings));
+        $this->assertEquals(3, (int)$this->subject->countDemandedForStatistics($demand, $settings));
     }
 
     /**
@@ -108,13 +115,13 @@ class OperationRepositoryTest extends FunctionalTestCase
             ],
         ];
         $operationUids = '1,2,3';
-        $result = $this->operationRepository->countGroupedByYear($years, $operationUids);
+        $result = $this->subject->countGroupedByYear($years, $operationUids);
         $this->assertEquals($expectedResult, $result);
 
     }
 
     public function tearDown(): void
     {
-        unset($this->operationRepository);
+        unset($this->subject);
     }
 }

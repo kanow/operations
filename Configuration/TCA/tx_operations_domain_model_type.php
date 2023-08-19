@@ -52,7 +52,8 @@ $imageSettingsFalMedia = [
 ];
 
 $versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
-if ($versionInformation->getMajorVersion() > 11) {
+$typo3Version = $versionInformation->getMajorVersion();
+if ($typo3Version > 11) {
     $imageConfigurationFalMedia = [
         'type' => 'file',
         'appearance' => $imageSettingsFalMedia['appearance'],
@@ -60,6 +61,7 @@ if ($versionInformation->getMajorVersion() > 11) {
         'overrideChildTca' => $imageSettingsFalMedia['overrideChildTca'],
         'allowed' => 'common-image-types',
     ];
+    $renderTypeDatetime = 'dateTime';
 } else {
     /** @noinspection PhpDeprecationInspection */
     // @extensionScannerIgnoreLine
@@ -68,6 +70,7 @@ if ($versionInformation->getMajorVersion() > 11) {
         $imageSettingsFalMedia,
         $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
     );
+    $renderTypeDatetime = 'inputDateTime';
 }
 
 return [
@@ -110,8 +113,10 @@ return [
 			'config' => [
 				'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [
+                'items' => $typo3Version < 12 ? [
                     ['', 0],
+                ] : [
+                    ['label' => '', 'value' => 0],
                 ],
                 'foreign_table' => 'tx_operations_domain_model_type',
                 'foreign_table_where' => 'AND tx_operations_domain_model_type.pid=###CURRENT_PID### AND tx_operations_domain_model_type.sys_language_uid IN (-1,0)',
@@ -146,7 +151,7 @@ return [
 				'type' => 'input',
 				'size' => 13,
 				'eval' => 'datetime',
-                'renderType' => 'inputDateTime',
+                'renderType' => $renderTypeDatetime,
 				'checkbox' => 0,
 				'default' => 0,
 				'range' => [
@@ -162,7 +167,7 @@ return [
 				'type' => 'input',
 				'size' => 13,
 				'eval' => 'datetime',
-                'renderType' => 'inputDateTime',
+                'renderType' => $renderTypeDatetime,
 				'checkbox' => 0,
 				'default' => 0,
 				'range' => [
@@ -177,7 +182,8 @@ return [
 			'config' => [
 				'type' => 'input',
 				'size' => 30,
-				'eval' => 'trim,required'
+				'eval' => 'trim',
+                'required' => true
             ],
         ],
         'color' => array(
@@ -186,7 +192,7 @@ return [
             'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_type.color',
             'config' => array(
                 'type' => 'input',
-                'renderType' => 'colorpicker',
+                'renderType' => $renderTypeDatetime,
                 'eval' => 'trim'
             ),
         ),

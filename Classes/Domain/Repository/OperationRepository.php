@@ -301,7 +301,9 @@ class OperationRepository extends Repository
     protected function generateQuery(OperationDemand $demand,array $settings, bool $noLimit = false): QueryInterface
     {
         $query = $this->createQuery();
-
+        if(isset($settings['dontRespectStoragePage']) && $settings['dontRespectStoragePage'] === 1) {
+            $query->getQuerySettings()->setRespectStoragePage(false);
+        }
         $constraints = $this->createConstraintsFromDemand($query, $demand, $settings);
         if (!empty($constraints)) {
             $query->matching(
@@ -345,7 +347,7 @@ class OperationRepository extends Repository
 
         //category constraints from plugin settings
         /** @var array $settings */
-        if ($settings['category'] != '') {
+        if ($settings['category'] ?? null != '') {
             $categories = GeneralUtility::trimExplode(',', $settings['category']);
             $constraints[] = $this->createCategoryConstraints($query, $categories, 'category', $settings);
         }
@@ -376,7 +378,7 @@ class OperationRepository extends Repository
         }
 
         // map constraints
-        if($settings['showMap']) {
+        if(isset($settings['showMap'])) {
             $constraints[] = $query->logicalAnd(
                 $query->greaterThan('latitude',0),
                 $query->greaterThan('longitude',0)

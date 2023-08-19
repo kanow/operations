@@ -55,7 +55,8 @@ $imageSettingsFalMedia = [
 ];
 
 $versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
-if ($versionInformation->getMajorVersion() > 11) {
+$typo3Version = $versionInformation->getMajorVersion();
+if ($typo3Version > 11) {
     $imageConfigurationFalMedia = [
         'type' => 'file',
         'appearance' => $imageSettingsFalMedia['appearance'],
@@ -63,6 +64,7 @@ if ($versionInformation->getMajorVersion() > 11) {
         'overrideChildTca' => $imageSettingsFalMedia['overrideChildTca'],
         'allowed' => 'common-image-types',
     ];
+    $renderTypeDatetime = 'dateTime';
 } else {
     /** @noinspection PhpDeprecationInspection */
     // @extensionScannerIgnoreLine
@@ -71,6 +73,7 @@ if ($versionInformation->getMajorVersion() > 11) {
         $imageSettingsFalMedia,
         $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
     );
+    $renderTypeDatetime = 'inputDateTime';
 }
 
 return [
@@ -131,9 +134,10 @@ return [
 			'config' => [
 				'type' => 'select',
                 'renderType' => 'selectSingle',
-                'eval' => 'int',
-                'items' => [
-					['', 0],
+                'items' => $typo3Version < 12 ? [
+                    ['', 0],
+                ] : [
+                    ['label' => '', 'value' => 0],
                 ],
 				'foreign_table' => 'tx_operations_domain_model_operation',
 				'foreign_table_where' => 'AND tx_operations_domain_model_operation.pid=###CURRENT_PID### AND tx_operations_domain_model_operation.sys_language_uid IN (-1,0)',
@@ -167,7 +171,7 @@ return [
 				'type' => 'input',
 				'size' => 13,
 				'eval' => 'datetime',
-                'renderType' => 'inputDateTime',
+                'renderType' => $renderTypeDatetime,
 				'checkbox' => 0,
 				'default' => 0,
 				'range' => [
@@ -183,7 +187,7 @@ return [
 				'type' => 'input',
 				'size' => 13,
 				'eval' => 'datetime',
-                'renderType' => 'inputDateTime',
+                'renderType' => $renderTypeDatetime,
 				'checkbox' => 0,
 				'default' => 0,
 				'range' => [
@@ -198,7 +202,8 @@ return [
 			'config' => [
 				'type' => 'input',
 				'size' => 10,
-				'eval' => 'trim,required'
+				'eval' => 'trim',
+                'required' => true
             ],
         ],
 		'onlyEld' => [
@@ -216,7 +221,8 @@ return [
 			'config' => [
 				'type' => 'input',
 				'size' => 60,
-				'eval' => 'trim,required'
+				'eval' => 'trim',
+                'required' => true
             ],
         ],
         'path_segment' => [
@@ -240,7 +246,8 @@ return [
 				'type' => 'text',
 				'cols' => 60,
 				'rows' => 3,
-				'eval' => 'trim,required'
+				'eval' => 'trim',
+                'required' => true
             ],
         ],
 		'begin' => [
@@ -250,8 +257,9 @@ return [
 			'config' => [
 				'type' => 'input',
 				'size' => 10,
-				'eval' => 'datetime,required',
-                'renderType' => 'inputDateTime',
+				'eval' => 'datetime',
+                'required' => true,
+                'renderType' => $renderTypeDatetime,
 				'checkbox' => 1,
 				'default' => time()
             ],
@@ -264,7 +272,7 @@ return [
 				'type' => 'input',
 				'size' => 10,
 				'eval' => 'datetime',
-                'renderType' => 'inputDateTime',
+                'renderType' => $renderTypeDatetime,
 				'checkbox' => 1,
 				'default' => time()
             ],
@@ -318,7 +326,7 @@ return [
 			'config' => [
 				'type' => 'input',
 				'size' => 4,
-				'eval' => 'int'
+				'eval' => 'num'
             ],
         ],
 		'media' => [
@@ -341,9 +349,11 @@ return [
 				'maxitems' => 1,
 				'multiple' => 0,
 				'renderType' => 'selectSingle',
-				'items' => [
-					['LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.choose','0']
-                ]
+                'items' => $typo3Version < 12 ? [
+                    ['LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.choose','0'],
+                ] : [
+                    ['label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.choose', 'value' => 0],
+                ],
             ],
         ],
 		'assistance' => [
