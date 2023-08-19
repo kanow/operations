@@ -308,13 +308,9 @@ class OperationRepository extends Repository
                 $query->logicalAnd(...$constraints)
             );
         }
-        $limit = $settings['limit'] ?? 0;
+        $limit = $demand->getLimit() ?: $settings['limit'] ?? 0;
         if(!$noLimit && $limit > 0) {
-            if ($demand->getLimit() != null) {
-                $query->setLimit((int)$demand->getLimit());
-            } else {
-                $query->setLimit((int)$limit);
-            }
+            $query->setLimit((int)$limit);
         }
         return $query;
     }
