@@ -60,6 +60,22 @@
 				<source>Slug behaviour for path_segment fields</source>
 			</trans-unit>
 
+			<trans-unit id="widget_group.operations.title">
+				<source>Operations widgets</source>
+			</trans-unit>
+			<trans-unit id="presets.operations.title">
+				<source>Operations Dashboard</source>
+			</trans-unit>
+			<trans-unit id="presets.operations.description">
+				<source>Common set of widgets for your operations dashboard.</source>
+			</trans-unit>
+			<trans-unit id="widgets.recentlyModifiedOperations.title">
+				<source>Recently modified operations</source>
+			</trans-unit>
+			<trans-unit id="widgets.recentlyModifiedOperations.description">
+				<source>Show a list of recently modified operations</source>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>

@@ -1,0 +1,33 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Kanow\Operations\:
+    resource: '../Classes/*'
+
+  dashboard.provider.recentlyModifiedOperations:
+    class: 'Kanow\Operations\Widgets\Provider\ListOfRecordsDataProvider'
+    arguments:
+      $table: 'tx_operations_domain_model_operation'
+      $orderField: 'tstamp'
+      $limit: 10
+
+  dashboard.widget.recentlyModifiedOperations:
+    class: 'Kanow\Operations\Widgets\ListOfRecordsWidget'
+    arguments:
+      $dataProvider: '@dashboard.provider.recentlyModifiedOperations'
+      $options:
+        titleField: 'title'
+        refreshAvailable: true
+    tags:
+      -
+        name: dashboard.widget
+        identifier: 'recentlyModifiedOperations'
+        groupNames: 'operations'
+        title: 'LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:widgets.recentlyModifiedOperations.title'
+        description: 'LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:widgets.recentlyModifiedOperations.description'
+        iconIdentifier: 'ext-operations-operation'
+        height: 'medium'
+        width: 'medium'

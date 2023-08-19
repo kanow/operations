@@ -1,3 +1,6 @@
+imports:
+    - { resource: Backend/Widgets/OperationsWidgets.yaml }
+
 services:
     _defaults:
         autowire: true
