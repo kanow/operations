@@ -13,6 +13,7 @@ $EM_CONF[$_EXTKEY] = array (
 	'constraints' => array (
 		'depends' => array (
 			'typo3' => '11.5.0 - 12.4.99',
+			'dashboard' => '11.5.0 - 12.4.99',
 		),
 	),
 );

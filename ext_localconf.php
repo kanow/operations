@@ -125,7 +125,7 @@ if($suggestedPaginationClassName) {
 # set class in your TypoScript if other pagination should be used
 plugin.tx_operations.settings.paginate.class = ' . $suggestedPaginationClassName));
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig(
+    ExtensionManagementUtility::addUserTSConfig(
         "@import 'EXT:operations/Configuration/TsConfig/User/options.tsconfig'"
     );
 }
