@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Kanow\Operations\Tests\Functional;
 
@@ -21,7 +22,7 @@ class OperationRepositoryTest extends FunctionalTestCase
     private PersistenceManager $persistenceManager;
 
     /**
-     * @var array
+     * @var string[]
      */
     protected array $testExtensionsToLoad = [
         'typo3conf/ext/operations'
