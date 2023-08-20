@@ -427,7 +427,7 @@ shift $((OPTIND - 1))
 TEST_FILE=${1}
 
 SUFFIX=$(echo $RANDOM)
-NETWORK="friendsoftypo3-tea-${SUFFIX}"
+NETWORK="kanow-operations-${SUFFIX}"
 ${CONTAINER_BIN} network create ${NETWORK} >/dev/null
 
 CONTAINER_COMMON_PARAMS="${CONTAINER_INTERACTIVE} --rm --network $NETWORK --add-host "host.docker.internal:host-gateway" $USERSET -v ${ROOT_DIR}:${ROOT_DIR} -w ${ROOT_DIR}"
