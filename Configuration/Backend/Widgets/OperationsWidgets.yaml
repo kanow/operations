@@ -31,3 +31,28 @@ services:
         iconIdentifier: 'ext-operations-operation'
         height: 'medium'
         width: 'medium'
+
+  dashboard.provider.listOfHiddenOperations:
+    class: 'Kanow\Operations\Widgets\Provider\ListOfRecordsDataProvider'
+    arguments:
+      $table: 'tx_operations_domain_model_operation'
+      $orderField: 'tstamp'
+      $limit: 10
+      $onlyHidden: true
+
+  dashboard.widget.listOfHiddenOperations:
+    class: 'Kanow\Operations\Widgets\ListOfHiddenOperationsWidget'
+    arguments:
+      $dataProvider: '@dashboard.provider.listOfHiddenOperations'
+      $options:
+        titleField: 'title'
+        refreshAvailable: true
+    tags:
+      - name: dashboard.widget
+        identifier: 'listOfHiddenOperations'
+        groupNames: 'operations'
+        title: 'LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:widgets.listOfHiddenOperations.title'
+        description: 'LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:widgets.listOfHiddenOperations.description'
+        iconIdentifier: 'ext-operations-operation'
+        height: 'medium'
+        width: 'medium'

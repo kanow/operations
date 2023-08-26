@@ -75,6 +75,12 @@
 			<trans-unit id="widgets.recentlyModifiedOperations.description">
 				<source>Show a list of recently modified operations</source>
 			</trans-unit>
+			<trans-unit id="widgets.listOfHiddenOperations.title">
+				<source>Hidden operations</source>
+			</trans-unit>
+			<trans-unit id="widgets.listOfHiddenOperations.description">
+				<source>Show a list of existing hidden operations data. Those data should edited to publish.</source>
+			</trans-unit>
 
 		</body>
 	</file>

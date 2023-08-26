@@ -7,7 +7,7 @@ return [
         'showInWizard' => true,
         'defaultWidgets' => [
             'recentlyModifiedOperations',
-            't3information',
+            'listOfHiddenOperations',
         ]
     ]
 ];
