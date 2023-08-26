@@ -16,6 +16,7 @@ nbproject
 
 Build
 .Build/
+!/Build
 Build/testing-docker/.env
 composer.lock
 /var/
