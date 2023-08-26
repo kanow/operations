@@ -23,7 +23,7 @@ Mittlerweile kümmert sich da jemand anderes und dieser Jemand findet halt
 Wordpress ganz toll. Naja, was soll man dazu sagen ;-).
 Wenn's denn glücklich macht, gerne.
 Die Downloadzahlen der Extension lassen aber auch darauf schließen,
-dass es noch andere TYPO3 Seiten mit Bedarf dieser Extension gibt.
+dass es noch andere TYPO3 Seiten gibt welche die Extension nutzen.
 Das aber nur am Rande.
 
 Die Daten werden hier im :ref:`TYPO3 Backend <t3start:concepts>`
@@ -60,7 +60,7 @@ Im :ref:`Frontend <t3start:concepts>` sind verschiedene Darstellungen möglich.
 
    Die Extension
    `FireDepartment <https://extensions.typo3.org/extension/fire_department>`_
-   stellt ein :ref:`Site Package <t3sitepackage:start>`
+   stellt ein :ref:`Site Package <t3sitepackage:start>` für eine Webseite
    bereit, in dem die Styles bereits für die Standard Templates von
    `operations` optimiert sind.
 

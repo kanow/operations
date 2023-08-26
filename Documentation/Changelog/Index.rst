@@ -22,11 +22,12 @@ The hard dependency to Georg Ringer's `numbered_pagination` has been removed.
 There was no 12 compatible version of it available. Maybe there won't be one,
 because the TYPO3 core has now its own solution.
 For TYPO3 11 installations this means that you have to take care of the
-installation of the `numbered_pagination` yourself.
+installation of the `numbered_pagination` by yourself.
 Depending on the TYPO3 version, `operations` selects either the
 `NumberedPagination` class (if exists) or the newer `SlidingWindowPagination` class.
 If neither is available, then `SimplePagination` is used.
-In TypoScript there is the possibility to override this.
+In TypoScript there is the possibility to override this and using another
+pagination class.
 
 .. code-block:: typoscript
 

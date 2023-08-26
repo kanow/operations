@@ -19,19 +19,19 @@ The extension were build to manage firefighter operations in a TYPO3 website.
 Quite originally the
 `Freiwillige Feuerwehr der Stadt Thale <www.feuerwehr-stadt-thale.de>`_,
 long time ago, got this extension from me in a TYPO3 website.
-In the meanwhile someone else takes care of it and this someone means
-Wordpress is quite great. Well, what to say ;-).
-If it makes happy, you're welcome.
+In the meanwhile someone else takes care of it and this one thinks
+Wordpress is great. Well, what to say ;-).
+If it makes people happy, you're welcome.
 But the download numbers of the extension also suggest me,
 that there are other TYPO3 sites with need for this extension.
 But that's just by the way.
 
 The data for operations are managed in
 :ref:`TYPO3 Backend <t3start:concepts>` by editors. Many detailed information
-e.g. used vehicles, recources, assistance and more are possible.
+e.g. used vehicles, resources, assistance and more are possible.
 
-This extension can be used for other institutions like THW, police or security
-agencies too.
+This extension can be used for other institutions like THW, DRK, Police or
+e.g. a Security Agency too.
 
 Different views in :ref:`Frontend <t3start:concepts>` are possible.
 
@@ -39,7 +39,7 @@ Different views in :ref:`Frontend <t3start:concepts>` are possible.
 
    Views in :ref:`Frontend <t3start:concepts>`:
 
-   - List/single view of reports
+   - List/Single view of reports
    - filter by type, year and category or text
    - Show location on a map in single view (geo data are necessary for this)
    - Map with all locations instead of normal list view (geo data are
@@ -49,13 +49,15 @@ Different views in :ref:`Frontend <t3start:concepts>` are possible.
 
 .. tip::
 
-   Extension `FireDepartment <https://extensions.typo3.org/extension/fire_department>`_ can be used
-   as :ref:`Site Package <t3sitepackage:start>` for a website.
-   Styles already optimized for operation default templates.
+   Extension `FireDepartment <https://extensions.typo3.org/extension/fire_department>`_
+   can be used as :ref:`Site Package <t3sitepackage:start>` for a website.
+   Styles already optimized for operations default templates.
 
 .. tip::
 
-    If the extension is useful for you and you would like to support my work you can make a donation on paypal: `PayPal Donation <https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZFPCNRYPD2MGA&source=url>`_
+   If the extension is useful for you and you would like to support my work you
+   can make a donation on paypal:
+   `PayPal Donation <https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZFPCNRYPD2MGA&source=url>`_
 
 .. note::
 
