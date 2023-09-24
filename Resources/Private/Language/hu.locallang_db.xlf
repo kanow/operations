@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2013-11-11T21:36:44Z" product-name="operations" target-language="hu">
+    <header/>
+    <body>
+      <trans-unit id="tsc.rootCategory">
+        <target>Root Kategorie:Uid der Start-Kategorie für den Kategoriebaum in der Operations Extensions. Diese Kategorien werden in den Fluid Templates für die Kategoriendarstellung genutzt.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
