@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2013-11-11T21:36:44Z" product-name="operations" target-language="t3">
+    <header/>
+    <body>
+      <trans-unit id="tx_operations_domain_model_operation">
+        <source>Operation</source>
+        <target>crwdns280091:0crwdne280091:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.number">
+        <source>Number</source>
+        <target>crwdns280093:0crwdne280093:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.onlyEld">
+        <source>Only Coordination</source>
+        <target>crwdns280095:0crwdne280095:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.title">
+        <source>Title</source>
+        <target>crwdns280097:0crwdne280097:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.path_segment">
+        <source>URL Segment</source>
+        <target>crwdns280099:0crwdne280099:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.location">
+        <source>Location</source>
+        <target>crwdns280101:0crwdne280101:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.begin">
+        <source>Begin</source>
+        <target>crwdns280103:0crwdne280103:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.end">
+        <source>End</source>
+        <target>crwdns280105:0crwdne280105:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.teaser">
+        <source>Teaser</source>
+        <target>crwdns280107:0crwdne280107:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.report">
+        <source>Report</source>
+        <target>crwdns280109:0crwdne280109:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.longitude">
+        <source>Longitude</source>
+        <target>crwdns280111:0crwdne280111:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.latitude">
+        <source>Latitude</source>
+        <target>crwdns280113:0crwdne280113:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.zoom">
+        <source>Zoom</source>
+        <target>crwdns280115:0crwdne280115:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.media">
+        <source>Media</source>
+        <target>crwdns280117:0crwdne280117:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.type">
+        <source>Type</source>
+        <target>crwdns280119:0crwdne280119:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.assistance">
+        <source>Assistance</source>
+        <target>crwdns280121:0crwdne280121:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.vehicles">
+        <source>Vehicles</source>
+        <target>crwdns280123:0crwdne280123:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.resources">
+        <source>Resources</source>
+        <target>crwdns280125:0crwdne280125:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.choose">
+        <source>Please choose...</source>
+        <target>crwdns280127:0crwdne280127:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_assistance">
+        <source>Assistance</source>
+        <target>crwdns280129:0crwdne280129:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_assistance.title">
+        <source>Title</source>
+        <target>crwdns280131:0crwdne280131:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_assistance.description">
+        <source>Description</source>
+        <target>crwdns280133:0crwdne280133:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_assistance.link">
+        <source>Link</source>
+        <target>crwdns280135:0crwdne280135:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle">
+        <source>Vehicle</source>
+        <target>crwdns280137:0crwdne280137:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle.title">
+        <source>Title</source>
+        <target>crwdns280139:0crwdne280139:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle.short">
+        <source>Short</source>
+        <target>crwdns280141:0crwdne280141:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle.description">
+        <source>Description</source>
+        <target>crwdns280143:0crwdne280143:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle.media">
+        <source>Media</source>
+        <target>crwdns280145:0crwdne280145:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle.link">
+        <source>Link</source>
+        <target>crwdns280147:0crwdne280147:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resource">
+        <source>Resource</source>
+        <target>crwdns280149:0crwdne280149:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resource.title">
+        <source>Title</source>
+        <target>crwdns280151:0crwdne280151:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resource.short">
+        <source>Short</source>
+        <target>crwdns280153:0crwdne280153:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resource.description">
+        <source>Description</source>
+        <target>crwdns280155:0crwdne280155:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resource.media">
+        <source>Media</source>
+        <target>crwdns280157:0crwdne280157:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resource.link">
+        <source>Link</source>
+        <target>crwdns280159:0crwdne280159:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_type">
+        <source>Type</source>
+        <target>crwdns280161:0crwdne280161:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_type.title">
+        <source>Title</source>
+        <target>crwdns280163:0crwdne280163:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_type.color">
+        <source>Color (Css values)</source>
+        <target>crwdns280165:0crwdne280165:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_type.image">
+        <source>Media</source>
+        <target>crwdns280167:0crwdne280167:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.sheet.settings">
+        <source>Options</source>
+        <target>crwdns280169:0crwdne280169:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.sheet.media">
+        <source>Media options</source>
+        <target>crwdns280171:0crwdne280171:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.sheet.template">
+        <source>Template options</source>
+        <target>crwdns280173:0crwdne280173:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.showMediaInList">
+        <source>Thumbnail in list view</source>
+        <target>crwdns280175:0crwdne280175:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.showMediaInList.description">
+        <source>Show the first media of an item as thumbnail in the list.</source>
+        <target>crwdns280177:0crwdne280177:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.listMediaWidth">
+        <source>Width of media elements</source>
+        <target>crwdns280179:0crwdne280179:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.listMediaHeight">
+        <source>Height of media elements</source>
+        <target>crwdns280181:0crwdne280181:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.singleMediaWidth">
+        <source>Width of media elements</source>
+        <target>crwdns280183:0crwdne280183:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.singleMediaHeight">
+        <source>Height of media elements</source>
+        <target>crwdns280185:0crwdne280185:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.controller">
+        <source>Show:</source>
+        <target>crwdns280187:0crwdne280187:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.operations">
+        <source>Operations</source>
+        <target>crwdns280189:0crwdne280189:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.operationsListAndSearchAction">
+        <source>Operations - List view</source>
+        <target>crwdns280191:0crwdne280191:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.operationsShowAction">
+        <source>Operations - Detail view</source>
+        <target>crwdns280193:0crwdne280193:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.vehicles">
+        <source>Vehicles</source>
+        <target>crwdns280195:0crwdne280195:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.vehiclesListAction">
+        <source>Vehicles - List view</source>
+        <target>crwdns280197:0crwdne280197:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.vehiclesShowAction">
+        <source>Vehicles - Single view</source>
+        <target>crwdns280199:0crwdne280199:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.operationsStatsAction">
+        <source>Operations - Statistics</source>
+        <target>crwdns280201:0crwdne280201:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.resources">
+        <source>Resources</source>
+        <target>crwdns280203:0crwdne280203:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.resourcesListAction">
+        <source>Resources - List view</source>
+        <target>crwdns280205:0crwdne280205:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.resourcesShowAction">
+        <source>Resources - Single view</source>
+        <target>crwdns280207:0crwdne280207:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.itemsPerPage">
+        <source>Items per page</source>
+        <target>crwdns280209:0crwdne280209:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.itemsPerPage.description">
+        <source>How many items per page are showing with activated pagination.</source>
+        <target>crwdns280211:0crwdne280211:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.showPaginator">
+        <source>Show pagination</source>
+        <target>crwdns280213:0crwdne280213:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.hidePagination">
+        <source>Hide pagination</source>
+        <target>crwdns280215:0crwdne280215:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.hidePagination.description">
+        <source>Hide the pagination and show the result in one list. If there are a lot of data, page load can take an extremely long time on first call or uncached pages.</source>
+        <target>crwdns280217:0crwdne280217:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.teaserMaxChars">
+        <source>Max chars of teaser text in list view</source>
+        <target>crwdns280219:0crwdne280219:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.teaserMaxChars.description">
+        <source>Max length of teaser text in list view. If set, text will be cropped automatically.</source>
+        <target>crwdns280221:0crwdne280221:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.limit">
+        <source>Max result items</source>
+        <target>crwdns280223:0crwdne280223:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.limit.description">
+        <source>Max result items for the list. Default setting in constants is 200.</source>
+        <target>crwdns280225:0crwdne280225:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.hideFilter">
+        <source>Hide filter for result</source>
+        <target>crwdns280227:0crwdne280227:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.hideFilter.description">
+        <source>Don't show a form for filtering the list view.</source>
+        <target>crwdns280229:0crwdne280229:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.showMap">
+        <source>Show a map</source>
+        <target>crwdns280231:0crwdne280231:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.showMap.description">
+        <source>Show the result list as items on a map instead of the normal list.</source>
+        <target>crwdns280233:0crwdne280233:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.templateLayout">
+        <source>Template Layout</source>
+        <target>crwdns280235:0crwdne280235:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.templateLayout.description">
+        <source>Use different layout variants in Fluid templates. Define own variants in Page TS-Config before use.</source>
+        <target>crwdns280237:0crwdne280237:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.statistics.lastYears">
+        <source>Last years for statistics</source>
+        <target>crwdns280239:0crwdne280239:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.statistics.lastYears.description">
+        <source>Define the number of last years back for statistics to show.</source>
+        <target>crwdns280241:0crwdne280241:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.categoryConjunction.label">
+        <source>Category Mode</source>
+        <target>crwdns280243:0crwdne280243:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.categoryConjunction.description">
+        <source>Set category mode for selected categories.</source>
+        <target>crwdns280245:0crwdne280245:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.categoryConjunction.all">
+        <source>Don't care, show all</source>
+        <target>crwdns280247:0crwdne280247:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.categoryConjunction.or">
+        <source>Show items with selected categories - Mode: OR</source>
+        <target>crwdns280249:0crwdne280249:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.categoryConjunction.and">
+        <source>Show items with selected categories - Mode: AND</source>
+        <target>crwdns280251:0crwdne280251:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.categoryConjunction.notor">
+        <source>Do NOT show items with selected categories - Mode: NOT OR</source>
+        <target>crwdns280253:0crwdne280253:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.categoryConjunction.notand">
+        <source>Do NOT show items with selected categories - Mode: NOT AND</source>
+        <target>crwdns280255:0crwdne280255:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.category.label">
+        <source>Categories</source>
+        <target>crwdns280257:0crwdne280257:0</target>
+      </trans-unit>
+      <trans-unit id="flexform.category.description">
+        <source>Select one or more categories to constrain the result.</source>
+        <target>crwdns280259:0crwdne280259:0</target>
+      </trans-unit>
+      <trans-unit id="tca.paletteTitle.time">
+        <source>Operation times</source>
+        <target>crwdns280261:0crwdne280261:0</target>
+      </trans-unit>
+      <trans-unit id="tca.paletteTitle.coordinates">
+        <source>Coordinates</source>
+        <target>crwdns280263:0crwdne280263:0</target>
+      </trans-unit>
+      <trans-unit id="tca.paletteTitle.media">
+        <source>Operation media</source>
+        <target>crwdns280265:0crwdne280265:0</target>
+      </trans-unit>
+      <trans-unit id="tca.paletteTitleResources.media">
+        <source>Resource media</source>
+        <target>crwdns280267:0crwdne280267:0</target>
+      </trans-unit>
+      <trans-unit id="tca.paletteTitleVehicles.media">
+        <source>Vehicle media</source>
+        <target>crwdns280269:0crwdne280269:0</target>
+      </trans-unit>
+      <trans-unit id="tca.paletteTitle.meta">
+        <source>Meta data</source>
+        <target>crwdns280271:0crwdne280271:0</target>
+      </trans-unit>
+      <trans-unit id="tca.divTitle.relations">
+        <source>Relations</source>
+        <target>crwdns280273:0crwdne280273:0</target>
+      </trans-unit>
+      <trans-unit id="tca.divTitle.map">
+        <source>Map data</source>
+        <target>crwdns280275:0crwdne280275:0</target>
+      </trans-unit>
+      <trans-unit id="tca.divTitle.media">
+        <source>Media</source>
+        <target>crwdns280277:0crwdne280277:0</target>
+      </trans-unit>
+      <trans-unit id="tca.fieldLabel.category">
+        <source>Category</source>
+        <target>crwdns280279:0crwdne280279:0</target>
+      </trans-unit>
+      <trans-unit id="tabs.categories">
+        <source>Categories</source>
+        <target>crwdns280281:0crwdne280281:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.subcategoryLabel.template">
+        <source>Resources (Template files, CSS, JS)</source>
+        <target>crwdns280283:0crwdne280283:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.subcategoryLabel.media">
+        <source>Settings for media</source>
+        <target>crwdns280285:0crwdne280285:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.subcategoryLabel.pids">
+        <source>Pids for views and storage</source>
+        <target>crwdns280287:0crwdne280287:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.subcategoryLabel.paginate">
+        <source>Settings for paginate</source>
+        <target>crwdns280289:0crwdne280289:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.subcategoryLabel.list">
+        <source>Settings for list view</source>
+        <target>crwdns280291:0crwdne280291:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.subcategoryLabel.map">
+        <source>Settings for map</source>
+        <target>crwdns280293:0crwdne280293:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.templateRootPath">
+        <source>Templates:Path to template root (FE)</source>
+        <target>crwdns280295:0crwdne280295:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.partialRootPath">
+        <source>Partials:Path to template partials (FE)</source>
+        <target>crwdns280297:0crwdne280297:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.layoutRootPath">
+        <source>Layouts:Path to template layouts (FE)</source>
+        <target>crwdns280299:0crwdne280299:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.css">
+        <source>Default CSS:Default CSS file, change path to use your own CSS (FE)</source>
+        <target>crwdns280301:0crwdne280301:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.flexsliderCss">
+        <source>Flexslider CSS:Default CSS from flexslider, change path to use your own CSS</source>
+        <target>crwdns280303:0crwdne280303:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.magnificCss">
+        <source>MagnificPopup CSS:Default CSS from magnific popup, change path to use your own CSS</source>
+        <target>crwdns280305:0crwdne280305:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.jquery">
+        <source>jQuery default:Default path to jquery library. Change or delete path to use your own library.</source>
+        <target>crwdns280307:0crwdne280307:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.flexsliderJs">
+        <source>Flexslider JS:Default path to flexslider JS. Change path to use your own flexslider code.</source>
+        <target>crwdns280309:0crwdne280309:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.magnificJs">
+        <source>MagnificPopup JS:Default path to magnific popup JS. Change path to use your own magnific popup code.</source>
+        <target>crwdns280311:0crwdne280311:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.sliderJs">
+        <source>Run slider JS:Default JS code from tx_operations to run the slider.</source>
+        <target>crwdns280313:0crwdne280313:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.lightboxJs">
+        <source>Run lightbox JS:Default JS code to run the lightbox.</source>
+        <target>crwdns280315:0crwdne280315:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.storagePid">
+        <source>Storage Pid:Default storage PID for all data of operations</source>
+        <target>crwdns280317:0crwdne280317:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.recursive">
+        <source>Recursive storage:Recursive for storage PID. Used for all data of operations</source>
+        <target>crwdns280319:0crwdne280319:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.operationSinglePid">
+        <source>Operation single page:Page with operation plugin single view</source>
+        <target>crwdns280321:0crwdne280321:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.vehicleSinglePid">
+        <source>Vehicle single page:Page with operation plugin and using vehicle single view</source>
+        <target>crwdns280323:0crwdne280323:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.resourceSinglePid">
+        <source>Resource single page:Page with operation plugin and using resource single view</source>
+        <target>crwdns280325:0crwdne280325:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.hidePagination">
+        <source>Hide pagination:Hide the pagination in list view of operations</source>
+        <target>crwdns280327:0crwdne280327:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.hideFilter">
+        <source>Hide filter:Hide search form (filter) in list view of operations</source>
+        <target>crwdns280329:0crwdne280329:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.lastYears">
+        <source>Last years:How many years back are showing in filter for years</source>
+        <target>crwdns280331:0crwdne280331:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.listMediaWidth">
+        <source>Max media width list:Max media width in list view of operations (add "c" for cropping)</source>
+        <target>crwdns280333:0crwdne280333:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.listMediaHeight">
+        <source>Max media height list:Max media width in list view of operations</source>
+        <target>crwdns280335:0crwdne280335:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.singleMediaWidth">
+        <source>Max media width list:Max media width in single view, also for vehicles and resources (add "c" for cropping)</source>
+        <target>crwdns280337:0crwdne280337:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.singleMediaHeight">
+        <source>Max media height list:Max media width in single view, also for vehicles and resources</source>
+        <target>crwdns280339:0crwdne280339:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.increaseImage">
+        <source>Lightbox for images:Render images in single view with a wrapped link to increase image (e.g. with lightbox plugin)</source>
+        <target>crwdns280341:0crwdne280341:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.showMediaInList">
+        <source>First media in list:Show first media in listview</source>
+        <target>crwdns280343:0crwdne280343:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.listMediaWidthVehicle">
+        <source>Media width vehicles:Media width in list view of vehicles</source>
+        <target>crwdns280345:0crwdne280345:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.listMediaHeightVehicle">
+        <source>Media height vehicles:Media height in list view of vehicles</source>
+        <target>crwdns280347:0crwdne280347:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.listMediaWidthResource">
+        <source>Media width resources:Media width in list view of resources</source>
+        <target>crwdns280349:0crwdne280349:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.listMediaHeightResource">
+        <source>Media height resources:Media height in list view of resources</source>
+        <target>crwdns280351:0crwdne280351:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.listVehiclesDefaultImagePath">
+        <source>Fallback image for vehicles list view:Image that will be shown in the list of vehicles, if no media is available.</source>
+        <target>crwdns280353:0crwdne280353:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.listResourcesDefaultImagePath">
+        <source>Fallback image for resources list view:Image that will be shown in the list of resources, if no media is available.</source>
+        <target>crwdns280355:0crwdne280355:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.itemsPerPage">
+        <source>Items per page:Items per page in listview</source>
+        <target>crwdns280357:0crwdne280357:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.limit">
+        <source>Limit:Limit the result in list view</source>
+        <target>crwdns280359:0crwdne280359:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.rootCategory">
+        <target>Root Kategorie:Uid der Start-Kategorie für den Kategoriebaum in der Operations Extensions. Diese Kategorien werden in den Fluid Templates für die Kategoriendarstellung genutzt.</target>
+      </trans-unit>
+      <trans-unit id="tsc.insertAbove">
+        <source>Pagination above:Show pagination above the list</source>
+        <target>crwdns280361:0crwdne280361:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.insertBelow">
+        <source>Pagination below:Show pagination below the list</source>
+        <target>crwdns280363:0crwdne280363:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.lessPages">
+        <source>lessPages</source>
+        <target>crwdns280365:0crwdne280365:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.maxNumberOfLinks">
+        <source>maxNumberOfLinks</source>
+        <target>crwdns280367:0crwdne280367:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.prevNextHeaderTags">
+        <source>Show prev/next:Show prev/next in pagination</source>
+        <target>crwdns280369:0crwdne280369:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.apikey">
+        <source>GoogleMaps Apikey:Use your own googlemaps apikey</source>
+        <target>crwdns280371:0crwdne280371:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.defaultZoomSingle">
+        <source>Default zoom single:Default zoom for map in single view if no zoom is set</source>
+        <target>crwdns280373:0crwdne280373:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.overrideCenterLatList">
+        <source>Override latitude list-map: Override automatic latitude for centering the map in list view</source>
+        <target>crwdns280375:0crwdne280375:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.overrideCenterLongList">
+        <source>Override longitude list-map:Override automatic longitude for centering the map in list view</source>
+        <target>crwdns280377:0crwdne280377:0</target>
+      </trans-unit>
+      <trans-unit id="tsc.overrideZoomList">
+        <source>Override zoom list-map:Override automatic zoom of the map in list view</source>
+        <target>crwdns280379:0crwdne280379:0</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
