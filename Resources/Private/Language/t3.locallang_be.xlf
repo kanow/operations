@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2016-04-17T20:23:49Z" product-name="operations" target-language="t3">
+    <header/>
+    <body>
+      <trans-unit id="plugin.title">
+        <source>Operations</source>
+        <target>crwdns280001:0crwdne280001:0</target>
+      </trans-unit>
+      <trans-unit id="plugin.operationlist.title">
+        <source>Operations list</source>
+        <target>crwdns280003:0crwdne280003:0</target>
+      </trans-unit>
+      <trans-unit id="plugin.operationlist.description">
+        <source>Show list of firefighter operations</source>
+        <target>crwdns280005:0crwdne280005:0</target>
+      </trans-unit>
+      <trans-unit id="plugin.operationshow.title">
+        <source>Operations detail</source>
+        <target>crwdns280007:0crwdne280007:0</target>
+      </trans-unit>
+      <trans-unit id="plugin.operationshow.description">
+        <source>Detail view for a firefighter operation</source>
+        <target>crwdns280009:0crwdne280009:0</target>
+      </trans-unit>
+      <trans-unit id="plugin.operationsearch.title">
+        <source>Operations search</source>
+        <target>crwdns280011:0crwdne280011:0</target>
+      </trans-unit>
+      <trans-unit id="plugin.operationsearch.description">
+        <source>Search firefighter operations</source>
+        <target>crwdns280013:0crwdne280013:0</target>
+      </trans-unit>
+      <trans-unit id="plugin.operationstatistics.title">
+        <source>Operations statistics</source>
+        <target>crwdns280015:0crwdne280015:0</target>
+      </trans-unit>
+      <trans-unit id="plugin.operationstatistics.description">
+        <source>Show statistics for the operations</source>
+        <target>crwdns280017:0crwdne280017:0</target>
+      </trans-unit>
+      <trans-unit id="plugin.vehiclelist.title">
+        <source>Vehicles list</source>
+        <target>crwdns280019:0crwdne280019:0</target>
+      </trans-unit>
+      <trans-unit id="plugin.vehiclelist.description">
+        <source>Show list of vehicles</source>
+        <target>crwdns280021:0crwdne280021:0</target>
+      </trans-unit>
+      <trans-unit id="plugin.vehicleshow.title">
+        <source>Vehicles show</source>
+        <target>crwdns280023:0crwdne280023:0</target>
+      </trans-unit>
+      <trans-unit id="plugin.vehicleshow.description">
+        <source>Detail view of a vehicle</source>
+        <target>crwdns280025:0crwdne280025:0</target>
+      </trans-unit>
+      <trans-unit id="plugin.resourcelist.title">
+        <source>Resources list</source>
+        <target>crwdns280027:0crwdne280027:0</target>
+      </trans-unit>
+      <trans-unit id="plugin.resourcelist.description">
+        <source>Show list of resources</source>
+        <target>crwdns280029:0crwdne280029:0</target>
+      </trans-unit>
+      <trans-unit id="plugin.resourceshow.title">
+        <source>Resources show</source>
+        <target>crwdns280031:0crwdne280031:0</target>
+      </trans-unit>
+      <trans-unit id="plugin.resourceshow.description">
+        <source>Detail view of a resource</source>
+        <target>crwdns280033:0crwdne280033:0</target>
+      </trans-unit>
+      <trans-unit id="extconf.slugBehaviour">
+        <source>Slug behaviour for path_segment fields</source>
+        <target>crwdns280035:0crwdne280035:0</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
