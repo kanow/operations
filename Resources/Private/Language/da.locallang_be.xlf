@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2016-04-17T20:23:49Z" product-name="operations" target-language="da">
+    <header/>
+    <body>
+      <trans-unit id="plugin.title" approved="yes">
+        <source>Operations</source>
+        <target state="final">Operationer</target>
+      </trans-unit>
+      <trans-unit id="plugin.operationlist.title" approved="yes">
+        <source>Operations list</source>
+        <target state="final">Operations liste</target>
+      </trans-unit>
+      <trans-unit id="plugin.operationlist.description" approved="yes">
+        <source>Show list of firefighter operations</source>
+        <target state="final">Vis brandslukningsoperationer</target>
+      </trans-unit>
+      <trans-unit id="plugin.operationshow.title" approved="yes">
+        <source>Operations detail</source>
+        <target state="final">Operationsoplysninger</target>
+      </trans-unit>
+      <trans-unit id="plugin.operationshow.description" approved="yes">
+        <source>Detail view for a firefighter operation</source>
+        <target state="final">Detalje for en brandslukningsoperation</target>
+      </trans-unit>
+      <trans-unit id="plugin.operationsearch.title" approved="yes">
+        <source>Operations search</source>
+        <target state="final">Operations søgning</target>
+      </trans-unit>
+      <trans-unit id="plugin.operationsearch.description" approved="yes">
+        <source>Search firefighter operations</source>
+        <target state="final">Søg i brandslukningsoperationer</target>
+      </trans-unit>
+      <trans-unit id="plugin.operationstatistics.title" approved="yes">
+        <source>Operations statistics</source>
+        <target state="final">Statistik over operationer</target>
+      </trans-unit>
+      <trans-unit id="plugin.operationstatistics.description" approved="yes">
+        <source>Show statistics for the operations</source>
+        <target state="final">Vis statistik for operationer</target>
+      </trans-unit>
+      <trans-unit id="plugin.vehiclelist.title" approved="yes">
+        <source>Vehicles list</source>
+        <target state="final">Liste over køretøjer</target>
+      </trans-unit>
+      <trans-unit id="plugin.vehiclelist.description" approved="yes">
+        <source>Show list of vehicles</source>
+        <target state="final">Vis liste over køretøjer</target>
+      </trans-unit>
+      <trans-unit id="plugin.vehicleshow.title" approved="yes">
+        <source>Vehicles show</source>
+        <target state="final">Køretøjsvisning</target>
+      </trans-unit>
+      <trans-unit id="plugin.vehicleshow.description" approved="yes">
+        <source>Detail view of a vehicle</source>
+        <target state="final">Detaljeret visning af et køretøj</target>
+      </trans-unit>
+      <trans-unit id="plugin.resourcelist.title" approved="yes">
+        <source>Resources list</source>
+        <target state="final">Ressourceliste</target>
+      </trans-unit>
+      <trans-unit id="plugin.resourcelist.description" approved="yes">
+        <source>Show list of resources</source>
+        <target state="final">Vis liste over ressourcer</target>
+      </trans-unit>
+      <trans-unit id="plugin.resourceshow.title" approved="yes">
+        <source>Resources show</source>
+        <target state="final">Vis ressourcer</target>
+      </trans-unit>
+      <trans-unit id="plugin.resourceshow.description" approved="yes">
+        <source>Detail view of a resource</source>
+        <target state="final">Detaljeret visning af en ressource</target>
+      </trans-unit>
+      <trans-unit id="extconf.slugBehaviour" approved="yes">
+        <source>Slug behaviour for path_segment fields</source>
+        <target state="final">Slug adfærd for sti_segment felter</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
