@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2013-11-11T21:36:44Z" product-name="operations" target-language="da">
+    <header/>
+    <body>
+      <trans-unit id="tx_operations_domain_model_operation" approved="yes">
+        <source>Operation</source>
+        <target state="final">Operation</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.number" approved="yes">
+        <source>Number</source>
+        <target state="final">Antal</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.onlyEld" approved="yes">
+        <source>Only Coordination</source>
+        <target state="final">Kun Koordinater</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.title" approved="yes">
+        <source>Title</source>
+        <target state="final">Titel</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.path_segment" approved="yes">
+        <source>URL Segment</source>
+        <target state="final">URL-segment</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.location" approved="yes">
+        <source>Location</source>
+        <target state="final">Placering</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.begin" approved="yes">
+        <source>Begin</source>
+        <target state="final">Begynd</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.end" approved="yes">
+        <source>End</source>
+        <target state="final">Slut</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.teaser" approved="yes">
+        <source>Teaser</source>
+        <target state="final">Manchet</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.report" approved="yes">
+        <source>Report</source>
+        <target state="final">Rapport</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.longitude" approved="yes">
+        <source>Longitude</source>
+        <target state="final">Længdegrad</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.latitude" approved="yes">
+        <source>Latitude</source>
+        <target state="final">Breddegrad</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.zoom" approved="yes">
+        <source>Zoom</source>
+        <target state="final">Zoom</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.media" approved="yes">
+        <source>Media</source>
+        <target state="final">Medie</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.type" approved="yes">
+        <source>Type</source>
+        <target state="final">Type</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.assistance" approved="yes">
+        <source>Assistance</source>
+        <target state="final">Assistance</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.vehicles" approved="yes">
+        <source>Vehicles</source>
+        <target state="final">Køretøjer</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.resources" approved="yes">
+        <source>Resources</source>
+        <target state="final">Ressourcer</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.choose" approved="yes">
+        <source>Please choose...</source>
+        <target state="final">Vælg venligst...</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_assistance" approved="yes">
+        <source>Assistance</source>
+        <target state="final">Assistance</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_assistance.title" approved="yes">
+        <source>Title</source>
+        <target state="final">Titel</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_assistance.description" approved="yes">
+        <source>Description</source>
+        <target state="final">Beskrivelse</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_assistance.link" approved="yes">
+        <source>Link</source>
+        <target state="final">Link</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle" approved="yes">
+        <source>Vehicle</source>
+        <target state="final">Køretøj</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle.title" approved="yes">
+        <source>Title</source>
+        <target state="final">Titel</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle.short" approved="yes">
+        <source>Short</source>
+        <target state="final">Kort</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle.description" approved="yes">
+        <source>Description</source>
+        <target state="final">Beskrivelse</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle.media" approved="yes">
+        <source>Media</source>
+        <target state="final">Medie</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle.link" approved="yes">
+        <source>Link</source>
+        <target state="final">Link</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resource" approved="yes">
+        <source>Resource</source>
+        <target state="final">Element</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resource.title" approved="yes">
+        <source>Title</source>
+        <target state="final">Titel</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resource.short" approved="yes">
+        <source>Short</source>
+        <target state="final">Kort</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resource.description" approved="yes">
+        <source>Description</source>
+        <target state="final">Beskrivelse</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resource.media" approved="yes">
+        <source>Media</source>
+        <target state="final">Medie</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resource.link" approved="yes">
+        <source>Link</source>
+        <target state="final">Link</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_type" approved="yes">
+        <source>Type</source>
+        <target state="final">Type</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_type.title" approved="yes">
+        <source>Title</source>
+        <target state="final">Titel</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_type.color" approved="yes">
+        <source>Color (Css values)</source>
+        <target state="final">Farve (Css værdier)</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_type.image" approved="yes">
+        <source>Media</source>
+        <target state="final">Medie</target>
+      </trans-unit>
+      <trans-unit id="flexform.sheet.settings" approved="yes">
+        <source>Options</source>
+        <target state="final">Indstillinger</target>
+      </trans-unit>
+      <trans-unit id="flexform.sheet.media" approved="yes">
+        <source>Media options</source>
+        <target state="final">Medie indstillinger</target>
+      </trans-unit>
+      <trans-unit id="flexform.sheet.template" approved="yes">
+        <source>Template options</source>
+        <target state="final">Skabelon indstillinger</target>
+      </trans-unit>
+      <trans-unit id="flexform.showMediaInList" approved="yes">
+        <source>Thumbnail in list view</source>
+        <target state="final">Miniature i listevisning</target>
+      </trans-unit>
+      <trans-unit id="flexform.showMediaInList.description" approved="yes">
+        <source>Show the first media of an item as thumbnail in the list.</source>
+        <target state="final">Vis det første medie for et element som miniature i listen.</target>
+      </trans-unit>
+      <trans-unit id="flexform.listMediaWidth" approved="yes">
+        <source>Width of media elements</source>
+        <target state="final">Medie bredde i listevisning</target>
+      </trans-unit>
+      <trans-unit id="flexform.listMediaHeight" approved="yes">
+        <source>Height of media elements</source>
+        <target state="final">Mediehøjde i listevisning</target>
+      </trans-unit>
+      <trans-unit id="flexform.singleMediaWidth" approved="yes">
+        <source>Width of media elements</source>
+        <target state="final">Mediebredde i enkelt visning</target>
+      </trans-unit>
+      <trans-unit id="flexform.singleMediaHeight" approved="yes">
+        <source>Height of media elements</source>
+        <target state="final">Mediehøjde i enkelt visning</target>
+      </trans-unit>
+      <trans-unit id="flexform.controller" approved="yes">
+        <source>Show:</source>
+        <target state="final">Vis:</target>
+      </trans-unit>
+      <trans-unit id="flexform.operations" approved="yes">
+        <source>Operations</source>
+        <target state="final">Operationer</target>
+      </trans-unit>
+      <trans-unit id="flexform.operationsListAndSearchAction" approved="yes">
+        <source>Operations - List view</source>
+        <target state="final">Operationer - Listevisning</target>
+      </trans-unit>
+      <trans-unit id="flexform.operationsShowAction" approved="yes">
+        <source>Operations - Detail view</source>
+        <target state="final">Operationer - Detaljevisning</target>
+      </trans-unit>
+      <trans-unit id="flexform.vehicles" approved="yes">
+        <source>Vehicles</source>
+        <target state="final">Køretøjer</target>
+      </trans-unit>
+      <trans-unit id="flexform.vehiclesListAction" approved="yes">
+        <source>Vehicles - List view</source>
+        <target state="final">Køretøjer - Liste visning</target>
+      </trans-unit>
+      <trans-unit id="flexform.vehiclesShowAction" approved="yes">
+        <source>Vehicles - Single view</source>
+        <target state="final">Køretøjer - Enkeltvisning</target>
+      </trans-unit>
+      <trans-unit id="flexform.operationsStatsAction" approved="yes">
+        <source>Operations - Statistics</source>
+        <target state="final">Operationer - Statistik</target>
+      </trans-unit>
+      <trans-unit id="flexform.resources" approved="yes">
+        <source>Resources</source>
+        <target state="final">Ressourcer</target>
+      </trans-unit>
+      <trans-unit id="flexform.resourcesListAction" approved="yes">
+        <source>Resources - List view</source>
+        <target state="final">Ressourcer - Listevisning</target>
+      </trans-unit>
+      <trans-unit id="flexform.resourcesShowAction" approved="yes">
+        <source>Resources - Single view</source>
+        <target state="final">Ressourcer - Enkelt visning</target>
+      </trans-unit>
+      <trans-unit id="flexform.itemsPerPage" approved="yes">
+        <source>Items per page</source>
+        <target state="final">Elementer pr. side</target>
+      </trans-unit>
+      <trans-unit id="flexform.itemsPerPage.description" approved="yes">
+        <source>How many items per page are showing with activated pagination.</source>
+        <target state="final">Hvor mange elementer pr. side der vises med aktiveret paginering.</target>
+      </trans-unit>
+      <trans-unit id="flexform.showPaginator" approved="yes">
+        <source>Show pagination</source>
+        <target state="final">Vis sideinddeling</target>
+      </trans-unit>
+      <trans-unit id="flexform.hidePagination" approved="yes">
+        <source>Hide pagination</source>
+        <target state="final">Skjul sideinddeling</target>
+      </trans-unit>
+      <trans-unit id="flexform.hidePagination.description" approved="yes">
+        <source>Hide the pagination and show the result in one list. If there are a lot of data, page load can take an extremely long time on first call or uncached pages.</source>
+        <target state="final">Skjul paginering og vis resultatet i en liste. Hvis der er en masse data, kan sideindlæsningen tage meget lang tid på første opslag eller uncached sider.</target>
+      </trans-unit>
+      <trans-unit id="flexform.teaserMaxChars" approved="yes">
+        <source>Max chars of teaser text in list view</source>
+        <target state="final">Maks. tegn på teaser tekst i listevisning</target>
+      </trans-unit>
+      <trans-unit id="flexform.teaserMaxChars.description" approved="yes">
+        <source>Max length of teaser text in list view. If set, text will be cropped automatically.</source>
+        <target state="final">Maksimal længde af teasertekst i listevisningen. Hvis angivet, vil tekst blive beskåret automatisk.</target>
+      </trans-unit>
+      <trans-unit id="flexform.limit" approved="yes">
+        <source>Max result items</source>
+        <target state="final">Maks. resultatelementer</target>
+      </trans-unit>
+      <trans-unit id="flexform.limit.description" approved="yes">
+        <source>Max result items for the list. Default setting in constants is 200.</source>
+        <target state="final">Maks resultat af elementer for listen. Standard indstilling i konstanter er 200.</target>
+      </trans-unit>
+      <trans-unit id="flexform.hideFilter" approved="yes">
+        <source>Hide filter for result</source>
+        <target state="final">Skjul filter for resultat</target>
+      </trans-unit>
+      <trans-unit id="flexform.hideFilter.description" approved="yes">
+        <source>Don't show a form for filtering the list view.</source>
+        <target state="final">Vis ikke en formular til filtrering af listevisningen.</target>
+      </trans-unit>
+      <trans-unit id="flexform.showMap" approved="yes">
+        <source>Show a map</source>
+        <target state="final">Vis liste over operationer på et kort</target>
+      </trans-unit>
+      <trans-unit id="flexform.showMap.description" approved="yes">
+        <source>Show the result list as items on a map instead of the normal list.</source>
+        <target state="final">Vis resultatlisten som punkter på et kort i stedet for den normale liste.</target>
+      </trans-unit>
+      <trans-unit id="flexform.templateLayout" approved="yes">
+        <source>Template Layout</source>
+        <target state="final">Vælg skabelon-layout (sæt elementer i side TS Config før brug)</target>
+      </trans-unit>
+      <trans-unit id="flexform.templateLayout.description" approved="yes">
+        <source>Use different layout variants in Fluid templates. Define own variants in Page TS-Config before use.</source>
+        <target state="final">Brug forskellige layoutvarianter i Fluid skabeloner. Definér egne varianter i Side TS-Config før brug.</target>
+      </trans-unit>
+      <trans-unit id="flexform.statistics.lastYears" approved="yes">
+        <source>Last years for statistics</source>
+        <target state="final">Definér sidste år for statistikker der skal vises</target>
+      </trans-unit>
+      <trans-unit id="flexform.statistics.lastYears.description" approved="yes">
+        <source>Define the number of last years back for statistics to show.</source>
+        <target state="final">Definér antallet af de sidste år tilbage for statistikker, der skal vises.</target>
+      </trans-unit>
+      <trans-unit id="flexform.categoryConjunction.label" approved="yes">
+        <source>Category Mode</source>
+        <target state="final">Kategoritilstand</target>
+      </trans-unit>
+      <trans-unit id="flexform.categoryConjunction.description" approved="yes">
+        <source>Set category mode for selected categories.</source>
+        <target state="final">Angiv kategoritilstand for valgte kategorier.</target>
+      </trans-unit>
+      <trans-unit id="flexform.categoryConjunction.all" approved="yes">
+        <source>Don't care, show all</source>
+        <target state="final">Ligegyldigt, vis alle</target>
+      </trans-unit>
+      <trans-unit id="flexform.categoryConjunction.or" approved="yes">
+        <source>Show items with selected categories - Mode: OR</source>
+        <target state="final">Vis elementer med valgte kategorier - Tilstand: ELLER</target>
+      </trans-unit>
+      <trans-unit id="flexform.categoryConjunction.and" approved="yes">
+        <source>Show items with selected categories - Mode: AND</source>
+        <target state="final">Vis elementer med valgte kategorier - Tilstand: OG</target>
+      </trans-unit>
+      <trans-unit id="flexform.categoryConjunction.notor" approved="yes">
+        <source>Do NOT show items with selected categories - Mode: NOT OR</source>
+        <target state="final">Vis IKKE elementer med valgte kategorier - Tilstand: IKKE ELLER</target>
+      </trans-unit>
+      <trans-unit id="flexform.categoryConjunction.notand" approved="yes">
+        <source>Do NOT show items with selected categories - Mode: NOT AND</source>
+        <target state="final">Vis IKKE elementer med valgte kategorier - Tilstand: IKKE OG</target>
+      </trans-unit>
+      <trans-unit id="flexform.category.label" approved="yes">
+        <source>Categories</source>
+        <target state="final">Kategorier</target>
+      </trans-unit>
+      <trans-unit id="flexform.category.description" approved="yes">
+        <source>Select one or more categories to constrain the result.</source>
+        <target state="final">Vælg en eller flere kategorier for at begrænse resultatet.</target>
+      </trans-unit>
+      <trans-unit id="tca.paletteTitle.time" approved="yes">
+        <source>Operation times</source>
+        <target state="final">Operationstider</target>
+      </trans-unit>
+      <trans-unit id="tca.paletteTitle.coordinates" approved="yes">
+        <source>Coordinates</source>
+        <target state="final">Koordinater</target>
+      </trans-unit>
+      <trans-unit id="tca.paletteTitle.media" approved="yes">
+        <source>Operation media</source>
+        <target state="final">Operations medier</target>
+      </trans-unit>
+      <trans-unit id="tca.paletteTitleResources.media" approved="yes">
+        <source>Resource media</source>
+        <target state="final">Ressource medier</target>
+      </trans-unit>
+      <trans-unit id="tca.paletteTitleVehicles.media" approved="yes">
+        <source>Vehicle media</source>
+        <target state="final">Køretøjets medier</target>
+      </trans-unit>
+      <trans-unit id="tca.paletteTitle.meta" approved="yes">
+        <source>Meta data</source>
+        <target state="final">Metadata</target>
+      </trans-unit>
+      <trans-unit id="tca.divTitle.relations" approved="yes">
+        <source>Relations</source>
+        <target state="final">Relationer</target>
+      </trans-unit>
+      <trans-unit id="tca.divTitle.map" approved="yes">
+        <source>Map data</source>
+        <target state="final">Kortdata</target>
+      </trans-unit>
+      <trans-unit id="tca.divTitle.media" approved="yes">
+        <source>Media</source>
+        <target state="final">Medie</target>
+      </trans-unit>
+      <trans-unit id="tca.fieldLabel.category" approved="yes">
+        <source>Category</source>
+        <target state="final">Kategori</target>
+      </trans-unit>
+      <trans-unit id="tabs.categories" approved="yes">
+        <source>Categories</source>
+        <target state="final">Kategorier</target>
+      </trans-unit>
+      <trans-unit id="tsc.subcategoryLabel.template" approved="yes">
+        <source>Resources (Template files, CSS, JS)</source>
+        <target state="final">Ressourcer (skabelonfiler, CSS, JS)</target>
+      </trans-unit>
+      <trans-unit id="tsc.subcategoryLabel.media" approved="yes">
+        <source>Settings for media</source>
+        <target state="final">Indstillinger for medier</target>
+      </trans-unit>
+      <trans-unit id="tsc.subcategoryLabel.pids" approved="yes">
+        <source>Pids for views and storage</source>
+        <target state="final">Pid'er til visninger og opbevaring</target>
+      </trans-unit>
+      <trans-unit id="tsc.subcategoryLabel.paginate" approved="yes">
+        <source>Settings for paginate</source>
+        <target state="final">Indstillinger for sideinddeling</target>
+      </trans-unit>
+      <trans-unit id="tsc.subcategoryLabel.list" approved="yes">
+        <source>Settings for list view</source>
+        <target state="final">Indstillinger for listevisning</target>
+      </trans-unit>
+      <trans-unit id="tsc.subcategoryLabel.map" approved="yes">
+        <source>Settings for map</source>
+        <target state="final">Indstillinger for kort</target>
+      </trans-unit>
+      <trans-unit id="tsc.templateRootPath" approved="yes">
+        <source>Templates:Path to template root (FE)</source>
+        <target state="final">Skabeloner: Sti til skabelonrod (FE)</target>
+      </trans-unit>
+      <trans-unit id="tsc.partialRootPath" approved="yes">
+        <source>Partials:Path to template partials (FE)</source>
+        <target state="final">Partials:Sti til skabelon partials (FE)</target>
+      </trans-unit>
+      <trans-unit id="tsc.layoutRootPath" approved="yes">
+        <source>Layouts:Path to template layouts (FE)</source>
+        <target state="final">Layouts:Sti til skabelon layouts (FE)</target>
+      </trans-unit>
+      <trans-unit id="tsc.css" approved="yes">
+        <source>Default CSS:Default CSS file, change path to use your own CSS (FE)</source>
+        <target state="final">Standard CSS:Standard CSS-fil, skift sti til at bruge din egen CSS (FE)</target>
+      </trans-unit>
+      <trans-unit id="tsc.flexsliderCss" approved="yes">
+        <source>Flexslider CSS:Default CSS from flexslider, change path to use your own CSS</source>
+        <target state="final">Flexslider CSS:Standard CSS fra flexslider, skift sti til at bruge din egen CSS</target>
+      </trans-unit>
+      <trans-unit id="tsc.magnificCss" approved="yes">
+        <source>MagnificPopup CSS:Default CSS from magnific popup, change path to use your own CSS</source>
+        <target state="final">MagnificPopup CSS:Standard CSS fra forstørrelsesbestemt popup, skift sti til at bruge din egen CSS</target>
+      </trans-unit>
+      <trans-unit id="tsc.jquery" approved="yes">
+        <source>jQuery default:Default path to jquery library. Change or delete path to use your own library.</source>
+        <target state="final">jQuery standard:Standard sti til jquery bibliotek. Skift eller slet sti for at bruge dit eget bibliotek.</target>
+      </trans-unit>
+      <trans-unit id="tsc.flexsliderJs" approved="yes">
+        <source>Flexslider JS:Default path to flexslider JS. Change path to use your own flexslider code.</source>
+        <target state="final">Flexslider JS: Standard sti til flexslider JS. Skift sti til at bruge din egen flexslider kode.</target>
+      </trans-unit>
+      <trans-unit id="tsc.magnificJs" approved="yes">
+        <source>MagnificPopup JS:Default path to magnific popup JS. Change path to use your own magnific popup code.</source>
+        <target state="final">MagnificPopup JS: Standard sti til forstørrelsesbestemt popup JS. Skift sti til at bruge din egen storslåede popup kode.</target>
+      </trans-unit>
+      <trans-unit id="tsc.sliderJs" approved="yes">
+        <source>Run slider JS:Default JS code from tx_operations to run the slider.</source>
+        <target state="final">Kør skyderen JS: Standard JS kode fra tx_operations til at køre skyderen.</target>
+      </trans-unit>
+      <trans-unit id="tsc.lightboxJs" approved="yes">
+        <source>Run lightbox JS:Default JS code to run the lightbox.</source>
+        <target state="final">Kør lightbox JS:Standard JS kode til at køre lightbox.</target>
+      </trans-unit>
+      <trans-unit id="tsc.storagePid" approved="yes">
+        <source>Storage Pid:Default storage PID for all data of operations</source>
+        <target state="final">Opbevaring Pid:Standard lagerplads PID for alle data for operationer</target>
+      </trans-unit>
+      <trans-unit id="tsc.recursive" approved="yes">
+        <source>Recursive storage:Recursive for storage PID. Used for all data of operations</source>
+        <target state="final">Rekursivt lagring:Rekursiv til lagring PID. Bruges til alle data for operationer</target>
+      </trans-unit>
+      <trans-unit id="tsc.operationSinglePid" approved="yes">
+        <source>Operation single page:Page with operation plugin single view</source>
+        <target state="final">Operation enkelt side:Side med operation plugin enkelt visning</target>
+      </trans-unit>
+      <trans-unit id="tsc.vehicleSinglePid" approved="yes">
+        <source>Vehicle single page:Page with operation plugin and using vehicle single view</source>
+        <target state="final">Køretøj enkelt side:Side med drift plugin og ved hjælp af køretøj enkelt visning</target>
+      </trans-unit>
+      <trans-unit id="tsc.resourceSinglePid" approved="yes">
+        <source>Resource single page:Page with operation plugin and using resource single view</source>
+        <target state="final">Ressource enkelt side:Side med operation plugin og bruger ressource enkelt visning</target>
+      </trans-unit>
+      <trans-unit id="tsc.hidePagination" approved="yes">
+        <source>Hide pagination:Hide the pagination in list view of operations</source>
+        <target state="final">Skjul paginering:Skjul paginering i listevisning af operationer</target>
+      </trans-unit>
+      <trans-unit id="tsc.hideFilter" approved="yes">
+        <source>Hide filter:Hide search form (filter) in list view of operations</source>
+        <target state="final">Skjul filter:Skjul søgeformular (filter) i listevisning af operationer</target>
+      </trans-unit>
+      <trans-unit id="tsc.lastYears" approved="yes">
+        <source>Last years:How many years back are showing in filter for years</source>
+        <target state="final">Sidste år:Hvor mange år tilbage vises i filter i årevis</target>
+      </trans-unit>
+      <trans-unit id="tsc.listMediaWidth" approved="yes">
+        <source>Max media width list:Max media width in list view of operations (add "c" for cropping)</source>
+        <target state="final">Max mediebredde liste:Max mediebredde i listevisning af operationer (tilføj "c" for beskæring)</target>
+      </trans-unit>
+      <trans-unit id="tsc.listMediaHeight" approved="yes">
+        <source>Max media height list:Max media width in list view of operations</source>
+        <target state="final">Max medie højde liste:Max medie bredde i listevisning af operationer</target>
+      </trans-unit>
+      <trans-unit id="tsc.singleMediaWidth" approved="yes">
+        <source>Max media width list:Max media width in single view, also for vehicles and resources (add "c" for cropping)</source>
+        <target state="final">Max mediebredde liste:Max mediebredde i enkeltvisning, også for køretøjer og ressourcer (tilføj "c" for beskæring)</target>
+      </trans-unit>
+      <trans-unit id="tsc.singleMediaHeight" approved="yes">
+        <source>Max media height list:Max media width in single view, also for vehicles and resources</source>
+        <target state="final">Max mediehøjde liste:Max mediebredde i enkeltvisning, også for køretøjer og ressourcer</target>
+      </trans-unit>
+      <trans-unit id="tsc.increaseImage" approved="yes">
+        <source>Lightbox for images:Render images in single view with a wrapped link to increase image (e.g. with lightbox plugin)</source>
+        <target state="final">Lightbox til billeder:Render billeder i enkelt visning med et indpakket link for at øge billedet (fx med lightbox plugin)</target>
+      </trans-unit>
+      <trans-unit id="tsc.showMediaInList" approved="yes">
+        <source>First media in list:Show first media in listview</source>
+        <target state="final">Første medie i liste:Vis første medie i listevisning</target>
+      </trans-unit>
+      <trans-unit id="tsc.listMediaWidthVehicle" approved="yes">
+        <source>Media width vehicles:Media width in list view of vehicles</source>
+        <target state="final">Køretøjer af mediebredde:Mediebredde i listevisning af køretøjer</target>
+      </trans-unit>
+      <trans-unit id="tsc.listMediaHeightVehicle" approved="yes">
+        <source>Media height vehicles:Media height in list view of vehicles</source>
+        <target state="final">Mediehøjde køretøjer:Mediehøjde i listevisning af køretøjer</target>
+      </trans-unit>
+      <trans-unit id="tsc.listMediaWidthResource" approved="yes">
+        <source>Media width resources:Media width in list view of resources</source>
+        <target state="final">Mediebredderessourcer:Mediebredde i listevisning af ressourcer</target>
+      </trans-unit>
+      <trans-unit id="tsc.listMediaHeightResource" approved="yes">
+        <source>Media height resources:Media height in list view of resources</source>
+        <target state="final">Mediehøjde ressourcer:Mediehøjde i listevisning af ressourcer</target>
+      </trans-unit>
+      <trans-unit id="tsc.listVehiclesDefaultImagePath" approved="yes">
+        <source>Fallback image for vehicles list view:Image that will be shown in the list of vehicles, if no media is available.</source>
+        <target state="final">Fallback billede for køretøjer liste visning:Billede, der vil blive vist på listen over køretøjer, hvis ingen medier er tilgængelige.</target>
+      </trans-unit>
+      <trans-unit id="tsc.listResourcesDefaultImagePath" approved="yes">
+        <source>Fallback image for resources list view:Image that will be shown in the list of resources, if no media is available.</source>
+        <target state="final">Fallback image for resources list view:Billede, der vil blive vist på listen over ressourcer, hvis der ikke er nogen medier tilgængelige.</target>
+      </trans-unit>
+      <trans-unit id="tsc.itemsPerPage" approved="yes">
+        <source>Items per page:Items per page in listview</source>
+        <target state="final">Elementer pr. side:Elementer pr. side i listevisning</target>
+      </trans-unit>
+      <trans-unit id="tsc.limit" approved="yes">
+        <source>Limit:Limit the result in list view</source>
+        <target state="final">Begræns: Begræns resultatet i listevisning</target>
+      </trans-unit>
+      <trans-unit id="tsc.rootCategory">
+        <target>Root Kategorie:Uid der Start-Kategorie für den Kategoriebaum in der Operations Extensions. Diese Kategorien werden in den Fluid Templates für die Kategoriendarstellung genutzt.</target>
+      </trans-unit>
+      <trans-unit id="tsc.insertAbove" approved="yes">
+        <source>Pagination above:Show pagination above the list</source>
+        <target state="final">Sideinddeling ovenfor:Vis sideinddeling over listen</target>
+      </trans-unit>
+      <trans-unit id="tsc.insertBelow" approved="yes">
+        <source>Pagination below:Show pagination below the list</source>
+        <target state="final">Sideinddeling nedenfor:Vis sideinddeling under listen</target>
+      </trans-unit>
+      <trans-unit id="tsc.lessPages" approved="yes">
+        <source>lessPages</source>
+        <target state="final">færreSider</target>
+      </trans-unit>
+      <trans-unit id="tsc.maxNumberOfLinks" approved="yes">
+        <source>maxNumberOfLinks</source>
+        <target state="final">maksAntalAfLinks</target>
+      </trans-unit>
+      <trans-unit id="tsc.prevNextHeaderTags" approved="yes">
+        <source>Show prev/next:Show prev/next in pagination</source>
+        <target state="final">Vis forrige/næste:Vis forrige/næste i paginering</target>
+      </trans-unit>
+      <trans-unit id="tsc.apikey" approved="yes">
+        <source>GoogleMaps Apikey:Use your own googlemaps apikey</source>
+        <target state="final">GoogleMaps Apikey:Brug dine egne googlemaps apikey</target>
+      </trans-unit>
+      <trans-unit id="tsc.defaultZoomSingle" approved="yes">
+        <source>Default zoom single:Default zoom for map in single view if no zoom is set</source>
+        <target state="final">Standard zoom single:Standard zoom for kort i enkelt visning hvis ingen zoom er sat</target>
+      </trans-unit>
+      <trans-unit id="tsc.overrideCenterLatList" approved="yes">
+        <source>Override latitude list-map: Override automatic latitude for centering the map in list view</source>
+        <target state="final">Tilsidesæt breddegradsliste-kort: Tilsidesæt automatisk breddegrad for at centrere kortet i listevisningen</target>
+      </trans-unit>
+      <trans-unit id="tsc.overrideCenterLongList" approved="yes">
+        <source>Override longitude list-map:Override automatic longitude for centering the map in list view</source>
+        <target state="final">Tilsidesæt længdegrad liste-kort:Tilsidesæt automatisk længdegrad for at centrere kortet i listevisning</target>
+      </trans-unit>
+      <trans-unit id="tsc.overrideZoomList" approved="yes">
+        <source>Override zoom list-map:Override automatic zoom of the map in list view</source>
+        <target state="final">Tilsidesæt zoom-map:Tilsidesæt automatisk zoom af kortet i listevisning</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
