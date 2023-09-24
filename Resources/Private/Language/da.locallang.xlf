@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2013-11-11T21:36:44Z" product-name="operations" target-language="da">
+    <header/>
+    <body>
+      <trans-unit id="list.header" approved="yes">
+        <source>List of operations</source>
+        <target state="final">Liste over operationer</target>
+      </trans-unit>
+      <trans-unit id="list.mapHeader" approved="yes">
+        <source>Map of operations</source>
+        <target state="final">Kort over operationer</target>
+      </trans-unit>
+      <trans-unit id="statistics.header" approved="yes">
+        <source>Statistics of operations</source>
+        <target state="final">Statistik over operationer</target>
+      </trans-unit>
+      <trans-unit id="statistics.dataTable.header" approved="yes">
+        <source>Table with data</source>
+        <target state="final">Tabel med data</target>
+      </trans-unit>
+      <trans-unit id="statistics.sum.header" approved="yes">
+        <source>Sum</source>
+        <target state="final">I alt</target>
+      </trans-unit>
+      <trans-unit id="statistics.chart.header" approved="yes">
+        <source>Chart</source>
+        <target state="final">Diagram</target>
+      </trans-unit>
+      <trans-unit id="backToList" approved="yes">
+        <source>back to list</source>
+        <target state="final">tilbage til liste</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation" approved="yes">
+        <source>Operation</source>
+        <target state="final">Operation</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.number" approved="yes">
+        <source>Operation number</source>
+        <target state="final">Operationsnummer</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.title" approved="yes">
+        <source>Title</source>
+        <target state="final">Titel</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.location" approved="yes">
+        <source>Location of operation</source>
+        <target state="final">Operations placering</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.begin" approved="yes">
+        <source>Begin</source>
+        <target state="final">Begynd</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.end" approved="yes">
+        <source>Ending</source>
+        <target state="final">Slutter</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.report" approved="yes">
+        <source>Operation report</source>
+        <target state="final">Rapport over drift</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.longitude" approved="yes">
+        <source>Longitude</source>
+        <target state="final">Længdegrad</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.latitude" approved="yes">
+        <source>Latitude</source>
+        <target state="final">Breddegrad</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.zoom" approved="yes">
+        <source>Zoom for maps</source>
+        <target state="final">Zoom for kort</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.media" approved="yes">
+        <source>Media of operation</source>
+        <target state="final">Medier over operation</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.type" approved="yes">
+        <source>Type of operation</source>
+        <target state="final">Type af operation</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.assistance" approved="yes">
+        <source>Assistance to this operation</source>
+        <target state="final">Bistand til denne operation</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.vehicles" approved="yes">
+        <source>Vehicles used on this operation</source>
+        <target state="final">Køretøjer, der anvendes til denne operation</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.resources" approved="yes">
+        <source>Resources</source>
+        <target state="final">Ressourcer</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_assistance" approved="yes">
+        <source>Assistance</source>
+        <target state="final">Assistance</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_assistance.title" approved="yes">
+        <source>Title of the assistance</source>
+        <target state="final">Assistancens titel</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_assistance.description" approved="yes">
+        <source>Description of assistance</source>
+        <target state="final">Assistancens beskrivelse</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_assistance.link" approved="yes">
+        <source>A website url</source>
+        <target state="final">En webside url</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle" approved="yes">
+        <source>Vehicle</source>
+        <target state="final">Køretøj</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle.title" approved="yes">
+        <source>Title of vehicle</source>
+        <target state="final">Køretøjets titel</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle.short" approved="yes">
+        <source>Abbreviation of vehicle</source>
+        <target state="final">Forkortelse af køretøj</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle.description" approved="yes">
+        <source>Description of vehicle</source>
+        <target state="final">Beskrivelse af køretøj</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle.media" approved="yes">
+        <source>Media of vehicle</source>
+        <target state="final">Køretøjets medie</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resources" approved="yes">
+        <source>Resources</source>
+        <target state="final">Ressourcer</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resources.title" approved="yes">
+        <source>Title of resource</source>
+        <target state="final">Ressourcens titel</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resources.short" approved="yes">
+        <source>Abbreviation title</source>
+        <target state="final">Forkortelses titel</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resources.description" approved="yes">
+        <source>Description of resource</source>
+        <target state="final">Beskrivelse af ressource</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resources.media" approved="yes">
+        <source>Media of resource</source>
+        <target state="final">Medie af ressource</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_type" approved="yes">
+        <source>Type</source>
+        <target state="final">Type</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_type.title" approved="yes">
+        <source>Operation type</source>
+        <target state="final">Operationstype</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_type.image" approved="yes">
+        <source>icon for use in list</source>
+        <target state="final">ikon til brug i listen</target>
+      </trans-unit>
+      <trans-unit id="emptyResult" approved="yes">
+        <source>No results</source>
+        <target state="final">Ingen resultater</target>
+      </trans-unit>
+      <trans-unit id="noReport" approved="yes">
+        <source>Sorry, there is no report here</source>
+        <target state="final">Beklager, der er ingen rapport her</target>
+      </trans-unit>
+      <trans-unit id="filter" approved="yes">
+        <source>Filter the results</source>
+        <target state="final">Filtrer resultater</target>
+      </trans-unit>
+      <trans-unit id="filter.labelYear" approved="yes">
+        <source>Select year</source>
+        <target state="final">Vælg år</target>
+      </trans-unit>
+      <trans-unit id="filter.select.first" approved="yes">
+        <source>Please choose...</source>
+        <target state="final">Vælg venligst...</target>
+      </trans-unit>
+      <trans-unit id="filter.selectYear.first" approved="yes">
+        <source>Choose year..</source>
+        <target state="final">Vælg år..</target>
+      </trans-unit>
+      <trans-unit id="filter.selectType.first" approved="yes">
+        <source>Choose Type...</source>
+        <target state="final">Vælg type...</target>
+      </trans-unit>
+      <trans-unit id="filter.selectCategory.first" approved="yes">
+        <source>Choose Category...</source>
+        <target state="final">Vælg kategori...</target>
+      </trans-unit>
+      <trans-unit id="filter.searchstring.placeholder" approved="yes">
+        <source>searching for...</source>
+        <target state="final">søger efter...</target>
+      </trans-unit>
+      <trans-unit id="filter.submit" approved="yes">
+        <source>Send</source>
+        <target state="final">Send</target>
+      </trans-unit>
+      <trans-unit id="filter.reset" approved="yes">
+        <source>Reset filter</source>
+        <target state="final">Nulstil filter</target>
+      </trans-unit>
+      <trans-unit id="operationsFound" approved="yes">
+        <source>operations found</source>
+        <target state="final">operationer fundet</target>
+      </trans-unit>
+      <trans-unit id="singleOperationFound" approved="yes">
+        <source>operation found</source>
+        <target state="final">operation fundet</target>
+      </trans-unit>
+      <trans-unit id="backToOperation" approved="yes">
+        <source>back to operation</source>
+        <target state="final">tilbage til operation</target>
+      </trans-unit>
+      <trans-unit id="backToResources" approved="yes">
+        <source>back to resources</source>
+        <target state="final">tilbage til ressourcer</target>
+      </trans-unit>
+      <trans-unit id="backToVehicles" approved="yes">
+        <source>back to vehicles</source>
+        <target state="final">tilbage til køretøjer</target>
+      </trans-unit>
+      <trans-unit id="back" approved="yes">
+        <source>back</source>
+        <target state="final">tilbage</target>
+      </trans-unit>
+      <trans-unit id="map.noscript" approved="yes">
+        <source>Please activate javascript to show map</source>
+        <target state="final">Aktiver venligst javascript for at vise kortet</target>
+      </trans-unit>
+      <trans-unit id="update.ScriptDo" approved="yes">
+        <source>This script will do the following:</source>
+        <target state="final">Dette script vil gøre følgende:</target>
+      </trans-unit>
+      <trans-unit id="update.Rename" approved="yes">
+        <source>Rename database table</source>
+        <target state="final">Omdøb databasetabel</target>
+      </trans-unit>
+      <trans-unit id="update.Attention" approved="yes">
+        <source><b>Attention!</b> Please make a backup of your database before running!</source>
+        <target state="final">&lt;b&gt;OBS!!&lt;/b&gt; Lav venligst en sikkerhedskopi af din database, før kørsel!</target>
+      </trans-unit>
+      <trans-unit id="update.NotNeeded" approved="yes">
+        <source>Database tables are already renamed. No update script needed.</source>
+        <target state="final">Databasetabeller er allerede omdøbt. Intet opdateringsscript er nødvendigt.</target>
+      </trans-unit>
+      <trans-unit id="update.Button" approved="yes">
+        <source>Update</source>
+        <target state="final">Opdatér</target>
+      </trans-unit>
+      <trans-unit id="noData" approved="yes">
+        <source>No data available</source>
+        <target state="final">Ingen data tilgængelig</target>
+      </trans-unit>
+      <trans-unit id="list.vehicles.defaultImage.title" approved="yes">
+        <source>Default image (vehicles) if no image available.</source>
+        <target state="final">Standardbillede (køretøjer) hvis intet billede er tilgængeligt.</target>
+      </trans-unit>
+      <trans-unit id="meta.operation-time" approved="yes">
+        <source>Operating time</source>
+        <target state="final">Driftstid</target>
+      </trans-unit>
+      <trans-unit id="meta.operation-begin" approved="yes">
+        <source>Begin</source>
+        <target state="final">Begynd</target>
+      </trans-unit>
+      <trans-unit id="meta.operation-end" approved="yes">
+        <source>End</source>
+        <target state="final">Slut</target>
+      </trans-unit>
+      <trans-unit id="meta.categories" approved="yes">
+        <source>Categories</source>
+        <target state="final">Kategorier</target>
+      </trans-unit>
+      <trans-unit id="pagination.visibleOperations" approved="yes">
+        <source>Visible Operations</source>
+        <target state="final">Synlige Operationer</target>
+      </trans-unit>
+      <trans-unit id="pagination.first" approved="yes">
+        <source>First</source>
+        <target state="final">Første</target>
+      </trans-unit>
+      <trans-unit id="pagination.previous" approved="yes">
+        <source>Previous</source>
+        <target state="final">Forrige</target>
+      </trans-unit>
+      <trans-unit id="pagination.next" approved="yes">
+        <source>Next</source>
+        <target state="final">Næste</target>
+      </trans-unit>
+      <trans-unit id="pagination.last" approved="yes">
+        <source>Last</source>
+        <target state="final">Sidste</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
