@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2013-11-11T21:36:44Z" product-name="operations" target-language="t3">
+    <header/>
+    <body>
+      <trans-unit id="list.header">
+        <source>List of operations</source>
+        <target>crwdns279855:0crwdne279855:0</target>
+      </trans-unit>
+      <trans-unit id="list.mapHeader">
+        <source>Map of operations</source>
+        <target>crwdns279857:0crwdne279857:0</target>
+      </trans-unit>
+      <trans-unit id="statistics.header">
+        <source>Statistics of operations</source>
+        <target>crwdns279859:0crwdne279859:0</target>
+      </trans-unit>
+      <trans-unit id="statistics.dataTable.header">
+        <source>Table with data</source>
+        <target>crwdns279861:0crwdne279861:0</target>
+      </trans-unit>
+      <trans-unit id="statistics.sum.header">
+        <source>Sum</source>
+        <target>crwdns279863:0crwdne279863:0</target>
+      </trans-unit>
+      <trans-unit id="statistics.chart.header">
+        <source>Chart</source>
+        <target>crwdns279865:0crwdne279865:0</target>
+      </trans-unit>
+      <trans-unit id="backToList">
+        <source>back to list</source>
+        <target>crwdns279867:0crwdne279867:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation">
+        <source>Operation</source>
+        <target>crwdns279869:0crwdne279869:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.number">
+        <source>Operation number</source>
+        <target>crwdns279871:0crwdne279871:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.title">
+        <source>Title</source>
+        <target>crwdns279873:0crwdne279873:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.location">
+        <source>Location of operation</source>
+        <target>crwdns279875:0crwdne279875:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.begin">
+        <source>Begin</source>
+        <target>crwdns279877:0crwdne279877:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.end">
+        <source>Ending</source>
+        <target>crwdns279879:0crwdne279879:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.report">
+        <source>Operation report</source>
+        <target>crwdns279881:0crwdne279881:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.longitude">
+        <source>Longitude</source>
+        <target>crwdns279883:0crwdne279883:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.latitude">
+        <source>Latitude</source>
+        <target>crwdns279885:0crwdne279885:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.zoom">
+        <source>Zoom for maps</source>
+        <target>crwdns279887:0crwdne279887:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.media">
+        <source>Media of operation</source>
+        <target>crwdns279889:0crwdne279889:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.type">
+        <source>Type of operation</source>
+        <target>crwdns279891:0crwdne279891:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.assistance">
+        <source>Assistance to this operation</source>
+        <target>crwdns279893:0crwdne279893:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.vehicles">
+        <source>Vehicles used on this operation</source>
+        <target>crwdns279895:0crwdne279895:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.resources">
+        <source>Resources</source>
+        <target>crwdns279897:0crwdne279897:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_assistance">
+        <source>Assistance</source>
+        <target>crwdns279899:0crwdne279899:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_assistance.title">
+        <source>Title of the assistance</source>
+        <target>crwdns279901:0crwdne279901:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_assistance.description">
+        <source>Description of assistance</source>
+        <target>crwdns279903:0crwdne279903:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_assistance.link">
+        <source>A website url</source>
+        <target>crwdns279905:0crwdne279905:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle">
+        <source>Vehicle</source>
+        <target>crwdns279907:0crwdne279907:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle.title">
+        <source>Title of vehicle</source>
+        <target>crwdns279909:0crwdne279909:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle.short">
+        <source>Abbreviation of vehicle</source>
+        <target>crwdns279911:0crwdne279911:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle.description">
+        <source>Description of vehicle</source>
+        <target>crwdns279913:0crwdne279913:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle.media">
+        <source>Media of vehicle</source>
+        <target>crwdns279915:0crwdne279915:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resources">
+        <source>Resources</source>
+        <target>crwdns279917:0crwdne279917:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resources.title">
+        <source>Title of resource</source>
+        <target>crwdns279919:0crwdne279919:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resources.short">
+        <source>Abbreviation title</source>
+        <target>crwdns279921:0crwdne279921:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resources.description">
+        <source>Description of resource</source>
+        <target>crwdns279923:0crwdne279923:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resources.media">
+        <source>Media of resource</source>
+        <target>crwdns279925:0crwdne279925:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_type">
+        <source>Type</source>
+        <target>crwdns279927:0crwdne279927:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_type.title">
+        <source>Operation type</source>
+        <target>crwdns279929:0crwdne279929:0</target>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_type.image">
+        <source>icon for use in list</source>
+        <target>crwdns279931:0crwdne279931:0</target>
+      </trans-unit>
+      <trans-unit id="emptyResult">
+        <source>No results</source>
+        <target>crwdns279933:0crwdne279933:0</target>
+      </trans-unit>
+      <trans-unit id="noReport">
+        <source>Sorry, there is no report here</source>
+        <target>crwdns279935:0crwdne279935:0</target>
+      </trans-unit>
+      <trans-unit id="filter">
+        <source>Filter the results</source>
+        <target>crwdns279937:0crwdne279937:0</target>
+      </trans-unit>
+      <trans-unit id="filter.labelYear">
+        <source>Select year</source>
+        <target>crwdns279939:0crwdne279939:0</target>
+      </trans-unit>
+      <trans-unit id="filter.select.first">
+        <source>Please choose...</source>
+        <target>crwdns279941:0crwdne279941:0</target>
+      </trans-unit>
+      <trans-unit id="filter.selectYear.first">
+        <source>Choose year..</source>
+        <target>crwdns279943:0crwdne279943:0</target>
+      </trans-unit>
+      <trans-unit id="filter.selectType.first">
+        <source>Choose Type...</source>
+        <target>crwdns279945:0crwdne279945:0</target>
+      </trans-unit>
+      <trans-unit id="filter.selectCategory.first">
+        <source>Choose Category...</source>
+        <target>crwdns279947:0crwdne279947:0</target>
+      </trans-unit>
+      <trans-unit id="filter.searchstring.placeholder">
+        <source>searching for...</source>
+        <target>crwdns279949:0crwdne279949:0</target>
+      </trans-unit>
+      <trans-unit id="filter.submit">
+        <source>Send</source>
+        <target>crwdns279951:0crwdne279951:0</target>
+      </trans-unit>
+      <trans-unit id="filter.reset">
+        <source>Reset filter</source>
+        <target>crwdns279953:0crwdne279953:0</target>
+      </trans-unit>
+      <trans-unit id="operationsFound">
+        <source>operations found</source>
+        <target>crwdns279955:0crwdne279955:0</target>
+      </trans-unit>
+      <trans-unit id="singleOperationFound">
+        <source>operation found</source>
+        <target>crwdns279957:0crwdne279957:0</target>
+      </trans-unit>
+      <trans-unit id="backToOperation">
+        <source>back to operation</source>
+        <target>crwdns279959:0crwdne279959:0</target>
+      </trans-unit>
+      <trans-unit id="backToResources">
+        <source>back to resources</source>
+        <target>crwdns279961:0crwdne279961:0</target>
+      </trans-unit>
+      <trans-unit id="backToVehicles">
+        <source>back to vehicles</source>
+        <target>crwdns279963:0crwdne279963:0</target>
+      </trans-unit>
+      <trans-unit id="back">
+        <source>back</source>
+        <target>crwdns279965:0crwdne279965:0</target>
+      </trans-unit>
+      <trans-unit id="map.noscript">
+        <source>Please activate javascript to show map</source>
+        <target>crwdns279967:0crwdne279967:0</target>
+      </trans-unit>
+      <trans-unit id="update.ScriptDo">
+        <source>This script will do the following:</source>
+        <target>crwdns279969:0crwdne279969:0</target>
+      </trans-unit>
+      <trans-unit id="update.Rename">
+        <source>Rename database table</source>
+        <target>crwdns279971:0crwdne279971:0</target>
+      </trans-unit>
+      <trans-unit id="update.Attention">
+        <source><b>Attention!</b> Please make a backup of your database before running!</source>
+        <target>crwdns279973:0crwdne279973:0</target>
+      </trans-unit>
+      <trans-unit id="update.NotNeeded">
+        <source>Database tables are already renamed. No update script needed.</source>
+        <target>crwdns279975:0crwdne279975:0</target>
+      </trans-unit>
+      <trans-unit id="update.Button">
+        <source>Update</source>
+        <target>crwdns279977:0crwdne279977:0</target>
+      </trans-unit>
+      <trans-unit id="noData">
+        <source>No data available</source>
+        <target>crwdns279979:0crwdne279979:0</target>
+      </trans-unit>
+      <trans-unit id="list.vehicles.defaultImage.title">
+        <source>Default image (vehicles) if no image available.</source>
+        <target>crwdns279981:0crwdne279981:0</target>
+      </trans-unit>
+      <trans-unit id="meta.operation-time">
+        <source>Operating time</source>
+        <target>crwdns279983:0crwdne279983:0</target>
+      </trans-unit>
+      <trans-unit id="meta.operation-begin">
+        <source>Begin</source>
+        <target>crwdns279985:0crwdne279985:0</target>
+      </trans-unit>
+      <trans-unit id="meta.operation-end">
+        <source>End</source>
+        <target>crwdns279987:0crwdne279987:0</target>
+      </trans-unit>
+      <trans-unit id="meta.categories">
+        <source>Categories</source>
+        <target>crwdns279989:0crwdne279989:0</target>
+      </trans-unit>
+      <trans-unit id="pagination.visibleOperations">
+        <source>Visible Operations</source>
+        <target>crwdns279991:0crwdne279991:0</target>
+      </trans-unit>
+      <trans-unit id="pagination.first">
+        <source>First</source>
+        <target>crwdns279993:0crwdne279993:0</target>
+      </trans-unit>
+      <trans-unit id="pagination.previous">
+        <source>Previous</source>
+        <target>crwdns279995:0crwdne279995:0</target>
+      </trans-unit>
+      <trans-unit id="pagination.next">
+        <source>Next</source>
+        <target>crwdns279997:0crwdne279997:0</target>
+      </trans-unit>
+      <trans-unit id="pagination.last">
+        <source>Last</source>
+        <target>crwdns279999:0crwdne279999:0</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
