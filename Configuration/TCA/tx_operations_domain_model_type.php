@@ -61,7 +61,21 @@ if ($typo3Version > 11) {
         'overrideChildTca' => $imageSettingsFalMedia['overrideChildTca'],
         'allowed' => 'common-image-types',
     ];
-    $renderTypeDatetime = 'dateTime';
+    $tcaForDatetimeFields = [
+        'size' => 13,
+        'eval' => 'datetime',
+        'type' => 'datetime',
+        'checkbox' => 0,
+        'default' => 0,
+        'range' => [
+            'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
+        ],
+        'behaviour' => ['allowLanguageSynchronization' => true],
+    ];
+    $tcaForColorField = [
+        'type' => 'color',
+        'size' => 10,
+    ];
 } else {
     /** @noinspection PhpDeprecationInspection */
     // @extensionScannerIgnoreLine
@@ -70,7 +84,23 @@ if ($typo3Version > 11) {
         $imageSettingsFalMedia,
         $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
     );
-    $renderTypeDatetime = 'inputDateTime';
+    $tcaForDatetimeFields = [
+        'type' => 'input',
+        'size' => 13,
+        'eval' => 'datetime',
+        'renderType' => 'inputDatetime',
+        'checkbox' => 0,
+        'default' => 0,
+        'range' => [
+            'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
+        ],
+        'behaviour' => ['allowLanguageSynchronization' => true],
+    ];
+    $tcaForColorField = [
+        'type' => 'input',
+        'renderType' => 'colorpicker',
+        'size' => 10,
+    ];
 }
 
 return [
@@ -147,34 +177,12 @@ return [
 		'starttime' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
-			'config' => [
-				'type' => 'input',
-				'size' => 13,
-				'eval' => 'datetime',
-                'renderType' => $renderTypeDatetime,
-				'checkbox' => 0,
-				'default' => 0,
-				'range' => [
-					'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
-                ],
-                'behaviour' => ['allowLanguageSynchronization' => true],
-            ],
+            'config' => $tcaForDatetimeFields,
         ],
 		'endtime' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
-			'config' => [
-				'type' => 'input',
-				'size' => 13,
-				'eval' => 'datetime',
-                'renderType' => $renderTypeDatetime,
-				'checkbox' => 0,
-				'default' => 0,
-				'range' => [
-					'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
-                ],
-                'behaviour' => ['allowLanguageSynchronization' => true],
-            ],
+			'config' => $tcaForDatetimeFields,
         ],
 		'title' => [
 			'exclude' => 1,
@@ -190,11 +198,7 @@ return [
             'exclude' => 1,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_type.color',
-            'config' => array(
-                'type' => 'input',
-                'renderType' => $renderTypeDatetime,
-                'eval' => 'trim'
-            ),
+            'config' => $tcaForColorField,
         ),
 		'image' => [
 			'exclude' => 1,

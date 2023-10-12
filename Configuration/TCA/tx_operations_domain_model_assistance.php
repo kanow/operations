@@ -10,10 +10,31 @@ $versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
 $typo3Version = $versionInformation->getMajorVersion();
 if ($typo3Version > 11) {
     $renderTypeLinkField = 'link';
-    $renderTypeDatetime = 'dateTime';
+    $tcaForDatetimeFields = [
+        'type' => 'datetime',
+        'size' => 13,
+        'eval' => 'datetime',
+        'checkbox' => 0,
+        'default' => 0,
+        'range' => [
+            'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
+        ],
+        'behaviour' => ['allowLanguageSynchronization' => true],
+    ];
 } else {
     $renderTypeLinkField = 'inputLink';
-    $renderTypeDatetime = 'inputDateTime';
+    $tcaForDatetimeFields = [
+        'type' => 'input',
+        'size' => 13,
+        'eval' => 'datetime',
+        'renderType' => 'inputDatetime',
+        'checkbox' => 0,
+        'default' => 0,
+        'range' => [
+            'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
+        ],
+        'behaviour' => ['allowLanguageSynchronization' => true],
+    ];
 }
 return [
 	'ctrl' => [
@@ -88,34 +109,14 @@ return [
 		'starttime' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
-			'config' => [
-				'type' => 'input',
-				'size' => 13,
-				'eval' => 'datetime',
-                'renderType' => $renderTypeDatetime,
-				'checkbox' => 0,
-				'default' => 0,
-				'range' => [
-					'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
-                ],
-                'behaviour' => ['allowLanguageSynchronization' => true],
-            ],
+            'config' => $tcaForDatetimeFields,
+
         ],
 		'endtime' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
-			'config' => [
-				'type' => 'input',
-				'size' => 13,
-				'eval' => 'datetime',
-                'renderType' => $renderTypeDatetime,
-				'checkbox' => 0,
-				'default' => 0,
-				'range' => [
-					'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
-                ],
-                'behaviour' => ['allowLanguageSynchronization' => true],
-            ],
+            'config' => $tcaForDatetimeFields,
+
         ],
 		'title' => [
 			'exclude' => 1,

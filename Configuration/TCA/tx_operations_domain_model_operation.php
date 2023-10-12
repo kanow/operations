@@ -65,6 +65,13 @@ if ($typo3Version > 11) {
         'allowed' => 'common-image-types',
     ];
     $renderTypeDatetime = 'dateTime';
+    $tcaForDatetimeFields = [
+        'type' => 'datetime',
+        'size' => 13,
+        'eval' => 'datetime',
+        'checkbox' => 1,
+        'default' => time()
+    ];
 } else {
     /** @noinspection PhpDeprecationInspection */
     // @extensionScannerIgnoreLine
@@ -74,6 +81,14 @@ if ($typo3Version > 11) {
         $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
     );
     $renderTypeDatetime = 'inputDateTime';
+    $tcaForDatetimeFields = [
+        'type' => 'input',
+        'size' => 13,
+        'eval' => 'datetime',
+        'renderType' => 'inputDateTime',
+        'checkbox' => 1,
+        'default' => time()
+    ];
 }
 
 return [
@@ -254,28 +269,17 @@ return [
 			'exclude' => 1,
             'l10n_mode' => 'exclude',
 			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.begin',
-			'config' => [
-				'type' => 'input',
-				'size' => 10,
-				'eval' => 'datetime',
-                'required' => true,
-                'renderType' => $renderTypeDatetime,
-				'checkbox' => 1,
-				'default' => time()
-            ],
+			'config' => array_merge_recursive($tcaForDatetimeFields,[
+                'required' => true
+            ]),
         ],
 		'end' => [
 			'exclude' => 1,
             'l10n_mode' => 'exclude',
 			'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.end',
-			'config' => [
-				'type' => 'input',
-				'size' => 10,
-				'eval' => 'datetime',
-                'renderType' => $renderTypeDatetime,
-				'checkbox' => 1,
-				'default' => time()
-            ],
+            'config' => array_merge_recursive($tcaForDatetimeFields,[
+                'required' => false
+            ]),
         ],
 		'teaser' => [
 			'exclude' => 1,
