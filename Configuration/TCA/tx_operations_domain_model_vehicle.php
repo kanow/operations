@@ -67,13 +67,10 @@ if ($typo3Version > 11) {
     $renderTypeLinkField = 'link';
     $tcaForDatetimeFields = [
         'type' => 'datetime',
-        'size' => 13,
+        'size' => 16,
         'eval' => 'datetime',
         'checkbox' => 0,
         'default' => 0,
-        'range' => [
-            'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
-        ],
         'behaviour' => ['allowLanguageSynchronization' => true],
     ];
 } else {
@@ -87,14 +84,11 @@ if ($typo3Version > 11) {
     $renderTypeLinkField = 'inputLink';
     $tcaForDatetimeFields = [
         'type' => 'input',
-        'size' => 13,
+        'size' => 16,
         'eval' => 'datetime',
         'renderType' => 'inputDatetime',
         'checkbox' => 0,
         'default' => 0,
-        'range' => [
-            'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
-        ],
         'behaviour' => ['allowLanguageSynchronization' => true],
     ];
 }

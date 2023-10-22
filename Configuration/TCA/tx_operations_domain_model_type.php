@@ -62,14 +62,11 @@ if ($typo3Version > 11) {
         'allowed' => 'common-image-types',
     ];
     $tcaForDatetimeFields = [
-        'size' => 13,
+        'size' => 16,
         'eval' => 'datetime',
         'type' => 'datetime',
         'checkbox' => 0,
         'default' => 0,
-        'range' => [
-            'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
-        ],
         'behaviour' => ['allowLanguageSynchronization' => true],
     ];
     $tcaForColorField = [
@@ -86,14 +83,11 @@ if ($typo3Version > 11) {
     );
     $tcaForDatetimeFields = [
         'type' => 'input',
-        'size' => 13,
+        'size' => 16,
         'eval' => 'datetime',
         'renderType' => 'inputDatetime',
         'checkbox' => 0,
         'default' => 0,
-        'range' => [
-            'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
-        ],
         'behaviour' => ['allowLanguageSynchronization' => true],
     ];
     $tcaForColorField = [
