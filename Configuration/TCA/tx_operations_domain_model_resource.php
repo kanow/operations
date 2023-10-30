@@ -67,10 +67,9 @@ if ($typo3Version > 11) {
     $tcaForDatetimeFields = [
         'type' => 'datetime',
         'size' => 16,
-        'eval' => 'datetime',
-        'checkbox' => 0,
+        'eval' => 'int',
         'default' => 0,
-        'behaviour' => ['allowLanguageSynchronization' => true],
+        'format' => 'datetime'
     ];
 } else {
     /** @noinspection PhpDeprecationInspection */
@@ -84,11 +83,9 @@ if ($typo3Version > 11) {
     $tcaForDatetimeFields = [
         'type' => 'input',
         'size' => 16,
-        'eval' => 'datetime',
-        'renderType' => 'inputDatetime',
-        'checkbox' => 0,
+        'eval' => 'datetime,int',
         'default' => 0,
-        'behaviour' => ['allowLanguageSynchronization' => true],
+        'renderType' => 'inputDateTime',
     ];
 }
 

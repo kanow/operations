@@ -68,8 +68,9 @@ if ($typo3Version > 11) {
     $tcaForDatetimeFields = [
         'type' => 'datetime',
         'size' => 16,
-        'eval' => 'datetime',
-        'checkbox' => 1,
+        'eval' => 'int',
+        'default' => 0,
+        'format' => 'datetime'
     ];
 } else {
     /** @noinspection PhpDeprecationInspection */
@@ -83,9 +84,9 @@ if ($typo3Version > 11) {
     $tcaForDatetimeFields = [
         'type' => 'input',
         'size' => 16,
-        'eval' => 'datetime',
+        'eval' => 'datetime,int',
+        'default' => 0,
         'renderType' => 'inputDateTime',
-        'checkbox' => 1,
     ];
 }
 
@@ -197,20 +198,12 @@ return [
 		'starttime' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
-            'config' => array_merge_recursive($tcaForDatetimeFields,[
-                'checkbox' => 0,
-                'default' => 0,
-                'behaviour' => ['allowLanguageSynchronization' => true],
-            ]),
+            'config' => $tcaForDatetimeFields,
         ],
 		'endtime' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
-            'config' => array_merge_recursive($tcaForDatetimeFields,[
-                'checkbox' => 0,
-                'default' => 0,
-                'behaviour' => ['allowLanguageSynchronization' => true],
-            ]),
+            'config' => $tcaForDatetimeFields,
         ],
 		'number' => [
 			'exclude' => 1,

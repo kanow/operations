@@ -13,21 +13,18 @@ if ($typo3Version > 11) {
     $tcaForDatetimeFields = [
         'type' => 'datetime',
         'size' => 16,
-        'eval' => 'datetime',
-        'checkbox' => 0,
+        'eval' => 'int',
         'default' => 0,
-        'behaviour' => ['allowLanguageSynchronization' => true],
+        'format' => 'datetime'
     ];
 } else {
     $renderTypeLinkField = 'inputLink';
     $tcaForDatetimeFields = [
         'type' => 'input',
         'size' => 16,
-        'eval' => 'datetime',
-        'renderType' => 'inputDatetime',
-        'checkbox' => 0,
+        'eval' => 'datetime,int',
         'default' => 0,
-        'behaviour' => ['allowLanguageSynchronization' => true],
+        'renderType' => 'inputDateTime',
     ];
 }
 return [
@@ -119,13 +116,11 @@ return [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
             'config' => $tcaForDatetimeFields,
-
         ],
 		'endtime' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
             'config' => $tcaForDatetimeFields,
-
         ],
 		'title' => [
 			'exclude' => 1,
