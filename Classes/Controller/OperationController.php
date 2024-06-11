@@ -65,14 +65,6 @@ class OperationController extends BaseController
      */
 	private OperationRepository $operationRepository;
 
-    public function __construct(\Kanow\Operations\Domain\Repository\OperationRepository $operationRepository, \Kanow\Operations\Domain\Repository\TypeRepository $typeRepository, \Kanow\Operations\Domain\Repository\CategoryRepository $categoryRepository, \Kanow\Operations\Service\CategoryService $categoryService)
-    {
-        $this->operationRepository = $operationRepository;
-        $this->typeRepository = $typeRepository;
-        $this->categoryRepository = $categoryRepository;
-        $this->categoryService = $categoryService;
-    }
-
     /**
      * typeRepository
      */
@@ -87,6 +79,18 @@ class OperationController extends BaseController
      * category service
      */
     private CategoryService $categoryService;
+
+    public function __construct(
+        \Kanow\Operations\Domain\Repository\OperationRepository $operationRepository,
+        \Kanow\Operations\Domain\Repository\TypeRepository $typeRepository,
+        \Kanow\Operations\Domain\Repository\CategoryRepository $categoryRepository,
+        \Kanow\Operations\Service\CategoryService $categoryService)
+    {
+        $this->operationRepository = $operationRepository;
+        $this->typeRepository = $typeRepository;
+        $this->categoryRepository = $categoryRepository;
+        $this->categoryService = $categoryService;
+    }
 
     /**
      * action list
