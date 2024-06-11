@@ -29,22 +29,22 @@ $imageSettingsFalMedia = [
                     --palette--;;imageoverlayPalette,
                     --palette--;;filePalette'
             ],
-            File::FILETYPE_TEXT => [
+            \TYPO3\CMS\Core\Resource\FileType::TEXT->value => [
                 'showitem' => '
                                 --palette--;;imageoverlayPalette,
                                 --palette--;;filePalette'
             ],
-            File::FILETYPE_IMAGE => [
+            \TYPO3\CMS\Core\Resource\FileType::IMAGE->value => [
                 'showitem' => '
                                 --palette--;;imageoverlayPalette,
                                 --palette--;;filePalette'
             ],
-            File::FILETYPE_AUDIO => [
+            \TYPO3\CMS\Core\Resource\FileType::AUDIO->value => [
                 'showitem' => '
                                 --palette--;;audioOverlayPalette,
                                 --palette--;;filePalette'
             ],
-            File::FILETYPE_VIDEO => [
+            \TYPO3\CMS\Core\Resource\FileType::VIDEO->value => [
                 'showitem' => '
                                 --palette--;;videoOverlayPalette,
                                 --palette--;;filePalette'
