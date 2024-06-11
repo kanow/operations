@@ -261,7 +261,7 @@ class OperationController extends BaseController
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable('tx_operations_domain_model_operation');
         $rows = $queryBuilder
-            ->add('select','FROM_UNIXTIME(begin, \'%Y\') AS year',true)
+            ->addSelectLiteral('FROM_UNIXTIME(begin, \'%Y\') AS year')
             ->from('tx_operations_domain_model_operation');
         if($operationUids != '') {
             $rows = $rows->andWhere('uid IN (' . $operationUids . ')');

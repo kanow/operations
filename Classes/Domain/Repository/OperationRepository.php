@@ -111,7 +111,7 @@ class OperationRepository extends Repository
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable('tx_operations_domain_model_operation');
         $result = $queryBuilder
-            ->add('select','ot.color as color, ot.title as title, ot.uid as type_uid, COUNT(*) as count, FROM_UNIXTIME(o.begin, \'%Y\') as year')
+            ->addSelectLiteral('ot.color as color, ot.title as title, ot.uid as type_uid, COUNT(*) as count, FROM_UNIXTIME(o.begin, \'%Y\') as year')
             ->from('tx_operations_domain_model_type','ot')
             ->innerJoin('ot','tx_operations_operation_type_mm','type_mm','type_mm.uid_foreign = ot.uid')
             ->innerJoin('type_mm','tx_operations_domain_model_operation','o','type_mm.uid_local = o.uid')
@@ -161,7 +161,7 @@ class OperationRepository extends Repository
             if($lang_uid > 0) {
                 /** @var QueryBuilder $queryBuilder */
                 $translatedType = $queryBuilder
-                    ->add('select','type.title')
+                    ->addSelectLiteral('type.title')
                     ->from('tx_operations_domain_model_type', 'type')
                     ->where('type.l10n_parent = ' . $value["type_uid"]);
                 $translatedType = $translatedType->executeQuery()->fetchAllAssociative();
@@ -281,7 +281,7 @@ class OperationRepository extends Repository
             ->getQueryBuilderForTable('tx_operations_domain_model_operation');
 
         $statement = $queryBuilder
-            ->add('select','COUNT(*) as count, FROM_UNIXTIME(begin, \'%Y\') as year',true)
+            ->addSelectLiteral('COUNT(*) as count, FROM_UNIXTIME(begin, \'%Y\') as year',true)
             ->from('tx_operations_domain_model_operation','o')
             ->where('FROM_UNIXTIME(begin, \'%Y\') IN('. $this->convertYearsToString($years) .')' );
         if($operationUids != '') {
