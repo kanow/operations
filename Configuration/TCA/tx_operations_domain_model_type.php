@@ -53,7 +53,7 @@ $imageSettingsFalMedia = [
 
 $versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
 $typo3Version = $versionInformation->getMajorVersion();
-if ($typo3Version > 11) {
+
     $imageConfigurationFalMedia = [
         'type' => 'file',
         'appearance' => $imageSettingsFalMedia['appearance'],
@@ -72,27 +72,7 @@ if ($typo3Version > 11) {
         'type' => 'color',
         'size' => 10,
     ];
-} else {
-    /** @noinspection PhpDeprecationInspection */
-    // @extensionScannerIgnoreLine
-    $imageConfigurationFalMedia = ExtensionManagementUtility::getFileFieldTCAConfig(
-        'fal_media',
-        $imageSettingsFalMedia,
-        $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
-    );
-    $tcaForDatetimeFields = [
-        'type' => 'input',
-        'size' => 16,
-        'eval' => 'datetime,int',
-        'default' => 0,
-        'renderType' => 'inputDateTime',
-    ];
-    $tcaForColorField = [
-        'type' => 'input',
-        'renderType' => 'colorpicker',
-        'size' => 10,
-    ];
-}
+
 
 return [
 	'ctrl' => [
