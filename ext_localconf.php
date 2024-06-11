@@ -96,8 +96,6 @@ ExtensionUtility::configurePlugin(
     ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
 );
 
-ExtensionManagementUtility::addPageTSConfig('@import "EXT:operations/Configuration/TsConfig/ContentElementWizard.page.typoscript"');
-
 ExtensionManagementUtility::addTypoScriptSetup(trim('
     plugin {
         tx_operations_operationlist.view.pluginNamespace = tx_operations_pi1

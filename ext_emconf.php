@@ -6,13 +6,12 @@ $EM_CONF[$_EXTKEY] = array (
 	'category' => 'plugin',
 	'version' => '8.0.5',
 	'state' => 'stable',
-	'clearCacheOnLoad' => true,
 	'author' => 'Karsten Nowak',
 	'author_email' => 'captnnowi@gmx.de',
 	'author_company' => 'undkonsorten',
 	'constraints' => array (
 		'depends' => array (
-			'typo3' => '11.5.0 - 13.1.99',
+			'typo3' => '12.4.0-13.1.99',
 		),
 	),
 );

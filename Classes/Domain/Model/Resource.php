@@ -41,8 +41,8 @@ class Resource extends AbstractEntity {
   * Title of resource
   *
   * @var string
-  * @Validate("NotEmpty")
   */
+ #[Validate(['validator' => 'NotEmpty'])]
  protected $title;
 
 	/**
@@ -87,7 +87,7 @@ class Resource extends AbstractEntity {
 	 * @param string $title
 	 * @return void
 	 */
-	public function setTitle($title) {
+	public function setTitle($title): void {
 		$this->title = $title;
 	}
 
@@ -106,7 +106,7 @@ class Resource extends AbstractEntity {
 	 * @param string $short
 	 * @return void
 	 */
-	public function setShort($short) {
+	public function setShort($short): void {
 		$this->short = $short;
 	}
 
@@ -125,7 +125,7 @@ class Resource extends AbstractEntity {
 	 * @param string $description
 	 * @return void
 	 */
-	public function setDescription($description) {
+	public function setDescription($description): void {
 		$this->description = $description;
 	}
 
@@ -153,7 +153,7 @@ class Resource extends AbstractEntity {
    * @param ObjectStorage $media
    * @return void
    */
-  public function setMedia($media) {
+  public function setMedia($media): void {
       $this->media = $media;
   }
 

@@ -42,7 +42,7 @@ class ItemsProcFunc
      * @param array &$config configuration array
      * @return void
      */
-    public function user_templateLayout(array &$config)
+    public function user_templateLayout(array &$config): void
     {
         $row = $this->getContentElementRow($config['row']['uid']);
 

@@ -45,7 +45,7 @@ class ResourceController extends BaseController
      */
     protected ResourceRepository $resourceRepository;
 
-    public function injectResourceRepository(ResourceRepository $resourceRepository): void
+    public function __construct(\Kanow\Operations\Domain\Repository\ResourceRepository $resourceRepository)
     {
         $this->resourceRepository = $resourceRepository;
     }

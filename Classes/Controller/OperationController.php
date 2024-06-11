@@ -65,12 +65,12 @@ class OperationController extends BaseController
      */
 	private OperationRepository $operationRepository;
 
-    /**
-     * @param OperationRepository $operationRepository
-     */
-    public function injectOperationRepository(OperationRepository $operationRepository): void
+    public function __construct(\Kanow\Operations\Domain\Repository\OperationRepository $operationRepository, \Kanow\Operations\Domain\Repository\TypeRepository $typeRepository, \Kanow\Operations\Domain\Repository\CategoryRepository $categoryRepository, \Kanow\Operations\Service\CategoryService $categoryService)
     {
         $this->operationRepository = $operationRepository;
+        $this->typeRepository = $typeRepository;
+        $this->categoryRepository = $categoryRepository;
+        $this->categoryService = $categoryService;
     }
 
     /**
@@ -79,38 +79,14 @@ class OperationController extends BaseController
     private TypeRepository $typeRepository;
 
     /**
-     * @param TypeRepository $typeRepository
-     */
-    public function injectTypeRepository(TypeRepository $typeRepository): void
-    {
-        $this->typeRepository = $typeRepository;
-    }
-
-    /**
      * categoryRepository
      */
     private CategoryRepository $categoryRepository;
 
     /**
-     * @param CategoryRepository $categoryRepository
-     */
-    public function injectCategoryRepository(CategoryRepository $categoryRepository): void
-    {
-        $this->categoryRepository = $categoryRepository;
-    }
-
-    /**
      * category service
      */
     private CategoryService $categoryService;
-
-    /**
-     * @param CategoryService $categoryService
-     */
-    public function injectCategoryService(CategoryService $categoryService): void
-    {
-        $this->categoryService = $categoryService;
-    }
 
     /**
      * action list
@@ -370,7 +346,7 @@ class OperationController extends BaseController
      *
      * @return void
      */
-    public function overrideFlexformSettings()
+    public function overrideFlexformSettings(): void
     {
         $originalSettings = $this->configurationManager->getConfiguration(
             ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS

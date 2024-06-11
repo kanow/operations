@@ -44,8 +44,8 @@ class Operation extends AbstractEntity
      * Operation number
      *
      * @var string
-     * @Validate("NotEmpty")
      */
+    #[Validate(['validator' => 'NotEmpty'])]
     protected $number;
 
     /**
@@ -59,24 +59,24 @@ class Operation extends AbstractEntity
      * Title
      *
      * @var string
-     * @Validate("NotEmpty")
      */
+    #[Validate(['validator' => 'NotEmpty'])]
     protected $title;
 
     /**
      * Location of operation
      *
      * @var string
-     * @Validate("NotEmpty")
      */
+    #[Validate(['validator' => 'NotEmpty'])]
     protected $location;
 
     /**
      * Begin
      *
      * @var \DateTime
-     * @Validate("NotEmpty")
      */
+    #[Validate(['validator' => 'NotEmpty'])]
     protected $begin;
 
     /**
@@ -136,23 +136,23 @@ class Operation extends AbstractEntity
 
     /**
      * Assistance to this operation
-     * @Lazy
      * @var ObjectStorage<\Kanow\Operations\Domain\Model\Assistance>
      */
+    #[Lazy]
     protected $assistance;
 
     /**
      * Vehicles use on this operation
-     * @Lazy
      * @var ObjectStorage<\Kanow\Operations\Domain\Model\Vehicle>
      */
+    #[Lazy]
     protected $vehicles;
 
     /**
      * resources used
-     * @Lazy
      * @var ObjectStorage<\Kanow\Operations\Domain\Model\Resource>
      */
+    #[Lazy]
     protected $resources;
 
     /**
@@ -203,7 +203,7 @@ class Operation extends AbstractEntity
      * @param string $number
      * @return void
      */
-    public function setNumber($number)
+    public function setNumber($number): void
     {
         $this->number = $number;
     }
@@ -224,7 +224,7 @@ class Operation extends AbstractEntity
      * @param integer $onlyEld
      * @return void
      */
-    public function setOnlyEld($onlyEld)
+    public function setOnlyEld($onlyEld): void
     {
         $this->onlyEld = $onlyEld;
     }
@@ -245,7 +245,7 @@ class Operation extends AbstractEntity
      * @param string $title
      * @return void
      */
-    public function setTitle($title)
+    public function setTitle($title): void
     {
         $this->title = $title;
     }
@@ -266,7 +266,7 @@ class Operation extends AbstractEntity
      * @param string $location
      * @return void
      */
-    public function setLocation($location)
+    public function setLocation($location): void
     {
         $this->location = $location;
     }
@@ -287,7 +287,7 @@ class Operation extends AbstractEntity
      * @param \DateTime $begin
      * @return void
      */
-    public function setBegin($begin)
+    public function setBegin($begin): void
     {
         $this->begin = $begin;
     }
@@ -309,7 +309,7 @@ class Operation extends AbstractEntity
      * @param \DateTime $end
      * @return void
      */
-    public function setEnd($end)
+    public function setEnd($end): void
     {
         $this->end = $end;
     }
@@ -330,7 +330,7 @@ class Operation extends AbstractEntity
      * @param string $teaser
      * @return void
      */
-    public function setTeaser($teaser)
+    public function setTeaser($teaser): void
     {
         $this->teaser = $teaser;
     }
@@ -351,7 +351,7 @@ class Operation extends AbstractEntity
      * @param string $report
      * @return void
      */
-    public function setReport($report)
+    public function setReport($report): void
     {
         $this->report = $report;
     }
@@ -372,7 +372,7 @@ class Operation extends AbstractEntity
      * @param string $longitude
      * @return void
      */
-    public function setLongitude($longitude)
+    public function setLongitude($longitude): void
     {
         $this->longitude = $longitude;
     }
@@ -393,7 +393,7 @@ class Operation extends AbstractEntity
      * @param string $latitude
      * @return void
      */
-    public function setLatitude($latitude)
+    public function setLatitude($latitude): void
     {
         $this->latitude = $latitude;
     }
@@ -414,7 +414,7 @@ class Operation extends AbstractEntity
      * @param integer $zoom
      * @return void
      */
-    public function setZoom($zoom)
+    public function setZoom($zoom): void
     {
         $this->zoom = $zoom;
     }
@@ -446,7 +446,7 @@ class Operation extends AbstractEntity
      * @param ObjectStorage $media
      * @return void
      */
-    public function setMedia($media)
+    public function setMedia($media): void
     {
         $this->media = $media;
     }
@@ -457,7 +457,7 @@ class Operation extends AbstractEntity
      * @param Type $type
      * @return void
      */
-    public function addType(Type $type)
+    public function addType(Type $type): void
     {
         $this->type->attach($type);
     }
@@ -468,7 +468,7 @@ class Operation extends AbstractEntity
      * @param Type $typeToRemove The Type to be removed
      * @return void
      */
-    public function removeType(Type $typeToRemove)
+    public function removeType(Type $typeToRemove): void
     {
         $this->type->detach($typeToRemove);
     }
@@ -500,7 +500,7 @@ class Operation extends AbstractEntity
      * @param ObjectStorage<\Kanow\Operations\Domain\Model\Type> $type
      * @return void
      */
-    public function setType(ObjectStorage $type)
+    public function setType(ObjectStorage $type): void
     {
         $this->type = $type;
     }
@@ -511,7 +511,7 @@ class Operation extends AbstractEntity
      * @param Assistance $assistance
      * @return void
      */
-    public function addAssistance(Assistance $assistance)
+    public function addAssistance(Assistance $assistance): void
     {
         $this->assistance->attach($assistance);
     }
@@ -522,7 +522,7 @@ class Operation extends AbstractEntity
      * @param Assistance $assistanceToRemove The Assistance to be removed
      * @return void
      */
-    public function removeAssistance(Assistance $assistanceToRemove)
+    public function removeAssistance(Assistance $assistanceToRemove): void
     {
         $this->assistance->detach($assistanceToRemove);
     }
@@ -543,7 +543,7 @@ class Operation extends AbstractEntity
      * @param ObjectStorage<\Kanow\Operations\Domain\Model\Assistance> $assistance
      * @return void
      */
-    public function setAssistance(ObjectStorage $assistance)
+    public function setAssistance(ObjectStorage $assistance): void
     {
         $this->assistance = $assistance;
     }
@@ -554,7 +554,7 @@ class Operation extends AbstractEntity
      * @param Vehicle $vehicle
      * @return void
      */
-    public function addVehicle(Vehicle $vehicle)
+    public function addVehicle(Vehicle $vehicle): void
     {
         $this->vehicles->attach($vehicle);
     }
@@ -565,7 +565,7 @@ class Operation extends AbstractEntity
      * @param Vehicle $vehicleToRemove The Vehicle to be removed
      * @return void
      */
-    public function removeVehicle(Vehicle $vehicleToRemove)
+    public function removeVehicle(Vehicle $vehicleToRemove): void
     {
         $this->vehicles->detach($vehicleToRemove);
     }
@@ -586,7 +586,7 @@ class Operation extends AbstractEntity
      * @param ObjectStorage<\Kanow\Operations\Domain\Model\Vehicle> $vehicles
      * @return void
      */
-    public function setVehicles(ObjectStorage $vehicles)
+    public function setVehicles(ObjectStorage $vehicles): void
     {
         $this->vehicles = $vehicles;
     }
@@ -597,7 +597,7 @@ class Operation extends AbstractEntity
      * @param Resource $resource
      * @return void
      */
-    public function addResource(Resource $resource)
+    public function addResource(Resource $resource): void
     {
         $this->resources->attach($resource);
     }
@@ -608,7 +608,7 @@ class Operation extends AbstractEntity
      * @param Resource $resourceToRemove The Resources to be removed
      * @return void
      */
-    public function removeResource(Resource $resourceToRemove)
+    public function removeResource(Resource $resourceToRemove): void
     {
         $this->resources->detach($resourceToRemove);
     }
@@ -629,7 +629,7 @@ class Operation extends AbstractEntity
      * @param ObjectStorage<\Kanow\Operations\Domain\Model\Resource> $resources
      * @return void
      */
-    public function setResources(ObjectStorage $resources)
+    public function setResources(ObjectStorage $resources): void
     {
         $this->resources = $resources;
     }
@@ -640,7 +640,7 @@ class Operation extends AbstractEntity
      * @param Category $category
      * @return void
      */
-    public function addCategory(Category $category)
+    public function addCategory(Category $category): void
     {
         $this->category->attach($category);
     }
@@ -651,7 +651,7 @@ class Operation extends AbstractEntity
      * @param Category $categoryToRemove The Category to be removed
      * @return void
      */
-    public function removeCategory(Category $categoryToRemove)
+    public function removeCategory(Category $categoryToRemove): void
     {
         $this->category->detach($categoryToRemove);
     }
@@ -672,7 +672,7 @@ class Operation extends AbstractEntity
      * @param ObjectStorage<Category> $category
      * @return void
      */
-    public function setCategory(ObjectStorage $category)
+    public function setCategory(ObjectStorage $category): void
     {
         $this->category = $category;
     }

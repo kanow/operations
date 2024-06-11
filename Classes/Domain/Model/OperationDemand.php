@@ -56,11 +56,11 @@ class OperationDemand extends AbstractValueObject {
 	protected $limit;
 
 	/**
-    * Begin
-    *
-    * @var string
-    * @Validate("NotEmpty")
-    */
+      * Begin
+      *
+      * @var string
+      */
+     #[Validate(['validator' => 'NotEmpty'])]
      protected $begin;
 
 	/**
@@ -83,7 +83,7 @@ class OperationDemand extends AbstractValueObject {
 	 * @param integer
 	 * @return void
 	 */
-	public function setOnlyEld($onlyEld) {
+	public function setOnlyEld($onlyEld): void {
 		$this->onlyEld = $onlyEld;
 	}
 
@@ -110,7 +110,7 @@ class OperationDemand extends AbstractValueObject {
 	 * @param integer $type
 	 * @return void
 	 */
-	public function setType($type) {
+	public function setType($type): void {
 		$this->type = $type;
 	}
 
@@ -120,7 +120,7 @@ class OperationDemand extends AbstractValueObject {
 	 * @param integer $limit limit
 	 * @return void
 	 */
-	public function setLimit($limit) {
+	public function setLimit($limit): void {
 		$this->limit = (int)$limit;
 	}
 
@@ -148,7 +148,7 @@ class OperationDemand extends AbstractValueObject {
 	 * @param string $begin
 	 * @return void
 	 */
-	public function setBegin($begin) {
+	public function setBegin($begin): void {
 		$this->begin = $begin;
 	}
 
@@ -167,7 +167,7 @@ class OperationDemand extends AbstractValueObject {
 	 * @param string $searchstring
 	 * @return void
 	 */
-	public function setSearchstring($searchstring) {
+	public function setSearchstring($searchstring): void {
 		$this->searchstring = $searchstring;
 	}
 
@@ -206,7 +206,7 @@ class OperationDemand extends AbstractValueObject {
      * @param integer $category
      * @return void
      */
-    public function setCategory($category) {
+    public function setCategory($category): void {
         $this->category = $category;
     }
 }

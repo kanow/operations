@@ -45,7 +45,7 @@ class VehicleController extends BaseController
      */
     protected VehicleRepository $vehicleRepository;
 
-    public function injectVehicleRepository(VehicleRepository $vehicleRepository): void
+    public function __construct(\Kanow\Operations\Domain\Repository\VehicleRepository $vehicleRepository)
     {
         $this->vehicleRepository = $vehicleRepository;
     }

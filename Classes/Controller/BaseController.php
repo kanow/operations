@@ -48,7 +48,7 @@ class BaseController extends ActionController
      */
     protected function initializeView($view)
     {
-        $view->assign('contentObjectData', $this->configurationManager->getContentObject()->data);
+        $view->assign('contentObjectData', $this->request->getAttribute('currentContentObject')->data);
     }
 
 }

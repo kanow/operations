@@ -41,8 +41,8 @@ class Type extends AbstractEntity {
   * Operation type
   *
   * @var string
-  * @Validate("NotEmpty")
   */
+ #[Validate(['validator' => 'NotEmpty'])]
  protected $title;
 
 	/**
@@ -74,7 +74,7 @@ class Type extends AbstractEntity {
 	 * @param string $title
 	 * @return void
 	 */
-	public function setTitle($title) {
+	public function setTitle($title): void {
 		$this->title = $title;
 	}
 
@@ -93,7 +93,7 @@ class Type extends AbstractEntity {
    * @param ObjectStorage $image
    * @return void
    */
-  public function setImage($image) {
+  public function setImage($image): void {
           $this->image = $image;
   }
     /**
@@ -111,7 +111,7 @@ class Type extends AbstractEntity {
      * @param string $color
      * @return void
      */
-    public function setColor($color) {
+    public function setColor($color): void {
         $this->color = $color;
     }
 
