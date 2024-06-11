@@ -108,18 +108,7 @@ ExtensionManagementUtility::addTypoScriptSetup(trim('
     }
 '));
 
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['operations_migrateCategoryRelations']
-    = MigrateCategoryRelations::class;
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['operations_migratePlugins']
-    = MigratePlugins::class;
-
-if($typo3VersionNumber > 12000000) {
-    $suggestedPaginationClassName = 'TYPO3\CMS\Core\Pagination\SlidingWindowPagination';
-} elseif (($typo3VersionNumber > 11000000 && $typo3VersionNumber < 12000000) && class_exists(NumberedPagination::class)) {
-    $suggestedPaginationClassName = 'GeorgRinger\NumberedPagination\NumberedPagination';
-}
-if($suggestedPaginationClassName) {
     ExtensionManagementUtility::addTypoScriptSetup(trim('
 # set class in your TypoScript if other pagination should be used
-plugin.tx_operations.settings.paginate.class = ' . $suggestedPaginationClassName));
-}
+plugin.tx_operations.settings.paginate.class = TYPO3\CMS\Core\Pagination\SlidingWindowPagination'));
+
