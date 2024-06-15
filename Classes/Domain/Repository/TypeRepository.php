@@ -1,14 +1,15 @@
 <?php
+
 namespace Kanow\Operations\Domain\Repository;
 
-use TYPO3\CMS\Extbase\Persistence\QueryInterface;
-use TYPO3\CMS\Extbase\Persistence\Repository;
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /***************************************************************
  *  Copyright notice
  *
  *  (c) 2013 Karsten Nowak <captnnowi@gmx.de>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -27,34 +28,29 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Database\Query\QueryBuilder;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
+use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
- *
- *
- * @package operations
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
  */
-class TypeRepository extends Repository {
+class TypeRepository extends Repository
+{
+    /**
+    * default ordering
+    *
+    * @return array
+    */
+    protected $defaultOrderings = [
+        'title' => QueryInterface::ORDER_ASCENDING,
+    ];
 
-	/**
-	* default ordering
-	* 
-	* @return array
-	*/
-	protected $defaultOrderings = array( 
-	    'title' => QueryInterface::ORDER_ASCENDING,
-	); 
-	
-	public function findAll() {
-		$query = $this->createQuery();
-		return $query->execute();
-	}
-	public function findAllTypesWithTitle()
+    public function findAll()
+    {
+        $query = $this->createQuery();
+        return $query->execute();
+    }
+    public function findAllTypesWithTitle()
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable('tx_operations_domain_model_type');
@@ -64,6 +60,5 @@ class TypeRepository extends Repository {
             ->executeQuery()->fetchAllAssociative();
         return $result;
     }
-
 
 }

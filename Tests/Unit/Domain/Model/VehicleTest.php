@@ -3,15 +3,17 @@
 declare(strict_types=1);
 
 namespace Kanow\Operations\Tests\Unit\Domain\Model\Vehicle;
+
 use Kanow\Operations\Domain\Model\Vehicle;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+
 /***************************************************************
  *  Copyright notice
  *
  *  (c) 2013 Karsten Nowak <captnnowi@gmx.de>
- *  			
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -38,13 +40,11 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
- * @package TYPO3
- * @subpackage Operations
  *
  * @author Karsten Nowak <captnnowi@gmx.de>
  */
-class VehicleTest extends UnitTestCase {
-
+class VehicleTest extends UnitTestCase
+{
     private Vehicle $subject;
 
     public function setUp(): void
@@ -60,7 +60,7 @@ class VehicleTest extends UnitTestCase {
     {
         $value = 'This is the tile';
         $this->subject->setTitle($value);
-        $this->assertEquals($value, $this->subject->getTitle());
+        self::assertEquals($value, $this->subject->getTitle());
     }
 
     /**
@@ -70,7 +70,7 @@ class VehicleTest extends UnitTestCase {
     {
         $value = 'Short title';
         $this->subject->setShort($value);
-        $this->assertEquals($value, $this->subject->getShort());
+        self::assertEquals($value, $this->subject->getShort());
     }
 
     /**
@@ -80,7 +80,7 @@ class VehicleTest extends UnitTestCase {
     {
         $value = 'This is the description.';
         $this->subject->setDescription($value);
-        $this->assertEquals($value, $this->subject->getDescription());
+        self::assertEquals($value, $this->subject->getDescription());
     }
 
     /**
@@ -92,8 +92,8 @@ class VehicleTest extends UnitTestCase {
         $media = new ObjectStorage();
         $media->attach($file);
         $this->subject->setMedia($media);
-        $this->assertSame($media, $this->subject->getMedia());
-        $this->assertSame($file, $this->subject->getFirstMedia());
+        self::assertSame($media, $this->subject->getMedia());
+        self::assertSame($file, $this->subject->getFirstMedia());
     }
 
     /**
@@ -103,6 +103,6 @@ class VehicleTest extends UnitTestCase {
     {
         $value = 'This is a link';
         $this->subject->setLink($value);
-        $this->assertEquals($value, $this->subject->getLink());
+        self::assertEquals($value, $this->subject->getLink());
     }
 }

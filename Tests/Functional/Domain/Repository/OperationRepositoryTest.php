@@ -1,19 +1,17 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Kanow\Operations\Tests\Functional;
 
 use Kanow\Operations\Domain\Model\OperationDemand;
 use Kanow\Operations\Domain\Repository\OperationRepository;
-use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
 use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 
 class OperationRepositoryTest extends FunctionalTestCase
 {
-
     /**
      * @var OperationRepository
      */
@@ -25,7 +23,7 @@ class OperationRepositoryTest extends FunctionalTestCase
      * @var string[]
      */
     protected array $testExtensionsToLoad = [
-        'typo3conf/ext/operations'
+        'typo3conf/ext/operations',
     ];
 
     public function setUp(): void
@@ -45,7 +43,7 @@ class OperationRepositoryTest extends FunctionalTestCase
     public function findRecordsByUid(): void
     {
         $operation = $this->subject->findByUid(1);
-        $this->assertEquals($operation->getTitle(), 'Einsatztest');
+        self::assertEquals($operation->getTitle(), 'Einsatztest');
     }
 
     /**
@@ -62,13 +60,13 @@ class OperationRepositoryTest extends FunctionalTestCase
         date_default_timezone_set('Europe/Berlin');
         // year 2020
         $demand->setBegin('2020');
-        $this->assertEquals((int)$this->subject->findDemanded($demand, $settings)->count(), 0);
+        self::assertEquals((int)$this->subject->findDemanded($demand, $settings)->count(), 0);
         // year 2021
         $demand->setBegin('2021');
-        $this->assertEquals((int)$this->subject->findDemanded($demand, $settings)->count(), 1);
+        self::assertEquals((int)$this->subject->findDemanded($demand, $settings)->count(), 1);
         // year 2022
         $demand->setBegin('2022');
-        $this->assertEquals((int)$this->subject->findDemanded($demand, $settings)->count(), 2);
+        self::assertEquals((int)$this->subject->findDemanded($demand, $settings)->count(), 2);
     }
 
     /**
@@ -84,13 +82,13 @@ class OperationRepositoryTest extends FunctionalTestCase
         $settings = [
             'limit' => 2,
             'noLimitForStatistics' => 0,
-            'dontRespectStoragePage' => 1
+            'dontRespectStoragePage' => 1,
         ];
-        $this->assertEquals(2, (int)$this->subject->countDemandedForStatistics($demand, $settings));
+        self::assertEquals(2, (int)$this->subject->countDemandedForStatistics($demand, $settings));
         $demand->setLimit(1);
-        $this->assertEquals(1, (int)$this->subject->countDemandedForStatistics($demand, $settings));
+        self::assertEquals(1, (int)$this->subject->countDemandedForStatistics($demand, $settings));
         $settings['noLimitForStatistics'] = 1;
-        $this->assertEquals(3, (int)$this->subject->countDemandedForStatistics($demand, $settings));
+        self::assertEquals(3, (int)$this->subject->countDemandedForStatistics($demand, $settings));
     }
 
     /**
@@ -117,7 +115,7 @@ class OperationRepositoryTest extends FunctionalTestCase
         ];
         $operationUids = '1,2,3';
         $result = $this->subject->countGroupedByYear($years, $operationUids);
-        $this->assertEquals($expectedResult, $result);
+        self::assertEquals($expectedResult, $result);
 
     }
 

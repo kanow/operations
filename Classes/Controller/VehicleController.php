@@ -2,9 +2,9 @@
 
 namespace Kanow\Operations\Controller;
 
-use Psr\Http\Message\ResponseInterface;
 use Kanow\Operations\Domain\Model\Vehicle;
 use Kanow\Operations\Domain\Repository\VehicleRepository;
+use Psr\Http\Message\ResponseInterface;
 
 /***************************************************************
  *  Copyright notice
@@ -31,15 +31,10 @@ use Kanow\Operations\Domain\Repository\VehicleRepository;
  ***************************************************************/
 
 /**
- *
- *
- * @package operations
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
  */
 class VehicleController extends BaseController
 {
-
     /**
      * @var VehicleRepository
      */
@@ -52,8 +47,6 @@ class VehicleController extends BaseController
 
     /**
      * action list
-     *
-     * @return void
      */
     public function listAction(): ResponseInterface
     {
@@ -66,13 +59,11 @@ class VehicleController extends BaseController
      * action show
      *
      * @param Vehicle $vehicle
-     * @return void
      */
     public function showAction(Vehicle $vehicle): ResponseInterface
     {
         $this->view->assign('vehicle', $vehicle);
         return $this->htmlResponse();
     }
-
 
 }

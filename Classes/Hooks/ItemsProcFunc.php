@@ -14,20 +14,13 @@ namespace Kanow\Operations\Hooks;
  *
  * The TYPO3 project - inspiring people to share!
  */
-use TYPO3\CMS\Core\Localization\LanguageService;
 use Kanow\Operations\Utility\TemplateLayout;
 use TYPO3\CMS\Backend\Utility\BackendUtility as BackendUtilityCore;
+use TYPO3\CMS\Core\Localization\LanguageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-/**
- *
- *
- * @package TYPO3
- * @subpackage operations
- */
 class ItemsProcFunc
 {
-
     /** @var TemplateLayout $templateLayoutsUtility */
     protected $templateLayoutsUtility;
 
@@ -40,7 +33,6 @@ class ItemsProcFunc
      * Itemsproc function to extend the selection of templateLayouts in the plugin
      *
      * @param array &$config configuration array
-     * @return void
      */
     public function user_templateLayout(array &$config): void
     {
@@ -50,7 +42,7 @@ class ItemsProcFunc
         foreach ($templateLayouts as $layout) {
             $additionalLayout = [
                 $this->getLanguageService()->sL($layout[0]),
-                $layout[1]
+                $layout[1],
             ];
             array_push($config['items'], $additionalLayout);
         }

@@ -6,12 +6,12 @@ use Kanow\Operations\Domain\Model\OperationDemand;
 use Kanow\Operations\Domain\Model\Type;
 use TYPO3\CMS\Core\Context\Context;
 use TYPO3\CMS\Core\Context\LanguageAspect;
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 use TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
-use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
-use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /***************************************************************
  *  Copyright notice
@@ -36,27 +36,22 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Database\Query\QueryBuilder;
+use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
+use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
- *
- *
- * @package operations
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
  */
 class OperationRepository extends Repository
 {
-
     /**
      * default ordering
      *
      * @return array
      */
-    protected $defaultOrderings = array(
+    protected $defaultOrderings = [
         'begin' => QueryInterface::ORDER_DESCENDING,
-    );
+    ];
 
     /**
      * Returns the objects of this repository matching the demand
@@ -90,10 +85,11 @@ class OperationRepository extends Repository
      * Counts all available operations
      * @param OperationDemand $demand
      * @param array $settings
-     * @return integer
+     * @return int
      * @throws InvalidQueryException
      */
-    public function countDemandedForStatistics($demand, $settings) {
+    public function countDemandedForStatistics($demand, $settings)
+    {
         return count($this->findDemandedForStatistics($demand, $settings));
     }
 
@@ -106,22 +102,23 @@ class OperationRepository extends Repository
      * @param string $operationUids
      * @return array
      */
-    public function countGroupedByYearAndType($years,$types, $operationUids = '') {
+    public function countGroupedByYearAndType($years, $types, $operationUids = '')
+    {
         /** @var QueryBuilder $queryBuilder */
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable('tx_operations_domain_model_operation');
         $result = $queryBuilder
             ->addSelectLiteral('ot.color as color, ot.title as title, ot.uid as type_uid, COUNT(*) as count, FROM_UNIXTIME(o.begin, \'%Y\') as year')
-            ->from('tx_operations_domain_model_type','ot')
-            ->innerJoin('ot','tx_operations_operation_type_mm','type_mm','type_mm.uid_foreign = ot.uid')
-            ->innerJoin('type_mm','tx_operations_domain_model_operation','o','type_mm.uid_local = o.uid')
-            ->where('FROM_UNIXTIME(o.begin, \'%Y\') IN('. $this->convertYearsToString($years) .')' );
-        if($operationUids != '') {
+            ->from('tx_operations_domain_model_type', 'ot')
+            ->innerJoin('ot', 'tx_operations_operation_type_mm', 'type_mm', 'type_mm.uid_foreign = ot.uid')
+            ->innerJoin('type_mm', 'tx_operations_domain_model_operation', 'o', 'type_mm.uid_local = o.uid')
+            ->where('FROM_UNIXTIME(o.begin, \'%Y\') IN(' . $this->convertYearsToString($years) . ')');
+        if ($operationUids != '') {
             $result = $result->andWhere('o.uid IN (' . $operationUids . ')');
         }
-         $result = $result->groupBy('year')
-            ->addGroupBy('ot.uid')
-            ->executeQuery()->fetchAllAssociative();
+        $result = $result->groupBy('year')
+           ->addGroupBy('ot.uid')
+           ->executeQuery()->fetchAllAssociative();
 
         $preparedResult = $this->prepareResultForChartArray($result);
 
@@ -145,37 +142,38 @@ class OperationRepository extends Repository
      * @param array $result
      * @return array $preparedResult
      */
-    protected function prepareResultForChartArray($result) {
+    protected function prepareResultForChartArray($result)
+    {
         $preparedResult = [];
 
         $languageAspect = GeneralUtility::makeInstance(Context::class)->getAspect('language');
         /** @var LanguageAspect $languageAspect */
         $lang_uid = $languageAspect->getId();
 
-        if($lang_uid > 0) {
+        if ($lang_uid > 0) {
             $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
                 ->getQueryBuilderForTable('tx_operations_domain_model_type');
         }
 
         foreach ($result as $key => $value) {
-            if($lang_uid > 0) {
+            if ($lang_uid > 0) {
                 /** @var QueryBuilder $queryBuilder */
                 $translatedType = $queryBuilder
                     ->addSelectLiteral('type.title')
                     ->from('tx_operations_domain_model_type', 'type')
-                    ->where('type.l10n_parent = ' . $value["type_uid"]);
+                    ->where('type.l10n_parent = ' . $value['type_uid']);
                 $translatedType = $translatedType->executeQuery()->fetchAllAssociative();
             }
             $title = $translatedType['title'] ?? $value['title'];
 
-            if(!array_key_exists($value['type_uid'],$preparedResult)) {
-                $preparedResult[$value['type_uid']] = array(
+            if (!array_key_exists($value['type_uid'], $preparedResult)) {
+                $preparedResult[$value['type_uid']] = [
                     'title' => $title,
                     'color' => $value['color'],
-                    'years' => array(
-                        $value['year'] => $value['count']
-                    )
-                );
+                    'years' => [
+                        $value['year'] => $value['count'],
+                    ],
+                ];
             } else {
                 $preparedResult[$value['type_uid']]['years'][$value['year']] = $value['count'];
             }
@@ -191,11 +189,11 @@ class OperationRepository extends Repository
      * @param string $year
      * @return array
      */
-    protected function addMissingType($data,$types,$year)
+    protected function addMissingType($data, $types, $year)
     {
         foreach ($types as $type) {
             /** @var Type $type */
-            if(!array_key_exists($type->getUid(),$data)) {
+            if (!array_key_exists($type->getUid(), $data)) {
                 $data[$type->getUid()]['title'] =  $type->getTitle();
                 $data[$type->getUid()]['color'] =  $type->getColor();
                 $data[$type->getUid()]['years'][$year] = 0;
@@ -211,10 +209,10 @@ class OperationRepository extends Repository
      * @param string $year
      * @return array
      */
-    protected function addEmptyYear($data,$year)
+    protected function addEmptyYear($data, $year)
     {
-        foreach($data as $key => $value) {
-            if(!isset($data[$key]['years'][$year])) {
+        foreach ($data as $key => $value) {
+            if (!isset($data[$key]['years'][$year])) {
                 $data[$key]['years'][$year] = 0;
             }
         }
@@ -230,14 +228,14 @@ class OperationRepository extends Repository
     protected function sortResultByYears($result)
     {
         $resultSorted = [];
-        foreach($result as $key => $value) {
+        foreach ($result as $key => $value) {
             // sort by array key (years) in revers order
             krsort($value['years']);
-            $resultSorted[$key] = array(
+            $resultSorted[$key] = [
                 'title' => $value['title'],
                 'color' => $value['color'],
-                'years' => $value['years']
-            );
+                'years' => $value['years'],
+            ];
         }
         return $resultSorted;
     }
@@ -275,16 +273,17 @@ class OperationRepository extends Repository
      * @param string $operationUids
      * @return array
      */
-    public function countGroupedByYear($years, $operationUids = '') {
+    public function countGroupedByYear($years, $operationUids = '')
+    {
         /** @var QueryBuilder $queryBuilder */
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable('tx_operations_domain_model_operation');
 
         $statement = $queryBuilder
-            ->addSelectLiteral('COUNT(*) as count, FROM_UNIXTIME(begin, \'%Y\') as year',true)
-            ->from('tx_operations_domain_model_operation','o')
-            ->where('FROM_UNIXTIME(begin, \'%Y\') IN('. $this->convertYearsToString($years) .')' );
-        if($operationUids != '') {
+            ->addSelectLiteral('COUNT(*) as count, FROM_UNIXTIME(begin, \'%Y\') as year', true)
+            ->from('tx_operations_domain_model_operation', 'o')
+            ->where('FROM_UNIXTIME(begin, \'%Y\') IN(' . $this->convertYearsToString($years) . ')');
+        if ($operationUids != '') {
             $statement = $statement->andWhere('o.uid IN (' . $operationUids . ')');
         }
         $statement = $statement->groupBy('year')
@@ -298,10 +297,10 @@ class OperationRepository extends Repository
      *
      * @throws InvalidQueryException
      */
-    protected function generateQuery(OperationDemand $demand,array $settings, bool $noLimit = false): QueryInterface
+    protected function generateQuery(OperationDemand $demand, array $settings, bool $noLimit = false): QueryInterface
     {
         $query = $this->createQuery();
-        if(isset($settings['dontRespectStoragePage']) && $settings['dontRespectStoragePage'] === 1) {
+        if (isset($settings['dontRespectStoragePage']) && $settings['dontRespectStoragePage'] === 1) {
             $query->getQuerySettings()->setRespectStoragePage(false);
         }
         $constraints = $this->createConstraintsFromDemand($query, $demand, $settings);
@@ -311,7 +310,7 @@ class OperationRepository extends Repository
             );
         }
         $limit = $demand->getLimit() ?: $settings['limit'] ?? 0;
-        if(!$noLimit && $limit > 0) {
+        if (!$noLimit && $limit > 0) {
             $query->setLimit((int)$limit);
         }
         return $query;
@@ -325,14 +324,12 @@ class OperationRepository extends Repository
      * @param array $settings
      * @throws InvalidQueryException
      * @return (\TYPO3\CMS\Extbase\Persistence\Generic\Qom\AndInterface|\TYPO3\CMS\Extbase\Persistence\Generic\Qom\ComparisonInterface|\TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface|\TYPO3\CMS\Extbase\Persistence\Generic\Qom\NotInterface|\TYPO3\CMS\Extbase\Persistence\Generic\Qom\OrInterface|null)[]
-     *
      */
     protected function createConstraintsFromDemand(
         QueryInterface $query,
         OperationDemand $demand,
         array $settings
-    ): array
-    {
+    ): array {
         $constraints = [];
 
         $fromTimestamp = mktime(0, 0, 0, 1, 1, $demand->getBegin());
@@ -360,7 +357,7 @@ class OperationRepository extends Repository
             $constraints[] = $query->contains('type', $demand->getType());
         }
         // search
-        if(!empty($demand->getSearchString())){
+        if (!empty($demand->getSearchString())) {
             $searchSubject = $demand->getSearchstring();
             $searchFields = GeneralUtility::trimExplode(',', $settings['searchFields'], true);
             $searchConstraints = [];
@@ -378,10 +375,10 @@ class OperationRepository extends Repository
         }
 
         // map constraints
-        if(isset($settings['showMap'])) {
+        if (isset($settings['showMap'])) {
             $constraints[] = $query->logicalAnd(
-                $query->greaterThan('latitude',0),
-                $query->greaterThan('longitude',0)
+                $query->greaterThan('latitude', 0),
+                $query->greaterThan('longitude', 0)
             );
         }
 
@@ -398,17 +395,16 @@ class OperationRepository extends Repository
      * @return ConstraintInterface $constraint
      * @throws InvalidQueryException
      */
-    protected  function createCategoryConstraints(
+    protected function createCategoryConstraints(
         QueryInterface $query,
         $categories,
         $property,
         $settings
-    ): ?\TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface
-    {
+    ): ?\TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface {
 
         if ($categories && count($categories) != 0) {
             $categoryConstraint = [];
-            foreach ($categories as $category){
+            foreach ($categories as $category) {
                 $categoryConstraint[] = $query->contains($property, $category);
             }
             switch ($settings['categoryConjunction']) {

@@ -14,7 +14,6 @@ class ResourceRepositoryTest extends UnitTestCase
      */
     private ResourceRepository $subject;
 
-
     protected function setUp(): void
     {
         parent::setUp();

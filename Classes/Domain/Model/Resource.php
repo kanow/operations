@@ -1,10 +1,12 @@
 <?php
+
 namespace Kanow\Operations\Domain\Model;
 
 use TYPO3\CMS\Extbase\Annotation\Validate;
-use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+
 /***************************************************************
  *  Copyright notice
  *
@@ -29,41 +31,37 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 /**
- *
- *
- * @package operations
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
  */
-class Resource extends AbstractEntity {
-
-	/**
+class Resource extends AbstractEntity
+{
+    /**
   * Title of resource
   *
   * @var string
   */
- #[Validate(['validator' => 'NotEmpty'])]
- protected $title;
+    #[Validate(['validator' => 'NotEmpty'])]
+    protected $title;
 
-	/**
-	 * Abbreviation title
-	 *
-	 * @var string
-	 */
-	protected $short;
+    /**
+     * Abbreviation title
+     *
+     * @var string
+     */
+    protected $short;
 
-	/**
-	 * Description of resource
-	 *
-	 * @var string
-	 */
-	protected $description;
+    /**
+     * Description of resource
+     *
+     * @var string
+     */
+    protected $description;
 
-	/**
+    /**
     * Media
     * @var ObjectStorage<FileReference>
     */
-   protected $media;
+    protected $media;
 
     /**
      * A website url or internal link
@@ -72,90 +70,95 @@ class Resource extends AbstractEntity {
      */
     protected $link;
 
-	/**
-	 * Returns the title
-	 *
-	 * @return string $title
-	 */
-	public function getTitle() {
-		return $this->title;
-	}
+    /**
+     * Returns the title
+     *
+     * @return string $title
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
 
-	/**
-	 * Sets the title
-	 *
-	 * @param string $title
-	 * @return void
-	 */
-	public function setTitle($title): void {
-		$this->title = $title;
-	}
+    /**
+     * Sets the title
+     *
+     * @param string $title
+     */
+    public function setTitle($title): void
+    {
+        $this->title = $title;
+    }
 
-	/**
-	 * Returns the short
-	 *
-	 * @return string $short
-	 */
-	public function getShort() {
-		return $this->short;
-	}
+    /**
+     * Returns the short
+     *
+     * @return string $short
+     */
+    public function getShort()
+    {
+        return $this->short;
+    }
 
-	/**
-	 * Sets the short
-	 *
-	 * @param string $short
-	 * @return void
-	 */
-	public function setShort($short): void {
-		$this->short = $short;
-	}
+    /**
+     * Sets the short
+     *
+     * @param string $short
+     */
+    public function setShort($short): void
+    {
+        $this->short = $short;
+    }
 
-	/**
-	 * Returns the description
-	 *
-	 * @return string $description
-	 */
-	public function getDescription() {
-		return $this->description;
-	}
+    /**
+     * Returns the description
+     *
+     * @return string $description
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
 
-	/**
-	 * Sets the description
-	 *
-	 * @param string $description
-	 * @return void
-	 */
-	public function setDescription($description): void {
-		$this->description = $description;
-	}
+    /**
+     * Sets the description
+     *
+     * @param string $description
+     */
+    public function setDescription($description): void
+    {
+        $this->description = $description;
+    }
 
-  /**
-    * Returns the media
-    *
-    * @return ObjectStorage $media
-    */
-   public function getMedia() {
-      return $this->media;
-   }
+    /**
+      * Returns the media
+      *
+      * @return ObjectStorage $media
+      */
+    public function getMedia()
+    {
+        return $this->media;
+    }
 
-  /**
-   * Returns the first media
-   *
-   * @return FileReference $media
-   */
-  public function getFirstMedia() {
-    $media = $this->getMedia()->toArray();
-    return $media[0];
-  }
-  /**
-   * Sets the media
-   *
-   * @param ObjectStorage $media
-   * @return void
-   */
-  public function setMedia($media): void {
-      $this->media = $media;
-  }
+    /**
+     * Returns the first media
+     *
+     * @return FileReference $media
+     */
+    public function getFirstMedia()
+    {
+        $media = $this->getMedia()->toArray();
+        return $media[0];
+    }
+    /**
+     * Sets the media
+     *
+     * @param ObjectStorage $media
+     */
+    public function setMedia($media): void
+    {
+        $this->media = $media;
+    }
 
     /**
      * @return string

@@ -3,11 +3,12 @@
 declare(strict_types=1);
 
 namespace Kanow\Operations\Tests\Unit\Domain\Model\Operation;
+
 /***************************************************************
  *  Copyright notice
  *
  *  (c) 2013 Karsten Nowak <captnnowi@gmx.de>
- *  			
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -32,6 +33,7 @@ use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+
 /**
  * Test case for class \Kanow\Operations\Domain\Model\Operation.
  *
@@ -39,15 +41,13 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
- * @package TYPO3
- * @subpackage Operations
  *
  * @author Karsten Nowak <captnnowi@gmx.de>
  * @covers \Kanow\Operations\Domain\Model\Operation
  */
-class OperationTest extends UnitTestCase {
-
-	private Operation $subject;
+class OperationTest extends UnitTestCase
+{
+    private Operation $subject;
 
     protected function setUp(): void
     {
@@ -70,7 +70,7 @@ class OperationTest extends UnitTestCase {
     {
         $value = 'This is an operation title';
         $this->subject->setTitle($value);
-        $this->assertEquals($value, $this->subject->getTitle());
+        self::assertEquals($value, $this->subject->getTitle());
     }
 
     /**
@@ -80,8 +80,8 @@ class OperationTest extends UnitTestCase {
     {
         $value = '2023';
         $this->subject->setNumber($value);
-        $this->assertIsString($this->subject->getNumber());
-        $this->assertEquals($value, $this->subject->getNumber());
+        self::assertIsString($this->subject->getNumber());
+        self::assertEquals($value, $this->subject->getNumber());
     }
 
     /**
@@ -91,8 +91,8 @@ class OperationTest extends UnitTestCase {
     {
         $value = 1;
         $this->subject->setOnlyEld($value);
-        $this->assertIsInt($this->subject->getOnlyEld());
-        $this->assertEquals($value, $this->subject->getOnlyEld());
+        self::assertIsInt($this->subject->getOnlyEld());
+        self::assertEquals($value, $this->subject->getOnlyEld());
     }
 
     /**
@@ -102,7 +102,7 @@ class OperationTest extends UnitTestCase {
     {
         $value = 'My location';
         $this->subject->setLocation($value);
-        $this->assertEquals($value, $this->subject->getLocation());
+        self::assertEquals($value, $this->subject->getLocation());
     }
 
     /**
@@ -113,7 +113,7 @@ class OperationTest extends UnitTestCase {
         $value = '1600899999';
         //$value = new \DateTime();
         $this->subject->setBegin($value);
-        $this->assertEquals($value, $this->subject->getBegin());
+        self::assertEquals($value, $this->subject->getBegin());
     }
 
     /**
@@ -123,7 +123,7 @@ class OperationTest extends UnitTestCase {
     {
         $value = '1610899999';
         $this->subject->setEnd($value);
-        $this->assertEquals($value, $this->subject->getEnd());
+        self::assertEquals($value, $this->subject->getEnd());
     }
 
     /**
@@ -133,7 +133,7 @@ class OperationTest extends UnitTestCase {
     {
         $value = 'This is an operation teaser';
         $this->subject->setTeaser($value);
-        $this->assertEquals($value, $this->subject->getTeaser());
+        self::assertEquals($value, $this->subject->getTeaser());
     }
 
     /**
@@ -143,7 +143,7 @@ class OperationTest extends UnitTestCase {
     {
         $value = 'This is an operation report';
         $this->subject->setReport($value);
-        $this->assertEquals($value, $this->subject->getReport());
+        self::assertEquals($value, $this->subject->getReport());
     }
 
     /**
@@ -153,7 +153,7 @@ class OperationTest extends UnitTestCase {
     {
         $value = '11.03773';
         $this->subject->setLongitude($value);
-        $this->assertEquals($value, $this->subject->getLongitude());
+        self::assertEquals($value, $this->subject->getLongitude());
     }
 
     /**
@@ -163,7 +163,7 @@ class OperationTest extends UnitTestCase {
     {
         $value = '51.75745';
         $this->subject->setLatitude($value);
-        $this->assertEquals($value, $this->subject->getLatitude());
+        self::assertEquals($value, $this->subject->getLatitude());
     }
 
     /**
@@ -173,8 +173,8 @@ class OperationTest extends UnitTestCase {
     {
         $value = 15;
         $this->subject->setZoom($value);
-        $this->assertIsInt($this->subject->getZoom());
-        $this->assertEquals($value, $this->subject->getZoom());
+        self::assertIsInt($this->subject->getZoom());
+        self::assertEquals($value, $this->subject->getZoom());
     }
 
     /**
@@ -186,8 +186,8 @@ class OperationTest extends UnitTestCase {
         $media = new ObjectStorage();
         $media->attach($mediaItem);
         $this->subject->setMedia($media);
-        $this->assertSame($media, $this->subject->getMedia());
-        $this->assertSame($mediaItem, $this->subject->getFirstMedia());
+        self::assertSame($media, $this->subject->getMedia());
+        self::assertSame($mediaItem, $this->subject->getFirstMedia());
     }
 
     /**
@@ -202,7 +202,7 @@ class OperationTest extends UnitTestCase {
         $operationType->attach($type);
 
         $this->subject->setType($operationType);
-        $this->assertSame($operationType,$this->subject->getType());
+        self::assertSame($operationType, $this->subject->getType());
     }
 
 }

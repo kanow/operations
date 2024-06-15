@@ -1,10 +1,11 @@
 <?php
+
 namespace Kanow\Operations\Service;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 use Kanow\Operations\Domain\Model\Category;
-use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use Kanow\Operations\Domain\Repository\CategoryRepository;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 
 /***************************************************************
@@ -31,14 +32,10 @@ use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
  ***************************************************************/
 
 /**
- *
- *
- * @package event
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
  */
-class CategoryService {
-
+class CategoryService
+{
     /**
      * @var CategoryRepository
      */
@@ -55,38 +52,42 @@ class CategoryService {
   * @param Category $parentCategory
   * @return ObjectStorage $resultStorage
   */
- public function findAllDescendants (Category $parentCategory){
-		$this->categoryRepository->setDefaultOrderings(array('title'=>QueryInterface::ORDER_ASCENDING));
-		$allCategories = $this->categoryRepository->findAll();
+    public function findAllDescendants(Category $parentCategory)
+    {
+        $this->categoryRepository->setDefaultOrderings(['title' => QueryInterface::ORDER_ASCENDING]);
+        $allCategories = $this->categoryRepository->findAll();
 
-		$storage = $regions = $this->buildStorageFromQuery($allCategories);
-		$resultStorage = new ObjectStorage;
-		$stack = array();
-		array_push($stack, $parentCategory);
-		while(count($stack)>0){
-			$currentRoot = array_pop($stack);
-			foreach($storage as $category){
-				if($category->getParent() === $currentRoot){
-					$resultStorage->attach($category);
-					array_push($stack, $category);
-				}
-			}
-		}
-		return $resultStorage;
-	}
+        $storage = $regions = $this->buildStorageFromQuery($allCategories);
+        $resultStorage = new ObjectStorage();
+        $stack = [];
+        array_push($stack, $parentCategory);
+        while (count($stack) > 0) {
+            $currentRoot = array_pop($stack);
+            foreach ($storage as $category) {
+                if ($category->getParent() === $currentRoot) {
+                    $resultStorage->attach($category);
+                    array_push($stack, $category);
+                }
+            }
+        }
+        return $resultStorage;
+    }
 
-	/**
-	 * Builds an object storage form query
-	 *
-	 * @param QueryResultInterface|array
-	 * @return ObjectStorage
-	 */
-	protected function buildStorageFromQuery (QueryResultInterface $query){
-		$storage = new ObjectStorage;
-		foreach($query as $category){
-			if($category->getParent()!=NULL) $storage->attach($category);
-		}
-		return $storage;
-	}
+    /**
+     * Builds an object storage form query
+     *
+     * @param QueryResultInterface|array
+     * @return ObjectStorage
+     */
+    protected function buildStorageFromQuery(QueryResultInterface $query)
+    {
+        $storage = new ObjectStorage();
+        foreach ($query as $category) {
+            if ($category->getParent() != null) {
+                $storage->attach($category);
+            }
+        }
+        return $storage;
+    }
 
 }

@@ -2,8 +2,8 @@
 
 namespace Kanow\Operations\Domain\Model;
 
-use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
+use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 
@@ -31,11 +31,7 @@ use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 /**
- *
- *
- * @package operations
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
  */
 class Category extends AbstractEntity
 {

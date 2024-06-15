@@ -2,9 +2,9 @@
 
 namespace Kanow\Operations\Controller;
 
-use Psr\Http\Message\ResponseInterface;
 use Kanow\Operations\Domain\Model\Resource;
 use Kanow\Operations\Domain\Repository\ResourceRepository;
+use Psr\Http\Message\ResponseInterface;
 
 /***************************************************************
  *  Copyright notice
@@ -31,15 +31,10 @@ use Kanow\Operations\Domain\Repository\ResourceRepository;
  ***************************************************************/
 
 /**
- *
- *
- * @package operations
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
  */
 class ResourceController extends BaseController
 {
-
     /**
      * @var ResourceRepository
      */
@@ -52,8 +47,6 @@ class ResourceController extends BaseController
 
     /**
      * action list
-     *
-     * @return void
      */
     public function listAction(): ResponseInterface
     {
@@ -65,14 +58,12 @@ class ResourceController extends BaseController
     /**
      * action show
      *
-     * @param Resource $resource
-     * @return void
+     * @param resource $resource
      */
     public function showAction(Resource $resource): ResponseInterface
     {
         $this->view->assign('resource', $resource);
         return $this->htmlResponse();
     }
-
 
 }

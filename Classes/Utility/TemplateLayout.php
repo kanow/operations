@@ -23,7 +23,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class TemplateLayout implements SingletonInterface
 {
-
     /**
      * Get available template layouts for a certain page
      *
@@ -40,7 +39,7 @@ class TemplateLayout implements SingletonInterface
         }
 
         // Add TsConfig values
-        if($pageUid) {
+        if ($pageUid) {
             foreach ($this->getTemplateLayoutsFromTsConfig($pageUid) as $templateKey => $title) {
                 if (str_starts_with($title, '--div--')) {
                     $optGroupParts = GeneralUtility::trimExplode(',', $title, true, 2);

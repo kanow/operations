@@ -1,4 +1,5 @@
 <?php
+
 namespace Kanow\Operations\Domain\Repository;
 
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
@@ -29,21 +30,17 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
  ***************************************************************/
 
 /**
- *
- *
- * @package operations
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
  */
-class ResourceRepository extends Repository {
-
+class ResourceRepository extends Repository
+{
     /**
      * default ordering
      *
      * @return array
      */
-    protected $defaultOrderings = array(
+    protected $defaultOrderings = [
         'sorting' => QueryInterface::ORDER_ASCENDING,
-    );
+    ];
 
 }

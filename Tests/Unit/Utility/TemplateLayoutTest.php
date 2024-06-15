@@ -22,18 +22,18 @@ class TemplateLayoutTest extends UnitTestCase
         $GLOBALS['TYPO3_CONF_VARS']['EXT']['operations']['templateLayouts'] = [
             0 => [
                 0 => 'Layout-1',
-                1 => 'layout1'
+                1 => 'layout1',
             ],
             1 => [
                 0 => 'Layout-2',
-                1 => 'layout2'
+                1 => 'layout2',
             ],
         ];
 
         $templateLayoutUtility = $this->getAccessibleMock(TemplateLayout::class, ['getTemplateLayoutsFromTsConfig']);
-        $templateLayoutUtility->expects($this->once())->method('getTemplateLayoutsFromTsConfig')->will($this->returnValue([]));
+        $templateLayoutUtility->expects(self::once())->method('getTemplateLayoutsFromTsConfig')->willReturn([]);
         $templateLayouts = $templateLayoutUtility->_call('getAvailableTemplateLayouts', 1);
-        $this->assertSame($GLOBALS['TYPO3_CONF_VARS']['EXT']['operations']['templateLayouts'], $templateLayouts);
+        self::assertSame($GLOBALS['TYPO3_CONF_VARS']['EXT']['operations']['templateLayouts'], $templateLayouts);
     }
 
     /*
@@ -48,11 +48,11 @@ class TemplateLayoutTest extends UnitTestCase
         $result = [
             0 => [
                 0 => 'Layout-1',
-                1 => 'layout1'
+                1 => 'layout1',
             ],
             1 => [
                 0 => 'Layout-2',
-                1 => 'layout2'
+                1 => 'layout2',
             ],
         ];
 
@@ -60,8 +60,8 @@ class TemplateLayoutTest extends UnitTestCase
         unset($GLOBALS['TYPO3_CONF_VARS']['EXT']['operations']['templateLayouts']);
 
         $templateLayoutUtility = $this->getAccessibleMock(TemplateLayout::class, ['getTemplateLayoutsFromTsConfig']);
-        $templateLayoutUtility->expects($this->once())->method('getTemplateLayoutsFromTsConfig')->will($this->returnValue($tsConfigArray));
+        $templateLayoutUtility->expects(self::once())->method('getTemplateLayoutsFromTsConfig')->willReturn($tsConfigArray);
         $templateLayouts = $templateLayoutUtility->_call('getAvailableTemplateLayouts', 1);
-        $this->assertSame($result, $templateLayouts);
+        self::assertSame($result, $templateLayouts);
     }
 }

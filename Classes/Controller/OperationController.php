@@ -1,4 +1,6 @@
-<?php /** @noinspection PhpFullyQualifiedNameUsageInspection */
+<?php
+
+/** @noinspection PhpFullyQualifiedNameUsageInspection */
 
 namespace Kanow\Operations\Controller;
 
@@ -26,30 +28,26 @@ namespace Kanow\Operations\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 /**
- *
- *
- * @package operations
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
  */
-use Psr\Log\LoggerAwareInterface;
-use TYPO3\CMS\Core\Pagination\SlidingWindowPagination;
-use TYPO3\CMS\Core\SingletonInterface;
-use Psr\Http\Message\ResponseInterface;
 use GeorgRinger\NumberedPagination\NumberedPagination;
+use Kanow\Operations\Domain\Model\Category;
 use Kanow\Operations\Domain\Model\Operation;
 use Kanow\Operations\Domain\Model\OperationDemand;
-use Kanow\Operations\Domain\Repository\OperationRepository;
-use Kanow\Operations\Service\CategoryService;
-use Kanow\Operations\Domain\Repository\TypeRepository;
-use Psr\Http\Message\ServerRequestInterface;
-use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Pagination\SimplePagination;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Database\Query\QueryBuilder;
-use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
-use Kanow\Operations\Domain\Model\Category;
 use Kanow\Operations\Domain\Repository\CategoryRepository;
+use Kanow\Operations\Domain\Repository\OperationRepository;
+use Kanow\Operations\Domain\Repository\TypeRepository;
+use Kanow\Operations\Service\CategoryService;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use Psr\Log\LoggerAwareInterface;
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Database\Query\QueryBuilder;
+use TYPO3\CMS\Core\Pagination\SimplePagination;
+use TYPO3\CMS\Core\Pagination\SlidingWindowPagination;
+use TYPO3\CMS\Core\SingletonInterface;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Extbase\Http\ForwardResponse;
 use TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException;
 use TYPO3\CMS\Extbase\Pagination\QueryResultPaginator;
@@ -59,11 +57,10 @@ use TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter;
 
 class OperationController extends BaseController
 {
-
-	/**
-	 * operationRepository
+    /**
+     * operationRepository
      */
-	private OperationRepository $operationRepository;
+    private OperationRepository $operationRepository;
 
     /**
      * typeRepository
@@ -84,8 +81,8 @@ class OperationController extends BaseController
         \Kanow\Operations\Domain\Repository\OperationRepository $operationRepository,
         \Kanow\Operations\Domain\Repository\TypeRepository $typeRepository,
         \Kanow\Operations\Domain\Repository\CategoryRepository $categoryRepository,
-        \Kanow\Operations\Service\CategoryService $categoryService)
-    {
+        \Kanow\Operations\Service\CategoryService $categoryService
+    ) {
         $this->operationRepository = $operationRepository;
         $this->typeRepository = $typeRepository;
         $this->categoryRepository = $categoryRepository;
@@ -100,18 +97,19 @@ class OperationController extends BaseController
      * @return ResponseInterface
      * @throws InvalidQueryException
      */
-	public function listAction(OperationDemand $demand = NULL, int $currentPage = 1): ResponseInterface {
+    public function listAction(OperationDemand $demand = null, int $currentPage = 1): ResponseInterface
+    {
 
         if ($this->request->hasArgument('demand')) {
             $forwardResponse = new ForwardResponse('search');
             return $forwardResponse->withArguments($this->request->getArguments());
         }
 
-		$demand = $this->updateDemandObjectFromSettings($demand);
+        $demand = $this->updateDemandObjectFromSettings($demand);
         /** @var OperationDemand $demand */
         $operations = $this->operationRepository->findDemanded($demand, $this->settings);
         $types = $this->typeRepository->findAll();
-		$years = $this->generateYears();
+        $years = $this->generateYears();
 
         if ($this->settings['hidePagination'] != 1) {
             $currentPage = $this->request->hasArgument('currentPage') ? $this->request->getArgument('currentPage') : $currentPage;
@@ -132,22 +130,22 @@ class OperationController extends BaseController
             'operations' =>  $operations,
             'categories' =>  $this->getOperationCategories(),
             'pagination' => $pagination,
-            'paginator' => $paginator
+            'paginator' => $paginator,
         ]);
         return $this->htmlResponse();
-	}
+    }
 
     /**
      * action search
      *
      * @param OperationDemand $demand
      * @param int $currentPage
-     * @return void
      * @throws InvalidQueryException
      * @throws NoSuchArgumentException
      */
-	public function searchAction(OperationDemand $demand = NULL, int $currentPage = 1): ResponseInterface {
-		$demand = $this->updateDemandObjectFromSettings($demand);
+    public function searchAction(OperationDemand $demand = null, int $currentPage = 1): ResponseInterface
+    {
+        $demand = $this->updateDemandObjectFromSettings($demand);
         /** @var OperationDemand $demand */
         $demanded = $this->operationRepository->findDemanded($demand, $this->settings);
 
@@ -164,8 +162,8 @@ class OperationController extends BaseController
             $pagination = $this->getPagination($paginationClass, $maximumNumberOfLinks, $paginator);
         }
 
-		$years = $this->generateYears();
-		$types = $this->typeRepository->findAll();
+        $years = $this->generateYears();
+        $types = $this->typeRepository->findAll();
 
         $this->view->assignMultiple([
             'types' => $types,
@@ -174,10 +172,10 @@ class OperationController extends BaseController
             'demand' => $demand,
             'categories' => $this->getOperationCategories(),
             'pagination' => $pagination,
-            'paginator' => $paginator
+            'paginator' => $paginator,
         ]);
         return $this->htmlResponse();
-	}
+    }
 
     /**
      * Initializes the current action
@@ -189,29 +187,29 @@ class OperationController extends BaseController
         if ($this->arguments->hasArgument('demand')) {
             $propertyMappingConfiguration = $this->arguments->getArgument('demand')->getPropertyMappingConfiguration();
             $propertyMappingConfiguration->allowAllProperties();
-            $propertyMappingConfiguration->setTypeConverterOption(PersistentObjectConverter::class, PersistentObjectConverter::CONFIGURATION_CREATION_ALLOWED, TRUE);
+            $propertyMappingConfiguration->setTypeConverterOption(PersistentObjectConverter::class, PersistentObjectConverter::CONFIGURATION_CREATION_ALLOWED, true);
         }
     }
 
-	/**
-	 * action show
-	 *
-	 * @param Operation $operation
-	 * @return void
-	 */
-	public function showAction(Operation $operation): ResponseInterface {
-		$this->view->assign('operation', $operation);
-  return $this->htmlResponse();
-	}
+    /**
+     * action show
+     *
+     * @param Operation $operation
+     */
+    public function showAction(Operation $operation): ResponseInterface
+    {
+        $this->view->assign('operation', $operation);
+        return $this->htmlResponse();
+    }
 
     /**
      * action for statistics
      *
      * @param OperationDemand $demand
-     * @return void
      * @throws InvalidQueryException
      */
-    public function statisticsAction(OperationDemand $demand = NULL): ResponseInterface {
+    public function statisticsAction(OperationDemand $demand = null): ResponseInterface
+    {
         $demand = $this->updateDemandObjectFromSettings($demand);
 
         /** @var OperationDemand $demand */
@@ -221,16 +219,16 @@ class OperationController extends BaseController
         $years = $this->generateYears($operationUids);
         $types = $this->typeRepository->findAll()->toArray();
 
-        $operationsGroupedByYearAndType = $this->operationRepository->countGroupedByYearAndType($years,$types, $operationUids);
+        $operationsGroupedByYearAndType = $this->operationRepository->countGroupedByYearAndType($years, $types, $operationUids);
         $operationsGroupedByYear = $this->operationRepository->countGroupedByYear($years, $operationUids);
 
         $this->view->assignMultiple(
-            array(
+            [
                 'operationsGroupedByYearAndType' => $operationsGroupedByYearAndType,
                 'operationsGroupedByYear' => $operationsGroupedByYear,
                 'count' => $this->operationRepository->countDemandedForStatistics($demand, $this->settings),
-                'years' => $years
-            )
+                'years' => $years,
+            ]
         );
         return $this->htmlResponse();
     }
@@ -241,12 +239,13 @@ class OperationController extends BaseController
      * @param OperationDemand $demand
      * @return object
      */
-	protected function updateDemandObjectFromSettings($demand) {
-		if(is_null($demand)){
+    protected function updateDemandObjectFromSettings($demand)
+    {
+        if (is_null($demand)) {
             $demand = GeneralUtility::makeInstance(OperationDemand::class);
-		}
-		return $demand;
-	}
+        }
+        return $demand;
+    }
 
     /**
      * Get the years. Only from defined operation uid list.
@@ -254,7 +253,8 @@ class OperationController extends BaseController
      * @param string $operationUids
      * @return array
      */
-    protected function generateYears($operationUids = ''){
+    protected function generateYears($operationUids = '')
+    {
         $years = [];
         $lastYears = $this->settings['lastYears'];
         /** @var QueryBuilder $queryBuilder */
@@ -263,11 +263,11 @@ class OperationController extends BaseController
         $rows = $queryBuilder
             ->addSelectLiteral('FROM_UNIXTIME(begin, \'%Y\') AS year')
             ->from('tx_operations_domain_model_operation');
-        if($operationUids != '') {
+        if ($operationUids != '') {
             $rows = $rows->andWhere('uid IN (' . $operationUids . ')');
         }
         $rows = $rows->groupBy('year')
-            ->orderBy('year','DESC')
+            ->orderBy('year', 'DESC')
             ->setMaxResults($lastYears)
             ->executeQuery()
             ->fetchAllAssociative();
@@ -282,11 +282,12 @@ class OperationController extends BaseController
      *
      * @return ObjectStorage $categories
      */
-    protected function getOperationCategories() {
+    protected function getOperationCategories()
+    {
         $site = $this->getRequest()->getAttribute('site');
         $configuration = $site->getConfiguration();
         $operationsRootCategory = $this->categoryRepository->findByUid((int)$configuration['settings']['operations']['rootCategory']);
-        if($operationsRootCategory != null) {
+        if ($operationsRootCategory != null) {
             /** @var Category $operationsRootCategory */
             $categories = $this->categoryService->findAllDescendants($operationsRootCategory);
         } else {
@@ -307,7 +308,7 @@ class OperationController extends BaseController
         foreach ($result as $item) {
             $uidList[] = $item['uid'];
         }
-        $uidList = implode(',',$uidList);
+        $uidList = implode(',', $uidList);
         return $uidList;
     }
 
@@ -329,26 +330,20 @@ class OperationController extends BaseController
     {
         if (class_exists(NumberedPagination::class) && $paginationClass === NumberedPagination::class && $maximumNumberOfLinks) {
             $pagination = GeneralUtility::makeInstance(NumberedPagination::class, $paginator, $maximumNumberOfLinks);
-        }
-        elseif (class_exists(SlidingWindowPagination::class) && $paginationClass === SlidingWindowPagination::class && $maximumNumberOfLinks) {
+        } elseif (class_exists(SlidingWindowPagination::class) && $paginationClass === SlidingWindowPagination::class && $maximumNumberOfLinks) {
             $pagination = GeneralUtility::makeInstance(SlidingWindowPagination::class, $paginator, $maximumNumberOfLinks);
-        }
-        elseif (class_exists($paginationClass)) {
+        } elseif (class_exists($paginationClass)) {
             $pagination = GeneralUtility::makeInstance($paginationClass, $paginator);
-        }
-        else {
+        } else {
             $pagination = GeneralUtility::makeInstance(SimplePagination::class, $paginator);
         }
         return $pagination;
     }
 
-
     /**
      * overrides flexform settings with original typoscript values when
      * flexform value is empty and settings key is defined in
      * 'settings.overrideFlexformSettingsIfEmpty'
-     *
-     * @return void
      */
     public function overrideFlexformSettings(): void
     {
@@ -361,7 +356,7 @@ class OperationController extends BaseController
             'operations_list'
         );
         if (isset($typoScriptSettings['settings']['overrideFlexformSettingsIfEmpty'])) {
-            $overrideIfEmpty = GeneralUtility::trimExplode(',', $typoScriptSettings['settings']['overrideFlexformSettingsIfEmpty'], TRUE);
+            $overrideIfEmpty = GeneralUtility::trimExplode(',', $typoScriptSettings['settings']['overrideFlexformSettingsIfEmpty'], true);
             foreach ($overrideIfEmpty as $settingToOverride) {
                 // if flexform setting is empty and value is available in TS
                 if ((!isset($originalSettings[$settingToOverride]) || empty($originalSettings[$settingToOverride]))
@@ -373,15 +368,14 @@ class OperationController extends BaseController
         }
     }
 
-
     /**
      * StoragePid fallback: TypoScript settings will be overridden by plugin date.
      * No flexform settings, field pages of tt_content will be used.
-     *
      */
     protected function storagePidFallback()
     {
-        $configuration = $this->configurationManager->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK,
+        $configuration = $this->configurationManager->getConfiguration(
+            ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK,
             'operations',
             'operations_pi1'
         );
@@ -394,7 +388,7 @@ class OperationController extends BaseController
         // Use current page as storagePid if neither set in TypoScript nor plugin data
         elseif (!$configuration['persistence']['storagePid']) {
             // Use current PID as storage PID
-            $pid['persistence']['storagePid'] = $GLOBALS["TSFE"]->id;
+            $pid['persistence']['storagePid'] = $GLOBALS['TSFE']->id;
             $this->configurationManager->setConfiguration(array_merge($configuration, $pid));
         }
     }

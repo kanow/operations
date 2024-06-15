@@ -1,10 +1,12 @@
 <?php
+
 namespace Kanow\Operations\Domain\Model;
 
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
-use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+
 /***************************************************************
  *  Copyright notice
  *
@@ -29,28 +31,24 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 /**
- *
- *
- * @package operations
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
  */
-class Type extends AbstractEntity {
-
-	/**
+class Type extends AbstractEntity
+{
+    /**
   * Operation type
   *
   * @var string
   */
- #[Validate(['validator' => 'NotEmpty'])]
- protected $title;
+    #[Validate(['validator' => 'NotEmpty'])]
+    protected $title;
 
-	/**
+    /**
   * icon for use in list or for whatever
   *
   * @var FileReference
   */
- protected $image;
+    protected $image;
 
     /**
      * Type color
@@ -59,49 +57,52 @@ class Type extends AbstractEntity {
      */
     protected $color;
 
-	/**
-	 * Returns the title
-	 *
-	 * @return string $title
-	 */
-	public function getTitle() {
-		return $this->title;
-	}
+    /**
+     * Returns the title
+     *
+     * @return string $title
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
 
-	/**
-	 * Sets the title
-	 *
-	 * @param string $title
-	 * @return void
-	 */
-	public function setTitle($title): void {
-		$this->title = $title;
-	}
+    /**
+     * Sets the title
+     *
+     * @param string $title
+     */
+    public function setTitle($title): void
+    {
+        $this->title = $title;
+    }
 
-	/**
+    /**
    * Returns the image
    *
    * @return FileReference $image
    */
-  public function getImage() {
-          return $this->image;
-  }
+    public function getImage()
+    {
+        return $this->image;
+    }
 
-  /**
-   * Sets the image
-   *
-   * @param ObjectStorage $image
-   * @return void
-   */
-  public function setImage($image): void {
-          $this->image = $image;
-  }
+    /**
+     * Sets the image
+     *
+     * @param ObjectStorage $image
+     */
+    public function setImage($image): void
+    {
+        $this->image = $image;
+    }
     /**
      * Returns the color
      *
      * @return string $color
      */
-    public function getColor() {
+    public function getColor()
+    {
         return $this->color;
     }
 
@@ -109,9 +110,9 @@ class Type extends AbstractEntity {
      * Sets the color
      *
      * @param string $color
-     * @return void
      */
-    public function setColor($color): void {
+    public function setColor($color): void
+    {
         $this->color = $color;
     }
 

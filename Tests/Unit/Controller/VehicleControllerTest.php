@@ -1,5 +1,7 @@
 <?php
+
 namespace Kanow\Operations\Tests;
+
 use Kanow\Operations\Controller\VehicleController;
 use Kanow\Operations\Domain\Model\Vehicle;
 use Kanow\Operations\Domain\Repository\VehicleRepository;
@@ -43,12 +45,11 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
- * @package TYPO3
- * @subpackage Operations
  *
  * @author Karsten Nowak <captnnowi@gmx.de>
  */
-class VehicleControllerTest extends UnitTestCase {
+class VehicleControllerTest extends UnitTestCase
+{
     /**
      * @var VehicleController&MockObject&AccessibleObjectInterface
      */
@@ -64,7 +65,8 @@ class VehicleControllerTest extends UnitTestCase {
      */
     private VehicleRepository $vehicleRepositoryMock;
 
-    protected function setUp(): void {
+    protected function setUp(): void
+    {
         parent::setUp();
 
         // We need to create an accessible mock in order to be able to set the protected `view`.

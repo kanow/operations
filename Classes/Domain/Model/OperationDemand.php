@@ -1,4 +1,5 @@
 <?php
+
 namespace Kanow\Operations\Domain\Model;
 
 use TYPO3\CMS\Extbase\Annotation\Validate;
@@ -31,182 +32,186 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractValueObject;
 /**
  * Operation Demand object which holds all information to get the correct
  * record.
- *
- * @package operations
  */
-class OperationDemand extends AbstractValueObject {
+class OperationDemand extends AbstractValueObject
+{
+    /**
+     * Operation onlyEld for demand
+     *
+     * @var int
+     */
+    protected $onlyEld;
 
-	/**
-	 * Operation onlyEld for demand
-	 *
-	 * @var integer
-	 */
-	protected $onlyEld;
+    /**
+     * Type of operation
+     *
+     * @var int
+     */
+    protected $type;
 
-	/**
-	 * Type of operation
-	 *
-	 * @var integer
-	 */
-	protected $type;
+    /**
+     * @var int
+     */
+    protected $limit;
 
-	/**
-	 * @var integer
-	 */
-	protected $limit;
-
-	/**
+    /**
       * Begin
       *
       * @var string
       */
-     #[Validate(['validator' => 'NotEmpty'])]
-     protected $begin;
+    #[Validate(['validator' => 'NotEmpty'])]
+    protected $begin;
 
-	/**
-	 * Searchstring
-	 *
-	 * @var string
-	 */
-	protected $searchstring;
+    /**
+     * Searchstring
+     *
+     * @var string
+     */
+    protected $searchstring;
 
     /**
      * Category
      *
-     * @var integer
-     *
+     * @var int
      */
     protected $category;
 
-	/**
+    /**
      * onlyEld for demanded
-	 * @param integer
-	 * @return void
-	 */
-	public function setOnlyEld($onlyEld): void {
-		$this->onlyEld = $onlyEld;
-	}
+     * @param int
+     */
+    public function setOnlyEld($onlyEld): void
+    {
+        $this->onlyEld = $onlyEld;
+    }
 
-	/**
+    /**
      * onlyEld for demanded
-	 * @return integer
-	 */
-	public function getOnlyEld() {
-		return $this->onlyEld;
-	}
+     * @return int
+     */
+    public function getOnlyEld()
+    {
+        return $this->onlyEld;
+    }
 
-	/**
-	 * Returns the type
-	 *
-	 * @return integer $type
-	 */
-	public function getType() {
-		return $this->type;
-	}
+    /**
+     * Returns the type
+     *
+     * @return int $type
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
 
-	/**
-	 * Sets the type
-	 *
-	 * @param integer $type
-	 * @return void
-	 */
-	public function setType($type): void {
-		$this->type = $type;
-	}
+    /**
+     * Sets the type
+     *
+     * @param int $type
+     */
+    public function setType($type): void
+    {
+        $this->type = $type;
+    }
 
-	/**
-	 * Set limit
-	 *
-	 * @param integer $limit limit
-	 * @return void
-	 */
-	public function setLimit($limit): void {
-		$this->limit = (int)$limit;
-	}
+    /**
+     * Set limit
+     *
+     * @param int $limit limit
+     */
+    public function setLimit($limit): void
+    {
+        $this->limit = (int)$limit;
+    }
 
-	/**
-	 * Get limit
-	 *
-	 * @return integer
-	 */
-	public function getLimit() {
-		return $this->limit;
-	}
+    /**
+     * Get limit
+     *
+     * @return int
+     */
+    public function getLimit()
+    {
+        return $this->limit;
+    }
 
-	/**
-	 * Returns the begin
-	 *
-	 * @return string
-	 */
-	public function getBegin() {
-		return $this->begin;
-	}
+    /**
+     * Returns the begin
+     *
+     * @return string
+     */
+    public function getBegin()
+    {
+        return $this->begin;
+    }
 
-	/**
-	 * Sets the begin
-	 *
-	 * @param string $begin
-	 * @return void
-	 */
-	public function setBegin($begin): void {
-		$this->begin = $begin;
-	}
+    /**
+     * Sets the begin
+     *
+     * @param string $begin
+     */
+    public function setBegin($begin): void
+    {
+        $this->begin = $begin;
+    }
 
-	/**
-	 * Returns the searchstring
-	 *
-	 * @return string
-	 */
-	public function getSearchstring() {
-		return $this->searchstring;
-	}
+    /**
+     * Returns the searchstring
+     *
+     * @return string
+     */
+    public function getSearchstring()
+    {
+        return $this->searchstring;
+    }
 
-	/**
-	 * Sets the searchstring
-	 *
-	 * @param string $searchstring
-	 * @return void
-	 */
-	public function setSearchstring($searchstring): void {
-		$this->searchstring = $searchstring;
-	}
+    /**
+     * Sets the searchstring
+     *
+     * @param string $searchstring
+     */
+    public function setSearchstring($searchstring): void
+    {
+        $this->searchstring = $searchstring;
+    }
 
-	const ARRAY_PROPERTIES = 'begin,type';
+    public const ARRAY_PROPERTIES = 'begin,type';
 
-	/**
-	 * get demand parameter for additionalParams in pagination
-	 */
-	public function getParameter(){
-		$returnArray = array();
-		foreach (explode(',', self::ARRAY_PROPERTIES) as $property) {
-			$method = 'get' . ucfirst($property);
-			$propertyValue =  $this->$method();
-			if(!is_null($propertyValue)) {
-				if(is_a($propertyValue, '\TYPO3\CMS\Extbase\Persistence\ObjectStorage')) {
-					$propertyValue = $propertyValue->toArray();
-				}
-				$returnArray [$property]= $propertyValue;
-			}
-		}
-		return $returnArray;
-	}
+    /**
+     * get demand parameter for additionalParams in pagination
+     */
+    public function getParameter()
+    {
+        $returnArray = [];
+        foreach (explode(',', self::ARRAY_PROPERTIES) as $property) {
+            $method = 'get' . ucfirst($property);
+            $propertyValue =  $this->$method();
+            if (!is_null($propertyValue)) {
+                if (is_a($propertyValue, '\TYPO3\CMS\Extbase\Persistence\ObjectStorage')) {
+                    $propertyValue = $propertyValue->toArray();
+                }
+                $returnArray [$property] = $propertyValue;
+            }
+        }
+        return $returnArray;
+    }
 
     /**
      * Returns the category
      *
-     * @return integer $category
+     * @return int $category
      */
-    public function getCategory() {
+    public function getCategory()
+    {
         return $this->category;
     }
 
     /**
      * Sets the category
      *
-     * @param integer $category
-     * @return void
+     * @param int $category
      */
-    public function setCategory($category): void {
+    public function setCategory($category): void
+    {
         $this->category = $category;
     }
 }

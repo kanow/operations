@@ -14,7 +14,6 @@ class TypeRepositoryTest extends UnitTestCase
      */
     private TypeRepository $subject;
 
-
     protected function setUp(): void
     {
         parent::setUp();

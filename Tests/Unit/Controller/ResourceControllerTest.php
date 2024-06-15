@@ -1,5 +1,7 @@
 <?php
+
 namespace Kanow\Operations\Tests;
+
 use Kanow\Operations\Controller\ResourceController;
 use Kanow\Operations\Domain\Model\Resource;
 use Kanow\Operations\Domain\Repository\ResourceRepository;
@@ -43,13 +45,11 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
- * @package TYPO3
- * @subpackage Operations
  *
  * @author Karsten Nowak <captnnowi@gmx.de>
  */
-class ResourceControllerTest extends UnitTestCase {
-
+class ResourceControllerTest extends UnitTestCase
+{
     /**
      * @var ResourceController&MockObject&AccessibleObjectInterface
      */
@@ -65,7 +65,8 @@ class ResourceControllerTest extends UnitTestCase {
      */
     private ResourceRepository $resourceRepositoryMock;
 
-    protected function setUp(): void {
+    protected function setUp(): void
+    {
         parent::setUp();
 
         // We need to create an accessible mock in order to be able to set the protected `view`.

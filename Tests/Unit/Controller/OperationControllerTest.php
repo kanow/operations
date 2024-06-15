@@ -1,5 +1,7 @@
 <?php
+
 namespace Kanow\Operations\Tests;
+
 use Kanow\Operations\Controller\OperationController;
 use Kanow\Operations\Domain\Model\Operation;
 use Kanow\Operations\Domain\Repository\OperationRepository;
@@ -15,7 +17,7 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
  *  Copyright notice
  *
  *  (c) 2013 Karsten Nowak <captnnowi@gmx.de>
- *  			
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -42,14 +44,11 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
- * @package TYPO3
- * @subpackage Operations
  *
  * @author Karsten Nowak <captnnowi@gmx.de>
  */
-class OperationControllerTest extends UnitTestCase {
-
-
+class OperationControllerTest extends UnitTestCase
+{
     /**
      * @var OperationController&MockObject&AccessibleObjectInterface
      */
@@ -65,8 +64,9 @@ class OperationControllerTest extends UnitTestCase {
      */
     private OperationRepository $operationRepositoryMock;
 
-	protected function setUp(): void {
-		parent::setUp();
+    protected function setUp(): void
+    {
+        parent::setUp();
 
         // We need to create an accessible mock in order to be able to set the protected `view`.
         $methodsToMock = ['htmlResponse', 'redirect', 'redirectToUri'];
@@ -83,28 +83,28 @@ class OperationControllerTest extends UnitTestCase {
 
         $responseMock = $this->createMock(HtmlResponse::class);
         $this->subject->method('htmlResponse')->willReturn($responseMock);
-	}
+    }
 
-	/**
-	 * @test
-	 */
-	public function isActionController(): void
+    /**
+     * @test
+     */
+    public function isActionController(): void
     {
         self::assertInstanceOf(ActionController::class, $this->subject);
-	}
+    }
 
-//    /**
-//     * @test
-//     */
+    //    /**
+    //     * @test
+    //     */
     //@todo test throws an error with accessing $request before intialization
-//    public function listActionAssignsAllOperationAsOperationsToView(): void
-//    {
-//        $operations = $this->createMock(QueryResultInterface::class);
-//        $this->operationRepositoryMock->method('findAll')->willReturn($operations);
-//        $this->viewMock->expects(self::once())->method('assign')->with('operations', $operations);
-//
-//        $this->subject->listAction();
-//    }
+    //    public function listActionAssignsAllOperationAsOperationsToView(): void
+    //    {
+    //        $operations = $this->createMock(QueryResultInterface::class);
+    //        $this->operationRepositoryMock->method('findAll')->willReturn($operations);
+    //        $this->viewMock->expects(self::once())->method('assign')->with('operations', $operations);
+    //
+    //        $this->subject->listAction();
+    //    }
 
     /**
      * @test

@@ -3,9 +3,10 @@
 namespace Kanow\Operations\Domain\Model;
 
 use TYPO3\CMS\Extbase\Annotation\Validate;
-use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+
 /***************************************************************
  *  Copyright notice
  *
@@ -30,15 +31,10 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 /**
- *
- *
- * @package operations
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
  */
 class Vehicle extends AbstractEntity
 {
-
     /**
      * Title of vehicle
      *
@@ -88,7 +84,6 @@ class Vehicle extends AbstractEntity
      * Sets the title
      *
      * @param string $title
-     * @return void
      */
     public function setTitle($title): void
     {
@@ -109,7 +104,6 @@ class Vehicle extends AbstractEntity
      * Sets the short
      *
      * @param string $short
-     * @return void
      */
     public function setShort($short): void
     {
@@ -130,7 +124,6 @@ class Vehicle extends AbstractEntity
      * Sets the description
      *
      * @param string $description
-     * @return void
      */
     public function setDescription($description): void
     {
@@ -162,7 +155,6 @@ class Vehicle extends AbstractEntity
      * Sets the media
      *
      * @param ObjectStorage $media
-     * @return void
      */
     public function setMedia($media): void
     {

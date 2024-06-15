@@ -14,7 +14,6 @@ class VehicleRepositoryTest extends UnitTestCase
      */
     private VehicleRepository $subject;
 
-
     protected function setUp(): void
     {
         parent::setUp();

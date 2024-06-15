@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Kanow\Operations\Tests\Unit\Domain\Model\Type;
+
 use Kanow\Operations\Domain\Model\Type;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
@@ -13,7 +14,7 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
  *  Copyright notice
  *
  *  (c) 2013 Karsten Nowak <captnnowi@gmx.de>
- *  			
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -40,13 +41,11 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
- * @package TYPO3
- * @subpackage Operations
  *
  * @author Karsten Nowak <captnnowi@gmx.de>
  */
-class TypeTest extends UnitTestCase {
-
+class TypeTest extends UnitTestCase
+{
     private Type $subject;
 
     protected function setUp(): void
@@ -70,7 +69,7 @@ class TypeTest extends UnitTestCase {
     {
         $value = 'This is a type';
         $this->subject->setTitle($value);
-        $this->assertEquals($value, $this->subject->getTitle());
+        self::assertEquals($value, $this->subject->getTitle());
     }
 
     /**
@@ -80,7 +79,7 @@ class TypeTest extends UnitTestCase {
     {
         $value = '#aacc00';
         $this->subject->setColor($value);
-        $this->assertEquals($value, $this->subject->getColor());
+        self::assertEquals($value, $this->subject->getColor());
     }
 
     /**
@@ -92,7 +91,7 @@ class TypeTest extends UnitTestCase {
         $image = new ObjectStorage();
         $image->attach($file);
         $this->subject->setImage($image);
-        $this->assertSame($image, $this->subject->getImage());
+        self::assertSame($image, $this->subject->getImage());
     }
 
 }
