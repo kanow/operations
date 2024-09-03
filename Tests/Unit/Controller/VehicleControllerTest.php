@@ -69,18 +69,17 @@ class VehicleControllerTest extends UnitTestCase
     {
         parent::setUp();
 
+        $this->vehicleRepositoryMock = $this->createMock(VehicleRepository::class);
         // We need to create an accessible mock in order to be able to set the protected `view`.
         $methodsToMock = ['htmlResponse', 'redirect', 'redirectToUri'];
-        if ((new Typo3Version())->getMajorVersion() <= 11) {
-            $methodsToMock[] = 'forward';
-        }
-        $this->subject = $this->getAccessibleMock(VehicleController::class, $methodsToMock);
+        $this->subject = $this->getAccessibleMock(VehicleController::class, $methodsToMock,[
+            $this->vehicleRepositoryMock
+        ]);
 
         $this->viewMock = $this->createMock(TemplateView::class);
         $this->subject->_set('view', $this->viewMock);
 
         $this->vehicleRepositoryMock = $this->getMockBuilder(VehicleRepository::class)->disableOriginalConstructor()->getMock();
-        $this->subject->injectVehicleRepository($this->vehicleRepositoryMock);
 
         $responseMock = $this->createMock(HtmlResponse::class);
         $this->subject->method('htmlResponse')->willReturn($responseMock);

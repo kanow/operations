@@ -4,7 +4,11 @@ namespace Kanow\Operations\Tests;
 
 use Kanow\Operations\Controller\OperationController;
 use Kanow\Operations\Domain\Model\Operation;
+use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
+use Kanow\Operations\Domain\Repository\CategoryRepository;
 use Kanow\Operations\Domain\Repository\OperationRepository;
+use Kanow\Operations\Domain\Repository\TypeRepository;
+use Kanow\Operations\Service\CategoryService;
 use PHPUnit\Framework\MockObject\MockObject;
 use TYPO3\CMS\Core\Http\HtmlResponse;
 use TYPO3\CMS\Core\Information\Typo3Version;
@@ -64,22 +68,46 @@ class OperationControllerTest extends UnitTestCase
      */
     private OperationRepository $operationRepositoryMock;
 
+    /**
+     * @var TypeRepository&MockObject
+     */
+    private TypeRepository $typeRepositoryMock;
+
+    /**
+     * @var CategoryRepository&MockObject
+     */
+    private CategoryRepository $categoryRepositoryMock;
+    /**
+     * @var CategoryService
+     */
+    private CategoryService $categoryServiceMock;
+
     protected function setUp(): void
     {
         parent::setUp();
+
+
+        $this->operationRepositoryMock = $this->createMock(OperationRepository::class);
+        $this->typeRepositoryMock = $this->createMock(TypeRepository::class);
+        $this->categoryRepositoryMock = $this->createMock(CategoryRepository::class);
+        $this->categoryServiceMock = $this->createMock(CategoryService::class);
 
         // We need to create an accessible mock in order to be able to set the protected `view`.
         $methodsToMock = ['htmlResponse', 'redirect', 'redirectToUri'];
         if ((new Typo3Version())->getMajorVersion() <= 11) {
             $methodsToMock[] = 'forward';
         }
-        $this->subject = $this->getAccessibleMock(OperationController::class, $methodsToMock);
+        $this->subject = $this->getAccessibleMock(OperationController::class, $methodsToMock, [
+            $this->operationRepositoryMock,
+            $this->typeRepositoryMock,
+            $this->categoryRepositoryMock,
+            $this->categoryServiceMock
+            ]);
 
         $this->viewMock = $this->createMock(TemplateView::class);
         $this->subject->_set('view', $this->viewMock);
 
         $this->operationRepositoryMock = $this->getMockBuilder(OperationRepository::class)->disableOriginalConstructor()->getMock();
-        $this->subject->injectOperationRepository($this->operationRepositoryMock);
 
         $responseMock = $this->createMock(HtmlResponse::class);
         $this->subject->method('htmlResponse')->willReturn($responseMock);
@@ -93,18 +121,18 @@ class OperationControllerTest extends UnitTestCase
         self::assertInstanceOf(ActionController::class, $this->subject);
     }
 
-    //    /**
-    //     * @test
-    //     */
-    //@todo test throws an error with accessing $request before intialization
-    //    public function listActionAssignsAllOperationAsOperationsToView(): void
-    //    {
-    //        $operations = $this->createMock(QueryResultInterface::class);
-    //        $this->operationRepositoryMock->method('findAll')->willReturn($operations);
-    //        $this->viewMock->expects(self::once())->method('assign')->with('operations', $operations);
-    //
-    //        $this->subject->listAction();
-    //    }
+//        /**
+//         * @test
+//         */
+// @todo test throws an error with accessing $request before intialization
+//        public function listActionAssignsAllOperationAsOperationsToView(): void
+//        {
+//            $operations = $this->createMock(QueryResultInterface::class);
+//            $this->operationRepositoryMock->method('findAll')->willReturn($operations);
+//            $this->viewMock->expects(self::once())->method('assign')->with('operations', $operations);
+//
+//            $this->subject->listAction();
+//        }
 
     /**
      * @test

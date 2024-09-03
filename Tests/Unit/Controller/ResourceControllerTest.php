@@ -69,18 +69,18 @@ class ResourceControllerTest extends UnitTestCase
     {
         parent::setUp();
 
+        $this->resourceRepositoryMock = $this->createMock(ResourceRepository::class);
         // We need to create an accessible mock in order to be able to set the protected `view`.
         $methodsToMock = ['htmlResponse', 'redirect', 'redirectToUri'];
-        if ((new Typo3Version())->getMajorVersion() <= 11) {
-            $methodsToMock[] = 'forward';
-        }
-        $this->subject = $this->getAccessibleMock(ResourceController::class, $methodsToMock);
+        $this->subject = $this->getAccessibleMock(ResourceController::class, $methodsToMock, [
+            $this->resourceRepositoryMock
+        ]);
+
 
         $this->viewMock = $this->createMock(TemplateView::class);
         $this->subject->_set('view', $this->viewMock);
 
         $this->resourceRepositoryMock = $this->getMockBuilder(ResourceRepository::class)->disableOriginalConstructor()->getMock();
-        $this->subject->injectResourceRepository($this->resourceRepositoryMock);
 
         $responseMock = $this->createMock(HtmlResponse::class);
         $this->subject->method('htmlResponse')->willReturn($responseMock);
