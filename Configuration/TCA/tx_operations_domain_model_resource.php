@@ -2,6 +2,7 @@
 
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Information\Typo3Version;
+use TYPO3\CMS\Core\Resource\AbstractFile;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 if (!defined('TYPO3')) {
@@ -27,22 +28,22 @@ $imageSettingsFalMedia = [
                     --palette--;;imageoverlayPalette,
                     --palette--;;filePalette',
             ],
-            \TYPO3\CMS\Core\Resource\FileType::TEXT->value => [
+            AbstractFile::FILETYPE_TEXT => [
                 'showitem' => '
                                 --palette--;;imageoverlayPalette,
                                 --palette--;;filePalette',
             ],
-            \TYPO3\CMS\Core\Resource\FileType::IMAGE->value => [
+            AbstractFile::FILETYPE_IMAGE => [
                 'showitem' => '
                                 --palette--;;imageoverlayPalette,
                                 --palette--;;filePalette',
             ],
-            \TYPO3\CMS\Core\Resource\FileType::AUDIO->value => [
+            AbstractFile::FILETYPE_AUDIO => [
                 'showitem' => '
                                 --palette--;;audioOverlayPalette,
                                 --palette--;;filePalette',
             ],
-            \TYPO3\CMS\Core\Resource\FileType::VIDEO->value => [
+            AbstractFile::FILETYPE_VIDEO => [
                 'showitem' => '
                                 --palette--;;videoOverlayPalette,
                                 --palette--;;filePalette',
