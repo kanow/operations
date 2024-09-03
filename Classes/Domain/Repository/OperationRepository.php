@@ -280,7 +280,7 @@ class OperationRepository extends Repository
             ->getQueryBuilderForTable('tx_operations_domain_model_operation');
 
         $statement = $queryBuilder
-            ->addSelectLiteral('COUNT(*) as count, FROM_UNIXTIME(begin, \'%Y\') as year', true)
+            ->addSelectLiteral('COUNT(*) as count, FROM_UNIXTIME(begin, \'%Y\') as year')
             ->from('tx_operations_domain_model_operation', 'o')
             ->where('FROM_UNIXTIME(begin, \'%Y\') IN(' . $this->convertYearsToString($years) . ')');
         if ($operationUids != '') {
