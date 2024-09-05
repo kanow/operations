@@ -3,134 +3,117 @@
     <sheets>
         <sDEF>
             <ROOT>
-                <TCEforms>
-                    <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.settings
-                    </sheetTitle>
-                </TCEforms>
+                <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.settings</sheetTitle>
                 <type>array</type>
                 <el>
 
                     <!-- Category Mode -->
                     <settings.categoryConjunction>
-                        <TCEforms>
-                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.label</label>
-                            <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.description</description>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items>
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.all</numIndex>
-                                        <numIndex index="1"></numIndex>
-                                    </numIndex>
-                                    <numIndex index="1">
-                                        <numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.or</numIndex>
-                                        <numIndex index="1">or</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2">
-                                        <numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.and</numIndex>
-                                        <numIndex index="1">and</numIndex>
-                                    </numIndex>
-                                    <numIndex index="3">
-                                        <numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.notor</numIndex>
-                                        <numIndex index="1">notor</numIndex>
-                                    </numIndex>
-                                    <numIndex index="4">
-                                        <numIndex index="0">LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.notand</numIndex>
-                                        <numIndex index="1">notand</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.label</label>
+                        <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.description</description>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items>
+                                <numIndex index="0">
+                                    <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.all</label>
+                                    <value></value>
+                                </numIndex>
+                                <numIndex index="1">
+                                    <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.or</label>
+                                    <value>or</value>
+                                </numIndex>
+                                <numIndex index="2">
+                                    <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.and</label>
+                                    <value>and</value>
+                                </numIndex>
+                                <numIndex index="3">
+                                    <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.notor</label>
+                                    <value>notor</value>
+                                </numIndex>
+                                <numIndex index="4">
+                                    <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.notand</label>
+                                    <value>notand</value>
+                                </numIndex>
+                            </items>
+                        </config>
                     </settings.categoryConjunction>
 
                     <!-- Category -->
                     <settings.category>
-                        <TCEforms>
-                            <exclude>1</exclude>
-                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.category.label</label>
-                            <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.category.description</description>
-                            <config>
-                                <type>category</type>
-                                <treeConfig>
-                                    <startingPoints>###SITE:settings.operations.rootCategory###</startingPoints>
-                                    <appearance>
-                                        <expandAll>1</expandAll>
-                                        <showHeader>1</showHeader>
-                                        <maxLevels>999</maxLevels>
-                                    </appearance>
-                                </treeConfig>
-                                <maxitems>50</maxitems>
-                                <minitems>0</minitems>
-                                <show_thumbs>1</show_thumbs>
-                                <wizards>
-                                    <suggest>
-                                        <type>suggest</type>
-                                    </suggest>
-                                </wizards>
-                            </config>
-                        </TCEforms>
+                        <exclude>1</exclude>
+                        <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.category.label</label>
+                        <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.category.description</description>
+                        <config>
+                            <type>category</type>
+                            <treeConfig>
+                                <startingPoints>###SITE:settings.operations.rootCategory###</startingPoints>
+                                <appearance>
+                                    <expandAll>1</expandAll>
+                                    <showHeader>1</showHeader>
+                                    <maxLevels>999</maxLevels>
+                                </appearance>
+                            </treeConfig>
+                            <maxitems>50</maxitems>
+                            <minitems>0</minitems>
+                            <show_thumbs>1</show_thumbs>
+                            <wizards>
+                                <suggest>
+                                    <type>suggest</type>
+                                </suggest>
+                            </wizards>
+                        </config>
                     </settings.category>
 
                     <settings.limit>
-                        <TCEforms>
-                            <exclude>1</exclude>
-                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.limit</label>
-                            <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.limit.description</description>
-                            <config>
-                                <type>input</type>
-                                <size>5</size>
-                                <default></default>
-                                <eval>trim,num</eval>
-                            </config>
-                        </TCEforms>
+                        <exclude>1</exclude>
+                        <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.limit</label>
+                        <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.limit.description</description>
+                        <config>
+                            <type>input</type>
+                            <size>5</size>
+                            <default></default>
+                            <eval>trim,num</eval>
+                        </config>
                     </settings.limit>
 
                     <settings.itemsPerPage>
-                        <TCEforms>
-                            <exclude>1</exclude>
-                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.itemsPerPage</label>
-                            <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.itemsPerPage.description</description>
-                            <config>
-                                <type>input</type>
-                                <size>5</size>
-                                <default></default>
-                                <eval>trim,num</eval>
-                            </config>
-                        </TCEforms>
+                        <exclude>1</exclude>
+                        <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.itemsPerPage</label>
+                        <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.itemsPerPage.description</description>
+                        <config>
+                            <type>input</type>
+                            <size>5</size>
+                            <default></default>
+                            <eval>trim,num</eval>
+                        </config>
                     </settings.itemsPerPage>
 
                     <settings.hidePagination>
-                        <TCEforms>
-                            <exclude>1</exclude>
-                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.hidePagination</label>
-                            <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.hidePagination.description</description>
-                            <config>
-                                <type>check</type>
-                            </config>
-                        </TCEforms>
+                        <exclude>1</exclude>
+                        <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.hidePagination</label>
+                        <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.hidePagination.description</description>
+                        <config>
+                            <type>check</type>
+                        </config>
                     </settings.hidePagination>
 
                     <settings.hideFilter>
-                        <TCEforms>
-                            <exclude>1</exclude>
-                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.hideFilter</label>
-                            <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.hideFilter.description</description>
-                            <config>
-                                <type>check</type>
-                            </config>
-                        </TCEforms>
+                        <exclude>1</exclude>
+                        <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.hideFilter</label>
+                        <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.hideFilter.description</description>
+                        <config>
+                            <type>check</type>
+                        </config>
                     </settings.hideFilter>
 
                     <settings.showMap>
-                        <TCEforms>
-                            <exclude>1</exclude>
-                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMap</label>
-                            <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMap.description</description>
-                            <config>
-                                <type>check</type>
-                            </config>
-                        </TCEforms>
+                        <exclude>1</exclude>
+                        <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMap</label>
+                        <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMap.description</description>
+                        <config>
+                            <type>check</type>
+                        </config>
                     </settings.showMap>
 
                 </el>
@@ -138,47 +121,38 @@
         </sDEF>
         <sIMG>
             <ROOT>
-                <TCEforms>
-                    <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.media
-                    </sheetTitle>
-                </TCEforms>
+                <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.media</sheetTitle>
                 <type>array</type>
                 <el>
                     <settings.showMediaInList>
-                        <TCEforms>
-                            <exclude>1</exclude>
-                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMediaInList</label>
-                            <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMediaInList.description</description>
-                            <config>
-                                <type>check</type>
-                            </config>
-                        </TCEforms>
+                        <exclude>1</exclude>
+                        <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMediaInList</label>
+                        <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMediaInList.description</description>
+                        <config>
+                            <type>check</type>
+                        </config>
                     </settings.showMediaInList>
 
                     <settings.listMediaWidth>
-                        <TCEforms>
-                            <exclude>1</exclude>
-                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listMediaWidth</label>
-                            <config>
-                                <type>input</type>
-                                <size>5</size>
-                                <default></default>
-                                <eval>trim,alphanum</eval>
-                            </config>
-                        </TCEforms>
+                        <exclude>1</exclude>
+                        <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listMediaWidth</label>
+                        <config>
+                            <type>input</type>
+                            <size>5</size>
+                            <default></default>
+                            <eval>trim,alphanum</eval>
+                        </config>
                     </settings.listMediaWidth>
 
                     <settings.listMediaHeight>
-                        <TCEforms>
-                            <exclude>1</exclude>
-                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listMediaHeight</label>
-                            <config>
-                                <type>input</type>
-                                <size>5</size>
-                                <default></default>
-                                <eval>trim,alphanum</eval>
-                            </config>
-                        </TCEforms>
+                        <exclude>1</exclude>
+                        <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listMediaHeight</label>
+                        <config>
+                            <type>input</type>
+                            <size>5</size>
+                            <default></default>
+                            <eval>trim,alphanum</eval>
+                        </config>
                     </settings.listMediaHeight>
 
                 </el>
@@ -186,42 +160,30 @@
         </sIMG>
         <sTemplate>
             <ROOT>
-                <TCEforms>
-                    <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.template
-                    </sheetTitle>
-                </TCEforms>
+                <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.template</sheetTitle>
                 <type>array</type>
                 <el>
                     <settings.templateLayout>
-                        <TCEforms>
-                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.templateLayout</label>
-                            <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.templateLayout.description</description>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <itemsProcFunc>Kanow\Operations\Hooks\ItemsProcFunc->user_templateLayout</itemsProcFunc>
-                                <items>
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0"></numIndex>
-                                        <numIndex index="1"></numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.templateLayout</label>
+                        <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.templateLayout.description</description>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <itemsProcFunc>Kanow\Operations\Hooks\ItemsProcFunc->user_templateLayout</itemsProcFunc>
+                           <items><label></label><value></value></items>
+                        </config>
                     </settings.templateLayout>
 
                     <settings.cropTeaser>
-                        <TCEforms>
-                            <exclude>1</exclude>
-                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.teaserMaxChars</label>
-                            <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.teaserMaxChars.description</description>
-                            <config>
-                                <type>input</type>
-                                <size>5</size>
-                                <default></default>
-                                <eval>trim,num</eval>
-                            </config>
-                        </TCEforms>
+                        <exclude>1</exclude>
+                        <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.teaserMaxChars</label>
+                        <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.teaserMaxChars.description</description>
+                        <config>
+                            <type>input</type>
+                            <size>5</size>
+                            <default></default>
+                            <eval>trim,num</eval>
+                        </config>
                     </settings.cropTeaser>
                 </el>
             </ROOT>
