@@ -4,25 +4,26 @@ on: [push, pull_request]
 
 jobs:
 
-  testsuite:
-    name: all tests
+  testsute:
+    name: "Testsuite"
     runs-on: ubuntu-latest
     strategy:
       matrix:
         php: [ '8.2' ]
         minMax: [ 'composerInstallMin', 'composerInstallMax' ]
+        coreVersion: [ '12.4', '13.2' ]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
       - name: Composer
-        run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s ${{ matrix.minMax }}
+        run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s ${{ matrix.minMax }} -t ${{ matrix.coreVersion }}
 
-#      - name: Composer validate
-#        run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s composerValidate
+      #      - name: Composer validate
+      #        run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s composerValidate
 
-#      - name: Lint PHP
-#        run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s lint
+      #      - name: Lint PHP
+      #        run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s lint
 
       - name: Unit tests
         run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s unit
