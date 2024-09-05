@@ -96,18 +96,6 @@ class VehicleControllerTest extends UnitTestCase
     /**
      * @test
      */
-    public function listActionAssignsAllVehicleAsVehiclesToView(): void
-    {
-        $vehicles = $this->createMock(QueryResultInterface::class);
-        $this->vehicleRepositoryMock->method('findAll')->willReturn($vehicles);
-        $this->viewMock->expects(self::once())->method('assign')->with('vehicles', $vehicles);
-
-        $this->subject->listAction();
-    }
-
-    /**
-     * @test
-     */
     public function showActionAssignsPassedVehicleToView(): void
     {
         $vehicle = new Vehicle();

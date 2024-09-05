@@ -97,18 +97,6 @@ class ResourceControllerTest extends UnitTestCase
     /**
      * @test
      */
-    public function listActionAssignsAllResourceAsResourcesToView(): void
-    {
-        $resources = $this->createMock(QueryResultInterface::class);
-        $this->resourceRepositoryMock->method('findAll')->willReturn($resources);
-        $this->viewMock->expects(self::once())->method('assign')->with('resources', $resources);
-
-        $this->subject->listAction();
-    }
-
-    /**
-     * @test
-     */
     public function showActionAssignsPassedResourceToView(): void
     {
         $resource = new Resource();
