@@ -10,7 +10,7 @@
     "operations"
   ],
   "require": {
-    "typo3/cms-core": "^12.4 || ^13.1"
+    "typo3/cms-core": "^13.2"
   },
   "config": {
     "vendor-dir": ".Build/vendor",
@@ -36,7 +36,8 @@
 	"webmozart/assert": "^1.11.0",
 	"typo3/cms-install": "^12.4.1 || ^13.1",
     "typo3/coding-standards": "^0.5.5 || ^0.6.1",
-    "typo3/testing-framework": "^7.0.2 || ^8.0.9"
+    "typo3/testing-framework": "^7.0.2 || ^8.0.9",
+	"php-parallel-lint/php-parallel-lint": "^1.4"
   },
   "extra": {
     "typo3/cms": {
@@ -64,7 +65,8 @@
       "TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
     ],
     "testUnit": ".Build/bin/phpunit -c Build/UnitTests.xml",
-    "testFunctional": ".Build/bin/phpunit -c Build/FunctionalTests.xml"
+    "testFunctional": ".Build/bin/phpunit -c Build/FunctionalTests.xml",
+	"ci:php:lint": "parallel-lint ./*.php *.php Classes Configuration Tests"
   },
   "minimum-stability": "dev",
   "prefer-stable": true
