@@ -100,7 +100,7 @@ class OperationControllerTest extends UnitTestCase
             $this->typeRepositoryMock,
             $this->categoryRepositoryMock,
             $this->categoryServiceMock,
-            ]);
+        ]);
 
         $this->viewMock = $this->createMock(TemplateView::class);
         $this->subject->_set('view', $this->viewMock);
