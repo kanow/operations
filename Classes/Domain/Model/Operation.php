@@ -641,5 +641,4 @@ class Operation extends AbstractEntity
     {
         $this->category = $category;
     }
-
 }

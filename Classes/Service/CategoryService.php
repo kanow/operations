@@ -89,5 +89,4 @@ class CategoryService
         }
         return $storage;
     }
-
 }

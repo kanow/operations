@@ -105,5 +105,4 @@ class ResourceTest extends UnitTestCase
         $this->subject->setLink($value);
         self::assertEquals($value, $this->subject->getLink());
     }
-
 }

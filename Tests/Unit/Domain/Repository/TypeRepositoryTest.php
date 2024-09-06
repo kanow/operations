@@ -34,5 +34,4 @@ class TypeRepositoryTest extends UnitTestCase
     {
         self::assertInstanceOf(Repository::class, $this->subject);
     }
-
 }

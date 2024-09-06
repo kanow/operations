@@ -116,7 +116,6 @@ class OperationRepositoryTest extends FunctionalTestCase
         $operationUids = '1,2,3';
         $result = $this->subject->countGroupedByYear($years, $operationUids);
         self::assertEquals($expectedResult, $result);
-
     }
 
     public function tearDown(): void

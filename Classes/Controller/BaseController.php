@@ -43,5 +43,4 @@ class BaseController extends ActionController
     {
         $view->assign('contentObjectData', $this->request->getAttribute('currentContentObject')->data);
     }
-
 }

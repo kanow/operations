@@ -65,5 +65,4 @@ class VehicleController extends BaseController
         $this->view->assign('vehicle', $vehicle);
         return $this->htmlResponse();
     }
-
 }

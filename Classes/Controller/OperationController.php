@@ -99,7 +99,6 @@ class OperationController extends BaseController
      */
     public function listAction(OperationDemand $demand = null, int $currentPage = 1): ResponseInterface
     {
-
         if ($this->request->hasArgument('demand')) {
             $forwardResponse = new ForwardResponse('search');
             return $forwardResponse->withArguments($this->request->getArguments());
@@ -392,5 +391,4 @@ class OperationController extends BaseController
             $this->configurationManager->setConfiguration(array_merge($configuration, $pid));
         }
     }
-
 }

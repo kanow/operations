@@ -60,5 +60,4 @@ class TypeRepository extends Repository
             ->executeQuery()->fetchAllAssociative();
         return $result;
     }
-
 }

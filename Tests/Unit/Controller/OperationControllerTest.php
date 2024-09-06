@@ -4,7 +4,6 @@ namespace Kanow\Operations\Tests;
 
 use Kanow\Operations\Controller\OperationController;
 use Kanow\Operations\Domain\Model\Operation;
-use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use Kanow\Operations\Domain\Repository\CategoryRepository;
 use Kanow\Operations\Domain\Repository\OperationRepository;
 use Kanow\Operations\Domain\Repository\TypeRepository;
@@ -86,7 +85,6 @@ class OperationControllerTest extends UnitTestCase
     {
         parent::setUp();
 
-
         $this->operationRepositoryMock = $this->createMock(OperationRepository::class);
         $this->typeRepositoryMock = $this->createMock(TypeRepository::class);
         $this->categoryRepositoryMock = $this->createMock(CategoryRepository::class);
@@ -101,7 +99,7 @@ class OperationControllerTest extends UnitTestCase
             $this->operationRepositoryMock,
             $this->typeRepositoryMock,
             $this->categoryRepositoryMock,
-            $this->categoryServiceMock
+            $this->categoryServiceMock,
             ]);
 
         $this->viewMock = $this->createMock(TemplateView::class);
@@ -131,5 +129,4 @@ class OperationControllerTest extends UnitTestCase
 
         $this->subject->showAction($operation);
     }
-
 }

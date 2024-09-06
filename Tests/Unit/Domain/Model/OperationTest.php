@@ -204,5 +204,4 @@ class OperationTest extends UnitTestCase
         $this->subject->setType($operationType);
         self::assertSame($operationType, $this->subject->getType());
     }
-
 }

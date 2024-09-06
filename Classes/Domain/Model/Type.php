@@ -115,5 +115,4 @@ class Type extends AbstractEntity
     {
         $this->color = $color;
     }
-
 }

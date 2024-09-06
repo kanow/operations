@@ -401,7 +401,6 @@ class OperationRepository extends Repository
         $property,
         $settings
     ): ?\TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface {
-
         if ($categories && count($categories) != 0) {
             $categoryConstraint = [];
             foreach ($categories as $category) {
@@ -444,5 +443,4 @@ class OperationRepository extends Repository
         }
         return $constraints;
     }
-
 }

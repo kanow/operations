@@ -42,5 +42,4 @@ class VehicleRepository extends Repository
     protected $defaultOrderings = [
         'sorting' => QueryInterface::ORDER_ASCENDING,
     ];
-
 }

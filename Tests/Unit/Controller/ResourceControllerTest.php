@@ -7,9 +7,7 @@ use Kanow\Operations\Domain\Model\Resource;
 use Kanow\Operations\Domain\Repository\ResourceRepository;
 use PHPUnit\Framework\MockObject\MockObject;
 use TYPO3\CMS\Core\Http\HtmlResponse;
-use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Fluid\View\TemplateView;
 use TYPO3\TestingFramework\Core\AccessibleObjectInterface;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
@@ -73,9 +71,8 @@ class ResourceControllerTest extends UnitTestCase
         // We need to create an accessible mock in order to be able to set the protected `view`.
         $methodsToMock = ['htmlResponse', 'redirect', 'redirectToUri'];
         $this->subject = $this->getAccessibleMock(ResourceController::class, $methodsToMock, [
-            $this->resourceRepositoryMock
+            $this->resourceRepositoryMock,
         ]);
-
 
         $this->viewMock = $this->createMock(TemplateView::class);
         $this->subject->_set('view', $this->viewMock);
@@ -104,5 +101,4 @@ class ResourceControllerTest extends UnitTestCase
 
         $this->subject->showAction($resource);
     }
-
 }

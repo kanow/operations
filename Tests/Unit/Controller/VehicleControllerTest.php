@@ -7,9 +7,7 @@ use Kanow\Operations\Domain\Model\Vehicle;
 use Kanow\Operations\Domain\Repository\VehicleRepository;
 use PHPUnit\Framework\MockObject\MockObject;
 use TYPO3\CMS\Core\Http\HtmlResponse;
-use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Fluid\View\TemplateView;
 use TYPO3\TestingFramework\Core\AccessibleObjectInterface;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
@@ -72,8 +70,8 @@ class VehicleControllerTest extends UnitTestCase
         $this->vehicleRepositoryMock = $this->createMock(VehicleRepository::class);
         // We need to create an accessible mock in order to be able to set the protected `view`.
         $methodsToMock = ['htmlResponse', 'redirect', 'redirectToUri'];
-        $this->subject = $this->getAccessibleMock(VehicleController::class, $methodsToMock,[
-            $this->vehicleRepositoryMock
+        $this->subject = $this->getAccessibleMock(VehicleController::class, $methodsToMock, [
+            $this->vehicleRepositoryMock,
         ]);
 
         $this->viewMock = $this->createMock(TemplateView::class);
@@ -103,5 +101,4 @@ class VehicleControllerTest extends UnitTestCase
 
         $this->subject->showAction($vehicle);
     }
-
 }

@@ -175,5 +175,4 @@ class Resource extends AbstractEntity
     {
         $this->link = $link;
     }
-
 }

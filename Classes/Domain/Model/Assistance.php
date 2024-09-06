@@ -114,5 +114,4 @@ class Assistance extends AbstractEntity
     {
         $this->link = $link;
     }
-
 }

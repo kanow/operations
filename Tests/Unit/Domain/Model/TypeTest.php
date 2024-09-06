@@ -93,5 +93,4 @@ class TypeTest extends UnitTestCase
         $this->subject->setImage($image);
         self::assertSame($image, $this->subject->getImage());
     }
-
 }

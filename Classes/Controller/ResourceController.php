@@ -65,5 +65,4 @@ class ResourceController extends BaseController
         $this->view->assign('resource', $resource);
         return $this->htmlResponse();
     }
-
 }
