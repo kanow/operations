@@ -25,6 +25,9 @@ jobs:
       - name: Lint PHP
         run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s lintPhp
 
+      - name: Lint PHP
+        run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s cgl -n
+
       - name: Unit tests
         run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s unit
 
