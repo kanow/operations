@@ -39,28 +39,28 @@ class Assistance extends AbstractEntity
   * @var string
   */
     #[Validate(['validator' => 'NotEmpty'])]
-    protected $title;
+    protected string $title;
 
     /**
      * Description of assistance
      *
      * @var string
      */
-    protected $description;
+    protected string $description;
 
     /**
      * A website url
      *
      * @var string
      */
-    protected $link;
+    protected string $link;
 
     /**
      * Returns the title
      *
      * @return string $title
      */
-    public function getTitle()
+    public function getTitle() :string
     {
         return $this->title;
     }
@@ -70,7 +70,7 @@ class Assistance extends AbstractEntity
      *
      * @param string $title
      */
-    public function setTitle($title): void
+    public function setTitle(string $title): void
     {
         $this->title = $title;
     }
@@ -80,7 +80,7 @@ class Assistance extends AbstractEntity
      *
      * @return string $description
      */
-    public function getDescription()
+    public function getDescription() :string
     {
         return $this->description;
     }
@@ -90,7 +90,7 @@ class Assistance extends AbstractEntity
      *
      * @param string $description
      */
-    public function setDescription($description): void
+    public function setDescription(string $description): void
     {
         $this->description = $description;
     }
@@ -100,7 +100,7 @@ class Assistance extends AbstractEntity
      *
      * @return string $link
      */
-    public function getLink()
+    public function getLink() :string
     {
         return $this->link;
     }
@@ -110,7 +110,7 @@ class Assistance extends AbstractEntity
      *
      * @param string $link
      */
-    public function setLink($link): void
+    public function setLink(string $link): void
     {
         $this->link = $link;
     }

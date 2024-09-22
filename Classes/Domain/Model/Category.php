@@ -39,25 +39,24 @@ class Category extends AbstractEntity
      * @var string
      */
     #[Validate(['validator' => 'NotEmpty'])]
-    protected $title = '';
+    protected string $title = '';
 
     /**
      * @var string
      */
-    protected $description = '';
+    protected string $description = '';
 
     /**
      * @var \Kanow\Operations\Domain\Model\Category|null
      */
-    #[Lazy]
-    protected $parent;
+    protected Category|null $parent;
 
     /**
      * Gets the title.
      *
      * @return string the title, might be empty
      */
-    public function getTitle()
+    public function getTitle() :string
     {
         return $this->title;
     }
@@ -67,7 +66,7 @@ class Category extends AbstractEntity
      *
      * @param string $title the title to set, may be empty
      */
-    public function setTitle($title): void
+    public function setTitle(string $title): void
     {
         $this->title = $title;
     }
@@ -77,7 +76,7 @@ class Category extends AbstractEntity
      *
      * @return string the description, might be empty
      */
-    public function getDescription()
+    public function getDescription() :string
     {
         return $this->description;
     }
@@ -87,7 +86,7 @@ class Category extends AbstractEntity
      *
      * @param string $description the description to set, may be empty
      */
-    public function setDescription($description): void
+    public function setDescription(string $description): void
     {
         $this->description = $description;
     }
@@ -97,7 +96,7 @@ class Category extends AbstractEntity
      *
      * @return Category|null the parent category
      */
-    public function getParent()
+    public function getParent() :Category|null
     {
         if ($this->parent instanceof LazyLoadingProxy) {
             $this->parent->_loadRealInstance();

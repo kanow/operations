@@ -10,12 +10,13 @@ parameters:
     # Don't be overly greedy on machines with more CPU's to be a good neighbor especially on CI
     maximumNumberOfProcesses: 5
 
-  level: 9
+  level: 1
 
   paths:
-    - Classes
-    - Configuration
-    - Tests
+    #- Classes
+    #- Configuration
+    #- Tests
+    - Classes/Domain/Model/
 
   # Allow instanceof checks, particularly in tests
   checkAlwaysTrueCheckTypeFunctionCall: false

@@ -40,47 +40,47 @@ class OperationDemand extends AbstractValueObject
      *
      * @var int
      */
-    protected $onlyEld;
+    protected int $onlyEld;
 
     /**
      * Type of operation
      *
-     * @var int
+     * @var ?int $type
      */
-    protected $type;
+    protected ?int $type = null;
 
     /**
-     * @var int
+     * @var ?int $limit
      */
-    protected $limit;
+    protected ?int $limit = null;
 
     /**
-      * Begin
+      * Begin (year)
       *
-      * @var string
+      * @var int $begin
       */
     #[Validate(['validator' => 'NotEmpty'])]
-    protected $begin;
+    protected int $begin = 0;
 
     /**
      * Searchstring
      *
-     * @var string
+     * @var string $searchstring
      */
-    protected $searchstring;
+    protected string $searchstring = '';
 
     /**
      * Category
      *
-     * @var int
+     * @var ?int $category
      */
-    protected $category;
+    protected ?int $category = null;
 
     /**
      * onlyEld for demanded
      * @param int
      */
-    public function setOnlyEld($onlyEld): void
+    public function setOnlyEld(int $onlyEld): void
     {
         $this->onlyEld = $onlyEld;
     }
@@ -89,7 +89,7 @@ class OperationDemand extends AbstractValueObject
      * onlyEld for demanded
      * @return int
      */
-    public function getOnlyEld()
+    public function getOnlyEld() :int
     {
         return $this->onlyEld;
     }
@@ -99,7 +99,7 @@ class OperationDemand extends AbstractValueObject
      *
      * @return int $type
      */
-    public function getType()
+    public function getType() :?int
     {
         return $this->type;
     }
@@ -109,7 +109,7 @@ class OperationDemand extends AbstractValueObject
      *
      * @param int $type
      */
-    public function setType($type): void
+    public function setType(int $type): void
     {
         $this->type = $type;
     }
@@ -117,19 +117,19 @@ class OperationDemand extends AbstractValueObject
     /**
      * Set limit
      *
-     * @param int $limit limit
+     * @param ?int $limit
      */
-    public function setLimit($limit): void
+    public function setLimit(?int $limit): void
     {
-        $this->limit = (int)$limit;
+        $this->limit = $limit;
     }
 
     /**
      * Get limit
      *
-     * @return int
+     * @return ?int $limit
      */
-    public function getLimit()
+    public function getLimit() :?int
     {
         return $this->limit;
     }
@@ -137,9 +137,9 @@ class OperationDemand extends AbstractValueObject
     /**
      * Returns the begin
      *
-     * @return string
+     * @return int
      */
-    public function getBegin()
+    public function getBegin() :int
     {
         return $this->begin;
     }
@@ -147,9 +147,9 @@ class OperationDemand extends AbstractValueObject
     /**
      * Sets the begin
      *
-     * @param string $begin
+     * @param int $begin
      */
-    public function setBegin($begin): void
+    public function setBegin(int $begin): void
     {
         $this->begin = $begin;
     }
@@ -159,7 +159,7 @@ class OperationDemand extends AbstractValueObject
      *
      * @return string
      */
-    public function getSearchstring()
+    public function getSearchstring() :string
     {
         return $this->searchstring;
     }
@@ -169,7 +169,7 @@ class OperationDemand extends AbstractValueObject
      *
      * @param string $searchstring
      */
-    public function setSearchstring($searchstring): void
+    public function setSearchstring(string $searchstring): void
     {
         $this->searchstring = $searchstring;
     }
@@ -177,30 +177,11 @@ class OperationDemand extends AbstractValueObject
     public const ARRAY_PROPERTIES = 'begin,type';
 
     /**
-     * get demand parameter for additionalParams in pagination
-     */
-    public function getParameter()
-    {
-        $returnArray = [];
-        foreach (explode(',', self::ARRAY_PROPERTIES) as $property) {
-            $method = 'get' . ucfirst($property);
-            $propertyValue =  $this->$method();
-            if (!is_null($propertyValue)) {
-                if (is_a($propertyValue, '\TYPO3\CMS\Extbase\Persistence\ObjectStorage')) {
-                    $propertyValue = $propertyValue->toArray();
-                }
-                $returnArray [$property] = $propertyValue;
-            }
-        }
-        return $returnArray;
-    }
-
-    /**
      * Returns the category
      *
-     * @return int $category
+     * @return ?int $category
      */
-    public function getCategory()
+    public function getCategory() :?int
     {
         return $this->category;
     }
@@ -210,7 +191,7 @@ class OperationDemand extends AbstractValueObject
      *
      * @param int $category
      */
-    public function setCategory($category): void
+    public function setCategory(int $category): void
     {
         $this->category = $category;
     }

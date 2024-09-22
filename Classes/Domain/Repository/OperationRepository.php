@@ -332,10 +332,9 @@ class OperationRepository extends Repository
     ): array {
         $constraints = [];
 
-        $fromTimestamp = mktime(0, 0, 0, 1, 1, $demand->getBegin());
-        $toTimestamp = mktime(23, 59, 59, 12, 31, $demand->getBegin());
-
         if ($demand->getBegin()) {
+            $fromTimestamp = mktime(0, 0, 0, 1, 1, $demand->getBegin());
+            $toTimestamp = mktime(23, 59, 59, 12, 31, $demand->getBegin());
             $constraints[] = $query->logicalAnd(
                 $query->greaterThanOrEqual('begin', $fromTimestamp),
                 $query->lessThanOrEqual('begin', $toTimestamp)

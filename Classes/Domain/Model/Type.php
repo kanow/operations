@@ -41,28 +41,28 @@ class Type extends AbstractEntity
   * @var string
   */
     #[Validate(['validator' => 'NotEmpty'])]
-    protected $title;
+    protected string $title;
 
     /**
   * icon for use in list or for whatever
   *
-  * @var FileReference
+  * @var ObjectStorage<FileReference>
   */
-    protected $image;
+    protected ObjectStorage $image;
 
     /**
      * Type color
      *
      * @var string
      */
-    protected $color;
+    protected string $color;
 
     /**
      * Returns the title
      *
      * @return string $title
      */
-    public function getTitle()
+    public function getTitle() :string
     {
         return $this->title;
     }
@@ -72,7 +72,7 @@ class Type extends AbstractEntity
      *
      * @param string $title
      */
-    public function setTitle($title): void
+    public function setTitle(string $title): void
     {
         $this->title = $title;
     }
@@ -80,9 +80,9 @@ class Type extends AbstractEntity
     /**
    * Returns the image
    *
-   * @return FileReference $image
+   * @return ObjectStorage<FileReference> $image
    */
-    public function getImage()
+    public function getImage() :ObjectStorage
     {
         return $this->image;
     }
@@ -90,9 +90,9 @@ class Type extends AbstractEntity
     /**
      * Sets the image
      *
-     * @param ObjectStorage $image
+     * @param ObjectStorage<FileReference> $image
      */
-    public function setImage($image): void
+    public function setImage(ObjectStorage $image): void
     {
         $this->image = $image;
     }
@@ -101,7 +101,7 @@ class Type extends AbstractEntity
      *
      * @return string $color
      */
-    public function getColor()
+    public function getColor() :string
     {
         return $this->color;
     }
@@ -111,7 +111,7 @@ class Type extends AbstractEntity
      *
      * @param string $color
      */
-    public function setColor($color): void
+    public function setColor(string $color): void
     {
         $this->color = $color;
     }

@@ -59,13 +59,13 @@ class OperationRepositoryTest extends FunctionalTestCase
         $settings['dontRespectStoragePage'] = 1;
         date_default_timezone_set('Europe/Berlin');
         // year 2020
-        $demand->setBegin('2020');
+        $demand->setBegin(2020);
         self::assertEquals((int)$this->subject->findDemanded($demand, $settings)->count(), 0);
         // year 2021
-        $demand->setBegin('2021');
+        $demand->setBegin(2021);
         self::assertEquals((int)$this->subject->findDemanded($demand, $settings)->count(), 1);
         // year 2022
-        $demand->setBegin('2022');
+        $demand->setBegin(2022);
         self::assertEquals((int)$this->subject->findDemanded($demand, $settings)->count(), 2);
     }
 

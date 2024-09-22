@@ -41,41 +41,41 @@ class Resource extends AbstractEntity
   * @var string
   */
     #[Validate(['validator' => 'NotEmpty'])]
-    protected $title;
+    protected string $title;
 
     /**
      * Abbreviation title
      *
      * @var string
      */
-    protected $short;
+    protected string $short;
 
     /**
      * Description of resource
      *
      * @var string
      */
-    protected $description;
+    protected string $description;
 
     /**
     * Media
     * @var ObjectStorage<FileReference>
     */
-    protected $media;
+    protected ObjectStorage $media;
 
     /**
      * A website url or internal link
      *
      * @var string
      */
-    protected $link;
+    protected string $link;
 
     /**
      * Returns the title
      *
      * @return string $title
      */
-    public function getTitle()
+    public function getTitle() :string
     {
         return $this->title;
     }
@@ -85,7 +85,7 @@ class Resource extends AbstractEntity
      *
      * @param string $title
      */
-    public function setTitle($title): void
+    public function setTitle(string $title): void
     {
         $this->title = $title;
     }
@@ -95,7 +95,7 @@ class Resource extends AbstractEntity
      *
      * @return string $short
      */
-    public function getShort()
+    public function getShort() :string
     {
         return $this->short;
     }
@@ -105,7 +105,7 @@ class Resource extends AbstractEntity
      *
      * @param string $short
      */
-    public function setShort($short): void
+    public function setShort(string $short): void
     {
         $this->short = $short;
     }
@@ -115,7 +115,7 @@ class Resource extends AbstractEntity
      *
      * @return string $description
      */
-    public function getDescription()
+    public function getDescription() :string
     {
         return $this->description;
     }
@@ -125,7 +125,7 @@ class Resource extends AbstractEntity
      *
      * @param string $description
      */
-    public function setDescription($description): void
+    public function setDescription(string $description): void
     {
         $this->description = $description;
     }
@@ -135,7 +135,7 @@ class Resource extends AbstractEntity
       *
       * @return ObjectStorage $media
       */
-    public function getMedia()
+    public function getMedia() :ObjectStorage
     {
         return $this->media;
     }
@@ -145,7 +145,7 @@ class Resource extends AbstractEntity
      *
      * @return FileReference $media
      */
-    public function getFirstMedia()
+    public function getFirstMedia() :FileReference
     {
         $media = $this->getMedia()->toArray();
         return $media[0];
@@ -153,9 +153,9 @@ class Resource extends AbstractEntity
     /**
      * Sets the media
      *
-     * @param ObjectStorage $media
+     * @param ObjectStorage<FileReference> $media
      */
-    public function setMedia($media): void
+    public function setMedia(ObjectStorage $media): void
     {
         $this->media = $media;
     }

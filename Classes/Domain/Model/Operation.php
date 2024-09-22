@@ -42,14 +42,14 @@ class Operation extends AbstractEntity
      * @var string
      */
     #[Validate(['validator' => 'NotEmpty'])]
-    protected $number;
+    protected string $number;
 
     /**
      * Operation onlyEld
      *
      * @var int
      */
-    protected $onlyEld;
+    protected int $onlyEld;
 
     /**
      * Title
@@ -57,7 +57,7 @@ class Operation extends AbstractEntity
      * @var string
      */
     #[Validate(['validator' => 'NotEmpty'])]
-    protected $title;
+    protected string $title;
 
     /**
      * Location of operation
@@ -65,7 +65,7 @@ class Operation extends AbstractEntity
      * @var string
      */
     #[Validate(['validator' => 'NotEmpty'])]
-    protected $location;
+    protected string $location;
 
     /**
      * Begin
@@ -73,90 +73,90 @@ class Operation extends AbstractEntity
      * @var \DateTime
      */
     #[Validate(['validator' => 'NotEmpty'])]
-    protected $begin;
+    protected \DateTime $begin;
 
     /**
      * Ending
      *
      * @var \DateTime
      */
-    protected $end;
+    protected \DateTime $end;
 
     /**
      * Operation short teaser
      *
      * @var string
      */
-    protected $teaser;
+    protected string $teaser;
 
     /**
      * Operation report
      *
      * @var string
      */
-    protected $report;
+    protected string $report;
 
     /**
      * Longitude
      *
      * @var string
      */
-    protected $longitude;
+    protected string $longitude;
 
     /**
      * Latitude
      *
      * @var string
      */
-    protected $latitude;
+    protected string $latitude;
 
     /**
      * Zoom for maps
      *
      * @var int
      */
-    protected $zoom;
+    protected int $zoom;
 
     /**
      * Media
      * @var ObjectStorage<FileReference>
      */
-    protected $media;
+    protected ObjectStorage $media;
 
     /**
      * Type of operation
      *
      * @var ObjectStorage<\Kanow\Operations\Domain\Model\Type>
      */
-    protected $type;
+    protected ObjectStorage $type;
 
     /**
      * Assistance to this operation
      * @var ObjectStorage<\Kanow\Operations\Domain\Model\Assistance>
      */
     #[Lazy]
-    protected $assistance;
+    protected ObjectStorage $assistance;
 
     /**
      * Vehicles use on this operation
      * @var ObjectStorage<\Kanow\Operations\Domain\Model\Vehicle>
      */
     #[Lazy]
-    protected $vehicles;
+    protected ObjectStorage $vehicles;
 
     /**
      * resources used
      * @var ObjectStorage<\Kanow\Operations\Domain\Model\Resource>
      */
     #[Lazy]
-    protected $resources;
+    protected ObjectStorage $resources;
 
     /**
      * Category
      *
      * @var ObjectStorage<Category>
      */
-    protected $category;
+    protected ObjectStorage $category;
 
     /**
      * __construct
@@ -170,7 +170,7 @@ class Operation extends AbstractEntity
     /**
      * Initializes all ObjectStorage properties.
      */
-    protected function initStorageObjects()
+    protected function initStorageObjects() :void
     {
         $this->type = new ObjectStorage();
         $this->assistance = new ObjectStorage();
@@ -185,7 +185,7 @@ class Operation extends AbstractEntity
      *
      * @return string $number
      */
-    public function getNumber()
+    public function getNumber() :string
     {
         return $this->number;
     }
@@ -195,7 +195,7 @@ class Operation extends AbstractEntity
      *
      * @param string $number
      */
-    public function setNumber($number): void
+    public function setNumber(string $number): void
     {
         $this->number = $number;
     }
@@ -205,7 +205,7 @@ class Operation extends AbstractEntity
      *
      * @return int $onlyEld
      */
-    public function getOnlyEld()
+    public function getOnlyEld() :int
     {
         return $this->onlyEld;
     }
@@ -215,7 +215,7 @@ class Operation extends AbstractEntity
      *
      * @param int $onlyEld
      */
-    public function setOnlyEld($onlyEld): void
+    public function setOnlyEld(int $onlyEld): void
     {
         $this->onlyEld = $onlyEld;
     }
@@ -225,7 +225,7 @@ class Operation extends AbstractEntity
      *
      * @return string $title
      */
-    public function getTitle()
+    public function getTitle() :string
     {
         return $this->title;
     }
@@ -235,7 +235,7 @@ class Operation extends AbstractEntity
      *
      * @param string $title
      */
-    public function setTitle($title): void
+    public function setTitle(string $title): void
     {
         $this->title = $title;
     }
@@ -245,7 +245,7 @@ class Operation extends AbstractEntity
      *
      * @return string $location
      */
-    public function getLocation()
+    public function getLocation() :string
     {
         return $this->location;
     }
@@ -255,7 +255,7 @@ class Operation extends AbstractEntity
      *
      * @param string $location
      */
-    public function setLocation($location): void
+    public function setLocation(string $location): void
     {
         $this->location = $location;
     }
@@ -265,7 +265,7 @@ class Operation extends AbstractEntity
      *
      * @return \DateTime $begin
      */
-    public function getBegin()
+    public function getBegin() :\DateTime
     {
         return $this->begin;
     }
@@ -275,7 +275,7 @@ class Operation extends AbstractEntity
      *
      * @param \DateTime $begin
      */
-    public function setBegin($begin): void
+    public function setBegin(\DateTime $begin): void
     {
         $this->begin = $begin;
     }
@@ -285,7 +285,7 @@ class Operation extends AbstractEntity
      *
      * @return \DateTime $end
      */
-    public function getEnd()
+    public function getEnd() :\DateTime
     {
         return $this->end;
     }
@@ -295,7 +295,7 @@ class Operation extends AbstractEntity
      *
      * @param \DateTime $end
      */
-    public function setEnd($end): void
+    public function setEnd( \DateTime $end): void
     {
         $this->end = $end;
     }
@@ -305,7 +305,7 @@ class Operation extends AbstractEntity
      *
      * @return string $teaser
      */
-    public function getTeaser()
+    public function getTeaser() :string
     {
         return $this->teaser;
     }
@@ -315,7 +315,7 @@ class Operation extends AbstractEntity
      *
      * @param string $teaser
      */
-    public function setTeaser($teaser): void
+    public function setTeaser(string $teaser): void
     {
         $this->teaser = $teaser;
     }
@@ -325,7 +325,7 @@ class Operation extends AbstractEntity
      *
      * @return string $report
      */
-    public function getReport()
+    public function getReport() :string
     {
         return $this->report;
     }
@@ -335,7 +335,7 @@ class Operation extends AbstractEntity
      *
      * @param string $report
      */
-    public function setReport($report): void
+    public function setReport(string $report): void
     {
         $this->report = $report;
     }
@@ -345,7 +345,7 @@ class Operation extends AbstractEntity
      *
      * @return string $longitude
      */
-    public function getLongitude()
+    public function getLongitude() :string
     {
         return $this->longitude;
     }
@@ -355,7 +355,7 @@ class Operation extends AbstractEntity
      *
      * @param string $longitude
      */
-    public function setLongitude($longitude): void
+    public function setLongitude(string $longitude): void
     {
         $this->longitude = $longitude;
     }
@@ -365,7 +365,7 @@ class Operation extends AbstractEntity
      *
      * @return string $latitude
      */
-    public function getLatitude()
+    public function getLatitude() :string
     {
         return $this->latitude;
     }
@@ -375,7 +375,7 @@ class Operation extends AbstractEntity
      *
      * @param string $latitude
      */
-    public function setLatitude($latitude): void
+    public function setLatitude(string $latitude): void
     {
         $this->latitude = $latitude;
     }
@@ -385,7 +385,7 @@ class Operation extends AbstractEntity
      *
      * @return int $zoom
      */
-    public function getZoom()
+    public function getZoom() :int
     {
         return $this->zoom;
     }
@@ -395,7 +395,7 @@ class Operation extends AbstractEntity
      *
      * @param int $zoom
      */
-    public function setZoom($zoom): void
+    public function setZoom(int $zoom): void
     {
         $this->zoom = $zoom;
     }
@@ -405,7 +405,7 @@ class Operation extends AbstractEntity
      *
      * @return ObjectStorage $media
      */
-    public function getMedia()
+    public function getMedia() :ObjectStorage
     {
         return $this->media;
     }
@@ -413,9 +413,9 @@ class Operation extends AbstractEntity
     /**
      * Returns the first media
      *
-     * @return FileReference $media
+     * @return ?FileReference $media
      */
-    public function getFirstMedia()
+    public function getFirstMedia() :?FileReference
     {
         $media = $this->getMedia()->toArray();
         return $media[0];
@@ -426,7 +426,7 @@ class Operation extends AbstractEntity
      *
      * @param ObjectStorage $media
      */
-    public function setMedia($media): void
+    public function setMedia(ObjectStorage $media): void
     {
         $this->media = $media;
     }
@@ -456,7 +456,7 @@ class Operation extends AbstractEntity
      *
      * @return ObjectStorage<\Kanow\Operations\Domain\Model\Type> $type
      */
-    public function getType()
+    public function getType() :ObjectStorage
     {
         return $this->type;
     }
@@ -466,7 +466,7 @@ class Operation extends AbstractEntity
      *
      * @return ObjectStorage<\Kanow\Operations\Domain\Model\Type> $type
      */
-    public function getAssignedType()
+    public function getAssignedType() :Type
     {
         $type = $this->getType()->toArray();
         return $type[0];
@@ -477,7 +477,7 @@ class Operation extends AbstractEntity
      *
      * @param ObjectStorage<\Kanow\Operations\Domain\Model\Type> $type
      */
-    public function setType(ObjectStorage $type): void
+    public function setType(Type $type): void
     {
         $this->type = $type;
     }
@@ -507,7 +507,7 @@ class Operation extends AbstractEntity
      *
      * @return ObjectStorage<\Kanow\Operations\Domain\Model\Assistance> $assistance
      */
-    public function getAssistance()
+    public function getAssistance() :ObjectStorage
     {
         return $this->assistance;
     }
@@ -547,7 +547,7 @@ class Operation extends AbstractEntity
      *
      * @return ObjectStorage<\Kanow\Operations\Domain\Model\Vehicle> $vehicles
      */
-    public function getVehicles()
+    public function getVehicles() :ObjectStorage
     {
         return $this->vehicles;
     }
@@ -587,7 +587,7 @@ class Operation extends AbstractEntity
      *
      * @return ObjectStorage<\Kanow\Operations\Domain\Model\Resource> $resources
      */
-    public function getResources()
+    public function getResources() :ObjectStorage
     {
         return $this->resources;
     }
@@ -627,7 +627,7 @@ class Operation extends AbstractEntity
      *
      * @return ObjectStorage<Category> $category
      */
-    public function getCategory()
+    public function getCategory() :ObjectStorage
     {
         return $this->category;
     }
