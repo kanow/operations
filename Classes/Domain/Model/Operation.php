@@ -477,7 +477,7 @@ class Operation extends AbstractEntity
      *
      * @param ObjectStorage<\Kanow\Operations\Domain\Model\Type> $type
      */
-    public function setType(Type $type): void
+    public function setType(ObjectStorage $type): void
     {
         $this->type = $type;
     }

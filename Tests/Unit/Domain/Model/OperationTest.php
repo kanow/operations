@@ -110,8 +110,7 @@ class OperationTest extends UnitTestCase
      */
     public function beginCanBeSet(): void
     {
-        $value = '1600899999';
-        //$value = new \DateTime();
+        $value = new \DateTime();
         $this->subject->setBegin($value);
         self::assertEquals($value, $this->subject->getBegin());
     }
@@ -121,7 +120,7 @@ class OperationTest extends UnitTestCase
      */
     public function endCanBeSet(): void
     {
-        $value = '1610899999';
+        $value = new \DateTime();
         $this->subject->setEnd($value);
         self::assertEquals($value, $this->subject->getEnd());
     }
