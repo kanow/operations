@@ -20,3 +20,5 @@ Build
 Build/testing-docker/.env
 composer.lock
 /var/
+.php-cs-fixer.cache
+/.cache
