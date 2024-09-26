@@ -403,7 +403,7 @@ class Operation extends AbstractEntity
     /**
      * Returns the media
      *
-     * @return ObjectStorage $media
+     * @return ObjectStorage<FileReference> $media
      */
     public function getMedia() :ObjectStorage
     {
@@ -424,7 +424,7 @@ class Operation extends AbstractEntity
     /**
      * Sets the media
      *
-     * @param ObjectStorage $media
+     * @param ObjectStorage<FileReference> $media
      */
     public function setMedia(ObjectStorage $media): void
     {
@@ -464,7 +464,7 @@ class Operation extends AbstractEntity
     /**
      * Returns directly the assigned type. Prevent to unnecessary iteration in operation data.
      *
-     * @return ObjectStorage<\Kanow\Operations\Domain\Model\Type> $type
+     * @return \Kanow\Operations\Domain\Model\Type $type
      */
     public function getAssignedType() :Type
     {

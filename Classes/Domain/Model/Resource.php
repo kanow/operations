@@ -133,7 +133,7 @@ class Resource extends AbstractEntity
     /**
       * Returns the media
       *
-      * @return ObjectStorage $media
+      * @return ObjectStorage<FileReference> $media
       */
     public function getMedia() :ObjectStorage
     {

@@ -78,7 +78,8 @@ class OperationDemand extends AbstractValueObject
 
     /**
      * onlyEld for demanded
-     * @param int
+     *
+     * @param int $onlyEld
      */
     public function setOnlyEld(int $onlyEld): void
     {

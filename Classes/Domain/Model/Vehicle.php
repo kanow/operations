@@ -133,7 +133,7 @@ class Vehicle extends AbstractEntity
     /**
      * Returns the media
      *
-     * @return ObjectStorage $media
+     * @return ObjectStorage<FileReference> $media
      */
     public function getMedia() :ObjectStorage
     {
@@ -154,7 +154,7 @@ class Vehicle extends AbstractEntity
     /**
      * Sets the media
      *
-     * @param ObjectStorage $media
+     * @param ObjectStorage<FileReference> $media
      */
     public function setMedia(ObjectStorage $media): void
     {
