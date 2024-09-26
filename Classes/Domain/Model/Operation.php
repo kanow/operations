@@ -563,26 +563,6 @@ class Operation extends AbstractEntity
     }
 
     /**
-     * Adds a Resource
-     *
-     * @param resource $resource
-     */
-    public function addResource(Resource $resource): void
-    {
-        $this->resources->attach($resource);
-    }
-
-    /**
-     * Removes a Resource
-     *
-     * @param resource $resourceToRemove The Resources to be removed
-     */
-    public function removeResource(Resource $resourceToRemove): void
-    {
-        $this->resources->detach($resourceToRemove);
-    }
-
-    /**
      * Returns the resources
      *
      * @return ObjectStorage<\Kanow\Operations\Domain\Model\Resource> $resources
