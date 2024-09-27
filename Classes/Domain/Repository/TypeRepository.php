@@ -50,14 +50,4 @@ class TypeRepository extends Repository
         $query = $this->createQuery();
         return $query->execute();
     }
-    public function findAllTypesWithTitle()
-    {
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
-            ->getQueryBuilderForTable('tx_operations_domain_model_type');
-        $result = $queryBuilder
-            ->select('title')
-            ->from('tx_operations_domain_model_type')
-            ->executeQuery()->fetchAllAssociative();
-        return $result;
-    }
 }
