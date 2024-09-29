@@ -2,6 +2,9 @@
 
 namespace Kanow\Operations\Domain\Repository;
 
+use Doctrine\DBAL\Exception;
+use Kanow\Operations\Domain\Model\Category;
+use Kanow\Operations\Domain\Model\Operation;
 use Kanow\Operations\Domain\Model\OperationDemand;
 use Kanow\Operations\Domain\Model\Type;
 use TYPO3\CMS\Core\Context\Context;
@@ -41,6 +44,8 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
+ *
+ * @extends Repository<Operation>
  */
 class OperationRepository extends Repository
 {
@@ -57,11 +62,11 @@ class OperationRepository extends Repository
      * Returns the objects of this repository matching the demand
      *
      * @param OperationDemand $demand
-     * @param array $settings
-     * @return QueryResultInterface
+     * @param array<mixed> $settings
+     * @return QueryResultInterface<Operation>
      * @throws InvalidQueryException
      */
-    public function findDemanded(OperationDemand $demand, $settings)
+    public function findDemanded(OperationDemand $demand, array $settings)
     {
         $query = $this->generateQuery($demand, $settings);
         return $query->execute();
@@ -71,24 +76,24 @@ class OperationRepository extends Repository
      * Category Returns the raw query result of this repository matching the demand
      *
      * @param OperationDemand $demand
-     * @param array $settings
-     * @return array
+     * @param array<mixed> $settings
+     * @return array<int,Operation>
      * @throws InvalidQueryException
      */
-    public function findDemandedForStatistics(OperationDemand $demand, $settings)
+    public function findDemandedForStatistics(OperationDemand $demand, array $settings) :array
     {
-        $query = $this->generateQuery($demand, $settings, $settings['noLimitForStatistics'] ?? false);
+        $query = $this->generateQuery($demand,$settings,(bool)($settings['noLimitForStatistics'] ?? false));
         return $query->execute(true);
     }
 
     /**
      * Counts all available operations
      * @param OperationDemand $demand
-     * @param array $settings
+     * @param array<mixed> $settings
      * @return int
      * @throws InvalidQueryException
      */
-    public function countDemandedForStatistics($demand, $settings)
+    public function countDemandedForStatistics(OperationDemand $demand, array$settings) :int
     {
         return count($this->findDemandedForStatistics($demand, $settings));
     }
@@ -97,12 +102,12 @@ class OperationRepository extends Repository
      * Counts all available operations grouped by a year and type
      * Optionally use operation uid list, which created before with category constraints
      *
-     * @param array $years
-     * @param array $types
+     * @param array<string,int> $years
+     * @param array<mixed> $types
      * @param string $operationUids
-     * @return array
+     * @return array<mixed>
      */
-    public function countGroupedByYearAndType($years, $types, $operationUids = '')
+    public function countGroupedByYearAndType(array $years, array $types, string $operationUids = '') :array
     {
         /** @var QueryBuilder $queryBuilder */
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
@@ -141,8 +146,9 @@ class OperationRepository extends Repository
      *
      * @param array $result
      * @return array $preparedResult
+     * @throws Exception
      */
-    protected function prepareResultForChartArray($result)
+    protected function prepareResultForChartArray(array $result) :array
     {
         $preparedResult = [];
 
@@ -184,12 +190,12 @@ class OperationRepository extends Repository
     /*
      * add missing type (no operations in year
      *
-     * @param array $data
-     * @param array $types
-     * @param string $year
+     * @param array<mixed> $data
+     * @param array<Type> $types
+     * @param int $year
      * @return array
      */
-    protected function addMissingType($data, $types, $year)
+    protected function addMissingType(array $data, array $types, int $year) :array
     {
         foreach ($types as $type) {
             /** @var Type $type */
@@ -206,10 +212,10 @@ class OperationRepository extends Repository
      * Add empty years to result array
      *
      * @param array $data
-     * @param string $year
+     * @param int $year
      * @return array
      */
-    protected function addEmptyYear($data, $year)
+    protected function addEmptyYear(array $data, int $year) :array
     {
         foreach ($data as $key => $value) {
             if (!isset($data[$key]['years'][$year])) {
@@ -225,7 +231,7 @@ class OperationRepository extends Repository
      * @param array $result
      * @return array
      */
-    protected function sortResultByYears($result)
+    protected function sortResultByYears(array $result) :array
     {
         $resultSorted = [];
         foreach ($result as $key => $value) {
@@ -246,7 +252,7 @@ class OperationRepository extends Repository
      * @param array $data
      * @return array
      */
-    protected function sortResultByTypeUid($data)
+    protected function sortResultByTypeUid(array $data) :array
     {
         // sort by array key (typeUid)
         ksort($data);
@@ -260,7 +266,7 @@ class OperationRepository extends Repository
      * @param array $years
      * @return string
      */
-    protected function convertYearsToString($years)
+    protected function convertYearsToString(array $years) :string
     {
         return implode(',', $years);
     }
@@ -273,7 +279,7 @@ class OperationRepository extends Repository
      * @param string $operationUids
      * @return array
      */
-    public function countGroupedByYear($years, $operationUids = '')
+    public function countGroupedByYear(array $years, string $operationUids = '') :array
     {
         /** @var QueryBuilder $queryBuilder */
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
@@ -295,6 +301,11 @@ class OperationRepository extends Repository
     /**
      * Generates the query
      *
+     *
+     * @param OperationDemand $demand
+     * @param array<mixed> $settings
+     * @param bool $noLimit
+     * @return QueryInterface
      * @throws InvalidQueryException
      */
     protected function generateQuery(OperationDemand $demand, array $settings, bool $noLimit = false): QueryInterface
@@ -304,12 +315,12 @@ class OperationRepository extends Repository
             $query->getQuerySettings()->setRespectStoragePage(false);
         }
         $constraints = $this->createConstraintsFromDemand($query, $demand, $settings);
-        if (!empty($constraints)) {
+        if ($constraints != null && count($constraints) != 0 ) {
             $query->matching(
                 $query->logicalAnd(...$constraints)
             );
         }
-        $limit = $demand->getLimit() ?: $settings['limit'] ?? 0;
+        $limit = $demand->getLimit() ?? ($settings['limit'] ?? 0);
         if (!$noLimit && $limit > 0) {
             $query->setLimit((int)$limit);
         }
@@ -332,7 +343,7 @@ class OperationRepository extends Repository
     ): array {
         $constraints = [];
 
-        if ($demand->getBegin()) {
+        if ($demand->getBegin() > 0) {
             $fromTimestamp = mktime(0, 0, 0, 1, 1, $demand->getBegin());
             $toTimestamp = mktime(23, 59, 59, 12, 31, $demand->getBegin());
             $constraints[] = $query->logicalAnd(
@@ -348,15 +359,15 @@ class OperationRepository extends Repository
             $constraints[] = $this->createCategoryConstraints($query, $categories, 'category', $settings);
         }
         // category constraints from filter form
-        if ($demand->getCategory()) {
+        if ($demand->getCategory() > 0) {
             $constraints[] = $query->contains('category', $demand->getCategory());
         }
 
-        if ($demand->getType()) {
+        if ($demand->getType() > 0) {
             $constraints[] = $query->contains('type', $demand->getType());
         }
         // search
-        if (!empty($demand->getSearchString())) {
+        if ($demand->getSearchstring() != '') {
             $searchSubject = $demand->getSearchstring();
             $searchFields = GeneralUtility::trimExplode(',', $settings['searchFields'], true);
             $searchConstraints = [];
@@ -364,11 +375,11 @@ class OperationRepository extends Repository
                 throw new \UnexpectedValueException('No search fields in TypoScript setup defined', 1506861158);
             }
             foreach ($searchFields as $field) {
-                if (!empty($searchSubject)) {
+                if ($searchSubject != '') {
                     $searchConstraints[] = $query->like($field, '%' . $searchSubject . '%');
                 }
             }
-            if (count($searchConstraints)) {
+            if (count($searchConstraints) > 0) {
                 $constraints[] = $query->logicalOr(...$searchConstraints);
             }
         }
@@ -387,20 +398,21 @@ class OperationRepository extends Repository
 
     /**
      * Build the constraints for the category logic
-     * @param QueryInterface $query
+     * @param QueryInterface<Category> $query
      * @param mixed $categories
      * @param string $property
-     * @param array $settings
+     * @param array<mixed> $settings
      * @return ConstraintInterface $constraint
      * @throws InvalidQueryException
      */
     protected function createCategoryConstraints(
         QueryInterface $query,
-        $categories,
-        $property,
-        $settings
+        mixed $categories,
+        string $property,
+        array $settings
     ): ?\TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface {
-        if ($categories && count($categories) != 0) {
+        $constraint = [];
+        if ($categories != null && count($categories) != 0) {
             $categoryConstraint = [];
             foreach ($categories as $category) {
                 $categoryConstraint[] = $query->contains($property, $category);
@@ -433,7 +445,7 @@ class OperationRepository extends Repository
      * @param array $constraints
      * @return array
      */
-    protected function cleanUnusedConstraints($constraints)
+    protected function cleanUnusedConstraints(array $constraints) :array
     {
         foreach ($constraints as $key => $value) {
             if (is_null($value)) {

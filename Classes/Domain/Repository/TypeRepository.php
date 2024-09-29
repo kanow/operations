@@ -2,6 +2,7 @@
 
 namespace Kanow\Operations\Domain\Repository;
 
+use Kanow\Operations\Domain\Model\Type;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -29,10 +30,13 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
+use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
+ *
+ * @extends Repository<Type>
  */
 class TypeRepository extends Repository
 {
@@ -45,7 +49,10 @@ class TypeRepository extends Repository
         'title' => QueryInterface::ORDER_ASCENDING,
     ];
 
-    public function findAll()
+    /**
+     * @return QueryResultInterface<Type>
+     */
+    public function findAll() :QueryResultInterface
     {
         $query = $this->createQuery();
         return $query->execute();

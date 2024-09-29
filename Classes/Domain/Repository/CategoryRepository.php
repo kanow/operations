@@ -17,12 +17,15 @@ namespace Kanow\Operations\Domain\Repository;
  * The TYPO3 project - inspiring people to share!
  */
 
+use Kanow\Operations\Domain\Model\Category;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
  * Repository for Category models.
+ *
+ * @extends Repository<Category>
  */
 class CategoryRepository extends Repository
 {
