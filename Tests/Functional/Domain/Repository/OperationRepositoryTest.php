@@ -6,8 +6,6 @@ namespace Kanow\Operations\Tests\Functional;
 
 use Kanow\Operations\Domain\Model\OperationDemand;
 use Kanow\Operations\Domain\Repository\OperationRepository;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
 use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 
 class OperationRepositoryTest extends FunctionalTestCase
@@ -16,8 +14,6 @@ class OperationRepositoryTest extends FunctionalTestCase
      * @var OperationRepository
      */
     private OperationRepository $subject;
-
-    private PersistenceManager $persistenceManager;
 
     /**
      * @var string[]
@@ -30,7 +26,6 @@ class OperationRepositoryTest extends FunctionalTestCase
     {
         parent::setUp();
 
-        $this->persistenceManager = GeneralUtility::makeInstance(PersistenceManager::class);
         $this->subject = $this->getContainer()->get(OperationRepository::class);
         $this->importCSVDataSet(__DIR__ . '/../../Fixtures/TxOperations.csv');
     }
