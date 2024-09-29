@@ -170,7 +170,7 @@ class Operation extends AbstractEntity
     /**
      * Initializes all ObjectStorage properties.
      */
-    protected function initStorageObjects() :void
+    protected function initStorageObjects(): void
     {
         $this->type = new ObjectStorage();
         $this->assistance = new ObjectStorage();
@@ -185,7 +185,7 @@ class Operation extends AbstractEntity
      *
      * @return string $number
      */
-    public function getNumber() :string
+    public function getNumber(): string
     {
         return $this->number;
     }
@@ -205,7 +205,7 @@ class Operation extends AbstractEntity
      *
      * @return int $onlyEld
      */
-    public function getOnlyEld() :int
+    public function getOnlyEld(): int
     {
         return $this->onlyEld;
     }
@@ -225,7 +225,7 @@ class Operation extends AbstractEntity
      *
      * @return string $title
      */
-    public function getTitle() :string
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -245,7 +245,7 @@ class Operation extends AbstractEntity
      *
      * @return string $location
      */
-    public function getLocation() :string
+    public function getLocation(): string
     {
         return $this->location;
     }
@@ -265,7 +265,7 @@ class Operation extends AbstractEntity
      *
      * @return \DateTime $begin
      */
-    public function getBegin() :\DateTime
+    public function getBegin(): \DateTime
     {
         return $this->begin;
     }
@@ -285,7 +285,7 @@ class Operation extends AbstractEntity
      *
      * @return \DateTime $end
      */
-    public function getEnd() :\DateTime
+    public function getEnd(): \DateTime
     {
         return $this->end;
     }
@@ -295,7 +295,7 @@ class Operation extends AbstractEntity
      *
      * @param \DateTime $end
      */
-    public function setEnd( \DateTime $end): void
+    public function setEnd(\DateTime $end): void
     {
         $this->end = $end;
     }
@@ -305,7 +305,7 @@ class Operation extends AbstractEntity
      *
      * @return string $teaser
      */
-    public function getTeaser() :string
+    public function getTeaser(): string
     {
         return $this->teaser;
     }
@@ -325,7 +325,7 @@ class Operation extends AbstractEntity
      *
      * @return string $report
      */
-    public function getReport() :string
+    public function getReport(): string
     {
         return $this->report;
     }
@@ -345,7 +345,7 @@ class Operation extends AbstractEntity
      *
      * @return string $longitude
      */
-    public function getLongitude() :string
+    public function getLongitude(): string
     {
         return $this->longitude;
     }
@@ -365,7 +365,7 @@ class Operation extends AbstractEntity
      *
      * @return string $latitude
      */
-    public function getLatitude() :string
+    public function getLatitude(): string
     {
         return $this->latitude;
     }
@@ -385,7 +385,7 @@ class Operation extends AbstractEntity
      *
      * @return int $zoom
      */
-    public function getZoom() :int
+    public function getZoom(): int
     {
         return $this->zoom;
     }
@@ -405,7 +405,7 @@ class Operation extends AbstractEntity
      *
      * @return ObjectStorage<FileReference> $media
      */
-    public function getMedia() :ObjectStorage
+    public function getMedia(): ObjectStorage
     {
         return $this->media;
     }
@@ -415,7 +415,7 @@ class Operation extends AbstractEntity
      *
      * @return ?FileReference $media
      */
-    public function getFirstMedia() :?FileReference
+    public function getFirstMedia(): ?FileReference
     {
         $media = $this->getMedia()->toArray();
         return $media[0];
@@ -456,7 +456,7 @@ class Operation extends AbstractEntity
      *
      * @return ObjectStorage<\Kanow\Operations\Domain\Model\Type> $type
      */
-    public function getType() :ObjectStorage
+    public function getType(): ObjectStorage
     {
         return $this->type;
     }
@@ -466,7 +466,7 @@ class Operation extends AbstractEntity
      *
      * @return \Kanow\Operations\Domain\Model\Type $type
      */
-    public function getAssignedType() :Type
+    public function getAssignedType(): Type
     {
         $type = $this->getType()->toArray();
         return $type[0];
@@ -507,7 +507,7 @@ class Operation extends AbstractEntity
      *
      * @return ObjectStorage<\Kanow\Operations\Domain\Model\Assistance> $assistance
      */
-    public function getAssistance() :ObjectStorage
+    public function getAssistance(): ObjectStorage
     {
         return $this->assistance;
     }
@@ -547,7 +547,7 @@ class Operation extends AbstractEntity
      *
      * @return ObjectStorage<\Kanow\Operations\Domain\Model\Vehicle> $vehicles
      */
-    public function getVehicles() :ObjectStorage
+    public function getVehicles(): ObjectStorage
     {
         return $this->vehicles;
     }
@@ -567,7 +567,7 @@ class Operation extends AbstractEntity
      *
      * @return ObjectStorage<\Kanow\Operations\Domain\Model\Resource> $resources
      */
-    public function getResources() :ObjectStorage
+    public function getResources(): ObjectStorage
     {
         return $this->resources;
     }
@@ -607,7 +607,7 @@ class Operation extends AbstractEntity
      *
      * @return ObjectStorage<Category> $category
      */
-    public function getCategory() :ObjectStorage
+    public function getCategory(): ObjectStorage
     {
         return $this->category;
     }

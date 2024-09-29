@@ -62,7 +62,7 @@ class Type extends AbstractEntity
      *
      * @return string $title
      */
-    public function getTitle() :string
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -82,7 +82,7 @@ class Type extends AbstractEntity
    *
    * @return ObjectStorage<FileReference> $image
    */
-    public function getImage() :ObjectStorage
+    public function getImage(): ObjectStorage
     {
         return $this->image;
     }
@@ -101,7 +101,7 @@ class Type extends AbstractEntity
      *
      * @return string $color
      */
-    public function getColor() :string
+    public function getColor(): string
     {
         return $this->color;
     }

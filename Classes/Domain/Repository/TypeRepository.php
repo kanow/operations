@@ -3,8 +3,6 @@
 namespace Kanow\Operations\Domain\Repository;
 
 use Kanow\Operations\Domain\Model\Type;
-use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /***************************************************************
  *  Copyright notice
@@ -52,7 +50,7 @@ class TypeRepository extends Repository
     /**
      * @return QueryResultInterface<Type>
      */
-    public function findAll() :QueryResultInterface
+    public function findAll(): QueryResultInterface
     {
         $query = $this->createQuery();
         return $query->execute();

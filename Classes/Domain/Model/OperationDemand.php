@@ -90,7 +90,7 @@ class OperationDemand extends AbstractValueObject
      * onlyEld for demanded
      * @return int
      */
-    public function getOnlyEld() :int
+    public function getOnlyEld(): int
     {
         return $this->onlyEld;
     }
@@ -100,7 +100,7 @@ class OperationDemand extends AbstractValueObject
      *
      * @return int $type
      */
-    public function getType() :?int
+    public function getType(): ?int
     {
         return $this->type;
     }
@@ -130,7 +130,7 @@ class OperationDemand extends AbstractValueObject
      *
      * @return ?int $limit
      */
-    public function getLimit() :?int
+    public function getLimit(): ?int
     {
         return $this->limit;
     }
@@ -140,7 +140,7 @@ class OperationDemand extends AbstractValueObject
      *
      * @return int
      */
-    public function getBegin() :int
+    public function getBegin(): int
     {
         return $this->begin;
     }
@@ -160,7 +160,7 @@ class OperationDemand extends AbstractValueObject
      *
      * @return string
      */
-    public function getSearchstring() :string
+    public function getSearchstring(): string
     {
         return $this->searchstring;
     }
@@ -182,7 +182,7 @@ class OperationDemand extends AbstractValueObject
      *
      * @return ?int $category
      */
-    public function getCategory() :?int
+    public function getCategory(): ?int
     {
         return $this->category;
     }

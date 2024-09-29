@@ -60,7 +60,7 @@ class Assistance extends AbstractEntity
      *
      * @return string $title
      */
-    public function getTitle() :string
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -80,7 +80,7 @@ class Assistance extends AbstractEntity
      *
      * @return string $description
      */
-    public function getDescription() :string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -100,7 +100,7 @@ class Assistance extends AbstractEntity
      *
      * @return string $link
      */
-    public function getLink() :string
+    public function getLink(): string
     {
         return $this->link;
     }

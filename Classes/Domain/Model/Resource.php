@@ -75,7 +75,7 @@ class Resource extends AbstractEntity
      *
      * @return string $title
      */
-    public function getTitle() :string
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -95,7 +95,7 @@ class Resource extends AbstractEntity
      *
      * @return string $short
      */
-    public function getShort() :string
+    public function getShort(): string
     {
         return $this->short;
     }
@@ -115,7 +115,7 @@ class Resource extends AbstractEntity
      *
      * @return string $description
      */
-    public function getDescription() :string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -135,7 +135,7 @@ class Resource extends AbstractEntity
       *
       * @return ObjectStorage<FileReference> $media
       */
-    public function getMedia() :ObjectStorage
+    public function getMedia(): ObjectStorage
     {
         return $this->media;
     }
@@ -145,7 +145,7 @@ class Resource extends AbstractEntity
      *
      * @return FileReference $media
      */
-    public function getFirstMedia() :FileReference
+    public function getFirstMedia(): FileReference
     {
         $media = $this->getMedia()->toArray();
         return $media[0];

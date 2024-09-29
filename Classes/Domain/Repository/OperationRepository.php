@@ -80,9 +80,9 @@ class OperationRepository extends Repository
      * @return array<int,Operation>
      * @throws InvalidQueryException
      */
-    public function findDemandedForStatistics(OperationDemand $demand, array $settings) :array
+    public function findDemandedForStatistics(OperationDemand $demand, array $settings): array
     {
-        $query = $this->generateQuery($demand,$settings,(bool)($settings['noLimitForStatistics'] ?? false));
+        $query = $this->generateQuery($demand, $settings, (bool)($settings['noLimitForStatistics'] ?? false));
         return $query->execute(true);
     }
 
@@ -93,7 +93,7 @@ class OperationRepository extends Repository
      * @return int
      * @throws InvalidQueryException
      */
-    public function countDemandedForStatistics(OperationDemand $demand, array$settings) :int
+    public function countDemandedForStatistics(OperationDemand $demand, array $settings): int
     {
         return count($this->findDemandedForStatistics($demand, $settings));
     }
@@ -107,7 +107,7 @@ class OperationRepository extends Repository
      * @param string $operationUids
      * @return array<mixed>
      */
-    public function countGroupedByYearAndType(array $years, array $types, string $operationUids = '') :array
+    public function countGroupedByYearAndType(array $years, array $types, string $operationUids = ''): array
     {
         /** @var QueryBuilder $queryBuilder */
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
@@ -148,7 +148,7 @@ class OperationRepository extends Repository
      * @return array $preparedResult
      * @throws Exception
      */
-    protected function prepareResultForChartArray(array $result) :array
+    protected function prepareResultForChartArray(array $result): array
     {
         $preparedResult = [];
 
@@ -195,7 +195,7 @@ class OperationRepository extends Repository
      * @param int $year
      * @return array
      */
-    protected function addMissingType(array $data, array $types, int $year) :array
+    protected function addMissingType(array $data, array $types, int $year): array
     {
         foreach ($types as $type) {
             /** @var Type $type */
@@ -215,7 +215,7 @@ class OperationRepository extends Repository
      * @param int $year
      * @return array
      */
-    protected function addEmptyYear(array $data, int $year) :array
+    protected function addEmptyYear(array $data, int $year): array
     {
         foreach ($data as $key => $value) {
             if (!isset($data[$key]['years'][$year])) {
@@ -231,7 +231,7 @@ class OperationRepository extends Repository
      * @param array $result
      * @return array
      */
-    protected function sortResultByYears(array $result) :array
+    protected function sortResultByYears(array $result): array
     {
         $resultSorted = [];
         foreach ($result as $key => $value) {
@@ -252,7 +252,7 @@ class OperationRepository extends Repository
      * @param array $data
      * @return array
      */
-    protected function sortResultByTypeUid(array $data) :array
+    protected function sortResultByTypeUid(array $data): array
     {
         // sort by array key (typeUid)
         ksort($data);
@@ -266,7 +266,7 @@ class OperationRepository extends Repository
      * @param array $years
      * @return string
      */
-    protected function convertYearsToString(array $years) :string
+    protected function convertYearsToString(array $years): string
     {
         return implode(',', $years);
     }
@@ -279,7 +279,7 @@ class OperationRepository extends Repository
      * @param string $operationUids
      * @return array
      */
-    public function countGroupedByYear(array $years, string $operationUids = '') :array
+    public function countGroupedByYear(array $years, string $operationUids = ''): array
     {
         /** @var QueryBuilder $queryBuilder */
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
@@ -315,7 +315,7 @@ class OperationRepository extends Repository
             $query->getQuerySettings()->setRespectStoragePage(false);
         }
         $constraints = $this->createConstraintsFromDemand($query, $demand, $settings);
-        if ($constraints != null && count($constraints) != 0 ) {
+        if ($constraints != null && count($constraints) != 0) {
             $query->matching(
                 $query->logicalAnd(...$constraints)
             );
@@ -445,7 +445,7 @@ class OperationRepository extends Repository
      * @param array $constraints
      * @return array
      */
-    protected function cleanUnusedConstraints(array $constraints) :array
+    protected function cleanUnusedConstraints(array $constraints): array
     {
         foreach ($constraints as $key => $value) {
             if (is_null($value)) {

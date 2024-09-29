@@ -2,10 +2,8 @@
 
 namespace Kanow\Operations\Domain\Model;
 
-use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
-use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 
 /***************************************************************
  *  Copyright notice
@@ -56,7 +54,7 @@ class Category extends AbstractEntity
      *
      * @return string the title, might be empty
      */
-    public function getTitle() :string
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -76,7 +74,7 @@ class Category extends AbstractEntity
      *
      * @return string the description, might be empty
      */
-    public function getDescription() :string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -96,7 +94,7 @@ class Category extends AbstractEntity
      *
      * @return Category|null the parent category
      */
-    public function getParent() :Category|null
+    public function getParent(): Category|null
     {
         return $this->parent;
     }
