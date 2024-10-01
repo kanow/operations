@@ -29,27 +29,57 @@ class TemplateLayout implements SingletonInterface
      * @param int $pageUid
      * @return array
      */
-    public function getAvailableTemplateLayouts($pageUid = null)
+    public function getAvailableTemplateLayouts(int $pageUid = 0): array
     {
-        $templateLayouts = [];
-
-        // Check if the layouts are extended by ext_tables
-        if (isset($GLOBALS['TYPO3_CONF_VARS']['EXT']['operations']['templateLayouts']) && is_array($GLOBALS['TYPO3_CONF_VARS']['EXT']['operations']['templateLayouts'])) {
-            $templateLayouts = $GLOBALS['TYPO3_CONF_VARS']['EXT']['operations']['templateLayouts'];
-        }
-
-        // Add TsConfig values
-        if ($pageUid) {
-            foreach ($this->getTemplateLayoutsFromTsConfig($pageUid) as $templateKey => $title) {
-                if (str_starts_with($title, '--div--')) {
-                    $optGroupParts = GeneralUtility::trimExplode(',', $title, true, 2);
-                    $title = $optGroupParts[1];
-                    $templateKey = $optGroupParts[0];
-                }
-                $templateLayouts[] = [$title, $templateKey];
-            }
+        $templateLayouts = $GLOBALS['TYPO3_CONF_VARS']['EXT']['operations']['templateLayouts'] ?? [];
+        if ($pageUid > 0) {
+            $tsConfigLayouts = $this->getTemplateLayoutsFromTsConfig($pageUid);
+            $templateLayouts = array_merge($templateLayouts, $this->processTsConfigLayouts($tsConfigLayouts));
         }
         return $templateLayouts;
+    }
+
+    /**
+     * Process the template layouts from TsConfig
+     *
+     * @param array $tsConfigLayouts
+     * @return array
+     */
+    protected function processTsConfigLayouts(array $tsConfigLayouts): array
+    {
+        $processedLayouts = [];
+        foreach ($tsConfigLayouts as $templateKey => $title) {
+            $processedLayouts[] = $this->processSingleTemplateLayout($templateKey, $title);
+        }
+        return $processedLayouts;
+    }
+
+    /**
+     * Process a single template layout
+     *
+     * @param string $templateKey
+     * @param string $title
+     * @return array
+     */
+    protected function processSingleTemplateLayout(string $templateKey, string $title): array
+    {
+        if (str_starts_with($title, '--div--')) {
+            list($templateKey, $title) = $this->extractTitleFromOptionGroup($title);
+        }
+
+        return [$title, $templateKey];
+    }
+
+    /**
+     * Extract title from option group
+     *
+     * @param string $title
+     * @return array
+     */
+    protected function extractTitleFromOptionGroup(string $title): array
+    {
+        $optionGroupParts = GeneralUtility::trimExplode(',', $title, true, 2);
+        return [$optionGroupParts[0], $optionGroupParts[1]];
     }
 
     /**
@@ -58,13 +88,9 @@ class TemplateLayout implements SingletonInterface
      * @param int $pageUid
      * @return array
      */
-    protected function getTemplateLayoutsFromTsConfig(int $pageUid)
+    protected function getTemplateLayoutsFromTsConfig(int $pageUid): array
     {
-        $templateLayouts = [];
         $pagesTsConfig = BackendUtility::getPagesTSconfig($pageUid);
-        if (isset($pagesTsConfig['tx_operations.']['templateLayouts.']) && is_array($pagesTsConfig['tx_operations.']['templateLayouts.'])) {
-            $templateLayouts = $pagesTsConfig['tx_operations.']['templateLayouts.'];
-        }
-        return $templateLayouts;
+        return $pagesTsConfig['tx_operations.']['templateLayouts.'] ?? [];
     }
 }
