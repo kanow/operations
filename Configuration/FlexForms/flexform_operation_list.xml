@@ -170,7 +170,6 @@
                             <type>select</type>
                             <renderType>selectSingle</renderType>
                             <itemsProcFunc>Kanow\Operations\Hooks\ItemsProcFunc->user_templateLayout</itemsProcFunc>
-                           <items><label></label><value></value></items>
                         </config>
                     </settings.templateLayout>
 
