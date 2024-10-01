@@ -17,7 +17,7 @@ class OperationRepositoryTest extends UnitTestCase
     private OperationRepository $subject;
 
     /**
-     * @var $statisticResultArray array
+     * @var array $statisticResultArray
      */
     protected array $statisticResultArray = [
         '1' => [
@@ -99,7 +99,7 @@ class OperationRepositoryTest extends UnitTestCase
         $method = $reflector->getMethod('cleanUnusedConstraints');
         $method->setAccessible(true);
         $result = $method->invokeArgs($this->subject, [$constraints]);
-        self::assertCount('2', $result);
+        self::assertCount(2, $result);
     }
 
     /**

@@ -11,12 +11,12 @@ use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 class OperationRepositoryTest extends FunctionalTestCase
 {
     /**
-     * @var OperationRepository
+     * @var OperationRepository $subject
      */
     private OperationRepository $subject;
 
     /**
-     * @var string[]
+     * @var array<non-empty-string> $testExtensionsToLoad
      */
     protected array $testExtensionsToLoad = [
         'typo3conf/ext/operations',
@@ -49,19 +49,18 @@ class OperationRepositoryTest extends FunctionalTestCase
     public function findRecordsByYear(): void
     {
         $demand = new OperationDemand();
-        $_GET['id'] = 1;
         $settings = [];
         $settings['dontRespectStoragePage'] = 1;
         date_default_timezone_set('Europe/Berlin');
         // year 2020
         $demand->setBegin(2020);
-        self::assertEquals((int)$this->subject->findDemanded($demand, $settings)->count(), 0);
+        self::assertEquals($this->subject->findDemanded($demand, $settings)->count(), 0);
         // year 2021
         $demand->setBegin(2021);
-        self::assertEquals((int)$this->subject->findDemanded($demand, $settings)->count(), 1);
+        self::assertEquals($this->subject->findDemanded($demand, $settings)->count(), 1);
         // year 2022
         $demand->setBegin(2022);
-        self::assertEquals((int)$this->subject->findDemanded($demand, $settings)->count(), 2);
+        self::assertEquals($this->subject->findDemanded($demand, $settings)->count(), 2);
     }
 
     /**
@@ -72,18 +71,17 @@ class OperationRepositoryTest extends FunctionalTestCase
      */
     public function noLimitSettingForStatisticsIsRespected(): void
     {
-        $_GET['id'] = 1;
         $demand = new OperationDemand();
         $settings = [
             'limit' => 2,
             'noLimitForStatistics' => 0,
             'dontRespectStoragePage' => 1,
         ];
-        self::assertEquals(2, (int)$this->subject->countDemandedForStatistics($demand, $settings));
+        self::assertEquals(2, $this->subject->countDemandedForStatistics($demand, $settings));
         $demand->setLimit(1);
-        self::assertEquals(1, (int)$this->subject->countDemandedForStatistics($demand, $settings));
+        self::assertEquals(1, $this->subject->countDemandedForStatistics($demand, $settings));
         $settings['noLimitForStatistics'] = 1;
-        self::assertEquals(3, (int)$this->subject->countDemandedForStatistics($demand, $settings));
+        self::assertEquals(3, $this->subject->countDemandedForStatistics($demand, $settings));
     }
 
     /**
@@ -115,6 +113,7 @@ class OperationRepositoryTest extends FunctionalTestCase
 
     public function tearDown(): void
     {
+        parent::tearDown();
         unset($this->subject);
     }
 }
