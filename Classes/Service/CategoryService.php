@@ -47,43 +47,74 @@ class CategoryService
     }
 
     /**
-  * Finds all descendants of a given category
-  *
-  * @param Category $parentCategory
-  * @return ObjectStorage $resultStorage
-  */
-    public function findAllDescendants(Category $parentCategory)
+     * Finds all descendants of a given category
+     *
+     * @param Category $parentCategory
+     * @return ObjectStorage
+     */
+    public function findAllDescendants(Category $parentCategory): ObjectStorage
     {
         $this->categoryRepository->setDefaultOrderings(['title' => QueryInterface::ORDER_ASCENDING]);
         $allCategories = $this->categoryRepository->findAll();
 
-        $storage = $regions = $this->buildStorageFromQuery($allCategories);
+        $storage = $this->buildStorageFromQuery($allCategories);
+        return $this->findDescendantsRecursive($parentCategory, $storage);
+    }
+
+    /**
+     * Recursively finds descendants of a category
+     *
+     * @param Category $parentCategory
+     * @param ObjectStorage $storage
+     * @return ObjectStorage
+     */
+    protected function findDescendantsRecursive(Category $parentCategory, ObjectStorage $storage): ObjectStorage
+    {
         $resultStorage = new ObjectStorage();
-        $stack = [];
-        array_push($stack, $parentCategory);
+        $stack = [$parentCategory];
+
         while (count($stack) > 0) {
             $currentRoot = array_pop($stack);
-            foreach ($storage as $category) {
-                if ($category->getParent() === $currentRoot) {
-                    $resultStorage->attach($category);
-                    array_push($stack, $category);
-                }
-            }
+            $this->attachChildrenToStorage($currentRoot, $storage, $resultStorage, $stack);
         }
+
         return $resultStorage;
     }
 
     /**
-     * Builds an object storage form query
+     * Attaches child categories to result storage and updates the stack
      *
-     * @param QueryResultInterface|array
-     * @return ObjectStorage
+     * @param Category $currentRoot
+     * @param ObjectStorage $storage
+     * @param ObjectStorage $resultStorage
+     * @param array $stack
+     * @return void
      */
-    protected function buildStorageFromQuery(QueryResultInterface $query)
+    protected function attachChildrenToStorage(
+        Category $currentRoot,
+        ObjectStorage $storage,
+        ObjectStorage $resultStorage,
+        array &$stack
+    ): void {
+        foreach ($storage as $category) {
+            if ($category->getParent() === $currentRoot) {
+                $resultStorage->attach($category);
+                $stack[] = $category;
+            }
+        }
+    }
+
+    /**
+     * Builds an object storage from a query
+     *
+     * @param QueryResultInterface|Category[] $query The query or array of categories
+     * @return ObjectStorage The resulting object storage
+     */
+    protected function buildStorageFromQuery(QueryResultInterface $query): ObjectStorage
     {
         $storage = new ObjectStorage();
         foreach ($query as $category) {
-            if ($category->getParent() != null) {
+            if ($category->getParent() !== null) {
                 $storage->attach($category);
             }
         }

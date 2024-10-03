@@ -54,7 +54,7 @@ class ItemsProcFunc
      * @param int $uid
      * @return array
      */
-    protected function getContentElementRow($uid)
+    protected function getContentElementRow(int $uid): array
     {
         return BackendUtilityCore::getRecord('tt_content', $uid);
     }
@@ -64,7 +64,7 @@ class ItemsProcFunc
      *
      * @return LanguageService
      */
-    protected function getLanguageService()
+    protected function getLanguageService(): LanguageService
     {
         return $GLOBALS['LANG'];
     }
