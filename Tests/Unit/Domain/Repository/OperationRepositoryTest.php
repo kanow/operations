@@ -127,8 +127,7 @@ class OperationRepositoryTest extends UnitTestCase
         $type->setTitle('BMA');
         $type->setColor('#cccccc');
         $type->_setProperty('uid', 7);
-        $types = new ObjectStorage();
-        $types->attach($type);
+        $types = [$type];
 
         $reflector = new \ReflectionClass(OperationRepository::class);
         $method = $reflector->getMethod('addMissingType');
