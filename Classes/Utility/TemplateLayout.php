@@ -64,7 +64,7 @@ class TemplateLayout implements SingletonInterface
     protected function processSingleTemplateLayout(string $templateKey, string $title): array
     {
         if (str_starts_with($title, '--div--')) {
-            list($templateKey, $title) = $this->extractTitleFromOptionGroup($title);
+            [$templateKey, $title] = $this->extractTitleFromOptionGroup($title);
         }
 
         return [$title, $templateKey];

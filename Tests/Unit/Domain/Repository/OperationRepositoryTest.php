@@ -5,7 +5,6 @@ namespace Kanow\Operations\Tests\Unit\Domain\Repository\Operation;
 use Kanow\Operations\Domain\Model\Type;
 use Kanow\Operations\Domain\Repository\OperationRepository;
 use TYPO3\CMS\Extbase\Object\ObjectManagerInterface;
-use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 

@@ -7,8 +7,6 @@ use Kanow\Operations\Domain\Model\Category;
 use Kanow\Operations\Domain\Model\Operation;
 use Kanow\Operations\Domain\Model\OperationDemand;
 use Kanow\Operations\Domain\Model\Type;
-use TYPO3\CMS\Core\Context\Context;
-use TYPO3\CMS\Core\Context\LanguageAspect;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -58,14 +56,14 @@ class OperationRepository extends Repository
         'begin' => QueryInterface::ORDER_DESCENDING,
     ];
 
-//    protected TypeRepository $typeRepository;
+    //    protected TypeRepository $typeRepository;
 
-//    public function __construct(
-//        TypeRepository $typeRepository
-//    ) {
-//        parent::__construct();
-//        $this->typeRepository = $typeRepository;
-//    }
+    //    public function __construct(
+    //        TypeRepository $typeRepository
+    //    ) {
+    //        parent::__construct();
+    //        $this->typeRepository = $typeRepository;
+    //    }
 
     /**
      * Returns the objects of this repository matching the demand
@@ -349,10 +347,10 @@ class OperationRepository extends Repository
      * @param QueryInterface $query
      * @param OperationDemand $demand
      * @param array $constraints
-     * @return void
      * @throws InvalidQueryException
      */
-    protected function addDateConstraints(QueryInterface $query, OperationDemand $demand, array &$constraints): void {
+    protected function addDateConstraints(QueryInterface $query, OperationDemand $demand, array &$constraints): void
+    {
         if ($demand->getBegin() > 0) {
             $fromTimestamp = mktime(0, 0, 0, 1, 1, $demand->getBegin());
             $toTimestamp = mktime(23, 59, 59, 12, 31, $demand->getBegin());
@@ -367,18 +365,18 @@ class OperationRepository extends Repository
      * @param QueryInterface $query
      * @param array $settings
      * @param array $constraints
-     * @return void
      * @throws InvalidQueryException
      */
-    protected function addCategoryConstraintsFromSettings(QueryInterface $query, array $settings, array &$constraints): void {
+    protected function addCategoryConstraintsFromSettings(QueryInterface $query, array $settings, array &$constraints): void
+    {
         if (isset($settings['category']) && $settings['category'] != '') {
-             $createdCategoryConstraints = $this->createCategoryConstraints(
+            $createdCategoryConstraints = $this->createCategoryConstraints(
                 $query,
                 GeneralUtility::trimExplode(',', $settings['category'], true),
                 'category',
                 $settings
             );
-            if($createdCategoryConstraints != null) {
+            if ($createdCategoryConstraints != null) {
                 $constraints[] = $createdCategoryConstraints;
             }
         }
@@ -388,10 +386,10 @@ class OperationRepository extends Repository
      * @param QueryInterface $query
      * @param OperationDemand $demand
      * @param array $constraints
-     * @return void
      * @throws InvalidQueryException
      */
-    protected function addCategoryConstraintsFromDemand(QueryInterface $query, OperationDemand $demand, array &$constraints): void {
+    protected function addCategoryConstraintsFromDemand(QueryInterface $query, OperationDemand $demand, array &$constraints): void
+    {
         if ($demand->getCategory() > 0) {
             $constraints[] = $query->contains('category', $demand->getCategory());
         }
@@ -401,10 +399,10 @@ class OperationRepository extends Repository
      * @param QueryInterface $query
      * @param OperationDemand $demand
      * @param array $constraints
-     * @return void
      * @throws InvalidQueryException
      */
-    protected function addTypeConstraints(QueryInterface $query, OperationDemand $demand, array &$constraints): void {
+    protected function addTypeConstraints(QueryInterface $query, OperationDemand $demand, array &$constraints): void
+    {
         if ($demand->getType() > 0) {
             $constraints[] = $query->contains('type', $demand->getType());
         }
@@ -415,10 +413,10 @@ class OperationRepository extends Repository
      * @param OperationDemand $demand
      * @param array $settings
      * @param array $constraints
-     * @return void
      * @throws InvalidQueryException
      */
-    protected function addSearchConstraints(QueryInterface $query, OperationDemand $demand, array $settings, array &$constraints): void {
+    protected function addSearchConstraints(QueryInterface $query, OperationDemand $demand, array $settings, array &$constraints): void
+    {
         if ($demand->getSearchstring() !== '') {
             $searchSubject = $demand->getSearchstring();
             $searchFields = $this->getSearchFields($settings);
@@ -434,7 +432,8 @@ class OperationRepository extends Repository
      * @param array $settings
      * @return array
      */
-    protected function getSearchFields(array $settings): array {
+    protected function getSearchFields(array $settings): array
+    {
         $searchFields = GeneralUtility::trimExplode(',', $settings['searchFields'], true);
         if (count($searchFields) === 0) {
             throw new \UnexpectedValueException('No search fields in TypoScript setup defined', 1506861158);
@@ -449,7 +448,8 @@ class OperationRepository extends Repository
      * @return array
      * @throws InvalidQueryException
      */
-    protected function buildSearchConstraints(QueryInterface $query, string $searchSubject, array $searchFields): array {
+    protected function buildSearchConstraints(QueryInterface $query, string $searchSubject, array $searchFields): array
+    {
         $searchConstraints = [];
         foreach ($searchFields as $field) {
             if ($searchSubject !== '') {
@@ -459,15 +459,14 @@ class OperationRepository extends Repository
         return $searchConstraints;
     }
 
-
     /**
      * @param QueryInterface $query
      * @param array $settings
      * @param array $constraints
-     * @return void
      * @throws InvalidQueryException
      */
-    protected function addMapConstraints(QueryInterface $query, array $settings, array &$constraints): void {
+    protected function addMapConstraints(QueryInterface $query, array $settings, array &$constraints): void
+    {
         if (isset($settings['showMap'])) {
             $constraints[] = $query->logicalAnd(
                 $query->greaterThan('latitude', 0),

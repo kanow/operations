@@ -88,7 +88,6 @@ class CategoryService
      * @param ObjectStorage $storage
      * @param ObjectStorage $resultStorage
      * @param array $stack
-     * @return void
      */
     protected function attachChildrenToStorage(
         Category $currentRoot,
