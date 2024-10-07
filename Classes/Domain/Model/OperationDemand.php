@@ -175,8 +175,6 @@ class OperationDemand extends AbstractValueObject
         $this->searchstring = $searchstring;
     }
 
-    public const ARRAY_PROPERTIES = 'begin,type';
-
     /**
      * Returns the category
      *
