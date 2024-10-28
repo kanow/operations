@@ -10,7 +10,7 @@
     "operations"
   ],
   "require": {
-    "typo3/cms-core": "^12.4"
+    "typo3/cms-core": "^12.4 || ^13.4"
   },
   "config": {
     "vendor-dir": ".Build/vendor",
@@ -53,7 +53,7 @@
       "extension-key": "operations"
     },
     "branch-alias": {
-      "dev-main": "8.0.x-dev"
+      "dev-main": "8.1.x-dev"
     }
   },
   "autoload": {
