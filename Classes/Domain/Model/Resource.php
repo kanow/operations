@@ -143,9 +143,9 @@ class Resource extends AbstractEntity
     /**
      * Returns the first media
      *
-     * @return FileReference $media
+     * @return ?FileReference $media
      */
-    public function getFirstMedia(): FileReference
+    public function getFirstMedia(): ?FileReference
     {
         $media = $this->getMedia()->toArray();
         return $media[0];
