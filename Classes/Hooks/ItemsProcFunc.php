@@ -36,27 +36,56 @@ class ItemsProcFunc
      */
     public function user_templateLayout(array &$config): void
     {
-        $row = $this->getContentElementRow($config['row']['uid']);
+        $pageId = 0;
 
-        $templateLayouts = $this->templateLayoutsUtility->getAvailableTemplateLayouts($row['pid'] ?? null);
-        foreach ($templateLayouts as $layout) {
-            $additionalLayout = [
-                $this->getLanguageService()->sL($layout[0]),
-                $layout[1],
-            ];
-            array_push($config['items'], $additionalLayout);
+        $currentColPos = $config['flexParentDatabaseRow']['colPos'] ?? null;
+        if ($currentColPos === null) {
+            return;
+        }
+        $pageId = $this->getPageId($config['flexParentDatabaseRow']['pid']);
+
+        if ($pageId > 0) {
+            $templateLayouts = $this->templateLayoutsUtility->getAvailableTemplateLayouts($pageId);
+
+            $templateLayouts = $this->reduceTemplateLayouts($templateLayouts, $currentColPos);
+            foreach ($templateLayouts as $layout) {
+                $additionalLayout = [
+                    htmlspecialchars($this->getLanguageService()->sL($layout[0])),
+                    $layout[1],
+                ];
+                array_push($config['items'], $additionalLayout);
+            }
         }
     }
 
     /**
-     * Get tt_content record
+     * Reduce the template layouts by the ones that are not allowed in given colPos
      *
-     * @param int $uid
-     * @return array
+     * @param array $templateLayouts
+     * @param int $currentColPos
      */
-    protected function getContentElementRow(int $uid): array
+    protected function reduceTemplateLayouts($templateLayouts, $currentColPos): array
     {
-        return BackendUtilityCore::getRecord('tt_content', $uid);
+        $currentColPos = (int)$currentColPos;
+        $restrictions = [];
+        $allLayouts = [];
+        foreach ($templateLayouts as $key => $layout) {
+            if (is_array($layout[0])) {
+                if (isset($layout[0]['allowedColPos']) && str_ends_with((string)$layout[1], '.')) {
+                    $layoutKey = substr($layout[1], 0, -1);
+                    $restrictions[$layoutKey] = GeneralUtility::intExplode(',', $layout[0]['allowedColPos'], true);
+                }
+            } else {
+                $allLayouts[$key] = $layout;
+            }
+        }
+        foreach ($restrictions as $restrictedIdentifier => $restrictedColPosList) {
+            if (!in_array($currentColPos, $restrictedColPosList, true)) {
+                unset($allLayouts[$restrictedIdentifier]);
+            }
+        }
+
+        return $allLayouts;
     }
 
     /**
@@ -67,5 +96,17 @@ class ItemsProcFunc
     protected function getLanguageService(): LanguageService
     {
         return $GLOBALS['LANG'];
+    }
+
+    protected function getPageId($pid): int
+    {
+        $pid = (int)$pid;
+
+        if ($pid > 0) {
+            return $pid;
+        }
+
+        $row = BackendUtilityCore::getRecord('tt_content', abs($pid), 'uid,pid');
+        return $row['pid'];
     }
 }
