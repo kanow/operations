@@ -58,3 +58,8 @@ Repeat these steps to create all needed content types for the frontend. At least
 
    Use default settings in TypoScript and just define settings in Plugins to overwrite the settings from TypoScript.
 
+.. tip::
+
+   Use TS-Config to define different `templateLayouts`,
+   for setting in the "Template Options".
+
