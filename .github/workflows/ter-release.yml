@@ -7,13 +7,20 @@ jobs:
   publish:
     name: Publish new version to TER
     if: startsWith(github.ref, 'refs/tags/')
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     env:
-      TYPO3_EXTENSION_KEY: 'operations'
       TYPO3_API_TOKEN: ${{ secrets.TYPO3_API_TOKEN }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+      - name: Fetch all tags
+        run: git fetch --tags --force
+
+      - name: Fetch extension key
+        id: fetch-extension-key
+        run: |
+          EXTENSION_KEY=$(cat composer.json | jq -r '.extra."typo3/cms"."extension-key" // empty')
+          echo "TYPO3_EXTENSION_KEY=$EXTENSION_KEY" >> $GITHUB_ENV
 
       - name: Check tag
         run: |
@@ -23,13 +30,12 @@ jobs:
 
       - name: Get version
         id: get-version
-        run: echo "version=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_ENV
+        run: echo "version=$(echo ${GITHUB_REF#refs/tags/} | sed 's/^v//')" >> $GITHUB_ENV
 
       - name: Get comment
         id: get-comment
         run: |
-          cd ${GITHUB_WORKSPACE}
-          readonly local comment=$(git tag -n10 -l ${{ env.version }} | sed "s/^[0-9.]*[ ]*//g" | sed "/^$/d")
+          readonly comment=$(git tag -n10 -l ${{ env.version }} | sed "s/^[0-9.]*[ ]*//g" | sed 's/^[ \t]*//')
 
           if [[ -z "${comment// }" ]]; then
             echo "comment=Released version ${{ env.version }} of ${{ env.TYPO3_EXTENSION_KEY }}" >> $GITHUB_ENV
@@ -37,14 +43,14 @@ jobs:
             {
               echo 'comment<<EOF'
               echo "$comment"
-              echo EOF
+              echo 'EOF'
             } >> "$GITHUB_ENV"
           fi
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 7.4
+          php-version: 8.3
           extensions: intl, mbstring, json, zip, curl
           tools: composer:v2
 
@@ -52,4 +58,4 @@ jobs:
         run: composer global require typo3/tailor --prefer-dist --no-progress --no-suggest
 
       - name: Publish to TER
-        run: php ~/.composer/vendor/bin/tailor ter:publish --comment "${{ env.comment }}" ${{ env.version }}
+        run: php ~/.composer/vendor/bin/tailor ter:publish --comment "${{ env.comment }}" "${{ env.version }}"
