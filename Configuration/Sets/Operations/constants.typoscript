@@ -1,1 +1,1 @@
-@import 'EXT:operation/Configuration/Typoscript/constants.typoscript'
+@import 'EXT:operation/Configuration/TypoScript/constants.typoscript'
