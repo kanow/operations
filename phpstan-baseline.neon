@@ -1,12 +1,12 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Out of 143 possible param types, only 138 \\- 96\\.5 %% actually have it\\. Add more param types to get over 100 %%$#"
+			message: "#^Out of 149 possible param types, only 137 \\- 91\\.9 %% actually have it\\. Add more param types to get over 100 %%$#"
 			count: 1
 			path: Classes/Controller/BaseController.php
 
 		-
-			message: "#^Out of 222 possible return types, only 215 \\- 96\\.8 %% actually have it\\. Add more return types to get over 100 %%$#"
+			message: "#^Out of 226 possible return types, only 216 \\- 95\\.5 %% actually have it\\. Add more return types to get over 100 %%$#"
 			count: 1
 			path: Classes/Controller/BaseController.php
 
@@ -46,12 +46,12 @@ parameters:
 			path: Classes/Controller/OperationController.php
 
 		-
-			message: "#^Out of 143 possible param types, only 138 \\- 96\\.5 %% actually have it\\. Add more param types to get over 100 %%$#"
+			message: "#^Out of 149 possible param types, only 137 \\- 91\\.9 %% actually have it\\. Add more param types to get over 100 %%$#"
 			count: 4
 			path: Classes/Controller/OperationController.php
 
 		-
-			message: "#^Out of 222 possible return types, only 215 \\- 96\\.8 %% actually have it\\. Add more return types to get over 100 %%$#"
+			message: "#^Out of 226 possible return types, only 216 \\- 95\\.5 %% actually have it\\. Add more return types to get over 100 %%$#"
 			count: 6
 			path: Classes/Controller/OperationController.php
 
@@ -79,3 +79,43 @@ parameters:
 			message: "#^Class cognitive complexity is 42, keep it under 10$#"
 			count: 1
 			path: Classes/Domain/Repository/OperationRepository.php
+
+		-
+			message: "#^Calling htmlspecialchars\\(\\) is forbidden, set the \\$flags parameter to `ENT_QUOTES` to also convert single quotes to entities to prevent some HTML injection bugs\\.$#"
+			count: 1
+			path: Classes/Hooks/ItemsProcFunc.php
+
+		-
+			message: "#^Casting to int something that's already int\\.$#"
+			count: 1
+			path: Classes/Hooks/ItemsProcFunc.php
+
+		-
+			message: "#^Class cognitive complexity is 16, keep it under 10$#"
+			count: 1
+			path: Classes/Hooks/ItemsProcFunc.php
+
+		-
+			message: "#^Cognitive complexity for \"Kanow\\\\Operations\\\\Hooks\\\\ItemsProcFunc\\:\\:reduceTemplateLayouts\\(\\)\" is 11, keep it under 5$#"
+			count: 1
+			path: Classes/Hooks/ItemsProcFunc.php
+
+		-
+			message: "#^Out of 149 possible param types, only 137 \\- 91\\.9 %% actually have it\\. Add more param types to get over 100 %%$#"
+			count: 3
+			path: Classes/Hooks/ItemsProcFunc.php
+
+		-
+			message: "#^Method Kanow\\\\Operations\\\\Utility\\\\Div\\:\\:getTypeIconClasses\\(\\) should return array but empty return statement found\\.$#"
+			count: 1
+			path: Classes/Utility/Div.php
+
+		-
+			message: "#^Out of 149 possible param types, only 137 \\- 91\\.9 %% actually have it\\. Add more param types to get over 100 %%$#"
+			count: 4
+			path: Classes/Utility/Div.php
+
+		-
+			message: "#^Out of 226 possible return types, only 216 \\- 95\\.5 %% actually have it\\. Add more return types to get over 100 %%$#"
+			count: 3
+			path: Classes/Utility/Div.php
