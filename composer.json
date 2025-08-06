@@ -1,8 +1,10 @@
 {
   "name": "kanow/operations",
-  "type": "typo3-cms-extension",
   "description": "Manage firefighter operations with detailed reports, images used resources or vehicles, map view for locations. Possibly to use it for other reportable events like THW and so on.",
-  "license": ["GPL-2.0-or-later"],
+  "license": [
+    "GPL-2.0-or-later"
+  ],
+  "type": "typo3-cms-extension",
   "keywords": [
     "TYPO3",
     "extension",
@@ -12,50 +14,29 @@
   "require": {
     "typo3/cms-core": "^12.4 || ^13.4"
   },
-  "config": {
-    "vendor-dir": ".Build/vendor",
-    "bin-dir": ".Build/bin",
-    "allow-plugins": {
-      "typo3/cms-composer-installers": true,
-      "typo3/class-alias-loader": true,
-      "ergebnis/composer-normalize": true,
-      "phpstan/extension-installer": true
-    },
-    "platform": {
-      "php": "8.2.0"
-    }
-  },
   "require-dev": {
-	"friendsofphp/php-cs-fixer": "^3.64.0",
+    "ergebnis/composer-normalize": "2.47.0",
+    "friendsofphp/php-cs-fixer": "^3.64.0",
     "helmich/typo3-typoscript-lint": "^3.1.0",
     "php-coveralls/php-coveralls": "^2.5.3",
+    "php-parallel-lint/php-parallel-lint": "^1.4",
     "phpstan/extension-installer": "^1.4.3",
     "phpstan/phpstan": "^1.12.2",
     "phpstan/phpstan-phpunit": "^1.4.0",
     "phpstan/phpstan-strict-rules": "^1.6.0",
-	"spaze/phpstan-disallowed-calls": "^3.4",
-	"tomasvotruba/cognitive-complexity": "^0.2.3",
-	"tomasvotruba/type-coverage": "^0.3.1",
     "phpunit/phpunit": "^9.6.9 || ^10.5",
     "saschaegerer/phpstan-typo3": "^1.8.5",
+    "spaze/phpstan-disallowed-calls": "^3.4",
+    "tomasvotruba/cognitive-complexity": "^0.2.3",
+    "tomasvotruba/type-coverage": "^0.3.1",
     "typo3/cms-fluid-styled-content": "^12.4.1 || ^13.1",
-	"webmozart/assert": "^1.11.0",
-	"typo3/cms-install": "^12.4.1 || ^13.1",
-	"typo3/coding-standards": "^0.6.1 || ^0.8.0",
+    "typo3/cms-install": "^12.4.1 || ^13.1",
+    "typo3/coding-standards": "^0.6.1 || ^0.8.0",
     "typo3/testing-framework": "^7.0.2 || ^8.0.9",
-	"php-parallel-lint/php-parallel-lint": "^1.4"
+    "webmozart/assert": "^1.11.0"
   },
-  "extra": {
-    "typo3/cms": {
-      "operations": "operations",
-      "cms-package-dir": "{$vendor-dir}/typo3/cms",
-      "web-dir": ".Build/Web",
-      "extension-key": "operations"
-    },
-    "branch-alias": {
-      "dev-main": "8.1.x-dev"
-    }
-  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "autoload": {
     "psr-4": {
       "Kanow\\Operations\\": "Classes/"
@@ -66,18 +47,39 @@
       "Kanow\\Operations\\Tests\\": "Tests"
     }
   },
+  "config": {
+    "allow-plugins": {
+      "ergebnis/composer-normalize": true,
+      "phpstan/extension-installer": true,
+      "typo3/class-alias-loader": true,
+      "typo3/cms-composer-installers": true
+    },
+    "bin-dir": ".Build/bin",
+    "vendor-dir": ".Build/vendor"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-main": "8.1.x-dev"
+    },
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "extension-key": "operations",
+      "operations": "operations",
+      "web-dir": ".Build/Web"
+    }
+  },
   "scripts": {
     "post-autoload-dump": [
       "TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
     ],
-    "testUnit": ".Build/bin/phpunit -c Build/UnitTests.xml",
+    "ci:composer:normalize": "@composer normalize --no-check-lock --dry-run",
+    "ci:php:cs-fixer": "php-cs-fixer fix --config ./Build/php-cs-fixer/php-cs-fixer.php -v --dry-run --diff",
+    "ci:php:lint": "parallel-lint *.php Classes Configuration Tests",
+    "ci:php:stan": "phpstan --no-progress -v  --configuration=Build/phpstan/phpstan.neon",
+    "fix:composer:normalize": "@composer normalize --no-check-lock",
+    "fix:php:cs": "php-cs-fixer fix --config ./Build/php-cs-fixer/php-cs-fixer.php",
+    "phpstan:baseline": "phpstan --generate-baseline=Build/phpstan/phpstan-baseline.neon --allow-empty-baseline --configuration=Build/phpstan/phpstan.neon",
     "testFunctional": ".Build/bin/phpunit -c Build/FunctionalTests.xml",
-	"ci:php:lint": "parallel-lint ./*.php *.php Classes Configuration Tests",
-	"ci:php:cs-fixer": "php-cs-fixer fix --config .php-cs-fixer.php -v --dry-run --diff",
-	"ci:php:stan": "phpstan --no-progress -v",
-	"fix:php:cs": "php-cs-fixer fix --config .php-cs-fixer.php",
-	"phpstan:baseline": "phpstan --generate-baseline --allow-empty-baseline"
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+    "testUnit": ".Build/bin/phpunit -c Build/UnitTests.xml"
+  }
 }
