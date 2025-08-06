@@ -7,6 +7,7 @@ namespace Kanow\Operations\Tests\Functional;
 use Kanow\Operations\Domain\Model\OperationDemand;
 use Kanow\Operations\Domain\Repository\OperationRepository;
 use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class OperationRepositoryTest extends FunctionalTestCase
 {
@@ -30,22 +31,14 @@ class OperationRepositoryTest extends FunctionalTestCase
         $this->importCSVDataSet(__DIR__ . '/../../Fixtures/TxOperations.csv');
     }
 
-    /**
-     * Test if storagePid is working
-     *
-     * @test
-     */
+    #[Test]
     public function findRecordsByUid(): void
     {
         $operation = $this->subject->findByUid(1);
         self::assertEquals($operation->getTitle(), 'Einsatztest');
     }
 
-    /**
-     * Test if record by year constraint works
-     *
-     * @test
-     */
+    #[Test]
     public function findRecordsByYear(): void
     {
         $demand = new OperationDemand();
@@ -66,9 +59,8 @@ class OperationRepositoryTest extends FunctionalTestCase
     /**
      * Count result for statistics without limit
      * if the setting noLimitForStatistics is active
-     *
-     * @test
      */
+    #[Test]
     public function noLimitSettingForStatisticsIsRespected(): void
     {
         $demand = new OperationDemand();
@@ -84,11 +76,7 @@ class OperationRepositoryTest extends FunctionalTestCase
         self::assertEquals(3, $this->subject->countDemandedForStatistics($demand, $settings));
     }
 
-    /**
-     * Count operations grouped by year
-     *
-     * @test
-     */
+    #[Test]
     public function countOperationsByYear(): void
     {
         $years = [

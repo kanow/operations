@@ -33,6 +33,7 @@ use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 /**
  * Test case for class \Kanow\Operations\Domain\Model\Operation.
@@ -55,17 +56,13 @@ class OperationTest extends UnitTestCase
         $this->subject = new Operation();
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function isAbstractEntity(): void
     {
         self::assertInstanceOf(AbstractEntity::class, $this->subject);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function titleCanBeSet(): void
     {
         $value = 'This is an operation title';
@@ -73,9 +70,7 @@ class OperationTest extends UnitTestCase
         self::assertEquals($value, $this->subject->getTitle());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function numberCanBeSet(): void
     {
         $value = '2023';
@@ -84,9 +79,7 @@ class OperationTest extends UnitTestCase
         self::assertEquals($value, $this->subject->getNumber());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function onlyEldCanBeSet(): void
     {
         $value = 1;
@@ -95,9 +88,7 @@ class OperationTest extends UnitTestCase
         self::assertEquals($value, $this->subject->getOnlyEld());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function locationCanBeSet(): void
     {
         $value = 'My location';
@@ -105,9 +96,7 @@ class OperationTest extends UnitTestCase
         self::assertEquals($value, $this->subject->getLocation());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function beginCanBeSet(): void
     {
         $value = new \DateTime();
@@ -115,9 +104,7 @@ class OperationTest extends UnitTestCase
         self::assertEquals($value, $this->subject->getBegin());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function endCanBeSet(): void
     {
         $value = new \DateTime();
@@ -125,9 +112,7 @@ class OperationTest extends UnitTestCase
         self::assertEquals($value, $this->subject->getEnd());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function teaserCanBeSet(): void
     {
         $value = 'This is an operation teaser';
@@ -135,9 +120,7 @@ class OperationTest extends UnitTestCase
         self::assertEquals($value, $this->subject->getTeaser());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function reportCanBeSet(): void
     {
         $value = 'This is an operation report';
@@ -145,9 +128,7 @@ class OperationTest extends UnitTestCase
         self::assertEquals($value, $this->subject->getReport());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function longitudeCanBeSet(): void
     {
         $value = '11.03773';
@@ -155,9 +136,7 @@ class OperationTest extends UnitTestCase
         self::assertEquals($value, $this->subject->getLongitude());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function latitudeCanBeSet(): void
     {
         $value = '51.75745';
@@ -165,9 +144,7 @@ class OperationTest extends UnitTestCase
         self::assertEquals($value, $this->subject->getLatitude());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function zoomCanBeSet(): void
     {
         $value = 15;
@@ -176,9 +153,7 @@ class OperationTest extends UnitTestCase
         self::assertEquals($value, $this->subject->getZoom());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function mediaCanBeSet(): void
     {
         $mediaItem = new FileReference();
@@ -189,9 +164,7 @@ class OperationTest extends UnitTestCase
         self::assertSame($mediaItem, $this->subject->getFirstMedia());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function typeCanBeSet(): void
     {
         $type = new Type();

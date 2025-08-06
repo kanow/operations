@@ -9,6 +9,7 @@ use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 /***************************************************************
  *  Copyright notice
@@ -54,17 +55,13 @@ class TypeTest extends UnitTestCase
         $this->subject = new Type();
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function isAbstractEntity(): void
     {
         self::assertInstanceOf(AbstractEntity::class, $this->subject);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function titleCanBeSet(): void
     {
         $value = 'This is a type';
@@ -72,9 +69,7 @@ class TypeTest extends UnitTestCase
         self::assertEquals($value, $this->subject->getTitle());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function colorCanBeSet(): void
     {
         $value = '#aacc00';
@@ -82,9 +77,7 @@ class TypeTest extends UnitTestCase
         self::assertEquals($value, $this->subject->getColor());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function imageCanBeSet(): void
     {
         $file = new FileReference();
