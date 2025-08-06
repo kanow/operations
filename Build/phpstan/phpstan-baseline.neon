@@ -1,0 +1,106 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Out of 145 possible param types, only 137 \\- 94\\.4 %% actually have it\\. Add more param types to get over 100 %%$#"
+			count: 1
+			path: ../../Classes/Controller/BaseController.php
+
+		-
+			message: "#^Out of 223 possible return types, only 216 \\- 96\\.8 %% actually have it\\. Add more return types to get over 100 %%$#"
+			count: 1
+			path: ../../Classes/Controller/BaseController.php
+
+		-
+			message: "#^Call to function is_null\\(\\) with Kanow\\\\Operations\\\\Domain\\\\Model\\\\OperationDemand will always evaluate to false\\.$#"
+			count: 1
+			path: ../../Classes/Controller/OperationController.php
+
+		-
+			message: "#^Class cognitive complexity is 32, keep it under 10$#"
+			count: 1
+			path: ../../Classes/Controller/OperationController.php
+
+		-
+			message: "#^Cognitive complexity for \"Kanow\\\\Operations\\\\Controller\\\\OperationController\\:\\:getPagination\\(\\)\" is 8, keep it under 5$#"
+			count: 1
+			path: ../../Classes/Controller/OperationController.php
+
+		-
+			message: "#^Cognitive complexity for \"Kanow\\\\Operations\\\\Controller\\\\OperationController\\:\\:overrideFlexformSettings\\(\\)\" is 7, keep it under 5$#"
+			count: 1
+			path: ../../Classes/Controller/OperationController.php
+
+		-
+			message: "#^Construct empty\\(\\) is not allowed\\. Use more strict comparison\\.$#"
+			count: 1
+			path: ../../Classes/Controller/OperationController.php
+
+		-
+			message: "#^Implicit array creation is not allowed \\- variable \\$pid does not exist\\.$#"
+			count: 2
+			path: ../../Classes/Controller/OperationController.php
+
+		-
+			message: "#^Only booleans are allowed in &&, int given on the right side\\.$#"
+			count: 2
+			path: ../../Classes/Controller/OperationController.php
+
+		-
+			message: "#^Out of 145 possible param types, only 137 \\- 94\\.4 %% actually have it\\. Add more param types to get over 100 %%$#"
+			count: 4
+			path: ../../Classes/Controller/OperationController.php
+
+		-
+			message: "#^Out of 223 possible return types, only 216 \\- 96\\.8 %% actually have it\\. Add more return types to get over 100 %%$#"
+			count: 6
+			path: ../../Classes/Controller/OperationController.php
+
+		-
+			message: "#^Parameter \\#2 \\$optionKey of method TYPO3\\\\CMS\\\\Extbase\\\\Property\\\\PropertyMappingConfiguration\\:\\:setTypeConverterOption\\(\\) expects string, int given\\.$#"
+			count: 1
+			path: ../../Classes/Controller/OperationController.php
+
+		-
+			message: "#^Short ternary operator is not allowed\\. Use null coalesce operator if applicable or consider using long ternary\\.$#"
+			count: 1
+			path: ../../Classes/Controller/OperationController.php
+
+		-
+			message: "#^Variable \\$pagination might not be defined\\.$#"
+			count: 2
+			path: ../../Classes/Controller/OperationController.php
+
+		-
+			message: "#^Variable \\$paginator might not be defined\\.$#"
+			count: 2
+			path: ../../Classes/Controller/OperationController.php
+
+		-
+			message: "#^Class cognitive complexity is 42, keep it under 10$#"
+			count: 1
+			path: ../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			message: "#^Calling htmlspecialchars\\(\\) is forbidden, set the \\$flags parameter to `ENT_QUOTES` to also convert single quotes to entities to prevent some HTML injection bugs\\.$#"
+			count: 1
+			path: ../../Classes/Hooks/ItemsProcFunc.php
+
+		-
+			message: "#^Casting to int something that's already int\\.$#"
+			count: 1
+			path: ../../Classes/Hooks/ItemsProcFunc.php
+
+		-
+			message: "#^Class cognitive complexity is 16, keep it under 10$#"
+			count: 1
+			path: ../../Classes/Hooks/ItemsProcFunc.php
+
+		-
+			message: "#^Cognitive complexity for \"Kanow\\\\Operations\\\\Hooks\\\\ItemsProcFunc\\:\\:reduceTemplateLayouts\\(\\)\" is 11, keep it under 5$#"
+			count: 1
+			path: ../../Classes/Hooks/ItemsProcFunc.php
+
+		-
+			message: "#^Out of 145 possible param types, only 137 \\- 94\\.4 %% actually have it\\. Add more param types to get over 100 %%$#"
+			count: 3
+			path: ../../Classes/Hooks/ItemsProcFunc.php
