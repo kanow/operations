@@ -70,6 +70,7 @@ $tcaForDatetimeFields = [
 $tcaForColorField = [
     'type' => 'color',
     'size' => 10,
+    'default' => '',
 ];
 
 return [

@@ -204,6 +204,7 @@ return [
             'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.onlyEld',
             'config' => [
                 'type' => 'check',
+                'default' => 0,
             ],
         ],
         'title' => [
@@ -239,6 +240,7 @@ return [
                 'rows' => 3,
                 'eval' => 'trim',
                 'required' => true,
+                'default' => '',
             ],
         ],
         'begin' => [
@@ -265,6 +267,7 @@ return [
                 'cols' => 60,
                 'rows' => 5,
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'report' => [
@@ -276,6 +279,7 @@ return [
                 'cols' => 40,
                 'rows' => 15,
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'longitude' => [
@@ -287,6 +291,7 @@ return [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'latitude' => [
@@ -298,6 +303,7 @@ return [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'zoom' => [
@@ -306,6 +312,7 @@ return [
             'config' => [
                 'type' => 'number',
                 'size' => 4,
+                'default' => 0,
             ],
         ],
         'media' => [
@@ -333,6 +340,7 @@ return [
                 ] : [
                     ['label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.choose', 'value' => 0],
                 ],
+                'default' => 0,
             ],
         ],
         'assistance' => [
@@ -364,6 +372,7 @@ return [
                         ],
                     ],
                 ],
+                'default' => 0,
             ],
         ],
         'vehicles' => [
@@ -395,6 +404,7 @@ return [
                         ],
                     ],
                 ],
+                'default' => 0,
             ],
         ],
         'resources' => [
@@ -426,6 +436,7 @@ return [
                         ],
                     ],
                 ],
+                'default' => 0,
             ],
         ],
         'category' => [
@@ -444,6 +455,7 @@ return [
                 'size' => 30,
                 'maxitems' => 9999,
                 'multiple' => 0,
+                'default' => 0,
             ],
         ],
     ],

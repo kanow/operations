@@ -140,6 +140,7 @@ return [
                 'cols' => 40,
                 'rows' => 15,
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'link' => [
@@ -150,6 +151,7 @@ return [
                 'renderType' => $renderTypeLinkField,
                 'size' => 30,
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
     ],

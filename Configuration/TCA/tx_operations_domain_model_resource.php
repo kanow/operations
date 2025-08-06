@@ -204,6 +204,7 @@ return [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'description' => [
@@ -215,6 +216,7 @@ return [
                 'cols' => 40,
                 'rows' => 15,
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         // mit FAL
@@ -231,6 +233,7 @@ return [
                 'renderType' => $renderTypeLinkField,
                 'size' => 30,
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
     ],
