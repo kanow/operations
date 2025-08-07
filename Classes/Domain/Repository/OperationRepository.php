@@ -56,15 +56,6 @@ class OperationRepository extends Repository
         'begin' => QueryInterface::ORDER_DESCENDING,
     ];
 
-    //    protected TypeRepository $typeRepository;
-
-    //    public function __construct(
-    //        TypeRepository $typeRepository
-    //    ) {
-    //        parent::__construct();
-    //        $this->typeRepository = $typeRepository;
-    //    }
-
     /**
      * Returns the objects of this repository matching the demand
      *
