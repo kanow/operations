@@ -6,7 +6,7 @@ parameters:
 			path: ../../Classes/Controller/BaseController.php
 
 		-
-			message: "#^Out of 223 possible return types, only 216 \\- 96\\.8 %% actually have it\\. Add more return types to get over 100 %%$#"
+			message: "#^Out of 248 possible return types, only 246 \\- 99\\.1 %% actually have it\\. Add more return types to get over 100 %%$#"
 			count: 1
 			path: ../../Classes/Controller/BaseController.php
 
@@ -51,8 +51,8 @@ parameters:
 			path: ../../Classes/Controller/OperationController.php
 
 		-
-			message: "#^Out of 223 possible return types, only 216 \\- 96\\.8 %% actually have it\\. Add more return types to get over 100 %%$#"
-			count: 6
+			message: "#^Out of 248 possible return types, only 246 \\- 99\\.1 %% actually have it\\. Add more return types to get over 100 %%$#"
+			count: 1
 			path: ../../Classes/Controller/OperationController.php
 
 		-
