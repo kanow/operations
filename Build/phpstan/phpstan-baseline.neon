@@ -41,7 +41,7 @@ parameters:
 			path: ../../Classes/Controller/OperationController.php
 
 		-
-			message: "#^Class cognitive complexity is 42, keep it under 10$#"
+			message: "#^Class cognitive complexity is 43, keep it under 10$#"
 			count: 1
 			path: ../../Classes/Domain/Repository/OperationRepository.php
 

@@ -56,15 +56,6 @@ class OperationRepository extends Repository
         'begin' => QueryInterface::ORDER_DESCENDING,
     ];
 
-    //    protected TypeRepository $typeRepository;
-
-    //    public function __construct(
-    //        TypeRepository $typeRepository
-    //    ) {
-    //        parent::__construct();
-    //        $this->typeRepository = $typeRepository;
-    //    }
-
     /**
      * Returns the objects of this repository matching the demand
      *
@@ -467,7 +458,7 @@ class OperationRepository extends Repository
      */
     protected function addMapConstraints(QueryInterface $query, array $settings, array &$constraints): void
     {
-        if (isset($settings['showMap'])) {
+        if (isset($settings['showMap']) && $settings['showMap'] == 1){
             $constraints[] = $query->logicalAnd(
                 $query->greaterThan('latitude', 0),
                 $query->greaterThan('longitude', 0)
