@@ -6,6 +6,8 @@ namespace Kanow\Operations\Tests\Functional;
 
 use Kanow\Operations\Domain\Model\OperationDemand;
 use Kanow\Operations\Domain\Repository\OperationRepository;
+use TYPO3\CMS\Core\Core\SystemEnvironmentBuilder;
+use TYPO3\CMS\Core\Http\ServerRequest;
 use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 use PHPUnit\Framework\Attributes\Test;
 
@@ -26,7 +28,8 @@ class OperationRepositoryTest extends FunctionalTestCase
     public function setUp(): void
     {
         parent::setUp();
-
+        $GLOBALS['TYPO3_REQUEST'] = (new ServerRequest())
+            ->withAttribute('applicationType', SystemEnvironmentBuilder::REQUESTTYPE_BE);
         $this->subject = $this->getContainer()->get(OperationRepository::class);
         $this->importCSVDataSet(__DIR__ . '/../../Fixtures/TxOperations.csv');
     }
