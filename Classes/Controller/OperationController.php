@@ -52,6 +52,7 @@ use TYPO3\CMS\Extbase\Http\ForwardResponse;
 use TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException;
 use TYPO3\CMS\Extbase\Pagination\QueryResultPaginator;
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
+use TYPO3\CMS\Extbase\Persistence\Generic\QueryResult;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter;
 
@@ -239,10 +240,10 @@ class OperationController extends BaseController
     /**
      * Update demand with current settings, if not exists it creates one
      *
-     * @param OperationDemand $demand
+     * @param ?OperationDemand $demand
      * @return object
      */
-    protected function updateDemandObjectFromSettings(OperationDemand $demand): object
+    protected function updateDemandObjectFromSettings(?OperationDemand $demand): object
     {
         if (is_null($demand)) {
             $demand = GeneralUtility::makeInstance(OperationDemand::class);
@@ -283,9 +284,9 @@ class OperationController extends BaseController
     /**
      * Get operation categories
      *
-     * @return ?ObjectStorage $categories
+     * @return ObjectStorage|QueryResult|null $categories
      */
-    protected function getOperationCategories(): ?ObjectStorage
+    protected function getOperationCategories(): ObjectStorage|QueryResult|null
     {
         $site = $this->getRequest()->getAttribute('site');
         $configuration = $site->getConfiguration();
