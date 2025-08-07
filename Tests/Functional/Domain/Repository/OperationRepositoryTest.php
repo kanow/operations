@@ -56,6 +56,23 @@ class OperationRepositoryTest extends FunctionalTestCase
         self::assertEquals($this->subject->findDemanded($demand, $settings)->count(), 2);
     }
 
+    #[Test]
+    public function findRecordsBySearchword(): void
+    {
+        $demand = new OperationDemand();
+        $settings = [];
+        $settings['dontRespectStoragePage'] = 1;
+        $settings['searchFields'] = 'title,teaser,location';
+        $demand->setSearchstring('Einsatztest');
+        self::assertEquals($this->subject->findDemanded($demand, $settings)->count(), 3);
+        $demand->setSearchstring('Einsatz');
+        self::assertEquals($this->subject->findDemanded($demand, $settings)->count(), 3);
+        $demand->setSearchstring('Wohnhaus');
+        self::assertEquals($this->subject->findDemanded($demand, $settings)->count(), 1);
+        $demand->setSearchstring('FooBar');
+        self::assertEquals($this->subject->findDemanded($demand, $settings)->count(), 0);
+    }
+
     /**
      * Count result for statistics without limit
      * if the setting noLimitForStatistics is active
