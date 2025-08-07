@@ -1,11 +1,6 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Call to function is_null\\(\\) with Kanow\\\\Operations\\\\Domain\\\\Model\\\\OperationDemand will always evaluate to false\\.$#"
-			count: 1
-			path: ../../Classes/Controller/OperationController.php
-
-		-
 			message: "#^Class cognitive complexity is 32, keep it under 10$#"
 			count: 1
 			path: ../../Classes/Controller/OperationController.php

@@ -105,7 +105,7 @@ class OperationController extends BaseController
             return $forwardResponse->withArguments($this->request->getArguments());
         }
 
-        $demand = $this->updateDemandObjectFromSettings($demand);
+        $demand = $this->createDemandObjectFromSettings($demand);
         /** @var OperationDemand $demand */
         $operations = $this->operationRepository->findDemanded($demand, $this->settings);
         $types = $this->typeRepository->findAll();
@@ -147,7 +147,7 @@ class OperationController extends BaseController
      */
     public function searchAction(OperationDemand $demand = null, int $currentPage = 1): ResponseInterface
     {
-        $demand = $this->updateDemandObjectFromSettings($demand);
+        $demand = $this->createDemandObjectFromSettings($demand);
         /** @var OperationDemand $demand */
         $demanded = $this->operationRepository->findDemanded($demand, $this->settings);
 
@@ -214,7 +214,7 @@ class OperationController extends BaseController
      */
     public function statisticsAction(OperationDemand $demand = null): ResponseInterface
     {
-        $demand = $this->updateDemandObjectFromSettings($demand);
+        $demand = $this->createDemandObjectFromSettings($demand);
 
         /** @var OperationDemand $demand */
         $operations = $this->operationRepository->findDemandedForStatistics($demand, $this->settings);
@@ -241,9 +241,9 @@ class OperationController extends BaseController
      * Update demand with current settings, if not exists it creates one
      *
      * @param ?OperationDemand $demand
-     * @return object
+     * @return OperationDemand
      */
-    protected function updateDemandObjectFromSettings(?OperationDemand $demand): object
+    protected function createDemandObjectFromSettings(?OperationDemand $demand): OperationDemand
     {
         if (is_null($demand)) {
             $demand = GeneralUtility::makeInstance(OperationDemand::class);
