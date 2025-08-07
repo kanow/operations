@@ -467,7 +467,7 @@ class OperationRepository extends Repository
      */
     protected function addMapConstraints(QueryInterface $query, array $settings, array &$constraints): void
     {
-        if (isset($settings['showMap'])) {
+        if (isset($settings['showMap']) && $settings['showMap'] == 1){
             $constraints[] = $query->logicalAnd(
                 $query->greaterThan('latitude', 0),
                 $query->greaterThan('longitude', 0)
