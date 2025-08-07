@@ -21,7 +21,7 @@ ExtensionUtility::configurePlugin(
     'Operations',
     'OperationList',
     [
-        OperationController::class => 'list',
+        OperationController::class => 'list,search',
     ],
     [
         OperationController::class => 'search',

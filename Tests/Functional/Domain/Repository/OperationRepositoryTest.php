@@ -6,7 +6,10 @@ namespace Kanow\Operations\Tests\Functional;
 
 use Kanow\Operations\Domain\Model\OperationDemand;
 use Kanow\Operations\Domain\Repository\OperationRepository;
+use TYPO3\CMS\Core\Core\SystemEnvironmentBuilder;
+use TYPO3\CMS\Core\Http\ServerRequest;
 use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class OperationRepositoryTest extends FunctionalTestCase
 {
@@ -25,27 +28,20 @@ class OperationRepositoryTest extends FunctionalTestCase
     public function setUp(): void
     {
         parent::setUp();
-
+        $GLOBALS['TYPO3_REQUEST'] = (new ServerRequest())
+            ->withAttribute('applicationType', SystemEnvironmentBuilder::REQUESTTYPE_BE);
         $this->subject = $this->getContainer()->get(OperationRepository::class);
         $this->importCSVDataSet(__DIR__ . '/../../Fixtures/TxOperations.csv');
     }
 
-    /**
-     * Test if storagePid is working
-     *
-     * @test
-     */
+    #[Test]
     public function findRecordsByUid(): void
     {
         $operation = $this->subject->findByUid(1);
         self::assertEquals($operation->getTitle(), 'Einsatztest');
     }
 
-    /**
-     * Test if record by year constraint works
-     *
-     * @test
-     */
+    #[Test]
     public function findRecordsByYear(): void
     {
         $demand = new OperationDemand();
@@ -63,12 +59,28 @@ class OperationRepositoryTest extends FunctionalTestCase
         self::assertEquals($this->subject->findDemanded($demand, $settings)->count(), 2);
     }
 
+    #[Test]
+    public function findRecordsBySearchword(): void
+    {
+        $demand = new OperationDemand();
+        $settings = [];
+        $settings['dontRespectStoragePage'] = 1;
+        $settings['searchFields'] = 'title,teaser,location';
+        $demand->setSearchstring('Einsatztest');
+        self::assertEquals($this->subject->findDemanded($demand, $settings)->count(), 3);
+        $demand->setSearchstring('Einsatz');
+        self::assertEquals($this->subject->findDemanded($demand, $settings)->count(), 3);
+        $demand->setSearchstring('Wohnhaus');
+        self::assertEquals($this->subject->findDemanded($demand, $settings)->count(), 1);
+        $demand->setSearchstring('FooBar');
+        self::assertEquals($this->subject->findDemanded($demand, $settings)->count(), 0);
+    }
+
     /**
      * Count result for statistics without limit
      * if the setting noLimitForStatistics is active
-     *
-     * @test
      */
+    #[Test]
     public function noLimitSettingForStatisticsIsRespected(): void
     {
         $demand = new OperationDemand();
@@ -84,11 +96,7 @@ class OperationRepositoryTest extends FunctionalTestCase
         self::assertEquals(3, $this->subject->countDemandedForStatistics($demand, $settings));
     }
 
-    /**
-     * Count operations grouped by year
-     *
-     * @test
-     */
+    #[Test]
     public function countOperationsByYear(): void
     {
         $years = [

@@ -52,6 +52,7 @@ use TYPO3\CMS\Extbase\Http\ForwardResponse;
 use TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException;
 use TYPO3\CMS\Extbase\Pagination\QueryResultPaginator;
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
+use TYPO3\CMS\Extbase\Persistence\Generic\QueryResult;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter;
 
@@ -104,7 +105,7 @@ class OperationController extends BaseController
             return $forwardResponse->withArguments($this->request->getArguments());
         }
 
-        $demand = $this->updateDemandObjectFromSettings($demand);
+        $demand = $this->createDemandObjectFromSettings($demand);
         /** @var OperationDemand $demand */
         $operations = $this->operationRepository->findDemanded($demand, $this->settings);
         $types = $this->typeRepository->findAll();
@@ -121,6 +122,10 @@ class OperationController extends BaseController
 
             $paginator = new QueryResultPaginator($operations, $currentPage, $itemsPerPage);
             $pagination = $this->getPagination($paginationClass, $maximumNumberOfLinks, $paginator);
+            $this->view->assignMultiple([
+                'pagination' => $pagination,
+                'paginator' => $paginator,
+            ]);
         }
 
         $this->view->assignMultiple([
@@ -128,8 +133,6 @@ class OperationController extends BaseController
             'begin' => $years,
             'operations' =>  $operations,
             'categories' =>  $this->getOperationCategories(),
-            'pagination' => $pagination,
-            'paginator' => $paginator,
         ]);
         return $this->htmlResponse();
     }
@@ -144,7 +147,7 @@ class OperationController extends BaseController
      */
     public function searchAction(OperationDemand $demand = null, int $currentPage = 1): ResponseInterface
     {
-        $demand = $this->updateDemandObjectFromSettings($demand);
+        $demand = $this->createDemandObjectFromSettings($demand);
         /** @var OperationDemand $demand */
         $demanded = $this->operationRepository->findDemanded($demand, $this->settings);
 
@@ -159,6 +162,10 @@ class OperationController extends BaseController
 
             $paginator = new QueryResultPaginator($demanded, $currentPage, $itemsPerPage);
             $pagination = $this->getPagination($paginationClass, $maximumNumberOfLinks, $paginator);
+            $this->view->assignMultiple([
+                'pagination' => $pagination,
+                'paginator' => $paginator,
+            ]);
         }
 
         $years = $this->generateYears();
@@ -170,8 +177,6 @@ class OperationController extends BaseController
             'demanded' => $demanded,
             'demand' => $demand,
             'categories' => $this->getOperationCategories(),
-            'pagination' => $pagination,
-            'paginator' => $paginator,
         ]);
         return $this->htmlResponse();
     }
@@ -209,7 +214,7 @@ class OperationController extends BaseController
      */
     public function statisticsAction(OperationDemand $demand = null): ResponseInterface
     {
-        $demand = $this->updateDemandObjectFromSettings($demand);
+        $demand = $this->createDemandObjectFromSettings($demand);
 
         /** @var OperationDemand $demand */
         $operations = $this->operationRepository->findDemandedForStatistics($demand, $this->settings);
@@ -235,10 +240,10 @@ class OperationController extends BaseController
     /**
      * Update demand with current settings, if not exists it creates one
      *
-     * @param OperationDemand $demand
-     * @return object
+     * @param ?OperationDemand $demand
+     * @return OperationDemand
      */
-    protected function updateDemandObjectFromSettings($demand)
+    protected function createDemandObjectFromSettings(?OperationDemand $demand): OperationDemand
     {
         if (is_null($demand)) {
             $demand = GeneralUtility::makeInstance(OperationDemand::class);
@@ -252,7 +257,7 @@ class OperationController extends BaseController
      * @param string $operationUids
      * @return array
      */
-    protected function generateYears($operationUids = '')
+    protected function generateYears(string $operationUids = ''): array
     {
         $years = [];
         $lastYears = $this->settings['lastYears'];
@@ -279,9 +284,9 @@ class OperationController extends BaseController
     /**
      * Get operation categories
      *
-     * @return ObjectStorage $categories
+     * @return ObjectStorage|QueryResult|null $categories
      */
-    protected function getOperationCategories()
+    protected function getOperationCategories(): ObjectStorage|QueryResult|null
     {
         $site = $this->getRequest()->getAttribute('site');
         $configuration = $site->getConfiguration();
@@ -301,7 +306,7 @@ class OperationController extends BaseController
      * @param array $result
      * @return string
      */
-    protected function buildUidList(array $result)
+    protected function buildUidList(array $result): string
     {
         $uidList = [];
         foreach ($result as $item) {
@@ -320,12 +325,12 @@ class OperationController extends BaseController
     }
 
     /**
-     * @param $paginationClass
+     * @param string $paginationClass
      * @param int $maximumNumberOfLinks
-     * @param $paginator
+     * @param QueryResultPaginator $paginator
      * @return NumberedPagination|mixed|LoggerAwareInterface|string|SimplePagination|SlidingWindowPagination|SingletonInterface
      */
-    protected function getPagination($paginationClass, int $maximumNumberOfLinks, $paginator)
+    protected function getPagination(string $paginationClass, int $maximumNumberOfLinks, QueryResultPaginator $paginator): mixed
     {
         if (class_exists(NumberedPagination::class) && $paginationClass === NumberedPagination::class && $maximumNumberOfLinks) {
             $pagination = GeneralUtility::makeInstance(NumberedPagination::class, $paginator, $maximumNumberOfLinks);
@@ -371,7 +376,7 @@ class OperationController extends BaseController
      * StoragePid fallback: TypoScript settings will be overridden by plugin date.
      * No flexform settings, field pages of tt_content will be used.
      */
-    protected function storagePidFallback()
+    protected function storagePidFallback(): void
     {
         $configuration = $this->configurationManager->getConfiguration(
             ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK,

@@ -1,21 +1,6 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Out of 145 possible param types, only 137 \\- 94\\.4 %% actually have it\\. Add more param types to get over 100 %%$#"
-			count: 1
-			path: ../../Classes/Controller/BaseController.php
-
-		-
-			message: "#^Out of 223 possible return types, only 216 \\- 96\\.8 %% actually have it\\. Add more return types to get over 100 %%$#"
-			count: 1
-			path: ../../Classes/Controller/BaseController.php
-
-		-
-			message: "#^Call to function is_null\\(\\) with Kanow\\\\Operations\\\\Domain\\\\Model\\\\OperationDemand will always evaluate to false\\.$#"
-			count: 1
-			path: ../../Classes/Controller/OperationController.php
-
-		-
 			message: "#^Class cognitive complexity is 32, keep it under 10$#"
 			count: 1
 			path: ../../Classes/Controller/OperationController.php
@@ -46,16 +31,6 @@ parameters:
 			path: ../../Classes/Controller/OperationController.php
 
 		-
-			message: "#^Out of 145 possible param types, only 137 \\- 94\\.4 %% actually have it\\. Add more param types to get over 100 %%$#"
-			count: 4
-			path: ../../Classes/Controller/OperationController.php
-
-		-
-			message: "#^Out of 223 possible return types, only 216 \\- 96\\.8 %% actually have it\\. Add more return types to get over 100 %%$#"
-			count: 6
-			path: ../../Classes/Controller/OperationController.php
-
-		-
 			message: "#^Parameter \\#2 \\$optionKey of method TYPO3\\\\CMS\\\\Extbase\\\\Property\\\\PropertyMappingConfiguration\\:\\:setTypeConverterOption\\(\\) expects string, int given\\.$#"
 			count: 1
 			path: ../../Classes/Controller/OperationController.php
@@ -63,16 +38,6 @@ parameters:
 		-
 			message: "#^Short ternary operator is not allowed\\. Use null coalesce operator if applicable or consider using long ternary\\.$#"
 			count: 1
-			path: ../../Classes/Controller/OperationController.php
-
-		-
-			message: "#^Variable \\$pagination might not be defined\\.$#"
-			count: 2
-			path: ../../Classes/Controller/OperationController.php
-
-		-
-			message: "#^Variable \\$paginator might not be defined\\.$#"
-			count: 2
 			path: ../../Classes/Controller/OperationController.php
 
 		-
@@ -98,9 +63,4 @@ parameters:
 		-
 			message: "#^Cognitive complexity for \"Kanow\\\\Operations\\\\Hooks\\\\ItemsProcFunc\\:\\:reduceTemplateLayouts\\(\\)\" is 11, keep it under 5$#"
 			count: 1
-			path: ../../Classes/Hooks/ItemsProcFunc.php
-
-		-
-			message: "#^Out of 145 possible param types, only 137 \\- 94\\.4 %% actually have it\\. Add more param types to get over 100 %%$#"
-			count: 3
 			path: ../../Classes/Hooks/ItemsProcFunc.php

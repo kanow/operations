@@ -6,6 +6,7 @@ namespace Kanow\Operations\Tests\Unit\Domain\Model\Assistance;
 
 use Kanow\Operations\Domain\Model\Assistance;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 /***************************************************************
  *  Copyright notice
@@ -51,9 +52,13 @@ class AssistanceTest extends UnitTestCase
         $this->subject = new Assistance();
     }
 
-    /**
-     * @test
-     */
+    #[Test]
+    public function getTitleInitiallyReturnsEmptyString(): void
+    {
+        self::assertSame('', $this->subject->getTitle());
+    }
+
+    #[Test]
     public function titleCanBeSet(): void
     {
         $value = 'This is the tile';
@@ -61,9 +66,13 @@ class AssistanceTest extends UnitTestCase
         self::assertEquals($value, $this->subject->getTitle());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
+    public function getDescriptionInitiallyReturnsEmptyString(): void
+    {
+        self::assertSame('', $this->subject->getDescription());
+    }
+
+    #[Test]
     public function descriptionCanBeSet(): void
     {
         $value = 'This is the description.';
@@ -71,9 +80,13 @@ class AssistanceTest extends UnitTestCase
         self::assertEquals($value, $this->subject->getDescription());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
+    public function getLinkInitiallyReturnsEmptyString(): void
+    {
+        self::assertSame('', $this->subject->getLink());
+    }
+
+    #[Test]
     public function linkCanBeSet(): void
     {
         $value = 'This is a link';

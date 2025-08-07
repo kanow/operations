@@ -8,6 +8,7 @@ use Kanow\Operations\Domain\Model\Vehicle;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 /***************************************************************
  *  Copyright notice
@@ -53,9 +54,13 @@ class VehicleTest extends UnitTestCase
         $this->subject = new Vehicle();
     }
 
-    /**
-     * @test
-     */
+    #[Test]
+    public function getTitleInitiallyReturnsEmptyString(): void
+    {
+        self::assertSame('', $this->subject->getTitle());
+    }
+
+    #[Test]
     public function titleCanBeSet(): void
     {
         $value = 'This is the tile';
@@ -63,9 +68,13 @@ class VehicleTest extends UnitTestCase
         self::assertEquals($value, $this->subject->getTitle());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
+    public function getShortInitiallyReturnsEmptyString(): void
+    {
+        self::assertSame('', $this->subject->getShort());
+    }
+
+    #[Test]
     public function shortCanBeSet(): void
     {
         $value = 'Short title';
@@ -73,9 +82,13 @@ class VehicleTest extends UnitTestCase
         self::assertEquals($value, $this->subject->getShort());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
+    public function getDescriptionInitiallyReturnsEmptyString(): void
+    {
+        self::assertSame('', $this->subject->getDescription());
+    }
+
+    #[Test]
     public function descriptionCanBeSet(): void
     {
         $value = 'This is the description.';
@@ -83,9 +96,7 @@ class VehicleTest extends UnitTestCase
         self::assertEquals($value, $this->subject->getDescription());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function mediaCanBeSet(): void
     {
         $file = new FileReference();
@@ -96,9 +107,13 @@ class VehicleTest extends UnitTestCase
         self::assertSame($file, $this->subject->getFirstMedia());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
+    public function getLinkInitiallyReturnsEmptyString(): void
+    {
+        self::assertSame('', $this->subject->getLink());
+    }
+
+    #[Test]
     public function linkCanBeSet(): void
     {
         $value = 'This is a link';

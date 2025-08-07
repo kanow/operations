@@ -41,21 +41,21 @@ class Type extends AbstractEntity
   * @var string
   */
     #[Validate(['validator' => 'NotEmpty'])]
-    protected string $title;
+    protected string $title = '';
 
     /**
   * icon for use in list or for whatever
   *
   * @var ObjectStorage<FileReference>
   */
-    protected ObjectStorage $image;
+    protected ?ObjectStorage $image = null;
 
     /**
      * Type color
      *
      * @var string
      */
-    protected string $color;
+    protected string $color = '';
 
     /**
      * Returns the title
@@ -82,7 +82,7 @@ class Type extends AbstractEntity
    *
    * @return ObjectStorage<FileReference> $image
    */
-    public function getImage(): ObjectStorage
+    public function getImage(): ?ObjectStorage
     {
         return $this->image;
     }

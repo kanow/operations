@@ -41,34 +41,34 @@ class Resource extends AbstractEntity
   * @var string
   */
     #[Validate(['validator' => 'NotEmpty'])]
-    protected string $title;
+    protected string $title = '';
 
     /**
      * Abbreviation title
      *
      * @var string
      */
-    protected string $short;
+    protected string $short = '';
 
     /**
      * Description of resource
      *
      * @var string
      */
-    protected string $description;
+    protected string $description = '';
 
     /**
     * Media
     * @var ObjectStorage<FileReference>
     */
-    protected ObjectStorage $media;
+    protected ?ObjectStorage $media = null;
 
     /**
      * A website url or internal link
      *
      * @var string
      */
-    protected string $link;
+    protected string $link = '';
 
     /**
      * Returns the title
@@ -135,7 +135,7 @@ class Resource extends AbstractEntity
       *
       * @return ObjectStorage<FileReference> $media
       */
-    public function getMedia(): ObjectStorage
+    public function getMedia(): ?ObjectStorage
     {
         return $this->media;
     }
