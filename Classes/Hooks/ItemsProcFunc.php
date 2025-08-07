@@ -63,8 +63,9 @@ class ItemsProcFunc
      *
      * @param array $templateLayouts
      * @param int $currentColPos
+     * @return array
      */
-    protected function reduceTemplateLayouts($templateLayouts, $currentColPos): array
+    protected function reduceTemplateLayouts(array $templateLayouts, int $currentColPos): array
     {
         $currentColPos = (int)$currentColPos;
         $restrictions = [];
@@ -98,7 +99,14 @@ class ItemsProcFunc
         return $GLOBALS['LANG'];
     }
 
-    protected function getPageId($pid): int
+    /**
+     * Returns the given pid.
+     * If the pid is negative, it will return the pid of the tt_content record.
+     *
+     * @param string $pid
+     * @return int
+     */
+    protected function getPageId(string $pid): int
     {
         $pid = (int)$pid;
 
