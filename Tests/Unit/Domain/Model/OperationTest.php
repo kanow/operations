@@ -63,11 +63,23 @@ class OperationTest extends UnitTestCase
     }
 
     #[Test]
+    public function getTitleInitiallyReturnsEmptyString(): void
+    {
+        self::assertSame('', $this->subject->getTitle());
+    }
+
+    #[Test]
     public function titleCanBeSet(): void
     {
         $value = 'This is an operation title';
         $this->subject->setTitle($value);
         self::assertEquals($value, $this->subject->getTitle());
+    }
+
+    #[Test]
+    public function getNumberInitiallyReturnsEmptyString(): void
+    {
+        self::assertSame('', $this->subject->getNumber());
     }
 
     #[Test]
@@ -80,12 +92,24 @@ class OperationTest extends UnitTestCase
     }
 
     #[Test]
+    public function getOnlyEldInitiallyReturnsIntegerNull(): void
+    {
+        self::assertSame(0, $this->subject->getOnlyEld());
+    }
+
+    #[Test]
     public function onlyEldCanBeSet(): void
     {
         $value = 1;
         $this->subject->setOnlyEld($value);
         self::assertIsInt($this->subject->getOnlyEld());
         self::assertEquals($value, $this->subject->getOnlyEld());
+    }
+
+    #[Test]
+    public function getLocationInitiallyReturnsEmptyString(): void
+    {
+        self::assertSame('', $this->subject->getLocation());
     }
 
     #[Test]
@@ -97,11 +121,23 @@ class OperationTest extends UnitTestCase
     }
 
     #[Test]
+    public function getBeginInitiallyReturnsNull(): void
+    {
+        self::assertNull($this->subject->getBegin());
+    }
+
+    #[Test]
     public function beginCanBeSet(): void
     {
         $value = new \DateTime();
         $this->subject->setBegin($value);
         self::assertEquals($value, $this->subject->getBegin());
+    }
+
+    #[Test]
+    public function getEndInitiallyReturnsNull(): void
+    {
+        self::assertNull($this->subject->getEnd());
     }
 
     #[Test]
@@ -113,11 +149,23 @@ class OperationTest extends UnitTestCase
     }
 
     #[Test]
+    public function getTeaserInitiallyReturnsEmptyString(): void
+    {
+        self::assertSame('', $this->subject->getTeaser());
+    }
+
+    #[Test]
     public function teaserCanBeSet(): void
     {
         $value = 'This is an operation teaser';
         $this->subject->setTeaser($value);
         self::assertEquals($value, $this->subject->getTeaser());
+    }
+
+    #[Test]
+    public function getReportInitiallyReturnsEmptyString(): void
+    {
+        self::assertSame('', $this->subject->getReport());
     }
 
     #[Test]
@@ -129,6 +177,12 @@ class OperationTest extends UnitTestCase
     }
 
     #[Test]
+    public function getLongitudeInitiallyReturnsEmptyString(): void
+    {
+        self::assertSame('', $this->subject->getLongitude());
+    }
+
+    #[Test]
     public function longitudeCanBeSet(): void
     {
         $value = '11.03773';
@@ -137,11 +191,23 @@ class OperationTest extends UnitTestCase
     }
 
     #[Test]
+    public function getLatitudeInitiallyReturnsEmptyString(): void
+    {
+        self::assertSame('', $this->subject->getLatitude());
+    }
+
+    #[Test]
     public function latitudeCanBeSet(): void
     {
         $value = '51.75745';
         $this->subject->setLatitude($value);
         self::assertEquals($value, $this->subject->getLatitude());
+    }
+
+    #[Test]
+    public function getZoomInitiallyReturnsEmptyString(): void
+    {
+        self::assertSame(0, $this->subject->getZoom());
     }
 
     #[Test]

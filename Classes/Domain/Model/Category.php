@@ -47,7 +47,7 @@ class Category extends AbstractEntity
     /**
      * @var \Kanow\Operations\Domain\Model\Category|null
      */
-    protected Category|null $parent;
+    protected ?Category $parent = null;
 
     /**
      * Gets the title.
@@ -94,7 +94,7 @@ class Category extends AbstractEntity
      *
      * @return Category|null the parent category
      */
-    public function getParent(): Category|null
+    public function getParent(): ?Category
     {
         return $this->parent;
     }

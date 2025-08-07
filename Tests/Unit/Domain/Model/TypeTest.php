@@ -62,11 +62,23 @@ class TypeTest extends UnitTestCase
     }
 
     #[Test]
+    public function getTitleInitiallyReturnsEmptyString(): void
+    {
+        self::assertSame('', $this->subject->getTitle());
+    }
+
+    #[Test]
     public function titleCanBeSet(): void
     {
         $value = 'This is a type';
         $this->subject->setTitle($value);
         self::assertEquals($value, $this->subject->getTitle());
+    }
+
+    #[Test]
+    public function getColorInitiallyReturnsEmptyString(): void
+    {
+        self::assertSame('', $this->subject->getColor());
     }
 
     #[Test]

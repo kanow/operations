@@ -55,6 +55,12 @@ class ResourceTest extends UnitTestCase
     }
 
     #[Test]
+    public function getTitleInitiallyReturnsEmptyString(): void
+    {
+        self::assertSame('', $this->subject->getTitle());
+    }
+
+    #[Test]
     public function titleCanBeSet(): void
     {
         $value = 'This is the title';
@@ -63,11 +69,23 @@ class ResourceTest extends UnitTestCase
     }
 
     #[Test]
+    public function getShortInitiallyReturnsEmptyString(): void
+    {
+        self::assertSame('', $this->subject->getShort());
+    }
+
+    #[Test]
     public function shortCanBeSet(): void
     {
         $value = 'Short title';
         $this->subject->setShort($value);
         self::assertEquals($value, $this->subject->getShort());
+    }
+
+    #[Test]
+    public function getDescriptionInitiallyReturnsEmptyString(): void
+    {
+        self::assertSame('', $this->subject->getDescription());
     }
 
     #[Test]
@@ -87,6 +105,12 @@ class ResourceTest extends UnitTestCase
         $this->subject->setMedia($media);
         self::assertSame($media, $this->subject->getMedia());
         self::assertSame($file, $this->subject->getFirstMedia());
+    }
+
+    #[Test]
+    public function getLinkInitiallyReturnsEmptyString(): void
+    {
+        self::assertSame('', $this->subject->getLink());
     }
 
     #[Test]

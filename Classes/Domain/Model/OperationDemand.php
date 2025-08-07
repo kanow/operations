@@ -40,7 +40,7 @@ class OperationDemand extends AbstractValueObject
      *
      * @var int
      */
-    protected int $onlyEld;
+    protected int $onlyEld = 0;
 
     /**
      * Type of operation

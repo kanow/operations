@@ -42,14 +42,14 @@ class Operation extends AbstractEntity
      * @var string
      */
     #[Validate(['validator' => 'NotEmpty'])]
-    protected string $number;
+    protected string $number = '';
 
     /**
      * Operation onlyEld
      *
      * @var int
      */
-    protected int $onlyEld;
+    protected int $onlyEld = 0;
 
     /**
      * Title
@@ -57,7 +57,7 @@ class Operation extends AbstractEntity
      * @var string
      */
     #[Validate(['validator' => 'NotEmpty'])]
-    protected string $title;
+    protected string $title = '';
 
     /**
      * Location of operation
@@ -65,7 +65,7 @@ class Operation extends AbstractEntity
      * @var string
      */
     #[Validate(['validator' => 'NotEmpty'])]
-    protected string $location;
+    protected string $location = '';
 
     /**
      * Begin
@@ -73,90 +73,90 @@ class Operation extends AbstractEntity
      * @var \DateTime
      */
     #[Validate(['validator' => 'NotEmpty'])]
-    protected \DateTime $begin;
+    protected ?\DateTime $begin = null;
 
     /**
      * Ending
      *
      * @var \DateTime
      */
-    protected \DateTime $end;
+    protected ?\DateTime $end = null;
 
     /**
      * Operation short teaser
      *
      * @var string
      */
-    protected string $teaser;
+    protected string $teaser = '';
 
     /**
      * Operation report
      *
      * @var string
      */
-    protected string $report;
+    protected string $report = '';
 
     /**
      * Longitude
      *
      * @var string
      */
-    protected string $longitude;
+    protected string $longitude = '';
 
     /**
      * Latitude
      *
      * @var string
      */
-    protected string $latitude;
+    protected string $latitude = '';
 
     /**
      * Zoom for maps
      *
      * @var int
      */
-    protected int $zoom;
+    protected int $zoom = 0;
 
     /**
      * Media
      * @var ObjectStorage<FileReference>
      */
-    protected ObjectStorage $media;
+    protected ?ObjectStorage $media = null;
 
     /**
      * Type of operation
      *
      * @var ObjectStorage<\Kanow\Operations\Domain\Model\Type>
      */
-    protected ObjectStorage $type;
+    protected ?ObjectStorage $type = null;
 
     /**
      * Assistance to this operation
      * @var ObjectStorage<\Kanow\Operations\Domain\Model\Assistance>
      */
     #[Lazy]
-    protected ObjectStorage $assistance;
+    protected ?ObjectStorage $assistance = null;
 
     /**
      * Vehicles use on this operation
      * @var ObjectStorage<\Kanow\Operations\Domain\Model\Vehicle>
      */
     #[Lazy]
-    protected ObjectStorage $vehicles;
+    protected ?ObjectStorage $vehicles = null;
 
     /**
      * resources used
      * @var ObjectStorage<\Kanow\Operations\Domain\Model\Resource>
      */
     #[Lazy]
-    protected ObjectStorage $resources;
+    protected ?ObjectStorage $resources = null;
 
     /**
      * Category
      *
      * @var ObjectStorage<Category>
      */
-    protected ObjectStorage $category;
+    protected ?ObjectStorage $category = null;
 
     /**
      * __construct
@@ -265,7 +265,7 @@ class Operation extends AbstractEntity
      *
      * @return \DateTime $begin
      */
-    public function getBegin(): \DateTime
+    public function getBegin(): ?\DateTime
     {
         return $this->begin;
     }
@@ -285,7 +285,7 @@ class Operation extends AbstractEntity
      *
      * @return \DateTime $end
      */
-    public function getEnd(): \DateTime
+    public function getEnd(): ?\DateTime
     {
         return $this->end;
     }
@@ -405,7 +405,7 @@ class Operation extends AbstractEntity
      *
      * @return ObjectStorage<FileReference> $media
      */
-    public function getMedia(): ObjectStorage
+    public function getMedia(): ?ObjectStorage
     {
         return $this->media;
     }
@@ -456,7 +456,7 @@ class Operation extends AbstractEntity
      *
      * @return ObjectStorage<\Kanow\Operations\Domain\Model\Type> $type
      */
-    public function getType(): ObjectStorage
+    public function getType(): ?ObjectStorage
     {
         return $this->type;
     }
@@ -466,7 +466,7 @@ class Operation extends AbstractEntity
      *
      * @return \Kanow\Operations\Domain\Model\Type $type
      */
-    public function getAssignedType(): Type
+    public function getAssignedType(): ?Type
     {
         $type = $this->getType()->toArray();
         return $type[0];
@@ -507,7 +507,7 @@ class Operation extends AbstractEntity
      *
      * @return ObjectStorage<\Kanow\Operations\Domain\Model\Assistance> $assistance
      */
-    public function getAssistance(): ObjectStorage
+    public function getAssistance(): ?ObjectStorage
     {
         return $this->assistance;
     }
@@ -547,7 +547,7 @@ class Operation extends AbstractEntity
      *
      * @return ObjectStorage<\Kanow\Operations\Domain\Model\Vehicle> $vehicles
      */
-    public function getVehicles(): ObjectStorage
+    public function getVehicles(): ?ObjectStorage
     {
         return $this->vehicles;
     }
@@ -567,7 +567,7 @@ class Operation extends AbstractEntity
      *
      * @return ObjectStorage<\Kanow\Operations\Domain\Model\Resource> $resources
      */
-    public function getResources(): ObjectStorage
+    public function getResources(): ?ObjectStorage
     {
         return $this->resources;
     }
@@ -607,7 +607,7 @@ class Operation extends AbstractEntity
      *
      * @return ObjectStorage<Category> $category
      */
-    public function getCategory(): ObjectStorage
+    public function getCategory(): ?ObjectStorage
     {
         return $this->category;
     }

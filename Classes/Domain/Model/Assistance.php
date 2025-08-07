@@ -39,21 +39,21 @@ class Assistance extends AbstractEntity
   * @var string
   */
     #[Validate(['validator' => 'NotEmpty'])]
-    protected string $title;
+    protected string $title = '';
 
     /**
      * Description of assistance
      *
      * @var string
      */
-    protected string $description;
+    protected string $description = '';
 
     /**
      * A website url
      *
      * @var string
      */
-    protected string $link;
+    protected string $link = '';
 
     /**
      * Returns the title

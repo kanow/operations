@@ -53,6 +53,12 @@ class AssistanceTest extends UnitTestCase
     }
 
     #[Test]
+    public function getTitleInitiallyReturnsEmptyString(): void
+    {
+        self::assertSame('', $this->subject->getTitle());
+    }
+
+    #[Test]
     public function titleCanBeSet(): void
     {
         $value = 'This is the tile';
@@ -61,11 +67,23 @@ class AssistanceTest extends UnitTestCase
     }
 
     #[Test]
+    public function getDescriptionInitiallyReturnsEmptyString(): void
+    {
+        self::assertSame('', $this->subject->getDescription());
+    }
+
+    #[Test]
     public function descriptionCanBeSet(): void
     {
         $value = 'This is the description.';
         $this->subject->setDescription($value);
         self::assertEquals($value, $this->subject->getDescription());
+    }
+
+    #[Test]
+    public function getLinkInitiallyReturnsEmptyString(): void
+    {
+        self::assertSame('', $this->subject->getLink());
     }
 
     #[Test]
