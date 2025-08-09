@@ -1,21 +1,14 @@
 <?php
 
-use Kanow\Operations\Updates\MigrateCategoryRelations;
 use Kanow\Operations\Controller\OperationController;
 use Kanow\Operations\Controller\ResourceController;
 use Kanow\Operations\Controller\VehicleController;
-use Kanow\Operations\Updates\MigratePlugins;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Core\Utility\VersionNumberUtility;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
-use GeorgRinger\NumberedPagination\NumberedPagination;
 
 if (!defined('TYPO3')) {
 	die ('Access denied.');
 }
-$typo3VersionNumber = VersionNumberUtility::convertVersionNumberToInteger(
-    VersionNumberUtility::getNumericTypo3Version()
-);
 
 ExtensionUtility::configurePlugin(
     'Operations',
