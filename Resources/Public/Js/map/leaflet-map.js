@@ -15,8 +15,8 @@ if(mapData != undefined) {
     }).addTo( map )
 
     var myIcon = L.icon({
-        iconUrl: mapData.mapFolder + 'images/operations-pin24.png',
-        iconRetinaUrl: mapData.mapFolder + 'images/operations-pin48.png',
+        iconUrl: mapData.mapIcon,
+        iconRetinaUrl: mapData.mapIconRetina,
         iconSize: [16, 24],
         iconAnchor: [16, 24],
         popupAnchor: [-8, -20],

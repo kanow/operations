@@ -1,8 +1,15 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
-<f:variable name="mapFolder" value="{f:uri.resource(extensionName: 'operations', path: 'Js/map/', absolute: 1)}" />
-<div id="leaflet-map" class="leaflet-map" data-map="{f:format.json(forceObject: false,value: {mapFolder:mapFolder})}"></div>
+<f:variable name="mapIcon" value="{f:uri.resource(extensionName: 'Operations', path: settings.map.icon, absolute: 1)}" />
+<f:variable name="mapIconRetina" value="{f:uri.resource(extensionName: 'Operations', path: settings.map.iconRetina, absolute: 1)}" />
+<div id="leaflet-map" class="leaflet-map" data-map="{f:format.json(
+    forceObject: false,
+    value: {
+        mapIcon: mapIcon,
+        mapIconRetina: mapIconRetina
+    }
+)}"></div>
 <ul class="list-data" style="display:none;">
     <f:for each="{operations}" as="operation">
         <f:variable name="uri" value="{f:uri.action(action:'show',arguments:'{operation:operation}',pageUid:settings.operationSinglePid, absolute: 1)}" />
