@@ -80,9 +80,15 @@
 					<p>{operation.location}</p>
 				</f:if>
 				<f:if condition="{operation.longitude}">
-					<f:variable name="mapFolder" value="{f:uri.resource(extensionName: 'operations', path: 'Js/map/', absolute: 1)}" />
+                    <f:variable name="mapIconSvg" value="{f:uri.resource(extensionName: 'Operations', path: settings.map.iconSvg, absolute: 1)}" />
 					<div id="leaflet-map" class="leaflet-map single operations__show--aside-map"
-						 data-map="{f:format.json(forceObject: false,value: {mapFolder:mapFolder,zoomControl:0})}"
+						 data-map="{f:format.json(
+						    forceObject: false,value: {
+						        mapIcon: mapIconSvg,
+                                mapIconRetina: mapIconSvg,
+						        zoomControl:0
+						    }
+						 )}"
 						 data-marker="{f:format.json(value:{
                     title:operation.location,
                     lat: operation.latitude,

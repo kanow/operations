@@ -74,8 +74,7 @@ plugin.tx_operations {
 		}
 		noLimitForStatistics = 1
     map {
-      icon = Js/map/images/operations-pin24.png
-      iconRetina = Js/map/images/operations-pin48.png
+      iconSvg = Js/map/images/operations-pin.svg
     }
 	}
 }
