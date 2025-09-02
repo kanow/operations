@@ -6,6 +6,7 @@ namespace Kanow\Operations\Tests\Functional;
 
 use Kanow\Operations\Domain\Model\OperationDemand;
 use Kanow\Operations\Domain\Repository\OperationRepository;
+use Kanow\Operations\Domain\Repository\TypeRepository;
 use TYPO3\CMS\Core\Core\SystemEnvironmentBuilder;
 use TYPO3\CMS\Core\Http\ServerRequest;
 use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
@@ -17,6 +18,11 @@ class OperationRepositoryTest extends FunctionalTestCase
      * @var OperationRepository $subject
      */
     private OperationRepository $subject;
+
+    /**
+     * @var TypeRepository $typeRepository
+     */
+    private TypeRepository $typeRepository;
 
     /**
      * @var array<non-empty-string> $testExtensionsToLoad
@@ -31,6 +37,7 @@ class OperationRepositoryTest extends FunctionalTestCase
         $GLOBALS['TYPO3_REQUEST'] = (new ServerRequest())
             ->withAttribute('applicationType', SystemEnvironmentBuilder::REQUESTTYPE_BE);
         $this->subject = $this->getContainer()->get(OperationRepository::class);
+        $this->typeRepository = $this->getContainer()->get(TypeRepository::class);
         $this->importCSVDataSet(__DIR__ . '/../../Fixtures/TxOperations.csv');
     }
 
@@ -116,6 +123,54 @@ class OperationRepositoryTest extends FunctionalTestCase
         ];
         $operationUids = '1,2,3';
         $result = $this->subject->countGroupedByYear($years, $operationUids);
+        self::assertEquals($expectedResult, $result);
+    }
+
+    #[Test]
+    public function countOperationsByYearAndType(): void
+    {
+        $years = [
+            '2020' => 2020,
+            '2021' => 2021,
+            '2022' => 2022,
+        ];
+        $types = [
+            0 => $this->typeRepository->findByUid(1),
+            1 => $this->typeRepository->findByUid(2),
+            2 => $this->typeRepository->findByUid(3),
+        ];
+        $operationUids = '1,2,3';
+        $expectedResult = [
+            1 => [
+                'title' => 'Type 1',
+                'color' => '#000000',
+                'years' => [
+                    '2022' => 2,
+                    '2021' => 0,
+                    '2020' => 0,
+                ],
+            ],
+            2 => [
+                'title' => 'Type 2',
+                'color' => '#cccccc',
+                'years' => [
+                    '2022' => 0,
+                    '2021' => 0,
+                    '2020' => 0,
+                ],
+            ],
+            3 => [
+                'title' => 'Type 3',
+                'color' => '#aaaaaa',
+                'years' => [
+                    '2022' => 0,
+                    '2021' => 1,
+                    '2020' => 0,
+                ],
+            ],
+
+        ];
+        $result = $this->subject->countGroupedByYearAndType($years, $types, $operationUids);
         self::assertEquals($expectedResult, $result);
     }
 

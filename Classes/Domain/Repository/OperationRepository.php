@@ -100,10 +100,10 @@ class OperationRepository extends Repository
      * Counts all available operations grouped by a year and type
      * Optionally use operation uid list, which created before with category constraints
      *
-     * @param array<string,int> $years
-     * @param array<mixed> $types
+     * @param array $years
+     * @param array $types
      * @param string $operationUids
-     * @return array<mixed>
+     * @return array
      */
     public function countGroupedByYearAndType(array $years, array $types, string $operationUids = ''): array
     {
@@ -111,7 +111,7 @@ class OperationRepository extends Repository
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable('tx_operations_domain_model_operation');
         $result = $queryBuilder
-            ->addSelectLiteral('ot.color as color, ot.title as title, ot.uid as type_uid, COUNT(*) as count, FROM_UNIXTIME(o.begin, \'%Y\') as year')
+            ->addSelectLiteral('MIN(ot.color) as color, MIN(ot.title) as title, ot.uid as type_uid, COUNT(*) as count, FROM_UNIXTIME(o.begin, \'%Y\') as year')
             ->from('tx_operations_domain_model_type', 'ot')
             ->innerJoin('ot', 'tx_operations_operation_type_mm', 'type_mm', 'type_mm.uid_foreign = ot.uid')
             ->innerJoin('type_mm', 'tx_operations_domain_model_operation', 'o', 'type_mm.uid_local = o.uid')
