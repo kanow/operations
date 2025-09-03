@@ -51,7 +51,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php-version: [ '8.2', '8.3' ]
+        php-version: [ '8.2', '8.3', '8.4' ]
         minMax: [ 'composerUpdateMin', 'composerUpdateMax' ]
         coreVersion: [ '12.4', '13.4' ]
         db: ['mariadb', 'mysql', 'sqlite', 'postgres']
