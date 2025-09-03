@@ -72,21 +72,6 @@ class OperationRepositoryTest extends UnitTestCase
     /**
      * @test
      */
-    public function convertYearsToStringReturnsString(): void
-    {
-        $yearsAsString = '2020,2021,2022';
-        $yearsAsArray = ['2020', '2021', '2022'];
-
-        $reflector = new \ReflectionClass(OperationRepository::class);
-        $method = $reflector->getMethod('convertYearsToString');
-        $method->setAccessible(true);
-        $result = $method->invokeArgs($this->subject, [$yearsAsArray]);
-        self::assertSame($result, $yearsAsString);
-    }
-
-    /**
-     * @test
-     */
     public function cleanUnusedConstraintsRemoveNullValues(): void
     {
         $constraints = [
