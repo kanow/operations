@@ -277,7 +277,7 @@ class OperationController extends BaseController
             ->executeQuery()
             ->fetchAllAssociative();
         foreach ($rows as $year) {
-            $years[$year['year']] = $year['year'];
+            $years[$year['year']] = (string) intval($year['year']);
         }
         return $years;
     }
