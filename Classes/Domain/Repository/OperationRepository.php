@@ -114,11 +114,11 @@ class OperationRepository extends Repository
         $connection = $connection->getConnectionForTable('tx_operations_domain_model_operation');
 
         $result = $queryBuilder
-            ->addSelectLiteral('MIN(ot.color) as color, MIN(ot.title) as title, ot.uid as type_uid, COUNT(*) as count, '. SqlUtility::getSelectYearFromUnixTime($connection) . ' as year')
+            ->addSelectLiteral('MIN(ot.color) as color, MIN(ot.title) as title, ot.uid as type_uid, COUNT(*) as count, '. SqlUtility::getSelectYearFromUnixTime($connection, 'o.begin') . ' as year')
             ->from('tx_operations_domain_model_type', 'ot')
             ->innerJoin('ot', 'tx_operations_operation_type_mm', 'type_mm', 'type_mm.uid_foreign = ot.uid')
             ->innerJoin('type_mm', 'tx_operations_domain_model_operation', 'o', 'type_mm.uid_local = o.uid')
-            ->where(SqlUtility::getSelectYearFromUnixTime($connection) . SqlUtility::getWhereYearInString($connection, $years));
+            ->where(SqlUtility::getSelectYearFromUnixTime($connection, 'o.begin') . SqlUtility::getWhereYearInString($connection, $years));
         if ($operationUids != '') {
             $result = $result->andWhere('o.uid IN (' . $operationUids . ')');
         }
@@ -259,9 +259,9 @@ class OperationRepository extends Repository
         $connection = $connection->getConnectionForTable('tx_operations_domain_model_operation');
 
         $statement = $queryBuilder
-            ->addSelectLiteral('COUNT(*) as count, ' . SqlUtility::getSelectYearFromUnixTime($connection) . ' as year')
+            ->addSelectLiteral('COUNT(*) as count, ' . SqlUtility::getSelectYearFromUnixTime($connection, 'o.begin') . ' as year')
             ->from('tx_operations_domain_model_operation', 'o')
-            ->where(SqlUtility::getSelectYearFromUnixTime($connection) . SqlUtility::getWhereYearInString($connection, $years));
+            ->where(SqlUtility::getSelectYearFromUnixTime($connection, 'o.begin') . SqlUtility::getWhereYearInString($connection, $years));
         if ($operationUids != '') {
             $statement = $statement->andWhere('o.uid IN (' . $operationUids . ')');
         }

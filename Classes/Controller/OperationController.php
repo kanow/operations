@@ -38,6 +38,7 @@ use Kanow\Operations\Domain\Repository\CategoryRepository;
 use Kanow\Operations\Domain\Repository\OperationRepository;
 use Kanow\Operations\Domain\Repository\TypeRepository;
 use Kanow\Operations\Service\CategoryService;
+use Kanow\Operations\Utility\SqlUtility;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Log\LoggerAwareInterface;
@@ -261,11 +262,11 @@ class OperationController extends BaseController
     {
         $years = [];
         $lastYears = $this->settings['lastYears'];
-        /** @var QueryBuilder $queryBuilder */
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
-            ->getQueryBuilderForTable('tx_operations_domain_model_operation');
+        $connection = GeneralUtility::makeInstance(ConnectionPool::class);
+        $queryBuilder = $connection->getQueryBuilderForTable('tx_operations_domain_model_operation');
+        $connection = $connection->getConnectionForTable('tx_operations_domain_model_operation');
         $rows = $queryBuilder
-            ->addSelectLiteral('FROM_UNIXTIME(begin, \'%Y\') AS year')
+            ->addSelectLiteral(SqlUtility::getSelectYearFromUnixTime($connection, 'begin') . ' AS year')
             ->from('tx_operations_domain_model_operation');
         if ($operationUids != '') {
             $rows = $rows->andWhere('uid IN (' . $operationUids . ')');

@@ -9,16 +9,16 @@ use TYPO3\CMS\Core\Database\Connection;
 class SqlUtility
 {
 
-    public static function getSelectYearFromUnixTime(Connection $connection): string
+    public static function getSelectYearFromUnixTime(Connection $connection, string $column): string
     {
         $isPostgres = $connection->getDatabasePlatform() instanceof PostgreSQLPlatform;
         $isSqlite = $connection->getDatabasePlatform() instanceof SQLitePlatform;
         if($isPostgres) {
-            return 'EXTRACT(YEAR FROM TO_TIMESTAMP(o.begin))';
+            return 'EXTRACT(YEAR FROM TO_TIMESTAMP(' . $column . '))';
         } elseif ($isSqlite) {
-            return 'STRFTIME(\'%Y\', DATETIME(o.begin, \'unixepoch\'))';
+            return 'STRFTIME(\'%Y\', DATETIME(' . $column . ', \'unixepoch\'))';
         } else {
-            return 'FROM_UNIXTIME(o.begin, \'%Y\')';
+            return 'FROM_UNIXTIME(' . $column . ', \'%Y\')';
         }
     }
 
