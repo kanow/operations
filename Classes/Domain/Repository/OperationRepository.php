@@ -9,9 +9,8 @@ use Kanow\Operations\Domain\Model\Category;
 use Kanow\Operations\Domain\Model\Operation;
 use Kanow\Operations\Domain\Model\OperationDemand;
 use Kanow\Operations\Domain\Model\Type;
-use TYPO3\CMS\Core\Database\Connection;
+use Kanow\Operations\Utility\SqlUtility;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 use TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface;
@@ -115,11 +114,11 @@ class OperationRepository extends Repository
         $connection = $connection->getConnectionForTable('tx_operations_domain_model_operation');
 
         $result = $queryBuilder
-            ->addSelectLiteral('MIN(ot.color) as color, MIN(ot.title) as title, ot.uid as type_uid, COUNT(*) as count, '. $this->getSelectYearFromUnixTime($connection, $years) . ' as year')
+            ->addSelectLiteral('MIN(ot.color) as color, MIN(ot.title) as title, ot.uid as type_uid, COUNT(*) as count, '. SqlUtility::getSelectYearFromUnixTime($connection) . ' as year')
             ->from('tx_operations_domain_model_type', 'ot')
             ->innerJoin('ot', 'tx_operations_operation_type_mm', 'type_mm', 'type_mm.uid_foreign = ot.uid')
             ->innerJoin('type_mm', 'tx_operations_domain_model_operation', 'o', 'type_mm.uid_local = o.uid')
-            ->where($this->getSelectYearFromUnixTime($connection, $years) . $this->getWhereYearInString($connection, $years));
+            ->where(SqlUtility::getSelectYearFromUnixTime($connection) . SqlUtility::getWhereYearInString($connection, $years));
         if ($operationUids != '') {
             $result = $result->andWhere('o.uid IN (' . $operationUids . ')');
         }
@@ -243,57 +242,7 @@ class OperationRepository extends Repository
         return $data;
     }
 
-    /*
-     *  convert years array to comma separated list
-     *  which can be check in sql
-     *
-     * @param array $years
-     * @return string
-     */
-    protected function convertYearsToString(array $years): string
-    {
-        return implode(',', $years);
-    }
 
-    /*
-     *  convert years array to comma separated list
-     *  and wrapped with '' to get proper result in sqlite databases
-     *
-     * @param array $years
-     * @return string
-     */
-    protected function convertYearsToStringForSqlite(array $years): string
-    {
-        // Every year must be set between '' to get a proper list for sqlite
-        return implode(',', array_map(function(string $year) {
-            return "'$year'";
-        }, $years));
-    }
-
-    protected function getSelectYearFromUnixTime(Connection $connection, array $years): string
-    {
-        $isPostgres = $connection->getDatabasePlatform() instanceof PostgreSQLPlatform;
-        $isSqlite = $connection->getDatabasePlatform() instanceof SQLitePlatform;
-        if($isPostgres) {
-            return 'EXTRACT(YEAR FROM TO_TIMESTAMP(o.begin))';
-        } elseif ($isSqlite) {
-            return 'STRFTIME(\'%Y\', DATETIME(o.begin, \'unixepoch\'))';
-        } else {
-            return 'FROM_UNIXTIME(o.begin, \'%Y\')';
-        }
-    }
-    protected function getWhereYearInString(Connection $connection, array $years): string
-    {
-        $isPostgres = $connection->getDatabasePlatform() instanceof PostgreSQLPlatform;
-        $isSqlite = $connection->getDatabasePlatform() instanceof SQLitePlatform;
-        if($isPostgres) {
-            return 'IN(' . $this->convertYearsToString($years) . ')';
-        } elseif ($isSqlite) {
-            return 'IN(' . $this->convertYearsToStringForSqlite($years) . ')';
-        } else {
-            return 'IN(' . $this->convertYearsToString($years) . ')';
-        }
-    }
 
     /**
      * Counts all available operations grouped by year
@@ -310,9 +259,9 @@ class OperationRepository extends Repository
         $connection = $connection->getConnectionForTable('tx_operations_domain_model_operation');
 
         $statement = $queryBuilder
-            ->addSelectLiteral('COUNT(*) as count, ' . $this->getSelectYearFromUnixTime($connection, $years) . ' as year')
+            ->addSelectLiteral('COUNT(*) as count, ' . SqlUtility::getSelectYearFromUnixTime($connection) . ' as year')
             ->from('tx_operations_domain_model_operation', 'o')
-            ->where($this->getSelectYearFromUnixTime($connection, $years) . $this->getWhereYearInString($connection, $years));
+            ->where(SqlUtility::getSelectYearFromUnixTime($connection) . SqlUtility::getWhereYearInString($connection, $years));
         if ($operationUids != '') {
             $statement = $statement->andWhere('o.uid IN (' . $operationUids . ')');
         }
