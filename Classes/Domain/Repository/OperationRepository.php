@@ -3,12 +3,14 @@
 namespace Kanow\Operations\Domain\Repository;
 
 use Doctrine\DBAL\Exception;
+use Doctrine\DBAL\Platforms\PostgreSQLPlatform;
+use Doctrine\DBAL\Platforms\SQLitePlatform;
 use Kanow\Operations\Domain\Model\Category;
 use Kanow\Operations\Domain\Model\Operation;
 use Kanow\Operations\Domain\Model\OperationDemand;
 use Kanow\Operations\Domain\Model\Type;
+use Kanow\Operations\Utility\SqlUtility;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 use TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface;
@@ -100,22 +102,23 @@ class OperationRepository extends Repository
      * Counts all available operations grouped by a year and type
      * Optionally use operation uid list, which created before with category constraints
      *
-     * @param array<string,int> $years
-     * @param array<mixed> $types
+     * @param array $years
+     * @param array $types
      * @param string $operationUids
-     * @return array<mixed>
+     * @return array
      */
     public function countGroupedByYearAndType(array $years, array $types, string $operationUids = ''): array
     {
-        /** @var QueryBuilder $queryBuilder */
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
-            ->getQueryBuilderForTable('tx_operations_domain_model_operation');
+        $connection = GeneralUtility::makeInstance(ConnectionPool::class);
+        $queryBuilder = $connection->getQueryBuilderForTable('tx_operations_domain_model_operation');
+        $connection = $connection->getConnectionForTable('tx_operations_domain_model_operation');
+
         $result = $queryBuilder
-            ->addSelectLiteral('ot.color as color, ot.title as title, ot.uid as type_uid, COUNT(*) as count, FROM_UNIXTIME(o.begin, \'%Y\') as year')
+            ->addSelectLiteral('MIN(ot.color) as color, MIN(ot.title) as title, ot.uid as type_uid, COUNT(*) as count, '. SqlUtility::getSelectYearFromUnixTime($connection, 'o.begin') . ' as year')
             ->from('tx_operations_domain_model_type', 'ot')
             ->innerJoin('ot', 'tx_operations_operation_type_mm', 'type_mm', 'type_mm.uid_foreign = ot.uid')
             ->innerJoin('type_mm', 'tx_operations_domain_model_operation', 'o', 'type_mm.uid_local = o.uid')
-            ->where('FROM_UNIXTIME(o.begin, \'%Y\') IN(' . $this->convertYearsToString($years) . ')');
+            ->where(SqlUtility::getSelectYearFromUnixTime($connection, 'o.begin') . SqlUtility::getWhereYearInString($connection, $years));
         if ($operationUids != '') {
             $result = $result->andWhere('o.uid IN (' . $operationUids . ')');
         }
@@ -239,17 +242,7 @@ class OperationRepository extends Repository
         return $data;
     }
 
-    /*
-     *  convert years array to comma separated list
-     *  which can be check in sql
-     *
-     * @param array $years
-     * @return string
-     */
-    protected function convertYearsToString(array $years): string
-    {
-        return implode(',', $years);
-    }
+
 
     /**
      * Counts all available operations grouped by year
@@ -261,14 +254,14 @@ class OperationRepository extends Repository
      */
     public function countGroupedByYear(array $years, string $operationUids = ''): array
     {
-        /** @var QueryBuilder $queryBuilder */
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
-            ->getQueryBuilderForTable('tx_operations_domain_model_operation');
+        $connection = GeneralUtility::makeInstance(ConnectionPool::class);
+        $queryBuilder = $connection->getQueryBuilderForTable('tx_operations_domain_model_operation');
+        $connection = $connection->getConnectionForTable('tx_operations_domain_model_operation');
 
         $statement = $queryBuilder
-            ->addSelectLiteral('COUNT(*) as count, FROM_UNIXTIME(begin, \'%Y\') as year')
+            ->addSelectLiteral('COUNT(*) as count, ' . SqlUtility::getSelectYearFromUnixTime($connection, 'o.begin') . ' as year')
             ->from('tx_operations_domain_model_operation', 'o')
-            ->where('FROM_UNIXTIME(begin, \'%Y\') IN(' . $this->convertYearsToString($years) . ')');
+            ->where(SqlUtility::getSelectYearFromUnixTime($connection, 'o.begin') . SqlUtility::getWhereYearInString($connection, $years));
         if ($operationUids != '') {
             $statement = $statement->andWhere('o.uid IN (' . $operationUids . ')');
         }

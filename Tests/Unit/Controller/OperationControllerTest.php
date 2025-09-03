@@ -92,9 +92,7 @@ class OperationControllerTest extends UnitTestCase
 
         // We need to create an accessible mock in order to be able to set the protected `view`.
         $methodsToMock = ['htmlResponse', 'redirect', 'redirectToUri'];
-        if ((new Typo3Version())->getMajorVersion() <= 11) {
-            $methodsToMock[] = 'forward';
-        }
+
         $this->subject = $this->getAccessibleMock(OperationController::class, $methodsToMock, [
             $this->operationRepositoryMock,
             $this->typeRepositoryMock,

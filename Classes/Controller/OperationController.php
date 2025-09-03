@@ -38,6 +38,7 @@ use Kanow\Operations\Domain\Repository\CategoryRepository;
 use Kanow\Operations\Domain\Repository\OperationRepository;
 use Kanow\Operations\Domain\Repository\TypeRepository;
 use Kanow\Operations\Service\CategoryService;
+use Kanow\Operations\Utility\SqlUtility;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Log\LoggerAwareInterface;
@@ -98,7 +99,7 @@ class OperationController extends BaseController
      * @return ResponseInterface
      * @throws InvalidQueryException
      */
-    public function listAction(OperationDemand $demand = null, int $currentPage = 1): ResponseInterface
+    public function listAction(?OperationDemand $demand = null, int $currentPage = 1): ResponseInterface
     {
         if ($this->request->hasArgument('demand')) {
             $forwardResponse = new ForwardResponse('search');
@@ -140,12 +141,12 @@ class OperationController extends BaseController
     /**
      * action search
      *
-     * @param OperationDemand $demand
+     * @param OperationDemand|null $demand
      * @param int $currentPage
      * @throws InvalidQueryException
      * @throws NoSuchArgumentException
      */
-    public function searchAction(OperationDemand $demand = null, int $currentPage = 1): ResponseInterface
+    public function searchAction(?OperationDemand $demand = null, int $currentPage = 1): ResponseInterface
     {
         $demand = $this->createDemandObjectFromSettings($demand);
         /** @var OperationDemand $demand */
@@ -209,10 +210,10 @@ class OperationController extends BaseController
     /**
      * action for statistics
      *
-     * @param OperationDemand $demand
+     * @param OperationDemand|null $demand
      * @throws InvalidQueryException
      */
-    public function statisticsAction(OperationDemand $demand = null): ResponseInterface
+    public function statisticsAction(?OperationDemand $demand = null): ResponseInterface
     {
         $demand = $this->createDemandObjectFromSettings($demand);
 
@@ -261,11 +262,11 @@ class OperationController extends BaseController
     {
         $years = [];
         $lastYears = $this->settings['lastYears'];
-        /** @var QueryBuilder $queryBuilder */
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
-            ->getQueryBuilderForTable('tx_operations_domain_model_operation');
+        $connection = GeneralUtility::makeInstance(ConnectionPool::class);
+        $queryBuilder = $connection->getQueryBuilderForTable('tx_operations_domain_model_operation');
+        $connection = $connection->getConnectionForTable('tx_operations_domain_model_operation');
         $rows = $queryBuilder
-            ->addSelectLiteral('FROM_UNIXTIME(begin, \'%Y\') AS year')
+            ->addSelectLiteral(SqlUtility::getSelectYearFromUnixTime($connection, 'begin') . ' AS year')
             ->from('tx_operations_domain_model_operation');
         if ($operationUids != '') {
             $rows = $rows->andWhere('uid IN (' . $operationUids . ')');
@@ -276,7 +277,7 @@ class OperationController extends BaseController
             ->executeQuery()
             ->fetchAllAssociative();
         foreach ($rows as $year) {
-            $years[$year['year']] = $year['year'];
+            $years[$year['year']] = (string) intval($year['year']);
         }
         return $years;
     }
