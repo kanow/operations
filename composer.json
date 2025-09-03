@@ -31,7 +31,7 @@
     "typo3/cms-fluid-styled-content": "^12.4.1 || ^13.1",
     "typo3/cms-install": "^12.4.1 || ^13.1",
     "typo3/coding-standards": "^0.6.1 || ^0.8.0",
-    "typo3/testing-framework": "^8.2.7",
+    "typo3/testing-framework": "^8.2.7 || ^9",
     "webmozart/assert": "^1.11.0"
   },
   "minimum-stability": "dev",
