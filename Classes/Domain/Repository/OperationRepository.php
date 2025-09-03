@@ -3,10 +3,13 @@
 namespace Kanow\Operations\Domain\Repository;
 
 use Doctrine\DBAL\Exception;
+use Doctrine\DBAL\Platforms\PostgreSQLPlatform;
+use Doctrine\DBAL\Platforms\SQLitePlatform;
 use Kanow\Operations\Domain\Model\Category;
 use Kanow\Operations\Domain\Model\Operation;
 use Kanow\Operations\Domain\Model\OperationDemand;
 use Kanow\Operations\Domain\Model\Type;
+use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -107,15 +110,16 @@ class OperationRepository extends Repository
      */
     public function countGroupedByYearAndType(array $years, array $types, string $operationUids = ''): array
     {
-        /** @var QueryBuilder $queryBuilder */
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
-            ->getQueryBuilderForTable('tx_operations_domain_model_operation');
+        $connection = GeneralUtility::makeInstance(ConnectionPool::class);
+        $queryBuilder = $connection->getQueryBuilderForTable('tx_operations_domain_model_operation');
+        $connection = $connection->getConnectionForTable('tx_operations_domain_model_operation');
+
         $result = $queryBuilder
-            ->addSelectLiteral('MIN(ot.color) as color, MIN(ot.title) as title, ot.uid as type_uid, COUNT(*) as count, FROM_UNIXTIME(o.begin, \'%Y\') as year')
+            ->addSelectLiteral('MIN(ot.color) as color, MIN(ot.title) as title, ot.uid as type_uid, COUNT(*) as count, '. $this->getSelectYearFromUnixTime($connection, $years) . ' as year')
             ->from('tx_operations_domain_model_type', 'ot')
             ->innerJoin('ot', 'tx_operations_operation_type_mm', 'type_mm', 'type_mm.uid_foreign = ot.uid')
             ->innerJoin('type_mm', 'tx_operations_domain_model_operation', 'o', 'type_mm.uid_local = o.uid')
-            ->where('FROM_UNIXTIME(o.begin, \'%Y\') IN(' . $this->convertYearsToString($years) . ')');
+            ->where($this->getSelectYearFromUnixTime($connection, $years) . $this->getWhereYearInString($connection, $years));
         if ($operationUids != '') {
             $result = $result->andWhere('o.uid IN (' . $operationUids . ')');
         }
@@ -249,6 +253,46 @@ class OperationRepository extends Repository
     protected function convertYearsToString(array $years): string
     {
         return implode(',', $years);
+    }
+
+    /*
+     *  convert years array to comma separated list
+     *  and wrapped with '' to get proper result in sqlite databases
+     *
+     * @param array $years
+     * @return string
+     */
+    protected function convertYearsToStringForSqlite(array $years): string
+    {
+        // Every year must be set between '' to get a proper list for sqlite
+        return implode(',', array_map(function(string $year) {
+            return "'$year'";
+        }, $years));
+    }
+
+    protected function getSelectYearFromUnixTime(Connection $connection, array $years): string
+    {
+        $isPostgres = $connection->getDatabasePlatform() instanceof PostgreSQLPlatform;
+        $isSqlite = $connection->getDatabasePlatform() instanceof SQLitePlatform;
+        if($isPostgres) {
+            return 'EXTRACT(YEAR FROM TO_TIMESTAMP(o.begin))';
+        } elseif ($isSqlite) {
+            return 'STRFTIME(\'%Y\', DATETIME(o.begin, \'unixepoch\'))';
+        } else {
+            return 'FROM_UNIXTIME(o.begin, \'%Y\')';
+        }
+    }
+    protected function getWhereYearInString(Connection $connection, array $years): string
+    {
+        $isPostgres = $connection->getDatabasePlatform() instanceof PostgreSQLPlatform;
+        $isSqlite = $connection->getDatabasePlatform() instanceof SQLitePlatform;
+        if($isPostgres) {
+            return 'IN(' . $this->convertYearsToString($years) . ')';
+        } elseif ($isSqlite) {
+            return 'IN(' . $this->convertYearsToStringForSqlite($years) . ')';
+        } else {
+            return 'IN(' . $this->convertYearsToString($years) . ')';
+        }
     }
 
     /**
