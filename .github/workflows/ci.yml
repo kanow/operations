@@ -33,7 +33,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Install Composer dependencies
-        run: Build/Scripts/runTests.sh -p ${{ matrix.php-version }} -s composerUpdateMax
+        run: Build/Scripts/runTests.sh -p ${{ matrix.php-version }} -t 13.4 -s composerUpdateMax
       - name: Run code quality checks
         run: |
           Build/Scripts/runTests.sh -p ${{ matrix.php-version }} -s composer ci:${{ matrix.command }}
@@ -45,7 +45,7 @@ jobs:
           - "php:cs-fixer"
           - "php:stan"
         php-version:
-          - "8.3"
+          - "8.4"
   testsuite:
     name: "Testsuite"
     runs-on: ubuntu-latest
@@ -54,6 +54,7 @@ jobs:
         php-version: [ '8.2', '8.3' ]
         minMax: [ 'composerUpdateMin', 'composerUpdateMax' ]
         coreVersion: [ '12.4', '13.4' ]
+        db: ['mariadb', 'mysql', 'sqlite', 'postgres']
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -65,4 +66,4 @@ jobs:
         run: Build/Scripts/runTests.sh -p ${{ matrix.php-version }} -s unit
 
       - name: Functional tests with mariadb
-        run: Build/Scripts/runTests.sh -p ${{ matrix.php-version }} -d mariadb -s functional
+        run: Build/Scripts/runTests.sh -p ${{ matrix.php-version }} -d ${{matrix.db}} -s functional
