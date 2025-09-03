@@ -305,14 +305,14 @@ class OperationRepository extends Repository
      */
     public function countGroupedByYear(array $years, string $operationUids = ''): array
     {
-        /** @var QueryBuilder $queryBuilder */
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
-            ->getQueryBuilderForTable('tx_operations_domain_model_operation');
+        $connection = GeneralUtility::makeInstance(ConnectionPool::class);
+        $queryBuilder = $connection->getQueryBuilderForTable('tx_operations_domain_model_operation');
+        $connection = $connection->getConnectionForTable('tx_operations_domain_model_operation');
 
         $statement = $queryBuilder
-            ->addSelectLiteral('COUNT(*) as count, FROM_UNIXTIME(begin, \'%Y\') as year')
+            ->addSelectLiteral('COUNT(*) as count, ' . $this->getSelectYearFromUnixTime($connection, $years) . ' as year')
             ->from('tx_operations_domain_model_operation', 'o')
-            ->where('FROM_UNIXTIME(begin, \'%Y\') IN(' . $this->convertYearsToString($years) . ')');
+            ->where($this->getSelectYearFromUnixTime($connection, $years) . $this->getWhereYearInString($connection, $years));
         if ($operationUids != '') {
             $statement = $statement->andWhere('o.uid IN (' . $operationUids . ')');
         }
