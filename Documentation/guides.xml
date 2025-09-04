@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<guides xmlns="https://www.phpdoc.org/guides" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://www.phpdoc.org/guides ../vendor/phpdocumentor/guides-cli/resources/schema/guides.xsd"
+        links-are-relative="true">
+    <extension class="\T3Docs\Typo3DocsTheme\DependencyInjection\Typo3DocsThemeExtension"
+               project-home="https://github.com/kanow/operations"
+               project-contact="captnnowi@gmx.de"
+               project-repository="https://github.com/kanow/operations"
+               project-issues="https://github.com/kanow/operations/issues"
+               edit-on-github-branch="main"
+               edit-on-github="kanow/operations"
+               typo3-core-preferred="stable"
+               interlink-shortcode="kanow/operations"/>
+    <project title="operations" release="8.2.0" copyright="since 2014 by Karsten Nowak"/>
+    <inventory id="t3coreapi" url="https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/"/>
+    <inventory id="t3docteam" url="https://docs.typo3.org/m/typo3/team-t3docteam/main/en-us/"/>
+    <inventory id="t3install" url="https://docs.typo3.org/m/typo3/guide-installation/main/en-us/"/>
+    <inventory id="t3start" url="https://docs.typo3.org/m/typo3/tutorial-getting-started/main/en-us/"/>
+    <inventory id="t3sitepackage" url="https://docs.typo3.org/m/typo3/tutorial-sitepackage/main/en-us/"/>
+    <inventory id="t3tca" url="https://docs.typo3.org/m/typo3/reference-tca/main/en-us/"/>
+    <inventory id="t3tsconfig" url="https://docs.typo3.org/m/typo3/reference-tsconfig/main/en-us/"/>
+    <inventory id="t3tsref" url="https://docs.typo3.org/m/typo3/reference-typoscript/main/en-us/"/>
+    <inventory id="t3tmsa" url="https://docs.typo3.org/m/typo3/guide-tell-me-something-about/main/en-us/"/>
+    <inventory id="t3core" url="https://docs.typo3.org/c/typo3/cms-core/main/en-us/"/>
+</guides>
