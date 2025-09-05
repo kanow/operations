@@ -21,7 +21,7 @@ Url routing for TYPO3 Extensions are explained more detailed here
 That's also needed to to use nice url's for single views of operations, vehicles, resources and the pages in list with
 pagination.
 
-More information about Routing: :ref:`Speaking Urls <t3tmsa:Speaking-Urls>`
+More information about Routing: :ref:`Speaking Urls <t3coreapi:routing-introduction>`
 
 You don't know about the Site Configuration? Read here: :ref:`Sitehandling <t3coreapi:sitehandling-basics>`
 

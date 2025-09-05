@@ -14,7 +14,7 @@ Eigene Template Dateien nutzen
 
 Falls ihr Änderungen an den Template Dateien vornehmen wollt, kopiert einfach
 die Dateien welche ihr bearbeiten wollt in euer eigenes
-:ref:`Site Package <t3tmsa:tmsa-Sitepackages>`. Beachtet dabei, dass die
+:ref:`Site Package <t3start:creating-a-site-package>`. Beachtet dabei, dass die
 Ordnerstruktur beibehalten werden muss. Hier gibt es dazu einige Erklärungen:
 :ref:`Fluid Templates <t3sitepackage:fluid-templates>`.
 
@@ -42,7 +42,7 @@ die ihr ändern wollt.
 
 Dann müsst ihr noch in den Konstanten die neue Pfade zu euren Templates angeben.
 Das macht ihr am besten auch in eurem
-:ref:`Site Package <t3tmsa:tmsa-Sitepackages>` oder im
+:ref:`Site Package <t3start:creating-a-site-package>` oder im
 :ref:`Konstanten Editor <t3tsref:constant-editor>` im TYPO3 Backend.
 Auf diese Weise könnt ihr einzelne Dateien ändern und habt bei Updates
 wahrscheinlich weniger anzupassen.

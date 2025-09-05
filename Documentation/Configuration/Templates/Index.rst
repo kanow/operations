@@ -12,11 +12,11 @@ Use your own template files
 ===========================
 
 If you need changes on the Fluid template files, you should copy the needed
-files to your :ref:`Site Package <t3tmsa:tmsa-Sitepackages>`.
+files to your :ref:`Site Package <t3start:creating-a-site-package>`.
 You need the same folder structure as described her:
 :ref:`Fluid Templates <t3sitepackage:fluid-templates>`.
 Please copy the needed folders and files in your
-:ref:`Site Package <t3tmsa:tmsa-Sitepackages>` ``Resources/Private`` folder.
+:ref:`Site Package <t3start:creating-a-site-package>` ``Resources/Private`` folder.
 
 
 You find those structure also in the extension:
@@ -35,7 +35,7 @@ You don't need to copy all files. Just copy the files and folders you need.
    ``Operation`` in your ``Templates`` folder.
 
 After that you can change the paths in constants to your own
-:ref:`Site Package <t3tmsa:tmsa-Sitepackages>` or in
+:ref:`Site Package <t3start:creating-a-site-package>` or in
 :ref:`Constants Editor <t3tsref:constant-editor>`.
 This way you can edit some files but not all. It's easier to check differences
 if you upgrade `operations`.

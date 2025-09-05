@@ -48,7 +48,7 @@ und passt den Pfad für das JavaScript hier an:
         <script src="{f:uri.resource(path: 'Js/MyChart.js')}"></script>
     </f:section>
 
-Am besten nutzt ihr dafür ein eigenes :ref:`Site Package / Theme Extension <t3tmsa:tmsa-Sitepackages>`.
+Am besten nutzt ihr dafür ein eigenes :ref:`Site Package / Theme Extension <t3start:creating-a-site-package>`.
 
 Ändert dann die Templatepfade wie hier beschrieben :ref:`Templates <fluid-template-files>` .
 

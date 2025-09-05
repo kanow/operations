@@ -17,7 +17,7 @@ Wofür ist die Extension gedacht?
 
 Die Extension wurde entwickelt um Feuerwehreinsätze in TYPO3 Webseiten zu
 verwalten. Ganz ursprünglich hat die
-`Freiwillige Feuerwehr der Stadt Thale <www.feuerwehr-stadt-thale.de>`_,
+`Freiwillige Feuerwehr der Stadt Thale <https://www.feuerwehr-stadt-thale.de>`__,
 vor langer Zeit, diese Extension von mir in einer TYPO3 Website bekommen.
 Mittlerweile kümmert sich da jemand anderes und dieser Jemand findet halt
 Wordpress ganz toll. Naja, was soll man dazu sagen ;-).

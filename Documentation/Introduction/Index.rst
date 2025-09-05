@@ -17,7 +17,7 @@ What does it do?
 
 The extension were build to manage firefighter operations in a TYPO3 website.
 Quite originally the
-`Freiwillige Feuerwehr der Stadt Thale <www.feuerwehr-stadt-thale.de>`_,
+`Freiwillige Feuerwehr der Stadt Thale <https://www.feuerwehr-stadt-thale.de>`__,
 long time ago, got this extension from me in a TYPO3 website.
 In the meanwhile someone else takes care of it and this one thinks
 Wordpress is great. Well, what to say ;-).

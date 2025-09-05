@@ -20,7 +20,7 @@ Schöne und lesbare Url's werden in TYPO3 mit Hilfe von sogenannten "Route Enhan
 dieser Funktionalität findet ihr hier:
 :ref:`Advanced routing configuration <t3coreapi:routing-advanced-routing-configuration>`.
 
-Mehr Information zum Url Routing von TYPO3: :ref:`Speaking Urls <t3tmsa:Speaking-Urls>`
+Mehr Information zum Url Routing von TYPO3: :ref:`Speaking Urls <t3coreapi:routing-introduction>`
 
 Information zur Nutzung der Site Configuration in TYPO3: :ref:`Sitehandling <t3coreapi:sitehandling-basics>`
 

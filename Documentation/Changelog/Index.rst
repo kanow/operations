@@ -12,6 +12,17 @@
 Changelog
 =========
 
+8.2.0
+=====
+
+Some small improvements on code quality checks and support now postgres and
+sqlite db systems.
+
+8.1.0
+=====
+
+TYPO3 13 compatibility
+
 Update to 8.0.0
 ===============
 
@@ -45,7 +56,7 @@ Breaking Change
 
 Instead of the old "SwitchableControllerActions" in the plugins now real
 content elements are used. There is an "Migrate old plugins"
-:ref:`Upgrade Wizard <t3install:postupgradetasks>` which must be
+:ref:`Upgrade Wizard <t3coreapi:postupgradetasks>` which must be
 executed after installing the update. This converts old plugins into the
 new content elements. Corresponding settings should be applied.
 
@@ -76,7 +87,7 @@ Changing of category relations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Database table for category relations was changed.
-There is an :ref:`Upgrade Wizard <t3install:postupgradetasks>` of operations to migrate old category relations
+There is an :ref:`Upgrade Wizard <t3coreapi:postupgradetasks>` of operations to migrate old category relations
 automatically to the new table.
 In this version `sys_category_mm` table is used and the old relation table should be removed.
 

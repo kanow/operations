@@ -44,7 +44,7 @@ If you need adapting the chart, please use your own JavaScript file and change t
         <script src="{f:uri.resource(path: 'Js/OperationsChart.js')}"></script>
     </f:section>
 
-I suggest to put those things in an own :ref:`Site Package <t3tmsa:tmsa-Sitepackages>`.
+I suggest to put those things in an own :ref:`Site Package <t3start:creating-a-site-package>`.
 Change the path in your own template files. using your own template files is described
 here :ref:`Templates <fluid-template-files>`.
 

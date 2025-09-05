@@ -10,7 +10,7 @@ Installation
 
 
 Ihr könnt die Extension auf verschiedene Arten installieren. Die empfohlene Methode ist eine Installation
-unter der Verwendung von :ref:`Composer <t3tmsa:tmsa-Composer>`.
+unter der Verwendung von :ref:`Composer <t3start:installation-typo3>`.
 
 .. code-block:: bash
 

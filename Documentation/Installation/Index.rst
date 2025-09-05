@@ -9,7 +9,7 @@ Installation
 ============
 
 
-There are various ways to install the extension. The preferred way is the installation with :ref:`Composer <t3tmsa:tmsa-Composer>`.
+There are various ways to install the extension. The preferred way is the installation with :ref:`Composer <t3start:installation-typo3>`.
 
 .. code-block:: bash
 
