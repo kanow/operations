@@ -1,0 +1,191 @@
+
+# Definition der Kategorien für den Constant Editor / Settings UI
+categories:
+  Operations:
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.title'
+  Operations.template:
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.subcategoryLabel.template'
+    parent: 'Operations'
+  Operations.pids:
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.subcategoryLabel.pids'
+    parent: 'Operations'
+  Operations.list:
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.subcategoryLabel.list'
+    parent: 'Operations'
+  Operations.media:
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.subcategoryLabel.media'
+    parent: 'Operations'
+  Operations.paginate:
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.subcategoryLabel.paginate'
+    parent: 'Operations'
+
+settings:
+  operations.css:
+    type: string
+    default: ''
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.css'
+    category: 'Operations.template'
+
+  operations.jquery:
+    type: string
+    default: 'https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.jquery'
+    category: 'Operations.template'
+
+  operations.view.templateRootPath:
+    type: string
+    default: 'EXT:operations/Resources/Private/Templates/'
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.templateRootPath'
+    category: 'Operations.template'
+    description: ''
+  operations.view.partialRootPath:
+    type: string
+    default: 'EXT:operations/Resources/Private/Partials/'
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.partialRootPath'
+    category: 'Operations.template'
+    description: ''
+  operations.view.layoutRootPath:
+    type: string
+    default: 'EXT:operations/Resources/Private/Layouts/'
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.layoutRootPath'
+    category: 'Operations.template'
+    description: ''
+
+  operations.persistence.storagePid:
+    # Geändert auf Typ 'page' für TYPO3 v14
+    type: page
+    default: 0
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.storagePid'
+    category: 'Operations.pids'
+  operations.persistence.recursive:
+    type: int
+    default: 1
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.recursive'
+    category: 'Operations.pids'
+  operations.hidePagination:
+    type: bool
+    default: false
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.hidePagination'
+    category: 'Operations.list'
+  operations.hideFilter:
+    type: bool
+    default: false
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.hideFilter'
+    category: 'Operations.list'
+  operations.lastYears:
+    type: int
+    default: 5
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.lastYears'
+    category: 'Operations.list'
+  operations.itemsPerPage:
+    type: int
+    default: 10
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.itemsPerPage'
+    category: 'Operations.list'
+  operations.limit:
+    type: int
+    default: 200
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.limit'
+    category: 'Operations.list'
+
+  operations.operationSinglePid:
+    # Geändert auf Typ 'page' für TYPO3 v14
+    type: page
+    default: 0
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.operationSinglePid'
+    category: 'Operations.pids'
+  operations.vehicleSinglePid:
+    # Geändert auf Typ 'page' für TYPO3 v14
+    type: page
+    default: 0
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.vehicleSinglePid'
+    category: 'Operations.pids'
+  operations.resourceSinglePid:
+    # Geändert auf Typ 'page' für TYPO3 v14
+    type: page
+    default: 0
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.resourceSinglePid'
+    category: 'Operations.pids'
+
+  operations.listMediaWidth:
+    type: string
+    default: '250c'
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidth'
+    category: 'Operations.media'
+  operations.listMediaHeight:
+    type: string
+    default: '188'
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeight'
+    category: 'Operations.media'
+  operations.singleMediaWidth:
+    type: string
+    default: '260c'
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.singleMediaWidth'
+    category: 'Operations.media'
+  operations.singleMediaHeight:
+    type: string
+    default: '195'
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.singleMediaHeight'
+    category: 'Operations.media'
+  operations.showMediaInList:
+    type: bool
+    default: true
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.showMediaInList'
+    category: 'Operations.media'
+  operations.increaseImage:
+    type: bool
+    default: true
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.increaseImage'
+    category: 'Operations.media'
+  operations.listMediaHeightResource:
+    type: string
+    default: ''
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeightResources'
+    category: 'Operations.media'
+
+  operations.list.vehicles.media.width:
+    type: string
+    default: '100'
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidthVehicle'
+    category: 'Operations.media'
+  operations.list.vehicles.media.height:
+    type: string
+    default: ''
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeightVehicle'
+    category: 'Operations.media'
+  operations.list.vehicles.defaultImage.path:
+    type: string
+    default: 'EXT:operations/Resources/Public/Icons/tx_operations_vehicle.svg'
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listVehiclesDefaultImagePath'
+    category: 'Operations.media'
+  operations.list.resources.media.width:
+    type: string
+    default: '100'
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidthResource'
+    category: 'Operations.media'
+  operations.list.resources.media.height:
+    type: string
+    default: ''
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeightResource'
+    category: 'Operations.media'
+  operations.list.resources.defaultImage.path:
+    type: string
+    default: 'EXT:operations/Resources/Public/Icons/tx_operations_resource.svg'
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listResourcesDefaultImagePath'
+    category: 'Operations.media'
+
+  operations.paginate.insertAbove:
+    type: bool
+    default: true
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.insertAbove'
+    category: 'Operations.paginate'
+  operations.paginate.insertBelow:
+    type: bool
+    default: true
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.insertBelow'
+    category: 'Operations.paginate'
+  operations.paginate.maximumLinks:
+    type: int
+    default: 6
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.maxNumberOfLinks'
+    category: 'Operations.paginate'
