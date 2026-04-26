@@ -57,9 +57,7 @@ class SqlUtility
     private static function convertYearsToStringForSqlite(array $years): string
     {
         // Every year must be set between '' to get a proper list for sqlite
-        return implode(',', array_map(function(string $year) {
-            return "'$year'";
-        }, $years));
+        return implode(',', array_map(fn(string $year) => "'$year'", $years));
     }
 
 }

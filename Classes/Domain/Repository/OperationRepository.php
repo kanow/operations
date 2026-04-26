@@ -2,9 +2,12 @@
 
 namespace Kanow\Operations\Domain\Repository;
 
+
+use TYPO3\CMS\Extbase\Persistence\Generic\Qom\AndInterface;
+use TYPO3\CMS\Extbase\Persistence\Generic\Qom\ComparisonInterface;
+use TYPO3\CMS\Extbase\Persistence\Generic\Qom\NotInterface;
+use TYPO3\CMS\Extbase\Persistence\Generic\Qom\OrInterface;
 use Doctrine\DBAL\Exception;
-use Doctrine\DBAL\Platforms\PostgreSQLPlatform;
-use Doctrine\DBAL\Platforms\SQLitePlatform;
 use Kanow\Operations\Domain\Model\Category;
 use Kanow\Operations\Domain\Model\Operation;
 use Kanow\Operations\Domain\Model\OperationDemand;
@@ -57,6 +60,13 @@ class OperationRepository extends Repository
     protected $defaultOrderings = [
         'begin' => QueryInterface::ORDER_DESCENDING,
     ];
+    /**
+     * Constructs a new Repository
+     */
+    public function __construct(private readonly ConnectionPool $connectionPool)
+    {
+        parent::__construct();
+    }
 
     /**
      * Returns the objects of this repository matching the demand
@@ -109,7 +119,7 @@ class OperationRepository extends Repository
      */
     public function countGroupedByYearAndType(array $years, array $types, string $operationUids = ''): array
     {
-        $connection = GeneralUtility::makeInstance(ConnectionPool::class);
+        $connection = $this->connectionPool;
         $queryBuilder = $connection->getQueryBuilderForTable('tx_operations_domain_model_operation');
         $connection = $connection->getConnectionForTable('tx_operations_domain_model_operation');
 
@@ -119,7 +129,7 @@ class OperationRepository extends Repository
             ->innerJoin('ot', 'tx_operations_operation_type_mm', 'type_mm', 'type_mm.uid_foreign = ot.uid')
             ->innerJoin('type_mm', 'tx_operations_domain_model_operation', 'o', 'type_mm.uid_local = o.uid')
             ->where(SqlUtility::getSelectYearFromUnixTime($connection, 'o.begin') . SqlUtility::getWhereYearInString($connection, $years));
-        if ($operationUids != '') {
+        if ($operationUids !== '') {
             $result = $result->andWhere('o.uid IN (' . $operationUids . ')');
         }
         $result = $result->groupBy('year')
@@ -200,7 +210,7 @@ class OperationRepository extends Repository
      */
     protected function addEmptyYear(array $data, int $year): array
     {
-        foreach ($data as $key => $value) {
+        foreach (array_keys($data) as $key) {
             if (!isset($data[$key]['years'][$year])) {
                 $data[$key]['years'][$year] = 0;
             }
@@ -254,7 +264,7 @@ class OperationRepository extends Repository
      */
     public function countGroupedByYear(array $years, string $operationUids = ''): array
     {
-        $connection = GeneralUtility::makeInstance(ConnectionPool::class);
+        $connection = $this->connectionPool;
         $queryBuilder = $connection->getQueryBuilderForTable('tx_operations_domain_model_operation');
         $connection = $connection->getConnectionForTable('tx_operations_domain_model_operation');
 
@@ -262,7 +272,7 @@ class OperationRepository extends Repository
             ->addSelectLiteral('COUNT(*) as count, ' . SqlUtility::getSelectYearFromUnixTime($connection, 'o.begin') . ' as year')
             ->from('tx_operations_domain_model_operation', 'o')
             ->where(SqlUtility::getSelectYearFromUnixTime($connection, 'o.begin') . SqlUtility::getWhereYearInString($connection, $years));
-        if ($operationUids != '') {
+        if ($operationUids !== '') {
             $statement = $statement->andWhere('o.uid IN (' . $operationUids . ')');
         }
         $statement = $statement->groupBy('year')
@@ -307,7 +317,7 @@ class OperationRepository extends Repository
      * @param OperationDemand $demand
      * @param array $settings
      * @throws InvalidQueryException
-     * @return (\TYPO3\CMS\Extbase\Persistence\Generic\Qom\AndInterface|\TYPO3\CMS\Extbase\Persistence\Generic\Qom\ComparisonInterface|\TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface|\TYPO3\CMS\Extbase\Persistence\Generic\Qom\NotInterface|\TYPO3\CMS\Extbase\Persistence\Generic\Qom\OrInterface|null)[]
+     * @return (AndInterface|ComparisonInterface|ConstraintInterface|NotInterface|OrInterface|null)[]
      */
     protected function createConstraintsFromDemand(
         QueryInterface $query,
@@ -473,8 +483,8 @@ class OperationRepository extends Repository
         mixed $categories,
         string $property,
         array $settings
-    ): ?\TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface {
-        if ($categories != null && count($categories) != 0) {
+    ): ?ConstraintInterface {
+        if ($categories != null && count($categories) !== 0) {
             $categoryConstraint = [];
             foreach ($categories as $category) {
                 $categoryConstraint[] = $query->contains($property, $category);

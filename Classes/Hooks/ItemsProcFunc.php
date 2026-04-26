@@ -53,7 +53,7 @@ class ItemsProcFunc
                     htmlspecialchars($this->getLanguageService()->sL($layout[0])),
                     $layout[1],
                 ];
-                array_push($config['items'], $additionalLayout);
+                $config['items'][] = $additionalLayout;
             }
         }
     }
@@ -73,7 +73,7 @@ class ItemsProcFunc
         foreach ($templateLayouts as $key => $layout) {
             if (is_array($layout[0])) {
                 if (isset($layout[0]['allowedColPos']) && str_ends_with((string)$layout[1], '.')) {
-                    $layoutKey = substr($layout[1], 0, -1);
+                    $layoutKey = substr((string) $layout[1], 0, -1);
                     $restrictions[$layoutKey] = GeneralUtility::intExplode(',', $layout[0]['allowedColPos'], true);
                 }
             } else {

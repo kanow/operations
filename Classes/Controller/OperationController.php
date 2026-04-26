@@ -43,7 +43,6 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Log\LoggerAwareInterface;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Pagination\SimplePagination;
 use TYPO3\CMS\Core\Pagination\SlidingWindowPagination;
 use TYPO3\CMS\Core\SingletonInterface;
@@ -252,13 +251,13 @@ class OperationController extends BaseController
     {
         $years = [];
         $lastYears = $this->settings['lastYears'];
-        $connection = GeneralUtility::makeInstance(ConnectionPool::class);
+        $connection = $this->connectionPool;
         $queryBuilder = $connection->getQueryBuilderForTable('tx_operations_domain_model_operation');
         $connection = $connection->getConnectionForTable('tx_operations_domain_model_operation');
         $rows = $queryBuilder
             ->addSelectLiteral(SqlUtility::getSelectYearFromUnixTime($connection, 'begin') . ' AS year')
             ->from('tx_operations_domain_model_operation');
-        if ($operationUids != '') {
+        if ($operationUids !== '') {
             $rows = $rows->andWhere('uid IN (' . $operationUids . ')');
         }
         $rows = $rows->groupBy('year')
@@ -383,7 +382,7 @@ class OperationController extends BaseController
         // Use current page as storagePid if neither set in TypoScript nor plugin data
         elseif (!$configuration['persistence']['storagePid']) {
             // Use current PID as storage PID
-            $pid['persistence']['storagePid'] = $GLOBALS['TSFE']->id;
+            $pid['persistence']['storagePid'] = $this->request->getAttribute('frontend.page.information')->getId();
             $this->configurationManager->setConfiguration(array_merge($configuration, $pid));
         }
     }
