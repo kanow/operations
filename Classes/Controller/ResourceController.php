@@ -35,14 +35,8 @@ use Psr\Http\Message\ResponseInterface;
  */
 class ResourceController extends BaseController
 {
-    /**
-     * @var ResourceRepository
-     */
-    protected ResourceRepository $resourceRepository;
-
-    public function __construct(\Kanow\Operations\Domain\Repository\ResourceRepository $resourceRepository)
+    public function __construct(protected ResourceRepository $resourceRepository)
     {
-        $this->resourceRepository = $resourceRepository;
     }
 
     /**

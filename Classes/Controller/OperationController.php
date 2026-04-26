@@ -59,36 +59,26 @@ use TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter;
 
 class OperationController extends BaseController
 {
-    /**
-     * operationRepository
-     */
-    private OperationRepository $operationRepository;
-
-    /**
-     * typeRepository
-     */
-    private TypeRepository $typeRepository;
-
-    /**
-     * categoryRepository
-     */
-    private CategoryRepository $categoryRepository;
-
-    /**
-     * category service
-     */
-    private CategoryService $categoryService;
-
     public function __construct(
-        \Kanow\Operations\Domain\Repository\OperationRepository $operationRepository,
-        \Kanow\Operations\Domain\Repository\TypeRepository $typeRepository,
-        \Kanow\Operations\Domain\Repository\CategoryRepository $categoryRepository,
-        \Kanow\Operations\Service\CategoryService $categoryService
-    ) {
-        $this->operationRepository = $operationRepository;
-        $this->typeRepository = $typeRepository;
-        $this->categoryRepository = $categoryRepository;
-        $this->categoryService = $categoryService;
+        /**
+         * operationRepository
+         */
+        private readonly OperationRepository $operationRepository,
+        /**
+         * typeRepository
+         */
+        private readonly TypeRepository $typeRepository,
+        /**
+         * categoryRepository
+         */
+        private readonly CategoryRepository $categoryRepository,
+        /**
+         * category service
+         */
+        private readonly CategoryService $categoryService,
+        private readonly ConnectionPool $connectionPool
+    )
+    {
     }
 
     /**

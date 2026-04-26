@@ -35,14 +35,8 @@ use Psr\Http\Message\ResponseInterface;
  */
 class VehicleController extends BaseController
 {
-    /**
-     * @var VehicleRepository
-     */
-    protected VehicleRepository $vehicleRepository;
-
-    public function __construct(\Kanow\Operations\Domain\Repository\VehicleRepository $vehicleRepository)
+    public function __construct(protected VehicleRepository $vehicleRepository)
     {
-        $this->vehicleRepository = $vehicleRepository;
     }
 
     /**
