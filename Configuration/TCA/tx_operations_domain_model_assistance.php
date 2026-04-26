@@ -50,7 +50,7 @@ return [
     ],
     'types' => [
         '0' => ['showitem' => 'sys_language_uid;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language,l10n_parent;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent,l10n_diffsource,title,description,link,
-		--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+		--div--;core.form.tabs:access,
                     --palette--;;paletteHidden,
                     --palette--;;paletteAccess,',
         ],
@@ -62,7 +62,7 @@ return [
             ',
         ],
         'paletteAccess' => [
-            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access',
+            'label' => 'core.form.palettes:access',
             'showitem' => '
                 starttime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:starttime_formlabel,
                 endtime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:endtime_formlabel,
