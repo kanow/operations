@@ -45,7 +45,7 @@ class Category extends AbstractEntity
     protected string $description = '';
 
     /**
-     * @var \Kanow\Operations\Domain\Model\Category|null
+     * @var Category|null
      */
     protected ?Category $parent = null;
 
