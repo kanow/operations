@@ -18,8 +18,7 @@ ExtensionUtility::configurePlugin(
     ],
     [
         OperationController::class => 'search',
-    ],
-    ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
+    ]
 );
 ExtensionUtility::configurePlugin(
     'Operations',
@@ -27,8 +26,7 @@ ExtensionUtility::configurePlugin(
     [
         OperationController::class => 'show',
     ],
-    [],
-    ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
+    []
 );
 ExtensionUtility::configurePlugin(
     'Operations',
@@ -41,8 +39,7 @@ ExtensionUtility::configurePlugin(
 	[
 		OperationController::class => 'statistics',
 
-    ],
-    ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
+    ]
 );
 ExtensionUtility::configurePlugin(
     'Operations',
@@ -52,8 +49,7 @@ ExtensionUtility::configurePlugin(
     ],
     [
         VehicleController::class => '',
-    ],
-    ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
+    ]
 );
 ExtensionUtility::configurePlugin(
     'Operations',
@@ -63,8 +59,7 @@ ExtensionUtility::configurePlugin(
     ],
     [
         VehicleController::class => '',
-    ],
-    ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
+    ]
 );
 ExtensionUtility::configurePlugin(
     'Operations',
@@ -74,8 +69,7 @@ ExtensionUtility::configurePlugin(
     ],
     [
         ResourceController::class => '',
-    ],
-    ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
+    ]
 );
 ExtensionUtility::configurePlugin(
     'Operations',
@@ -85,8 +79,7 @@ ExtensionUtility::configurePlugin(
     ],
     [
         ResourceController::class => '',
-    ],
-    ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
+    ]
 );
 
 ExtensionManagementUtility::addTypoScriptSetup(trim('
