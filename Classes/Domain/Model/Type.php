@@ -2,7 +2,7 @@
 
 namespace Kanow\Operations\Domain\Model;
 
-use TYPO3\CMS\Extbase\Annotation\Validate;
+use TYPO3\CMS\Extbase\Attribute as Extbase;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
@@ -40,7 +40,7 @@ class Type extends AbstractEntity
   *
   * @var string
   */
-    #[Validate(['validator' => 'NotEmpty'])]
+    #[Extbase\Validate(['validator' => 'NotEmpty'])]
     protected string $title = '';
 
     /**

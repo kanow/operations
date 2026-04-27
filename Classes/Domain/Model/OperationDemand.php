@@ -2,7 +2,7 @@
 
 namespace Kanow\Operations\Domain\Model;
 
-use TYPO3\CMS\Extbase\Annotation\Validate;
+use TYPO3\CMS\Extbase\Attribute as Extbase;
 use TYPO3\CMS\Extbase\DomainObject\AbstractValueObject;
 
 /***************************************************************
@@ -59,7 +59,7 @@ class OperationDemand extends AbstractValueObject
       *
       * @var int $begin
       */
-    #[Validate(['validator' => 'NotEmpty'])]
+    #[Extbase\Validate(['validator' => 'NotEmpty'])]
     protected int $begin = 0;
 
     /**

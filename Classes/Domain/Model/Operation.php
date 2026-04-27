@@ -2,8 +2,7 @@
 
 namespace Kanow\Operations\Domain\Model;
 
-use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
-use TYPO3\CMS\Extbase\Annotation\Validate;
+use TYPO3\CMS\Extbase\Attribute as Extbase;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
@@ -41,7 +40,7 @@ class Operation extends AbstractEntity
      *
      * @var string
      */
-    #[Validate(['validator' => 'NotEmpty'])]
+    #[Extbase\Validate(['validator' => 'NotEmpty'])]
     protected string $number = '';
 
     /**
@@ -56,7 +55,7 @@ class Operation extends AbstractEntity
      *
      * @var string
      */
-    #[Validate(['validator' => 'NotEmpty'])]
+    #[Extbase\Validate(['validator' => 'NotEmpty'])]
     protected string $title = '';
 
     /**
@@ -64,7 +63,7 @@ class Operation extends AbstractEntity
      *
      * @var string
      */
-    #[Validate(['validator' => 'NotEmpty'])]
+    #[Extbase\Validate(['validator' => 'NotEmpty'])]
     protected string $location = '';
 
     /**
@@ -72,7 +71,7 @@ class Operation extends AbstractEntity
      *
      * @var \DateTime
      */
-    #[Validate(['validator' => 'NotEmpty'])]
+    #[Extbase\Validate(['validator' => 'NotEmpty'])]
     protected ?\DateTime $begin = null;
 
     /**
@@ -134,21 +133,21 @@ class Operation extends AbstractEntity
      * Assistance to this operation
      * @var ObjectStorage<Assistance>
      */
-    #[Lazy]
+    #[Extbase\ORM\Lazy]
     protected ?ObjectStorage $assistance = null;
 
     /**
      * Vehicles use on this operation
      * @var ObjectStorage<Vehicle>
      */
-    #[Lazy]
+    #[Extbase\ORM\Lazy]
     protected ?ObjectStorage $vehicles = null;
 
     /**
      * resources used
      * @var ObjectStorage<\Kanow\Operations\Domain\Model\Resource>
      */
-    #[Lazy]
+    #[Extbase\ORM\Lazy]
     protected ?ObjectStorage $resources = null;
 
     /**
