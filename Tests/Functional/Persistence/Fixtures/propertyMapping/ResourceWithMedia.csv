@@ -1,0 +1,11 @@
+"tx_operations_domain_model_resource"
+,"uid","pid","title","short","description","link","media"
+,1,2,"Thermal imaging camera","TIC","<p>Finds people in smoke.</p>","https://example.com/tic",1
+
+"sys_file"
+,"uid","pid","storage","type","identifier","identifier_hash","folder_hash","name","extension","mime_type"
+,1,0,1,2,"/user_upload/resource.svg","4d0a4bdd4a3b4c3b9e5cbbd38c3cbf65ae8e1f1b","19669f1e02c2f16705ec7587044c66443be70725","resource.svg","svg","image/svg+xml"
+
+"sys_file_reference"
+,"uid","pid","uid_local","uid_foreign","tablenames","fieldname","sorting_foreign"
+,1,2,1,1,"tx_operations_domain_model_resource","media",1

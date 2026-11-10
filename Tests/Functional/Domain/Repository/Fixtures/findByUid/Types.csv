@@ -1,0 +1,5 @@
+"tx_operations_domain_model_type"
+,"uid","pid","title","color","hidden","deleted"
+,1,2,"Fire","#ff0000",0,0
+,2,2,"Hidden type","#000000",1,0
+,3,2,"Deleted type","#000000",0,1
