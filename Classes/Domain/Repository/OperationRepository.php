@@ -123,6 +123,10 @@ class OperationRepository extends Repository
      */
     public function countGroupedByYearAndType(array $years, array $types, string $operationUids = ''): array
     {
+        if ($years === []) {
+            // An empty IN() list is invalid SQL on most DBMS
+            return [];
+        }
         $connection = $this->connectionPool;
         $queryBuilder = $connection->getQueryBuilderForTable('tx_operations_domain_model_operation');
         $connection = $connection->getConnectionForTable('tx_operations_domain_model_operation');
@@ -273,6 +277,10 @@ class OperationRepository extends Repository
      */
     public function countGroupedByYear(array $years, string $operationUids = ''): array
     {
+        if ($years === []) {
+            // An empty IN() list is invalid SQL on most DBMS
+            return [];
+        }
         $connection = $this->connectionPool;
         $queryBuilder = $connection->getQueryBuilderForTable('tx_operations_domain_model_operation');
         $connection = $connection->getConnectionForTable('tx_operations_domain_model_operation');

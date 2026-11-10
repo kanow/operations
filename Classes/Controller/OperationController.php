@@ -209,7 +209,8 @@ class OperationController extends BaseController
         $operations = $this->operationRepository->findDemandedForStatistics($demand, $this->settings);
         $operationUids = $this->buildUidList($operations);
 
-        $years = $this->generateYears($operationUids);
+        // Without matching operations, the empty uid list must not lead to statistics of all operations
+        $years = $operationUids === '' ? [] : $this->generateYears($operationUids);
         $types = $this->typeRepository->findAll()->toArray();
 
         $operationsGroupedByYearAndType = $this->operationRepository->countGroupedByYearAndType($years, $types, $operationUids);
