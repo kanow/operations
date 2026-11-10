@@ -1,97 +1,97 @@
 plugin.tx_operations {
-	mvc.callDefaultActionIfActionCantBeResolved = 1
-	view {
-		templateRootPaths {
-		  0 = EXT:operations/Resources/Private/Templates/
-		  10 = {$plugin.tx_operations.view.templateRootPath ?? $operations.view.templateRootPath}
-		}
-		layoutRootPaths {
-		  0 = EXT:operations/Resources/Private/Layouts/
-		  10 = {$plugin.tx_operations.view.layoutRootPath ?? $operations.view.layoutRootPath}
-		}
-		partialRootPaths {
-		  0 = EXT:operations/Resources/Private/Partials/
-		  10 = {$plugin.tx_operations.view.partialRootPath ?? $operations.view.partialRootPath}
-		}
-	}
-	persistence {
-		storagePid = {$plugin.tx_operations.persistence.storagePid ?? $operations.persistence.storagePid}
-		recursive = {$plugin.tx_operations.persistence.recursive ?? $operations.persistence.recursive}
-	}
-	settings {
-		overrideFlexformSettingsIfEmpty = itemsPerPage,showMediaInList,listMediaWidth,listMediaHeight,singleMediaWidth,singleMediaHeight,cropTeaser,hideFilter,lastYears,limit
-		searchFields = title,teaser,location
-		operationSinglePid = {$plugin.tx_operations.settings.operationSinglePid ?? $operations.operationSinglePid}
-		vehicleSinglePid = {$plugin.tx_operations.settings.vehicleSinglePid ?? $operations.vehicleSinglePid}
-		resourceSinglePid = {$plugin.tx_operations.settings.resourceSinglePid ?? $operations.resourceSinglePid}
-		itemsPerPage = {$plugin.tx_operations.settings.itemsPerPage ?? $operations.itemsPerPage}
-		limit = {$plugin.tx_operations.settings.limit ?? $operations.limit}
-		hidePagination = {$plugin.tx_operations.settings.hidePagination ?? $operations.hidePagination}
-		hideFilter = {$plugin.tx_operations.settings.hideFilter ?? $operations.hideFilter}
-		showMediaInList = {$plugin.tx_operations.settings.showMediaInList ?? $operations.showMediaInList}
-		listMediaWidth = {$plugin.tx_operations.settings.listMediaWidth ?? $operations.listMediaWidth}
-		listMediaHeight = {$plugin.tx_operations.settings.listMediaHeight ?? $operations.listMediaHeight}
-		singleMediaWidth = {$plugin.tx_operations.settings.singleMediaWidth ?? $operations.singleMediaWidth}
-		singleMediaHeight = {$plugin.tx_operations.settings.singleMediaHeight ?? $operations.singleMediaHeight}
-		increaseImage = {$plugin.tx_operations.settings.increaseImage ?? $operations.increaseImage}
+  mvc.callDefaultActionIfActionCantBeResolved = 1
+  view {
+    templateRootPaths {
+      0 = EXT:operations/Resources/Private/Templates/
+      10 = {$plugin.tx_operations.view.templateRootPath ?? $operations.view.templateRootPath}
+    }
+    layoutRootPaths {
+      0 = EXT:operations/Resources/Private/Layouts/
+      10 = {$plugin.tx_operations.view.layoutRootPath ?? $operations.view.layoutRootPath}
+    }
+    partialRootPaths {
+      0 = EXT:operations/Resources/Private/Partials/
+      10 = {$plugin.tx_operations.view.partialRootPath ?? $operations.view.partialRootPath}
+    }
+  }
+  persistence {
+    storagePid = {$plugin.tx_operations.persistence.storagePid ?? $operations.persistence.storagePid}
+    recursive = {$plugin.tx_operations.persistence.recursive ?? $operations.persistence.recursive}
+  }
+  settings {
+    overrideFlexformSettingsIfEmpty = itemsPerPage,showMediaInList,listMediaWidth,listMediaHeight,singleMediaWidth,singleMediaHeight,cropTeaser,hideFilter,lastYears,limit
+    searchFields = title,teaser,location
+    operationSinglePid = {$plugin.tx_operations.settings.operationSinglePid ?? $operations.operationSinglePid}
+    vehicleSinglePid = {$plugin.tx_operations.settings.vehicleSinglePid ?? $operations.vehicleSinglePid}
+    resourceSinglePid = {$plugin.tx_operations.settings.resourceSinglePid ?? $operations.resourceSinglePid}
+    itemsPerPage = {$plugin.tx_operations.settings.itemsPerPage ?? $operations.itemsPerPage}
+    limit = {$plugin.tx_operations.settings.limit ?? $operations.limit}
+    hidePagination = {$plugin.tx_operations.settings.hidePagination ?? $operations.hidePagination}
+    hideFilter = {$plugin.tx_operations.settings.hideFilter ?? $operations.hideFilter}
+    showMediaInList = {$plugin.tx_operations.settings.showMediaInList ?? $operations.showMediaInList}
+    listMediaWidth = {$plugin.tx_operations.settings.listMediaWidth ?? $operations.listMediaWidth}
+    listMediaHeight = {$plugin.tx_operations.settings.listMediaHeight ?? $operations.listMediaHeight}
+    singleMediaWidth = {$plugin.tx_operations.settings.singleMediaWidth ?? $operations.singleMediaWidth}
+    singleMediaHeight = {$plugin.tx_operations.settings.singleMediaHeight ?? $operations.singleMediaHeight}
+    increaseImage = {$plugin.tx_operations.settings.increaseImage ?? $operations.increaseImage}
 
-		listMediaWidthResources = {$plugin.tx_operations.settings.listMediaWidthResource ?? $operations.listMediaWidthResource}
-		listMediaHeightResources = {$plugin.tx_operations.settings.listMediaHeightResource ?? $operations.listMediaHeightResource}
-		cropTeaser = 150
-		sortOrder = DESC
-		sortBy = begin
-		lastYears = {$plugin.tx_operations.settings.lastYears ?? $operations.lastYears}
-		list {
-			vehicles {
-				media {
-					width = {$plugin.tx_operations.settings.list.vehicles.media.width ?? $operations.list.vehicles.media.width}
-					height = {$plugin.tx_operations.settings.list.vehicles.media.height ?? $operations.list.vehicles.media.height}
-				}
-				defaultImage {
-					path = {$plugin.tx_operations.settings.list.vehicles.defaultImage.path ?? $operations.list.vehicles.defaultImage.path}
-					attribution =
-				}
-			}
-			resources {
-				media {
-					width = {$plugin.tx_operations.settings.list.resources.media.width ?? $operations.list.resources.media.width}
-					height = {$plugin.tx_operations.settings.list.resources.media.height ?? $operations.list.resources.media.height}
-				}
-				defaultImage {
-					path = {$plugin.tx_operations.settings.list.resources.defaultImage.path ?? $operations.list.resources.defaultImage.path}
-					attribution =
-				}
-			}
-		}
-		single {
-			showNoReport = 1
-		}
-		paginate {
-			insertAbove = {$plugin.tx_operations.settings.paginate.insertAbove ?? $operations.paginate.insertAbove}
-			insertBelow = {$plugin.tx_operations.settings.paginate.insertBelow ?? $operations.paginate.insertBelow}
-			maximumLinks = {$plugin.tx_operations.settings.paginate.maximumLinks ?? $operations.paginate.maximumLinks}
-			itemsPerPage = 10
-		}
-		noLimitForStatistics = 1
+    listMediaWidthResources = {$plugin.tx_operations.settings.listMediaWidthResource ?? $operations.listMediaWidthResource}
+    listMediaHeightResources = {$plugin.tx_operations.settings.listMediaHeightResource ?? $operations.listMediaHeightResource}
+    cropTeaser = 150
+    sortOrder = DESC
+    sortBy = begin
+    lastYears = {$plugin.tx_operations.settings.lastYears ?? $operations.lastYears}
+    list {
+      vehicles {
+        media {
+          width = {$plugin.tx_operations.settings.list.vehicles.media.width ?? $operations.list.vehicles.media.width}
+          height = {$plugin.tx_operations.settings.list.vehicles.media.height ?? $operations.list.vehicles.media.height}
+        }
+        defaultImage {
+          path = {$plugin.tx_operations.settings.list.vehicles.defaultImage.path ?? $operations.list.vehicles.defaultImage.path}
+          attribution =
+        }
+      }
+      resources {
+        media {
+          width = {$plugin.tx_operations.settings.list.resources.media.width ?? $operations.list.resources.media.width}
+          height = {$plugin.tx_operations.settings.list.resources.media.height ?? $operations.list.resources.media.height}
+        }
+        defaultImage {
+          path = {$plugin.tx_operations.settings.list.resources.defaultImage.path ?? $operations.list.resources.defaultImage.path}
+          attribution =
+        }
+      }
+    }
+    single {
+      showNoReport = 1
+    }
+    paginate {
+      insertAbove = {$plugin.tx_operations.settings.paginate.insertAbove ?? $operations.paginate.insertAbove}
+      insertBelow = {$plugin.tx_operations.settings.paginate.insertBelow ?? $operations.paginate.insertBelow}
+      maximumLinks = {$plugin.tx_operations.settings.paginate.maximumLinks ?? $operations.paginate.maximumLinks}
+      itemsPerPage = 10
+    }
+    noLimitForStatistics = 1
     map {
       iconSvg = Js/map/images/operations-pin.svg
     }
-	}
+  }
 }
 
 page {
-	includeJSLibs {
-		leaflet = https://unpkg.com/leaflet@1.4.0/dist/leaflet.js
-	}
-	includeCSSLibs {
-		leaflet = https://unpkg.com/leaflet@1.4.0/dist/leaflet.css
-	}
-	includeCSS {
-		operations = {$plugin.tx_operations.css ?? $operations.css}
-		map = EXT:operations/Resources/Public/Css/map.css
-	}
-	includeJSFooter {
-		jquery = {$plugin.tx_operations.jquery ?? $operations.jquery}
-		leafletMap = EXT:operations/Resources/Public/Js/map/leaflet-map.js
-	}
+  includeJSLibs {
+    leaflet = https://unpkg.com/leaflet@1.4.0/dist/leaflet.js
+  }
+  includeCSSLibs {
+    leaflet = https://unpkg.com/leaflet@1.4.0/dist/leaflet.css
+  }
+  includeCSS {
+    operations = {$plugin.tx_operations.css ?? $operations.css}
+    map = EXT:operations/Resources/Public/Css/map.css
+  }
+  includeJSFooter {
+    jquery = {$plugin.tx_operations.jquery ?? $operations.jquery}
+    leafletMap = EXT:operations/Resources/Public/Js/map/leaflet-map.js
+  }
 }
