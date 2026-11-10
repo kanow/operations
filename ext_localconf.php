@@ -6,9 +6,7 @@ use Kanow\Operations\Controller\VehicleController;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
-if (!defined('TYPO3')) {
-	die ('Access denied.');
-}
+defined('TYPO3') or die();
 
 ExtensionUtility::configurePlugin(
     'Operations',
@@ -30,15 +28,13 @@ ExtensionUtility::configurePlugin(
 );
 ExtensionUtility::configurePlugin(
     'Operations',
-	'OperationStatistics',
-	[
-		OperationController::class => 'statistics',
-
+    'OperationStatistics',
+    [
+        OperationController::class => 'statistics',
     ],
-	// non-cacheable actions
-	[
-		OperationController::class => 'statistics',
-
+    // non-cacheable actions
+    [
+        OperationController::class => 'statistics',
     ]
 );
 ExtensionUtility::configurePlugin(
@@ -47,9 +43,7 @@ ExtensionUtility::configurePlugin(
     [
         VehicleController::class => 'list',
     ],
-    [
-        VehicleController::class => '',
-    ]
+    []
 );
 ExtensionUtility::configurePlugin(
     'Operations',
@@ -57,9 +51,7 @@ ExtensionUtility::configurePlugin(
     [
         VehicleController::class => 'show',
     ],
-    [
-        VehicleController::class => '',
-    ]
+    []
 );
 ExtensionUtility::configurePlugin(
     'Operations',
@@ -67,9 +59,7 @@ ExtensionUtility::configurePlugin(
     [
         ResourceController::class => 'list',
     ],
-    [
-        ResourceController::class => '',
-    ]
+    []
 );
 ExtensionUtility::configurePlugin(
     'Operations',
@@ -77,9 +67,7 @@ ExtensionUtility::configurePlugin(
     [
         ResourceController::class => 'show',
     ],
-    [
-        ResourceController::class => '',
-    ]
+    []
 );
 
 ExtensionManagementUtility::addTypoScriptSetup(trim('
@@ -94,7 +82,7 @@ ExtensionManagementUtility::addTypoScriptSetup(trim('
     }
 '));
 
-    ExtensionManagementUtility::addTypoScriptSetup(trim('
-# set class in your TypoScript if other pagination should be used
-plugin.tx_operations.settings.paginate.class = TYPO3\CMS\Core\Pagination\SlidingWindowPagination'));
-
+ExtensionManagementUtility::addTypoScriptSetup(trim('
+    # set class in your TypoScript if other pagination should be used
+    plugin.tx_operations.settings.paginate.class = TYPO3\CMS\Core\Pagination\SlidingWindowPagination
+'));
