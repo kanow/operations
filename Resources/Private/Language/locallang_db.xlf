@@ -424,7 +424,7 @@
 				<source>Limit:Limit the result in list view</source>
 			</trans-unit>
 			<trans-unit id="tsc.rootCategory">
-				<target>Root Kategorie:Uid der Start-Kategorie für den Kategoriebaum in der Operations Extensions. Diese Kategorien werden in den Fluid Templates für die Kategoriendarstellung genutzt.</target>
+				<source>Root category:Uid of the root category for the category tree of the operations extension. These categories are used for the category output in the Fluid templates.</source>
 			</trans-unit>
 
 			<trans-unit id="tsc.insertAbove">

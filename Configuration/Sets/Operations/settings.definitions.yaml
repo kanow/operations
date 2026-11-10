@@ -1,5 +1,4 @@
 
-# Definition der Kategorien für den Constant Editor / Settings UI
 categories:
   Operations:
     label: 'LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.title'
@@ -52,7 +51,6 @@ settings:
     description: ''
 
   operations.persistence.storagePid:
-    # Geändert auf Typ 'page' für TYPO3 v14
     type: page
     default: 0
     label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.storagePid'
@@ -89,19 +87,16 @@ settings:
     category: 'Operations.list'
 
   operations.operationSinglePid:
-    # Geändert auf Typ 'page' für TYPO3 v14
     type: page
     default: 0
     label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.operationSinglePid'
     category: 'Operations.pids'
   operations.vehicleSinglePid:
-    # Geändert auf Typ 'page' für TYPO3 v14
     type: page
     default: 0
     label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.vehicleSinglePid'
     category: 'Operations.pids'
   operations.resourceSinglePid:
-    # Geändert auf Typ 'page' für TYPO3 v14
     type: page
     default: 0
     label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.resourceSinglePid'
@@ -137,6 +132,12 @@ settings:
     default: true
     label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.increaseImage'
     category: 'Operations.media'
+  operations.listMediaWidthResource:
+    type: string
+    default: '320'
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidthResource'
+    category: 'Operations.media'
+
   operations.listMediaHeightResource:
     type: string
     default: ''
@@ -189,3 +190,9 @@ settings:
     default: 6
     label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.maxNumberOfLinks'
     category: 'Operations.paginate'
+
+  operations.rootCategory:
+    type: int
+    default: 0
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.rootCategory'
+    category: 'Operations'
