@@ -36,24 +36,25 @@ class ItemsProcFunc
      */
     public function user_templateLayout(array &$config): void
     {
-        $pageId = 0;
-
         $currentColPos = $config['flexParentDatabaseRow']['colPos'] ?? null;
         if ($currentColPos === null) {
             return;
         }
-        $pageId = $this->getPageId($config['flexParentDatabaseRow']['pid']);
+        // FormEngine provides processed select values (e.g. colPos) as array
+        if (is_array($currentColPos)) {
+            $currentColPos = reset($currentColPos);
+        }
+        $pageId = $this->getPageId((int)($config['flexParentDatabaseRow']['pid'] ?? 0));
 
         if ($pageId > 0) {
             $templateLayouts = $this->templateLayoutsUtility->getAvailableTemplateLayouts($pageId);
 
-            $templateLayouts = $this->reduceTemplateLayouts($templateLayouts, $currentColPos);
+            $templateLayouts = $this->reduceTemplateLayouts($templateLayouts, (int)$currentColPos);
             foreach ($templateLayouts as $layout) {
-                $additionalLayout = [
-                    htmlspecialchars($this->getLanguageService()->sL($layout[0])),
-                    $layout[1],
+                $config['items'][] = [
+                    'label' => $this->getLanguageService()->sL($layout[0]),
+                    'value' => $layout[1],
                 ];
-                $config['items'][] = $additionalLayout;
             }
         }
     }
@@ -67,7 +68,6 @@ class ItemsProcFunc
      */
     protected function reduceTemplateLayouts(array $templateLayouts, int $currentColPos): array
     {
-        $currentColPos = (int)$currentColPos;
         $restrictions = [];
         $allLayouts = [];
         foreach ($templateLayouts as $key => $layout) {
@@ -103,18 +103,16 @@ class ItemsProcFunc
      * Returns the given pid.
      * If the pid is negative, it will return the pid of the tt_content record.
      *
-     * @param string $pid
+     * @param int $pid
      * @return int
      */
-    protected function getPageId(string $pid): int
+    protected function getPageId(int $pid): int
     {
-        $pid = (int)$pid;
-
         if ($pid > 0) {
             return $pid;
         }
 
         $row = BackendUtilityCore::getRecord('tt_content', abs($pid), 'uid,pid');
-        return $row['pid'];
+        return (int)($row['pid'] ?? 0);
     }
 }
