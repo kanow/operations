@@ -1,14 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 use PhpCsFixer\Runner\Parallel\ParallelConfigFactory;
 use TYPO3\CodingStandards\CsFixerConfig;
 
 $config = CsFixerConfig::create();
+
 // @TODO 4.0 no need to call this manually
 $config->setParallelConfig(ParallelConfigFactory::detect());
-$config->getFinder()->in('Classes')->in('Configuration')->in('Tests');
-$config->setRules([
-    'phpdoc_scalar' => false,
-    'phpdoc_types' => false,
-]);
+
+$config->getFinder()
+    ->in('Classes')
+    ->in('Configuration')
+    ->in('Tests')
+    ->append([
+        'ext_emconf.php',
+        'ext_localconf.php',
+    ]);
 return $config;
