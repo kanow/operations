@@ -57,6 +57,7 @@ final class TypeTest extends UnitTestCase
         /** @var ObjectStorage<FileReference> $image */
         $image = new ObjectStorage();
         $image->attach(new FileReference());
+
         $this->subject->setImage($image);
 
         self::assertSame($image, $this->subject->getImage());

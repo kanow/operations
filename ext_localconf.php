@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 use Kanow\Operations\Controller\OperationController;
 use Kanow\Operations\Controller\ResourceController;
 use Kanow\Operations\Controller\VehicleController;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
-defined('TYPO3') or die();
+defined('TYPO3') || die();
 
 ExtensionUtility::configurePlugin(
     'Operations',

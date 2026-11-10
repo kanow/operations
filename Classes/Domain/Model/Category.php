@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Kanow\Operations\Domain\Model;
 
 use TYPO3\CMS\Extbase\Attribute as Extbase;
@@ -33,20 +35,11 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
  */
 class Category extends AbstractEntity
 {
-    /**
-     * @var string
-     */
     #[Extbase\Validate(validator: 'NotEmpty')]
     protected string $title = '';
 
-    /**
-     * @var string
-     */
     protected string $description = '';
 
-    /**
-     * @var Category|null
-     */
     protected ?Category $parent = null;
 
     /**

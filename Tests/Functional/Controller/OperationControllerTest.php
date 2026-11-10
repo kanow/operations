@@ -101,7 +101,7 @@ final class OperationControllerTest extends FunctionalTestCase
         return $this->renderPage(self::STATISTICS_PAGE_UID);
     }
 
-    private static function assertStringOccursBefore(string $first, string $second, string $haystack): void
+    private function assertStringOccursBefore(string $first, string $second, string $haystack): void
     {
         $firstPosition = strpos($haystack, $first);
         $secondPosition = strpos($haystack, $second);
@@ -128,8 +128,8 @@ final class OperationControllerTest extends FunctionalTestCase
     {
         $html = $this->renderListWithOperations();
 
-        self::assertStringOccursBefore('Car accident', 'Kitchen fire', $html);
-        self::assertStringOccursBefore('Kitchen fire', 'Chimney fire', $html);
+        $this->assertStringOccursBefore('Car accident', 'Kitchen fire', $html);
+        $this->assertStringOccursBefore('Kitchen fire', 'Chimney fire', $html);
     }
 
     #[Test]
@@ -496,8 +496,8 @@ final class OperationControllerTest extends FunctionalTestCase
     {
         $html = $this->renderStatisticsWithOperations();
 
-        self::assertStringOccursBefore('jquery.min.js', 'Resources/Public/Js/OperationsChart.js', $html);
-        self::assertStringOccursBefore('Resources/Public/Js/Chart.bundle.js', 'Resources/Public/Js/OperationsChart.js', $html);
+        $this->assertStringOccursBefore('jquery.min.js', 'Resources/Public/Js/OperationsChart.js', $html);
+        $this->assertStringOccursBefore('Resources/Public/Js/Chart.bundle.js', 'Resources/Public/Js/OperationsChart.js', $html);
     }
 
     #[Test]

@@ -37,23 +37,17 @@ class Vehicle extends AbstractEntity
 {
     /**
      * Title of vehicle
-     *
-     * @var string
      */
     #[Extbase\Validate(validator: 'NotEmpty')]
     protected string $title = '';
 
     /**
      * Abbreviation of vehicle
-     *
-     * @var string
      */
     protected string $short = '';
 
     /**
      * Description of vehicle
-     *
-     * @var string
      */
     protected string $description = '';
 
@@ -65,8 +59,6 @@ class Vehicle extends AbstractEntity
 
     /**
      * A website url or internal link
-     *
-     * @var string
      */
     protected string $link = '';
 
@@ -82,8 +74,6 @@ class Vehicle extends AbstractEntity
 
     /**
      * Sets the title
-     *
-     * @param string $title
      */
     public function setTitle(string $title): void
     {
@@ -102,8 +92,6 @@ class Vehicle extends AbstractEntity
 
     /**
      * Sets the short
-     *
-     * @param string $short
      */
     public function setShort(string $short): void
     {
@@ -122,8 +110,6 @@ class Vehicle extends AbstractEntity
 
     /**
      * Sets the description
-     *
-     * @param string $description
      */
     public function setDescription(string $description): void
     {
@@ -161,17 +147,11 @@ class Vehicle extends AbstractEntity
         $this->media = $media;
     }
 
-    /**
-     * @return string
-     */
     public function getLink(): string
     {
         return $this->link;
     }
 
-    /**
-     * @param string $link
-     */
     public function setLink(string $link): void
     {
         $this->link = $link;

@@ -1,6 +1,8 @@
 <?php
 
-defined('TYPO3') or die();
+declare(strict_types=1);
+
+defined('TYPO3') || die();
 
 return [
     'ctrl' => [
@@ -38,8 +40,8 @@ return [
         'paletteAccess' => [
             'label' => 'core.form.palettes:access',
             'showitem' => '
-                starttime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:starttime_formlabel,
-                endtime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:endtime_formlabel,
+                starttime;core.db.general:starttime,
+                endtime;core.db.general:endtime,
                 --linebreak--
             ',
         ],

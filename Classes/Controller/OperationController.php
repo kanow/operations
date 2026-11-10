@@ -82,9 +82,6 @@ class OperationController extends BaseController
     /**
      * action list
      *
-     * @param OperationDemand|null $demand
-     * @param int $currentPage
-     * @return ResponseInterface
      * @throws InvalidQueryException
      */
     public function listAction(?OperationDemand $demand = null, int $currentPage = 1): ResponseInterface
@@ -129,8 +126,6 @@ class OperationController extends BaseController
     /**
      * action search
      *
-     * @param OperationDemand|null $demand
-     * @param int $currentPage
      * @throws InvalidQueryException
      * @throws NoSuchArgumentException
      */
@@ -173,7 +168,7 @@ class OperationController extends BaseController
     /**
      * Initializes the current action
      */
-    public function initializeAction(): void
+    protected function initializeAction(): void
     {
         $this->overrideFlexformSettings();
         $this->storagePidFallback();
@@ -186,8 +181,6 @@ class OperationController extends BaseController
 
     /**
      * action show
-     *
-     * @param Operation $operation
      */
     public function showAction(Operation $operation): ResponseInterface
     {
@@ -198,7 +191,6 @@ class OperationController extends BaseController
     /**
      * action for statistics
      *
-     * @param OperationDemand|null $demand
      * @throws InvalidQueryException
      */
     public function statisticsAction(?OperationDemand $demand = null): ResponseInterface
@@ -229,23 +221,15 @@ class OperationController extends BaseController
 
     /**
      * Update demand with current settings, if not exists it creates one
-     *
-     * @param ?OperationDemand $demand
-     * @return OperationDemand
      */
     protected function createDemandObjectFromSettings(?OperationDemand $demand): OperationDemand
     {
-        if (is_null($demand)) {
-            $demand = GeneralUtility::makeInstance(OperationDemand::class);
-        }
+        $demand ??= GeneralUtility::makeInstance(OperationDemand::class);
         return $demand;
     }
 
     /**
      * Get the years. Only from defined operation uid list.
-     *
-     * @param string $operationUids
-     * @return array
      */
     protected function generateYears(string $operationUids = ''): array
     {
@@ -288,18 +272,13 @@ class OperationController extends BaseController
         $operationsRootCategory = $rootCategoryUid > 0 ? $this->categoryRepository->findByUid($rootCategoryUid) : null;
         if ($operationsRootCategory != null) {
             /** @var Category $operationsRootCategory */
-            $categories = $this->categoryService->findAllDescendants($operationsRootCategory);
-        } else {
-            $categories = $this->categoryRepository->findAll();
+            return $this->categoryService->findAllDescendants($operationsRootCategory);
         }
-        return $categories;
+        return $this->categoryRepository->findAll();
     }
 
     /**
      * collect all uids from a result
-     *
-     * @param array $result
-     * @return string
      */
     protected function buildUidList(array $result): string
     {
@@ -307,14 +286,10 @@ class OperationController extends BaseController
         foreach ($result as $item) {
             $uidList[] = $item['uid'];
         }
-        $uidList = implode(',', $uidList);
-        return $uidList;
+        return implode(',', $uidList);
     }
 
     /**
-     * @param string $paginationClass
-     * @param int $maximumNumberOfLinks
-     * @param QueryResultPaginator $paginator
      * @return NumberedPagination|SimplePagination|SlidingWindowPagination|object
      */
     protected function getPagination(string $paginationClass, int $maximumNumberOfLinks, QueryResultPaginator $paginator): mixed

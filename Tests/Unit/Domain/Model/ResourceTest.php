@@ -131,6 +131,7 @@ final class ResourceTest extends UnitTestCase
         $media = new ObjectStorage();
         $media->attach($firstMedia);
         $media->attach($secondMedia);
+
         $this->subject->setMedia($media);
 
         self::assertSame($firstMedia, $this->subject->getFirstMedia());

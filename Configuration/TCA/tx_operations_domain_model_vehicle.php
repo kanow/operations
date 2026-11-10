@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 use TYPO3\CMS\Core\Resource\FileType;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-defined('TYPO3') or die();
+defined('TYPO3') || die();
 
 $extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('operations');
 
@@ -99,8 +101,8 @@ return [
         'paletteAccess' => [
             'label' => 'core.form.palettes:access',
             'showitem' => '
-                starttime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:starttime_formlabel,
-                endtime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:endtime_formlabel,
+                starttime;core.db.general:starttime,
+                endtime;core.db.general:endtime,
                 --linebreak--
             ',
         ],

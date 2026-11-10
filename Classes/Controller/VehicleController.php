@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Kanow\Operations\Controller;
 
 use Kanow\Operations\Domain\Model\Vehicle;
@@ -51,8 +53,6 @@ class VehicleController extends BaseController
 
     /**
      * action show
-     *
-     * @param Vehicle $vehicle
      */
     public function showAction(Vehicle $vehicle): ResponseInterface
     {

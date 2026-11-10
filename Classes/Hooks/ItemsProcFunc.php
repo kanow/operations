@@ -32,7 +32,7 @@ class ItemsProcFunc
     /**
      * Itemsproc function to extend the selection of templateLayouts in the plugin
      *
-     * @param array &$config configuration array
+     * @param array<string, mixed> &$config configuration array
      */
     public function user_templateLayout(array &$config): void
     {
@@ -61,10 +61,6 @@ class ItemsProcFunc
 
     /**
      * Reduce the template layouts by the ones that are not allowed in given colPos
-     *
-     * @param array $templateLayouts
-     * @param int $currentColPos
-     * @return array
      */
     protected function reduceTemplateLayouts(array $templateLayouts, int $currentColPos): array
     {
@@ -94,8 +90,6 @@ class ItemsProcFunc
 
     /**
      * Returns LanguageService
-     *
-     * @return LanguageService
      */
     protected function getLanguageService(): LanguageService
     {
@@ -105,9 +99,6 @@ class ItemsProcFunc
     /**
      * Returns the given pid.
      * If the pid is negative, it will return the pid of the tt_content record.
-     *
-     * @param int $pid
-     * @return int
      */
     protected function getPageId(int $pid): int
     {

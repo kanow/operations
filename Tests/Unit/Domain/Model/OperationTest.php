@@ -232,6 +232,7 @@ final class OperationTest extends UnitTestCase
         $media = new ObjectStorage();
         $media->attach($firstMedia);
         $media->attach($secondMedia);
+
         $this->subject->setMedia($media);
 
         self::assertSame($firstMedia, $this->subject->getFirstMedia());
@@ -392,6 +393,7 @@ final class OperationTest extends UnitTestCase
         /** @var ObjectStorage<\Kanow\Operations\Domain\Model\Resource> $resources */
         $resources = new ObjectStorage();
         $resources->attach(new Resource());
+
         $this->subject->setResources($resources);
 
         self::assertSame($resources, $this->subject->getResources());

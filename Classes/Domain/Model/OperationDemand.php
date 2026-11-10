@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Kanow\Operations\Domain\Model;
 
 use TYPO3\CMS\Extbase\Attribute as Extbase;
@@ -37,49 +39,34 @@ class OperationDemand extends AbstractValueObject
 {
     /**
      * Operation onlyEld for demand
-     *
-     * @var int
      */
     protected int $onlyEld = 0;
 
     /**
      * Type of operation
-     *
-     * @var ?int $type
      */
     protected ?int $type = null;
 
-    /**
-     * @var ?int $limit
-     */
     protected ?int $limit = null;
 
     /**
-      * Begin (year)
-      *
-      * @var int $begin
-      */
+     * Begin (year)
+     */
     #[Extbase\Validate(validator: 'NotEmpty')]
     protected int $begin = 0;
 
     /**
      * Searchstring
-     *
-     * @var string $searchstring
      */
     protected string $searchstring = '';
 
     /**
      * Category
-     *
-     * @var ?int $category
      */
     protected ?int $category = null;
 
     /**
      * onlyEld for demanded
-     *
-     * @param int $onlyEld
      */
     public function setOnlyEld(int $onlyEld): void
     {
@@ -88,7 +75,6 @@ class OperationDemand extends AbstractValueObject
 
     /**
      * onlyEld for demanded
-     * @return int
      */
     public function getOnlyEld(): int
     {
@@ -107,8 +93,6 @@ class OperationDemand extends AbstractValueObject
 
     /**
      * Sets the type
-     *
-     * @param int $type
      */
     public function setType(int $type): void
     {
@@ -117,8 +101,6 @@ class OperationDemand extends AbstractValueObject
 
     /**
      * Set limit
-     *
-     * @param ?int $limit
      */
     public function setLimit(?int $limit): void
     {
@@ -137,8 +119,6 @@ class OperationDemand extends AbstractValueObject
 
     /**
      * Returns the begin
-     *
-     * @return int
      */
     public function getBegin(): int
     {
@@ -147,8 +127,6 @@ class OperationDemand extends AbstractValueObject
 
     /**
      * Sets the begin
-     *
-     * @param int $begin
      */
     public function setBegin(int $begin): void
     {
@@ -157,8 +135,6 @@ class OperationDemand extends AbstractValueObject
 
     /**
      * Returns the searchstring
-     *
-     * @return string
      */
     public function getSearchstring(): string
     {
@@ -167,8 +143,6 @@ class OperationDemand extends AbstractValueObject
 
     /**
      * Sets the searchstring
-     *
-     * @param string $searchstring
      */
     public function setSearchstring(string $searchstring): void
     {
@@ -187,8 +161,6 @@ class OperationDemand extends AbstractValueObject
 
     /**
      * Sets the category
-     *
-     * @param int $category
      */
     public function setCategory(int $category): void
     {

@@ -43,7 +43,7 @@ final class FlexFormTest extends FunctionalTestCase
      *
      * @return array<string, list<string>> field names by sheet name
      */
-    private static function getFieldNamesBySheet(array $dataStructure): array
+    private function getFieldNamesBySheet(array $dataStructure): array
     {
         $sheets = $dataStructure['sheets'] ?? null;
         self::assertIsArray($sheets);
@@ -51,7 +51,7 @@ final class FlexFormTest extends FunctionalTestCase
         foreach ($sheets as $sheetName => $sheet) {
             $elements = is_array($sheet) && is_array($sheet['ROOT'] ?? null) ? ($sheet['ROOT']['el'] ?? null) : null;
             self::assertIsArray($elements, 'Sheet "' . $sheetName . '" has no elements.');
-            $fieldNamesBySheet[(string)$sheetName] = array_map('strval', array_keys($elements));
+            $fieldNamesBySheet[(string)$sheetName] = array_map(strval(...), array_keys($elements));
         }
 
         return $fieldNamesBySheet;
@@ -107,6 +107,6 @@ final class FlexFormTest extends FunctionalTestCase
 
         $dataStructure = $this->parseDataStructureOfContentType($contentType);
 
-        self::assertSame(self::getFieldNamesBySheet($expectedDataStructure), self::getFieldNamesBySheet($dataStructure));
+        self::assertSame($this->getFieldNamesBySheet($expectedDataStructure), $this->getFieldNamesBySheet($dataStructure));
     }
 }

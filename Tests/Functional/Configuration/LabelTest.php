@@ -36,14 +36,14 @@ final class LabelTest extends FunctionalTestCase
     /**
      * @return list<string>
      */
-    private static function findLabelReferences(string $content): array
+    private function findLabelReferences(string $content): array
     {
         preg_match_all(self::LABEL_PATTERN, $content, $matches);
 
         return array_values(array_unique($matches[0]));
     }
 
-    private static function readFile(string $relativePath): string
+    private function readFile(string $relativePath): string
     {
         $content = file_get_contents(self::EXTENSION_PATH . $relativePath);
         self::assertIsString($content);
@@ -54,7 +54,7 @@ final class LabelTest extends FunctionalTestCase
     /**
      * @return list<string>
      */
-    private static function globFiles(string $relativePattern): array
+    private function globFiles(string $relativePattern): array
     {
         $files = glob(self::EXTENSION_PATH . $relativePattern);
         self::assertIsArray($files);
@@ -66,7 +66,7 @@ final class LabelTest extends FunctionalTestCase
     /**
      * @param list<string> $files
      */
-    private static function readFiles(array $files): string
+    private function readFiles(array $files): string
     {
         return implode(LF, array_map(static fn(string $file): string => (string)file_get_contents($file), $files));
     }
@@ -89,7 +89,7 @@ final class LabelTest extends FunctionalTestCase
     /**
      * @return list<string>
      */
-    private static function getTtContentLabelReferences(): array
+    private function getTtContentLabelReferences(): array
     {
         $relevantTca = [
             'items' => self::getContentTypeItems(),
@@ -97,15 +97,15 @@ final class LabelTest extends FunctionalTestCase
             'types' => array_intersect_key(self::getTcaArray('tt_content/types'), array_flip(TcaTest::CONTENT_TYPES)),
         ];
 
-        return self::findLabelReferences(json_encode($relevantTca, JSON_THROW_ON_ERROR | JSON_UNESCAPED_SLASHES));
+        return $this->findLabelReferences(json_encode($relevantTca, JSON_THROW_ON_ERROR | JSON_UNESCAPED_SLASHES));
     }
 
     #[Test]
     public function allLabelsInTcaOfExtensionTablesCanBeResolved(): void
     {
-        $tca = array_map(static fn(string $table): array => self::getTcaArray($table), TcaTest::TABLES);
+        $tca = array_map(self::getTcaArray(...), TcaTest::TABLES);
 
-        $labels = self::findLabelReferences(json_encode($tca, JSON_THROW_ON_ERROR | JSON_UNESCAPED_SLASHES));
+        $labels = $this->findLabelReferences(json_encode($tca, JSON_THROW_ON_ERROR | JSON_UNESCAPED_SLASHES));
 
         self::assertSame([], $this->findUnresolvableLabels($labels));
     }
@@ -113,43 +113,43 @@ final class LabelTest extends FunctionalTestCase
     #[Test]
     public function allLabelsOfContentTypesCanBeResolved(): void
     {
-        self::assertSame([], $this->findUnresolvableLabels(self::getTtContentLabelReferences()));
+        self::assertSame([], $this->findUnresolvableLabels($this->getTtContentLabelReferences()));
     }
 
     #[Test]
     public function allLabelsInFlexFormsCanBeResolved(): void
     {
-        $files = self::globFiles('Configuration/FlexForms/*.xml');
+        $files = $this->globFiles('Configuration/FlexForms/*.xml');
         self::assertCount(7, $files);
 
-        $content = self::readFiles($files);
+        $content = $this->readFiles($files);
 
-        self::assertSame([], $this->findUnresolvableLabels(self::findLabelReferences($content)));
+        self::assertSame([], $this->findUnresolvableLabels($this->findLabelReferences($content)));
     }
 
     #[Test]
     public function allLabelsInSiteSetCanBeResolved(): void
     {
-        $content = self::readFile('Configuration/Sets/Operations/settings.definitions.yaml')
-            . LF . self::readFile('Configuration/Sets/Operations/config.yaml');
+        $content = $this->readFile('Configuration/Sets/Operations/settings.definitions.yaml')
+            . LF . $this->readFile('Configuration/Sets/Operations/config.yaml');
 
-        self::assertSame([], $this->findUnresolvableLabels(self::findLabelReferences($content)));
+        self::assertSame([], $this->findUnresolvableLabels($this->findLabelReferences($content)));
     }
 
     #[Test]
     public function allLabelsInTypoScriptConstantsCanBeResolved(): void
     {
-        $content = self::readFile('Configuration/TypoScript/constants.typoscript');
+        $content = $this->readFile('Configuration/TypoScript/constants.typoscript');
 
-        self::assertSame([], $this->findUnresolvableLabels(self::findLabelReferences($content)));
+        self::assertSame([], $this->findUnresolvableLabels($this->findLabelReferences($content)));
     }
 
     #[Test]
     public function allTranslationKeysUsedInFluidTemplatesCanBeResolved(): void
     {
-        $content = self::readFiles(array_merge(
-            self::globFiles('Resources/Private/Templates/*/*.html'),
-            self::globFiles('Resources/Private/Partials/*/*.html')
+        $content = $this->readFiles(array_merge(
+            $this->globFiles('Resources/Private/Templates/*/*.html'),
+            $this->globFiles('Resources/Private/Partials/*/*.html')
         ));
         preg_match_all('/key(?:="|:\s*\'|:\s*")([^"\']+)/', $content, $matches);
         self::assertNotSame([], $matches[1]);

@@ -64,7 +64,7 @@ final class OperationRepositoryTest extends FunctionalTestCase
      *
      * @return list<int>
      */
-    private static function extractUids(array $rows): array
+    private function extractUids(array $rows): array
     {
         $uids = [];
         foreach ($rows as $row) {
@@ -224,6 +224,7 @@ final class OperationRepositoryTest extends FunctionalTestCase
         $this->importCSVDataSet(__DIR__ . '/Fixtures/findDemanded/Operations.csv');
         $demand = new OperationDemand();
         $demand->setSearchstring($searchString);
+
         $settings = ['searchFields' => 'title,teaser,location'];
 
         self::assertSame($expectedTitles, $this->findDemandedTitles($demand, $settings));
@@ -235,6 +236,7 @@ final class OperationRepositoryTest extends FunctionalTestCase
         $this->importCSVDataSet(__DIR__ . '/Fixtures/findDemanded/Operations.csv');
         $demand = new OperationDemand();
         $demand->setSearchstring('Thale');
+
         $settings = ['searchFields' => 'title'];
 
         self::assertSame([], $this->findDemandedTitles($demand, $settings));
@@ -323,7 +325,7 @@ final class OperationRepositoryTest extends FunctionalTestCase
 
         $rows = $this->subject->findDemandedForStatistics(new OperationDemand(), []);
 
-        self::assertSame([2, 1, 3, 4], self::extractUids($rows));
+        self::assertSame([2, 1, 3, 4], $this->extractUids($rows));
     }
 
     #[Test]
@@ -334,7 +336,7 @@ final class OperationRepositoryTest extends FunctionalTestCase
 
         $rows = $this->subject->findDemandedForStatistics(new OperationDemand(), $settings);
 
-        self::assertSame([2, 1, 3, 4], self::extractUids($rows));
+        self::assertSame([2, 1, 3, 4], $this->extractUids($rows));
     }
 
     #[Test]
@@ -345,7 +347,7 @@ final class OperationRepositoryTest extends FunctionalTestCase
 
         $rows = $this->subject->findDemandedForStatistics(new OperationDemand(), $settings);
 
-        self::assertSame([2, 1], self::extractUids($rows));
+        self::assertSame([2, 1], $this->extractUids($rows));
     }
 
     #[Test]
@@ -357,7 +359,7 @@ final class OperationRepositoryTest extends FunctionalTestCase
 
         $rows = $this->subject->findDemandedForStatistics($demand, []);
 
-        self::assertSame([2, 1], self::extractUids($rows));
+        self::assertSame([2, 1], $this->extractUids($rows));
     }
 
     #[Test]
@@ -395,7 +397,7 @@ final class OperationRepositoryTest extends FunctionalTestCase
      *
      * @return list<array{year: int, count: int}>
      */
-    private static function normalizeYearCounts(array $rows): array
+    private function normalizeYearCounts(array $rows): array
     {
         $normalizedRows = [];
         foreach ($rows as $row) {
@@ -436,7 +438,7 @@ final class OperationRepositoryTest extends FunctionalTestCase
             ['year' => 2022, 'count' => 1],
             ['year' => 2021, 'count' => 1],
         ];
-        self::assertSame($expected, self::normalizeYearCounts($result));
+        self::assertSame($expected, $this->normalizeYearCounts($result));
     }
 
     #[Test]
@@ -450,7 +452,7 @@ final class OperationRepositoryTest extends FunctionalTestCase
             ['year' => 2022, 'count' => 1],
             ['year' => 2020, 'count' => 1],
         ];
-        self::assertSame($expected, self::normalizeYearCounts($result));
+        self::assertSame($expected, $this->normalizeYearCounts($result));
     }
 
     #[Test]
@@ -464,7 +466,7 @@ final class OperationRepositoryTest extends FunctionalTestCase
             ['year' => 2023, 'count' => 2],
             ['year' => 2022, 'count' => 1],
         ];
-        self::assertSame($expected, self::normalizeYearCounts($result));
+        self::assertSame($expected, $this->normalizeYearCounts($result));
     }
 
     #[Test]
@@ -500,7 +502,7 @@ final class OperationRepositoryTest extends FunctionalTestCase
      *
      * @return array<array-key, array{title: mixed, color: mixed, years: array<array-key, int>}>
      */
-    private static function normalizeCountsPerType(array $result): array
+    private function normalizeCountsPerType(array $result): array
     {
         $normalizedResult = [];
         foreach ($result as $typeUid => $item) {
@@ -531,7 +533,7 @@ final class OperationRepositoryTest extends FunctionalTestCase
             2 => ['title' => 'Technical assistance', 'color' => '#00ff00', 'years' => [2023 => 1, 2022 => 0, 2021 => 0]],
             3 => ['title' => 'Hazardous materials', 'color' => '#0000ff', 'years' => [2023 => 0, 2022 => 0, 2021 => 0]],
         ];
-        self::assertSame($expected, self::normalizeCountsPerType($result));
+        self::assertSame($expected, $this->normalizeCountsPerType($result));
     }
 
     #[Test]
@@ -550,7 +552,7 @@ final class OperationRepositoryTest extends FunctionalTestCase
             2 => ['title' => 'Technical assistance', 'color' => '#00ff00', 'years' => [2023 => 0, 2022 => 0, 2021 => 0]],
             3 => ['title' => 'Hazardous materials', 'color' => '#0000ff', 'years' => [2023 => 0, 2022 => 0, 2021 => 0]],
         ];
-        self::assertSame($expected, self::normalizeCountsPerType($result));
+        self::assertSame($expected, $this->normalizeCountsPerType($result));
     }
 
     #[Test]
@@ -570,6 +572,6 @@ final class OperationRepositoryTest extends FunctionalTestCase
         $resultForStrings = $this->subject->countGroupedByYearAndType(['2023', '2022'], $types);
         $resultForIntegers = $this->subject->countGroupedByYearAndType([2023, 2022], $types);
 
-        self::assertSame(self::normalizeCountsPerType($resultForStrings), self::normalizeCountsPerType($resultForIntegers));
+        self::assertSame($this->normalizeCountsPerType($resultForStrings), $this->normalizeCountsPerType($resultForIntegers));
     }
 }

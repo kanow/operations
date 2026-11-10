@@ -48,9 +48,6 @@ class CategoryService
 
     /**
      * Finds all descendants of a given category
-     *
-     * @param Category $parentCategory
-     * @return ObjectStorage
      */
     public function findAllDescendants(Category $parentCategory): ObjectStorage
     {
@@ -63,10 +60,6 @@ class CategoryService
 
     /**
      * Recursively finds descendants of a category
-     *
-     * @param Category $parentCategory
-     * @param ObjectStorage $storage
-     * @return ObjectStorage
      */
     protected function findDescendantsRecursive(Category $parentCategory, ObjectStorage $storage): ObjectStorage
     {
@@ -83,11 +76,6 @@ class CategoryService
 
     /**
      * Attaches child categories to result storage and updates the stack
-     *
-     * @param Category $currentRoot
-     * @param ObjectStorage $storage
-     * @param ObjectStorage $resultStorage
-     * @param array $stack
      */
     protected function attachChildrenToStorage(
         Category $currentRoot,
