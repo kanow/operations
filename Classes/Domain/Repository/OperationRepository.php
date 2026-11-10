@@ -13,6 +13,7 @@ use Kanow\Operations\Domain\Model\Operation;
 use Kanow\Operations\Domain\Model\OperationDemand;
 use Kanow\Operations\Domain\Model\Type;
 use Kanow\Operations\Utility\SqlUtility;
+use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
@@ -63,7 +64,10 @@ class OperationRepository extends Repository
     /**
      * Constructs a new Repository
      */
-    public function __construct(private readonly ConnectionPool $connectionPool)
+    public function __construct(
+        private readonly ConnectionPool $connectionPool,
+        private readonly TypeRepository $typeRepository,
+    )
     {
         parent::__construct();
     }
@@ -130,7 +134,12 @@ class OperationRepository extends Repository
             ->innerJoin('type_mm', 'tx_operations_domain_model_operation', 'o', 'type_mm.uid_local = o.uid')
             ->where(SqlUtility::getSelectYearFromUnixTime($connection, 'o.begin') . SqlUtility::getWhereYearInString($connection, $years));
         if ($operationUids !== '') {
-            $result = $result->andWhere('o.uid IN (' . $operationUids . ')');
+            $result = $result->andWhere(
+                $queryBuilder->expr()->in(
+                    'o.uid',
+                    $queryBuilder->createNamedParameter(GeneralUtility::intExplode(',', $operationUids, true), Connection::PARAM_INT_ARRAY)
+                )
+            );
         }
         $result = $result->groupBy('year')
            ->addGroupBy('ot.uid')
@@ -273,7 +282,12 @@ class OperationRepository extends Repository
             ->from('tx_operations_domain_model_operation', 'o')
             ->where(SqlUtility::getSelectYearFromUnixTime($connection, 'o.begin') . SqlUtility::getWhereYearInString($connection, $years));
         if ($operationUids !== '') {
-            $statement = $statement->andWhere('o.uid IN (' . $operationUids . ')');
+            $statement = $statement->andWhere(
+                $queryBuilder->expr()->in(
+                    'o.uid',
+                    $queryBuilder->createNamedParameter(GeneralUtility::intExplode(',', $operationUids, true), Connection::PARAM_INT_ARRAY)
+                )
+            );
         }
         $statement = $statement->groupBy('year')
             ->orderBy('year', 'DESC')
@@ -294,7 +308,7 @@ class OperationRepository extends Repository
     protected function generateQuery(OperationDemand $demand, array $settings, bool $noLimit = false): QueryInterface
     {
         $query = $this->createQuery();
-        if (isset($settings['dontRespectStoragePage']) && $settings['dontRespectStoragePage'] === 1) {
+        if ((int)($settings['dontRespectStoragePage'] ?? 0) === 1) {
             $query->getQuerySettings()->setRespectStoragePage(false);
         }
         $constraints = $this->createConstraintsFromDemand($query, $demand, $settings);
@@ -428,7 +442,7 @@ class OperationRepository extends Repository
      */
     protected function getSearchFields(array $settings): array
     {
-        $searchFields = GeneralUtility::trimExplode(',', $settings['searchFields'], true);
+        $searchFields = GeneralUtility::trimExplode(',', (string)($settings['searchFields'] ?? ''), true);
         if (count($searchFields) === 0) {
             throw new \UnexpectedValueException('No search fields in TypoScript setup defined', 1506861158);
         }
@@ -489,7 +503,7 @@ class OperationRepository extends Repository
             foreach ($categories as $category) {
                 $categoryConstraint[] = $query->contains($property, $category);
             }
-            switch ($settings['categoryConjunction']) {
+            switch ($settings['categoryConjunction'] ?? '') {
                 case 'or':
                     $constraint = $query->logicalOr(...$categoryConstraint);
                     break;
@@ -535,6 +549,6 @@ class OperationRepository extends Repository
      */
     protected function getTypeTitle(array $value): string
     {
-        return GeneralUtility::makeInstance(TypeRepository::class)->findByUid($value['type_uid'])->getTitle();
+        return (string)$this->typeRepository->findByUid((int)$value['type_uid'])?->getTitle();
     }
 }
