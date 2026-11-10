@@ -2,11 +2,13 @@
 
 declare(strict_types=1);
 
+use Rector\CodingStyle\Rector\Stmt\NewlineAfterStatementRector;
 use Rector\Config\RectorConfig;
 use Rector\PHPUnit\CodeQuality\Rector\Class_\PreferPHPUnitThisCallRector;
 use Rector\PHPUnit\PHPUnit60\Rector\ClassMethod\AddDoesNotPerformAssertionToNonAssertingTestRector;
 use Rector\TypeDeclaration\Rector\StmtsAwareInterface\SafeDeclareStrictTypesRector;
 use Ssch\TYPO3Rector\CodeQuality\General\ExtEmConfRector;
+use Ssch\TYPO3Rector\TYPO313\v4\MigratePluginContentElementAndPluginSubtypesRector;
 use Ssch\TYPO3Rector\Configuration\Typo3Option;
 use Ssch\TYPO3Rector\Set\Typo3LevelSetList;
 use Ssch\TYPO3Rector\Set\Typo3SetList;
@@ -50,7 +52,10 @@ return RectorConfig::configure()
     ])
     ->withRules([
     ])
-    ->withImportNames(true, true, false)
+    // Do not import names in docblocks: Extbase evaluates docblock types like
+    // ObjectStorage<\Kanow\Operations\Domain\Model\Resource>, and the short
+    // name "Resource" would be interpreted as the pseudo type "resource".
+    ->withImportNames(importNames: true, importDocBlockNames: false, importShortClasses: false)
     ->withConfiguredRule(ExtEmConfRector::class, [
         ExtEmConfRector::PHP_VERSION_CONSTRAINT => '8.2.0-8.5.99',
         ExtEmConfRector::TYPO3_VERSION_CONSTRAINT => '14.3.0-14.3.99',
@@ -59,6 +64,11 @@ return RectorConfig::configure()
     ->withSkip([
         // This rule creates false positives as the TYPO3 testing framework always adds assertions.
         AddDoesNotPerformAssertionToNonAssertingTestRector::class,
+        // Blank lines are handled by php-cs-fixer, which would revert this rule
+        NewlineAfterStatementRector::class,
+        // The plugins are registered as content elements (CType) since TYPO3 v12,
+        // so no list_type upgrade wizard needs to be generated
+        MigratePluginContentElementAndPluginSubtypesRector::class,
         PreferPHPUnitThisCallRector::class,
         SafeDeclareStrictTypesRector::class => [
             __DIR__ . '/../../ext_emconf.php',
