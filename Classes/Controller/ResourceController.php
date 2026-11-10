@@ -52,7 +52,7 @@ class ResourceController extends BaseController
     /**
      * action show
      *
-     * @param resource $resource
+     * @param Resource $resource
      */
     public function showAction(Resource $resource): ResponseInterface
     {
