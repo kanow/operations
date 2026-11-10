@@ -141,7 +141,7 @@ settings:
   operations.listMediaHeightResource:
     type: string
     default: ''
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeightResources'
+    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeightResource'
     category: 'Operations.media'
 
   operations.list.vehicles.media.width:
