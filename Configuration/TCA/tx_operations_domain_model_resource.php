@@ -62,7 +62,6 @@ $imageConfigurationFalMedia = [
     'overrideChildTca' => $imageSettingsFalMedia['overrideChildTca'],
     'allowed' => 'common-image-types',
 ];
-$renderTypeLinkField = 'link';
 
 return [
     'ctrl' => [
@@ -169,11 +168,9 @@ return [
             'exclude' => 1,
             'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_resource.link',
             'config' => [
-                'type' => 'input',
-                'renderType' => $renderTypeLinkField,
+                'type' => 'link',
                 'searchable' => false,
                 'size' => 30,
-                'eval' => 'trim',
                 'default' => '',
             ],
         ],

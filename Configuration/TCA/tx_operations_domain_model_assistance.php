@@ -9,7 +9,6 @@ if (!defined('TYPO3')) {
 $versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
 $typo3Version = $versionInformation->getMajorVersion();
 if ($typo3Version > 11) {
-    $renderTypeLinkField = 'link';
     $tcaForDatetimeFields = [
         'type' => 'datetime',
         'size' => 16,
@@ -18,7 +17,6 @@ if ($typo3Version > 11) {
         'format' => 'datetime',
     ];
 } else {
-    $renderTypeLinkField = 'inputLink';
     $tcaForDatetimeFields = [
         'type' => 'input',
         'size' => 16,
@@ -95,10 +93,8 @@ return [
             'exclude' => 1,
             'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_assistance.link',
             'config' => [
-                'type' => 'input',
-                'renderType' => $renderTypeLinkField,
+                'type' => 'link',
                 'size' => 30,
-                'eval' => 'trim',
                 'default' => '',
             ],
         ],
