@@ -2,12 +2,10 @@
 
 use TYPO3\CMS\Core\Resource\FileType;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
-use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-if (!defined('TYPO3')) {
-    die('Access denied.');
-}
+defined('TYPO3') or die();
+
 $extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('operations');
 
 $imageSettingsFalMedia = [
@@ -52,9 +50,6 @@ $imageSettingsFalMedia = [
     ],
 ];
 
-$versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
-$typo3Version = $versionInformation->getMajorVersion();
-
 $imageConfigurationFalMedia = [
     'type' => 'file',
     'appearance' => $imageSettingsFalMedia['appearance'],
@@ -94,7 +89,6 @@ return [
     'palettes' => [
         'paletteImg' => [
             'showitem' => 'media',
-            'canNotCollapse' => 'TRUE',
         ],
         'paletteHidden' => [
             'showitem' => '

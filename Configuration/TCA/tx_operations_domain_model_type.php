@@ -1,12 +1,8 @@
 <?php
 
 use TYPO3\CMS\Core\Resource\FileType;
-use TYPO3\CMS\Core\Information\Typo3Version;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-if (!defined('TYPO3')) {
-    die('Access denied.');
-}
+defined('TYPO3') or die();
 
 $imageSettingsFalMedia = [
     'behaviour' => [
@@ -49,9 +45,6 @@ $imageSettingsFalMedia = [
         ],
     ],
 ];
-
-$versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
-$typo3Version = $versionInformation->getMajorVersion();
 
 $imageConfigurationFalMedia = [
     'type' => 'file',

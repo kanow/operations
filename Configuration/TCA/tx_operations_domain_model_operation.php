@@ -2,12 +2,9 @@
 
 use TYPO3\CMS\Core\Resource\FileType;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
-use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-if (!defined('TYPO3')) {
-    die('Access denied.');
-}
+defined('TYPO3') or die();
 
 $extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('operations');
 
@@ -53,9 +50,6 @@ $imageSettingsFalMedia = [
     ],
 ];
 
-$versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
-$typo3Version = $versionInformation->getMajorVersion();
-
 $imageConfigurationFalMedia = [
     'type' => 'file',
     'appearance' => $imageSettingsFalMedia['appearance'],
@@ -63,11 +57,9 @@ $imageConfigurationFalMedia = [
     'overrideChildTca' => $imageSettingsFalMedia['overrideChildTca'],
     'allowed' => 'common-image-types',
 ];
-$renderTypeDatetime = 'dateTime';
 $tcaForDatetimeFields = [
     'type' => 'datetime',
     'size' => 16,
-    'eval' => 'int',
     'default' => 0,
     'format' => 'datetime',
 ];
@@ -106,19 +98,15 @@ return [
         'paletteMap' => [
             'showitem' => 'latitude,--linebreak--,longitude,
 			--linebreak--,zoom',
-            'canNotCollapse' => 'TRUE',
         ],
         'paletteImg' => [
             'showitem' => 'media',
-            'canNotCollapse' => 'TRUE',
         ],
         'paletteTime' => [
             'showitem' => 'begin,end',
-            'canNotCollapse' => 'TRUE',
         ],
         'paletteMeta' => [
             'showitem' => 'number, type, onlyEld',
-            'canNotCollapse' => 'TRUE',
         ],
         'paletteHidden' => [
             'showitem' => '
@@ -281,13 +269,9 @@ return [
                 'MM' => 'tx_operations_operation_type_mm',
                 'size' => 1,
                 'autoSizeMax' => 40,
-                'minItems' => 0,
                 'maxitems' => 1,
-                'multiple' => 0,
                 'renderType' => 'selectSingle',
-                'items' => $typo3Version < 12 ? [
-                    ['LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.choose', '0'],
-                ] : [
+                'items' => [
                     ['label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.choose', 'value' => 0],
                 ],
                 'default' => 0,
@@ -306,7 +290,6 @@ return [
                 'autoSizeMax' => 40,
                 'minitems' => 0,
                 'maxitems' => 9999,
-                'multiple' => 0,
                 'renderType' => 'selectMultipleSideBySide',
                 'fieldControl' => [
                     'editPopup' => [
@@ -338,7 +321,6 @@ return [
                 'autoSizeMax' => 40,
                 'minitems' => 0,
                 'maxitems' => 9999,
-                'multiple' => 0,
                 'renderType' => 'selectMultipleSideBySide',
                 'fieldControl' => [
                     'editPopup' => [
@@ -370,7 +352,6 @@ return [
                 'autoSizeMax' => 40,
                 'minitems' => 0,
                 'maxitems' => 9999,
-                'multiple' => 0,
                 'renderType' => 'selectMultipleSideBySide',
                 'fieldControl' => [
                     'editPopup' => [
@@ -404,7 +385,6 @@ return [
                 ],
                 'size' => 30,
                 'maxitems' => 9999,
-                'multiple' => 0,
                 'default' => 0,
             ],
         ],

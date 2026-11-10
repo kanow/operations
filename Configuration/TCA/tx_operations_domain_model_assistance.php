@@ -1,30 +1,7 @@
 <?php
 
-use TYPO3\CMS\Core\Information\Typo3Version;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
+defined('TYPO3') or die();
 
-if (!defined('TYPO3')) {
-    die('Access denied.');
-}
-$versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
-$typo3Version = $versionInformation->getMajorVersion();
-if ($typo3Version > 11) {
-    $tcaForDatetimeFields = [
-        'type' => 'datetime',
-        'size' => 16,
-        'eval' => 'int',
-        'default' => 0,
-        'format' => 'datetime',
-    ];
-} else {
-    $tcaForDatetimeFields = [
-        'type' => 'input',
-        'size' => 16,
-        'eval' => 'datetime,int',
-        'default' => 0,
-        'renderType' => 'inputDateTime',
-    ];
-}
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_assistance',
