@@ -75,9 +75,7 @@ class OperationController extends BaseController
          */
         private readonly CategoryService $categoryService,
         private readonly ConnectionPool $connectionPool
-    )
-    {
-    }
+    ) {}
 
     /**
      * action list
@@ -255,7 +253,7 @@ class OperationController extends BaseController
             ->executeQuery()
             ->fetchAllAssociative();
         foreach ($rows as $year) {
-            $years[$year['year']] = (string) intval($year['year']);
+            $years[$year['year']] = (string)(int)($year['year']);
         }
         return $years;
     }

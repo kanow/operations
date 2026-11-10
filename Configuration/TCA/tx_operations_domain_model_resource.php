@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use TYPO3\CMS\Core\Resource\FileType;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
+use TYPO3\CMS\Core\Resource\FileType;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 defined('TYPO3') || die();

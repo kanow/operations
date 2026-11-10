@@ -37,9 +37,7 @@ use Psr\Http\Message\ResponseInterface;
  */
 class VehicleController extends BaseController
 {
-    public function __construct(protected VehicleRepository $vehicleRepository)
-    {
-    }
+    public function __construct(protected VehicleRepository $vehicleRepository) {}
 
     /**
      * action list
