@@ -3,7 +3,7 @@
   <sheets>
     <sDEF>
       <ROOT>
-        <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.general</sheetTitle>
+        <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.settings</sheetTitle>
         <type>array</type>
         <el>
             <!-- Category Mode -->
