@@ -13,7 +13,7 @@ $imageSettingsFalMedia = [
         'allowLanguageSynchronization' => true,
     ],
     'appearance' => [
-        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
+        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
         'showPossibleLocalizationRecords' => true,
         'showAllLocalizationLink' => true,
         'showSynchronizationLink' => true,
