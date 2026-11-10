@@ -40,7 +40,7 @@ class Operation extends AbstractEntity
      *
      * @var string
      */
-    #[Extbase\Validate(['validator' => 'NotEmpty'])]
+    #[Extbase\Validate(validator: 'NotEmpty')]
     protected string $number = '';
 
     /**
@@ -55,7 +55,7 @@ class Operation extends AbstractEntity
      *
      * @var string
      */
-    #[Extbase\Validate(['validator' => 'NotEmpty'])]
+    #[Extbase\Validate(validator: 'NotEmpty')]
     protected string $title = '';
 
     /**
@@ -63,7 +63,7 @@ class Operation extends AbstractEntity
      *
      * @var string
      */
-    #[Extbase\Validate(['validator' => 'NotEmpty'])]
+    #[Extbase\Validate(validator: 'NotEmpty')]
     protected string $location = '';
 
     /**
@@ -71,7 +71,7 @@ class Operation extends AbstractEntity
      *
      * @var \DateTime
      */
-    #[Extbase\Validate(['validator' => 'NotEmpty'])]
+    #[Extbase\Validate(validator: 'NotEmpty')]
     protected ?\DateTime $begin = null;
 
     /**
