@@ -2,12 +2,9 @@
 
 use TYPO3\CMS\Core\Resource\FileType;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
-use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-if (!defined('TYPO3')) {
-    die('Access denied.');
-}
+defined('TYPO3') or die();
 
 $extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('operations');
 
@@ -16,7 +13,7 @@ $imageSettingsFalMedia = [
         'allowLanguageSynchronization' => true,
     ],
     'appearance' => [
-        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
+        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
         'showPossibleLocalizationRecords' => true,
         'showAllLocalizationLink' => true,
         'showSynchronizationLink' => true,
@@ -53,9 +50,6 @@ $imageSettingsFalMedia = [
     ],
 ];
 
-$versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
-$typo3Version = $versionInformation->getMajorVersion();
-
 $imageConfigurationFalMedia = [
     'type' => 'file',
     'appearance' => $imageSettingsFalMedia['appearance'],
@@ -63,11 +57,9 @@ $imageConfigurationFalMedia = [
     'overrideChildTca' => $imageSettingsFalMedia['overrideChildTca'],
     'allowed' => 'common-image-types',
 ];
-$renderTypeDatetime = 'dateTime';
 $tcaForDatetimeFields = [
     'type' => 'datetime',
     'size' => 16,
-    'eval' => 'int',
     'default' => 0,
     'format' => 'datetime',
 ];
@@ -91,12 +83,11 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'number,title,location,begin,end,report,longitude,latitude,zoom,media,type,assistance,vehicles,resources,',
         'typeicon_classes' => ['default' => 'ext-operations-operation'],
     ],
     'types' => [
         '0' => [
-            'showitem' => 'sys_language_uid;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language,l10n_parent;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent,l10n_diffsource,
+            'showitem' => 'sys_language_uid,l10n_parent,
             --palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.meta;paletteMeta,title,path_segment,location,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.time;paletteTime,teaser,report,--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.map,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.coordinates;paletteMap,--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.relations,assistance,vehicles,resources,--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.media,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.media;paletteImg,--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tabs.categories,category,
             --div--;core.form.tabs:access,
             --palette--;;paletteHidden,
@@ -107,19 +98,15 @@ return [
         'paletteMap' => [
             'showitem' => 'latitude,--linebreak--,longitude,
 			--linebreak--,zoom',
-            'canNotCollapse' => 'TRUE',
         ],
         'paletteImg' => [
             'showitem' => 'media',
-            'canNotCollapse' => 'TRUE',
         ],
         'paletteTime' => [
             'showitem' => 'begin,end',
-            'canNotCollapse' => 'TRUE',
         ],
         'paletteMeta' => [
             'showitem' => 'number, type, onlyEld',
-            'canNotCollapse' => 'TRUE',
         ],
         'paletteHidden' => [
             'showitem' => '
@@ -136,57 +123,6 @@ return [
         ],
     ],
     'columns' => [
-        'sys_language_uid' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
-            'config' => ['type' => 'language'],
-        ],
-        'l10n_parent' => [
-            'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'items' => $typo3Version < 12 ? [
-                    ['', 0],
-                ] : [
-                    ['label' => '', 'value' => 0],
-                ],
-                'foreign_table' => 'tx_operations_domain_model_operation',
-                'foreign_table_where' => 'AND tx_operations_domain_model_operation.pid=###CURRENT_PID### AND tx_operations_domain_model_operation.sys_language_uid IN (-1,0)',
-                'default' => 0,
-            ],
-        ],
-        'l10n_diffsource' => [
-            'config' => [
-                'type' => 'passthrough',
-            ],
-        ],
-        't3ver_label' => [
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.versionLabel',
-            'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'max' => 255,
-            ],
-        ],
-        'hidden' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
-            'config' => [
-                'type' => 'check',
-            ],
-        ],
-        'starttime' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
-            'config' => $tcaForDatetimeFields,
-        ],
-        'endtime' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
-            'config' => $tcaForDatetimeFields,
-        ],
         'number' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.number',
@@ -222,6 +158,7 @@ return [
             'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.path_segment',
             'config' => [
                 'type' => 'slug',
+                'searchable' => false,
                 'generatorOptions' => [
                     'fields' => ['title'],
                     'fieldSeparator' => '/',
@@ -266,6 +203,7 @@ return [
                 'type' => 'text',
                 'cols' => 60,
                 'rows' => 5,
+                'searchable' => false,
                 'eval' => 'trim',
                 'default' => '',
             ],
@@ -331,13 +269,9 @@ return [
                 'MM' => 'tx_operations_operation_type_mm',
                 'size' => 1,
                 'autoSizeMax' => 40,
-                'minItems' => 0,
                 'maxitems' => 1,
-                'multiple' => 0,
                 'renderType' => 'selectSingle',
-                'items' => $typo3Version < 12 ? [
-                    ['LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.choose', '0'],
-                ] : [
+                'items' => [
                     ['label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.choose', 'value' => 0],
                 ],
                 'default' => 0,
@@ -356,7 +290,6 @@ return [
                 'autoSizeMax' => 40,
                 'minitems' => 0,
                 'maxitems' => 9999,
-                'multiple' => 0,
                 'renderType' => 'selectMultipleSideBySide',
                 'fieldControl' => [
                     'editPopup' => [
@@ -388,7 +321,6 @@ return [
                 'autoSizeMax' => 40,
                 'minitems' => 0,
                 'maxitems' => 9999,
-                'multiple' => 0,
                 'renderType' => 'selectMultipleSideBySide',
                 'fieldControl' => [
                     'editPopup' => [
@@ -420,7 +352,6 @@ return [
                 'autoSizeMax' => 40,
                 'minitems' => 0,
                 'maxitems' => 9999,
-                'multiple' => 0,
                 'renderType' => 'selectMultipleSideBySide',
                 'fieldControl' => [
                     'editPopup' => [
@@ -454,7 +385,6 @@ return [
                 ],
                 'size' => 30,
                 'maxitems' => 9999,
-                'multiple' => 0,
                 'default' => 0,
             ],
         ],
