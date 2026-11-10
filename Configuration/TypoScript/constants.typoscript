@@ -59,7 +59,7 @@ plugin.tx_operations {
 
 
 		listMediaWidthResource = 320
-		# cat=tx_operations-media-settings/media/258/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeightResources
+		# cat=tx_operations-media-settings/media/258/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeightResource
 		listMediaHeightResource =
 
 		list {

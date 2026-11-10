@@ -82,11 +82,9 @@ plugin.tx_operations {
 page {
 	includeJSLibs {
 		leaflet = https://unpkg.com/leaflet@1.4.0/dist/leaflet.js
-		leaflet.external = 1
 	}
 	includeCSSLibs {
 		leaflet = https://unpkg.com/leaflet@1.4.0/dist/leaflet.css
-		leaflet.external = 1
 	}
 	includeCSS {
 		operations = {$plugin.tx_operations.css ?? $operations.css}
@@ -94,7 +92,6 @@ page {
 	}
 	includeJSFooter {
 		jquery = {$plugin.tx_operations.jquery ?? $operations.jquery}
-		jquery.external = 1
 		leafletMap = EXT:operations/Resources/Public/Js/map/leaflet-map.js
 	}
 }
