@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Kanow\Operations\Domain\Model;
 
 use TYPO3\CMS\Extbase\Attribute as Extbase;
@@ -36,11 +38,9 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 class Type extends AbstractEntity
 {
     /**
-  * Operation type
-  *
-  * @var string
-  */
-    #[Extbase\Validate(['validator' => 'NotEmpty'])]
+     * Operation type
+     */
+    #[Extbase\Validate(validator: 'NotEmpty')]
     protected string $title = '';
 
     /**
@@ -52,8 +52,6 @@ class Type extends AbstractEntity
 
     /**
      * Type color
-     *
-     * @var string
      */
     protected string $color = '';
 
@@ -69,8 +67,6 @@ class Type extends AbstractEntity
 
     /**
      * Sets the title
-     *
-     * @param string $title
      */
     public function setTitle(string $title): void
     {
@@ -96,6 +92,7 @@ class Type extends AbstractEntity
     {
         $this->image = $image;
     }
+
     /**
      * Returns the color
      *
@@ -108,8 +105,6 @@ class Type extends AbstractEntity
 
     /**
      * Sets the color
-     *
-     * @param string $color
      */
     public function setColor(string $color): void
     {

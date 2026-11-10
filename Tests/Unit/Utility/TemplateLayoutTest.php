@@ -4,64 +4,145 @@ declare(strict_types=1);
 
 namespace Kanow\Operations\Tests\Unit\Utility;
 
+use Kanow\Operations\Tests\Unit\Utility\Fixtures\TestingTemplateLayout;
 use Kanow\Operations\Utility\TemplateLayout;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
+use TYPO3\CMS\Core\SingletonInterface;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
-class TemplateLayoutTest extends UnitTestCase
+#[CoversClass(TemplateLayout::class)]
+final class TemplateLayoutTest extends UnitTestCase
 {
-    public function setUp(): void
+    private const GLOBAL_LAYOUTS = [
+        ['Global layout 1', 'global1'],
+        ['Global layout 2', 'global2'],
+    ];
+
+    protected function tearDown(): void
     {
-        parent::setUp();
+        /** @var array<string, array<string, mixed>> $configuration */
+        $configuration = $GLOBALS['TYPO3_CONF_VARS'];
+        unset($configuration['EXT']['operations']);
+        $GLOBALS['TYPO3_CONF_VARS'] = $configuration;
+
+        parent::tearDown();
+    }
+
+    #[Test]
+    public function isSingleton(): void
+    {
+        self::assertInstanceOf(SingletonInterface::class, new TemplateLayout());
+    }
+
+    #[Test]
+    public function getAvailableTemplateLayoutsWithoutConfigurationReturnsEmptyArray(): void
+    {
+        $subject = new TestingTemplateLayout([]);
+
+        self::assertSame([], $subject->getAvailableTemplateLayouts());
+    }
+
+    #[Test]
+    public function getAvailableTemplateLayoutsWithoutPageUidReturnsGlobalLayouts(): void
+    {
+        $this->setGlobalTemplateLayouts(self::GLOBAL_LAYOUTS);
+        $subject = new TestingTemplateLayout(['tsconfig1' => 'TSconfig layout']);
+
+        self::assertSame(self::GLOBAL_LAYOUTS, $subject->getAvailableTemplateLayouts());
+    }
+
+    #[Test]
+    public function getAvailableTemplateLayoutsWithPageUidZeroDoesNotReadTsConfig(): void
+    {
+        $subject = new TestingTemplateLayout(['tsconfig1' => 'TSconfig layout']);
+
+        $subject->getAvailableTemplateLayouts(0);
+
+        self::assertSame([], $subject->getRequestedPageUids());
+    }
+
+    #[Test]
+    public function getAvailableTemplateLayoutsWithPageUidReadsTsConfigOfThatPage(): void
+    {
+        $subject = new TestingTemplateLayout([]);
+
+        $subject->getAvailableTemplateLayouts(42);
+
+        self::assertSame([42], $subject->getRequestedPageUids());
+    }
+
+    #[Test]
+    public function getAvailableTemplateLayoutsWithPageUidAppendsTsConfigLayoutsToGlobalLayouts(): void
+    {
+        $this->setGlobalTemplateLayouts(self::GLOBAL_LAYOUTS);
+        $subject = new TestingTemplateLayout(['tsconfig1' => 'TSconfig layout']);
+
+        $expected = [
+            ['Global layout 1', 'global1'],
+            ['Global layout 2', 'global2'],
+            ['TSconfig layout', 'tsconfig1'],
+        ];
+        self::assertSame($expected, $subject->getAvailableTemplateLayouts(42));
     }
 
     /**
-     * @test
+     * @return \Generator<string, array{0: array<array-key, string|array<string, string>>, 1: list<array{0: string|array<string, string>, 1: string}>}>
      */
-    public function availableTemplateLayoutsReturnsLayouts(): void
+    public static function tsConfigLayoutsDataProvider(): \Generator
     {
-        $GLOBALS['TYPO3_CONF_VARS']['EXT']['operations']['templateLayouts'] = [
-            0 => [
-                0 => 'Layout-1',
-                1 => 'layout1',
-            ],
-            1 => [
-                0 => 'Layout-2',
-                1 => 'layout2',
-            ],
+        yield 'no layouts' => [
+            [],
+            [],
         ];
-
-        $templateLayoutUtility = $this->getAccessibleMock(TemplateLayout::class, ['getTemplateLayoutsFromTsConfig']);
-        $templateLayoutUtility->expects(self::once())->method('getTemplateLayoutsFromTsConfig')->willReturn([]);
-        $templateLayouts = $templateLayoutUtility->_call('getAvailableTemplateLayouts', 1);
-        self::assertSame($GLOBALS['TYPO3_CONF_VARS']['EXT']['operations']['templateLayouts'], $templateLayouts);
+        yield 'layouts with string keys' => [
+            ['layoutA' => 'Layout A', 'layoutB' => 'Layout B'],
+            [['Layout A', 'layoutA'], ['Layout B', 'layoutB']],
+        ];
+        yield 'layouts with numeric keys' => [
+            [1 => 'Layout 1', 99 => 'LLL:EXT:site/Resources/Private/Language/locallang.xlf:layout'],
+            [['Layout 1', '1'], ['LLL:EXT:site/Resources/Private/Language/locallang.xlf:layout', '99']],
+        ];
+        yield 'option group' => [
+            [10 => '--div--,My group', 11 => 'Layout in group'],
+            [['My group', '--div--'], ['Layout in group', '11']],
+        ];
+        yield 'option group with whitespace around the title' => [
+            [10 => '--div--,  My group  '],
+            [['My group', '--div--']],
+        ];
+        yield 'option group with comma in title' => [
+            [10 => '--div--,My group, the second'],
+            [['My group, the second', '--div--']],
+        ];
+        yield 'layout with allowedColPos sub-configuration' => [
+            [1 => 'Layout 1', '1.' => ['allowedColPos' => '0,2']],
+            [['Layout 1', '1'], [['allowedColPos' => '0,2'], '1.']],
+        ];
     }
 
-    /*
-     * @test
+    /**
+     * @param array<array-key, string|array<string, string>> $tsConfigLayouts
+     * @param list<array{0: string|array<string, string>, 1: string}> $expected
      */
-    public function templateLayoutsFoundInPageTsConfig(): void
+    #[Test]
+    #[DataProvider('tsConfigLayoutsDataProvider')]
+    public function getAvailableTemplateLayoutsProcessesTsConfigLayouts(array $tsConfigLayouts, array $expected): void
     {
-        $tsConfigArray = [
-            'layout1' => 'Layout-1',
-            'layout2' => 'Layout-2',
-        ];
-        $result = [
-            0 => [
-                0 => 'Layout-1',
-                1 => 'layout1',
-            ],
-            1 => [
-                0 => 'Layout-2',
-                1 => 'layout2',
-            ],
-        ];
+        $subject = new TestingTemplateLayout($tsConfigLayouts);
 
-        // clear TYPO3_CONF_VARS
-        unset($GLOBALS['TYPO3_CONF_VARS']['EXT']['operations']['templateLayouts']);
+        self::assertSame($expected, $subject->getAvailableTemplateLayouts(1));
+    }
 
-        $templateLayoutUtility = $this->getAccessibleMock(TemplateLayout::class, ['getTemplateLayoutsFromTsConfig']);
-        $templateLayoutUtility->expects(self::once())->method('getTemplateLayoutsFromTsConfig')->willReturn($tsConfigArray);
-        $templateLayouts = $templateLayoutUtility->_call('getAvailableTemplateLayouts', 1);
-        self::assertSame($result, $templateLayouts);
+    /**
+     * @param list<array{0: string, 1: string}> $layouts
+     */
+    private function setGlobalTemplateLayouts(array $layouts): void
+    {
+        /** @var array<string, array<string, array<string, mixed>>> $configuration */
+        $configuration = $GLOBALS['TYPO3_CONF_VARS'];
+        $configuration['EXT']['operations']['templateLayouts'] = $layouts;
+        $GLOBALS['TYPO3_CONF_VARS'] = $configuration;
     }
 }

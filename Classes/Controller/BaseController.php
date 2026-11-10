@@ -1,8 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Kanow\Operations\Controller;
 
-use TYPO3\CMS\Core\View\ViewInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /***************************************************************
@@ -42,6 +43,6 @@ class BaseController extends ActionController
      */
     protected function initializeView($view): void
     {
-        $view->assign('contentObjectData', $this->request->getAttribute('currentContentObject')->data);
+        $view->assign('contentObjectData', $this->request->getAttribute('currentContentObject')?->data ?? []);
     }
 }

@@ -1,0 +1,16 @@
+"pages"
+,"uid","pid","title","slug","doktype"
+,1,0,"Root","/",1
+,2,1,"Storage","/storage",254
+,3,1,"Other storage","/other-storage",254
+
+"sys_category"
+,"uid","pid","title","parent","hidden","deleted","starttime","endtime"
+,1,2,"Operations",0,0,0,0,0
+,2,2,"District North",1,0,0,0,0
+,3,3,"District South",1,0,0,0,0
+,4,0,"Category on root level",0,0,0,0,0
+,5,2,"Hidden category",0,1,0,0,0
+,6,2,"Deleted category",0,0,1,0,0
+,7,2,"Category not yet started",0,0,0,2000000000,0
+,8,2,"Expired category",0,0,0,0,1000000000

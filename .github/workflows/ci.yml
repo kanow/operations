@@ -1,69 +1,142 @@
+---
 name: CI
-
+# All checks run inside the containers of Build/Scripts/runTests.sh, so the
+# results are the same as for local runs. "-b docker" is passed explicitly,
+# because GitHub hosted runners ship podman as well, and the database
+# containers of the functional tests are not reachable under podman there.
 on:
   push:
     branches:
       - main
+      - typo3-14
   pull_request:
-
+  schedule:
+    # Weekly run to detect problems with new releases of dependencies
+    - cron: "15 3 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   php-lint:
-    name: PHP linter
-    runs-on: ubuntu-24.04
+    name: "PHP linter (PHP ${{ matrix.php-version }})"
+    runs-on: ubuntu-26.04
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version: ["8.2", "8.3", "8.4", "8.5"]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Install Composer dependencies
-        run: Build/Scripts/runTests.sh -p ${{ matrix.php-version }} -s composerUpdateMax
+        uses: ./.github/actions/composer-install
+        with:
+          php-version: ${{ matrix.php-version }}
       - name: Lint PHP
-        run: |
-          Build/Scripts/runTests.sh -p ${{ matrix.php-version }} -s lintPhp
+        run: ./Build/Scripts/runTests.sh -b docker -p ${{ matrix.php-version }} -s lintPhp
+
+  static-analysis:
+    name: "Static analysis (${{ matrix.suite }})"
+    runs-on: ubuntu-26.04
+    timeout-minutes: 15
     strategy:
       fail-fast: false
       matrix:
-        php-version:
-          - "8.1"
-          - "8.2"
-          - "8.3"
-          - "8.4"
-  code-quality:
-    name: Code quality checks
-    runs-on: ubuntu-24.04
+        # The PHP version must be the lowest supported one (default of
+        # runTests.sh), so that the tools don't suggest newer syntax.
+        php-version: ["8.2"]
+        suite:
+          - phpstan
+          - cgl
+          - rector
+          - composerNormalize
+          - composerUnused
+          - psrVerify
+          - lintJson
+          - lintTypoScript
+          - lintYaml
+          - checkIntegrityXliff
+          - normalizeXliff
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Install Composer dependencies
-        run: Build/Scripts/runTests.sh -p ${{ matrix.php-version }} -t 13.4 -s composerUpdateMax
-      - name: Run code quality checks
-        run: |
-          Build/Scripts/runTests.sh -p ${{ matrix.php-version }} -s composer ci:${{ matrix.command }}
+        uses: ./.github/actions/composer-install
+        with:
+          php-version: ${{ matrix.php-version }}
+      - name: Run ${{ matrix.suite }}
+        # "-n" (dry run) only affects the fixer suites (cgl, rector,
+        # composerNormalize, normalizeXliff), all other suites ignore it.
+        run: ./Build/Scripts/runTests.sh -b docker -p ${{ matrix.php-version }} -n -s ${{ matrix.suite }}
+
+  shellcheck:
+    name: Shellcheck
+    runs-on: ubuntu-26.04
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Run shellcheck on runTests.sh
+        run: ./Build/Scripts/runTests.sh -b docker -s shellcheck
+
+  unit-tests:
+    name: "Unit tests (PHP ${{ matrix.php-version }}, ${{ matrix.composer-dependencies }})"
+    needs: php-lint
+    runs-on: ubuntu-26.04
+    timeout-minutes: 15
     strategy:
       fail-fast: false
       matrix:
-        command:
-          - "composer:normalize"
-          - "php:cs-fixer"
-          - "php:stan"
-        php-version:
-          - "8.4"
-  testsuite:
-    name: "Testsuite"
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        php-version: [ '8.2', '8.3', '8.4' ]
-        minMax: [ 'composerUpdateMin', 'composerUpdateMax' ]
-        coreVersion: [ '12.4', '13.4' ]
-        db: ['mariadb', 'mysql', 'sqlite', 'postgres']
+        php-version: ["8.2", "8.3", "8.4", "8.5"]
+        composer-dependencies: ["Min", "Max"]
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v7
+      - name: Install Composer dependencies
+        uses: ./.github/actions/composer-install
+        with:
+          php-version: ${{ matrix.php-version }}
+          composer-dependencies: ${{ matrix.composer-dependencies }}
+      - name: Run unit tests
+        run: ./Build/Scripts/runTests.sh -b docker -p ${{ matrix.php-version }} -s unit
 
-      - name: Composer
-        run: Build/Scripts/runTests.sh -p ${{ matrix.php-version }} -s ${{ matrix.minMax }} -t ${{ matrix.coreVersion }}
-
-      - name: Unit tests
-        run: Build/Scripts/runTests.sh -p ${{ matrix.php-version }} -s unit
-
-      - name: Functional tests with mariadb
-        run: Build/Scripts/runTests.sh -p ${{ matrix.php-version }} -d ${{matrix.db}} -s functional
+  functional-tests:
+    name: "Functional tests (PHP ${{ matrix.php-version }}, ${{ matrix.dbms }} ${{ matrix.dbms-version }}, ${{ matrix.composer-dependencies }})"
+    needs: php-lint
+    runs-on: ubuntu-26.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        # SQLite is fast and covers all supported PHP versions with the
+        # lowest and highest dependencies.
+        php-version: ["8.2", "8.3", "8.4", "8.5"]
+        composer-dependencies: ["Min", "Max"]
+        dbms: ["sqlite"]
+        dbms-version: [""]
+        # The statistics use DBMS specific SQL (see SqlUtility), so the
+        # lowest and highest database versions supported by TYPO3 v14 are
+        # tested as well.
+        include:
+          - {php-version: "8.2", composer-dependencies: "Min", dbms: "mariadb", dbms-version: "10.4"}
+          - {php-version: "8.5", composer-dependencies: "Max", dbms: "mariadb", dbms-version: "10.11"}
+          - {php-version: "8.2", composer-dependencies: "Min", dbms: "mysql", dbms-version: "8.0"}
+          - {php-version: "8.5", composer-dependencies: "Max", dbms: "mysql", dbms-version: "8.4"}
+          - {php-version: "8.2", composer-dependencies: "Min", dbms: "postgres", dbms-version: "10"}
+          - {php-version: "8.5", composer-dependencies: "Max", dbms: "postgres", dbms-version: "16"}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Install Composer dependencies
+        uses: ./.github/actions/composer-install
+        with:
+          php-version: ${{ matrix.php-version }}
+          composer-dependencies: ${{ matrix.composer-dependencies }}
+      - name: Run functional tests
+        run: >-
+          ./Build/Scripts/runTests.sh -b docker -p ${{ matrix.php-version }}
+          -d ${{ matrix.dbms }} ${{ matrix.dbms-version != '' && format('-i {0}', matrix.dbms-version) || '' }}
+          -s functional

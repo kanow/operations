@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Kanow\Operations\Domain\Model;
 
 use TYPO3\CMS\Extbase\Attribute as Extbase;
@@ -34,24 +36,18 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 class Assistance extends AbstractEntity
 {
     /**
-  * Title of the assistance
-  *
-  * @var string
-  */
-    #[Extbase\Validate(['validator' => 'NotEmpty'])]
+     * Title of the assistance
+     */
+    #[Extbase\Validate(validator: 'NotEmpty')]
     protected string $title = '';
 
     /**
      * Description of assistance
-     *
-     * @var string
      */
     protected string $description = '';
 
     /**
      * A website url
-     *
-     * @var string
      */
     protected string $link = '';
 
@@ -67,8 +63,6 @@ class Assistance extends AbstractEntity
 
     /**
      * Sets the title
-     *
-     * @param string $title
      */
     public function setTitle(string $title): void
     {
@@ -87,8 +81,6 @@ class Assistance extends AbstractEntity
 
     /**
      * Sets the description
-     *
-     * @param string $description
      */
     public function setDescription(string $description): void
     {
@@ -107,8 +99,6 @@ class Assistance extends AbstractEntity
 
     /**
      * Sets the link
-     *
-     * @param string $link
      */
     public function setLink(string $link): void
     {

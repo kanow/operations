@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Kanow\Operations\Controller;
 
 use Kanow\Operations\Domain\Model\Resource;
@@ -35,9 +37,7 @@ use Psr\Http\Message\ResponseInterface;
  */
 class ResourceController extends BaseController
 {
-    public function __construct(protected ResourceRepository $resourceRepository)
-    {
-    }
+    public function __construct(protected ResourceRepository $resourceRepository) {}
 
     /**
      * action list
@@ -52,7 +52,7 @@ class ResourceController extends BaseController
     /**
      * action show
      *
-     * @param resource $resource
+     * @param Resource $resource
      */
     public function showAction(Resource $resource): ResponseInterface
     {

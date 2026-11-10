@@ -4,102 +4,100 @@
 # customsubcategory=paginate=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.subcategoryLabel.paginate
 # customsubcategory=list=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.subcategoryLabel.list
 
-
 plugin.tx_operations {
-	# cat=tx_operations-templating/template/030/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.css
-	css =
-	# cat=tx_operations-templating/template/045/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.jquery
-	jquery = https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
+  # cat=tx_operations-templating/template/030/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.css
+  css =
+  # cat=tx_operations-templating/template/045/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.jquery
+  jquery = https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
 
-	view {
-		# cat=tx_operations-templating/template/010/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.templateRootPath
-		templateRootPath = EXT:operations/Resources/Private/Templates/
-		# cat=tx_operations-templating/template/015/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.partialRootPath
-		partialRootPath = EXT:operations/Resources/Private/Partials/
-		# cat=tx_operations-templating/template/020/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.layoutRootPath
-		layoutRootPath = EXT:operations/Resources/Private/Layouts/
-	}
-	persistence {
-		# cat=tx_operations-storage-and-pids/pids/065; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.storagePid
-		storagePid =
-		# cat=tx_operations-storage-and-pids/pids/070; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.recursive
-		recursive = 1
-	}
-	settings {
-		# cat=tx_operations-list-settings/list/030/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.hidePagination
-		hidePagination = 0
-		# cat=tx_operations-list-settings/list/035/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.hideFilter
-		hideFilter = 0
-		# cat=tx_operations-list-settings/list/037/; type=int+; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.lastYears
-		lastYears = 5
-		# cat=tx_operations-list-settings/list/040/; type=int+; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.itemsPerPage
-		itemsPerPage = 10
-		# cat=tx_operations-list-settings/list/041/; type=int+; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.limit
-		limit = 200
+  view {
+    # cat=tx_operations-templating/template/010/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.templateRootPath
+    templateRootPath = EXT:operations/Resources/Private/Templates/
+    # cat=tx_operations-templating/template/015/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.partialRootPath
+    partialRootPath = EXT:operations/Resources/Private/Partials/
+    # cat=tx_operations-templating/template/020/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.layoutRootPath
+    layoutRootPath = EXT:operations/Resources/Private/Layouts/
+  }
+  persistence {
+    # cat=tx_operations-storage-and-pids/pids/065; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.storagePid
+    storagePid =
+    # cat=tx_operations-storage-and-pids/pids/070; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.recursive
+    recursive = 1
+  }
+  settings {
+    # cat=tx_operations-list-settings/list/030/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.hidePagination
+    hidePagination = 0
+    # cat=tx_operations-list-settings/list/035/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.hideFilter
+    hideFilter = 0
+    # cat=tx_operations-list-settings/list/037/; type=int+; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.lastYears
+    lastYears = 5
+    # cat=tx_operations-list-settings/list/040/; type=int+; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.itemsPerPage
+    itemsPerPage = 10
+    # cat=tx_operations-list-settings/list/041/; type=int+; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.limit
+    limit = 200
 
-		# cat=tx_operations-storage-and-pids/pids/300/; type=int; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.operationSinglePid
-		operationSinglePid =
-		# cat=tx_operations-storage-and-pids/pids/310/; type=int; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.vehicleSinglePid
-		vehicleSinglePid =
-		# cat=tx_operations-storage-and-pids/pids/320/; type=int; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.resourceSinglePid
-		resourceSinglePid =
+    # cat=tx_operations-storage-and-pids/pids/300/; type=int; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.operationSinglePid
+    operationSinglePid =
+    # cat=tx_operations-storage-and-pids/pids/310/; type=int; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.vehicleSinglePid
+    vehicleSinglePid =
+    # cat=tx_operations-storage-and-pids/pids/320/; type=int; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.resourceSinglePid
+    resourceSinglePid =
 
-		# cat=tx_operations-media-settings/media/200/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidth
-		listMediaWidth = 250c
-		# cat=tx_operations-media-settings/media/210/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeight
-		listMediaHeight = 188
-		# cat=tx_operations-media-settings/media/220/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.singleMediaWidth
-		singleMediaWidth = 260c
-		# cat=tx_operations-media-settings/media/230/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.singleMediaHeight
-		singleMediaHeight = 195
-		# cat=tx_operations-media-settings/media/240/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.showMediaInList
-		showMediaInList = 1
-		# cat=tx_operations-media-settings/media/250/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.increaseImage
-		increaseImage = 1
+    # cat=tx_operations-media-settings/media/200/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidth
+    listMediaWidth = 250c
+    # cat=tx_operations-media-settings/media/210/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeight
+    listMediaHeight = 188
+    # cat=tx_operations-media-settings/media/220/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.singleMediaWidth
+    singleMediaWidth = 260c
+    # cat=tx_operations-media-settings/media/230/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.singleMediaHeight
+    singleMediaHeight = 195
+    # cat=tx_operations-media-settings/media/240/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.showMediaInList
+    showMediaInList = 1
+    # cat=tx_operations-media-settings/media/250/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.increaseImage
+    increaseImage = 1
 
+    listMediaWidthResource = 320
+    # cat=tx_operations-media-settings/media/258/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeightResource
+    listMediaHeightResource =
 
-		listMediaWidthResource = 320
-		# cat=tx_operations-media-settings/media/258/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeightResources
-		listMediaHeightResource =
+    list {
+      vehicles {
+        media {
+          # cat=tx_operations-media-settings/media/255/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidthVehicle
+          width = 100
+          # cat=tx_operations-media-settings/media/256/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeightVehicle
+          height =
+        }
+        # cat=tx_operations-media-settings/media/257/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidthVehicle
+        defaultImage {
+          # cat=tx_operations-media-settings/media/265/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listVehiclesDefaultImagePath
+          path = EXT:operations/Resources/Public/Icons/tx_operations_vehicle.svg
+          attribution =
+        }
+      }
+      resources {
+        media {
+          # cat=tx_operations-media-settings/media/255/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidthResource
+          width = 100
+          # cat=tx_operations-media-settings/media/256/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeightResource
+          height =
+        }
+        # cat=tx_operations-media-settings/media/257/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidthResource
+        defaultImage {
+          # cat=tx_operations-media-settings/media/265/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listResourcesDefaultImagePath
+          path = EXT:operations/Resources/Public/Icons/tx_operations_resource.svg
+          attribution =
+        }
+      }
+    }
 
-		list {
-			vehicles {
-				media {
-					# cat=tx_operations-media-settings/media/255/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidthVehicle
-					width = 100
-					# cat=tx_operations-media-settings/media/256/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeightVehicle
-					height =
-				}
-				# cat=tx_operations-media-settings/media/257/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidthVehicle
-				defaultImage {
-					# cat=tx_operations-media-settings/media/265/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listVehiclesDefaultImagePath
-					path = EXT:operations/Resources/Public/Icons/tx_operations_vehicle.svg
-					attribution =
-				}
-			}
-			resources {
-				media {
-					# cat=tx_operations-media-settings/media/255/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidthResource
-					width = 100
-					# cat=tx_operations-media-settings/media/256/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeightResource
-					height =
-				}
-				# cat=tx_operations-media-settings/media/257/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidthResource
-				defaultImage {
-					# cat=tx_operations-media-settings/media/265/; type=string; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listResourcesDefaultImagePath
-					path = EXT:operations/Resources/Public/Icons/tx_operations_resource.svg
-					attribution =
-				}
-			}
-		}
-
-		paginate {
-			# cat=tx_operations-list-settings/paginate/310/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.insertAbove
-			insertAbove = 1
-			# cat=tx_operations-list-settings/paginate/320/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.insertBelow
-			insertBelow = 1
-			# cat=tx_operations-list-settings/paginate/320/; type=int; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.maxNumberOfLinks
-			maximumLinks = 6
-		}
-	}
+    paginate {
+      # cat=tx_operations-list-settings/paginate/310/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.insertAbove
+      insertAbove = 1
+      # cat=tx_operations-list-settings/paginate/320/; type=boolean; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.insertBelow
+      insertBelow = 1
+      # cat=tx_operations-list-settings/paginate/320/; type=int; label=LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.maxNumberOfLinks
+      maximumLinks = 6
+    }
+  }
 }

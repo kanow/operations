@@ -1,0 +1,16 @@
+"pages"
+,"uid","pid","title","slug","doktype"
+,1,0,"Root","/",1
+,2,1,"Storage","/storage",254
+,3,1,"Other storage","/other-storage",254
+
+"tx_operations_domain_model_operation"
+,"uid","pid","title","number","location","begin","hidden","deleted"
+,1,2,"Kitchen fire","2023-01","Thale",1683288000,0,0
+,2,2,"Car accident","2023-02","Neinstedt",1694260800,0,0
+,3,2,"Chimney fire","2022-01","Quedlinburg",1660996800,0,0
+,4,2,"Oil spill","2021-01","Thale",1623758400,0,0
+,5,2,"Hidden operation","2023-03","Thale",1675252800,1,0
+,6,2,"Deleted operation","2023-04","Thale",1675252800,0,1
+,7,3,"Operation on other page","2023-05","Blankenburg",1699704000,0,0
+,8,2,"Operation in 2020","2020-01","Thale",1592222400,0,0

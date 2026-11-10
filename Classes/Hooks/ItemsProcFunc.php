@@ -32,57 +32,56 @@ class ItemsProcFunc
     /**
      * Itemsproc function to extend the selection of templateLayouts in the plugin
      *
-     * @param array &$config configuration array
+     * @param array<string, mixed> &$config configuration array
      */
     public function user_templateLayout(array &$config): void
     {
-        $pageId = 0;
-
         $currentColPos = $config['flexParentDatabaseRow']['colPos'] ?? null;
         if ($currentColPos === null) {
             return;
         }
-        $pageId = $this->getPageId($config['flexParentDatabaseRow']['pid']);
+        // FormEngine provides processed select values (e.g. colPos) as array
+        if (is_array($currentColPos)) {
+            $currentColPos = reset($currentColPos);
+        }
+        $pageId = $this->getPageId((int)($config['flexParentDatabaseRow']['pid'] ?? 0));
 
         if ($pageId > 0) {
             $templateLayouts = $this->templateLayoutsUtility->getAvailableTemplateLayouts($pageId);
 
-            $templateLayouts = $this->reduceTemplateLayouts($templateLayouts, $currentColPos);
+            $templateLayouts = $this->reduceTemplateLayouts($templateLayouts, (int)$currentColPos);
             foreach ($templateLayouts as $layout) {
-                $additionalLayout = [
-                    htmlspecialchars($this->getLanguageService()->sL($layout[0])),
-                    $layout[1],
+                $config['items'][] = [
+                    'label' => $this->getLanguageService()->sL($layout[0]),
+                    'value' => $layout[1],
                 ];
-                $config['items'][] = $additionalLayout;
             }
         }
     }
 
     /**
      * Reduce the template layouts by the ones that are not allowed in given colPos
-     *
-     * @param array $templateLayouts
-     * @param int $currentColPos
-     * @return array
      */
     protected function reduceTemplateLayouts(array $templateLayouts, int $currentColPos): array
     {
-        $currentColPos = (int)$currentColPos;
         $restrictions = [];
         $allLayouts = [];
         foreach ($templateLayouts as $key => $layout) {
             if (is_array($layout[0])) {
                 if (isset($layout[0]['allowedColPos']) && str_ends_with((string)$layout[1], '.')) {
-                    $layoutKey = substr((string) $layout[1], 0, -1);
+                    $layoutKey = substr((string)$layout[1], 0, -1);
                     $restrictions[$layoutKey] = GeneralUtility::intExplode(',', $layout[0]['allowedColPos'], true);
                 }
             } else {
                 $allLayouts[$key] = $layout;
             }
         }
-        foreach ($restrictions as $restrictedIdentifier => $restrictedColPosList) {
-            if (!in_array($currentColPos, $restrictedColPosList, true)) {
-                unset($allLayouts[$restrictedIdentifier]);
+        // Restrictions are bound to the layout identifier, not to the position in the list of layouts.
+        // Layouts without restriction are allowed in every colPos.
+        foreach ($allLayouts as $key => $layout) {
+            $allowedColPosList = $restrictions[(string)$layout[1]] ?? [$currentColPos];
+            if (!in_array($currentColPos, $allowedColPosList, true)) {
+                unset($allLayouts[$key]);
             }
         }
 
@@ -91,8 +90,6 @@ class ItemsProcFunc
 
     /**
      * Returns LanguageService
-     *
-     * @return LanguageService
      */
     protected function getLanguageService(): LanguageService
     {
@@ -102,19 +99,14 @@ class ItemsProcFunc
     /**
      * Returns the given pid.
      * If the pid is negative, it will return the pid of the tt_content record.
-     *
-     * @param string $pid
-     * @return int
      */
-    protected function getPageId(string $pid): int
+    protected function getPageId(int $pid): int
     {
-        $pid = (int)$pid;
-
         if ($pid > 0) {
             return $pid;
         }
 
         $row = BackendUtilityCore::getRecord('tt_content', abs($pid), 'uid,pid');
-        return $row['pid'];
+        return (int)($row['pid'] ?? 0);
     }
 }

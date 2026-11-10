@@ -25,9 +25,6 @@ class TemplateLayout implements SingletonInterface
 {
     /**
      * Get available template layouts for a certain page
-     *
-     * @param int $pageUid
-     * @return array
      */
     public function getAvailableTemplateLayouts(int $pageUid = 0): array
     {
@@ -41,9 +38,6 @@ class TemplateLayout implements SingletonInterface
 
     /**
      * Process the template layouts from TsConfig
-     *
-     * @param array $tsConfigLayouts
-     * @return array
      */
     protected function processTsConfigLayouts(array $tsConfigLayouts): array
     {
@@ -57,13 +51,12 @@ class TemplateLayout implements SingletonInterface
     /**
      * Process a single template layout
      *
-     * @param string $templateKey
-     * @param string $title
-     * @return array
+     * @param string|array<mixed> $title title or, for sub-configuration like "1.allowedColPos", the configuration array
+     * @return array<int, mixed>
      */
-    protected function processSingleTemplateLayout(string $templateKey, string $title): array
+    protected function processSingleTemplateLayout(string $templateKey, string|array $title): array
     {
-        if (str_starts_with($title, '--div--')) {
+        if (is_string($title) && str_starts_with($title, '--div--')) {
             [$templateKey, $title] = $this->extractTitleFromOptionGroup($title);
         }
 
@@ -73,8 +66,7 @@ class TemplateLayout implements SingletonInterface
     /**
      * Extract title from option group
      *
-     * @param string $title
-     * @return array
+     * @return array<int, string>
      */
     protected function extractTitleFromOptionGroup(string $title): array
     {
@@ -84,9 +76,6 @@ class TemplateLayout implements SingletonInterface
 
     /**
      * Get template layouts defined in TsConfig
-     *
-     * @param int $pageUid
-     * @return array
      */
     protected function getTemplateLayoutsFromTsConfig(int $pageUid): array
     {

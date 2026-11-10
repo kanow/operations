@@ -1,465 +1,446 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2013-11-11T21:36:44Z" product-name="operations">
-		<header/>
-		<body>
-
-			<trans-unit id="tx_operations_domain_model_operation">
-				<source>Operation</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_operation.number">
-				<source>Number</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_operation.onlyEld">
-				<source>Only Coordination</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_operation.title">
-				<source>Title</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_operation.path_segment">
-				<source>URL Segment</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_operation.location">
-				<source>Location</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_operation.begin">
-				<source>Begin</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_operation.end">
-				<source>End</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_operation.teaser">
-				<source>Teaser</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_operation.report">
-				<source>Report</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_operation.longitude">
-				<source>Longitude</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_operation.latitude">
-				<source>Latitude</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_operation.zoom">
-				<source>Zoom</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_operation.media">
-				<source>Media</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_operation.type">
-				<source>Type</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_operation.assistance">
-				<source>Assistance</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_operation.vehicles">
-				<source>Vehicles</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_operation.resources">
-				<source>Resources</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_operation.choose">
-                                <source>Please choose...</source>
-                        </trans-unit>
-
-			<trans-unit id="tx_operations_domain_model_assistance">
-				<source>Assistance</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_assistance.title">
-				<source>Title</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_assistance.description">
-				<source>Description</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_assistance.link">
-				<source>Link</source>
-			</trans-unit>
-
-			<trans-unit id="tx_operations_domain_model_vehicle">
-				<source>Vehicle</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_vehicle.title">
-				<source>Title</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_vehicle.short">
-				<source>Short</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_vehicle.description">
-				<source>Description</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_vehicle.media">
-				<source>Media</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_vehicle.link">
-				<source>Link</source>
-			</trans-unit>
-
-			<trans-unit id="tx_operations_domain_model_resource">
-				<source>Resource</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_resource.title">
-				<source>Title</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_resource.short">
-				<source>Short</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_resource.description">
-				<source>Description</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_resource.media">
-				<source>Media</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_resource.link">
-				<source>Link</source>
-			</trans-unit>
-
-			<trans-unit id="tx_operations_domain_model_type">
-				<source>Type</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_type.title">
-				<source>Title</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_type.color">
-				<source>Color (Css values)</source>
-			</trans-unit>
-			<trans-unit id="tx_operations_domain_model_type.image">
-				<source>Media</source>
-			</trans-unit>
-
-			<trans-unit id="flexform.sheet.settings">
-				<source>Options</source>
-			</trans-unit>
-			<trans-unit id="flexform.sheet.media">
-				<source>Media options</source>
-			</trans-unit>
-			<trans-unit id="flexform.sheet.template">
-				<source>Template options</source>
-			</trans-unit>
-
-			<trans-unit id="flexform.showMediaInList">
-				<source>Thumbnail in list view</source>
-			</trans-unit>
-			<trans-unit id="flexform.showMediaInList.description">
-				<source>Show the first media of an item as thumbnail in the list.</source>
-			</trans-unit>
-			<trans-unit id="flexform.listMediaWidth">
-				<source>Width of media elements</source>
-			</trans-unit>
-			<trans-unit id="flexform.listMediaHeight">
-				<source>Height of media elements</source>
-			</trans-unit>
-			<trans-unit id="flexform.singleMediaWidth">
-				<source>Width of media elements</source>
-			</trans-unit>
-			<trans-unit id="flexform.singleMediaHeight">
-				<source>Height of media elements</source>
-			</trans-unit>
-
-			<trans-unit id="flexform.controller">
-				<source>Show:</source>
-			</trans-unit>
-			<trans-unit id="flexform.operations">
-				<source>Operations</source>
-			</trans-unit>
-			<trans-unit id="flexform.operationsListAndSearchAction">
-				<source>Operations - List view</source>
-			</trans-unit>
-			<trans-unit id="flexform.operationsShowAction">
-				<source>Operations - Detail view</source>
-			</trans-unit>
-			<trans-unit id="flexform.vehicles">
-				<source>Vehicles</source>
-			</trans-unit>
-			<trans-unit id="flexform.vehiclesListAction">
-				<source>Vehicles - List view</source>
-			</trans-unit>
-			<trans-unit id="flexform.vehiclesShowAction">
-				<source>Vehicles - Single view</source>
-			</trans-unit>
-			<trans-unit id="flexform.operationsStatsAction">
-				<source>Operations - Statistics</source>
-			</trans-unit>
-			<trans-unit id="flexform.resources">
-				<source>Resources</source>
-			</trans-unit>
-			<trans-unit id="flexform.resourcesListAction">
-				<source>Resources - List view</source>
-			</trans-unit>
-			<trans-unit id="flexform.resourcesShowAction">
-				<source>Resources - Single view</source>
-			</trans-unit>
-			<trans-unit id="flexform.itemsPerPage">
-				<source>Items per page</source>
-			</trans-unit>
-			<trans-unit id="flexform.itemsPerPage.description">
-				<source>How many items per page are showing with activated pagination.</source>
-			</trans-unit>
-			<trans-unit id="flexform.showPaginator">
-				<source>Show pagination</source>
-			</trans-unit>
-			<trans-unit id="flexform.hidePagination">
-				<source>Hide pagination</source>
-			</trans-unit>
-			<trans-unit id="flexform.hidePagination.description">
-				<source>Hide the pagination and show the result in one list. If there are a lot of data, page load can take an extremely long time on first call or uncached pages.</source>
-			</trans-unit>
-			<trans-unit id="flexform.teaserMaxChars">
-				<source>Max chars of teaser text in list view</source>
-			</trans-unit>
-			<trans-unit id="flexform.teaserMaxChars.description">
-				<source>Max length of teaser text in list view. If set, text will be cropped automatically.</source>
-			</trans-unit>
-			<trans-unit id="flexform.limit">
-				<source>Max result items</source>
-			</trans-unit>
-			<trans-unit id="flexform.limit.description">
-				<source>Max result items for the list. Default setting in constants is 200.</source>
-			</trans-unit>
-			<trans-unit id="flexform.hideFilter">
-				<source>Hide filter for result</source>
-			</trans-unit>
-			<trans-unit id="flexform.hideFilter.description">
-				<source>Don't show a form for filtering the list view.</source>
-			</trans-unit>
-			<trans-unit id="flexform.showMap">
-				<source>Show a map</source>
-			</trans-unit>
-			<trans-unit id="flexform.showMap.description">
-				<source>Show the result list as items on a map instead of the normal list.</source>
-			</trans-unit>
-			<trans-unit id="flexform.templateLayout">
-				<source>Template Layout</source>
-			</trans-unit>
-			<trans-unit id="flexform.templateLayout.description">
-				<source>Use different layout variants in Fluid templates. Define own variants in Page TS-Config before use.</source>
-			</trans-unit>
-			<trans-unit id="flexform.statistics.lastYears">
-				<source>Last years for statistics</source>
-			</trans-unit>
-			<trans-unit id="flexform.statistics.lastYears.description">
-				<source>Define the number of last years back for statistics to show.</source>
-			</trans-unit>
-
-			<trans-unit id="flexform.categoryConjunction.label">
-				<source>Category Mode</source>
-			</trans-unit>
-			<trans-unit id="flexform.categoryConjunction.description">
-				<source>Set category mode for selected categories.</source>
-			</trans-unit>
-			<trans-unit id="flexform.categoryConjunction.all">
-				<source>Don't care, show all</source>
-			</trans-unit>
-			<trans-unit id="flexform.categoryConjunction.or">
-				<source>Show items with selected categories - Mode: OR</source>
-			</trans-unit>
-			<trans-unit id="flexform.categoryConjunction.and">
-				<source>Show items with selected categories - Mode: AND</source>
-			</trans-unit>
-			<trans-unit id="flexform.categoryConjunction.notor">
-				<source>Do NOT show items with selected categories - Mode: NOT OR</source>
-			</trans-unit>
-			<trans-unit id="flexform.categoryConjunction.notand">
-				<source>Do NOT show items with selected categories - Mode: NOT AND</source>
-			</trans-unit>
-			<trans-unit id="flexform.category.label">
-				<source>Categories</source>
-			</trans-unit>
-			<trans-unit id="flexform.category.description">
-				<source>Select one or more categories to constrain the result.</source>
-			</trans-unit>
-
-			<trans-unit id="tca.paletteTitle.time">
-				<source>Operation times</source>
-			</trans-unit>
-			<trans-unit id="tca.paletteTitle.coordinates">
-				<source>Coordinates</source>
-			</trans-unit>
-			<trans-unit id="tca.paletteTitle.media">
-				<source>Operation media</source>
-			</trans-unit>
-			<trans-unit id="tca.paletteTitleResources.media">
-				<source>Resource media</source>
-			</trans-unit>
-			<trans-unit id="tca.paletteTitleVehicles.media">
-				<source>Vehicle media</source>
-			</trans-unit>
-			<trans-unit id="tca.paletteTitle.meta">
-				<source>Meta data</source>
-			</trans-unit>
-			<trans-unit id="tca.divTitle.relations">
-				<source>Relations</source>
-			</trans-unit>
-			<trans-unit id="tca.divTitle.map">
-				<source>Map data</source>
-			</trans-unit>
-			<trans-unit id="tca.divTitle.media">
-				<source>Media</source>
-			</trans-unit>
-            <trans-unit id="tca.fieldLabel.category">
-                <source>Category</source>
-            </trans-unit>
-			<trans-unit id="tabs.categories">
-				<source>Categories</source>
-			</trans-unit>
-
-			<trans-unit id="tsc.subcategoryLabel.template">
-				<source>Resources (Template files, CSS, JS)</source>
-			</trans-unit>
-			<trans-unit id="tsc.subcategoryLabel.media">
-				<source>Settings for media</source>
-			</trans-unit>
-			<trans-unit id="tsc.subcategoryLabel.pids">
-				<source>Pids for views and storage</source>
-			</trans-unit>
-			<trans-unit id="tsc.subcategoryLabel.paginate">
-				<source>Settings for paginate</source>
-			</trans-unit>
-			<trans-unit id="tsc.subcategoryLabel.list">
-				<source>Settings for list view</source>
-			</trans-unit>
-			<trans-unit id="tsc.subcategoryLabel.map">
-				<source>Settings for map</source>
-			</trans-unit>
-
-			<trans-unit id="tsc.templateRootPath">
-				<source>Templates:Path to template root (FE)</source>
-			</trans-unit>
-			<trans-unit id="tsc.partialRootPath">
-				<source>Partials:Path to template partials (FE)</source>
-			</trans-unit>
-			<trans-unit id="tsc.layoutRootPath">
-				<source>Layouts:Path to template layouts (FE)</source>
-			</trans-unit>
-			<trans-unit id="tsc.css">
-				<source>Default CSS:Default CSS file, change path to use your own CSS (FE)</source>
-			</trans-unit>
-
-			<trans-unit id="tsc.flexsliderCss">
-				<source>Flexslider CSS:Default CSS from flexslider, change path to use your own CSS</source>
-			</trans-unit>
-			<trans-unit id="tsc.magnificCss">
-				<source>MagnificPopup CSS:Default CSS from magnific popup, change path to use your own CSS</source>
-			</trans-unit>
-			<trans-unit id="tsc.jquery">
-				<source>jQuery default:Default path to jquery library. Change or delete path to use your own library.</source>
-			</trans-unit>
-			<trans-unit id="tsc.flexsliderJs">
-				<source>Flexslider JS:Default path to flexslider JS. Change path to use your own flexslider code.</source>
-			</trans-unit>
-			<trans-unit id="tsc.magnificJs">
-				<source>MagnificPopup JS:Default path to magnific popup JS. Change path to use your own magnific popup code.</source>
-			</trans-unit>
-			<trans-unit id="tsc.sliderJs">
-				<source>Run slider JS:Default JS code from tx_operations to run the slider.</source>
-			</trans-unit>
-			<trans-unit id="tsc.lightboxJs">
-				<source>Run lightbox JS:Default JS code to run the lightbox.</source>
-			</trans-unit>
-
-			<trans-unit id="tsc.storagePid">
-				<source>Storage Pid:Default storage PID for all data of operations</source>
-			</trans-unit>
-			<trans-unit id="tsc.recursive">
-				<source>Recursive storage:Recursive for storage PID. Used for all data of operations</source>
-			</trans-unit>
-			<trans-unit id="tsc.operationSinglePid">
-				<source>Operation single page:Page with operation plugin single view</source>
-			</trans-unit>
-			<trans-unit id="tsc.vehicleSinglePid">
-				<source>Vehicle single page:Page with operation plugin and using vehicle single view</source>
-			</trans-unit>
-			<trans-unit id="tsc.resourceSinglePid">
-				<source>Resource single page:Page with operation plugin and using resource single view</source>
-			</trans-unit>
-			<trans-unit id="tsc.hidePagination">
-				<source>Hide pagination:Hide the pagination in list view of operations</source>
-			</trans-unit>
-			<trans-unit id="tsc.hideFilter">
-				<source>Hide filter:Hide search form (filter) in list view of operations</source>
-			</trans-unit>
-			<trans-unit id="tsc.lastYears">
-				<source>Last years:How many years back are showing in filter for years</source>
-			</trans-unit>
-			<trans-unit id="tsc.listMediaWidth">
-				<source>Max media width list:Max media width in list view of operations (add "c" for cropping)</source>
-			</trans-unit>
-			<trans-unit id="tsc.listMediaHeight">
-				<source>Max media height list:Max media width in list view of operations</source>
-			</trans-unit>
-			<trans-unit id="tsc.singleMediaWidth">
-				<source>Max media width list:Max media width in single view, also for vehicles and resources (add "c" for cropping)</source>
-			</trans-unit>
-			<trans-unit id="tsc.singleMediaHeight">
-				<source>Max media height list:Max media width in single view, also for vehicles and resources</source>
-			</trans-unit>
-			<trans-unit id="tsc.increaseImage">
-				<source>Lightbox for images:Render images in single view with a wrapped link to increase image (e.g. with lightbox plugin)</source>
-			</trans-unit>
-			<trans-unit id="tsc.showMediaInList">
-				<source>First media in list:Show first media in listview</source>
-			</trans-unit>
-			<trans-unit id="tsc.listMediaWidthVehicle">
-				<source>Media width vehicles:Media width in list view of vehicles</source>
-			</trans-unit>
-			<trans-unit id="tsc.listMediaHeightVehicle">
-				<source>Media height vehicles:Media height in list view of vehicles</source>
-			</trans-unit>
-			<trans-unit id="tsc.listMediaWidthResource">
-				<source>Media width resources:Media width in list view of resources</source>
-			</trans-unit>
-			<trans-unit id="tsc.listMediaHeightResource">
-				<source>Media height resources:Media height in list view of resources</source>
-			</trans-unit>
-			<trans-unit id="tsc.listVehiclesDefaultImagePath">
-				<source>Fallback image for vehicles list view:Image that will be shown in the list of vehicles, if no media is available.</source>
-			</trans-unit>
-			<trans-unit id="tsc.listResourcesDefaultImagePath">
-				<source>Fallback image for resources list view:Image that will be shown in the list of resources, if no media is available.</source>
-			</trans-unit>
-
-			<trans-unit id="tsc.itemsPerPage">
-				<source>Items per page:Items per page in listview</source>
-			</trans-unit>
-			<trans-unit id="tsc.limit">
-				<source>Limit:Limit the result in list view</source>
-			</trans-unit>
-			<trans-unit id="tsc.rootCategory">
-				<target>Root Kategorie:Uid der Start-Kategorie für den Kategoriebaum in der Operations Extensions. Diese Kategorien werden in den Fluid Templates für die Kategoriendarstellung genutzt.</target>
-			</trans-unit>
-
-			<trans-unit id="tsc.insertAbove">
-				<source>Pagination above:Show pagination above the list</source>
-			</trans-unit>
-			<trans-unit id="tsc.insertBelow">
-				<source>Pagination below:Show pagination below the list</source>
-			</trans-unit>
-			<trans-unit id="tsc.lessPages">
-				<source>lessPages</source>
-			</trans-unit>
-			<trans-unit id="tsc.maxNumberOfLinks">
-				<source>maxNumberOfLinks</source>
-			</trans-unit>
-			<trans-unit id="tsc.prevNextHeaderTags">
-				<source>Show prev/next:Show prev/next in pagination</source>
-			</trans-unit>
-
-			<trans-unit id="tsc.apikey">
-				<source>GoogleMaps Apikey:Use your own googlemaps apikey</source>
-			</trans-unit>
-			<trans-unit id="tsc.defaultZoomSingle">
-				<source>Default zoom single:Default zoom for map in single view if no zoom is set</source>
-			</trans-unit>
-			<trans-unit id="tsc.overrideCenterLatList">
-				<source>Override latitude list-map: Override automatic latitude for centering the map in list view</source>
-			</trans-unit>
-			<trans-unit id="tsc.overrideCenterLongList">
-				<source>Override longitude list-map:Override automatic longitude for centering the map in list view</source>
-			</trans-unit>
-			<trans-unit id="tsc.overrideZoomList">
-				<source>Override zoom list-map:Override automatic zoom of the map in list view</source>
-			</trans-unit>
-
-
-		</body>
-	</file>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="messages" date="2013-11-11T21:36:44Z" product-name="operations">
+    <header/>
+    <body>
+      <trans-unit id="tx_operations_domain_model_operation">
+        <source>Operation</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.number">
+        <source>Number</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.onlyEld">
+        <source>Only Coordination</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.title">
+        <source>Title</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.path_segment">
+        <source>URL Segment</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.location">
+        <source>Location</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.begin">
+        <source>Begin</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.end">
+        <source>End</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.teaser">
+        <source>Teaser</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.report">
+        <source>Report</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.longitude">
+        <source>Longitude</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.latitude">
+        <source>Latitude</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.zoom">
+        <source>Zoom</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.media">
+        <source>Media</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.type">
+        <source>Type</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.assistance">
+        <source>Assistance</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.vehicles">
+        <source>Vehicles</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.resources">
+        <source>Resources</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_operation.choose">
+        <source>Please choose...</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_assistance">
+        <source>Assistance</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_assistance.title">
+        <source>Title</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_assistance.description">
+        <source>Description</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_assistance.link">
+        <source>Link</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle">
+        <source>Vehicle</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle.title">
+        <source>Title</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle.short">
+        <source>Short</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle.description">
+        <source>Description</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle.media">
+        <source>Media</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_vehicle.link">
+        <source>Link</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resource">
+        <source>Resource</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resource.title">
+        <source>Title</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resource.short">
+        <source>Short</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resource.description">
+        <source>Description</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resource.media">
+        <source>Media</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_resource.link">
+        <source>Link</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_type">
+        <source>Type</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_type.title">
+        <source>Title</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_type.color">
+        <source>Color (Css values)</source>
+      </trans-unit>
+      <trans-unit id="tx_operations_domain_model_type.image">
+        <source>Media</source>
+      </trans-unit>
+      <trans-unit id="flexform.sheet.settings">
+        <source>Options</source>
+      </trans-unit>
+      <trans-unit id="flexform.sheet.media">
+        <source>Media options</source>
+      </trans-unit>
+      <trans-unit id="flexform.sheet.template">
+        <source>Template options</source>
+      </trans-unit>
+      <trans-unit id="flexform.showMediaInList">
+        <source>Thumbnail in list view</source>
+      </trans-unit>
+      <trans-unit id="flexform.showMediaInList.description">
+        <source>Show the first media of an item as thumbnail in the list.</source>
+      </trans-unit>
+      <trans-unit id="flexform.listMediaWidth">
+        <source>Width of media elements</source>
+      </trans-unit>
+      <trans-unit id="flexform.listMediaHeight">
+        <source>Height of media elements</source>
+      </trans-unit>
+      <trans-unit id="flexform.singleMediaWidth">
+        <source>Width of media elements</source>
+      </trans-unit>
+      <trans-unit id="flexform.singleMediaHeight">
+        <source>Height of media elements</source>
+      </trans-unit>
+      <trans-unit id="flexform.controller">
+        <source>Show:</source>
+      </trans-unit>
+      <trans-unit id="flexform.operations">
+        <source>Operations</source>
+      </trans-unit>
+      <trans-unit id="flexform.operationsListAndSearchAction">
+        <source>Operations - List view</source>
+      </trans-unit>
+      <trans-unit id="flexform.operationsShowAction">
+        <source>Operations - Detail view</source>
+      </trans-unit>
+      <trans-unit id="flexform.vehicles">
+        <source>Vehicles</source>
+      </trans-unit>
+      <trans-unit id="flexform.vehiclesListAction">
+        <source>Vehicles - List view</source>
+      </trans-unit>
+      <trans-unit id="flexform.vehiclesShowAction">
+        <source>Vehicles - Single view</source>
+      </trans-unit>
+      <trans-unit id="flexform.operationsStatsAction">
+        <source>Operations - Statistics</source>
+      </trans-unit>
+      <trans-unit id="flexform.resources">
+        <source>Resources</source>
+      </trans-unit>
+      <trans-unit id="flexform.resourcesListAction">
+        <source>Resources - List view</source>
+      </trans-unit>
+      <trans-unit id="flexform.resourcesShowAction">
+        <source>Resources - Single view</source>
+      </trans-unit>
+      <trans-unit id="flexform.itemsPerPage">
+        <source>Items per page</source>
+      </trans-unit>
+      <trans-unit id="flexform.itemsPerPage.description">
+        <source>How many items per page are showing with activated pagination.</source>
+      </trans-unit>
+      <trans-unit id="flexform.showPaginator">
+        <source>Show pagination</source>
+      </trans-unit>
+      <trans-unit id="flexform.hidePagination">
+        <source>Hide pagination</source>
+      </trans-unit>
+      <trans-unit id="flexform.hidePagination.description">
+        <source>Hide the pagination and show the result in one list. If there are a lot of data, page load can take an extremely long time on first call or uncached pages.</source>
+      </trans-unit>
+      <trans-unit id="flexform.teaserMaxChars">
+        <source>Max chars of teaser text in list view</source>
+      </trans-unit>
+      <trans-unit id="flexform.teaserMaxChars.description">
+        <source>Max length of teaser text in list view. If set, text will be cropped automatically.</source>
+      </trans-unit>
+      <trans-unit id="flexform.limit">
+        <source>Max result items</source>
+      </trans-unit>
+      <trans-unit id="flexform.limit.description">
+        <source>Max result items for the list. Default setting in constants is 200.</source>
+      </trans-unit>
+      <trans-unit id="flexform.hideFilter">
+        <source>Hide filter for result</source>
+      </trans-unit>
+      <trans-unit id="flexform.hideFilter.description">
+        <source>Don't show a form for filtering the list view.</source>
+      </trans-unit>
+      <trans-unit id="flexform.showMap">
+        <source>Show a map</source>
+      </trans-unit>
+      <trans-unit id="flexform.showMap.description">
+        <source>Show the result list as items on a map instead of the normal list.</source>
+      </trans-unit>
+      <trans-unit id="flexform.templateLayout">
+        <source>Template Layout</source>
+      </trans-unit>
+      <trans-unit id="flexform.templateLayout.description">
+        <source>Use different layout variants in Fluid templates. Define own variants in Page TS-Config before use.</source>
+      </trans-unit>
+      <trans-unit id="flexform.statistics.lastYears">
+        <source>Last years for statistics</source>
+      </trans-unit>
+      <trans-unit id="flexform.statistics.lastYears.description">
+        <source>Define the number of last years back for statistics to show.</source>
+      </trans-unit>
+      <trans-unit id="flexform.categoryConjunction.label">
+        <source>Category Mode</source>
+      </trans-unit>
+      <trans-unit id="flexform.categoryConjunction.description">
+        <source>Set category mode for selected categories.</source>
+      </trans-unit>
+      <trans-unit id="flexform.categoryConjunction.all">
+        <source>Don't care, show all</source>
+      </trans-unit>
+      <trans-unit id="flexform.categoryConjunction.or">
+        <source>Show items with selected categories - Mode: OR</source>
+      </trans-unit>
+      <trans-unit id="flexform.categoryConjunction.and">
+        <source>Show items with selected categories - Mode: AND</source>
+      </trans-unit>
+      <trans-unit id="flexform.categoryConjunction.notor">
+        <source>Do NOT show items with selected categories - Mode: NOT OR</source>
+      </trans-unit>
+      <trans-unit id="flexform.categoryConjunction.notand">
+        <source>Do NOT show items with selected categories - Mode: NOT AND</source>
+      </trans-unit>
+      <trans-unit id="flexform.category.label">
+        <source>Categories</source>
+      </trans-unit>
+      <trans-unit id="flexform.category.description">
+        <source>Select one or more categories to constrain the result.</source>
+      </trans-unit>
+      <trans-unit id="tca.paletteTitle.time">
+        <source>Operation times</source>
+      </trans-unit>
+      <trans-unit id="tca.paletteTitle.coordinates">
+        <source>Coordinates</source>
+      </trans-unit>
+      <trans-unit id="tca.paletteTitle.media">
+        <source>Operation media</source>
+      </trans-unit>
+      <trans-unit id="tca.paletteTitleResources.media">
+        <source>Resource media</source>
+      </trans-unit>
+      <trans-unit id="tca.paletteTitleVehicles.media">
+        <source>Vehicle media</source>
+      </trans-unit>
+      <trans-unit id="tca.paletteTitle.meta">
+        <source>Meta data</source>
+      </trans-unit>
+      <trans-unit id="tca.divTitle.relations">
+        <source>Relations</source>
+      </trans-unit>
+      <trans-unit id="tca.divTitle.map">
+        <source>Map data</source>
+      </trans-unit>
+      <trans-unit id="tca.divTitle.media">
+        <source>Media</source>
+      </trans-unit>
+      <trans-unit id="tca.fieldLabel.category">
+        <source>Category</source>
+      </trans-unit>
+      <trans-unit id="tabs.categories">
+        <source>Categories</source>
+      </trans-unit>
+      <trans-unit id="tsc.subcategoryLabel.template">
+        <source>Resources (Template files, CSS, JS)</source>
+      </trans-unit>
+      <trans-unit id="tsc.subcategoryLabel.media">
+        <source>Settings for media</source>
+      </trans-unit>
+      <trans-unit id="tsc.subcategoryLabel.pids">
+        <source>Pids for views and storage</source>
+      </trans-unit>
+      <trans-unit id="tsc.subcategoryLabel.paginate">
+        <source>Settings for paginate</source>
+      </trans-unit>
+      <trans-unit id="tsc.subcategoryLabel.list">
+        <source>Settings for list view</source>
+      </trans-unit>
+      <trans-unit id="tsc.subcategoryLabel.map">
+        <source>Settings for map</source>
+      </trans-unit>
+      <trans-unit id="tsc.templateRootPath">
+        <source>Templates:Path to template root (FE)</source>
+      </trans-unit>
+      <trans-unit id="tsc.partialRootPath">
+        <source>Partials:Path to template partials (FE)</source>
+      </trans-unit>
+      <trans-unit id="tsc.layoutRootPath">
+        <source>Layouts:Path to template layouts (FE)</source>
+      </trans-unit>
+      <trans-unit id="tsc.css">
+        <source>Default CSS:Default CSS file, change path to use your own CSS (FE)</source>
+      </trans-unit>
+      <trans-unit id="tsc.flexsliderCss">
+        <source>Flexslider CSS:Default CSS from flexslider, change path to use your own CSS</source>
+      </trans-unit>
+      <trans-unit id="tsc.magnificCss">
+        <source>MagnificPopup CSS:Default CSS from magnific popup, change path to use your own CSS</source>
+      </trans-unit>
+      <trans-unit id="tsc.jquery">
+        <source>jQuery default:Default path to jquery library. Change or delete path to use your own library.</source>
+      </trans-unit>
+      <trans-unit id="tsc.flexsliderJs">
+        <source>Flexslider JS:Default path to flexslider JS. Change path to use your own flexslider code.</source>
+      </trans-unit>
+      <trans-unit id="tsc.magnificJs">
+        <source>MagnificPopup JS:Default path to magnific popup JS. Change path to use your own magnific popup code.</source>
+      </trans-unit>
+      <trans-unit id="tsc.sliderJs">
+        <source>Run slider JS:Default JS code from tx_operations to run the slider.</source>
+      </trans-unit>
+      <trans-unit id="tsc.lightboxJs">
+        <source>Run lightbox JS:Default JS code to run the lightbox.</source>
+      </trans-unit>
+      <trans-unit id="tsc.storagePid">
+        <source>Storage Pid:Default storage PID for all data of operations</source>
+      </trans-unit>
+      <trans-unit id="tsc.recursive">
+        <source>Recursive storage:Recursive for storage PID. Used for all data of operations</source>
+      </trans-unit>
+      <trans-unit id="tsc.operationSinglePid">
+        <source>Operation single page:Page with operation plugin single view</source>
+      </trans-unit>
+      <trans-unit id="tsc.vehicleSinglePid">
+        <source>Vehicle single page:Page with operation plugin and using vehicle single view</source>
+      </trans-unit>
+      <trans-unit id="tsc.resourceSinglePid">
+        <source>Resource single page:Page with operation plugin and using resource single view</source>
+      </trans-unit>
+      <trans-unit id="tsc.hidePagination">
+        <source>Hide pagination:Hide the pagination in list view of operations</source>
+      </trans-unit>
+      <trans-unit id="tsc.hideFilter">
+        <source>Hide filter:Hide search form (filter) in list view of operations</source>
+      </trans-unit>
+      <trans-unit id="tsc.lastYears">
+        <source>Last years:How many years back are showing in filter for years</source>
+      </trans-unit>
+      <trans-unit id="tsc.listMediaWidth">
+        <source>Max media width list:Max media width in list view of operations (add "c" for cropping)</source>
+      </trans-unit>
+      <trans-unit id="tsc.listMediaHeight">
+        <source>Max media height list:Max media width in list view of operations</source>
+      </trans-unit>
+      <trans-unit id="tsc.singleMediaWidth">
+        <source>Max media width list:Max media width in single view, also for vehicles and resources (add "c" for cropping)</source>
+      </trans-unit>
+      <trans-unit id="tsc.singleMediaHeight">
+        <source>Max media height list:Max media width in single view, also for vehicles and resources</source>
+      </trans-unit>
+      <trans-unit id="tsc.increaseImage">
+        <source>Lightbox for images:Render images in single view with a wrapped link to increase image (e.g. with lightbox plugin)</source>
+      </trans-unit>
+      <trans-unit id="tsc.showMediaInList">
+        <source>First media in list:Show first media in listview</source>
+      </trans-unit>
+      <trans-unit id="tsc.listMediaWidthVehicle">
+        <source>Media width vehicles:Media width in list view of vehicles</source>
+      </trans-unit>
+      <trans-unit id="tsc.listMediaHeightVehicle">
+        <source>Media height vehicles:Media height in list view of vehicles</source>
+      </trans-unit>
+      <trans-unit id="tsc.listMediaWidthResource">
+        <source>Media width resources:Media width in list view of resources</source>
+      </trans-unit>
+      <trans-unit id="tsc.listMediaHeightResource">
+        <source>Media height resources:Media height in list view of resources</source>
+      </trans-unit>
+      <trans-unit id="tsc.listVehiclesDefaultImagePath">
+        <source>Fallback image for vehicles list view:Image that will be shown in the list of vehicles, if no media is available.</source>
+      </trans-unit>
+      <trans-unit id="tsc.listResourcesDefaultImagePath">
+        <source>Fallback image for resources list view:Image that will be shown in the list of resources, if no media is available.</source>
+      </trans-unit>
+      <trans-unit id="tsc.itemsPerPage">
+        <source>Items per page:Items per page in listview</source>
+      </trans-unit>
+      <trans-unit id="tsc.limit">
+        <source>Limit:Limit the result in list view</source>
+      </trans-unit>
+      <trans-unit id="tsc.rootCategory">
+        <source>Root category:Uid of the root category for the category tree of the operations extension. These categories are used for the category output in the Fluid templates.</source>
+      </trans-unit>
+      <trans-unit id="tsc.insertAbove">
+        <source>Pagination above:Show pagination above the list</source>
+      </trans-unit>
+      <trans-unit id="tsc.insertBelow">
+        <source>Pagination below:Show pagination below the list</source>
+      </trans-unit>
+      <trans-unit id="tsc.lessPages">
+        <source>lessPages</source>
+      </trans-unit>
+      <trans-unit id="tsc.maxNumberOfLinks">
+        <source>maxNumberOfLinks</source>
+      </trans-unit>
+      <trans-unit id="tsc.prevNextHeaderTags">
+        <source>Show prev/next:Show prev/next in pagination</source>
+      </trans-unit>
+      <trans-unit id="tsc.apikey">
+        <source>GoogleMaps Apikey:Use your own googlemaps apikey</source>
+      </trans-unit>
+      <trans-unit id="tsc.defaultZoomSingle">
+        <source>Default zoom single:Default zoom for map in single view if no zoom is set</source>
+      </trans-unit>
+      <trans-unit id="tsc.overrideCenterLatList">
+        <source>Override latitude list-map: Override automatic latitude for centering the map in list view</source>
+      </trans-unit>
+      <trans-unit id="tsc.overrideCenterLongList">
+        <source>Override longitude list-map:Override automatic longitude for centering the map in list view</source>
+      </trans-unit>
+      <trans-unit id="tsc.overrideZoomList">
+        <source>Override zoom list-map:Override automatic zoom of the map in list view</source>
+      </trans-unit>
+    </body>
+  </file>
 </xliff>

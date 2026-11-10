@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Kanow\Operations\Controller;
 
 use Kanow\Operations\Domain\Model\Vehicle;
@@ -35,9 +37,7 @@ use Psr\Http\Message\ResponseInterface;
  */
 class VehicleController extends BaseController
 {
-    public function __construct(protected VehicleRepository $vehicleRepository)
-    {
-    }
+    public function __construct(protected VehicleRepository $vehicleRepository) {}
 
     /**
      * action list
@@ -51,8 +51,6 @@ class VehicleController extends BaseController
 
     /**
      * action show
-     *
-     * @param Vehicle $vehicle
      */
     public function showAction(Vehicle $vehicle): ResponseInterface
     {

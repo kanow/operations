@@ -37,82 +37,60 @@ class Operation extends AbstractEntity
 {
     /**
      * Operation number
-     *
-     * @var string
      */
-    #[Extbase\Validate(['validator' => 'NotEmpty'])]
+    #[Extbase\Validate(validator: 'NotEmpty')]
     protected string $number = '';
 
     /**
      * Operation onlyEld
-     *
-     * @var int
      */
     protected int $onlyEld = 0;
 
     /**
      * Title
-     *
-     * @var string
      */
-    #[Extbase\Validate(['validator' => 'NotEmpty'])]
+    #[Extbase\Validate(validator: 'NotEmpty')]
     protected string $title = '';
 
     /**
      * Location of operation
-     *
-     * @var string
      */
-    #[Extbase\Validate(['validator' => 'NotEmpty'])]
+    #[Extbase\Validate(validator: 'NotEmpty')]
     protected string $location = '';
 
     /**
      * Begin
-     *
-     * @var \DateTime
      */
-    #[Extbase\Validate(['validator' => 'NotEmpty'])]
+    #[Extbase\Validate(validator: 'NotEmpty')]
     protected ?\DateTime $begin = null;
 
     /**
      * Ending
-     *
-     * @var \DateTime
      */
     protected ?\DateTime $end = null;
 
     /**
      * Operation short teaser
-     *
-     * @var string
      */
     protected string $teaser = '';
 
     /**
      * Operation report
-     *
-     * @var string
      */
     protected string $report = '';
 
     /**
      * Longitude
-     *
-     * @var string
      */
     protected string $longitude = '';
 
     /**
      * Latitude
-     *
-     * @var string
      */
     protected string $latitude = '';
 
     /**
      * Zoom for maps
-     *
-     * @var int
      */
     protected int $zoom = 0;
 
@@ -191,8 +169,6 @@ class Operation extends AbstractEntity
 
     /**
      * Sets the number
-     *
-     * @param string $number
      */
     public function setNumber(string $number): void
     {
@@ -211,8 +187,6 @@ class Operation extends AbstractEntity
 
     /**
      * Sets the onlyEld
-     *
-     * @param int $onlyEld
      */
     public function setOnlyEld(int $onlyEld): void
     {
@@ -231,8 +205,6 @@ class Operation extends AbstractEntity
 
     /**
      * Sets the title
-     *
-     * @param string $title
      */
     public function setTitle(string $title): void
     {
@@ -251,8 +223,6 @@ class Operation extends AbstractEntity
 
     /**
      * Sets the location
-     *
-     * @param string $location
      */
     public function setLocation(string $location): void
     {
@@ -271,8 +241,6 @@ class Operation extends AbstractEntity
 
     /**
      * Sets the begin
-     *
-     * @param \DateTime $begin
      */
     public function setBegin(\DateTime $begin): void
     {
@@ -291,8 +259,6 @@ class Operation extends AbstractEntity
 
     /**
      * Sets the end
-     *
-     * @param \DateTime $end
      */
     public function setEnd(\DateTime $end): void
     {
@@ -311,8 +277,6 @@ class Operation extends AbstractEntity
 
     /**
      * Sets the teaser
-     *
-     * @param string $teaser
      */
     public function setTeaser(string $teaser): void
     {
@@ -331,8 +295,6 @@ class Operation extends AbstractEntity
 
     /**
      * Sets the report
-     *
-     * @param string $report
      */
     public function setReport(string $report): void
     {
@@ -351,8 +313,6 @@ class Operation extends AbstractEntity
 
     /**
      * Sets the longitude
-     *
-     * @param string $longitude
      */
     public function setLongitude(string $longitude): void
     {
@@ -371,8 +331,6 @@ class Operation extends AbstractEntity
 
     /**
      * Sets the latitude
-     *
-     * @param string $latitude
      */
     public function setLatitude(string $latitude): void
     {
@@ -391,8 +349,6 @@ class Operation extends AbstractEntity
 
     /**
      * Sets the zoom
-     *
-     * @param int $zoom
      */
     public function setZoom(int $zoom): void
     {
@@ -416,7 +372,7 @@ class Operation extends AbstractEntity
      */
     public function getFirstMedia(): ?FileReference
     {
-        $media = $this->getMedia()->toArray();
+        $media = $this->getMedia()?->toArray() ?? [];
         return $media[0] ?? null;
     }
 
@@ -432,8 +388,6 @@ class Operation extends AbstractEntity
 
     /**
      * Adds a Type
-     *
-     * @param Type $type
      */
     public function addType(Type $type): void
     {
@@ -467,8 +421,8 @@ class Operation extends AbstractEntity
      */
     public function getAssignedType(): ?Type
     {
-        $type = $this->getType()->toArray();
-        return $type[0];
+        $type = $this->getType()?->toArray() ?? [];
+        return $type[0] ?? null;
     }
 
     /**
@@ -483,8 +437,6 @@ class Operation extends AbstractEntity
 
     /**
      * Adds a Assistance
-     *
-     * @param Assistance $assistance
      */
     public function addAssistance(Assistance $assistance): void
     {
@@ -523,8 +475,6 @@ class Operation extends AbstractEntity
 
     /**
      * Adds a Vehicle
-     *
-     * @param Vehicle $vehicle
      */
     public function addVehicle(Vehicle $vehicle): void
     {
@@ -583,8 +533,6 @@ class Operation extends AbstractEntity
 
     /**
      * Adds a Category
-     *
-     * @param Category $category
      */
     public function addCategory(Category $category): void
     {

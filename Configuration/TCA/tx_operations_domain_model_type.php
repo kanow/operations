@@ -1,19 +1,17 @@
 <?php
 
-use TYPO3\CMS\Core\Resource\FileType;
-use TYPO3\CMS\Core\Information\Typo3Version;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
+declare(strict_types=1);
 
-if (!defined('TYPO3')) {
-    die('Access denied.');
-}
+use TYPO3\CMS\Core\Resource\FileType;
+
+defined('TYPO3') || die();
 
 $imageSettingsFalMedia = [
     'behaviour' => [
         'allowLanguageSynchronization' => true,
     ],
     'appearance' => [
-        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
+        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
         'showPossibleLocalizationRecords' => true,
         'showAllLocalizationLink' => true,
         'showSynchronizationLink' => true,
@@ -50,9 +48,6 @@ $imageSettingsFalMedia = [
     ],
 ];
 
-$versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
-$typo3Version = $versionInformation->getMajorVersion();
-
 $imageConfigurationFalMedia = [
     'type' => 'file',
     'appearance' => $imageSettingsFalMedia['appearance'],
@@ -60,15 +55,9 @@ $imageConfigurationFalMedia = [
     'overrideChildTca' => $imageSettingsFalMedia['overrideChildTca'],
     'allowed' => 'common-image-types',
 ];
-$tcaForDatetimeFields = [
-    'type' => 'datetime',
-    'size' => 16,
-    'eval' => 'int',
-    'default' => 0,
-    'format' => 'datetime',
-];
 $tcaForColorField = [
     'type' => 'color',
+    'searchable' => false,
     'size' => 10,
     'default' => '',
 ];
@@ -91,11 +80,10 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'uid,title',
         'typeicon_classes' => ['default' => 'ext-operations-type'],
     ],
     'types' => [
-        '0' => ['showitem' => 'sys_language_uid;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language,l10n_parent;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent,l10n_diffsource,title,color,image,
+        '0' => ['showitem' => 'sys_language_uid,l10n_parent,title,color,image,
 		--div--;core.form.tabs:access,
             --palette--;;paletteHidden,
             --palette--;;paletteAccess,',
@@ -108,65 +96,13 @@ return [
         'paletteAccess' => [
             'label' => 'core.form.palettes:access',
             'showitem' => '
-                starttime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:starttime_formlabel,
-                endtime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:endtime_formlabel,
+                starttime;core.db.general:starttime,
+                endtime;core.db.general:endtime,
                 --linebreak--
             ',
         ],
     ],
     'columns' => [
-        'sys_language_uid' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
-            'config' => ['type' => 'language'],
-        ],
-        'l10n_parent' => [
-            'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'items' => $typo3Version < 12 ? [
-                    ['', 0],
-                ] : [
-                    ['label' => '', 'value' => 0],
-                ],
-                'foreign_table' => 'tx_operations_domain_model_type',
-                'foreign_table_where' => 'AND tx_operations_domain_model_type.pid=###CURRENT_PID### AND tx_operations_domain_model_type.sys_language_uid IN (-1,0)',
-                'default' => 0,
-            ],
-        ],
-        'l10n_diffsource' => [
-            'config' => [
-                'type' => 'passthrough',
-            ],
-        ],
-        't3ver_label' => [
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.versionLabel',
-            'config' => [
-                'type' => 'input',
-
-                'size' => 30,
-                'max' => 255,
-            ],
-        ],
-        'hidden' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
-            'config' => [
-                'type' => 'check',
-            ],
-        ],
-        'starttime' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
-            'config' => $tcaForDatetimeFields,
-        ],
-        'endtime' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
-            'config' => $tcaForDatetimeFields,
-        ],
         'title' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_type.title',

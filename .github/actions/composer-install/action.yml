@@ -1,0 +1,26 @@
+---
+name: Install Composer dependencies
+description: Restores the Composer cache and installs the dependencies via runTests.sh
+inputs:
+  php-version:
+    description: PHP version to use (e.g. "8.2")
+    required: true
+  composer-dependencies:
+    description: '"Max" for the highest or "Min" for the lowest possible dependencies'
+    required: false
+    default: Max
+runs:
+  using: composite
+  steps:
+    - name: Show the Composer version
+      shell: bash
+      run: ./Build/Scripts/runTests.sh -b docker -p ${{ inputs.php-version }} -s composer -- --version
+    - name: Cache dependencies installed with Composer
+      uses: actions/cache@v6
+      with:
+        key: "php-${{ inputs.php-version }}-typo3-14.3-${{ inputs.composer-dependencies }}-composer-${{ hashFiles('**/composer.json') }}"
+        path: .cache/composer
+        restore-keys: "php-${{ inputs.php-version }}-typo3-14.3-${{ inputs.composer-dependencies }}-composer-\n"
+    - name: Install Composer dependencies
+      shell: bash
+      run: ./Build/Scripts/runTests.sh -b docker -p ${{ inputs.php-version }} -s composerUpdate${{ inputs.composer-dependencies }}

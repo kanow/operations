@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Kanow\Operations\Utility;
 
 use Doctrine\DBAL\Platforms\PostgreSQLPlatform;
@@ -8,31 +10,30 @@ use TYPO3\CMS\Core\Database\Connection;
 
 class SqlUtility
 {
-
     public static function getSelectYearFromUnixTime(Connection $connection, string $column): string
     {
         $isPostgres = $connection->getDatabasePlatform() instanceof PostgreSQLPlatform;
         $isSqlite = $connection->getDatabasePlatform() instanceof SQLitePlatform;
-        if($isPostgres) {
+        if ($isPostgres) {
             return 'EXTRACT(YEAR FROM TO_TIMESTAMP(' . $column . '))';
-        } elseif ($isSqlite) {
-            return 'STRFTIME(\'%Y\', DATETIME(' . $column . ', \'unixepoch\'))';
-        } else {
-            return 'FROM_UNIXTIME(' . $column . ', \'%Y\')';
         }
+        if ($isSqlite) {
+            return "STRFTIME('%Y', DATETIME(" . $column . ", 'unixepoch'))";
+        }
+        return 'FROM_UNIXTIME(' . $column . ", '%Y')";
     }
 
     public static function getWhereYearInString(Connection $connection, array $years): string
     {
         $isPostgres = $connection->getDatabasePlatform() instanceof PostgreSQLPlatform;
         $isSqlite = $connection->getDatabasePlatform() instanceof SQLitePlatform;
-        if($isPostgres) {
-            return 'IN(' . self::convertYearsToString($years) . ')';
-        } elseif ($isSqlite) {
-            return 'IN(' . self::convertYearsToStringForSqlite($years) . ')';
-        } else {
+        if ($isPostgres) {
             return 'IN(' . self::convertYearsToString($years) . ')';
         }
+        if ($isSqlite) {
+            return 'IN(' . self::convertYearsToStringForSqlite($years) . ')';
+        }
+        return 'IN(' . self::convertYearsToString($years) . ')';
     }
 
     /*
@@ -54,10 +55,13 @@ class SqlUtility
      * @param array $years
      * @return string
      */
+    /**
+     * @param string[] $years
+     */
     private static function convertYearsToStringForSqlite(array $years): string
     {
         // Every year must be set between '' to get a proper list for sqlite
-        return implode(',', array_map(fn(string $year) => "'$year'", $years));
+        return implode(',', array_map(fn(string $year): string => "'$year'", $years));
     }
 
 }

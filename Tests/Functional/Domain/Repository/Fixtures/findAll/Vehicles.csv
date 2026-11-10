@@ -1,0 +1,16 @@
+"pages"
+,"uid","pid","title","slug","doktype"
+,1,0,"Root","/",1
+,2,1,"Storage","/storage",254
+,3,1,"Other storage","/other-storage",254
+
+"tx_operations_domain_model_vehicle"
+,"uid","pid","title","short","sorting","hidden","deleted","starttime","endtime"
+,1,2,"Rescue fire engine","HLF 20",2,0,0,0,0
+,2,2,"Turntable ladder","DLK 23",1,0,0,0,0
+,3,2,"Command vehicle","ELW 1",3,0,0,0,0
+,4,2,"Hidden vehicle","",4,1,0,0,0
+,5,2,"Deleted vehicle","",5,0,1,0,0
+,6,2,"Vehicle not yet in service","",6,0,0,2000000000,0
+,7,2,"Retired vehicle","",7,0,0,0,1000000000
+,8,3,"Vehicle on other page","",8,0,0,0,0
