@@ -1,0 +1,6 @@
+"sys_category"
+,"uid","pid","title","description","parent","hidden","deleted"
+,1,2,"Operations","All operations",0,0,0
+,2,3,"District North","Northern part",1,0,0
+,3,2,"Hidden category","",0,1,0
+,4,2,"Deleted category","",0,0,1

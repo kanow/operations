@@ -1,0 +1,16 @@
+"pages"
+,"uid","pid","title","slug","doktype"
+,1,0,"Root","/",1
+,2,1,"Storage","/storage",254
+,3,1,"Other storage","/other-storage",254
+
+"tx_operations_domain_model_resource"
+,"uid","pid","title","short","sorting","hidden","deleted","starttime","endtime"
+,1,2,"Thermal imaging camera","TIC",2,0,0,0,0
+,2,2,"Hydraulic rescue tool","HRT",1,0,0,0,0
+,3,2,"Oil binder","",3,0,0,0,0
+,4,2,"Hidden resource","",4,1,0,0,0
+,5,2,"Deleted resource","",5,0,1,0,0
+,6,2,"Resource not yet available","",6,0,0,2000000000,0
+,7,2,"Expired resource","",7,0,0,0,1000000000
+,8,3,"Resource on other page","",8,0,0,0,0

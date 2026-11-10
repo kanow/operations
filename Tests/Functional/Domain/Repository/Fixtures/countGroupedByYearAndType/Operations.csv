@@ -1,0 +1,28 @@
+"pages"
+,"uid","pid","title","slug","doktype"
+,1,0,"Root","/",1
+,2,1,"Storage","/storage",254
+
+"tx_operations_domain_model_type"
+,"uid","pid","title","color"
+,1,2,"Fire","#ff0000"
+,2,2,"Technical assistance","#00ff00"
+,3,2,"Hazardous materials","#0000ff"
+
+"tx_operations_domain_model_operation"
+,"uid","pid","title","number","location","begin","type","hidden","deleted"
+,1,2,"Kitchen fire","2023-01","Thale",1683288000,1,0,0
+,2,2,"Car accident","2023-02","Neinstedt",1694260800,1,0,0
+,3,2,"Chimney fire","2022-01","Quedlinburg",1660996800,1,0,0
+,4,2,"Barn fire","2023-03","Warnstedt",1699704000,1,0,0
+,5,2,"Hidden operation","2023-04","Thale",1675252800,1,1,0
+,6,2,"Operation in 2020","2020-01","Thale",1592222400,1,0,0
+
+"tx_operations_operation_type_mm"
+,"uid_local","uid_foreign","sorting","sorting_foreign"
+,1,1,1,0
+,2,2,1,0
+,3,1,1,0
+,4,1,1,0
+,5,2,1,0
+,6,1,1,0
