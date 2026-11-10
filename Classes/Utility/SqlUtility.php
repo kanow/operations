@@ -10,7 +10,6 @@ use TYPO3\CMS\Core\Database\Connection;
 
 class SqlUtility
 {
-
     public static function getSelectYearFromUnixTime(Connection $connection, string $column): string
     {
         $isPostgres = $connection->getDatabasePlatform() instanceof PostgreSQLPlatform;

@@ -37,9 +37,7 @@ use Psr\Http\Message\ResponseInterface;
  */
 class ResourceController extends BaseController
 {
-    public function __construct(protected ResourceRepository $resourceRepository)
-    {
-    }
+    public function __construct(protected ResourceRepository $resourceRepository) {}
 
     /**
      * action list

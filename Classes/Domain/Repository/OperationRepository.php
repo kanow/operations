@@ -2,11 +2,6 @@
 
 namespace Kanow\Operations\Domain\Repository;
 
-
-use TYPO3\CMS\Extbase\Persistence\Generic\Qom\AndInterface;
-use TYPO3\CMS\Extbase\Persistence\Generic\Qom\ComparisonInterface;
-use TYPO3\CMS\Extbase\Persistence\Generic\Qom\NotInterface;
-use TYPO3\CMS\Extbase\Persistence\Generic\Qom\OrInterface;
 use Doctrine\DBAL\Exception;
 use Kanow\Operations\Domain\Model\Category;
 use Kanow\Operations\Domain\Model\Operation;
@@ -17,7 +12,11 @@ use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
+use TYPO3\CMS\Extbase\Persistence\Generic\Qom\AndInterface;
+use TYPO3\CMS\Extbase\Persistence\Generic\Qom\ComparisonInterface;
 use TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface;
+use TYPO3\CMS\Extbase\Persistence\Generic\Qom\NotInterface;
+use TYPO3\CMS\Extbase\Persistence\Generic\Qom\OrInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 /***************************************************************
@@ -68,8 +67,7 @@ class OperationRepository extends Repository
     public function __construct(
         private readonly ConnectionPool $connectionPool,
         private readonly TypeRepository $typeRepository,
-    )
-    {
+    ) {
         parent::__construct();
     }
 
@@ -124,7 +122,7 @@ class OperationRepository extends Repository
         $connection = $connection->getConnectionForTable('tx_operations_domain_model_operation');
 
         $result = $queryBuilder
-            ->addSelectLiteral('MIN(ot.color) as color, MIN(ot.title) as title, ot.uid as type_uid, COUNT(*) as count, '. SqlUtility::getSelectYearFromUnixTime($connection, 'o.begin') . ' as year')
+            ->addSelectLiteral('MIN(ot.color) as color, MIN(ot.title) as title, ot.uid as type_uid, COUNT(*) as count, ' . SqlUtility::getSelectYearFromUnixTime($connection, 'o.begin') . ' as year')
             ->from('tx_operations_domain_model_type', 'ot')
             ->innerJoin('ot', 'tx_operations_operation_type_mm', 'type_mm', 'type_mm.uid_foreign = ot.uid')
             ->innerJoin('type_mm', 'tx_operations_domain_model_operation', 'o', 'type_mm.uid_local = o.uid')
@@ -252,8 +250,6 @@ class OperationRepository extends Repository
         ksort($data);
         return $data;
     }
-
-
 
     /**
      * Counts all available operations grouped by year
@@ -438,7 +434,7 @@ class OperationRepository extends Repository
      */
     protected function addMapConstraints(QueryInterface $query, array $settings, array &$constraints): void
     {
-        if (isset($settings['showMap']) && $settings['showMap'] == 1){
+        if (isset($settings['showMap']) && $settings['showMap'] == 1) {
             $constraints[] = $query->logicalAnd(
                 $query->greaterThan('latitude', 0),
                 $query->greaterThan('longitude', 0)
