@@ -1,28 +1,16 @@
 parameters:
 	ignoreErrors:
 		-
-			rawMessage: Cannot access property $data on TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer|null.
-			identifier: property.nonObject
-			count: 1
-			path: ../../../Classes/Controller/BaseController.php
-
-		-
-			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
-			identifier: ergebnis.declareStrictTypes
-			count: 1
-			path: ../../../Classes/Controller/BaseController.php
-
-		-
-			rawMessage: 'Out of 152 possible param types, only 151 - 99.3 %% actually have it. Add more param types to get over 100 %%'
+			rawMessage: 'Out of 243 possible param types, only 242 - 99.5 %% actually have it. Add more param types to get over 100 %%'
 			identifier: typeCoverage.paramTypeCoverage
 			count: 1
 			path: ../../../Classes/Controller/BaseController.php
 
 		-
-			rawMessage: 'Cannot call method getConfiguration() on TYPO3\CMS\Core\Site\Entity\Site|null.'
-			identifier: method.nonObject
+			rawMessage: Using nullsafe property access "?->data" on left side of ?? is unnecessary. Use -> instead.
+			identifier: nullsafe.neverNull
 			count: 1
-			path: ../../../Classes/Controller/OperationController.php
+			path: ../../../Classes/Controller/BaseController.php
 
 		-
 			rawMessage: 'Cannot call method getId() on TYPO3\CMS\Frontend\Page\PageInformation|null.'
@@ -31,7 +19,13 @@ parameters:
 			path: ../../../Classes/Controller/OperationController.php
 
 		-
-			rawMessage: 'Class cognitive complexity is 32, keep it under 10'
+			rawMessage: Cannot cast mixed to int.
+			identifier: cast.int
+			count: 2
+			path: ../../../Classes/Controller/OperationController.php
+
+		-
+			rawMessage: 'Class cognitive complexity is 34, keep it under 10'
 			identifier: complexity.classLike
 			count: 1
 			path: ../../../Classes/Controller/OperationController.php
@@ -51,7 +45,7 @@ parameters:
 		-
 			rawMessage: 'Construct empty() is not allowed. Use more strict comparison.'
 			identifier: empty.notAllowed
-			count: 1
+			count: 2
 			path: ../../../Classes/Controller/OperationController.php
 
 		-
@@ -69,7 +63,7 @@ parameters:
 		-
 			rawMessage: 'Loose comparison via "!=" is not allowed.'
 			identifier: notEqual.notAllowed
-			count: 3
+			count: 1
 			path: ../../../Classes/Controller/OperationController.php
 
 		-
@@ -97,13 +91,7 @@ parameters:
 			path: ../../../Classes/Controller/OperationController.php
 
 		-
-			rawMessage: 'Method Kanow\Operations\Controller\OperationController::getOperationCategories() should return TYPO3\CMS\Extbase\Persistence\Generic\QueryResult|TYPO3\CMS\Extbase\Persistence\ObjectStorage|null but returns TYPO3\CMS\Extbase\Persistence\ObjectStorage|TYPO3\CMS\Extbase\Persistence\QueryResultInterface<int, Kanow\Operations\Domain\Model\Category>.'
-			identifier: return.type
-			count: 1
-			path: ../../../Classes/Controller/OperationController.php
-
-		-
-			rawMessage: 'Method Kanow\Operations\Controller\OperationController::getRequest() should return Psr\Http\Message\ServerRequestInterface but returns mixed.'
+			rawMessage: 'Method Kanow\Operations\Controller\OperationController::getOperationCategories() should return TYPO3\CMS\Extbase\Persistence\Generic\QueryResult|TYPO3\CMS\Extbase\Persistence\ObjectStorage|null but returns TYPO3\CMS\Extbase\Persistence\QueryResultInterface<int, Kanow\Operations\Domain\Model\Category>.'
 			identifier: return.type
 			count: 1
 			path: ../../../Classes/Controller/OperationController.php
@@ -112,18 +100,6 @@ parameters:
 			rawMessage: 'Only booleans are allowed in &&, int given on the right side.'
 			identifier: booleanAnd.rightNotBoolean
 			count: 2
-			path: ../../../Classes/Controller/OperationController.php
-
-		-
-			rawMessage: 'Only booleans are allowed in a negated boolean, array|float|int|string|false|null given.'
-			identifier: booleanNot.exprNotBoolean
-			count: 1
-			path: ../../../Classes/Controller/OperationController.php
-
-		-
-			rawMessage: 'Parameter #1 $value of function intval expects array|bool|float|GMP|int|resource|SimpleXMLElement|string|null, mixed given.'
-			identifier: argument.type
-			count: 1
 			path: ../../../Classes/Controller/OperationController.php
 
 		-
@@ -143,30 +119,6 @@ parameters:
 			identifier: ternary.shortNotAllowed
 			count: 1
 			path: ../../../Classes/Controller/OperationController.php
-
-		-
-			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
-			identifier: ergebnis.declareStrictTypes
-			count: 1
-			path: ../../../Classes/Controller/ResourceController.php
-
-		-
-			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
-			identifier: ergebnis.declareStrictTypes
-			count: 1
-			path: ../../../Classes/Controller/VehicleController.php
-
-		-
-			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
-			identifier: ergebnis.declareStrictTypes
-			count: 1
-			path: ../../../Classes/Domain/Model/Assistance.php
-
-		-
-			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
-			identifier: ergebnis.declareStrictTypes
-			count: 1
-			path: ../../../Classes/Domain/Model/Category.php
 
 		-
 			rawMessage: 'Cannot call method attach() on TYPO3\CMS\Extbase\Persistence\ObjectStorage<Kanow\Operations\Domain\Model\Assistance>|null.'
@@ -217,52 +169,16 @@ parameters:
 			path: ../../../Classes/Domain/Model/Operation.php
 
 		-
-			rawMessage: 'Cannot call method toArray() on TYPO3\CMS\Extbase\Persistence\ObjectStorage<Kanow\Operations\Domain\Model\Type>|null.'
-			identifier: method.nonObject
-			count: 1
-			path: ../../../Classes/Domain/Model/Operation.php
-
-		-
-			rawMessage: 'Cannot call method toArray() on TYPO3\CMS\Extbase\Persistence\ObjectStorage<TYPO3\CMS\Extbase\Domain\Model\FileReference>|null.'
-			identifier: method.nonObject
-			count: 1
-			path: ../../../Classes/Domain/Model/Operation.php
-
-		-
 			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
 			identifier: ergebnis.declareStrictTypes
 			count: 1
 			path: ../../../Classes/Domain/Model/Operation.php
-
-		-
-			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
-			identifier: ergebnis.declareStrictTypes
-			count: 1
-			path: ../../../Classes/Domain/Model/OperationDemand.php
-
-		-
-			rawMessage: 'Cannot call method toArray() on TYPO3\CMS\Extbase\Persistence\ObjectStorage<TYPO3\CMS\Extbase\Domain\Model\FileReference>|null.'
-			identifier: method.nonObject
-			count: 1
-			path: ../../../Classes/Domain/Model/Resource.php
 
 		-
 			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
 			identifier: ergebnis.declareStrictTypes
 			count: 1
 			path: ../../../Classes/Domain/Model/Resource.php
-
-		-
-			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
-			identifier: ergebnis.declareStrictTypes
-			count: 1
-			path: ../../../Classes/Domain/Model/Type.php
-
-		-
-			rawMessage: 'Cannot call method toArray() on TYPO3\CMS\Extbase\Persistence\ObjectStorage<TYPO3\CMS\Extbase\Domain\Model\FileReference>|null.'
-			identifier: method.nonObject
-			count: 1
-			path: ../../../Classes/Domain/Model/Vehicle.php
 
 		-
 			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
@@ -277,19 +193,19 @@ parameters:
 			path: ../../../Classes/Domain/Repository/OperationRepository.php
 
 		-
-			rawMessage: 'Cannot call method getTitle() on Kanow\Operations\Domain\Model\Type|null.'
-			identifier: method.nonObject
-			count: 1
-			path: ../../../Classes/Domain/Repository/OperationRepository.php
-
-		-
 			rawMessage: Cannot cast mixed to int.
 			identifier: cast.int
+			count: 3
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: Cannot cast mixed to string.
+			identifier: cast.string
 			count: 1
 			path: ../../../Classes/Domain/Repository/OperationRepository.php
 
 		-
-			rawMessage: 'Class cognitive complexity is 44, keep it under 10'
+			rawMessage: 'Class cognitive complexity is 43, keep it under 10'
 			identifier: complexity.classLike
 			count: 1
 			path: ../../../Classes/Domain/Repository/OperationRepository.php
@@ -361,12 +277,6 @@ parameters:
 			path: ../../../Classes/Domain/Repository/OperationRepository.php
 
 		-
-			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addCategoryConstraintsFromSettings() has parameter $settings with no value type specified in iterable type array.'
-			identifier: missingType.iterableValue
-			count: 1
-			path: ../../../Classes/Domain/Repository/OperationRepository.php
-
-		-
 			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addDateConstraints() has parameter $constraints that is passed by reference.'
 			identifier: ergebnis.noParameterPassedByReference
 			count: 1
@@ -411,12 +321,6 @@ parameters:
 		-
 			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addMapConstraints() has parameter $query with generic interface TYPO3\CMS\Extbase\Persistence\QueryInterface but does not specify its types: T'
 			identifier: missingType.generics
-			count: 1
-			path: ../../../Classes/Domain/Repository/OperationRepository.php
-
-		-
-			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addMapConstraints() has parameter $settings with no value type specified in iterable type array.'
-			identifier: missingType.iterableValue
 			count: 1
 			path: ../../../Classes/Domain/Repository/OperationRepository.php
 
@@ -488,12 +392,6 @@ parameters:
 
 		-
 			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::buildSearchConstraints() has parameter $searchFields with no value type specified in iterable type array.'
-			identifier: missingType.iterableValue
-			count: 1
-			path: ../../../Classes/Domain/Repository/OperationRepository.php
-
-		-
-			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::buildSearchConstraints() return type has no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: ../../../Classes/Domain/Repository/OperationRepository.php
@@ -577,19 +475,7 @@ parameters:
 			path: ../../../Classes/Domain/Repository/OperationRepository.php
 
 		-
-			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::getSearchFields() has parameter $settings with no value type specified in iterable type array.'
-			identifier: missingType.iterableValue
-			count: 1
-			path: ../../../Classes/Domain/Repository/OperationRepository.php
-
-		-
 			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::getSearchFields() return type has no value type specified in iterable type array.'
-			identifier: missingType.iterableValue
-			count: 1
-			path: ../../../Classes/Domain/Repository/OperationRepository.php
-
-		-
-			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::getTypeTitle() has parameter $value with no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: ../../../Classes/Domain/Repository/OperationRepository.php
@@ -649,10 +535,10 @@ parameters:
 			path: ../../../Classes/Domain/Repository/OperationRepository.php
 
 		-
-			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
-			identifier: ergebnis.declareStrictTypes
+			rawMessage: 'Parameter #2 $string of static method TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode() expects string, mixed given.'
+			identifier: argument.type
 			count: 1
-			path: ../../../Classes/Domain/Repository/ResourceRepository.php
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
 
 		-
 			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
@@ -673,25 +559,31 @@ parameters:
 			path: ../../../Classes/Domain/Repository/TypeRepository.php
 
 		-
-			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
-			identifier: ergebnis.declareStrictTypes
-			count: 1
-			path: ../../../Classes/Domain/Repository/VehicleRepository.php
-
-		-
-			rawMessage: 'Calling htmlspecialchars() is forbidden, set the $flags parameter to `ENT_QUOTES` to also convert single quotes to entities to prevent some HTML injection bugs.'
-			identifier: disallowed.function
+			rawMessage: Cannot access an offset on mixed.
+			identifier: offsetAccess.nonOffsetAccessible
 			count: 1
 			path: ../../../Classes/Hooks/ItemsProcFunc.php
 
 		-
-			rawMessage: Casting to int something that's already int.
-			identifier: cast.useless
+			rawMessage: Cannot access offset 'colPos' on mixed.
+			identifier: offsetAccess.nonOffsetAccessible
 			count: 1
 			path: ../../../Classes/Hooks/ItemsProcFunc.php
 
 		-
-			rawMessage: 'Class cognitive complexity is 16, keep it under 10'
+			rawMessage: Cannot access offset 'pid' on mixed.
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: ../../../Classes/Hooks/ItemsProcFunc.php
+
+		-
+			rawMessage: Cannot cast mixed to int.
+			identifier: cast.int
+			count: 2
+			path: ../../../Classes/Hooks/ItemsProcFunc.php
+
+		-
+			rawMessage: 'Class cognitive complexity is 17, keep it under 10'
 			identifier: complexity.classLike
 			count: 1
 			path: ../../../Classes/Hooks/ItemsProcFunc.php
@@ -729,18 +621,6 @@ parameters:
 		-
 			rawMessage: 'Method Kanow\Operations\Hooks\ItemsProcFunc::user_templateLayout() has parameter $config that is passed by reference.'
 			identifier: ergebnis.noParameterPassedByReference
-			count: 1
-			path: ../../../Classes/Hooks/ItemsProcFunc.php
-
-		-
-			rawMessage: 'Method Kanow\Operations\Hooks\ItemsProcFunc::user_templateLayout() has parameter $config with no value type specified in iterable type array.'
-			identifier: missingType.iterableValue
-			count: 1
-			path: ../../../Classes/Hooks/ItemsProcFunc.php
-
-		-
-			rawMessage: Offset 'pid' might not exist on array|null.
-			identifier: offsetAccess.notFound
 			count: 1
 			path: ../../../Classes/Hooks/ItemsProcFunc.php
 
@@ -817,19 +697,7 @@ parameters:
 			path: ../../../Classes/Service/CategoryService.php
 
 		-
-			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
-			identifier: ergebnis.declareStrictTypes
-			count: 1
-			path: ../../../Classes/Utility/SqlUtility.php
-
-		-
 			rawMessage: 'Method Kanow\Operations\Utility\SqlUtility::convertYearsToString() has parameter $years with no value type specified in iterable type array.'
-			identifier: missingType.iterableValue
-			count: 1
-			path: ../../../Classes/Utility/SqlUtility.php
-
-		-
-			rawMessage: 'Method Kanow\Operations\Utility\SqlUtility::convertYearsToStringForSqlite() has parameter $years with no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: ../../../Classes/Utility/SqlUtility.php
@@ -865,12 +733,6 @@ parameters:
 			path: ../../../Classes/Utility/TemplateLayout.php
 
 		-
-			rawMessage: 'Method Kanow\Operations\Utility\TemplateLayout::extractTitleFromOptionGroup() return type has no value type specified in iterable type array.'
-			identifier: missingType.iterableValue
-			count: 1
-			path: ../../../Classes/Utility/TemplateLayout.php
-
-		-
 			rawMessage: 'Method Kanow\Operations\Utility\TemplateLayout::getAvailableTemplateLayouts() return type has no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
@@ -884,12 +746,6 @@ parameters:
 
 		-
 			rawMessage: 'Method Kanow\Operations\Utility\TemplateLayout::getTemplateLayoutsFromTsConfig() return type has no value type specified in iterable type array.'
-			identifier: missingType.iterableValue
-			count: 1
-			path: ../../../Classes/Utility/TemplateLayout.php
-
-		-
-			rawMessage: 'Method Kanow\Operations\Utility\TemplateLayout::processSingleTemplateLayout() return type has no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: ../../../Classes/Utility/TemplateLayout.php
@@ -916,71 +772,11 @@ parameters:
 			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
 			identifier: ergebnis.declareStrictTypes
 			count: 1
-			path: ../../../Configuration/Icons.php
-
-		-
-			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
-			identifier: ergebnis.declareStrictTypes
-			count: 1
-			path: ../../../Configuration/TCA/Overrides/sys_template.php
-
-		-
-			rawMessage: Cannot access offset 'ctrl' on mixed.
-			identifier: offsetAccess.nonOffsetAccessible
-			count: 1
 			path: ../../../Configuration/TCA/Overrides/tt_content.php
-
-		-
-			rawMessage: Cannot access offset 'operations_operationlist'|'operations_operationshow'|'operations_operationstatistics'|'operations_resourcelist'|'operations_resourceshow'|'operations_vehiclelist'|'operations_vehicleshow' on mixed.
-			identifier: offsetAccess.nonOffsetAccessible
-			count: 2
-			path: ../../../Configuration/TCA/Overrides/tt_content.php
-
-		-
-			rawMessage: Cannot access offset 'showitem' on mixed.
-			identifier: offsetAccess.nonOffsetAccessible
-			count: 1
-			path: ../../../Configuration/TCA/Overrides/tt_content.php
-
-		-
-			rawMessage: Cannot access offset 'tt_content' on mixed.
-			identifier: offsetAccess.nonOffsetAccessible
-			count: 2
-			path: ../../../Configuration/TCA/Overrides/tt_content.php
-
-		-
-			rawMessage: Cannot access offset 'typeicon_classes' on mixed.
-			identifier: offsetAccess.nonOffsetAccessible
-			count: 1
-			path: ../../../Configuration/TCA/Overrides/tt_content.php
-
-		-
-			rawMessage: Cannot access offset 'types' on mixed.
-			identifier: offsetAccess.nonOffsetAccessible
-			count: 1
-			path: ../../../Configuration/TCA/Overrides/tt_content.php
-
-		-
-			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
-			identifier: ergebnis.declareStrictTypes
-			count: 1
-			path: ../../../Configuration/TCA/Overrides/tt_content.php
-
-		-
-			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
-			identifier: ergebnis.declareStrictTypes
-			count: 1
-			path: ../../../Configuration/TCA/tx_operations_domain_model_assistance.php
 
 		-
 			rawMessage: Cannot access offset 'slugBehaviour' on mixed.
 			identifier: offsetAccess.nonOffsetAccessible
-			count: 1
-			path: ../../../Configuration/TCA/tx_operations_domain_model_operation.php
-
-		-
-			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
-			identifier: ergebnis.declareStrictTypes
 			count: 1
 			path: ../../../Configuration/TCA/tx_operations_domain_model_operation.php
 
@@ -991,31 +787,13 @@ parameters:
 			path: ../../../Configuration/TCA/tx_operations_domain_model_resource.php
 
 		-
-			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
-			identifier: ergebnis.declareStrictTypes
-			count: 1
-			path: ../../../Configuration/TCA/tx_operations_domain_model_resource.php
-
-		-
-			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
-			identifier: ergebnis.declareStrictTypes
-			count: 1
-			path: ../../../Configuration/TCA/tx_operations_domain_model_type.php
-
-		-
 			rawMessage: Cannot access offset 'slugBehaviour' on mixed.
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 1
 			path: ../../../Configuration/TCA/tx_operations_domain_model_vehicle.php
 
 		-
-			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
-			identifier: ergebnis.declareStrictTypes
+			rawMessage: 'Parameter #1 $array of function array_column expects array, mixed given.'
+			identifier: argument.type
 			count: 1
-			path: ../../../Configuration/TCA/tx_operations_domain_model_vehicle.php
-
-		-
-			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
-			identifier: ergebnis.declareStrictTypes
-			count: 1
-			path: ../../../ext_localconf.php
+			path: ../../../Tests/Unit/Hooks/ItemsProcFuncTest.php
