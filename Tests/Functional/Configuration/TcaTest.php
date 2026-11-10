@@ -75,7 +75,7 @@ final class TcaTest extends FunctionalTestCase
             $GLOBALS['TCA'] = $tcaBackup;
         }
 
-        return array_values(array_map('strval', (new TcaMigration())->migrate($notMigratedTca)->getMessages()));
+        return array_values(array_map(strval(...), (new TcaMigration())->migrate($notMigratedTca)->getMessages()));
     }
 
     #[Test]

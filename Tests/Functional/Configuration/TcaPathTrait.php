@@ -45,6 +45,6 @@ trait TcaPathTrait
             static fn(mixed $item): bool => is_array($item) && in_array($item['value'] ?? null, TcaTest::CONTENT_TYPES, true)
         );
 
-        return array_values(array_filter($items, 'is_array'));
+        return array_values(array_filter($items, is_array(...)));
     }
 }

@@ -61,6 +61,7 @@ class OperationRepository extends Repository
     protected $defaultOrderings = [
         'begin' => QueryInterface::ORDER_DESCENDING,
     ];
+
     /**
      * Constructs a new Repository
      */
@@ -75,7 +76,6 @@ class OperationRepository extends Repository
     /**
      * Returns the objects of this repository matching the demand
      *
-     * @param OperationDemand $demand
      * @param array<mixed> $settings
      * @return QueryResultInterface<Operation>
      * @throws InvalidQueryException
@@ -89,7 +89,6 @@ class OperationRepository extends Repository
     /**
      * Category Returns the raw query result of this repository matching the demand
      *
-     * @param OperationDemand $demand
      * @param array<mixed> $settings
      * @return array<int,Operation>
      * @throws InvalidQueryException
@@ -102,9 +101,7 @@ class OperationRepository extends Repository
 
     /**
      * Counts all available operations
-     * @param OperationDemand $demand
      * @param array<mixed> $settings
-     * @return int
      * @throws InvalidQueryException
      */
     public function countDemandedForStatistics(OperationDemand $demand, array $settings): int
@@ -115,11 +112,6 @@ class OperationRepository extends Repository
     /**
      * Counts all available operations grouped by a year and type
      * Optionally use operation uid list, which created before with category constraints
-     *
-     * @param array $years
-     * @param array $types
-     * @param string $operationUids
-     * @return array
      */
     public function countGroupedByYearAndType(array $years, array $types, string $operationUids = ''): array
     {
@@ -158,9 +150,8 @@ class OperationRepository extends Repository
             $preparedResult = $this->addMissingType($preparedResult, $types, $year);
         }
         $resultWithEmptyYearsSorted = $this->sortResultByYears($preparedResult);
-        $resultWithEmptyYearsSorted = $this->sortResultByTypeUid($resultWithEmptyYearsSorted);
 
-        return $resultWithEmptyYearsSorted;
+        return $this->sortResultByTypeUid($resultWithEmptyYearsSorted);
     }
 
     /**
@@ -168,7 +159,6 @@ class OperationRepository extends Repository
      * the "type_uid" will be the array key for the result instead of ascending uids
      * the "year" will be the array key in new array key "years" with "count" as value
      *
-     * @param array $result
      * @return array $preparedResult
      * @throws Exception
      */
@@ -176,7 +166,7 @@ class OperationRepository extends Repository
     {
         $preparedResult = [];
 
-        foreach ($result as $key => $value) {
+        foreach ($result as $value) {
             $title = $this->getTypeTitle($value);
             if (!array_key_exists($value['type_uid'], $preparedResult)) {
                 $preparedResult[$value['type_uid']] = [
@@ -224,9 +214,7 @@ class OperationRepository extends Repository
     protected function addEmptyYear(array $data, int $year): array
     {
         foreach (array_keys($data) as $key) {
-            if (!isset($data[$key]['years'][$year])) {
-                $data[$key]['years'][$year] = 0;
-            }
+            $data[$key]['years'][$year] ??= 0;
         }
         return $data;
     }
@@ -270,10 +258,6 @@ class OperationRepository extends Repository
     /**
      * Counts all available operations grouped by year
      * Optionally use operation uid list, which created before with category constraints
-     *
-     * @param array $years
-     * @param string $operationUids
-     * @return array
      */
     public function countGroupedByYear(array $years, string $operationUids = ''): array
     {
@@ -307,10 +291,7 @@ class OperationRepository extends Repository
      * Generates the query
      *
      *
-     * @param OperationDemand $demand
      * @param array<mixed> $settings
-     * @param bool $noLimit
-     * @return QueryInterface
      * @throws InvalidQueryException
      */
     protected function generateQuery(OperationDemand $demand, array $settings, bool $noLimit = false): QueryInterface
@@ -335,9 +316,6 @@ class OperationRepository extends Repository
     /**
      * Returns an array of constraints created from a given demand object.
      *
-     * @param QueryInterface $query
-     * @param OperationDemand $demand
-     * @param array $settings
      * @throws InvalidQueryException
      * @return (AndInterface|ComparisonInterface|ConstraintInterface|NotInterface|OrInterface|null)[]
      */
@@ -354,15 +332,10 @@ class OperationRepository extends Repository
         $this->addTypeConstraints($query, $demand, $constraints);
         $this->addSearchConstraints($query, $demand, $settings, $constraints);
         $this->addMapConstraints($query, $settings, $constraints);
-
-        $constraints = $this->cleanUnusedConstraints($constraints);
-        return $constraints;
+        return $this->cleanUnusedConstraints($constraints);
     }
 
     /**
-     * @param QueryInterface $query
-     * @param OperationDemand $demand
-     * @param array $constraints
      * @throws InvalidQueryException
      */
     protected function addDateConstraints(QueryInterface $query, OperationDemand $demand, array &$constraints): void
@@ -378,10 +351,8 @@ class OperationRepository extends Repository
     }
 
     /**
-     * @param QueryInterface $query
-     * @param array $settings
-     * @param array $constraints
      * @throws InvalidQueryException
+     * @param array<string, mixed> $settings
      */
     protected function addCategoryConstraintsFromSettings(QueryInterface $query, array $settings, array &$constraints): void
     {
@@ -399,9 +370,6 @@ class OperationRepository extends Repository
     }
 
     /**
-     * @param QueryInterface $query
-     * @param OperationDemand $demand
-     * @param array $constraints
      * @throws InvalidQueryException
      */
     protected function addCategoryConstraintsFromDemand(QueryInterface $query, OperationDemand $demand, array &$constraints): void
@@ -412,9 +380,6 @@ class OperationRepository extends Repository
     }
 
     /**
-     * @param QueryInterface $query
-     * @param OperationDemand $demand
-     * @param array $constraints
      * @throws InvalidQueryException
      */
     protected function addTypeConstraints(QueryInterface $query, OperationDemand $demand, array &$constraints): void
@@ -425,10 +390,6 @@ class OperationRepository extends Repository
     }
 
     /**
-     * @param QueryInterface $query
-     * @param OperationDemand $demand
-     * @param array $settings
-     * @param array $constraints
      * @throws InvalidQueryException
      */
     protected function addSearchConstraints(QueryInterface $query, OperationDemand $demand, array $settings, array &$constraints): void
@@ -445,8 +406,7 @@ class OperationRepository extends Repository
     }
 
     /**
-     * @param array $settings
-     * @return array
+     * @param array<string, mixed> $settings
      */
     protected function getSearchFields(array $settings): array
     {
@@ -458,11 +418,8 @@ class OperationRepository extends Repository
     }
 
     /**
-     * @param QueryInterface $query
-     * @param string $searchSubject
-     * @param array $searchFields
-     * @return array
      * @throws InvalidQueryException
+     * @return \TYPO3\CMS\Extbase\Persistence\Generic\Qom\ComparisonInterface[]
      */
     protected function buildSearchConstraints(QueryInterface $query, string $searchSubject, array $searchFields): array
     {
@@ -476,10 +433,8 @@ class OperationRepository extends Repository
     }
 
     /**
-     * @param QueryInterface $query
-     * @param array $settings
-     * @param array $constraints
      * @throws InvalidQueryException
+     * @param array<string, mixed> $settings
      */
     protected function addMapConstraints(QueryInterface $query, array $settings, array &$constraints): void
     {
@@ -494,8 +449,6 @@ class OperationRepository extends Repository
     /**
      * Build the constraints for the category logic
      * @param QueryInterface<Category> $query
-     * @param mixed $categories
-     * @param string $property
      * @param array<mixed> $settings
      * @return ConstraintInterface $constraint
      * @throws InvalidQueryException
@@ -535,9 +488,6 @@ class OperationRepository extends Repository
 
     /**
      *  Clean not used constraints
-     *
-     * @param array $constraints
-     * @return array
      */
     protected function cleanUnusedConstraints(array $constraints): array
     {
@@ -552,8 +502,7 @@ class OperationRepository extends Repository
     /**
      * Get proper title for Types in chart array
      *
-     * @param array $value
-     * @return string
+     * @param array<string, mixed> $value
      */
     protected function getTypeTitle(array $value): string
     {

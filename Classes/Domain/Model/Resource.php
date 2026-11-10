@@ -36,24 +36,18 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 class Resource extends AbstractEntity
 {
     /**
-  * Title of resource
-  *
-  * @var string
-  */
+     * Title of resource
+     */
     #[Extbase\Validate(validator: 'NotEmpty')]
     protected string $title = '';
 
     /**
      * Abbreviation title
-     *
-     * @var string
      */
     protected string $short = '';
 
     /**
      * Description of resource
-     *
-     * @var string
      */
     protected string $description = '';
 
@@ -65,8 +59,6 @@ class Resource extends AbstractEntity
 
     /**
      * A website url or internal link
-     *
-     * @var string
      */
     protected string $link = '';
 
@@ -82,8 +74,6 @@ class Resource extends AbstractEntity
 
     /**
      * Sets the title
-     *
-     * @param string $title
      */
     public function setTitle(string $title): void
     {
@@ -102,8 +92,6 @@ class Resource extends AbstractEntity
 
     /**
      * Sets the short
-     *
-     * @param string $short
      */
     public function setShort(string $short): void
     {
@@ -122,8 +110,6 @@ class Resource extends AbstractEntity
 
     /**
      * Sets the description
-     *
-     * @param string $description
      */
     public function setDescription(string $description): void
     {
@@ -150,6 +136,7 @@ class Resource extends AbstractEntity
         $media = $this->getMedia()?->toArray() ?? [];
         return $media[0] ?? null;
     }
+
     /**
      * Sets the media
      *
@@ -160,17 +147,11 @@ class Resource extends AbstractEntity
         $this->media = $media;
     }
 
-    /**
-     * @return string
-     */
     public function getLink(): string
     {
         return $this->link;
     }
 
-    /**
-     * @param string $link
-     */
     public function setLink(string $link): void
     {
         $this->link = $link;

@@ -25,11 +25,11 @@ final class SqlUtilityTest extends UnitTestCase
      */
     public static function selectYearFromUnixTimeDataProvider(): \Generator
     {
-        yield 'MySQL' => [new MySQLPlatform(), 'FROM_UNIXTIME(o.begin, \'%Y\')'];
-        yield 'MySQL 8.0' => [new MySQL80Platform(), 'FROM_UNIXTIME(o.begin, \'%Y\')'];
-        yield 'MariaDB' => [new MariaDBPlatform(), 'FROM_UNIXTIME(o.begin, \'%Y\')'];
+        yield 'MySQL' => [new MySQLPlatform(), "FROM_UNIXTIME(o.begin, '%Y')"];
+        yield 'MySQL 8.0' => [new MySQL80Platform(), "FROM_UNIXTIME(o.begin, '%Y')"];
+        yield 'MariaDB' => [new MariaDBPlatform(), "FROM_UNIXTIME(o.begin, '%Y')"];
         yield 'PostgreSQL' => [new PostgreSQLPlatform(), 'EXTRACT(YEAR FROM TO_TIMESTAMP(o.begin))'];
-        yield 'SQLite' => [new SQLitePlatform(), 'STRFTIME(\'%Y\', DATETIME(o.begin, \'unixepoch\'))'];
+        yield 'SQLite' => [new SQLitePlatform(), "STRFTIME('%Y', DATETIME(o.begin, 'unixepoch'))"];
     }
 
     #[Test]
@@ -55,9 +55,9 @@ final class SqlUtilityTest extends UnitTestCase
         yield 'MariaDB with integer years' => [new MariaDBPlatform(), [2023, 2024], 'IN(2023,2024)'];
         yield 'PostgreSQL with one year' => [new PostgreSQLPlatform(), ['2024'], 'IN(2024)'];
         yield 'PostgreSQL with several years' => [new PostgreSQLPlatform(), ['2023', '2024'], 'IN(2023,2024)'];
-        yield 'SQLite with one year' => [new SQLitePlatform(), ['2024'], 'IN(\'2024\')'];
-        yield 'SQLite with several years' => [new SQLitePlatform(), ['2023', '2024'], 'IN(\'2023\',\'2024\')'];
-        yield 'SQLite with integer years' => [new SQLitePlatform(), [2023, 2024], 'IN(\'2023\',\'2024\')'];
+        yield 'SQLite with one year' => [new SQLitePlatform(), ['2024'], "IN('2024')"];
+        yield 'SQLite with several years' => [new SQLitePlatform(), ['2023', '2024'], "IN('2023','2024')"];
+        yield 'SQLite with integer years' => [new SQLitePlatform(), [2023, 2024], "IN('2023','2024')"];
     }
 
     /**

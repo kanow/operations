@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Kanow\Operations\Controller;
 
 use Kanow\Operations\Domain\Model\Resource;

@@ -32,6 +32,7 @@ final class TypeRepositoryTest extends FunctionalTestCase
     {
         $querySettings = $this->get(Typo3QuerySettings::class);
         $querySettings->setStoragePageIds([$storagePageUid]);
+
         $this->subject->setDefaultQuerySettings($querySettings);
     }
 
