@@ -1,5 +1,4 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      xmlns:o="http://typo3.org/ns/KN/Operations/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
 <f:layout name="Default"/>
@@ -40,8 +39,6 @@
             </f:else>
         </f:if>
     </div>
-</f:section>
-<f:section name="FooterAssets">
-    <script src="{f:uri.resource(path: 'Js/Chart.bundle.js')}"></script>
-    <script src="{f:uri.resource(path: 'Js/OperationsChart.js')}"></script>
+    <f:asset.script identifier="operationsChartBundle" src="EXT:operations/Resources/Public/Js/Chart.bundle.js"/>
+    <f:asset.script identifier="operationsChart" src="EXT:operations/Resources/Public/Js/OperationsChart.js"/>
 </f:section>
