@@ -80,9 +80,12 @@ class ItemsProcFunc
                 $allLayouts[$key] = $layout;
             }
         }
-        foreach ($restrictions as $restrictedIdentifier => $restrictedColPosList) {
-            if (!in_array($currentColPos, $restrictedColPosList, true)) {
-                unset($allLayouts[$restrictedIdentifier]);
+        // Restrictions are bound to the layout identifier, not to the position in the list of layouts.
+        // Layouts without restriction are allowed in every colPos.
+        foreach ($allLayouts as $key => $layout) {
+            $allowedColPosList = $restrictions[(string)$layout[1]] ?? [$currentColPos];
+            if (!in_array($currentColPos, $allowedColPosList, true)) {
+                unset($allLayouts[$key]);
             }
         }
 
