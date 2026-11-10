@@ -91,7 +91,6 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'number,title,location,begin,end,report,longitude,latitude,zoom,media,type,assistance,vehicles,resources,',
         'typeicon_classes' => ['default' => 'ext-operations-operation'],
     ],
     'types' => [
@@ -222,6 +221,7 @@ return [
             'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.path_segment',
             'config' => [
                 'type' => 'slug',
+                'searchable' => false,
                 'generatorOptions' => [
                     'fields' => ['title'],
                     'fieldSeparator' => '/',
@@ -266,6 +266,7 @@ return [
                 'type' => 'text',
                 'cols' => 60,
                 'rows' => 5,
+                'searchable' => false,
                 'eval' => 'trim',
                 'default' => '',
             ],

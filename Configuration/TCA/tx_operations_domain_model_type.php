@@ -69,6 +69,7 @@ $tcaForDatetimeFields = [
 ];
 $tcaForColorField = [
     'type' => 'color',
+    'searchable' => false,
     'size' => 10,
     'default' => '',
 ];
@@ -91,7 +92,6 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'uid,title',
         'typeicon_classes' => ['default' => 'ext-operations-type'],
     ],
     'types' => [

@@ -45,7 +45,6 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'title,description,link,',
         'typeicon_classes' => ['default' => 'ext-operations-assistance'],
     ],
     'types' => [

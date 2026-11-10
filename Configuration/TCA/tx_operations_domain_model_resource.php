@@ -89,7 +89,6 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'title,short,description,media,',
         'typeicon_classes' => ['default' => 'ext-operations-resource'],
     ],
     'types' => [
@@ -188,6 +187,7 @@ return [
             'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.path_segment',
             'config' => [
                 'type' => 'slug',
+                'searchable' => false,
                 'generatorOptions' => [
                     'fields' => ['title'],
                     'fieldSeparator' => '/',
@@ -231,6 +231,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'renderType' => $renderTypeLinkField,
+                'searchable' => false,
                 'size' => 30,
                 'eval' => 'trim',
                 'default' => '',
