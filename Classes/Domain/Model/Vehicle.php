@@ -40,7 +40,7 @@ class Vehicle extends AbstractEntity
      *
      * @var string
      */
-    #[Extbase\Validate(['validator' => 'NotEmpty'])]
+    #[Extbase\Validate(validator: 'NotEmpty')]
     protected string $title = '';
 
     /**
@@ -147,7 +147,7 @@ class Vehicle extends AbstractEntity
      */
     public function getFirstMedia(): ?FileReference
     {
-        $media = $this->getMedia()->toArray();
+        $media = $this->getMedia()?->toArray() ?? [];
         return $media[0] ?? null;
     }
 
