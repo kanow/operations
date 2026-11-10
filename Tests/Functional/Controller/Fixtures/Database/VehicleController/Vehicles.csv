@@ -1,0 +1,23 @@
+"pages"
+,"uid","pid","title","slug","doktype"
+,4,1,"Vehicle detail","/vehicle-detail",1
+
+"tt_content"
+,"uid","pid","CType","header","pages","pi_flexform"
+,1,1,"operations_vehiclelist","Vehicle list","2",""
+,2,4,"operations_vehicleshow","Vehicle detail","2",""
+
+"tx_operations_domain_model_vehicle"
+,"uid","pid","title","short","description","link","sorting","media","hidden"
+,1,2,"Rescue fire engine","HLF 20","<p>Carries water and rescue equipment.</p>","",2,1,0
+,2,2,"Turntable ladder","DLK 23","<p>Reaches the upper floors.</p>","https://example.com/dlk-23",1,0,0
+,3,2,"Hidden vehicle","","","",3,0,1
+,4,3,"Vehicle on other page","","","",4,0,0
+
+"sys_file"
+,"uid","pid","storage","type","identifier","identifier_hash","folder_hash","name","extension","mime_type","size"
+,1,0,1,2,"/user_upload/vehicle.svg","3d0a4bdd4a3b4c3b9e5cbbd38c3cbf65ae8e1f1b","19669f1e02c2f16705ec7587044c66443be70725","vehicle.svg","svg","image/svg+xml",1000
+
+"sys_file_reference"
+,"uid","pid","uid_local","uid_foreign","tablenames","fieldname","sorting_foreign"
+,1,2,1,1,"tx_operations_domain_model_vehicle","media",1

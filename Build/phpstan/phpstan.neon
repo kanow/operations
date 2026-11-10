@@ -1,29 +1,25 @@
 includes:
-  - phpstan-baseline.neon
   - ../../.Build/vendor/spaze/phpstan-disallowed-calls/disallowed-dangerous-calls.neon
   - ../../.Build/vendor/spaze/phpstan-disallowed-calls/disallowed-execution-calls.neon
   - ../../.Build/vendor/spaze/phpstan-disallowed-calls/disallowed-insecure-calls.neon
   - ../../.Build/vendor/spaze/phpstan-disallowed-calls/disallowed-loose-calls.neon
 
 parameters:
-  parallel:
-    # Don't be overly greedy on machines with more CPU's to be a good neighbor especially on CI
-    maximumNumberOfProcesses: 5
-
-  level: 5
+  level: 9
 
   paths:
     - ../../Classes
     - ../../Configuration
     - ../../Tests
-
-  # Allow instanceof checks, particularly in tests
-  checkAlwaysTrueCheckTypeFunctionCall: false
+    - ../../ext_localconf.php
 
   type_coverage:
-    return_type: 100
-    param_type: 100
-    property_type: 95
+    # Native types for class constants are only available in PHP >= 8.3.0:
+    # https://www.php.net/manual/en/language.oop5.constants.php
+    constant: 0
+    param: 100
+    property: 95
+    return: 100
 
   cognitive_complexity:
     class: 10
@@ -39,12 +35,14 @@ parameters:
     -
       function: 'header()'
       message: 'Use PSR-7 API instead'
+
   disallowedStaticCalls:
     -
       method:
         - 'TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump()'
         - 'TYPO3\CMS\Core\Utility\DebugUtility::debug()'
       message: 'Use logging instead or remove if it was for debugging purposes.'
+
   disallowedSuperglobals:
     -
       superglobal:
@@ -53,3 +51,31 @@ parameters:
         - '$_FILES'
         - '$_SERVER'
       message: 'Use PSR-7 API instead'
+
+  ignoreErrors:
+    -
+      message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertInstanceOf\(\) .* will always evaluate to#'
+      path: '../../Tests/'
+
+  featureToggles:
+    rawMessageInBaseline: true
+
+  ergebnis:
+    declareStrictTypes:
+      enabled: true
+    final:
+      enabled: false
+    finalInAbstractClass:
+      enabled: true
+    noExtends:
+      enabled: false
+    noIsset:
+      enabled: false
+    noNullableReturnTypeDeclaration:
+      enabled: false
+    noParameterWithContainerTypeDeclaration:
+      enabled: false
+    noParameterWithNullableTypeDeclaration:
+      enabled: false
+    noParameterWithNullDefaultValue:
+      enabled: false

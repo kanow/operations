@@ -1,0 +1,7 @@
+"pages"
+,"uid","pid","title","slug","doktype"
+,5,1,"Statistics","/statistics",1
+
+"tt_content"
+,"uid","pid","CType","header","pages","pi_flexform"
+,3,5,"operations_operationstatistics","Statistics","2",""

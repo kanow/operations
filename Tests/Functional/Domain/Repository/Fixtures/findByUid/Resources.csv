@@ -1,0 +1,5 @@
+"tx_operations_domain_model_resource"
+,"uid","pid","title","short","description","link","hidden","deleted"
+,1,2,"Thermal imaging camera","TIC","<p>Finds people in smoke.</p>","https://example.com/tic",0,0
+,2,2,"Hidden resource","","","",1,0
+,3,2,"Deleted resource","","","",0,1

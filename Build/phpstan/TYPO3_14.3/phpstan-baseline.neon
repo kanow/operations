@@ -1,0 +1,1021 @@
+parameters:
+	ignoreErrors:
+		-
+			rawMessage: Cannot access property $data on TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer|null.
+			identifier: property.nonObject
+			count: 1
+			path: ../../../Classes/Controller/BaseController.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Classes/Controller/BaseController.php
+
+		-
+			rawMessage: 'Out of 152 possible param types, only 151 - 99.3 %% actually have it. Add more param types to get over 100 %%'
+			identifier: typeCoverage.paramTypeCoverage
+			count: 1
+			path: ../../../Classes/Controller/BaseController.php
+
+		-
+			rawMessage: 'Cannot call method getConfiguration() on TYPO3\CMS\Core\Site\Entity\Site|null.'
+			identifier: method.nonObject
+			count: 1
+			path: ../../../Classes/Controller/OperationController.php
+
+		-
+			rawMessage: 'Cannot call method getId() on TYPO3\CMS\Frontend\Page\PageInformation|null.'
+			identifier: method.nonObject
+			count: 1
+			path: ../../../Classes/Controller/OperationController.php
+
+		-
+			rawMessage: 'Class cognitive complexity is 32, keep it under 10'
+			identifier: complexity.classLike
+			count: 1
+			path: ../../../Classes/Controller/OperationController.php
+
+		-
+			rawMessage: 'Cognitive complexity for "Kanow\Operations\Controller\OperationController::getPagination()" is 6, keep it under 5'
+			identifier: complexity.functionLike
+			count: 1
+			path: ../../../Classes/Controller/OperationController.php
+
+		-
+			rawMessage: 'Cognitive complexity for "Kanow\Operations\Controller\OperationController::overrideFlexformSettings()" is 8, keep it under 5'
+			identifier: complexity.functionLike
+			count: 1
+			path: ../../../Classes/Controller/OperationController.php
+
+		-
+			rawMessage: 'Construct empty() is not allowed. Use more strict comparison.'
+			identifier: empty.notAllowed
+			count: 1
+			path: ../../../Classes/Controller/OperationController.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Classes/Controller/OperationController.php
+
+		-
+			rawMessage: Implicit array creation is not allowed - variable $pid does not exist.
+			identifier: variable.implicitArray
+			count: 2
+			path: ../../../Classes/Controller/OperationController.php
+
+		-
+			rawMessage: 'Loose comparison via "!=" is not allowed.'
+			identifier: notEqual.notAllowed
+			count: 3
+			path: ../../../Classes/Controller/OperationController.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Controller\OperationController::buildUidList() has parameter $result with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Controller/OperationController.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Controller\OperationController::generateYears() return type has no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Controller/OperationController.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Controller\OperationController::getOperationCategories() return type with generic class TYPO3\CMS\Extbase\Persistence\Generic\QueryResult does not specify its types: TValue'
+			identifier: missingType.generics
+			count: 1
+			path: ../../../Classes/Controller/OperationController.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Controller\OperationController::getOperationCategories() return type with generic class TYPO3\CMS\Extbase\Persistence\ObjectStorage does not specify its types: TEntity'
+			identifier: missingType.generics
+			count: 1
+			path: ../../../Classes/Controller/OperationController.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Controller\OperationController::getOperationCategories() should return TYPO3\CMS\Extbase\Persistence\Generic\QueryResult|TYPO3\CMS\Extbase\Persistence\ObjectStorage|null but returns TYPO3\CMS\Extbase\Persistence\ObjectStorage|TYPO3\CMS\Extbase\Persistence\QueryResultInterface<int, Kanow\Operations\Domain\Model\Category>.'
+			identifier: return.type
+			count: 1
+			path: ../../../Classes/Controller/OperationController.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Controller\OperationController::getRequest() should return Psr\Http\Message\ServerRequestInterface but returns mixed.'
+			identifier: return.type
+			count: 1
+			path: ../../../Classes/Controller/OperationController.php
+
+		-
+			rawMessage: 'Only booleans are allowed in &&, int given on the right side.'
+			identifier: booleanAnd.rightNotBoolean
+			count: 2
+			path: ../../../Classes/Controller/OperationController.php
+
+		-
+			rawMessage: 'Only booleans are allowed in a negated boolean, array|float|int|string|false|null given.'
+			identifier: booleanNot.exprNotBoolean
+			count: 1
+			path: ../../../Classes/Controller/OperationController.php
+
+		-
+			rawMessage: 'Parameter #1 $value of function intval expects array|bool|float|GMP|int|resource|SimpleXMLElement|string|null, mixed given.'
+			identifier: argument.type
+			count: 1
+			path: ../../../Classes/Controller/OperationController.php
+
+		-
+			rawMessage: 'Parameter #2 $currentPageNumber of class TYPO3\CMS\Extbase\Pagination\QueryResultPaginator constructor expects int, mixed given.'
+			identifier: argument.type
+			count: 2
+			path: ../../../Classes/Controller/OperationController.php
+
+		-
+			rawMessage: Possibly invalid array key type mixed.
+			identifier: offsetAccess.invalidOffset
+			count: 1
+			path: ../../../Classes/Controller/OperationController.php
+
+		-
+			rawMessage: Short ternary operator is not allowed. Use null coalesce operator if applicable or consider using long ternary.
+			identifier: ternary.shortNotAllowed
+			count: 1
+			path: ../../../Classes/Controller/OperationController.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Classes/Controller/ResourceController.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Classes/Controller/VehicleController.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Classes/Domain/Model/Assistance.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Classes/Domain/Model/Category.php
+
+		-
+			rawMessage: 'Cannot call method attach() on TYPO3\CMS\Extbase\Persistence\ObjectStorage<Kanow\Operations\Domain\Model\Assistance>|null.'
+			identifier: method.nonObject
+			count: 1
+			path: ../../../Classes/Domain/Model/Operation.php
+
+		-
+			rawMessage: 'Cannot call method attach() on TYPO3\CMS\Extbase\Persistence\ObjectStorage<Kanow\Operations\Domain\Model\Category>|null.'
+			identifier: method.nonObject
+			count: 1
+			path: ../../../Classes/Domain/Model/Operation.php
+
+		-
+			rawMessage: 'Cannot call method attach() on TYPO3\CMS\Extbase\Persistence\ObjectStorage<Kanow\Operations\Domain\Model\Type>|null.'
+			identifier: method.nonObject
+			count: 1
+			path: ../../../Classes/Domain/Model/Operation.php
+
+		-
+			rawMessage: 'Cannot call method attach() on TYPO3\CMS\Extbase\Persistence\ObjectStorage<Kanow\Operations\Domain\Model\Vehicle>|null.'
+			identifier: method.nonObject
+			count: 1
+			path: ../../../Classes/Domain/Model/Operation.php
+
+		-
+			rawMessage: 'Cannot call method detach() on TYPO3\CMS\Extbase\Persistence\ObjectStorage<Kanow\Operations\Domain\Model\Assistance>|null.'
+			identifier: method.nonObject
+			count: 1
+			path: ../../../Classes/Domain/Model/Operation.php
+
+		-
+			rawMessage: 'Cannot call method detach() on TYPO3\CMS\Extbase\Persistence\ObjectStorage<Kanow\Operations\Domain\Model\Category>|null.'
+			identifier: method.nonObject
+			count: 1
+			path: ../../../Classes/Domain/Model/Operation.php
+
+		-
+			rawMessage: 'Cannot call method detach() on TYPO3\CMS\Extbase\Persistence\ObjectStorage<Kanow\Operations\Domain\Model\Type>|null.'
+			identifier: method.nonObject
+			count: 1
+			path: ../../../Classes/Domain/Model/Operation.php
+
+		-
+			rawMessage: 'Cannot call method detach() on TYPO3\CMS\Extbase\Persistence\ObjectStorage<Kanow\Operations\Domain\Model\Vehicle>|null.'
+			identifier: method.nonObject
+			count: 1
+			path: ../../../Classes/Domain/Model/Operation.php
+
+		-
+			rawMessage: 'Cannot call method toArray() on TYPO3\CMS\Extbase\Persistence\ObjectStorage<Kanow\Operations\Domain\Model\Type>|null.'
+			identifier: method.nonObject
+			count: 1
+			path: ../../../Classes/Domain/Model/Operation.php
+
+		-
+			rawMessage: 'Cannot call method toArray() on TYPO3\CMS\Extbase\Persistence\ObjectStorage<TYPO3\CMS\Extbase\Domain\Model\FileReference>|null.'
+			identifier: method.nonObject
+			count: 1
+			path: ../../../Classes/Domain/Model/Operation.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Classes/Domain/Model/Operation.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Classes/Domain/Model/OperationDemand.php
+
+		-
+			rawMessage: 'Cannot call method toArray() on TYPO3\CMS\Extbase\Persistence\ObjectStorage<TYPO3\CMS\Extbase\Domain\Model\FileReference>|null.'
+			identifier: method.nonObject
+			count: 1
+			path: ../../../Classes/Domain/Model/Resource.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Classes/Domain/Model/Resource.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Classes/Domain/Model/Type.php
+
+		-
+			rawMessage: 'Cannot call method toArray() on TYPO3\CMS\Extbase\Persistence\ObjectStorage<TYPO3\CMS\Extbase\Domain\Model\FileReference>|null.'
+			identifier: method.nonObject
+			count: 1
+			path: ../../../Classes/Domain/Model/Vehicle.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Classes/Domain/Model/Vehicle.php
+
+		-
+			rawMessage: 'Argument of an invalid type mixed supplied for foreach, only iterables are supported.'
+			identifier: foreach.nonIterable
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Cannot call method getTitle() on Kanow\Operations\Domain\Model\Type|null.'
+			identifier: method.nonObject
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: Cannot cast mixed to int.
+			identifier: cast.int
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Class cognitive complexity is 44, keep it under 10'
+			identifier: complexity.classLike
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Cognitive complexity for "Kanow\Operations\Domain\Repository\OperationRepository::createCategoryConstraints()" is 6, keep it under 5'
+			identifier: complexity.functionLike
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: Control structures using switch should not be used.
+			identifier: ergebnis.noSwitch
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Loose comparison via "!=" is not allowed.'
+			identifier: notEqual.notAllowed
+			count: 3
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Loose comparison via "==" is not allowed.'
+			identifier: equal.notAllowed
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addCategoryConstraintsFromDemand() has parameter $constraints that is passed by reference.'
+			identifier: ergebnis.noParameterPassedByReference
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addCategoryConstraintsFromDemand() has parameter $constraints with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addCategoryConstraintsFromDemand() has parameter $query with generic interface TYPO3\CMS\Extbase\Persistence\QueryInterface but does not specify its types: T'
+			identifier: missingType.generics
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addCategoryConstraintsFromSettings() has parameter $constraints that is passed by reference.'
+			identifier: ergebnis.noParameterPassedByReference
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addCategoryConstraintsFromSettings() has parameter $constraints with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addCategoryConstraintsFromSettings() has parameter $query with generic interface TYPO3\CMS\Extbase\Persistence\QueryInterface but does not specify its types: T'
+			identifier: missingType.generics
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addCategoryConstraintsFromSettings() has parameter $settings with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addDateConstraints() has parameter $constraints that is passed by reference.'
+			identifier: ergebnis.noParameterPassedByReference
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addDateConstraints() has parameter $constraints with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addDateConstraints() has parameter $query with generic interface TYPO3\CMS\Extbase\Persistence\QueryInterface but does not specify its types: T'
+			identifier: missingType.generics
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addEmptyYear() has parameter $data with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addEmptyYear() return type has no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addMapConstraints() has parameter $constraints that is passed by reference.'
+			identifier: ergebnis.noParameterPassedByReference
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addMapConstraints() has parameter $constraints with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addMapConstraints() has parameter $query with generic interface TYPO3\CMS\Extbase\Persistence\QueryInterface but does not specify its types: T'
+			identifier: missingType.generics
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addMapConstraints() has parameter $settings with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addMissingType() has parameter $data with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addMissingType() has parameter $types with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addMissingType() return type has no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addSearchConstraints() has parameter $constraints that is passed by reference.'
+			identifier: ergebnis.noParameterPassedByReference
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addSearchConstraints() has parameter $constraints with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addSearchConstraints() has parameter $query with generic interface TYPO3\CMS\Extbase\Persistence\QueryInterface but does not specify its types: T'
+			identifier: missingType.generics
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addSearchConstraints() has parameter $settings with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addTypeConstraints() has parameter $constraints that is passed by reference.'
+			identifier: ergebnis.noParameterPassedByReference
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addTypeConstraints() has parameter $constraints with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::addTypeConstraints() has parameter $query with generic interface TYPO3\CMS\Extbase\Persistence\QueryInterface but does not specify its types: T'
+			identifier: missingType.generics
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::buildSearchConstraints() has parameter $query with generic interface TYPO3\CMS\Extbase\Persistence\QueryInterface but does not specify its types: T'
+			identifier: missingType.generics
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::buildSearchConstraints() has parameter $searchFields with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::buildSearchConstraints() return type has no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::cleanUnusedConstraints() has parameter $constraints with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::cleanUnusedConstraints() return type has no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::countGroupedByYear() has parameter $years with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::countGroupedByYear() return type has no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::countGroupedByYearAndType() has parameter $types with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::countGroupedByYearAndType() has parameter $years with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::countGroupedByYearAndType() return type has no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::createConstraintsFromDemand() has parameter $query with generic interface TYPO3\CMS\Extbase\Persistence\QueryInterface but does not specify its types: T'
+			identifier: missingType.generics
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::createConstraintsFromDemand() has parameter $settings with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::findDemanded() return type with generic interface TYPO3\CMS\Extbase\Persistence\QueryResultInterface does not specify its types: TKey, TValue'
+			identifier: missingType.generics
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::findDemanded() should return iterable<Kanow\Operations\Domain\Model\Operation>&TYPO3\CMS\Extbase\Persistence\QueryResultInterface but returns TYPO3\CMS\Extbase\Persistence\QueryResultInterface<int, object>.'
+			identifier: return.type
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::findDemandedForStatistics() should return array<int, Kanow\Operations\Domain\Model\Operation> but returns list<array<string, mixed>>.'
+			identifier: return.type
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::generateQuery() return type with generic interface TYPO3\CMS\Extbase\Persistence\QueryInterface does not specify its types: T'
+			identifier: missingType.generics
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::getSearchFields() has parameter $settings with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::getSearchFields() return type has no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::getTypeTitle() has parameter $value with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::prepareResultForChartArray() has parameter $result with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::prepareResultForChartArray() return type has no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::sortResultByTypeUid() has parameter $data with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::sortResultByTypeUid() return type has no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::sortResultByYears() has parameter $result with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\OperationRepository::sortResultByYears() return type has no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Parameter #1 $key of function array_key_exists expects int|string, int<1, max>|null given.'
+			identifier: argument.type
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Parameter #1 $value of function count expects array|Countable, mixed given.'
+			identifier: argument.type
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'Parameter #1 ...$constraints of method TYPO3\CMS\Extbase\Persistence\QueryInterface<Kanow\Operations\Domain\Model\Operation>::logicalAnd() expects TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface, TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface|null given.'
+			identifier: argument.type
+			count: 1
+			path: ../../../Classes/Domain/Repository/OperationRepository.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Classes/Domain/Repository/ResourceRepository.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Classes/Domain/Repository/TypeRepository.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Domain\Repository\TypeRepository::findAll() return type with generic interface TYPO3\CMS\Extbase\Persistence\QueryResultInterface does not specify its types: TKey, TValue'
+			identifier: missingType.generics
+			count: 1
+			path: ../../../Classes/Domain/Repository/TypeRepository.php
+
+		-
+			rawMessage: 'Return type (iterable<Kanow\Operations\Domain\Model\Type>&TYPO3\CMS\Extbase\Persistence\QueryResultInterface) of method Kanow\Operations\Domain\Repository\TypeRepository::findAll() should be covariant with return type (TYPO3\CMS\Extbase\Persistence\QueryResultInterface<int, Kanow\Operations\Domain\Model\Type>) of method TYPO3\CMS\Extbase\Persistence\Repository<Kanow\Operations\Domain\Model\Type>::findAll()'
+			identifier: method.childReturnType
+			count: 1
+			path: ../../../Classes/Domain/Repository/TypeRepository.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Classes/Domain/Repository/VehicleRepository.php
+
+		-
+			rawMessage: 'Calling htmlspecialchars() is forbidden, set the $flags parameter to `ENT_QUOTES` to also convert single quotes to entities to prevent some HTML injection bugs.'
+			identifier: disallowed.function
+			count: 1
+			path: ../../../Classes/Hooks/ItemsProcFunc.php
+
+		-
+			rawMessage: Casting to int something that's already int.
+			identifier: cast.useless
+			count: 1
+			path: ../../../Classes/Hooks/ItemsProcFunc.php
+
+		-
+			rawMessage: 'Class cognitive complexity is 16, keep it under 10'
+			identifier: complexity.classLike
+			count: 1
+			path: ../../../Classes/Hooks/ItemsProcFunc.php
+
+		-
+			rawMessage: 'Cognitive complexity for "Kanow\Operations\Hooks\ItemsProcFunc::reduceTemplateLayouts()" is 11, keep it under 5'
+			identifier: complexity.functionLike
+			count: 1
+			path: ../../../Classes/Hooks/ItemsProcFunc.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Classes/Hooks/ItemsProcFunc.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Hooks\ItemsProcFunc::getLanguageService() should return TYPO3\CMS\Core\Localization\LanguageService but returns mixed.'
+			identifier: return.type
+			count: 1
+			path: ../../../Classes/Hooks/ItemsProcFunc.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Hooks\ItemsProcFunc::reduceTemplateLayouts() has parameter $templateLayouts with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Hooks/ItemsProcFunc.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Hooks\ItemsProcFunc::reduceTemplateLayouts() return type has no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Hooks/ItemsProcFunc.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Hooks\ItemsProcFunc::user_templateLayout() has parameter $config that is passed by reference.'
+			identifier: ergebnis.noParameterPassedByReference
+			count: 1
+			path: ../../../Classes/Hooks/ItemsProcFunc.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Hooks\ItemsProcFunc::user_templateLayout() has parameter $config with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Hooks/ItemsProcFunc.php
+
+		-
+			rawMessage: Offset 'pid' might not exist on array|null.
+			identifier: offsetAccess.notFound
+			count: 1
+			path: ../../../Classes/Hooks/ItemsProcFunc.php
+
+		-
+			rawMessage: 'Parameter #2 $string of static method TYPO3\CMS\Core\Utility\GeneralUtility::intExplode() expects string, mixed given.'
+			identifier: argument.type
+			count: 1
+			path: ../../../Classes/Hooks/ItemsProcFunc.php
+
+		-
+			rawMessage: 'Call to an undefined method object::getParent().'
+			identifier: method.notFound
+			count: 1
+			path: ../../../Classes/Service/CategoryService.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Classes/Service/CategoryService.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Service\CategoryService::attachChildrenToStorage() has parameter $resultStorage with generic class TYPO3\CMS\Extbase\Persistence\ObjectStorage but does not specify its types: TEntity'
+			identifier: missingType.generics
+			count: 1
+			path: ../../../Classes/Service/CategoryService.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Service\CategoryService::attachChildrenToStorage() has parameter $stack that is passed by reference.'
+			identifier: ergebnis.noParameterPassedByReference
+			count: 1
+			path: ../../../Classes/Service/CategoryService.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Service\CategoryService::attachChildrenToStorage() has parameter $stack with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Service/CategoryService.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Service\CategoryService::attachChildrenToStorage() has parameter $storage with generic class TYPO3\CMS\Extbase\Persistence\ObjectStorage but does not specify its types: TEntity'
+			identifier: missingType.generics
+			count: 1
+			path: ../../../Classes/Service/CategoryService.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Service\CategoryService::buildStorageFromQuery() has parameter $query with generic interface TYPO3\CMS\Extbase\Persistence\QueryResultInterface but does not specify its types: TKey, TValue'
+			identifier: missingType.generics
+			count: 1
+			path: ../../../Classes/Service/CategoryService.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Service\CategoryService::buildStorageFromQuery() return type with generic class TYPO3\CMS\Extbase\Persistence\ObjectStorage does not specify its types: TEntity'
+			identifier: missingType.generics
+			count: 1
+			path: ../../../Classes/Service/CategoryService.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Service\CategoryService::findAllDescendants() return type with generic class TYPO3\CMS\Extbase\Persistence\ObjectStorage does not specify its types: TEntity'
+			identifier: missingType.generics
+			count: 1
+			path: ../../../Classes/Service/CategoryService.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Service\CategoryService::findDescendantsRecursive() has parameter $storage with generic class TYPO3\CMS\Extbase\Persistence\ObjectStorage but does not specify its types: TEntity'
+			identifier: missingType.generics
+			count: 1
+			path: ../../../Classes/Service/CategoryService.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Service\CategoryService::findDescendantsRecursive() return type with generic class TYPO3\CMS\Extbase\Persistence\ObjectStorage does not specify its types: TEntity'
+			identifier: missingType.generics
+			count: 1
+			path: ../../../Classes/Service/CategoryService.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Classes/Utility/SqlUtility.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Utility\SqlUtility::convertYearsToString() has parameter $years with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Utility/SqlUtility.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Utility\SqlUtility::convertYearsToStringForSqlite() has parameter $years with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Utility/SqlUtility.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Utility\SqlUtility::getWhereYearInString() has parameter $years with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Utility/SqlUtility.php
+
+		-
+			rawMessage: Cannot access offset 'EXT' on mixed.
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: ../../../Classes/Utility/TemplateLayout.php
+
+		-
+			rawMessage: Cannot access offset 'operations' on mixed.
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: ../../../Classes/Utility/TemplateLayout.php
+
+		-
+			rawMessage: Cannot access offset 'templateLayouts' on mixed.
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: ../../../Classes/Utility/TemplateLayout.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Classes/Utility/TemplateLayout.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Utility\TemplateLayout::extractTitleFromOptionGroup() return type has no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Utility/TemplateLayout.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Utility\TemplateLayout::getAvailableTemplateLayouts() return type has no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Utility/TemplateLayout.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Utility\TemplateLayout::getAvailableTemplateLayouts() should return array but returns mixed.'
+			identifier: return.type
+			count: 1
+			path: ../../../Classes/Utility/TemplateLayout.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Utility\TemplateLayout::getTemplateLayoutsFromTsConfig() return type has no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Utility/TemplateLayout.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Utility\TemplateLayout::processSingleTemplateLayout() return type has no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Utility/TemplateLayout.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Utility\TemplateLayout::processTsConfigLayouts() has parameter $tsConfigLayouts with no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Utility/TemplateLayout.php
+
+		-
+			rawMessage: 'Method Kanow\Operations\Utility\TemplateLayout::processTsConfigLayouts() return type has no value type specified in iterable type array.'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../../../Classes/Utility/TemplateLayout.php
+
+		-
+			rawMessage: 'Parameter #1 ...$arrays of function array_merge expects array, mixed given.'
+			identifier: argument.type
+			count: 1
+			path: ../../../Classes/Utility/TemplateLayout.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Configuration/Icons.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Configuration/TCA/Overrides/sys_template.php
+
+		-
+			rawMessage: Cannot access offset 'ctrl' on mixed.
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: ../../../Configuration/TCA/Overrides/tt_content.php
+
+		-
+			rawMessage: Cannot access offset 'operations_operationlist'|'operations_operationshow'|'operations_operationstatistics'|'operations_resourcelist'|'operations_resourceshow'|'operations_vehiclelist'|'operations_vehicleshow' on mixed.
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 2
+			path: ../../../Configuration/TCA/Overrides/tt_content.php
+
+		-
+			rawMessage: Cannot access offset 'showitem' on mixed.
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: ../../../Configuration/TCA/Overrides/tt_content.php
+
+		-
+			rawMessage: Cannot access offset 'tt_content' on mixed.
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 2
+			path: ../../../Configuration/TCA/Overrides/tt_content.php
+
+		-
+			rawMessage: Cannot access offset 'typeicon_classes' on mixed.
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: ../../../Configuration/TCA/Overrides/tt_content.php
+
+		-
+			rawMessage: Cannot access offset 'types' on mixed.
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: ../../../Configuration/TCA/Overrides/tt_content.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Configuration/TCA/Overrides/tt_content.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Configuration/TCA/tx_operations_domain_model_assistance.php
+
+		-
+			rawMessage: Cannot access offset 'slugBehaviour' on mixed.
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: ../../../Configuration/TCA/tx_operations_domain_model_operation.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Configuration/TCA/tx_operations_domain_model_operation.php
+
+		-
+			rawMessage: Cannot access offset 'slugBehaviour' on mixed.
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: ../../../Configuration/TCA/tx_operations_domain_model_resource.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Configuration/TCA/tx_operations_domain_model_resource.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Configuration/TCA/tx_operations_domain_model_type.php
+
+		-
+			rawMessage: Cannot access offset 'slugBehaviour' on mixed.
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: ../../../Configuration/TCA/tx_operations_domain_model_vehicle.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../Configuration/TCA/tx_operations_domain_model_vehicle.php
+
+		-
+			rawMessage: 'File is missing a "declare(strict_types=1)" declaration.'
+			identifier: ergebnis.declareStrictTypes
+			count: 1
+			path: ../../../ext_localconf.php

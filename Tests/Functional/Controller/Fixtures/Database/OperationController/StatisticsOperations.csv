@@ -1,0 +1,31 @@
+"tx_operations_domain_model_type"
+,"uid","pid","title","color"
+,1,2,"Fire","#ff0000"
+,2,2,"Technical assistance","#00ff00"
+
+"sys_category"
+,"uid","pid","title","parent"
+,1,2,"Operations",0
+,2,2,"District North",1
+,3,2,"District South",1
+
+"tx_operations_domain_model_operation"
+,"uid","pid","title","number","location","begin","type","category","hidden"
+,1,2,"Kitchen fire","2023-01","Thale",1683288000,1,1,0
+,2,2,"Car accident","2023-02","Neinstedt",1694260800,1,0,0
+,3,2,"Chimney fire","2022-01","Quedlinburg",1660996800,1,1,0
+,4,2,"Barn fire","2023-03","Warnstedt",1699704000,1,0,0
+,5,2,"Hidden operation","2023-04","Thale",1675252800,1,0,1
+
+"tx_operations_operation_type_mm"
+,"uid_local","uid_foreign","sorting","sorting_foreign"
+,1,1,1,0
+,2,2,1,0
+,3,1,1,0
+,4,1,1,0
+,5,2,1,0
+
+"sys_category_record_mm"
+,"uid_local","uid_foreign","tablenames","fieldname","sorting","sorting_foreign"
+,2,1,"tx_operations_domain_model_operation","category",0,1
+,2,3,"tx_operations_domain_model_operation","category",0,1
