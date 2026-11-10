@@ -55,12 +55,6 @@
                     </treeConfig>
                     <maxitems>50</maxitems>
                     <minitems>0</minitems>
-                    <show_thumbs>1</show_thumbs>
-                    <wizards>
-                        <suggest>
-                            <type>suggest</type>
-                        </suggest>
-                    </wizards>
                 </config>
             </settings.category>
 
@@ -69,10 +63,8 @@
                 <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.statistics.lastYears</label>
                 <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.statistics.lastYears.description</description>
                 <config>
-                    <type>input</type>
+                    <type>number</type>
                     <size>5</size>
-                    <default></default>
-                    <eval>trim,num</eval>
                 </config>
             </settings.lastYears>
 
