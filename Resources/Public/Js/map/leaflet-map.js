@@ -46,25 +46,34 @@ if(mapData != undefined) {
     map.fitBounds(bounds);
 
 
+    // Build popup content as DOM nodes: record values (title, teaser, location)
+    // are plain text and must never be interpreted as HTML.
+    var createTextElement = function(tagName, text) {
+        var element = document.createElement(tagName);
+        element.textContent = text != null ? String(text) : '';
+        return element;
+    };
+
     if(jQuery('.leaflet-map.single').length > 0)
     {
         // set content for popup
         for ( var i=0; i < markers.length; ++i )
         {
-            markerTitle = markers[i].title;
             L.marker( [markers[i].lat, markers[i].lng], {icon: myIcon} )
-                .bindPopup( '<p>' + markerTitle + '</p>'  )
+                .bindPopup( createTextElement('p', markers[i].title) )
                 .addTo( map );
         }
     } else {
         // set content for popup
         for ( var i=0; i < markers.length; ++i )
         {
-            markerUri = markers[i].uri;
-            markerTitle = markers[i].title;
-            markerTeaser = markers[i].teaser;
+            var popupContent = document.createElement('div');
+            var link = createTextElement('a', markers[i].title);
+            link.setAttribute('href', markers[i].uri != null ? String(markers[i].uri) : '');
+            popupContent.appendChild(link);
+            popupContent.appendChild(createTextElement('p', markers[i].teaser));
             L.marker( [markers[i].lat, markers[i].lng], {icon: myIcon} )
-                .bindPopup( '<a href="' + markerUri + '">' + markerTitle + '</a>' + '<p>' + markerTeaser + '</p>'  )
+                .bindPopup( popupContent )
                 .addTo( map );
         }
     }
