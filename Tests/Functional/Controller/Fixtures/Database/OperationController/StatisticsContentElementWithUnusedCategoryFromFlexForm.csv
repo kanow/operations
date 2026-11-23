@@ -1,0 +1,21 @@
+"pages"
+,"uid","pid","title","slug","doktype"
+,5,1,"Statistics","/statistics",1
+
+"tt_content"
+,"uid","pid","CType","header","pages","pi_flexform"
+,3,5,"operations_operationstatistics","Statistics","2","<?xml version=""1.0"" encoding=""utf-8"" standalone=""yes"" ?>
+<T3FlexForms>
+    <data>
+        <sheet index=""sDEF"">
+            <language index=""lDEF"">
+                <field index=""settings.categoryConjunction"">
+                    <value index=""vDEF"">or</value>
+                </field>
+                <field index=""settings.category"">
+                    <value index=""vDEF"">3</value>
+                </field>
+            </language>
+        </sheet>
+    </data>
+</T3FlexForms>"

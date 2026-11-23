@@ -1,0 +1,17 @@
+"pages"
+,"uid","pid","title","slug","doktype"
+,1,0,"Root","/",1
+,2,1,"Storage","/storage",254
+,3,1,"Other storage","/other-storage",254
+
+"tx_operations_domain_model_type"
+,"uid","pid","title","color","sorting","sys_language_uid","l10n_parent","hidden","deleted","starttime","endtime"
+,1,2,"Fire","#ff0000",3,0,0,0,0,0,0
+,2,2,"Technical assistance","#00ff00",1,0,0,0,0,0,0
+,3,2,"Hazardous materials","#0000ff",2,0,0,0,0,0,0
+,4,2,"Hidden type","#000000",4,0,0,1,0,0,0
+,5,2,"Deleted type","#000000",5,0,0,0,1,0,0
+,6,2,"Type not yet started","#000000",6,0,0,0,0,2000000000,0
+,7,2,"Expired type","#000000",7,0,0,0,0,0,1000000000
+,8,3,"Type on other page","#000000",8,0,0,0,0,0,0
+,9,2,"Feuer","#ff0000",3,1,1,0,0,0,0

@@ -1,0 +1,11 @@
+"sys_category"
+,"uid","pid","title","parent","hidden","deleted"
+,1,2,"Operations",0,0,0
+,2,2,"District South",1,0,0
+,3,3,"District North",1,0,0
+,4,2,"Village A",3,0,0
+,5,2,"Street 1",4,0,0
+,6,2,"Other root",0,0,0
+,7,2,"Child of other root",6,0,0
+,8,2,"Hidden child",1,1,0
+,9,2,"Deleted child",1,0,1

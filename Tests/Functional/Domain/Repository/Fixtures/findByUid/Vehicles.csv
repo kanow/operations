@@ -1,0 +1,5 @@
+"tx_operations_domain_model_vehicle"
+,"uid","pid","title","short","description","link","hidden","deleted"
+,1,2,"Rescue fire engine","HLF 20","<p>Carries water and rescue equipment.</p>","https://example.com/hlf-20",0,0
+,2,2,"Hidden vehicle","","","",1,0
+,3,2,"Deleted vehicle","","","",0,1

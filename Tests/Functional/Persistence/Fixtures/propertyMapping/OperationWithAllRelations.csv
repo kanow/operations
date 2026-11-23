@@ -1,0 +1,64 @@
+"tx_operations_domain_model_operation"
+,"uid","pid","title","number","onlyEld","location","teaser","report","begin","end","latitude","longitude","zoom","type","assistance","vehicles","resources","category","media"
+,1,2,"Kitchen fire","2023-17",1,"Thale, Main street 1","Smoke in the kitchen","<p>The fire was extinguished quickly.</p>",1683288000,1683295200,"51.7500","11.0400",15,1,2,2,1,2,2
+
+"tx_operations_domain_model_type"
+,"uid","pid","title","color"
+,1,2,"Fire","#ff0000"
+,2,2,"Technical assistance","#00ff00"
+
+"tx_operations_operation_type_mm"
+,"uid_local","uid_foreign","sorting","sorting_foreign"
+,1,1,1,0
+
+"tx_operations_domain_model_assistance"
+,"uid","pid","title","description","link"
+,1,2,"Police","Traffic control","https://example.com/police"
+,2,2,"Ambulance","Medical care",""
+,3,2,"Unrelated assistance","",""
+
+"tx_operations_operation_assistance_mm"
+,"uid_local","uid_foreign","sorting","sorting_foreign"
+,1,2,1,0
+,1,1,2,0
+
+"tx_operations_domain_model_vehicle"
+,"uid","pid","title","short"
+,1,2,"Rescue fire engine","HLF 20"
+,2,2,"Turntable ladder","DLK 23"
+,3,2,"Command vehicle","ELW 1"
+
+"tx_operations_operation_vehicle_mm"
+,"uid_local","uid_foreign","sorting","sorting_foreign"
+,1,1,1,0
+,1,2,2,0
+
+"tx_operations_domain_model_resource"
+,"uid","pid","title","short"
+,1,2,"Thermal imaging camera","TIC"
+,2,2,"Oil binder",""
+
+"tx_operations_operation_resource_mm"
+,"uid_local","uid_foreign","sorting","sorting_foreign"
+,1,1,1,0
+
+"sys_category"
+,"uid","pid","title","parent"
+,1,2,"Operations",0
+,2,2,"District North",1
+,3,2,"Night",1
+
+"sys_category_record_mm"
+,"uid_local","uid_foreign","tablenames","fieldname","sorting","sorting_foreign"
+,2,1,"tx_operations_domain_model_operation","category",0,1
+,3,1,"tx_operations_domain_model_operation","category",0,2
+
+"sys_file"
+,"uid","pid","storage","type","identifier","identifier_hash","folder_hash","name","extension","mime_type"
+,1,0,1,2,"/user_upload/kitchen.svg","1d0a4bdd4a3b4c3b9e5cbbd38c3cbf65ae8e1f1b","19669f1e02c2f16705ec7587044c66443be70725","kitchen.svg","svg","image/svg+xml"
+,2,0,1,2,"/user_upload/smoke.svg","2d0a4bdd4a3b4c3b9e5cbbd38c3cbf65ae8e1f1b","19669f1e02c2f16705ec7587044c66443be70725","smoke.svg","svg","image/svg+xml"
+
+"sys_file_reference"
+,"uid","pid","uid_local","uid_foreign","tablenames","fieldname","sorting_foreign","title","alternative"
+,1,2,1,1,"tx_operations_domain_model_operation","media",1,"Kitchen","Burnt kitchen"
+,2,2,2,1,"tx_operations_domain_model_operation","media",2,"Smoke","Smoke over the roof"

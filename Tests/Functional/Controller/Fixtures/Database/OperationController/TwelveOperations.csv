@@ -1,0 +1,14 @@
+"tx_operations_domain_model_operation"
+,"uid","pid","title","number","location","begin"
+,1,2,"Operation 01","2023-01","Thale",1675339200
+,2,2,"Operation 02","2023-02","Thale",1675425600
+,3,2,"Operation 03","2023-03","Thale",1675512000
+,4,2,"Operation 04","2023-04","Thale",1675598400
+,5,2,"Operation 05","2023-05","Thale",1675684800
+,6,2,"Operation 06","2023-06","Thale",1675771200
+,7,2,"Operation 07","2023-07","Thale",1675857600
+,8,2,"Operation 08","2023-08","Thale",1675944000
+,9,2,"Operation 09","2023-09","Thale",1676030400
+,10,2,"Operation 10","2023-10","Thale",1676116800
+,11,2,"Operation 11","2023-11","Thale",1676203200
+,12,2,"Operation 12","2023-12","Thale",1676289600

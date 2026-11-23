@@ -1,0 +1,23 @@
+"pages"
+,"uid","pid","title","slug","doktype"
+,4,1,"Resource detail","/resource-detail",1
+
+"tt_content"
+,"uid","pid","CType","header","pages","pi_flexform"
+,1,1,"operations_resourcelist","Resource list","2",""
+,2,4,"operations_resourceshow","Resource detail","2",""
+
+"tx_operations_domain_model_resource"
+,"uid","pid","title","short","description","link","sorting","media","hidden"
+,1,2,"Thermal imaging camera","TIC","<p>Finds people in smoke.</p>","",2,1,0
+,2,2,"Hydraulic rescue tool","HRT","<p>Cuts cars open.</p>","https://example.com/hrt",1,0,0
+,3,2,"Hidden resource","","","",3,0,1
+,4,3,"Resource on other page","","","",4,0,0
+
+"sys_file"
+,"uid","pid","storage","type","identifier","identifier_hash","folder_hash","name","extension","mime_type","size"
+,1,0,1,2,"/user_upload/resource.svg","4d0a4bdd4a3b4c3b9e5cbbd38c3cbf65ae8e1f1b","19669f1e02c2f16705ec7587044c66443be70725","resource.svg","svg","image/svg+xml",1000
+
+"sys_file_reference"
+,"uid","pid","uid_local","uid_foreign","tablenames","fieldname","sorting_foreign"
+,1,2,1,1,"tx_operations_domain_model_resource","media",1

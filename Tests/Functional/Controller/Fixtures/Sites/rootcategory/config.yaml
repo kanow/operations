@@ -1,0 +1,14 @@
+base: 'http://rootcategory.localhost/'
+rootPageId: 10
+dependencies:
+  - typo3/fluid-styled-content
+  - kanow/operations
+languages:
+  - title: English
+    enabled: true
+    languageId: 0
+    base: /
+    locale: en_US.UTF-8
+    navigationTitle: English
+    flag: us
+    websiteTitle: ''
