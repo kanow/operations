@@ -1,12 +1,6 @@
 parameters:
 	ignoreErrors:
 		-
-			rawMessage: 'Out of 243 possible param types, only 242 - 99.5 %% actually have it. Add more param types to get over 100 %%'
-			identifier: typeCoverage.paramTypeCoverage
-			count: 1
-			path: ../../../Classes/Controller/BaseController.php
-
-		-
 			rawMessage: Using nullsafe property access "?->data" on left side of ?? is unnecessary. Use -> instead.
 			identifier: nullsafe.neverNull
 			count: 1

@@ -8,6 +8,7 @@ use Rector\PHPUnit\CodeQuality\Rector\Class_\PreferPHPUnitThisCallRector;
 use Rector\PHPUnit\PHPUnit60\Rector\ClassMethod\AddDoesNotPerformAssertionToNonAssertingTestRector;
 use Rector\TypeDeclaration\Rector\StmtsAwareInterface\SafeDeclareStrictTypesRector;
 use Ssch\TYPO3Rector\CodeQuality\General\ExtEmConfRector;
+use Ssch\TYPO3Rector\TYPO311\v5\MigrateExtbaseViewInterfaceRector;
 use Ssch\TYPO3Rector\TYPO313\v4\MigratePluginContentElementAndPluginSubtypesRector;
 use Ssch\TYPO3Rector\Configuration\Typo3Option;
 use Ssch\TYPO3Rector\Set\Typo3LevelSetList;
@@ -70,6 +71,9 @@ return RectorConfig::configure()
         // so no list_type upgrade wizard needs to be generated
         MigratePluginContentElementAndPluginSubtypesRector::class,
         PreferPHPUnitThisCallRector::class,
+        // TYPO3 v11 migration, which removes the TYPO3\CMS\Core\View\ViewInterface type of initializeView()
+        // that is required since TYPO3 v13
+        MigrateExtbaseViewInterfaceRector::class,
         SafeDeclareStrictTypesRector::class => [
             __DIR__ . '/../../ext_emconf.php',
         ],
