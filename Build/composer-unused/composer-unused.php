@@ -6,9 +6,8 @@ use ComposerUnused\ComposerUnused\Configuration\Configuration;
 use ComposerUnused\ComposerUnused\Configuration\NamedFilter;
 
 return static function (Configuration $config): Configuration {
-    // These packages are only used via Fluid templates and TypoScript,
-    // so composer-unused cannot detect their usage in the PHP code.
-    $config->addNamedFilter(NamedFilter::fromString('typo3/cms-fluid'));
+    // typo3/cms-frontend is only used via TypoScript and request attributes,
+    // so composer-unused cannot detect its usage in the PHP code.
     $config->addNamedFilter(NamedFilter::fromString('typo3/cms-frontend'));
 
     return $config;
