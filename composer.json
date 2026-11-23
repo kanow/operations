@@ -1,6 +1,6 @@
 {
   "name": "kanow/operations",
-  "description": "Manage firefighter operations with detailed reports, images used resources or vehicles, map view for locations. Possibly to use it for other reportable events like THW and so on.",
+  "description": "Operations - Manage firefighter operations with detailed reports, images, used resources or vehicles and a map view for locations. Can also be used for other reportable events (e.g. THW).",
   "license": [
     "GPL-2.0-or-later"
   ],
@@ -11,8 +11,19 @@
     "firefighter",
     "operations"
   ],
+  "homepage": "https://github.com/kanow/operations",
+  "support": {
+    "issues": "https://github.com/kanow/operations/issues",
+    "source": "https://github.com/kanow/operations",
+    "docs": "https://docs.typo3.org/p/kanow/operations/main/en-us/"
+  },
   "require": {
-    "typo3/cms-core": "^14.3"
+    "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
+    "typo3/cms-backend": "^14.3",
+    "typo3/cms-core": "^14.3",
+    "typo3/cms-extbase": "^14.3",
+    "typo3/cms-fluid": "^14.3",
+    "typo3/cms-frontend": "^14.3"
   },
   "require-dev": {
     "ergebnis/composer-normalize": "2.47.0",
@@ -33,6 +44,9 @@
     "typo3/coding-standards": "^0.6.1 || ^0.8.0",
     "typo3/testing-framework": "^8.2.7 || ^9",
     "webmozart/assert": "^1.11.0"
+  },
+  "suggest": {
+    "georgringer/numbered-pagination": "Alternative pagination (set plugin.tx_operations.settings.paginate.class)"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
@@ -58,12 +72,14 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-main": "8.1.x-dev"
+      "dev-main": "8.2.x-dev"
     },
     "typo3/cms": {
-      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "Package": {
+        "providesPackages": {}
+      },
       "extension-key": "operations",
-      "operations": "operations",
+      "version": "8.2.0",
       "web-dir": ".Build/Web"
     }
   },
