@@ -58,12 +58,12 @@ class TemplateLayout implements SingletonInterface
      * Process a single template layout
      *
      * @param string $templateKey
-     * @param string $title
+     * @param string|array<mixed> $title title or, for sub-configuration like "1.allowedColPos", the configuration array
      * @return array
      */
-    protected function processSingleTemplateLayout(string $templateKey, string $title): array
+    protected function processSingleTemplateLayout(string $templateKey, string|array $title): array
     {
-        if (str_starts_with($title, '--div--')) {
+        if (is_string($title) && str_starts_with($title, '--div--')) {
             [$templateKey, $title] = $this->extractTitleFromOptionGroup($title);
         }
 
