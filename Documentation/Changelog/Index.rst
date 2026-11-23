@@ -39,6 +39,30 @@ still as expected after the update.
       }
    }
 
+Database update
+^^^^^^^^^^^^^^^
+
+..  TODO: Provide an upgrade wizard which checks for and fixes empty strings in
+    the "media" / "image" columns, so users do not have to run the SQL below
+    themselves. Note: the database analyzer runs before the upgrade wizards,
+    so the wizard must not depend on an updated database schema.
+
+Most database columns are now created automatically from TCA. The database
+analyzer changes the columns `media` (operation, vehicle, resource) and
+`image` (type) from `varchar(255)` to `int unsigned`, as for every TCA field of
+type `file`.
+
+On MySQL/MariaDB in strict mode this change fails with
+"Truncated incorrect INTEGER value" if one of these columns contains an empty
+string. In this case run the following SQL **before** the database update:
+
+.. code-block:: sql
+
+   UPDATE tx_operations_domain_model_operation SET media = '0' WHERE media = '';
+   UPDATE tx_operations_domain_model_vehicle SET media = '0' WHERE media = '';
+   UPDATE tx_operations_domain_model_resource SET media = '0' WHERE media = '';
+   UPDATE tx_operations_domain_model_type SET image = '0' WHERE image = '';
+
 8.2.0
 =====
 
