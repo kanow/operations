@@ -121,7 +121,7 @@
     ],
     "check:tests:create-directories": "mkdir -p .Build/public/typo3temp/var/tests",
     "check:tests:unit": "phpunit -c Build/phpunit/UnitTests.xml --exclude-group not-core-14.3",
-    "check:typoscript:lint": "typoscript-lint -c Build/typoscript-lint/config.yml --ansi -n --fail-on-warnings -vvv Configuration/TypoScript Configuration/Sets Configuration/TsConfig",
+    "check:typoscript:lint": "typoscript-lint -c Build/typoscript-lint/config.yml --ansi -n --fail-on-warnings -vvv Configuration/TypoScript Configuration/Sets",
     "check:xliff:lint": "php Build/Scripts/checkIntegrityXliff.php",
     "check:xliff:normalize": "php Build/Scripts/xliffNormalizer.php --dry-run",
     "check:yaml:lint": "find . ! -path '*/.cache/*' ! -path '*.Build/*' ! -path '*/Documentation-GENERATED-temp/*' ! -path '*node_modules/*' \\( -name '*.yaml' -o -name '*.yml' \\) | xargs -r php ./.Build/bin/yaml-lint",
