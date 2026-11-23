@@ -45,9 +45,6 @@
     "typo3/testing-framework": "^8.2.7 || ^9",
     "webmozart/assert": "^1.11.0"
   },
-  "suggest": {
-    "georgringer/numbered-pagination": "Alternative pagination (set plugin.tx_operations.settings.paginate.class)"
-  },
   "minimum-stability": "dev",
   "prefer-stable": true,
   "autoload": {
@@ -75,11 +72,7 @@
       "dev-main": "8.2.x-dev"
     },
     "typo3/cms": {
-      "Package": {
-        "providesPackages": {}
-      },
       "extension-key": "operations",
-      "version": "8.2.0",
       "web-dir": ".Build/Web"
     }
   },
