@@ -1,24 +1,25 @@
-*.idea
+# typical clutter of IDEs and editors (this could be added in .git/info/exclude,
+# but we add it here for convenience)
+/*.idea
+/.fleet
+/nbproject
 *.swp
 *.swo
-
-
-# ignore generated documentation
-*GENERATED*
-# ignore typical clutter of IDEs and editors (this could be added in .git/info/exclude,
-#  but we add it here for convenience)
 *~
 *.bak
 *.project
-.project
 .webprj
-nbproject
 
-Build
-.Build/
-!/Build
-Build/testing-docker/.env
-composer.lock
-/var/
-.php-cs-fixer.cache
+# build, cache and test artifacts
+/.Build/*
 /.cache
+/.php-cs-fixer.cache
+/.phpunit.result.cache
+/composer.build.json
+/composer.lock
+/node_modules/
+/var
+
+# generated documentation
+/Documentation-GENERATED-temp/
+*GENERATED*

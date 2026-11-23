@@ -13,3 +13,31 @@ TYPO3 extension to manage and display firefighter operations. Organize data in b
 5. There is also a plugin to view operations statistic. Create new content element and choose the "Operations statistic" plugin.
 
 You find a more detailed documentation here: https://extensions.typo3.org/extension/operations
+
+## Running tests
+
+All tests and code checks run in containers (docker or podman) via
+`Build/Scripts/runTests.sh`, so no local PHP installation is needed.
+
+```bash
+# Show all available options and test suites
+Build/Scripts/runTests.sh -h
+
+# Install the dependencies (highest versions)
+Build/Scripts/runTests.sh -s composerUpdateMax
+
+# Run the unit tests
+Build/Scripts/runTests.sh -s unit
+
+# Run the functional tests on MariaDB
+Build/Scripts/runTests.sh -s functional -d mariadb
+
+# Run PHPStan
+Build/Scripts/runTests.sh -s phpstan
+
+# Run all static code checks
+Build/Scripts/runTests.sh -s checkStatic
+```
+
+Use `-p <8.2|8.3|8.4|8.5>` to select the PHP version and `-b docker` to
+enforce docker if podman is installed as well.
