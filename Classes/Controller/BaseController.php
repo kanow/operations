@@ -38,10 +38,9 @@ class BaseController extends ActionController
      * Initializes the view before invoking an action method.
      * Override this method to solve assign variables common for all actions
      * or prepare the view in another way before the action is called.
-     * @param \TYPO3Fluid\Fluid\View\ViewInterface $view
      */
-    protected function initializeView($view): void
+    protected function initializeView(ViewInterface $view): void
     {
-        $view->assign('contentObjectData', $this->request->getAttribute('currentContentObject')->data);
+        $view->assign('contentObjectData', $this->request->getAttribute('currentContentObject')?->data ?? []);
     }
 }

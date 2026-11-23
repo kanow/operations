@@ -59,7 +59,7 @@ class OperationDemand extends AbstractValueObject
       *
       * @var int $begin
       */
-    #[Extbase\Validate(['validator' => 'NotEmpty'])]
+    #[Extbase\Validate(validator: 'NotEmpty')]
     protected int $begin = 0;
 
     /**

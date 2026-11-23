@@ -40,7 +40,7 @@ class Type extends AbstractEntity
   *
   * @var string
   */
-    #[Extbase\Validate(['validator' => 'NotEmpty'])]
+    #[Extbase\Validate(validator: 'NotEmpty')]
     protected string $title = '';
 
     /**
