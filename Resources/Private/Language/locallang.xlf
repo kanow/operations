@@ -206,6 +206,9 @@
 			<trans-unit id="list.vehicles.defaultImage.title">
 				<source>Default image (vehicles) if no image available.</source>
 			</trans-unit>
+			<trans-unit id="list.resources.defaultImage.title">
+				<source>Default image (resources) if no image available.</source>
+			</trans-unit>
 
 			<trans-unit id="meta.operation-time">
 				<source>Operating time</source>
