@@ -19,6 +19,11 @@ TYPO3 14 (upcoming release)
 
 TYPO3 14 compatibility.
 
+..  TODO: Unknown records in the detail views (operation, vehicle, resource)
+    throw an Extbase exception instead of showing the 404 page. Set
+    plugin.tx_operations.mvc.showPageNotFoundIfTargetNotFoundException = 1
+    (and adjust the functional tests from #42), then document it here.
+
 Changed behaviour
 ^^^^^^^^^^^^^^^^^
 
