@@ -1,32 +1,7 @@
 <?php
 
-use TYPO3\CMS\Core\Information\Typo3Version;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
+defined('TYPO3') or die();
 
-if (!defined('TYPO3')) {
-    die('Access denied.');
-}
-$versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
-$typo3Version = $versionInformation->getMajorVersion();
-if ($typo3Version > 11) {
-    $renderTypeLinkField = 'link';
-    $tcaForDatetimeFields = [
-        'type' => 'datetime',
-        'size' => 16,
-        'eval' => 'int',
-        'default' => 0,
-        'format' => 'datetime',
-    ];
-} else {
-    $renderTypeLinkField = 'inputLink';
-    $tcaForDatetimeFields = [
-        'type' => 'input',
-        'size' => 16,
-        'eval' => 'datetime,int',
-        'default' => 0,
-        'renderType' => 'inputDateTime',
-    ];
-}
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_assistance',
@@ -45,11 +20,10 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'title,description,link,',
         'typeicon_classes' => ['default' => 'ext-operations-assistance'],
     ],
     'types' => [
-        '0' => ['showitem' => 'sys_language_uid;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language,l10n_parent;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent,l10n_diffsource,title,description,link,
+        '0' => ['showitem' => 'sys_language_uid,l10n_parent,title,description,link,
 		--div--;core.form.tabs:access,
                     --palette--;;paletteHidden,
                     --palette--;;paletteAccess,',
@@ -71,57 +45,6 @@ return [
         ],
     ],
     'columns' => [
-        'sys_language_uid' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
-            'config' => ['type' => 'language'],
-        ],
-        'l10n_parent' => [
-            'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'items' => $typo3Version < 12 ? [
-                    ['', 0],
-                ] : [
-                    ['label' => '', 'value' => 0],
-                ],
-                'foreign_table' => 'tx_operations_domain_model_assistance',
-                'foreign_table_where' => 'AND tx_operations_domain_model_assistance.pid=###CURRENT_PID### AND tx_operations_domain_model_assistance.sys_language_uid IN (-1,0)',
-                'default' => 0,
-            ],
-        ],
-        'l10n_diffsource' => [
-            'config' => [
-                'type' => 'passthrough',
-            ],
-        ],
-        't3ver_label' => [
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.versionLabel',
-            'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'max' => 255,
-            ],
-        ],
-        'hidden' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
-            'config' => [
-                'type' => 'check',
-            ],
-        ],
-        'starttime' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
-            'config' => $tcaForDatetimeFields,
-        ],
-        'endtime' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
-            'config' => $tcaForDatetimeFields,
-        ],
         'title' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_assistance.title',
@@ -147,10 +70,8 @@ return [
             'exclude' => 1,
             'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_assistance.link',
             'config' => [
-                'type' => 'input',
-                'renderType' => $renderTypeLinkField,
+                'type' => 'link',
                 'size' => 30,
-                'eval' => 'trim',
                 'default' => '',
             ],
         ],
