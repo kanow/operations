@@ -12,6 +12,33 @@
 Changelog
 =========
 
+..  TODO: Replace the headline with the final version number before the release.
+
+TYPO3 14 (upcoming release)
+===========================
+
+TYPO3 14 compatibility.
+
+Changed behaviour
+^^^^^^^^^^^^^^^^^
+
+The TypoScript setting `dontRespectStoragePage` did not work in previous
+versions because of a wrong type comparison. Now it works as intended: with
+`dontRespectStoragePage = 1` the operation list (including search and filter)
+and the statistics ignore the storage page and use operations from **all**
+pages.
+
+If you set this option in your installation, check whether the output is
+still as expected after the update.
+
+.. code-block:: typoscript
+
+   plugin.tx_operations {
+      settings {
+         dontRespectStoragePage = 1
+      }
+   }
+
 8.2.0
 =====
 
