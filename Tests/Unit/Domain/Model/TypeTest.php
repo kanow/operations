@@ -7,7 +7,9 @@ namespace Kanow\Operations\Tests\Unit\Domain\Model;
 use Kanow\Operations\Domain\Model\Type;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Test;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 #[CoversClass(Type::class)]
@@ -41,6 +43,23 @@ final class TypeTest extends UnitTestCase
         $this->subject->setTitle($value);
 
         self::assertSame($value, $this->subject->getTitle());
+    }
+
+    #[Test]
+    public function getImageInitiallyReturnsNull(): void
+    {
+        self::assertNull($this->subject->getImage());
+    }
+
+    #[Test]
+    public function setImageSetsImage(): void
+    {
+        /** @var ObjectStorage<FileReference> $image */
+        $image = new ObjectStorage();
+        $image->attach(new FileReference());
+        $this->subject->setImage($image);
+
+        self::assertSame($image, $this->subject->getImage());
     }
 
     #[Test]
