@@ -65,6 +65,10 @@ to `operations.messages:list.header`. Entries in
 names. Labels overridden via TypoScript (`_LOCAL_LANG`) do not have to be
 changed.
 
+Unused labels, for example `backToOperation`, `filter.labelYear` and several
+`tx_operations_domain_model_*` labels in `messages.xlf`, were removed. If your
+own templates use one of them, provide the label in your own language file.
+
 Database update
 ^^^^^^^^^^^^^^^
 

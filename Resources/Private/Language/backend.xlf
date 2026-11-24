@@ -18,12 +18,6 @@
       <trans-unit id="plugin.operationshow.description">
         <source>Detail view for a firefighter operation</source>
       </trans-unit>
-      <trans-unit id="plugin.operationsearch.title">
-        <source>Operations search</source>
-      </trans-unit>
-      <trans-unit id="plugin.operationsearch.description">
-        <source>Search firefighter operations</source>
-      </trans-unit>
       <trans-unit id="plugin.operationstatistics.title">
         <source>Operations statistics</source>
       </trans-unit>

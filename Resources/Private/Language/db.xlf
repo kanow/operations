@@ -147,47 +147,11 @@
       <trans-unit id="flexform.singleMediaHeight">
         <source>Height of media elements</source>
       </trans-unit>
-      <trans-unit id="flexform.controller">
-        <source>Show:</source>
-      </trans-unit>
-      <trans-unit id="flexform.operations">
-        <source>Operations</source>
-      </trans-unit>
-      <trans-unit id="flexform.operationsListAndSearchAction">
-        <source>Operations - List view</source>
-      </trans-unit>
-      <trans-unit id="flexform.operationsShowAction">
-        <source>Operations - Detail view</source>
-      </trans-unit>
-      <trans-unit id="flexform.vehicles">
-        <source>Vehicles</source>
-      </trans-unit>
-      <trans-unit id="flexform.vehiclesListAction">
-        <source>Vehicles - List view</source>
-      </trans-unit>
-      <trans-unit id="flexform.vehiclesShowAction">
-        <source>Vehicles - Single view</source>
-      </trans-unit>
-      <trans-unit id="flexform.operationsStatsAction">
-        <source>Operations - Statistics</source>
-      </trans-unit>
-      <trans-unit id="flexform.resources">
-        <source>Resources</source>
-      </trans-unit>
-      <trans-unit id="flexform.resourcesListAction">
-        <source>Resources - List view</source>
-      </trans-unit>
-      <trans-unit id="flexform.resourcesShowAction">
-        <source>Resources - Single view</source>
-      </trans-unit>
       <trans-unit id="flexform.itemsPerPage">
         <source>Items per page</source>
       </trans-unit>
       <trans-unit id="flexform.itemsPerPage.description">
         <source>How many items per page are showing with activated pagination.</source>
-      </trans-unit>
-      <trans-unit id="flexform.showPaginator">
-        <source>Show pagination</source>
       </trans-unit>
       <trans-unit id="flexform.hidePagination">
         <source>Hide pagination</source>
@@ -306,9 +270,6 @@
       <trans-unit id="tsc.subcategoryLabel.list">
         <source>Settings for list view</source>
       </trans-unit>
-      <trans-unit id="tsc.subcategoryLabel.map">
-        <source>Settings for map</source>
-      </trans-unit>
       <trans-unit id="tsc.templateRootPath">
         <source>Templates:Path to template root (FE)</source>
       </trans-unit>
@@ -321,26 +282,8 @@
       <trans-unit id="tsc.css">
         <source>Default CSS:Default CSS file, change path to use your own CSS (FE)</source>
       </trans-unit>
-      <trans-unit id="tsc.flexsliderCss">
-        <source>Flexslider CSS:Default CSS from flexslider, change path to use your own CSS</source>
-      </trans-unit>
-      <trans-unit id="tsc.magnificCss">
-        <source>MagnificPopup CSS:Default CSS from magnific popup, change path to use your own CSS</source>
-      </trans-unit>
       <trans-unit id="tsc.jquery">
         <source>jQuery default:Default path to jquery library. Change or delete path to use your own library.</source>
-      </trans-unit>
-      <trans-unit id="tsc.flexsliderJs">
-        <source>Flexslider JS:Default path to flexslider JS. Change path to use your own flexslider code.</source>
-      </trans-unit>
-      <trans-unit id="tsc.magnificJs">
-        <source>MagnificPopup JS:Default path to magnific popup JS. Change path to use your own magnific popup code.</source>
-      </trans-unit>
-      <trans-unit id="tsc.sliderJs">
-        <source>Run slider JS:Default JS code from tx_operations to run the slider.</source>
-      </trans-unit>
-      <trans-unit id="tsc.lightboxJs">
-        <source>Run lightbox JS:Default JS code to run the lightbox.</source>
       </trans-unit>
       <trans-unit id="tsc.storagePid">
         <source>Storage Pid:Default storage PID for all data of operations</source>
@@ -417,29 +360,8 @@
       <trans-unit id="tsc.insertBelow">
         <source>Pagination below:Show pagination below the list</source>
       </trans-unit>
-      <trans-unit id="tsc.lessPages">
-        <source>lessPages</source>
-      </trans-unit>
       <trans-unit id="tsc.maxNumberOfLinks">
         <source>maxNumberOfLinks</source>
-      </trans-unit>
-      <trans-unit id="tsc.prevNextHeaderTags">
-        <source>Show prev/next:Show prev/next in pagination</source>
-      </trans-unit>
-      <trans-unit id="tsc.apikey">
-        <source>GoogleMaps Apikey:Use your own googlemaps apikey</source>
-      </trans-unit>
-      <trans-unit id="tsc.defaultZoomSingle">
-        <source>Default zoom single:Default zoom for map in single view if no zoom is set</source>
-      </trans-unit>
-      <trans-unit id="tsc.overrideCenterLatList">
-        <source>Override latitude list-map: Override automatic latitude for centering the map in list view</source>
-      </trans-unit>
-      <trans-unit id="tsc.overrideCenterLongList">
-        <source>Override longitude list-map:Override automatic longitude for centering the map in list view</source>
-      </trans-unit>
-      <trans-unit id="tsc.overrideZoomList">
-        <source>Override zoom list-map:Override automatic zoom of the map in list view</source>
       </trans-unit>
     </body>
   </file>
