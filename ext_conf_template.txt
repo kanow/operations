@@ -1,2 +1,2 @@
-# cat=basic;type=options[Unique=unique,Unique in Site=uniqueInSite]; label=LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:extconf.slugBehaviour
+# cat=basic;type=options[Unique=unique,Unique in Site=uniqueInSite]; label=operations.backend:extconf.slugBehaviour
 slugBehaviour=unique

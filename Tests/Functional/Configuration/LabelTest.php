@@ -20,7 +20,10 @@ final class LabelTest extends FunctionalTestCase
 
     private const EXTENSION_PATH = __DIR__ . '/../../../';
 
-    private const LABEL_PATTERN = '/LLL:[^;,"\'\s<>]+/';
+    /**
+     * Matches translation domain references (e.g. "operations.db:key") as well as "LLL:" references.
+     */
+    private const LABEL_PATTERN = '/LLL:[^;,"\'\s<>]+|\b[a-z0-9_]+(?:\.[a-z0-9_]+)+:[^;,"\'\s<>\/]+/';
 
     protected array $testExtensionsToLoad = ['kanow/operations'];
 
@@ -82,7 +85,8 @@ final class LabelTest extends FunctionalTestCase
 
         return array_values(array_filter(
             $labels,
-            fn(string $label): bool => trim($this->languageService->sL($label)) === ''
+            // References without "LLL:" prefix are returned unchanged if they can not be resolved
+            fn(string $label): bool => in_array(trim($this->languageService->sL($label)), ['', $label], true)
         ));
     }
 
@@ -155,7 +159,7 @@ final class LabelTest extends FunctionalTestCase
         self::assertNotSame([], $matches[1]);
 
         $labels = array_map(
-            static fn(string $key): string => 'LLL:EXT:operations/Resources/Private/Language/locallang.xlf:' . $key,
+            static fn(string $key): string => 'operations.messages:' . $key,
             array_values(array_unique($matches[1]))
         );
 

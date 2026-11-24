@@ -3,12 +3,12 @@
     <sheets>
         <sIMG>
             <ROOT>
-                <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.media</sheetTitle>
+                <sheetTitle>operations.db:flexform.sheet.media</sheetTitle>
                 <type>array</type>
                 <el>
                     <settings.singleMediaWidth>
                         <exclude>1</exclude>
-                        <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.singleMediaWidth</label>
+                        <label>operations.db:flexform.singleMediaWidth</label>
                         <config>
                             <type>input</type>
                             <size>5</size>
@@ -19,7 +19,7 @@
 
                     <settings.singleMediaHeight>
                         <exclude>1</exclude>
-                        <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.singleMediaHeight</label>
+                        <label>operations.db:flexform.singleMediaHeight</label>
                         <config>
                             <type>input</type>
                             <size>5</size>
@@ -32,12 +32,12 @@
         </sIMG>
         <sTemplate>
             <ROOT>
-                <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.template</sheetTitle>
+                <sheetTitle>operations.db:flexform.sheet.template</sheetTitle>
                 <type>array</type>
                 <el>
                     <settings.templateLayout>
-                        <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.templateLayout</label>
-                        <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.templateLayout.description</description>
+                        <label>operations.db:flexform.templateLayout</label>
+                        <description>operations.db:flexform.templateLayout.description</description>
                         <config>
                             <type>select</type>
                             <renderType>selectSingle</renderType>

@@ -6,7 +6,7 @@ defined('TYPO3') || die();
 
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_assistance',
+        'title' => 'operations.db:tx_operations_domain_model_assistance',
         'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -49,7 +49,7 @@ return [
     'columns' => [
         'title' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_assistance.title',
+            'label' => 'operations.db:tx_operations_domain_model_assistance.title',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -59,7 +59,7 @@ return [
         ],
         'description' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_assistance.description',
+            'label' => 'operations.db:tx_operations_domain_model_assistance.description',
             'config' => [
                 'type' => 'text',
                 'cols' => 40,
@@ -70,7 +70,7 @@ return [
         ],
         'link' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_assistance.link',
+            'label' => 'operations.db:tx_operations_domain_model_assistance.link',
             'config' => [
                 'type' => 'link',
                 'size' => 30,

@@ -1,198 +1,198 @@
 
 categories:
   Operations:
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:plugin.title'
+    label: 'operations.backend:plugin.title'
   Operations.template:
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.subcategoryLabel.template'
+    label: 'operations.db:tsc.subcategoryLabel.template'
     parent: 'Operations'
   Operations.pids:
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.subcategoryLabel.pids'
+    label: 'operations.db:tsc.subcategoryLabel.pids'
     parent: 'Operations'
   Operations.list:
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.subcategoryLabel.list'
+    label: 'operations.db:tsc.subcategoryLabel.list'
     parent: 'Operations'
   Operations.media:
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.subcategoryLabel.media'
+    label: 'operations.db:tsc.subcategoryLabel.media'
     parent: 'Operations'
   Operations.paginate:
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.subcategoryLabel.paginate'
+    label: 'operations.db:tsc.subcategoryLabel.paginate'
     parent: 'Operations'
 
 settings:
   operations.css:
     type: string
     default: ''
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.css'
+    label: 'operations.db:tsc.css'
     category: 'Operations.template'
 
   operations.jquery:
     type: string
     default: 'https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.jquery'
+    label: 'operations.db:tsc.jquery'
     category: 'Operations.template'
 
   operations.view.templateRootPath:
     type: string
     default: 'EXT:operations/Resources/Private/Templates/'
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.templateRootPath'
+    label: 'operations.db:tsc.templateRootPath'
     category: 'Operations.template'
     description: ''
   operations.view.partialRootPath:
     type: string
     default: 'EXT:operations/Resources/Private/Partials/'
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.partialRootPath'
+    label: 'operations.db:tsc.partialRootPath'
     category: 'Operations.template'
     description: ''
   operations.view.layoutRootPath:
     type: string
     default: 'EXT:operations/Resources/Private/Layouts/'
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.layoutRootPath'
+    label: 'operations.db:tsc.layoutRootPath'
     category: 'Operations.template'
     description: ''
 
   operations.persistence.storagePid:
     type: page
     default: 0
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.storagePid'
+    label: 'operations.db:tsc.storagePid'
     category: 'Operations.pids'
   operations.persistence.recursive:
     type: int
     default: 1
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.recursive'
+    label: 'operations.db:tsc.recursive'
     category: 'Operations.pids'
   operations.hidePagination:
     type: bool
     default: false
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.hidePagination'
+    label: 'operations.db:tsc.hidePagination'
     category: 'Operations.list'
   operations.hideFilter:
     type: bool
     default: false
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.hideFilter'
+    label: 'operations.db:tsc.hideFilter'
     category: 'Operations.list'
   operations.lastYears:
     type: int
     default: 5
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.lastYears'
+    label: 'operations.db:tsc.lastYears'
     category: 'Operations.list'
   operations.itemsPerPage:
     type: int
     default: 10
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.itemsPerPage'
+    label: 'operations.db:tsc.itemsPerPage'
     category: 'Operations.list'
   operations.limit:
     type: int
     default: 200
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.limit'
+    label: 'operations.db:tsc.limit'
     category: 'Operations.list'
 
   operations.operationSinglePid:
     type: page
     default: 0
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.operationSinglePid'
+    label: 'operations.db:tsc.operationSinglePid'
     category: 'Operations.pids'
   operations.vehicleSinglePid:
     type: page
     default: 0
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.vehicleSinglePid'
+    label: 'operations.db:tsc.vehicleSinglePid'
     category: 'Operations.pids'
   operations.resourceSinglePid:
     type: page
     default: 0
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.resourceSinglePid'
+    label: 'operations.db:tsc.resourceSinglePid'
     category: 'Operations.pids'
 
   operations.listMediaWidth:
     type: string
     default: '250c'
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidth'
+    label: 'operations.db:tsc.listMediaWidth'
     category: 'Operations.media'
   operations.listMediaHeight:
     type: string
     default: '188'
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeight'
+    label: 'operations.db:tsc.listMediaHeight'
     category: 'Operations.media'
   operations.singleMediaWidth:
     type: string
     default: '260c'
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.singleMediaWidth'
+    label: 'operations.db:tsc.singleMediaWidth'
     category: 'Operations.media'
   operations.singleMediaHeight:
     type: string
     default: '195'
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.singleMediaHeight'
+    label: 'operations.db:tsc.singleMediaHeight'
     category: 'Operations.media'
   operations.showMediaInList:
     type: bool
     default: true
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.showMediaInList'
+    label: 'operations.db:tsc.showMediaInList'
     category: 'Operations.media'
   operations.increaseImage:
     type: bool
     default: true
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.increaseImage'
+    label: 'operations.db:tsc.increaseImage'
     category: 'Operations.media'
   operations.listMediaWidthResource:
     type: string
     default: '320'
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidthResource'
+    label: 'operations.db:tsc.listMediaWidthResource'
     category: 'Operations.media'
 
   operations.listMediaHeightResource:
     type: string
     default: ''
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeightResource'
+    label: 'operations.db:tsc.listMediaHeightResource'
     category: 'Operations.media'
 
   operations.list.vehicles.media.width:
     type: string
     default: '100'
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidthVehicle'
+    label: 'operations.db:tsc.listMediaWidthVehicle'
     category: 'Operations.media'
   operations.list.vehicles.media.height:
     type: string
     default: ''
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeightVehicle'
+    label: 'operations.db:tsc.listMediaHeightVehicle'
     category: 'Operations.media'
   operations.list.vehicles.defaultImage.path:
     type: string
     default: 'EXT:operations/Resources/Public/Icons/tx_operations_vehicle.svg'
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listVehiclesDefaultImagePath'
+    label: 'operations.db:tsc.listVehiclesDefaultImagePath'
     category: 'Operations.media'
   operations.list.resources.media.width:
     type: string
     default: '100'
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaWidthResource'
+    label: 'operations.db:tsc.listMediaWidthResource'
     category: 'Operations.media'
   operations.list.resources.media.height:
     type: string
     default: ''
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listMediaHeightResource'
+    label: 'operations.db:tsc.listMediaHeightResource'
     category: 'Operations.media'
   operations.list.resources.defaultImage.path:
     type: string
     default: 'EXT:operations/Resources/Public/Icons/tx_operations_resource.svg'
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.listResourcesDefaultImagePath'
+    label: 'operations.db:tsc.listResourcesDefaultImagePath'
     category: 'Operations.media'
 
   operations.paginate.insertAbove:
     type: bool
     default: true
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.insertAbove'
+    label: 'operations.db:tsc.insertAbove'
     category: 'Operations.paginate'
   operations.paginate.insertBelow:
     type: bool
     default: true
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.insertBelow'
+    label: 'operations.db:tsc.insertBelow'
     category: 'Operations.paginate'
   operations.paginate.maximumLinks:
     type: int
     default: 6
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.maxNumberOfLinks'
+    label: 'operations.db:tsc.maxNumberOfLinks'
     category: 'Operations.paginate'
 
   operations.rootCategory:
     type: int
     default: 0
-    label: 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tsc.rootCategory'
+    label: 'operations.db:tsc.rootCategory'
     category: 'Operations'

@@ -6,7 +6,7 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 (static function (): void {
-    $languageFile = 'LLL:EXT:operations/Resources/Private/Language/locallang_be.xlf:';
+    $languageFile = 'operations.backend:';
 
     ExtensionManagementUtility::addTcaSelectItemGroup(
         'tt_content',

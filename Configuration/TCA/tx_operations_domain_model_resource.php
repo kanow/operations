@@ -15,7 +15,7 @@ $imageSettingsFalMedia = [
         'allowLanguageSynchronization' => true,
     ],
     'appearance' => [
-        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
+        'createNewRelationLinkTitle' => 'frontend.ttc:images.addFileReference',
         'showPossibleLocalizationRecords' => true,
         'showAllLocalizationLink' => true,
         'showSynchronizationLink' => true,
@@ -62,7 +62,7 @@ $imageConfigurationFalMedia = [
 
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_resource',
+        'title' => 'operations.db:tx_operations_domain_model_resource',
         'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -82,7 +82,7 @@ return [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'sys_language_uid,l10n_parent,title,path_segment,short,description,link,--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.media,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitleResources.media;paletteImg,
+            'showitem' => 'sys_language_uid,l10n_parent,title,path_segment,short,description,link,--div--;operations.db:tca.divTitle.media,--palette--;operations.db:tca.paletteTitleResources.media;paletteImg,
             --div--;core.form.tabs:access,
                 --palette--;;paletteHidden,
                 --palette--;;paletteAccess,',
@@ -109,7 +109,7 @@ return [
     'columns' => [
         'title' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_resource.title',
+            'label' => 'operations.db:tx_operations_domain_model_resource.title',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -119,7 +119,7 @@ return [
         ],
         'path_segment' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.path_segment',
+            'label' => 'operations.db:tx_operations_domain_model_operation.path_segment',
             'config' => [
                 'type' => 'slug',
                 'searchable' => false,
@@ -134,7 +134,7 @@ return [
         ],
         'short' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_resource.short',
+            'label' => 'operations.db:tx_operations_domain_model_resource.short',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -144,7 +144,7 @@ return [
         ],
         'description' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_resource.description',
+            'label' => 'operations.db:tx_operations_domain_model_resource.description',
             'config' => [
                 'type' => 'text',
                 'enableRichtext' => true,
@@ -157,12 +157,12 @@ return [
         // mit FAL
         'media' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_resource.media',
+            'label' => 'operations.db:tx_operations_domain_model_resource.media',
             'config' => $imageConfigurationFalMedia,
         ],
         'link' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_resource.link',
+            'label' => 'operations.db:tx_operations_domain_model_resource.link',
             'config' => [
                 'type' => 'link',
                 'searchable' => false,

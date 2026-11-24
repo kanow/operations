@@ -3,13 +3,13 @@
     <sheets>
         <sIMG>
             <ROOT>
-                <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.media</sheetTitle>
+                <sheetTitle>operations.db:flexform.sheet.media</sheetTitle>
                 <type>array</type>
                 <el>
                     <settings.showMediaInList>
                         <exclude>1</exclude>
-                        <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMediaInList</label>
-                        <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.showMediaInList.description</description>
+                        <label>operations.db:flexform.showMediaInList</label>
+                        <description>operations.db:flexform.showMediaInList.description</description>
                         <config>
                             <type>check</type>
                         </config>
@@ -17,7 +17,7 @@
 
                     <settings.listMediaWidth>
                         <exclude>1</exclude>
-                        <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listMediaWidth</label>
+                        <label>operations.db:flexform.listMediaWidth</label>
                         <config>
                             <type>input</type>
                             <size>5</size>
@@ -28,7 +28,7 @@
 
                     <settings.listMediaHeight>
                         <exclude>1</exclude>
-                        <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.listMediaHeight</label>
+                        <label>operations.db:flexform.listMediaHeight</label>
                         <config>
                             <type>input</type>
                             <size>5</size>
@@ -41,12 +41,12 @@
         </sIMG>
         <sTemplate>
             <ROOT>
-                <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.template</sheetTitle>
+                <sheetTitle>operations.db:flexform.sheet.template</sheetTitle>
                 <type>array</type>
                 <el>
                     <settings.templateLayout>
-                        <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.templateLayout</label>
-                        <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.templateLayout.description</description>
+                        <label>operations.db:flexform.templateLayout</label>
+                        <description>operations.db:flexform.templateLayout.description</description>
                         <config>
                             <type>select</type>
                             <renderType>selectSingle</renderType>

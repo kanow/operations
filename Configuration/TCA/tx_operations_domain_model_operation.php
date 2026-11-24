@@ -15,7 +15,7 @@ $imageSettingsFalMedia = [
         'allowLanguageSynchronization' => true,
     ],
     'appearance' => [
-        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
+        'createNewRelationLinkTitle' => 'frontend.ttc:images.addFileReference',
         'showPossibleLocalizationRecords' => true,
         'showAllLocalizationLink' => true,
         'showSynchronizationLink' => true,
@@ -68,7 +68,7 @@ $tcaForDatetimeFields = [
 
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation',
+        'title' => 'operations.db:tx_operations_domain_model_operation',
         'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -90,7 +90,7 @@ return [
     'types' => [
         '0' => [
             'showitem' => 'sys_language_uid,l10n_parent,
-            --palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.meta;paletteMeta,title,path_segment,location,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.time;paletteTime,teaser,report,--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.map,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.coordinates;paletteMap,--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.relations,assistance,vehicles,resources,--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.media,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitle.media;paletteImg,--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tabs.categories,category,
+            --palette--;operations.db:tca.paletteTitle.meta;paletteMeta,title,path_segment,location,--palette--;operations.db:tca.paletteTitle.time;paletteTime,teaser,report,--div--;operations.db:tca.divTitle.map,--palette--;operations.db:tca.paletteTitle.coordinates;paletteMap,--div--;operations.db:tca.divTitle.relations,assistance,vehicles,resources,--div--;operations.db:tca.divTitle.media,--palette--;operations.db:tca.paletteTitle.media;paletteImg,--div--;operations.db:tabs.categories,category,
             --div--;core.form.tabs:access,
             --palette--;;paletteHidden,
             --palette--;;paletteAccess,',
@@ -127,7 +127,7 @@ return [
     'columns' => [
         'number' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.number',
+            'label' => 'operations.db:tx_operations_domain_model_operation.number',
             'config' => [
                 'type' => 'input',
                 'size' => 10,
@@ -139,7 +139,7 @@ return [
             'exclude' => 1,
             'l10n_mode' => 'exclude',
             'l10n_display' => 'defaultAsReadonly',
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.onlyEld',
+            'label' => 'operations.db:tx_operations_domain_model_operation.onlyEld',
             'config' => [
                 'type' => 'check',
                 'default' => 0,
@@ -147,7 +147,7 @@ return [
         ],
         'title' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.title',
+            'label' => 'operations.db:tx_operations_domain_model_operation.title',
             'config' => [
                 'type' => 'input',
                 'size' => 60,
@@ -157,7 +157,7 @@ return [
         ],
         'path_segment' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.path_segment',
+            'label' => 'operations.db:tx_operations_domain_model_operation.path_segment',
             'config' => [
                 'type' => 'slug',
                 'searchable' => false,
@@ -172,7 +172,7 @@ return [
         ],
         'location' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.location',
+            'label' => 'operations.db:tx_operations_domain_model_operation.location',
             'config' => [
                 'type' => 'text',
                 'cols' => 60,
@@ -185,7 +185,7 @@ return [
         'begin' => [
             'exclude' => 1,
             'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.begin',
+            'label' => 'operations.db:tx_operations_domain_model_operation.begin',
             'config' => array_merge_recursive($tcaForDatetimeFields, [
                 'required' => true,
             ]),
@@ -193,14 +193,14 @@ return [
         'end' => [
             'exclude' => 1,
             'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.end',
+            'label' => 'operations.db:tx_operations_domain_model_operation.end',
             'config' => array_merge_recursive($tcaForDatetimeFields, [
                 'required' => false,
             ]),
         ],
         'teaser' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.teaser',
+            'label' => 'operations.db:tx_operations_domain_model_operation.teaser',
             'config' => [
                 'type' => 'text',
                 'cols' => 60,
@@ -212,7 +212,7 @@ return [
         ],
         'report' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.report',
+            'label' => 'operations.db:tx_operations_domain_model_operation.report',
             'config' => [
                 'type' => 'text',
                 'enableRichtext' => true,
@@ -226,7 +226,7 @@ return [
             'exclude' => 1,
             'l10n_mode' => 'exclude',
             'l10n_display' => 'defaultAsReadonly',
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.longitude',
+            'label' => 'operations.db:tx_operations_domain_model_operation.longitude',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -238,7 +238,7 @@ return [
             'exclude' => 1,
             'l10n_mode' => 'exclude',
             'l10n_display' => 'defaultAsReadonly',
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.latitude',
+            'label' => 'operations.db:tx_operations_domain_model_operation.latitude',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -248,7 +248,7 @@ return [
         ],
         'zoom' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.zoom',
+            'label' => 'operations.db:tx_operations_domain_model_operation.zoom',
             'config' => [
                 'type' => 'number',
                 'size' => 4,
@@ -257,13 +257,13 @@ return [
         ],
         'media' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.media',
+            'label' => 'operations.db:tx_operations_domain_model_operation.media',
             'config' => $imageConfigurationFalMedia,
         ],
         'type' => [
             'exclude' => 1,
             'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.type',
+            'label' => 'operations.db:tx_operations_domain_model_operation.type',
             'config' => [
                 'type' => 'select',
                 'foreign_table' => 'tx_operations_domain_model_type',
@@ -274,7 +274,7 @@ return [
                 'maxitems' => 1,
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.choose', 'value' => 0],
+                    ['label' => 'operations.db:tx_operations_domain_model_operation.choose', 'value' => 0],
                 ],
                 'default' => 0,
             ],
@@ -282,7 +282,7 @@ return [
         'assistance' => [
             'exclude' => 1,
             'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.assistance',
+            'label' => 'operations.db:tx_operations_domain_model_operation.assistance',
             'config' => [
                 'type' => 'select',
                 'foreign_table' => 'tx_operations_domain_model_assistance',
@@ -297,13 +297,13 @@ return [
                     'editPopup' => [
                         'disabled' => false,
                         'options' => [
-                            'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.edit',
+                            'title' => 'core.core:labels.edit',
                         ],
                     ],
                     'addRecord' => [
                         'disabled' => false,
                         'options' => [
-                            'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.createNew',
+                            'title' => 'core.core:labels.createNew',
                         ],
                     ],
                 ],
@@ -313,7 +313,7 @@ return [
         'vehicles' => [
             'exclude' => 1,
             'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.vehicles',
+            'label' => 'operations.db:tx_operations_domain_model_operation.vehicles',
             'config' => [
                 'type' => 'select',
                 'foreign_table' => 'tx_operations_domain_model_vehicle',
@@ -328,13 +328,13 @@ return [
                     'editPopup' => [
                         'disabled' => false,
                         'options' => [
-                            'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.edit',
+                            'title' => 'core.core:labels.edit',
                         ],
                     ],
                     'addRecord' => [
                         'disabled' => false,
                         'options' => [
-                            'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.createNew',
+                            'title' => 'core.core:labels.createNew',
                         ],
                     ],
                 ],
@@ -344,7 +344,7 @@ return [
         'resources' => [
             'exclude' => 1,
             'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.resources',
+            'label' => 'operations.db:tx_operations_domain_model_operation.resources',
             'config' => [
                 'type' => 'select',
                 'foreign_table' => 'tx_operations_domain_model_resource',
@@ -359,13 +359,13 @@ return [
                     'editPopup' => [
                         'disabled' => false,
                         'options' => [
-                            'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.edit',
+                            'title' => 'core.core:labels.edit',
                         ],
                     ],
                     'addRecord' => [
                         'disabled' => false,
                         'options' => [
-                            'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.createNew',
+                            'title' => 'core.core:labels.createNew',
                         ],
                     ],
                 ],
@@ -375,7 +375,7 @@ return [
         'category' => [
             'exclude' => 1,
             'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.fieldLabel.category',
+            'label' => 'operations.db:tca.fieldLabel.category',
             'config' => [
                 'type' => 'category',
                 'treeConfig' => [

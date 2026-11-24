@@ -15,7 +15,7 @@ $imageSettingsFalMedia = [
         'allowLanguageSynchronization' => true,
     ],
     'appearance' => [
-        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
+        'createNewRelationLinkTitle' => 'frontend.ttc:images.addFileReference',
         'showPossibleLocalizationRecords' => true,
         'showAllLocalizationLink' => true,
         'showSynchronizationLink' => true,
@@ -62,7 +62,7 @@ $imageConfigurationFalMedia = [
 
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_vehicle',
+        'title' => 'operations.db:tx_operations_domain_model_vehicle',
         //'label' => 'title',
         'label' => 'short',
         'tstamp' => 'tstamp',
@@ -83,7 +83,7 @@ return [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'sys_language_uid,l10n_parent,title,path_segment,short,description,link,--div--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.divTitle.media,--palette--;LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tca.paletteTitleVehicles.media;paletteImg,
+            'showitem' => 'sys_language_uid,l10n_parent,title,path_segment,short,description,link,--div--;operations.db:tca.divTitle.media,--palette--;operations.db:tca.paletteTitleVehicles.media;paletteImg,
             --div--;core.form.tabs:access,
                 --palette--;;paletteHidden,
                 --palette--;;paletteAccess,',
@@ -110,7 +110,7 @@ return [
     'columns' => [
         'title' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_vehicle.title',
+            'label' => 'operations.db:tx_operations_domain_model_vehicle.title',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -120,7 +120,7 @@ return [
         ],
         'path_segment' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_operation.path_segment',
+            'label' => 'operations.db:tx_operations_domain_model_operation.path_segment',
             'config' => [
                 'type' => 'slug',
                 'searchable' => false,
@@ -135,7 +135,7 @@ return [
         ],
         'short' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_vehicle.short',
+            'label' => 'operations.db:tx_operations_domain_model_vehicle.short',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -145,7 +145,7 @@ return [
         ],
         'description' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_vehicle.description',
+            'label' => 'operations.db:tx_operations_domain_model_vehicle.description',
             'config' => [
                 'type' => 'text',
                 'enableRichtext' => true,
@@ -157,12 +157,12 @@ return [
         ],
         'media' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_vehicle.media',
+            'label' => 'operations.db:tx_operations_domain_model_vehicle.media',
             'config' => $imageConfigurationFalMedia,
         ],
         'link' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_vehicle.link',
+            'label' => 'operations.db:tx_operations_domain_model_vehicle.link',
             'config' => [
                 'type' => 'link',
                 'searchable' => false,

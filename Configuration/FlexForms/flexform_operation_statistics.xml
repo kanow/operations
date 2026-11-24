@@ -3,35 +3,35 @@
   <sheets>
     <sDEF>
       <ROOT>
-        <sheetTitle>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.sheet.settings</sheetTitle>
+        <sheetTitle>operations.db:flexform.sheet.settings</sheetTitle>
         <type>array</type>
         <el>
             <!-- Category Mode -->
             <settings.categoryConjunction>
-                <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.label</label>
-                <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.description</description>
+                <label>operations.db:flexform.categoryConjunction.label</label>
+                <description>operations.db:flexform.categoryConjunction.description</description>
                 <config>
                     <type>select</type>
                     <renderType>selectSingle</renderType>
                     <items>
                         <numIndex index="0">
-                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.all</label>
+                            <label>operations.db:flexform.categoryConjunction.all</label>
                             <value></value>
                         </numIndex>
                         <numIndex index="1">
-                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.or</label>
+                            <label>operations.db:flexform.categoryConjunction.or</label>
                             <value>or</value>
                         </numIndex>
                         <numIndex index="2">
-                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.and</label>
+                            <label>operations.db:flexform.categoryConjunction.and</label>
                             <value>and</value>
                         </numIndex>
                         <numIndex index="3">
-                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.notor</label>
+                            <label>operations.db:flexform.categoryConjunction.notor</label>
                             <value>notor</value>
                         </numIndex>
                         <numIndex index="4">
-                            <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.categoryConjunction.notand</label>
+                            <label>operations.db:flexform.categoryConjunction.notand</label>
                             <value>notand</value>
                         </numIndex>
                     </items>
@@ -41,8 +41,8 @@
             <!-- Category -->
             <settings.category>
                 <exclude>1</exclude>
-                <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.category.label</label>
-                <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.category.description</description>
+                <label>operations.db:flexform.category.label</label>
+                <description>operations.db:flexform.category.description</description>
                 <config>
                     <type>category</type>
                     <treeConfig>
@@ -60,8 +60,8 @@
 
             <settings.lastYears>
                 <exclude>1</exclude>
-                <label>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.statistics.lastYears</label>
-                <description>LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:flexform.statistics.lastYears.description</description>
+                <label>operations.db:flexform.statistics.lastYears</label>
+                <description>operations.db:flexform.statistics.lastYears.description</description>
                 <config>
                     <type>number</type>
                     <size>5</size>

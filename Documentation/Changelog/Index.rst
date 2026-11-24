@@ -44,6 +44,27 @@ still as expected after the update.
       }
    }
 
+Renamed language files
+^^^^^^^^^^^^^^^^^^^^^^
+
+The language files were renamed and all labels are referenced with the
+translation domain syntax of TYPO3 14:
+
+=====================  ================  =======================
+Old file               New file          Translation domain
+=====================  ================  =======================
+`locallang.xlf`        `messages.xlf`    `operations.messages`
+`locallang_db.xlf`     `db.xlf`          `operations.db`
+`locallang_be.xlf`     `backend.xlf`     `operations.backend`
+=====================  ================  =======================
+
+Adjust your own references like
+`LLL:EXT:operations/Resources/Private/Language/locallang.xlf:list.header`
+to `operations.messages:list.header`. Entries in
+`$GLOBALS['TYPO3_CONF_VARS']['LANG']['resourceOverrides']` need the new file
+names. Labels overridden via TypoScript (`_LOCAL_LANG`) do not have to be
+changed.
+
 Database update
 ^^^^^^^^^^^^^^^
 

@@ -11,7 +11,7 @@ $imageSettingsFalMedia = [
         'allowLanguageSynchronization' => true,
     ],
     'appearance' => [
-        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
+        'createNewRelationLinkTitle' => 'frontend.ttc:images.addFileReference',
         'showPossibleLocalizationRecords' => true,
         'showAllLocalizationLink' => true,
         'showSynchronizationLink' => true,
@@ -64,7 +64,7 @@ $tcaForColorField = [
 
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_type',
+        'title' => 'operations.db:tx_operations_domain_model_type',
         'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -105,7 +105,7 @@ return [
     'columns' => [
         'title' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_type.title',
+            'label' => 'operations.db:tx_operations_domain_model_type.title',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -116,12 +116,12 @@ return [
         'color' => [
             'exclude' => 1,
             'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_type.color',
+            'label' => 'operations.db:tx_operations_domain_model_type.color',
             'config' => $tcaForColorField,
         ],
         'image' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:operations/Resources/Private/Language/locallang_db.xlf:tx_operations_domain_model_type.image',
+            'label' => 'operations.db:tx_operations_domain_model_type.image',
             'config' => $imageConfigurationFalMedia,
         ],
     ],
