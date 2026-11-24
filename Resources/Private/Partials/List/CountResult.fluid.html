@@ -2,5 +2,5 @@
 	  data-namespace-typo3-fluid="true">
 
 <div class="countResult">
-	<span>{count} {f:if(condition:'{count} == 1',then:'{f:translate(key:"singleOperationFound")}',else:'{f:translate(key:"operationsFound")}')}</span>
+	<span><f:translate key="list.operationsFound" arguments="{count: count}" /></span>
 </div>

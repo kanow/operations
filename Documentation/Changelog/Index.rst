@@ -75,6 +75,21 @@ The labels `tx_operations_domain_model_resources.description` and
 `tx_operations_domain_model_resource.media`. Adjust your own templates and
 `_LOCAL_LANG` overrides if they use the old keys.
 
+The labels `operationsFound` and `singleOperationFound` were replaced by the
+single label `list.operationsFound`, which uses ICU MessageFormat for the
+plural forms and already contains the number. Adjust your own
+:file:`List/CountResult` partial and `_LOCAL_LANG` overrides:
+
+.. code-block:: html
+
+   <f:translate key="list.operationsFound" arguments="{count: count}" />
+
+.. code-block:: typoscript
+
+   plugin.tx_operations._LOCAL_LANG.de {
+      list.operationsFound = {count, plural, one {# Einsatz gefunden} other {# Einsätze gefunden}}
+   }
+
 Database update
 ^^^^^^^^^^^^^^^
 

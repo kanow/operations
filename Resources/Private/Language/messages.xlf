@@ -131,14 +131,9 @@
         <source>Reset filter</source>
       </segment>
     </unit>
-    <unit id="operationsFound">
+    <unit id="list.operationsFound">
       <segment>
-        <source>operations found</source>
-      </segment>
-    </unit>
-    <unit id="singleOperationFound">
-      <segment>
-        <source>operation found</source>
+        <source>{count, plural, one {# operation found} other {# operations found}}</source>
       </segment>
     </unit>
     <unit id="back">
