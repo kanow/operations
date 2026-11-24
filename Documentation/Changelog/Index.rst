@@ -63,11 +63,17 @@ Adjust your own references like
 to `operations.messages:list.header`. Entries in
 `$GLOBALS['TYPO3_CONF_VARS']['LANG']['resourceOverrides']` need the new file
 names. Labels overridden via TypoScript (`_LOCAL_LANG`) do not have to be
-changed.
+changed, except for the renamed and removed labels below.
 
 Unused labels, for example `backToOperation`, `filter.labelYear` and several
 `tx_operations_domain_model_*` labels in `messages.xlf`, were removed. If your
 own templates use one of them, provide the label in your own language file.
+
+The labels `tx_operations_domain_model_resources.description` and
+`tx_operations_domain_model_resources.media` in `messages.xlf` were renamed to
+`tx_operations_domain_model_resource.description` and
+`tx_operations_domain_model_resource.media`. Adjust your own templates and
+`_LOCAL_LANG` overrides if they use the old keys.
 
 Database update
 ^^^^^^^^^^^^^^^

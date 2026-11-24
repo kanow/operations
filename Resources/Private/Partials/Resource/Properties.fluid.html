@@ -4,14 +4,14 @@
 
 <f:if condition="{resource.description}">
 	<div class="description layer">
-		<h2><f:translate key="tx_operations_domain_model_resources.description" /></h2>
+		<h2><f:translate key="tx_operations_domain_model_resource.description" /></h2>
 		<f:format.html parseFuncTSPath="lib.parseFunc_RTE">{resource.description}</f:format.html>
 	</div>
 </f:if>
 
 	<f:if condition="{resource.media}">
 		<div class="media layer">
-		<!--	<h2><f:translate key="tx_operations_domain_model_resources.media" /></h2> -->
+		<!--	<h2><f:translate key="tx_operations_domain_model_resource.media" /></h2> -->
 			<f:for each="{resource.media}" as="media">
 				<figure>
 					<f:media file="{media}" width="{settings.singleMediaWidth}" height="{settings.singleMediaHeight}" />

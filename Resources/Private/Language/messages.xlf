@@ -48,10 +48,10 @@
       <trans-unit id="tx_operations_domain_model_vehicle.description">
         <source>Description of vehicle</source>
       </trans-unit>
-      <trans-unit id="tx_operations_domain_model_resources.description">
+      <trans-unit id="tx_operations_domain_model_resource.description">
         <source>Description of resource</source>
       </trans-unit>
-      <trans-unit id="tx_operations_domain_model_resources.media">
+      <trans-unit id="tx_operations_domain_model_resource.media">
         <source>Media of resource</source>
       </trans-unit>
       <trans-unit id="emptyResult">
