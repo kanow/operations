@@ -1,368 +1,605 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" datatype="plaintext" original="messages" date="2013-11-11T21:36:44Z" product-name="operations">
-    <header/>
-    <body>
-      <trans-unit id="tx_operations_domain_model_operation">
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en">
+  <file id="f1">
+    <unit id="tx_operations_domain_model_operation">
+      <segment>
         <source>Operation</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_operation.number">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_operation.number">
+      <segment>
         <source>Number</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_operation.onlyEld">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_operation.onlyEld">
+      <segment>
         <source>Only Coordination</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_operation.title">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_operation.title">
+      <segment>
         <source>Title</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_operation.path_segment">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_operation.path_segment">
+      <segment>
         <source>URL Segment</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_operation.location">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_operation.location">
+      <segment>
         <source>Location</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_operation.begin">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_operation.begin">
+      <segment>
         <source>Begin</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_operation.end">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_operation.end">
+      <segment>
         <source>End</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_operation.teaser">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_operation.teaser">
+      <segment>
         <source>Teaser</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_operation.report">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_operation.report">
+      <segment>
         <source>Report</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_operation.longitude">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_operation.longitude">
+      <segment>
         <source>Longitude</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_operation.latitude">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_operation.latitude">
+      <segment>
         <source>Latitude</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_operation.zoom">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_operation.zoom">
+      <segment>
         <source>Zoom</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_operation.media">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_operation.media">
+      <segment>
         <source>Media</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_operation.type">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_operation.type">
+      <segment>
         <source>Type</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_operation.assistance">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_operation.assistance">
+      <segment>
         <source>Assistance</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_operation.vehicles">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_operation.vehicles">
+      <segment>
         <source>Vehicles</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_operation.resources">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_operation.resources">
+      <segment>
         <source>Resources</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_operation.choose">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_operation.choose">
+      <segment>
         <source>Please choose...</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_assistance">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_assistance">
+      <segment>
         <source>Assistance</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_assistance.title">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_assistance.title">
+      <segment>
         <source>Title</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_assistance.description">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_assistance.description">
+      <segment>
         <source>Description</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_assistance.link">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_assistance.link">
+      <segment>
         <source>Link</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_vehicle">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_vehicle">
+      <segment>
         <source>Vehicle</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_vehicle.title">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_vehicle.title">
+      <segment>
         <source>Title</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_vehicle.short">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_vehicle.short">
+      <segment>
         <source>Short</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_vehicle.description">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_vehicle.description">
+      <segment>
         <source>Description</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_vehicle.media">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_vehicle.media">
+      <segment>
         <source>Media</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_vehicle.link">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_vehicle.link">
+      <segment>
         <source>Link</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_resource">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_resource">
+      <segment>
         <source>Resource</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_resource.title">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_resource.title">
+      <segment>
         <source>Title</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_resource.short">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_resource.short">
+      <segment>
         <source>Short</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_resource.description">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_resource.description">
+      <segment>
         <source>Description</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_resource.media">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_resource.media">
+      <segment>
         <source>Media</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_resource.link">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_resource.link">
+      <segment>
         <source>Link</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_type">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_type">
+      <segment>
         <source>Type</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_type.title">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_type.title">
+      <segment>
         <source>Title</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_type.color">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_type.color">
+      <segment>
         <source>Color (Css values)</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_type.image">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_type.image">
+      <segment>
         <source>Media</source>
-      </trans-unit>
-      <trans-unit id="flexform.sheet.settings">
+      </segment>
+    </unit>
+    <unit id="flexform.sheet.settings">
+      <segment>
         <source>Options</source>
-      </trans-unit>
-      <trans-unit id="flexform.sheet.media">
+      </segment>
+    </unit>
+    <unit id="flexform.sheet.media">
+      <segment>
         <source>Media options</source>
-      </trans-unit>
-      <trans-unit id="flexform.sheet.template">
+      </segment>
+    </unit>
+    <unit id="flexform.sheet.template">
+      <segment>
         <source>Template options</source>
-      </trans-unit>
-      <trans-unit id="flexform.showMediaInList">
+      </segment>
+    </unit>
+    <unit id="flexform.showMediaInList">
+      <segment>
         <source>Thumbnail in list view</source>
-      </trans-unit>
-      <trans-unit id="flexform.showMediaInList.description">
+      </segment>
+    </unit>
+    <unit id="flexform.showMediaInList.description">
+      <segment>
         <source>Show the first media of an item as thumbnail in the list.</source>
-      </trans-unit>
-      <trans-unit id="flexform.listMediaWidth">
+      </segment>
+    </unit>
+    <unit id="flexform.listMediaWidth">
+      <segment>
         <source>Width of media elements</source>
-      </trans-unit>
-      <trans-unit id="flexform.listMediaHeight">
+      </segment>
+    </unit>
+    <unit id="flexform.listMediaHeight">
+      <segment>
         <source>Height of media elements</source>
-      </trans-unit>
-      <trans-unit id="flexform.singleMediaWidth">
+      </segment>
+    </unit>
+    <unit id="flexform.singleMediaWidth">
+      <segment>
         <source>Width of media elements</source>
-      </trans-unit>
-      <trans-unit id="flexform.singleMediaHeight">
+      </segment>
+    </unit>
+    <unit id="flexform.singleMediaHeight">
+      <segment>
         <source>Height of media elements</source>
-      </trans-unit>
-      <trans-unit id="flexform.itemsPerPage">
+      </segment>
+    </unit>
+    <unit id="flexform.itemsPerPage">
+      <segment>
         <source>Items per page</source>
-      </trans-unit>
-      <trans-unit id="flexform.itemsPerPage.description">
+      </segment>
+    </unit>
+    <unit id="flexform.itemsPerPage.description">
+      <segment>
         <source>How many items per page are showing with activated pagination.</source>
-      </trans-unit>
-      <trans-unit id="flexform.hidePagination">
+      </segment>
+    </unit>
+    <unit id="flexform.hidePagination">
+      <segment>
         <source>Hide pagination</source>
-      </trans-unit>
-      <trans-unit id="flexform.hidePagination.description">
+      </segment>
+    </unit>
+    <unit id="flexform.hidePagination.description">
+      <segment>
         <source>Hide the pagination and show the result in one list. If there are a lot of data, page load can take an extremely long time on first call or uncached pages.</source>
-      </trans-unit>
-      <trans-unit id="flexform.teaserMaxChars">
+      </segment>
+    </unit>
+    <unit id="flexform.teaserMaxChars">
+      <segment>
         <source>Max chars of teaser text in list view</source>
-      </trans-unit>
-      <trans-unit id="flexform.teaserMaxChars.description">
+      </segment>
+    </unit>
+    <unit id="flexform.teaserMaxChars.description">
+      <segment>
         <source>Max length of teaser text in list view. If set, text will be cropped automatically.</source>
-      </trans-unit>
-      <trans-unit id="flexform.limit">
+      </segment>
+    </unit>
+    <unit id="flexform.limit">
+      <segment>
         <source>Max result items</source>
-      </trans-unit>
-      <trans-unit id="flexform.limit.description">
+      </segment>
+    </unit>
+    <unit id="flexform.limit.description">
+      <segment>
         <source>Max result items for the list. Default setting in constants is 200.</source>
-      </trans-unit>
-      <trans-unit id="flexform.hideFilter">
+      </segment>
+    </unit>
+    <unit id="flexform.hideFilter">
+      <segment>
         <source>Hide filter for result</source>
-      </trans-unit>
-      <trans-unit id="flexform.hideFilter.description">
+      </segment>
+    </unit>
+    <unit id="flexform.hideFilter.description">
+      <segment>
         <source>Don't show a form for filtering the list view.</source>
-      </trans-unit>
-      <trans-unit id="flexform.showMap">
+      </segment>
+    </unit>
+    <unit id="flexform.showMap">
+      <segment>
         <source>Show a map</source>
-      </trans-unit>
-      <trans-unit id="flexform.showMap.description">
+      </segment>
+    </unit>
+    <unit id="flexform.showMap.description">
+      <segment>
         <source>Show the result list as items on a map instead of the normal list.</source>
-      </trans-unit>
-      <trans-unit id="flexform.templateLayout">
+      </segment>
+    </unit>
+    <unit id="flexform.templateLayout">
+      <segment>
         <source>Template Layout</source>
-      </trans-unit>
-      <trans-unit id="flexform.templateLayout.description">
+      </segment>
+    </unit>
+    <unit id="flexform.templateLayout.description">
+      <segment>
         <source>Use different layout variants in Fluid templates. Define own variants in Page TS-Config before use.</source>
-      </trans-unit>
-      <trans-unit id="flexform.statistics.lastYears">
+      </segment>
+    </unit>
+    <unit id="flexform.statistics.lastYears">
+      <segment>
         <source>Last years for statistics</source>
-      </trans-unit>
-      <trans-unit id="flexform.statistics.lastYears.description">
+      </segment>
+    </unit>
+    <unit id="flexform.statistics.lastYears.description">
+      <segment>
         <source>Define the number of last years back for statistics to show.</source>
-      </trans-unit>
-      <trans-unit id="flexform.categoryConjunction.label">
+      </segment>
+    </unit>
+    <unit id="flexform.categoryConjunction.label">
+      <segment>
         <source>Category Mode</source>
-      </trans-unit>
-      <trans-unit id="flexform.categoryConjunction.description">
+      </segment>
+    </unit>
+    <unit id="flexform.categoryConjunction.description">
+      <segment>
         <source>Set category mode for selected categories.</source>
-      </trans-unit>
-      <trans-unit id="flexform.categoryConjunction.all">
+      </segment>
+    </unit>
+    <unit id="flexform.categoryConjunction.all">
+      <segment>
         <source>Don't care, show all</source>
-      </trans-unit>
-      <trans-unit id="flexform.categoryConjunction.or">
+      </segment>
+    </unit>
+    <unit id="flexform.categoryConjunction.or">
+      <segment>
         <source>Show items with selected categories - Mode: OR</source>
-      </trans-unit>
-      <trans-unit id="flexform.categoryConjunction.and">
+      </segment>
+    </unit>
+    <unit id="flexform.categoryConjunction.and">
+      <segment>
         <source>Show items with selected categories - Mode: AND</source>
-      </trans-unit>
-      <trans-unit id="flexform.categoryConjunction.notor">
+      </segment>
+    </unit>
+    <unit id="flexform.categoryConjunction.notor">
+      <segment>
         <source>Do NOT show items with selected categories - Mode: NOT OR</source>
-      </trans-unit>
-      <trans-unit id="flexform.categoryConjunction.notand">
+      </segment>
+    </unit>
+    <unit id="flexform.categoryConjunction.notand">
+      <segment>
         <source>Do NOT show items with selected categories - Mode: NOT AND</source>
-      </trans-unit>
-      <trans-unit id="flexform.category.label">
+      </segment>
+    </unit>
+    <unit id="flexform.category.label">
+      <segment>
         <source>Categories</source>
-      </trans-unit>
-      <trans-unit id="flexform.category.description">
+      </segment>
+    </unit>
+    <unit id="flexform.category.description">
+      <segment>
         <source>Select one or more categories to constrain the result.</source>
-      </trans-unit>
-      <trans-unit id="tca.paletteTitle.time">
+      </segment>
+    </unit>
+    <unit id="tca.paletteTitle.time">
+      <segment>
         <source>Operation times</source>
-      </trans-unit>
-      <trans-unit id="tca.paletteTitle.coordinates">
+      </segment>
+    </unit>
+    <unit id="tca.paletteTitle.coordinates">
+      <segment>
         <source>Coordinates</source>
-      </trans-unit>
-      <trans-unit id="tca.paletteTitle.media">
+      </segment>
+    </unit>
+    <unit id="tca.paletteTitle.media">
+      <segment>
         <source>Operation media</source>
-      </trans-unit>
-      <trans-unit id="tca.paletteTitleResources.media">
+      </segment>
+    </unit>
+    <unit id="tca.paletteTitleResources.media">
+      <segment>
         <source>Resource media</source>
-      </trans-unit>
-      <trans-unit id="tca.paletteTitleVehicles.media">
+      </segment>
+    </unit>
+    <unit id="tca.paletteTitleVehicles.media">
+      <segment>
         <source>Vehicle media</source>
-      </trans-unit>
-      <trans-unit id="tca.paletteTitle.meta">
+      </segment>
+    </unit>
+    <unit id="tca.paletteTitle.meta">
+      <segment>
         <source>Meta data</source>
-      </trans-unit>
-      <trans-unit id="tca.divTitle.relations">
+      </segment>
+    </unit>
+    <unit id="tca.divTitle.relations">
+      <segment>
         <source>Relations</source>
-      </trans-unit>
-      <trans-unit id="tca.divTitle.map">
+      </segment>
+    </unit>
+    <unit id="tca.divTitle.map">
+      <segment>
         <source>Map data</source>
-      </trans-unit>
-      <trans-unit id="tca.divTitle.media">
+      </segment>
+    </unit>
+    <unit id="tca.divTitle.media">
+      <segment>
         <source>Media</source>
-      </trans-unit>
-      <trans-unit id="tca.fieldLabel.category">
+      </segment>
+    </unit>
+    <unit id="tca.fieldLabel.category">
+      <segment>
         <source>Category</source>
-      </trans-unit>
-      <trans-unit id="tabs.categories">
+      </segment>
+    </unit>
+    <unit id="tabs.categories">
+      <segment>
         <source>Categories</source>
-      </trans-unit>
-      <trans-unit id="tsc.subcategoryLabel.template">
+      </segment>
+    </unit>
+    <unit id="tsc.subcategoryLabel.template">
+      <segment>
         <source>Resources (Template files, CSS, JS)</source>
-      </trans-unit>
-      <trans-unit id="tsc.subcategoryLabel.media">
+      </segment>
+    </unit>
+    <unit id="tsc.subcategoryLabel.media">
+      <segment>
         <source>Settings for media</source>
-      </trans-unit>
-      <trans-unit id="tsc.subcategoryLabel.pids">
+      </segment>
+    </unit>
+    <unit id="tsc.subcategoryLabel.pids">
+      <segment>
         <source>Pids for views and storage</source>
-      </trans-unit>
-      <trans-unit id="tsc.subcategoryLabel.paginate">
+      </segment>
+    </unit>
+    <unit id="tsc.subcategoryLabel.paginate">
+      <segment>
         <source>Settings for paginate</source>
-      </trans-unit>
-      <trans-unit id="tsc.subcategoryLabel.list">
+      </segment>
+    </unit>
+    <unit id="tsc.subcategoryLabel.list">
+      <segment>
         <source>Settings for list view</source>
-      </trans-unit>
-      <trans-unit id="tsc.templateRootPath">
+      </segment>
+    </unit>
+    <unit id="tsc.templateRootPath">
+      <segment>
         <source>Templates:Path to template root (FE)</source>
-      </trans-unit>
-      <trans-unit id="tsc.partialRootPath">
+      </segment>
+    </unit>
+    <unit id="tsc.partialRootPath">
+      <segment>
         <source>Partials:Path to template partials (FE)</source>
-      </trans-unit>
-      <trans-unit id="tsc.layoutRootPath">
+      </segment>
+    </unit>
+    <unit id="tsc.layoutRootPath">
+      <segment>
         <source>Layouts:Path to template layouts (FE)</source>
-      </trans-unit>
-      <trans-unit id="tsc.css">
+      </segment>
+    </unit>
+    <unit id="tsc.css">
+      <segment>
         <source>Default CSS:Default CSS file, change path to use your own CSS (FE)</source>
-      </trans-unit>
-      <trans-unit id="tsc.jquery">
+      </segment>
+    </unit>
+    <unit id="tsc.jquery">
+      <segment>
         <source>jQuery default:Default path to jquery library. Change or delete path to use your own library.</source>
-      </trans-unit>
-      <trans-unit id="tsc.storagePid">
+      </segment>
+    </unit>
+    <unit id="tsc.storagePid">
+      <segment>
         <source>Storage Pid:Default storage PID for all data of operations</source>
-      </trans-unit>
-      <trans-unit id="tsc.recursive">
+      </segment>
+    </unit>
+    <unit id="tsc.recursive">
+      <segment>
         <source>Recursive storage:Recursive for storage PID. Used for all data of operations</source>
-      </trans-unit>
-      <trans-unit id="tsc.operationSinglePid">
+      </segment>
+    </unit>
+    <unit id="tsc.operationSinglePid">
+      <segment>
         <source>Operation single page:Page with operation plugin single view</source>
-      </trans-unit>
-      <trans-unit id="tsc.vehicleSinglePid">
+      </segment>
+    </unit>
+    <unit id="tsc.vehicleSinglePid">
+      <segment>
         <source>Vehicle single page:Page with operation plugin and using vehicle single view</source>
-      </trans-unit>
-      <trans-unit id="tsc.resourceSinglePid">
+      </segment>
+    </unit>
+    <unit id="tsc.resourceSinglePid">
+      <segment>
         <source>Resource single page:Page with operation plugin and using resource single view</source>
-      </trans-unit>
-      <trans-unit id="tsc.hidePagination">
+      </segment>
+    </unit>
+    <unit id="tsc.hidePagination">
+      <segment>
         <source>Hide pagination:Hide the pagination in list view of operations</source>
-      </trans-unit>
-      <trans-unit id="tsc.hideFilter">
+      </segment>
+    </unit>
+    <unit id="tsc.hideFilter">
+      <segment>
         <source>Hide filter:Hide search form (filter) in list view of operations</source>
-      </trans-unit>
-      <trans-unit id="tsc.lastYears">
+      </segment>
+    </unit>
+    <unit id="tsc.lastYears">
+      <segment>
         <source>Last years:How many years back are showing in filter for years</source>
-      </trans-unit>
-      <trans-unit id="tsc.listMediaWidth">
+      </segment>
+    </unit>
+    <unit id="tsc.listMediaWidth">
+      <segment>
         <source>Max media width list:Max media width in list view of operations (add "c" for cropping)</source>
-      </trans-unit>
-      <trans-unit id="tsc.listMediaHeight">
+      </segment>
+    </unit>
+    <unit id="tsc.listMediaHeight">
+      <segment>
         <source>Max media height list:Max media width in list view of operations</source>
-      </trans-unit>
-      <trans-unit id="tsc.singleMediaWidth">
+      </segment>
+    </unit>
+    <unit id="tsc.singleMediaWidth">
+      <segment>
         <source>Max media width list:Max media width in single view, also for vehicles and resources (add "c" for cropping)</source>
-      </trans-unit>
-      <trans-unit id="tsc.singleMediaHeight">
+      </segment>
+    </unit>
+    <unit id="tsc.singleMediaHeight">
+      <segment>
         <source>Max media height list:Max media width in single view, also for vehicles and resources</source>
-      </trans-unit>
-      <trans-unit id="tsc.increaseImage">
+      </segment>
+    </unit>
+    <unit id="tsc.increaseImage">
+      <segment>
         <source>Lightbox for images:Render images in single view with a wrapped link to increase image (e.g. with lightbox plugin)</source>
-      </trans-unit>
-      <trans-unit id="tsc.showMediaInList">
+      </segment>
+    </unit>
+    <unit id="tsc.showMediaInList">
+      <segment>
         <source>First media in list:Show first media in listview</source>
-      </trans-unit>
-      <trans-unit id="tsc.listMediaWidthVehicle">
+      </segment>
+    </unit>
+    <unit id="tsc.listMediaWidthVehicle">
+      <segment>
         <source>Media width vehicles:Media width in list view of vehicles</source>
-      </trans-unit>
-      <trans-unit id="tsc.listMediaHeightVehicle">
+      </segment>
+    </unit>
+    <unit id="tsc.listMediaHeightVehicle">
+      <segment>
         <source>Media height vehicles:Media height in list view of vehicles</source>
-      </trans-unit>
-      <trans-unit id="tsc.listMediaWidthResource">
+      </segment>
+    </unit>
+    <unit id="tsc.listMediaWidthResource">
+      <segment>
         <source>Media width resources:Media width in list view of resources</source>
-      </trans-unit>
-      <trans-unit id="tsc.listMediaHeightResource">
+      </segment>
+    </unit>
+    <unit id="tsc.listMediaHeightResource">
+      <segment>
         <source>Media height resources:Media height in list view of resources</source>
-      </trans-unit>
-      <trans-unit id="tsc.listVehiclesDefaultImagePath">
+      </segment>
+    </unit>
+    <unit id="tsc.listVehiclesDefaultImagePath">
+      <segment>
         <source>Fallback image for vehicles list view:Image that will be shown in the list of vehicles, if no media is available.</source>
-      </trans-unit>
-      <trans-unit id="tsc.listResourcesDefaultImagePath">
+      </segment>
+    </unit>
+    <unit id="tsc.listResourcesDefaultImagePath">
+      <segment>
         <source>Fallback image for resources list view:Image that will be shown in the list of resources, if no media is available.</source>
-      </trans-unit>
-      <trans-unit id="tsc.itemsPerPage">
+      </segment>
+    </unit>
+    <unit id="tsc.itemsPerPage">
+      <segment>
         <source>Items per page:Items per page in listview</source>
-      </trans-unit>
-      <trans-unit id="tsc.limit">
+      </segment>
+    </unit>
+    <unit id="tsc.limit">
+      <segment>
         <source>Limit:Limit the result in list view</source>
-      </trans-unit>
-      <trans-unit id="tsc.rootCategory">
+      </segment>
+    </unit>
+    <unit id="tsc.rootCategory">
+      <segment>
         <source>Root category:Uid of the root category for the category tree of the operations extension. These categories are used for the category output in the Fluid templates.</source>
-      </trans-unit>
-      <trans-unit id="tsc.insertAbove">
+      </segment>
+    </unit>
+    <unit id="tsc.insertAbove">
+      <segment>
         <source>Pagination above:Show pagination above the list</source>
-      </trans-unit>
-      <trans-unit id="tsc.insertBelow">
+      </segment>
+    </unit>
+    <unit id="tsc.insertBelow">
+      <segment>
         <source>Pagination below:Show pagination below the list</source>
-      </trans-unit>
-      <trans-unit id="tsc.maxNumberOfLinks">
+      </segment>
+    </unit>
+    <unit id="tsc.maxNumberOfLinks">
+      <segment>
         <source>maxNumberOfLinks</source>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

@@ -1,56 +1,85 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" datatype="plaintext" original="messages" date="2016-04-17T20:23:49Z" product-name="operations">
-    <header/>
-    <body>
-      <trans-unit id="plugin.title">
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en">
+  <file id="f1">
+    <unit id="plugin.title">
+      <segment>
         <source>Operations</source>
-      </trans-unit>
-      <trans-unit id="plugin.operationlist.title">
+      </segment>
+    </unit>
+    <unit id="plugin.operationlist.title">
+      <segment>
         <source>Operations list</source>
-      </trans-unit>
-      <trans-unit id="plugin.operationlist.description">
+      </segment>
+    </unit>
+    <unit id="plugin.operationlist.description">
+      <segment>
         <source>Show list of firefighter operations</source>
-      </trans-unit>
-      <trans-unit id="plugin.operationshow.title">
+      </segment>
+    </unit>
+    <unit id="plugin.operationshow.title">
+      <segment>
         <source>Operations detail</source>
-      </trans-unit>
-      <trans-unit id="plugin.operationshow.description">
+      </segment>
+    </unit>
+    <unit id="plugin.operationshow.description">
+      <segment>
         <source>Detail view for a firefighter operation</source>
-      </trans-unit>
-      <trans-unit id="plugin.operationstatistics.title">
+      </segment>
+    </unit>
+    <unit id="plugin.operationstatistics.title">
+      <segment>
         <source>Operations statistics</source>
-      </trans-unit>
-      <trans-unit id="plugin.operationstatistics.description">
+      </segment>
+    </unit>
+    <unit id="plugin.operationstatistics.description">
+      <segment>
         <source>Show statistics for the operations</source>
-      </trans-unit>
-      <trans-unit id="plugin.vehiclelist.title">
+      </segment>
+    </unit>
+    <unit id="plugin.vehiclelist.title">
+      <segment>
         <source>Vehicles list</source>
-      </trans-unit>
-      <trans-unit id="plugin.vehiclelist.description">
+      </segment>
+    </unit>
+    <unit id="plugin.vehiclelist.description">
+      <segment>
         <source>Show list of vehicles</source>
-      </trans-unit>
-      <trans-unit id="plugin.vehicleshow.title">
+      </segment>
+    </unit>
+    <unit id="plugin.vehicleshow.title">
+      <segment>
         <source>Vehicles show</source>
-      </trans-unit>
-      <trans-unit id="plugin.vehicleshow.description">
+      </segment>
+    </unit>
+    <unit id="plugin.vehicleshow.description">
+      <segment>
         <source>Detail view of a vehicle</source>
-      </trans-unit>
-      <trans-unit id="plugin.resourcelist.title">
+      </segment>
+    </unit>
+    <unit id="plugin.resourcelist.title">
+      <segment>
         <source>Resources list</source>
-      </trans-unit>
-      <trans-unit id="plugin.resourcelist.description">
+      </segment>
+    </unit>
+    <unit id="plugin.resourcelist.description">
+      <segment>
         <source>Show list of resources</source>
-      </trans-unit>
-      <trans-unit id="plugin.resourceshow.title">
+      </segment>
+    </unit>
+    <unit id="plugin.resourceshow.title">
+      <segment>
         <source>Resources show</source>
-      </trans-unit>
-      <trans-unit id="plugin.resourceshow.description">
+      </segment>
+    </unit>
+    <unit id="plugin.resourceshow.description">
+      <segment>
         <source>Detail view of a resource</source>
-      </trans-unit>
-      <trans-unit id="extconf.slugBehaviour">
+      </segment>
+    </unit>
+    <unit id="extconf.slugBehaviour">
+      <segment>
         <source>Slug behaviour for path_segment fields</source>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

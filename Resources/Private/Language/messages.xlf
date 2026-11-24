@@ -1,134 +1,215 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" datatype="plaintext" original="messages" date="2013-11-11T21:36:44Z" product-name="operations">
-    <header/>
-    <body>
-      <trans-unit id="list.header">
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en">
+  <file id="f1">
+    <unit id="list.header">
+      <segment>
         <source>List of operations</source>
-      </trans-unit>
-      <trans-unit id="list.mapHeader">
+      </segment>
+    </unit>
+    <unit id="list.mapHeader">
+      <segment>
         <source>Map of operations</source>
-      </trans-unit>
-      <trans-unit id="statistics.header">
+      </segment>
+    </unit>
+    <unit id="statistics.header">
+      <segment>
         <source>Statistics of operations</source>
-      </trans-unit>
-      <trans-unit id="statistics.dataTable.header">
+      </segment>
+    </unit>
+    <unit id="statistics.dataTable.header">
+      <segment>
         <source>Table with data</source>
-      </trans-unit>
-      <trans-unit id="statistics.sum.header">
+      </segment>
+    </unit>
+    <unit id="statistics.sum.header">
+      <segment>
         <source>Sum</source>
-      </trans-unit>
-      <trans-unit id="statistics.chart.header">
+      </segment>
+    </unit>
+    <unit id="statistics.chart.header">
+      <segment>
         <source>Chart</source>
-      </trans-unit>
-      <trans-unit id="backToList">
+      </segment>
+    </unit>
+    <unit id="backToList">
+      <segment>
         <source>back to list</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_operation.number">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_operation.number">
+      <segment>
         <source>Operation number</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_operation.location">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_operation.location">
+      <segment>
         <source>Location of operation</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_operation.media">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_operation.media">
+      <segment>
         <source>Media of operation</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_operation.type">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_operation.type">
+      <segment>
         <source>Type of operation</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_operation.assistance">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_operation.assistance">
+      <segment>
         <source>Assistance to this operation</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_operation.vehicles">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_operation.vehicles">
+      <segment>
         <source>Vehicles used on this operation</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_operation.resources">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_operation.resources">
+      <segment>
         <source>Resources</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_vehicle.description">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_vehicle.description">
+      <segment>
         <source>Description of vehicle</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_resource.description">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_resource.description">
+      <segment>
         <source>Description of resource</source>
-      </trans-unit>
-      <trans-unit id="tx_operations_domain_model_resource.media">
+      </segment>
+    </unit>
+    <unit id="tx_operations_domain_model_resource.media">
+      <segment>
         <source>Media of resource</source>
-      </trans-unit>
-      <trans-unit id="emptyResult">
+      </segment>
+    </unit>
+    <unit id="emptyResult">
+      <segment>
         <source>No results</source>
-      </trans-unit>
-      <trans-unit id="noReport">
+      </segment>
+    </unit>
+    <unit id="noReport">
+      <segment>
         <source>Sorry, there is no report here</source>
-      </trans-unit>
-      <trans-unit id="filter">
+      </segment>
+    </unit>
+    <unit id="filter">
+      <segment>
         <source>Filter the results</source>
-      </trans-unit>
-      <trans-unit id="filter.selectYear.first">
+      </segment>
+    </unit>
+    <unit id="filter.selectYear.first">
+      <segment>
         <source>Choose year..</source>
-      </trans-unit>
-      <trans-unit id="filter.selectType.first">
+      </segment>
+    </unit>
+    <unit id="filter.selectType.first">
+      <segment>
         <source>Choose Type...</source>
-      </trans-unit>
-      <trans-unit id="filter.selectCategory.first">
+      </segment>
+    </unit>
+    <unit id="filter.selectCategory.first">
+      <segment>
         <source>Choose Category...</source>
-      </trans-unit>
-      <trans-unit id="filter.searchstring.placeholder">
+      </segment>
+    </unit>
+    <unit id="filter.searchstring.placeholder">
+      <segment>
         <source>searching for...</source>
-      </trans-unit>
-      <trans-unit id="filter.submit">
+      </segment>
+    </unit>
+    <unit id="filter.submit">
+      <segment>
         <source>Send</source>
-      </trans-unit>
-      <trans-unit id="filter.reset">
+      </segment>
+    </unit>
+    <unit id="filter.reset">
+      <segment>
         <source>Reset filter</source>
-      </trans-unit>
-      <trans-unit id="operationsFound">
+      </segment>
+    </unit>
+    <unit id="operationsFound">
+      <segment>
         <source>operations found</source>
-      </trans-unit>
-      <trans-unit id="singleOperationFound">
+      </segment>
+    </unit>
+    <unit id="singleOperationFound">
+      <segment>
         <source>operation found</source>
-      </trans-unit>
-      <trans-unit id="back">
+      </segment>
+    </unit>
+    <unit id="back">
+      <segment>
         <source>back</source>
-      </trans-unit>
-      <trans-unit id="map.noscript">
+      </segment>
+    </unit>
+    <unit id="map.noscript">
+      <segment>
         <source>Please activate javascript to show map</source>
-      </trans-unit>
-      <trans-unit id="noData">
+      </segment>
+    </unit>
+    <unit id="noData">
+      <segment>
         <source>No data available</source>
-      </trans-unit>
-      <trans-unit id="list.vehicles.defaultImage.title">
+      </segment>
+    </unit>
+    <unit id="list.vehicles.defaultImage.title">
+      <segment>
         <source>Default image (vehicles) if no image available.</source>
-      </trans-unit>
-      <trans-unit id="list.resources.defaultImage.title">
+      </segment>
+    </unit>
+    <unit id="list.resources.defaultImage.title">
+      <segment>
         <source>Default image (resources) if no image available.</source>
-      </trans-unit>
-      <trans-unit id="meta.operation-time">
+      </segment>
+    </unit>
+    <unit id="meta.operation-time">
+      <segment>
         <source>Operating time</source>
-      </trans-unit>
-      <trans-unit id="meta.operation-begin">
+      </segment>
+    </unit>
+    <unit id="meta.operation-begin">
+      <segment>
         <source>Begin</source>
-      </trans-unit>
-      <trans-unit id="meta.operation-end">
+      </segment>
+    </unit>
+    <unit id="meta.operation-end">
+      <segment>
         <source>End</source>
-      </trans-unit>
-      <trans-unit id="meta.categories">
+      </segment>
+    </unit>
+    <unit id="meta.categories">
+      <segment>
         <source>Categories</source>
-      </trans-unit>
-      <trans-unit id="pagination.visibleOperations">
+      </segment>
+    </unit>
+    <unit id="pagination.visibleOperations">
+      <segment>
         <source>Visible Operations</source>
-      </trans-unit>
-      <trans-unit id="pagination.first">
+      </segment>
+    </unit>
+    <unit id="pagination.first">
+      <segment>
         <source>First</source>
-      </trans-unit>
-      <trans-unit id="pagination.previous">
+      </segment>
+    </unit>
+    <unit id="pagination.previous">
+      <segment>
         <source>Previous</source>
-      </trans-unit>
-      <trans-unit id="pagination.next">
+      </segment>
+    </unit>
+    <unit id="pagination.next">
+      <segment>
         <source>Next</source>
-      </trans-unit>
-      <trans-unit id="pagination.last">
+      </segment>
+    </unit>
+    <unit id="pagination.last">
+      <segment>
         <source>Last</source>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>
